@@ -1,0 +1,165 @@
+---
+title: "Mass function overloading: why and how?"
+date: "2021-02-10"
+categories: 
+  - "articles"
+tags: 
+  - "api-design"
+  - "bliss"
+  - "esm"
+  - "javascript"
+  - "js"
+---
+
+One of the things I've been doing for the past few months (on and off—more off than on TBH) is rewriting [Bliss](http://blissfuljs.com/) to use [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [1](#bliss-v2). Since Bliss v1 was not using a modular architecture at all, this introduced some interesting challenges.
+
+Bliss is essentially a collection of helper functions. Most of these functions have a number of different [signatures](https://en.wikipedia.org/wiki/Type_signature#Method_signature), to allow for more compact, readable code. The functions can be used for single things (one element, one set of arguments) or they can operate _en masse_ (arrays of elements, object literals with multiple key-value pairs). As you might guess, this practice has been strongly inspired by the heavy use of [overloading](https://en.wikipedia.org/wiki/Function_overloading) in jQuery, which was one of the driving factors behind its huge success.
+
+For example, let's take `[$.style()](https://blissfuljs.com/docs.html#fn-style)`. It can be used to set a single CSS property, on a single element, being a rather thin abstraction over `element.style`:
+
+```
+$.style(element, "top", rect.top);
+```
+
+It can also be used to set a single CSS property on multiple elements:
+
+```
+$.style($$(".popup"), "top", rect.top);
+```
+
+It can also be used to set multiple properties on a single element:
+
+```
+$.style(element, {
+	top: rect.top,
+	right: rect.right,
+	bottom: rect.bottom,
+	left: rect.left
+);
+```
+
+Or to set multiple properties on multiple elements:
+
+```
+$.style($$(".popup"), {
+	top: rect.top,
+	right: rect.right,
+	bottom: rect.bottom,
+	left: rect.left
+});
+```
+
+I'm a strong believer in overloading for handling both aggregate operations, as well as singular data. Supporting only aggregate operations would mean that developers have to pointlessly wrap single values in object literals or arrays. E.g. if `$.style()` only accepted arrays and object literals, our first example would be:
+
+```
+$.style([element], {top: rect.top});
+```
+
+Not the end of the world, but certainly annoying and error-prone. Developers would often try setting the pair as separate arguments because it's more natural, remember it doesn't work, then adjust their code.
+
+The opposite situation is much worse. If `$.style()` only supported singular operations, our last example would be:
+
+```
+let values = {
+	top: rect.top,
+	right: rect.right,
+	bottom: rect.bottom,
+	left: rect.left
+};
+for (let element of $$(".popup")) {
+	for (let property in values) {
+		$.style(element, property, values[property]);
+	}
+}
+```
+
+Yikes! You don't need a library for that! Just using `element.style` and `Object.assign()` would have actually fared better here:
+
+```
+for (let element of $$(".popup")) {
+	Object.assign(element.style, {
+		top: rect.top,
+		right: rect.right,
+		bottom: rect.bottom,
+		left: rect.left
+	});
+}
+```
+
+`$.style()` is not unique here: any Bliss function that accepts a main target element (the function's _subject_ as it's called in the Bliss docs) also accepts arrays of elements. Similarly, any Bliss function that accepts key-value pairs as separate arguments, also accepts object literals with multiple of them.
+
+In talks about API Design, I have presented this pattern (and overloading in general) as an instance of the [Robustness principle](https://en.wikipedia.org/wiki/Robustness_principle) in action: _“Be liberal in what you accept”_ is good practice for designing any user interface, and APIs are no exception. An analog in GUI design would be [bulk operations](https://uxdesign.cc/the-bulk-experience-7fcca8080f82): imagine if e.g. you could only delete emails one by one?
+
+In JS, overloading is typically implemented by inspecting the types and number of a function's arguments in the function, and branching accordingly. However, doing this individually on every function would get quite repetitive. Consider the following, _very_ simplified implementation of `$.style()` with the overloading logic inlined:
+
+```
+style(subject, ...args) {
+	if (Array.isArray(subject)) {
+		subject.forEach(e => style(e, ...args));
+	}
+	else if ($.type(args[0]) === "object" && args.length = 1) {
+		for (let p in args[0]) {
+			style(subject, p, args[0][p]);
+		}
+	}
+	else {
+		subject.style[args[0]] = args[1];
+	}
+
+	return subject;
+}
+```
+
+Note that the actual code of this function is only 1 line out of the 13 lines of code it contains. The other 12 are just boilerplate for overloading. What a nightmare for maintainability and readability!
+
+In Bliss v1, all functions were contained a single file, so they could be defined in their most singular version (one element, a single key-value pair as separate arguments etc), and the aggregate signatures could be automatically generated by looping over all defined functions and wrapping them accordingly.
+
+However, in Bliss v2, each function is defined in its own module, as a default export. There is also a module pulling them all together and adding them on `$`, but people _should_ be able to do things like:
+
+```
+import style from "https://v2.blissfuljs.com/src/dom/style.js";
+```
+
+And `style()` would need to support its full functionality, not be some cut down version allowing only single elements and one property-value pair. What use would that be?
+
+This means that the overloading needs to happen in the module defining each function. It cannot happen via a loop in the `index.js` module. How can we do this and still keep our code maintainable, short, and easy to change? I explored several alternatives.
+
+_(We are not going to discuss the implementation of `overload()` in each case below, but if you're interested in the current one, it's [on Github](https://github.com/LeaVerou/bliss/blob/v2/src/overload.js). Do note that just like everything in Bliss v2, it's subject to heavy change before release)_
+
+#### Option 1: Inside each function
+
+```
+export default function style(subject, ...args) {
+	return overload(subject, args, (element, property, value) => {
+		element.style[property] = value;
+	})
+}
+```
+
+While this at first seems like the most natural way to abstract the inlined code we previously had, it's the most verbose and hard to read. Furthermore, it adds extra code that needs to be executed every time the function is called and needs us to pass the current execution context through. It's far better to go with a solution that takes the singular function as input, and gives you a modified function that just works. That's what the next two options use.
+
+#### Option 2: Wrap with overload()
+
+```
+export default overload(function style(element, property, value) {
+	element.style[property] = value;
+});
+```
+
+#### Option 3: Overload at export
+
+```
+function style(element, property, value) {
+	element.style[property] = value;
+}
+
+export default overload(style);
+```
+
+Options 2 and 3 are very similar. I was originally inclined to go with 2 to avoid typing the function name twice, but I eventually concluded that it made the code harder to read, so I went with option 3: Declaring the function, then overloading it & exporting it.
+
+I wasn't super happy with any of these options. Something inside me protested the idea of having to include even a line of boilerplate in every single module, and almost every Bliss function depending on another module. However, in the large scheme of things, I think this boilerplate is as minimal as it gets, and certainly beats the alternatives.
+
+Have you had to perform a transform on a number of different modules in your code? How did you abstract it away?
+
+1 You can see the rewrite progress in the [v2 branch on Github](https://github.com/LeaVerou/bliss/tree/v2), and even use [v2.blissfuljs.com](https://v2.blissfuljs.com) to import modules from and experiment. Note that at the time of writing, all of the progress is in the code, the docs and tests are still all about v1.
