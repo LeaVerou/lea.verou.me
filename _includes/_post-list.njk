@@ -1,0 +1,31 @@
+{% if not post.data.draft %}
+<article id="{{post.fileSlug}}">
+	<h2>
+		<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+	</h2>
+	<div class="summary">
+		{% if post.data.summary %}
+			{{ post.data.summary | md | safe }}
+		{% elseif post.data.page.excerpt %}
+			{{ post.data.page.excerpt | md | safe }}
+		{% else %}
+			{{ post.content | md | safe }}
+		{% endif %}
+	</div>
+
+	<footer class="post-meta">
+		<div class="tags">
+			{% for tag in post.data.tags %}
+			{% if tag != "blog" %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endif %}
+			{%- endfor -%}
+		</div>
+
+		<p class="date">
+			Published on
+			<time datetime="{{ post.date.toISOString() }}">{{ post.date.toLocaleString("en-gb", {
+				dateStyle: "long"
+			}) }}</time>
+		</p>
+	</footer>
+</article>
+{% endif %}

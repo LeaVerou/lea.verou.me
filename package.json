@@ -1,0 +1,35 @@
+{
+  "name": "lea.verou.me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx postcss \"**/*.postcss\" --base . --dir . --ext .css --config postcss.config.cjs",
+    "build:html": "npx @11ty/eleventy --config=.eleventy.cjs",
+    "build": "npm run build:html && npm run build:css && npm run docs",
+    "watch:css": "npx postcss \"**/*.postcss\" --base . --dir . --ext .css --config postcss.config.cjs --watch",
+    "watch:html": "npx @11ty/eleventy --config=.eleventy.cjs --watch",
+    "watch": "npx concurrently -n w: npm:watch:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leaverou/lea.verou.me.git"
+  },
+  "author": "Lea Verou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leaverou/lea.verou.me/issues"
+  },
+  "homepage": "https://github.com/leaverou/lea.verou.me#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "concurrently": "^8.0.0",
+    "documentation": "^14.0.1",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-attrs": "^4.1.6",
+    "postcss": "^8.3.9",
+    "postcss-cli": "^10.1.0",
+    "postcss-nesting": "^11.2.2"
+  }
+}

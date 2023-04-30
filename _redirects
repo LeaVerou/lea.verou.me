@@ -1,0 +1,2 @@
+# Blog links using year/month/slug format
+/20* /blog/20:splat 200
