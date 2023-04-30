@@ -31,10 +31,6 @@
 	--font-serif: "Hoefler Text", Garamond, "Times New Roman", serif;
 	--font-monospace: Consolas, Menlo, Monaco, source-code-pro, monospace;
 
-	@supports ( font-variation-settings: normal ) {
-		--font-sans: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-	}
-
 	--color-magenta: #f06;
 	--color-orange: #f73;
 	--color-accent: var(--color-magenta);
@@ -51,19 +47,27 @@
 
 	--width-thin: 50rem;
 	--page-margin: calc(50vw - var(--width-thin) / 2);
-
-	@supports (width: max(1px, 1em)) {
-		--page-margin: max(1em, 50vw - var(--width-thin) / 2);
-	}
 }
 
-html {
-	@media (width > 700px) {
-		&.supports-registerproperty {
+@supports ( font-variation-settings: normal ) {
+
+:root {
+		--font-sans: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+}
+	}
+
+@supports (width: max(1px, 1em)) {
+
+:root {
+		--page-margin: max(1em, 50vw - var(--width-thin) / 2);
+}
+	}
+
+@media (width > 700px) {
+		html.supports-registerproperty {
 			xanimation: to1 600s linear infinite;
 		}
 	}
-}
 
 body {
 	background: var(--color-light-3);
@@ -83,11 +87,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-sans);
 	margin: 3.5rem 0 2rem;
 	text-wrap: balance;
+}
 
-	& a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 		color: inherit;
 	}
-}
 
 h1 {
 	font-size: 400%;
@@ -123,13 +127,13 @@ p {
 a {
 	color: var(--color-accent);
 	text-decoration: none;
+}
 
-	&:hover,
-	&:focus {
+a:hover,
+	a:focus {
 		color: var(--color-accent2);
 		text-decoration: underline;
 	}
-}
 
 hr {
 	background: linear-gradient(to left, currentColor calc(50% - 16px), transparent calc(50% - 16px), transparent calc(50% + 16px), currentColor calc(50% + 16px));
@@ -140,12 +144,13 @@ hr {
 	position: relative;
 	font-size: 80%;
 	margin-top: 3em;
+}
 
-	&:not(.has-background) {
+hr:not(.has-background) {
 		color: var(--color-gray-medium);
 	}
 
-	&::before {
+hr::before {
 		content: "";
 		background: url("/logo.svg") center / cover no-repeat;
 		height: 1.6em;
@@ -157,7 +162,6 @@ hr {
 		filter: grayscale();
 		opacity: .8;
 	}
-}
 
 video, img {
 	max-width: 100%;
@@ -185,29 +189,35 @@ body > header {
 	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at var(--header-bg-center), var(--color-light-1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: var(--color-light-2);
 	--content-width: clamp(5em, var(--width-thin) * 2, 100vw);
+}
 
-	@media (width <= 700px) {
+@media (width <= 700px) {
+
+body > header {
 		--content-width: 100%;
+}
 	}
 
-	.header-inner {
+body > header .header-inner {
 		display: flex;
 		align-items: center;
+	}
 
-		.site-logo {
+body > header .header-inner .site-logo {
 			display: flex;
 			gap: .5em;
 			align-items: center;
 			flex-shrink: 0;
 			color: inherit;
 			text-decoration: none;
+		}
 
-			& img {
+body > header .header-inner .site-logo img {
 				max-height: 2.5rem;
 				width: auto;
 			}
 
-			.site-title {
+body > header .header-inner .site-logo .site-title {
 				color: var(--color-accent);
 				font-size: 150%;
 				font-weight: 300;
@@ -215,100 +225,94 @@ body > header {
 				line-height: 1;
 				white-space: nowrap;
 			}
-		}
 
-		& nav {
+body > header .header-inner nav {
 			display: flex;
 			gap: 1em;
 			margin-left: auto;
-
-			& a {
-				color: var(--color-accent);
-
-				&:not(:hover) {
-					text-decoration: none;
-				}
-			}
 		}
 
-		& .social {
+body > header .header-inner nav a {
+				color: var(--color-accent);
+			}
+
+body > header .header-inner nav a:not(:hover) {
+					text-decoration: none;
+				}
+
+body > header .header-inner .social {
 			display: flex;
 			gap: .5em;
 			margin-left: 1em;
 		}
-	}
 
-	> h1 {
+body > header > h1 {
 		text-align: center;
 	}
-}
 
 body > main {
 	font-family: var(--font-serif);
 	--content-width: clamp(5em, var(--width-thin), 100vw);
-
-	@media (width <= 700px) {
-		--content-width: 100%;
-	}
 }
+
+@media (width <= 700px) {
+
+body > main {
+		--content-width: 100%;
+}
+	}
 
 .post-meta {
 	display: flex;
 	color: var(--color-gray-medium);
 	font-family: var(--font-sans);
 	-webkit-font-smoothing: initial;
+}
 
-	& a {
-		&:not(:hover) {
+.post-meta a:not(:hover) {
 			color: inherit;
 		}
-	}
 
-	& time {
-		&::before {
+.post-meta time::before {
 			content: "\F1F6";
 			font-family: bootstrap-icons;
 			display: inline-block;
 			vertical-align: middle;
 			margin-right: .5em;
 		}
+
+.post-meta .tags {
+		margin-right: auto;
 	}
 
-	.tags {
-		margin-right: auto;
-
-		&::before {
+.post-meta .tags::before {
 			content: "\F5B2";
 			font-family: bootstrap-icons;
 			display: inline-block;
 			vertical-align: middle;
 		}
-	}
-}
 
 .nutshell {
 	font-family: var(--font-sans);
 	font-size: 150%;
 }
 
-.post {
-	& .post-meta {
+.post .post-meta {
 		font-size: 80%;
 	}
 
-	& header {
+.post header {
 		text-align: center;
 		margin-bottom: 1.2em;
+	}
 
-		& h2 {
+.post header h2 {
 			margin-bottom: .4em;
 		}
 
-		& .post-meta {
+.post header .post-meta {
 			justify-content: center;
 		}
-	}
-}
 
 :not(pre) > code,
 pre[class*="language-"][class*="language-"],
@@ -348,13 +352,13 @@ pre {
 	clip-path: polygon(var(--clip-top), var(--clip-bottom));
 	--clip-top: 0 0, 100% 2em;
 	--clip-bottom: 100% calc(100% - 1.5em), 0 100%;
+}
 
-	&:nth-of-type(odd) {
+pre:nth-of-type(odd) {
 		--clip-top: 0 2em, 100% 0;
 	}
 
-	&:nth-of-type(3n + 1),
-	&:nth-of-type(5n + 1) {
+pre:nth-of-type(3n + 1),
+	pre:nth-of-type(5n + 1) {
 		--clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
 	}
-}

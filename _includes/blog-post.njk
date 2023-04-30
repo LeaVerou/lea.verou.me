@@ -2,24 +2,20 @@
 layout: "page.njk"
 ---
 
-<main>
-
 <header class="post-meta">
+	<div class="post-meta">
+		<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
+			dateStyle: "long"
+		}) }}</time>
+	</div>
+</header>
+
+{{ content | safe }}
+
+<footer class="post-meta">
 	<div class="tags">
 		{% for tag in page.data.tags %}
 		{% if tag != "blog" %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endif %}
 		{%- endfor -%}
 	</div>
-
-	<p class="date">
-		Published on
-		<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
-			dateStyle: "long"
-		}) }}</time>
-	</p>
-
-</header>
-
-
-{{ content | safe }}
-</main>
+</footer>

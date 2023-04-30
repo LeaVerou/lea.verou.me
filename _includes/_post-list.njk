@@ -1,8 +1,15 @@
 {% if not post.data.draft %}
-<article id="{{post.fileSlug}}">
-	<h2>
-		<a href="{{ post.url | url }}">{{ post.data.title }}</a>
-	</h2>
+<article class="post" id="{{post.fileSlug}}">
+	<header>
+		<h2>
+			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+		</h2>
+		<div class="post-meta">
+			<time datetime="{{ post.date.toISOString() }}">{{ post.date.toLocaleString("en-gb", {
+				dateStyle: "long"
+			}) }}</time>
+		</div>
+	</header>
 	<div class="summary">
 		{% if post.data.summary %}
 			{{ post.data.summary | md | safe }}
@@ -15,17 +22,12 @@
 
 	<footer class="post-meta">
 		<div class="tags">
-			{% for tag in post.data.tags %}
-			{% if tag != "blog" %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endif %}
-			{%- endfor -%}
+			{% for tag in post.data.tags %}{% if tag != "blog" %}
+			<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% if loop.revindex0 > 0 %}<span class="comma">, </span>{% endif %}
+			{% endif %}{%- endfor -%}
 		</div>
-
-		<p class="date">
-			Published on
-			<time datetime="{{ post.date.toISOString() }}">{{ post.date.toLocaleString("en-gb", {
-				dateStyle: "long"
-			}) }}</time>
-		</p>
 	</footer>
 </article>
+
+<hr>
 {% endif %}

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}{% if title %} &bull; {% endif %}Lea Verou</title>
+	<link rel="shortcut icon" href="/logo.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{{ includes | safe }}
@@ -12,28 +13,29 @@
 <body>
 
 <header>
-	<a class="site-logo">
-		<img property="image" src="/mark.svg" alt="">
-		Lea Verou
-	</a>
-	<div class="site-description">Life at the bleeding edge (of the Web)</div>
-	<nav>
-		<div>
+	<div class="header-inner">
+		<a href="/" class="site-logo">
+			<img property="image" src="/mark.svg" alt="">
+			<span class="site-title" title="Life at the bleeding edge (of the Web)">Lea Verou</span>
+		</a>
+		<div class="social">
+			<a class="twitter" href="http://twitter.com/leaverou" target="_blank" title="Twitter"><i class="bi bi-twitter"></i></a>
+			<a class="mastodon" href="https://front-end.social/@leaverou" target="_blank" title="Mastodon"><i class="bi bi-mastodon"></i></a>
+			<a class="github" href="http://github.com/leaverou" target="_blank" title="Github"><i class="bi bi-github"></i></a>
+		</div>
+
+		<nav>
 			<a href="/">Home</a>
+			<a href="/blog/">Blog</a>
 			<a href="/projects/">Projects</a>
 			<a href="/speaking/">Speaking</a>
 			<a href="/publications/">Publications</a>
 			<a href="/press/">Press</a>
 			<a href="/interviews/">Interviews</a>
-			<a href="/blog/">Blog</a>
 			<a href="/about/">About</a>
-		</div>
-		<div class="social">
-			<a class="twitter" href="http://twitter.com/leaverou" target="_blank" title="Twitter">Twitter</a>
-			<a class="github" href="http://github.com/leaverou" target="_blank" title="Github">Github</a>
-		</div>
-	</nav>
-
+		</nav>
+	</div>
+{% if page.url and page.url !== "/" %}
 	<h1>
 		<span property="name">
 			{% if heading %}
@@ -45,11 +47,14 @@
 			{% endif %}
 		</span>
 	</h1>
+{% endif %}
 </header>
 
+<main>
 {{ content | safe }}
+</main>
 
-<script src="/assets/global.js"></script>
+<script src="/assets/global.js" type="module"></script>
 
 </body>
 </html>
