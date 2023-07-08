@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}{% if title %} &bull; {% endif %}Lea Verou</title>
-	<link rel="shortcut icon" href="/logo.svg" />
+	<link rel="shortcut icon" href="/mark.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{{ includes | safe }}
@@ -19,7 +19,8 @@
 			<span class="site-title" title="Life at the bleeding edge (of the Web)">Lea Verou</span>
 		</a>
 		<div class="social">{% include "_social.njk" %}</div>
-		<nav>{% include "_nav.njk" %}</nav>
+		<nav class="gt-md">{% include "_nav.njk" %}</nav>
+		<a href="#nav" class="🍔 lt-md"><i class="bi bi-list"></i></a>
 	</div>
 	<div class="page-meta">
 		{% if page.url and page.url !== "/" %}
@@ -54,7 +55,7 @@
 		<h4>Social Me</h4>
 		{% include "_social.njk" %}
 	</section>
-	<nav>
+	<nav id="nav">
 		{% include "_nav.njk" %}
 	</nav>
 

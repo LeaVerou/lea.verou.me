@@ -224,13 +224,6 @@ body > header {
 			font-size: 75%;
 			font-weight: 500;
 
-			@media (width <= 960px) {
-				/* Only footer nav in small screens for now
-				TODO: make this a proper menu
-				 */
-				display: none;
-			}
-
 			& a {
 				color: var(--color-accent);
 				word-break: initial;
@@ -242,10 +235,18 @@ body > header {
 			}
 		}
 
+		.🍔 {
+			margin-left: 1em;
+		}
+
 		& .social {
 			display: flex;
 			gap: .5em;
-			margin-left: 1em;
+			margin-left: auto;
+
+			@media (width > 960px) {
+				margin-left: 1em;
+			}
 		}
 	}
 
@@ -486,14 +487,24 @@ pre {
 }
 
 /* Utility classes */
-
-@media (width < 700px) {
-	.long-text {
-		display: none;
+@media not (width > 700px) {
+	.long-text, .gt-sm {
+		display: none !important;
 	}
 }
-@media (width >= 700px) {
-	.short-text {
-		display: none;
+@media (width > 700px) {
+	.short-text, .lt-sm {
+		display: none !important;
+	}
+}
+
+@media not (width > 960px) {
+	.gt-md {
+		display: none !important;
+	}
+}
+@media (width > 960px) {
+	.lt-md {
+		display: none !important;
 	}
 }

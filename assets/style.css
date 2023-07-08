@@ -239,16 +239,6 @@ body > header .site-meta nav {
 			font-weight: 500;
 		}
 
-@media (width <= 960px) {
-
-body > header .site-meta nav {
-				/* Only footer nav in small screens for now
-				TODO: make this a proper menu
-				 */
-				display: none;
-		}
-			}
-
 body > header .site-meta nav a {
 				color: var(--color-accent);
 				word-break: initial;
@@ -259,11 +249,22 @@ body > header .site-meta nav a:not(:hover) {
 					text-decoration: none;
 				}
 
+body > header .site-meta .🍔 {
+			margin-left: 1em;
+		}
+
 body > header .site-meta .social {
 			display: flex;
 			gap: .5em;
-			margin-left: 1em;
+			margin-left: auto;
 		}
+
+@media (width > 960px) {
+
+body > header .site-meta .social {
+				margin-left: 1em;
+		}
+			}
 
 body > header .page-meta {
 		padding: 0 var(--content-margin);
@@ -501,14 +502,24 @@ pre:nth-of-type(3n + 1),
 	}
 
 /* Utility classes */
-
-@media (width < 700px) {
-	.long-text {
-		display: none;
+@media not (width > 700px) {
+	.long-text, .gt-sm {
+		display: none !important;
 	}
 }
-@media (width >= 700px) {
-	.short-text {
-		display: none;
+@media (width > 700px) {
+	.short-text, .lt-sm {
+		display: none !important;
+	}
+}
+
+@media not (width > 960px) {
+	.gt-md {
+		display: none !important;
+	}
+}
+@media (width > 960px) {
+	.lt-md {
+		display: none !important;
 	}
 }
