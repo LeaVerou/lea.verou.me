@@ -34,3 +34,10 @@ if (window.CSS && CSS.registerProperty) {
 		intersectionObserver.observe(el);
 	}
 }
+
+for (let el of $$(".to-top")) {
+	el.addEventListener("click", evt => {
+		evt.preventDefault();
+		root.scrollTo({top: 0, behavior: "smooth"});
+	});
+}

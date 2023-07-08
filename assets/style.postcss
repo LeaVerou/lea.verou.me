@@ -62,10 +62,12 @@
 
 html {
 	color: black;
-	font: 130%/1.5 var(--font-sans);
+	font: 110%/1.5 var(--font-sans);
 	letter-spacing: -0.015em;
 
 	@media (width > 700px) {
+		font-size: 130%;
+
 		&.supports-registerproperty {
 			xanimation: to1 600s linear infinite;
 		}
@@ -94,7 +96,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 400%;
+	font-size: 220%;
+
+	@media (width > 700px) {
+		font-size: 400%;
+	}
 }
 
 h2 {
@@ -259,8 +265,9 @@ body > main {
 
 body > footer {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	gap: 1em;
 	padding: var(--min-padding) var(--content-margin);
+	margin-top: 2em;
 	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at calc(100% + 1em) calc(100% + 1em), rgb(0 0 0 / .1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: hsl(var(--gray) 23%);
 	border: 0 solid hsl(var(--gray) 95% / .2);
@@ -325,12 +332,10 @@ body > footer {
 	}
 
 	& small {
-		grid-column-end: span 2;
 		display: flex;
-		gap: 1em;
+		gap: .6em;
 		padding: 1rem 0;
 		border-top: 1px solid hsl(var(--gray) 95% / .2);
-		margin-top: 1rem;
 
 		& a,
 		& a:hover {
@@ -347,6 +352,18 @@ body > footer {
 
 		.to-top {
 			margin-left: auto;
+		}
+
+		@media (width < 700px) {
+			flex-flow: column;
+		}
+	}
+
+	@media (width > 600px) {
+		grid-template-columns: 1fr 1fr;
+
+		& small {
+			grid-column-end: span 2;
 		}
 	}
 }
