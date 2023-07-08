@@ -1,2 +1,4 @@
 
 /blog/**/index.html
+# Local Netlify folder
+.netlify

@@ -6,6 +6,7 @@ module.exports = config => {
 	let data = {
 		layout: "page.njk",
 		permalink: "{{ page.filePathStem }}.html",
+		currentYear: new Date().getFullYear(),
 	};
 
 	for (let p in data) {

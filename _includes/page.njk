@@ -13,46 +13,62 @@
 <body>
 
 <header>
-	<div class="header-inner">
+	<div class="site-meta">
 		<a href="/" class="site-logo">
 			<img property="image" src="/mark.svg" alt="">
 			<span class="site-title" title="Life at the bleeding edge (of the Web)">Lea Verou</span>
 		</a>
-		<div class="social">
-			<a class="twitter" href="http://twitter.com/leaverou" target="_blank" title="Twitter"><i class="bi bi-twitter"></i></a>
-			<a class="mastodon" href="https://front-end.social/@leaverou" target="_blank" title="Mastodon"><i class="bi bi-mastodon"></i></a>
-			<a class="github" href="http://github.com/leaverou" target="_blank" title="Github"><i class="bi bi-github"></i></a>
-		</div>
-
-		<nav>
-			<a href="/">Home</a>
-			<a href="/blog/">Blog</a>
-			<a href="/projects/">Projects</a>
-			<a href="/speaking/">Speaking</a>
-			<a href="/publications/">Publications</a>
-			<a href="/press/">Press</a>
-			<a href="/interviews/">Interviews</a>
-			<a href="/about/">About</a>
-		</nav>
+		<div class="social">{% include "_social.njk" %}</div>
+		<nav>{% include "_nav.njk" %}</nav>
 	</div>
-{% if page.url and page.url !== "/" %}
-	<h1>
-		<span property="name">
-			{% if heading %}
-				{{ heading }}
-			{% elseif title %}
-				{{ title }}
-			{% else %}
-				Lea Verou
-			{% endif %}
-		</span>
-	</h1>
-{% endif %}
+	<div class="page-meta">
+		{% if page.url and page.url !== "/" %}
+			<h1>
+				<span property="name">
+					{% if heading %}
+						{{ heading }}
+					{% elseif title %}
+						{{ title }}
+					{% else %}
+						Lea Verou
+					{% endif %}
+				</span>
+			</h1>
+		{% endif %}
+		{% if page.date %}
+		<div class="post-meta">
+			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
+				dateStyle: "long"
+			}) }}</time>
+		</div>
+		{% endif %}
+	</div>
 </header>
 
 <main>
 {{ content | safe }}
 </main>
+
+<footer>
+	<section class="social">
+		<h4>Social Me</h4>
+		{% include "_social.njk" %}
+	</section>
+	<nav>
+		{% include "_nav.njk" %}
+	</nav>
+
+
+	<small>
+		<div class="copyright">&copy;2009&thinsp;&ndash;&thinsp;{{ currentYear }} Lea Verou</div>
+		<div class="credits">Powered by <a href="https://11ty.dev/">Eleventy</a>, hosted by <a href="https://netlify.com">Netlify</span></div>
+		<a href="#" class="to-top">
+			<span class="long-text">To the top</span>
+			<span class="short-text">Up</span>
+			<span class="arrow" aria-hidden="true">↑</span>
+		</a>
+	</small>
+</footer>
 
 <script src="/assets/global.js" type="module"></script>
 

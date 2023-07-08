@@ -46,7 +46,10 @@
 	--color-light-3: hsl(35 100% 99%);
 
 	--width-thin: 50rem;
-	--page-margin: calc(50vw - var(--width-thin) / 2);
+
+	--content-width: var(--width-thin);
+	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
+	--min-padding: 1rem;
 }
 
 @supports ( font-variation-settings: normal ) {
@@ -56,12 +59,18 @@
 }
 	}
 
-@supports (width: max(1px, 1em)) {
+@media (width <= 700px) {
 
 :root {
-		--page-margin: max(1em, 50vw - var(--width-thin) / 2);
+		--content-width: calc(100vw - 2 * var(--min-padding));
 }
 	}
+
+html {
+	color: black;
+	font: 130%/1.5 var(--font-sans);
+	letter-spacing: -0.015em;
+}
 
 @media (width > 700px) {
 		html.supports-registerproperty {
@@ -73,9 +82,6 @@ body {
 	background: var(--color-light-3);
 	box-sizing: border-box;
 	margin: 0;
-	color: black;
-	font: 100%/1.5 var(--font-sans);
-	letter-spacing: -0.015em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -177,33 +183,20 @@ pre, code {
 	to { --number: 1; }
 }
 
-body > header,
-body > main {
-	--padding-h: clamp(1rem, 50vw - var(--content-width) / 2, 25vw);
-	padding: 1rem var(--padding-h);
-}
-
 body > header {
 	position: relative;
-	--header-bg-center: calc(var(--padding-h) + .75em) 2em;
+	padding: var(--min-padding);
+	--header-bg-center: calc(var(--min-padding) + .75em) calc(2em - var(--scrolltop, 0) * 1px);
 	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at var(--header-bg-center), var(--color-light-1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: var(--color-light-2);
-	--content-width: clamp(5em, var(--width-thin) * 2, 100vw);
 }
 
-@media (width <= 700px) {
-
-body > header {
-		--content-width: 100%;
-}
-	}
-
-body > header .header-inner {
+body > header .site-meta {
 		display: flex;
 		align-items: center;
 	}
 
-body > header .header-inner .site-logo {
+body > header .site-meta .site-logo {
 			display: flex;
 			gap: .5em;
 			align-items: center;
@@ -212,12 +205,12 @@ body > header .header-inner .site-logo {
 			text-decoration: none;
 		}
 
-body > header .header-inner .site-logo img {
+body > header .site-meta .site-logo img {
 				max-height: 2.5rem;
 				width: auto;
 			}
 
-body > header .header-inner .site-logo .site-title {
+body > header .site-meta .site-logo .site-title {
 				color: var(--color-accent);
 				font-size: 150%;
 				font-weight: 300;
@@ -226,48 +219,161 @@ body > header .header-inner .site-logo .site-title {
 				white-space: nowrap;
 			}
 
-body > header .header-inner nav {
+body > header .site-meta nav {
 			display: flex;
 			gap: 1em;
 			margin-left: auto;
+			font-size: 75%;
+			font-weight: 500;
 		}
 
-body > header .header-inner nav a {
-				color: var(--color-accent);
+@media (width <= 960px) {
+
+body > header .site-meta nav {
+				/* Only footer nav in small screens for now
+				TODO: make this a proper menu
+				 */
+				display: none;
+		}
 			}
 
-body > header .header-inner nav a:not(:hover) {
+body > header .site-meta nav a {
+				color: var(--color-accent);
+				word-break: initial;
+				word-wrap: initial;
+			}
+
+body > header .site-meta nav a:not(:hover) {
 					text-decoration: none;
 				}
 
-body > header .header-inner .social {
+body > header .site-meta .social {
 			display: flex;
 			gap: .5em;
 			margin-left: 1em;
 		}
 
-body > header > h1 {
+body > header .page-meta {
+		padding: 0 var(--content-margin);
+	}
+
+body > header h1 {
 		text-align: center;
 	}
 
 body > main {
+	padding: 2rem var(--content-margin) 1rem;
 	font-family: var(--font-serif);
-	--content-width: clamp(5em, var(--width-thin), 100vw);
 }
 
-@media (width <= 700px) {
-
-body > main {
-		--content-width: 100%;
+body > footer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: var(--min-padding) var(--content-margin);
+	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at calc(100% + 1em) calc(100% + 1em), rgb(0 0 0 / .1) 0 4deg, transparent 0 8deg) fixed;
+	background-color: hsl(var(--gray) 23%);
+	border: 0 solid hsl(var(--gray) 95% / .2);
+	color: white;
 }
+
+body > footer h4 {
+		padding: .3em 1em;
+		width: max-content;
+		align-self: start;
+		margin: 0;
+		background: var(--color-accent);
+		color: hsl(var(--gray) 20%);
+		font-size: .8em;
+		text-transform: uppercase;
+		--offset: .5em;
+		clip-path: polygon(var(--offset) 0, 100% 0, calc(100% - var(--offset)) 100%, 0 100%);
+		margin-left: calc(-1 * var(--offset));
 	}
+
+body > footer .social {
+		display: flex;
+		flex-flow: column;
+		gap: .5em;
+		margin-top: -1.5em;
+	}
+
+body > footer .social a {
+			display: flex;
+			gap: .5em;
+			text-decoration: none;
+		}
+
+body > footer .social a::after {
+				content: attr(title);
+				font-weight: bold;
+			}
+
+body > footer .social a i {
+				display: inline-flex;
+				width: 1em;
+				line-height: 1;
+				padding: .3em;
+				box-sizing: content-box;
+				border-radius: 50%;
+				background: var(--color-accent);
+				color: white;
+				transition: .2s transform;
+			}
+
+body > footer .social a i:is(:hover > *) {
+					background: var(--color-accent2);
+					transform: scale(1.2);
+				}
+
+body > footer nav {
+		column-count: 2;
+	}
+
+body > footer nav a {
+			display: block;
+			font-weight: bold;
+		}
+
+body > footer small {
+		grid-column-end: span 2;
+		display: flex;
+		gap: 1em;
+		padding: 1rem 0;
+		border-top: 1px solid hsl(var(--gray) 95% / .2);
+		margin-top: 1rem;
+	}
+
+body > footer small a,
+		body > footer small a:hover {
+			color: var(--color-gray-medium);
+		}
+
+body > footer small .copyright {
+			font-weight: bold;
+		}
+
+body > footer small .credits {
+			color: var(--color-gray-medium);
+		}
+
+body > footer small .to-top {
+			margin-left: auto;
+		}
 
 .post-meta {
 	display: flex;
 	color: var(--color-gray-medium);
+	font-size: .77rem;
 	font-family: var(--font-sans);
 	-webkit-font-smoothing: initial;
 }
+
+.post-meta:is(body > header *) {
+		justify-content: center;
+		margin-bottom: 1em;
+		mix-blend-mode: multiply;
+		font-weight: 500;
+	}
 
 .post-meta a:not(:hover) {
 			color: inherit;
@@ -313,6 +419,8 @@ body > main {
 .post header .post-meta {
 			justify-content: center;
 		}
+
+/* Code */
 
 :not(pre) > code,
 pre[class*="language-"][class*="language-"],
@@ -362,3 +470,16 @@ pre:nth-of-type(3n + 1),
 	pre:nth-of-type(5n + 1) {
 		--clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
 	}
+
+/* Utility classes */
+
+@media (width < 700px) {
+	.long-text {
+		display: none;
+	}
+}
+@media (width >= 700px) {
+	.short-text {
+		display: none;
+	}
+}

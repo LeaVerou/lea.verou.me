@@ -2,20 +2,14 @@
 layout: "page.njk"
 ---
 
-<header class="post-meta">
-	<div class="post-meta">
-		<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
-			dateStyle: "long"
-		}) }}</time>
-	</div>
-</header>
-
 {{ content | safe }}
 
 <footer class="post-meta">
 	<div class="tags">
-		{% for tag in page.data.tags %}
-		{% if tag != "blog" %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endif %}
-		{%- endfor -%}
+		{% for tag in tags %}
+		{% if tag != "blog" %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+		{% endif %}
+
+		{% endfor %}
 	</div>
 </footer>

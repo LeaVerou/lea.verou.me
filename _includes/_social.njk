@@ -1,0 +1,6 @@
+{% for service in social %}
+	<a class="{{ service.name | lower }}"
+	href="{{ service.url }}"
+	target="_blank" rel="me"
+	title="{{ service.name }}"><i class="bi bi-{{ service.icon }}"></i></a>
+{% endfor %}

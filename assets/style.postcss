@@ -50,14 +50,21 @@
 	--color-light-3: hsl(35 100% 99%);
 
 	--width-thin: 50rem;
-	--page-margin: calc(50vw - var(--width-thin) / 2);
 
-	@supports (width: max(1px, 1em)) {
-		--page-margin: max(1em, 50vw - var(--width-thin) / 2);
+	--content-width: var(--width-thin);
+	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
+	--min-padding: 1rem;
+
+	@media (width <= 700px) {
+		--content-width: calc(100vw - 2 * var(--min-padding));
 	}
 }
 
 html {
+	color: black;
+	font: 130%/1.5 var(--font-sans);
+	letter-spacing: -0.015em;
+
 	@media (width > 700px) {
 		&.supports-registerproperty {
 			xanimation: to1 600s linear infinite;
@@ -69,9 +76,6 @@ body {
 	background: var(--color-light-3);
 	box-sizing: border-box;
 	margin: 0;
-	color: black;
-	font: 100%/1.5 var(--font-sans);
-	letter-spacing: -0.015em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -173,24 +177,14 @@ pre, code {
 	to { --number: 1; }
 }
 
-body > header,
-body > main {
-	--padding-h: clamp(1rem, 50vw - var(--content-width) / 2, 25vw);
-	padding: 1rem var(--padding-h);
-}
-
 body > header {
 	position: relative;
-	--header-bg-center: calc(var(--padding-h) + .75em) 2em;
+	padding: var(--min-padding);
+	--header-bg-center: calc(var(--min-padding) + .75em) calc(2em - var(--scrolltop, 0) * 1px);
 	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at var(--header-bg-center), var(--color-light-1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: var(--color-light-2);
-	--content-width: clamp(5em, var(--width-thin) * 2, 100vw);
 
-	@media (width <= 700px) {
-		--content-width: 100%;
-	}
-
-	.header-inner {
+	.site-meta {
 		display: flex;
 		align-items: center;
 
@@ -221,9 +215,20 @@ body > header {
 			display: flex;
 			gap: 1em;
 			margin-left: auto;
+			font-size: 75%;
+			font-weight: 500;
+
+			@media (width <= 960px) {
+				/* Only footer nav in small screens for now
+				TODO: make this a proper menu
+				 */
+				display: none;
+			}
 
 			& a {
 				color: var(--color-accent);
+				word-break: initial;
+				word-wrap: initial;
 
 				&:not(:hover) {
 					text-decoration: none;
@@ -238,25 +243,127 @@ body > header {
 		}
 	}
 
-	> h1 {
+	.page-meta {
+		padding: 0 var(--content-margin);
+	}
+
+	& h1 {
 		text-align: center;
 	}
 }
 
 body > main {
+	padding: 2rem var(--content-margin) 1rem;
 	font-family: var(--font-serif);
-	--content-width: clamp(5em, var(--width-thin), 100vw);
+}
 
-	@media (width <= 700px) {
-		--content-width: 100%;
+body > footer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: var(--min-padding) var(--content-margin);
+	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at calc(100% + 1em) calc(100% + 1em), rgb(0 0 0 / .1) 0 4deg, transparent 0 8deg) fixed;
+	background-color: hsl(var(--gray) 23%);
+	border: 0 solid hsl(var(--gray) 95% / .2);
+	color: white;
+
+	& h4 {
+		padding: .3em 1em;
+		width: max-content;
+		align-self: start;
+		margin: 0;
+		background: var(--color-accent);
+		color: hsl(var(--gray) 20%);
+		font-size: .8em;
+		text-transform: uppercase;
+		--offset: .5em;
+		clip-path: polygon(var(--offset) 0, 100% 0, calc(100% - var(--offset)) 100%, 0 100%);
+		margin-left: calc(-1 * var(--offset));
+	}
+
+	& .social {
+		display: flex;
+		flex-flow: column;
+		gap: .5em;
+		margin-top: -1.5em;
+
+		& a {
+			display: flex;
+			gap: .5em;
+			text-decoration: none;
+
+			&::after {
+				content: attr(title);
+				font-weight: bold;
+			}
+
+			& i {
+				display: inline-flex;
+				width: 1em;
+				line-height: 1;
+				padding: .3em;
+				box-sizing: content-box;
+				border-radius: 50%;
+				background: var(--color-accent);
+				color: white;
+				transition: .2s transform;
+
+				&:is(:hover > *) {
+					background: var(--color-accent2);
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+
+	& nav {
+		column-count: 2;
+
+		& a {
+			display: block;
+			font-weight: bold;
+		}
+	}
+
+	& small {
+		grid-column-end: span 2;
+		display: flex;
+		gap: 1em;
+		padding: 1rem 0;
+		border-top: 1px solid hsl(var(--gray) 95% / .2);
+		margin-top: 1rem;
+
+		& a,
+		& a:hover {
+			color: var(--color-gray-medium);
+		}
+
+		.copyright {
+			font-weight: bold;
+		}
+
+		.credits {
+			color: var(--color-gray-medium);
+		}
+
+		.to-top {
+			margin-left: auto;
+		}
 	}
 }
 
 .post-meta {
 	display: flex;
 	color: var(--color-gray-medium);
+	font-size: .77rem;
 	font-family: var(--font-sans);
 	-webkit-font-smoothing: initial;
+
+	&:is(body > header *) {
+		justify-content: center;
+		margin-bottom: 1em;
+		mix-blend-mode: multiply;
+		font-weight: 500;
+	}
 
 	& a {
 		&:not(:hover) {
@@ -310,6 +417,8 @@ body > main {
 	}
 }
 
+/* Code */
+
 :not(pre) > code,
 pre[class*="language-"][class*="language-"],
 pre {
@@ -356,5 +465,18 @@ pre {
 	&:nth-of-type(3n + 1),
 	&:nth-of-type(5n + 1) {
 		--clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
+	}
+}
+
+/* Utility classes */
+
+@media (width < 700px) {
+	.long-text {
+		display: none;
+	}
+}
+@media (width >= 700px) {
+	.short-text {
+		display: none;
 	}
 }
