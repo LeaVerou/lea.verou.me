@@ -1,0 +1,34 @@
+[
+	{
+		"title": "Home",
+		"path": ""
+	},
+	{
+		"title": "Blog",
+		"path": "blog"
+	},
+	{
+		"title": "Projects",
+		"path": "projects"
+	},
+	{
+		"title": "Speaking",
+		"path": "speaking"
+	},
+	{
+		"title": "Publications",
+		"path": "publications"
+	},
+	{
+		"title": "Press",
+		"path": "press"
+	},
+	{
+		"title": "Interviews",
+		"path": "interviews"
+	},
+	{
+		"title": "About",
+		"path": "about"
+	}
+]

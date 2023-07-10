@@ -10,7 +10,7 @@
     "build:html": "npx @11ty/eleventy --config=.eleventy.cjs",
     "build": "npm run build:html && npm run build:css",
     "watch:css": "npx postcss \"**/*.postcss\" --base . --dir . --ext .css --config postcss.config.cjs --watch",
-    "watch:html": "npx @11ty/eleventy --config=.eleventy.cjs --watch",
+    "watch:html": "npx @11ty/eleventy --config=.eleventy.cjs --watch  --quiet",
     "watch": "npx concurrently -n w: npm:watch:*"
   },
   "repository": {

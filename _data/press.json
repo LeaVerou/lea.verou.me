@@ -1,0 +1,302 @@
+{
+	"articles": [
+		{
+			"title": "The best CSS book",
+			"url": "https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html",
+			"venue": "Chicago Tribune",
+			"venueUrl": "https://www.chicagotribune.com/",
+			"date": "2020-07-01"
+		},
+		{
+			"title": "27 Women Who Change the Tech World [Infographic]",
+			"url": "https://www.monterail.com/blog/27-women-who-change-the-tech-world#:~:text=Lea%20Verou",
+			"venue": "Monterail",
+			"venueUrl": "https://www.monterail.com/",
+			"date": "2018-03-08"
+		},
+		{
+			"title": "20 Web Designers and Developers You Should be Following on Twitter",
+			"url": "https://www.shopify.com/partners/blog/20-web-designers-and-developers-you-should-be-following-on-twitter",
+			"venue": "Shopify Web Design & Development Blog",
+			"venueUrl": "https://www.shopify.com/partners/blog",
+			"date": "2016-08-11"
+		},
+		{
+			"title": "10 Women in Tech to Watch in 2016",
+			"url": "http://www.huffingtonpost.com/craig-newmark/10-women-to-watch-in-2016_b_9141830.html",
+			"venue": "Huffington Post",
+			"venueUrl": "http://www.huffingtonpost.com/",
+			"date": "2016-02-02"
+		},
+		{
+			"title": "Microsoft to developers: This is the ‘modern.IE’ world",
+			"url": "http://download.cnet.com/8301-2007_4-57566794-12/microsoft-to-developers-this-is-the-modern.ie-world/",
+			"venue": "CNet",
+			"venueUrl": "http://readwrite.com/",
+			"date": "2013-1-31"
+		},
+		{
+			"title": "Microsoft Launches Modern.ie to Help Developers – And Itself",
+			"url": "http://readwrite.com/2013/01/31/microsoft-launches-modernie-to-boost-web-site-compatibility",
+			"venue": "ReadWrite",
+			"venueUrl": "http://readwrite.com/",
+			"date": "2013-1-31"
+		},
+		{
+			"title": "Four Big Ideas from Web Directions South 2012",
+			"url": "http://www.sitepoint.com/four-big-ideas-i-took-from-web-directions-south-2012/",
+			"venue": "Sitepoint",
+			"venueUrl": "http://www.sitepoint.com/",
+			"date": "2012-11-5"
+		},
+		{
+			"title": "Create More Accessible Color Schemes With ‘Contrast Ratio’",
+			"url": "https://www.wired.com/2012/10/create-more-accessible-color-schemes-with-contrast-ratio/",
+			"venue": "Wired.com",
+			"venueUrl": "http://wired.com/",
+			"date": "2012-10-16"
+		},
+		{
+			"title": "Prism: Beautiful Code-Highlighting for the Web",
+			"url": "https://www.wired.com/2012/07/prism-beautiful-code-highlighting-for-the-web/",
+			"venue": "Wired.com",
+			"venueUrl": "http://wired.com/",
+			"date": "2012-07-31"
+		},
+		{
+			"title": "Powerful new CSS techniques and tools",
+			"url": "http://coding.smashingmagazine.com/2012/06/21/powerful-new-cssjavascript-techniques/",
+			"venue": "Smashing Magazine",
+			"venueUrl": "http://smashingmagazine.com/",
+			"date": "2012-6-22"
+		},
+		{
+			"title": "CSS generated content on replaced elements",
+			"url": "http://www.red-team-design.com/css-generated-content-replaced-elements",
+			"venue": "Red Team Design",
+			"venueUrl": "http://www.red-team-design.com/css-generated-content-replaced-elements",
+			"date": "2012-6-20"
+		},
+		{
+			"title": "Dabblet is an interactive playground for quickly testing CSS & HTML code",
+			"url": "http://thenextweb.com/dd/2012/02/16/dabblet-is-an-interactive-playground-for-quickly-testing-css-html-code/",
+			"venue": "The Next Web",
+			"venueUrl": "http://thenextweb.com/",
+			"date": "2012-2-15"
+		},
+		{
+			"title": "Introducing the CSS3 Test",
+			"url": "http://www.css3.info/introducing-the-css3-test/",
+			"venue": "CSS3.info",
+			"venueUrl": "http://www.css3.info/",
+			"date": "2012-2-6"
+		},
+		{
+			"title": "2011 in review: 20 HTML5 sites that changed the game",
+			"url": "http://www.netmagazine.com/features/2011-review-20-html5-sites-changed-game",
+			"venue": "netmagazine.com",
+			"venueUrl": "http://www.netmagazine.com/",
+			"date": "2011-12-19"
+		},
+		{
+			"title": "Dabblet: An Interactive CSS ‘Playground’ in Your Browser",
+			"url": "https://www.wired.com/2011/12/dabblet-an-interactive-css-playground-in-your-browser/",
+			"venue": "Wired.com",
+			"venueUrl": "https://www.wired.com/",
+			"date": "2011-12-16"
+		},
+		{
+			"title": "Dabblet",
+			"url": "http://css-tricks.com/dabblet/",
+			"venue": "CSS-Tricks",
+			"venueUrl": "http://css-tricks.com/",
+			"date": "2011-12-15"
+		},
+		{
+			"title": "2011 in review: 15 web conference talks you need to watch",
+			"url": "http://www.netmagazine.com/features/2011-review-15-web-conference-talks-you-need-watch",
+			"venue": "netmagazine.com",
+			"venueUrl": "http://www.netmagazine.com/",
+			"date": "2011-12-15"
+		},
+		{
+			"title": "steps()",
+			"url": "http://css-tricks.com/14023-steps/",
+			"venue": "CSS-Tricks",
+			"venueUrl": "http://css-tricks.com/",
+			"date": "2011-9-5"
+		},
+		{
+			"title": "jQuery Pure project to zap code bloat",
+			"url": "http://www.netmagazine.com/news/jquery-pure-project-zap-code-bloat",
+			"venue": "netmagazine.com",
+			"venueUrl": "http://www.netmagazine.com/",
+			"date": "2011-6-24"
+		},
+		{
+			"title": "Tic Tac Toe with CSS Style",
+			"url": "http://functionsource.com/post/tic-tac-toe-with-css-style",
+			"venue": "FunctionSource",
+			"venueUrl": "http://functionsource.com/",
+			"date": "2011-6-21"
+		},
+		{
+			"title": "CSS3 Patterns Gallery",
+			"url": "http://functionsource.com/post/css3-patterns-gallery",
+			"venue": "FunctionSource",
+			"venueUrl": "http://functionsource.com/",
+			"date": "2011-5-2"
+		},
+		{
+			"title": "Powerful new CSS techniques and tools",
+			"url": "http://coding.smashingmagazine.com/2011/04/18/powerful-new-css-techniques-and-tools/",
+			"venue": "Smashing Magazine",
+			"venueUrl": "http://smashingmagazine.com/",
+			"date": "2011-4-18"
+		},
+		{
+			"title": "CSS Gradient Patterns Gallery",
+			"url": "http://css-tricks.com/9050-css-gradient-patterns-gallery/",
+			"venue": "CSS-Tricks",
+			"venueUrl": "http://css-tricks.com/",
+			"date": "2011-4-15"
+		},
+		{
+			"title": "How To Use CSS3 Pseudo-Classes",
+			"url": "http://coding.smashingmagazine.com/2011/03/30/how-to-use-css3-pseudo-classes/",
+			"venue": "Smashing Magazine",
+			"venueUrl": "http://smashingmagazine.com/",
+			"date": "2011-3-30"
+		},
+		{
+			"title": "CSS3 linear gradients",
+			"url": "http://dev.opera.com/articles/view/css3-linear-gradients/",
+			"venue": "Dev.Opera",
+			"venueUrl": "http://dev.opera.com/",
+			"date": "2011-3-17"
+		},
+		{
+			"title": "CSS: Innovative Techniques and Practical Solutions",
+			"url": "http://coding.smashingmagazine.com/2011/02/16/css-useful-coding-techniques-and-design-solutions/",
+			"venue": "Smashing Magazine",
+			"venueUrl": "http://smashingmagazine.com/",
+			"date": "2011-2-16"
+		},
+		{
+			"title": "Striped and Checkerboard Backgrounds Without Images",
+			"url": "http://css-tricks.com/8193-striped-and-checkerboard-backgrounds-without-images/",
+			"venue": "CSS-Tricks",
+			"venueUrl": "http://css-tricks.com/",
+			"date": "2010-12-22"
+		},
+		{
+			"title": "Start using CSS3 Today: Techniques and Tutorials",
+			"url": "http://coding.smashingmagazine.com/2010/06/17/start-using-css3-today-techniques-and-tutorials/",
+			"venue": "Smashing Magazine",
+			"venueUrl": "http://smashingmagazine.com/",
+			"date": "2010-6-17"
+		}
+	],
+	"interviews": [
+		{
+			"title": "“A journey into software development with Lea Verou”",
+			"url": "https://www.youtube.com/watch?v=gJD0aws8jeg",
+			"venue": "Honeypot.io",
+			"venueUrl": "https://honeypot.io/",
+			"date": "2020-06-03"
+		},
+		{
+			"title": "CSS Innovation with Lea Verou",
+			"url": "http://5by5.tv/webahead/58",
+			"venue": "The Web Ahead",
+			"venueUrl": "http://5by5.tv/bigwebshow",
+			"date": "2013-10-22"
+		},
+		{
+			"title": "LMB hack days: Lea Verou",
+			"url": "https://first-website.web.cern.ch/node/44.html",
+			"venue": "CERN First Website Project",
+			"venueUrl": "https://first-website.web.cern.ch/first-website/",
+			"date": "2013-09-20"
+		},
+		{
+			"title": "Interview With Lea Verou of the W3C",
+			"url": "http://net.tutsplus.com/articles/interview-with-lea-verou-of-the-w3c/",
+			"venue": "nettuts+",
+			"venueUrl": "http://net.tutsplus.com/",
+			"date": "2013-09-2"
+		},
+		{
+			"title": "Lea Verou",
+			"url": "http://5by5.tv/bigwebshow/94",
+			"venue": "The Big Web Show by Jeffrey Zeldman",
+			"venueUrl": "http://5by5.tv/bigwebshow",
+			"date": "2013-07-11"
+		},
+		{
+			"title": "What Are You Using?",
+			"url": "http://net.tutsplus.com/articles/what-are-you-using/",
+			"venue": "nettuts+",
+			"venueUrl": "http://net.tutsplus.com/",
+			"date": "2013-6-10"
+		},
+		{
+			"title": "Appliness March with Lea Verou",
+			"url": "http://www.appliness.com/march-issue-with-lea-verou/",
+			"venue": "Appliness by Adobe",
+			"venueUrl": "http://www.appliness.com/",
+			"date": "2012-3"
+		},
+		{
+			"title": "Lea Verou on Why Web Standards Matter and How You Can Help",
+			"url": "http://www.webmonkey.com/2013/02/developer-lea-verou-on-why-web-standards-matter/",
+			"venue": "Wired’s WebMonkey",
+			"venueUrl": "http://www.webmonkey.com/",
+			"date": "2012-2-15"
+		},
+		{
+			"title": "Lea Verou on the future of CSS and more",
+			"url": "https://www.creativebloq.com/css3/lea-verou-future-css-and-more-2126439",
+			"venue": ".net magazine",
+			"venueUrl": "http://www.netmagazine.com/",
+			"date": "2012-2-28"
+		},
+		{
+			"title": "Interview with Lea Verou, Fluent 2012",
+			"url": "http://chimera.labs.oreilly.com/books/1234000001644/ch03.html",
+			"venue": "O’Reilly Fluent conference 2012",
+			"venueUrl": "http://fluentconf.com/fluent2012",
+			"date": "2011-5"
+		},
+		{
+			"title": "A year in web design: How the experts saw 2011",
+			"url": "http://webdesign.tutsplus.com/articles/general/a-year-in-web-design-how-the-experts-saw-2011/#lea_verou",
+			"venue": "webdesign tuts+",
+			"venueUrl": "http://webdesign.tutsplus.com/",
+			"date": "2011-12-20"
+		},
+		{
+			"title": "Experimenting With CSS3 with Lea Verou",
+			"url": "http://www.sitepoint.com/podcast-139-experimenting-with-css3-with-lea-verou/",
+			"venue": "SitePoint",
+			"venueUrl": "http://sitepoint.com/",
+			"date": "2011-11-18"
+		},
+		{
+			"title": "Five questions with Lea Verou",
+			"url": "http://css-tricks.com/five-questions-with-lea-verou/",
+			"venue": "CSS-Tricks",
+			"venueUrl": "http://css-tricks.com/",
+			"date": "2011-11-1"
+		},
+		{
+			"title": "10 brilliant newcomers",
+			"url": "http://www.netmagazine.com/features/net-awards-2011-10-brilliant-newcomers",
+			"venue": ".net magazine",
+			"venueUrl": "http://www.netmagazine.com/",
+			"date": "2011-8-15"
+		}
+	]
+}
+
+

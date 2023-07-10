@@ -115,11 +115,15 @@ h1 {
 }
 
 h2 {
-	font-size: 300%;
+	font-size: 180%;
+
+	@media (width > 700px) {
+		font-size: 300%;
+	}
 }
 
 h3 {
-	font-size: 2.8rem;
+	font-size: 140%;
 }
 
 h4 {
@@ -280,6 +284,33 @@ body > header {
 
 				&:not(:hover) {
 					text-decoration: none;
+				}
+
+				&.selected {
+					position: relative;
+					margin: 0 .5em;
+
+					&::before,
+					&::after {
+						position: absolute;
+						font-weight: 500;
+						font-size: 180%;
+						top: 50%;
+						transform: translateY(-55%);
+					}
+
+					&::before {
+						content: "{";
+						right: 100%;
+					}
+
+					&::after {
+						content: "}";
+						left: 100%;
+					}
+
+
+
 				}
 			}
 		}
@@ -549,5 +580,48 @@ pre {
 @media (width > 960px) {
 	.lt-md {
 		display: none !important;
+	}
+}
+
+.press {
+	> article {
+		padding: .5em .1em;
+		border-bottom: 1px solid var(--color-gray-light);
+
+		.article {
+			display: block;
+		}
+
+		.venue, time {
+			font-size: 80%;
+		}
+
+		.venue {
+			color: black;
+		}
+
+		& time {
+			color: var(--color-gray-medium);
+
+			&::before {
+				content: " • ";
+			}
+		}
+	}
+}
+
+.newsletter {
+	.issues {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: .4em;
+	}
+
+	.issue > a {
+		background: var(--color-gray-medium);
+		padding: .1em .5em;
+		border-radius: .2em;
+		color: white;
 	}
 }

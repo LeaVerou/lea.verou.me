@@ -6,6 +6,11 @@
 	<link rel="shortcut icon" href="/mark.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	{% if mavo %}
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+	<script src="https://get.mavo.io/mavo.js"></script>
+	{% endif %}
+
 	{{ includes | safe }}
 	<link rel="stylesheet" href="/assets/style.css">
 	{{ includesEnd | safe }}
@@ -36,7 +41,7 @@
 				</span>
 			</h1>
 		{% endif %}
-		{% if page.date %}
+		{% if page.date and siteArea === "blog" %}
 		<div class="post-meta">
 			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
 				dateStyle: "long"

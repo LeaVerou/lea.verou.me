@@ -64,6 +64,12 @@ module.exports = config => {
 		}
 	);
 
+	config.addFilter("format_date", (date, format = "long") => {
+		return new Date(date).toLocaleString("en-GB", {
+			dateStyle: format
+		});
+	});
+
 	return {
 		markdownTemplateEngine: "njk",
 		templateFormats: ["md", "njk"],
