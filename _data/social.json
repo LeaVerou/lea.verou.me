@@ -5,13 +5,28 @@
 		"icon": "twitter"
 	},
 	{
+		"name": "GitHub",
+		"url": "https://github.com/leaverou",
+		"icon": "github"
+	},
+	{
 		"name": "Mastodon",
 		"url": "https://front-end.social/@leaverou",
 		"icon": "mastodon"
 	},
 	{
-		"name": "GitHub",
-		"url": "https://github.com/leaverou",
-		"icon": "github"
+		"name": "LinkedIn",
+		"url": "https://www.linkedin.com/in/leaverou/",
+		"icon": "linkedin"
+	},
+	{
+		"name": "BlueSky",
+		"url": "https://bsky.app/profile/lea.verou.me",
+		"icon": "clouds-fill"
+	},
+	{
+		"name": "Dribbble",
+		"url": "https://dribbble.com/leaverou",
+		"icon": "dribbble"
 	}
 ]
