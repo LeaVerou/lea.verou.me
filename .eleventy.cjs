@@ -1,6 +1,9 @@
-let markdownIt = require("markdown-it");
-let markdownItAnchor = require("markdown-it-anchor");
-let markdownItAttrs = require('markdown-it-attrs');
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+const markdownItAttrs = require('markdown-it-attrs');
+const embedTwitter = require("eleventy-plugin-embed-twitter");
+const pluginTOC = require('eleventy-plugin-toc');
+
 
 module.exports = config => {
 	let data = {
@@ -68,6 +71,15 @@ module.exports = config => {
 		return new Date(date).toLocaleString("en-GB", {
 			dateStyle: format
 		});
+	});
+
+	config.addPlugin(embedTwitter);
+
+	config.addPlugin(pluginTOC, {
+		tags: ['h2'],
+		wrapper: 'div',
+		ul: true,
+		wrapper: "",
 	});
 
 	return {

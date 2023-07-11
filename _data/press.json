@@ -199,18 +199,28 @@
 	],
 	"interviews": [
 		{
-			"title": "“A journey into software development with Lea Verou”",
+			"title": "What the W3C TAG is, how standards are made, and why gray is darker than darkgray",
+			"url": "https://f-word.dev/episodes/17/",
+			"venue": "The F-Word",
+			"venueUrl": "https://f-word.dev/",
+			"date": "2023-07-04",
+			"type": "Audio"
+		},
+		{
+			"title": "A journey into software development with Lea Verou",
 			"url": "https://www.youtube.com/watch?v=gJD0aws8jeg",
 			"venue": "Honeypot.io",
 			"venueUrl": "https://honeypot.io/",
-			"date": "2020-06-03"
+			"date": "2020-06-03",
+			"type": "Mini documentary"
 		},
 		{
 			"title": "CSS Innovation with Lea Verou",
 			"url": "http://5by5.tv/webahead/58",
 			"venue": "The Web Ahead",
 			"venueUrl": "http://5by5.tv/bigwebshow",
-			"date": "2013-10-22"
+			"date": "2013-10-22",
+			"type": "Audio"
 		},
 		{
 			"title": "LMB hack days: Lea Verou",
@@ -231,7 +241,8 @@
 			"url": "http://5by5.tv/bigwebshow/94",
 			"venue": "The Big Web Show by Jeffrey Zeldman",
 			"venueUrl": "http://5by5.tv/bigwebshow",
-			"date": "2013-07-11"
+			"date": "2013-07-11",
+			"type": "Audio"
 		},
 		{
 			"title": "What Are You Using?",
@@ -245,28 +256,28 @@
 			"url": "http://www.appliness.com/march-issue-with-lea-verou/",
 			"venue": "Appliness by Adobe",
 			"venueUrl": "http://www.appliness.com/",
-			"date": "2012-3"
+			"date": "2012-03"
 		},
 		{
 			"title": "Lea Verou on Why Web Standards Matter and How You Can Help",
 			"url": "http://www.webmonkey.com/2013/02/developer-lea-verou-on-why-web-standards-matter/",
 			"venue": "Wired’s WebMonkey",
 			"venueUrl": "http://www.webmonkey.com/",
-			"date": "2012-2-15"
+			"date": "2012-02-15"
 		},
 		{
 			"title": "Lea Verou on the future of CSS and more",
 			"url": "https://www.creativebloq.com/css3/lea-verou-future-css-and-more-2126439",
 			"venue": ".net magazine",
 			"venueUrl": "http://www.netmagazine.com/",
-			"date": "2012-2-28"
+			"date": "2012-02-28"
 		},
 		{
 			"title": "Interview with Lea Verou, Fluent 2012",
 			"url": "http://chimera.labs.oreilly.com/books/1234000001644/ch03.html",
 			"venue": "O’Reilly Fluent conference 2012",
 			"venueUrl": "http://fluentconf.com/fluent2012",
-			"date": "2011-5"
+			"date": "2011-05"
 		},
 		{
 			"title": "A year in web design: How the experts saw 2011",
@@ -280,14 +291,15 @@
 			"url": "http://www.sitepoint.com/podcast-139-experimenting-with-css3-with-lea-verou/",
 			"venue": "SitePoint",
 			"venueUrl": "http://sitepoint.com/",
-			"date": "2011-11-18"
+			"date": "2011-11-18",
+			"type": "Audio"
 		},
 		{
 			"title": "Five questions with Lea Verou",
 			"url": "http://css-tricks.com/five-questions-with-lea-verou/",
 			"venue": "CSS-Tricks",
 			"venueUrl": "http://css-tricks.com/",
-			"date": "2011-11-1"
+			"date": "2011-11-01"
 		},
 		{
 			"title": "10 brilliant newcomers",
