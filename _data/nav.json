@@ -24,10 +24,6 @@
 		"path": "press"
 	},
 	{
-		"title": "Interviews",
-		"path": "interviews"
-	},
-	{
 		"title": "About",
 		"path": "about"
 	}

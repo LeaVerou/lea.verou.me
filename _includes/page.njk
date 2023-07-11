@@ -41,11 +41,18 @@
 				</span>
 			</h1>
 		{% endif %}
-		{% if page.date and siteArea === "blog" %}
+		{% if siteArea === "blog" %}
 		<div class="post-meta">
+			{% if page.date %}
 			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
 				dateStyle: "long"
 			}) }}</time>
+			{% endif %}
+
+			{% if disqus_id %}
+			<span class="disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>
+			<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
+			{% endif %}
 		</div>
 		{% endif %}
 	</div>
@@ -70,7 +77,6 @@
 		<h4>About me</h4>
 		{% include "_nav.njk" %}
 	</nav>
-
 
 	<small>
 		<div class="copyright">&copy;2009&ndash;{{ currentYear }} Lea Verou</div>

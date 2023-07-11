@@ -535,6 +535,7 @@ body > footer {
 
 .post-meta {
 	display: flex;
+	gap: 2em;
 	color: var(--color-gray-medium);
 	font-size: .77rem;
 	font-family: var(--font-sans);
@@ -552,12 +553,19 @@ body > footer {
 			color: inherit;
 		}
 
+.post-meta >::before {
+		font-family: bootstrap-icons;
+		display: inline-block;
+		vertical-align: -.1em;
+		margin-right: .5em;
+	}
+
 .post-meta time::before {
 			content: "\F1F6";
-			font-family: bootstrap-icons;
-			display: inline-block;
-			vertical-align: middle;
-			margin-right: .5em;
+		}
+
+.post-meta .comment-count::before {
+			content: "\F268";
 		}
 
 .post-meta .tags {

@@ -14,7 +14,7 @@ layout: "page.njk"
 	</div>
 </footer>
 
-{% if wpid %}
+{% if disqus_id %}
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -31,7 +31,7 @@ layout: "page.njk"
         this.page.url = 'https://lea.verou.me/{{ postUrlStem }}/';
 
         // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        this.page.identifier = "{{ wpid }} https:\/\/lea.verou.me\/?p={{ wpid }}";
+        this.page.identifier = "{{ disqus_id }}";
     };
 
     (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
