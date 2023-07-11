@@ -1,2 +1,3 @@
 # Blog links using year/month/slug format
+/interviews/ /press/
 /20* /blog/20:splat 200

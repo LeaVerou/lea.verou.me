@@ -27,7 +27,7 @@ the many interviews I have given over the years, both in person and online.
 ## Articles
 
 My work and/or opinions have been featured many times in leading industry publications, both online and printed.
-The following is only a small sample of the mentions I managed to collect, **very infrequently updated**.
+The following is a small sample of the mentions I managed to collect, **very infrequently updated**.
 
 <section class="press">
 {% for article in press.articles %}
@@ -40,6 +40,9 @@ The following is only a small sample of the mentions I managed to collect, **ver
 </section>
 
 ## Newsletters
+
+My work has been featured in nearly every front-end newsletter.
+The following is a small, infrequently updated sample of the mentions I collected.
 
 <div mv-app="newsletters" mv-storage="https://github.com/LeaVerou/leaverou.github.io/blob/master/data.json" mv-bar="no-login">
 <details class="newsletter" property="newsletter" mv-multiple="">
