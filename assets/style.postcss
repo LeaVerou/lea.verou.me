@@ -49,14 +49,19 @@
 	--color-light-2: hsl(35 100% 95%);
 	--color-light-3: hsl(35 100% 99%);
 
-	--width-thin: 50rem;
+	--width-med: 50rem;
+	--width-thin: 35rem;
 
-	--content-width: var(--width-thin);
+	--content-width: var(--width-med);
 	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
 	--min-padding: 1rem;
 
+	@media (width <= 1280px) {
+		--content-width: var(--width-thin);
+	}
+
 	@media (width <= 700px) {
-		--content-width: calc(100vw - 2 * var(--min-padding));
+		--content-width: min(var(--width-med), 100vw - 2 * var(--min-padding));
 	}
 }
 
@@ -116,19 +121,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 220%;
-
-	@media (width > 700px) {
-		font-size: 400%;
-	}
+	font-size: calc(210% + clamp(0%, 1.5vw, 180%));
 }
 
 h2 {
-	font-size: 180%;
-
-	@media (width > 700px) {
-		font-size: 250%;
-	}
+	font-size: calc(170% + clamp(0%, 1vw, 70%));
 }
 
 h3 {
@@ -199,6 +196,69 @@ video, img {
 
 pre, code {
 	font-family: var(--font-monospace);
+}
+
+figure {
+	margin: 1em 0;
+
+	&.center {
+		width: fit-content;
+		margin-inline: auto;
+	}
+
+	&.left,
+	&.right {
+		--small-figure-max-width: 200px;
+		--small-figure-min-width: 100px;
+		--small-figure-width: calc(50vw - var(--content-width) / 2 - 2em);
+		--small-figure-clamped-width: clamp(var(--small-figure-min-width), var(--small-figure-width), var(--small-figure-max-width));
+		--small-figure-outset: calc(-1em - var(--small-figure-clamped-width));
+		max-width: var(--small-figure-clamped-width);
+		margin: 0;
+
+		&:where(.left) {
+			float: left;
+			margin-right: 1em;
+			margin-left: var(--small-figure-outset);
+		}
+
+		&:where(.right) {
+			float: right;
+			margin-left: 1em;
+			margin-right: var(--small-figure-outset);
+		}
+
+		@media (width < 1200px) {
+			/* Simple floats */
+			--small-figure-width: calc(25vw - 2em);
+			--small-figure-outset: 0;
+			margin-bottom: 1em;
+		}
+
+		@media (width < 600px) {
+			float: none;
+			margin: 1em 0;
+			display: grid;
+			gap: 1em;
+			max-width: calc(3 * var(--small-figure-max-width));
+			grid-template-columns: var(--small-figure-max-width) 1fr;
+		}
+	}
+
+	& figcaption {
+		font-size: 70%;
+	}
+
+
+
+	> p {
+		margin: 0;
+	}
+
+	& figcaption {
+		font: 500 80% var(--font-sans);
+		color: var(--color-gray-medium);
+	}
 }
 
 @property --number {

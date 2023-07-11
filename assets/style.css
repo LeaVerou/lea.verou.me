@@ -45,9 +45,10 @@
 	--color-light-2: hsl(35 100% 95%);
 	--color-light-3: hsl(35 100% 99%);
 
-	--width-thin: 50rem;
+	--width-med: 50rem;
+	--width-thin: 35rem;
 
-	--content-width: var(--width-thin);
+	--content-width: var(--width-med);
 	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
 	--min-padding: 1rem;
 }
@@ -59,10 +60,17 @@
 }
 	}
 
+@media (width <= 1280px) {
+
+:root {
+		--content-width: var(--width-thin);
+}
+	}
+
 @media (width <= 700px) {
 
 :root {
-		--content-width: calc(100vw - 2 * var(--min-padding));
+		--content-width: min(var(--width-med), 100vw - 2 * var(--min-padding));
 }
 	}
 
@@ -125,26 +133,12 @@ h1 > a:only-child:hover, h2 > a:only-child:hover, h3 > a:only-child:hover, h4 > 
 		}
 
 h1 {
-	font-size: 220%;
+	font-size: calc(210% + clamp(0%, 1.5vw, 180%));
 }
-
-@media (width > 700px) {
-
-h1 {
-		font-size: 400%;
-}
-	}
 
 h2 {
-	font-size: 180%;
+	font-size: calc(170% + clamp(0%, 1vw, 70%));
 }
-
-@media (width > 700px) {
-
-h2 {
-		font-size: 250%;
-}
-	}
 
 h3 {
 	font-size: 140%;
@@ -215,6 +209,75 @@ video, img {
 pre, code {
 	font-family: var(--font-monospace);
 }
+
+figure {
+	margin: 1em 0;
+}
+
+figure.center {
+		width: fit-content;
+		margin-inline: auto;
+	}
+
+figure.left,
+	figure.right {
+		--small-figure-max-width: 200px;
+		--small-figure-min-width: 100px;
+		--small-figure-width: calc(50vw - var(--content-width) / 2 - 2em);
+		--small-figure-clamped-width: clamp(var(--small-figure-min-width), var(--small-figure-width), var(--small-figure-max-width));
+		--small-figure-outset: calc(-1em - var(--small-figure-clamped-width));
+		max-width: var(--small-figure-clamped-width);
+		margin: 0;
+	}
+
+figure.left:where(.left), figure.right:where(.left) {
+			float: left;
+			margin-right: 1em;
+			margin-left: var(--small-figure-outset);
+		}
+
+figure.left:where(.right), figure.right:where(.right) {
+			float: right;
+			margin-left: 1em;
+			margin-right: var(--small-figure-outset);
+		}
+
+@media (width < 1200px) {
+
+figure.left,
+	figure.right {
+			/* Simple floats */
+			--small-figure-width: calc(25vw - 2em);
+			--small-figure-outset: 0;
+			margin-bottom: 1em;
+	}
+		}
+
+@media (width < 600px) {
+
+figure.left,
+	figure.right {
+			float: none;
+			margin: 1em 0;
+			display: grid;
+			gap: 1em;
+			max-width: calc(3 * var(--small-figure-max-width));
+			grid-template-columns: var(--small-figure-max-width) 1fr;
+	}
+		}
+
+figure figcaption {
+		font-size: 70%;
+	}
+
+figure > p {
+		margin: 0;
+	}
+
+figure figcaption {
+		font: 500 80% var(--font-sans);
+		color: var(--color-gray-medium);
+	}
 
 @property --number {
 	syntax: "<number>";
