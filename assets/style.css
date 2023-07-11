@@ -857,3 +857,196 @@ pre:nth-of-type(3n + 1),
 .projects article footer > img {
 			margin-left: auto;
 		}
+
+.event {
+	display: grid;
+	grid-template-columns: minmax(5em, auto) 1fr;
+	gap: .5em;
+	padding: .8em 0;
+	border-bottom: 1px solid silver;
+	text-indent: 0;
+	list-style: none;
+
+
+}
+
+.event:last-child {
+		border-bottom: 5px solid #eee;
+	}
+
+.event:before {
+		content:none;
+	}
+
+.event .talk,
+	.event .venue,
+	.event address,
+	.event .comment {
+		line-height: inherit;
+	}
+
+.event .talk,
+	.event .venue {
+		font-size: 100%;
+	}
+
+.event .talk,
+	.event .venue,
+	.event p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+.event .talk .type {
+			color: var(--color-gray-medium);
+			font-weight: normal;
+			font-style: italic;
+		}
+
+.event .talk span.type:before {
+			content: ' (';
+		}
+
+.event .talk span.type:after {
+			content: ')';
+		}
+
+.event .talk a {
+			display: inline-block;
+			vertical-align: .1em;
+			padding: .4em .4em .25em;
+			margin-left: .5em;
+			color: white;
+			text-shadow: 0;
+			font-size: 75%;
+			line-height: 1;
+			text-transform: uppercase;
+			border-radius: .3em;
+		}
+
+.event .talk a.slides {
+			background: var(--color-orange);
+		}
+
+.event .talk a.details {
+			background: #0bd;
+		}
+
+.event .talk a.video {
+			background: yellowgreen;
+		}
+
+.event .talk a:hover {
+			background: #f06;
+			color: white;
+		}
+
+.event .venue {
+		margin-bottom:.6em;
+	}
+
+.event .date {
+		color: var(--color-gray-medium);
+		font-variant:small-caps;
+	}
+
+.event address,
+	.event .comment,
+	.event .comment[property="comment"] {
+		font-size:75%;
+		font-style:normal;
+	}
+
+.event address:before {
+			display:inline-block;
+			margin-right:.4em;
+			vertical-align:-1px;
+		}
+
+.event address:not([class*="flag-"]):before {
+			content: url(flags/online.png);
+			vertical-align:-3px;
+		}
+
+.event address.flag-nl:before { content: url(flags/nl.png); }
+
+.event address.flag-nz:before { content: url(flags/nz.png); }
+
+.event address.flag-gb:before { content: url(flags/gb.png); }
+
+.event address.flag-se:before { content: url(flags/se.png); }
+
+.event address.flag-fi:before { content: url(flags/fi.png); }
+
+.event address.flag-ru:before { content: url(flags/ru.png); }
+
+.event address.flag-no:before { content: url(flags/no.png); }
+
+.event address.flag-pl:before { content: url(flags/pl.png); }
+
+.event address.flag-gr:before { content: url(flags/gr.png); }
+
+.event address.flag-ch:before { content: url(flags/ch.png); }
+
+.event address.flag-de:before { content: url(flags/de.png); }
+
+.event address.flag-it:before { content: url(flags/it.png); }
+
+.event address.flag-us:before { content: url(flags/us.png); }
+
+.event address.flag-au:before { content: url(flags/au.png); }
+
+.event address.flag-cz:before { content: url(flags/cz.png); }
+
+.event address.flag-ca:before { content: url(flags/ca.png); }
+
+.event address.flag-cl:before { content: url(flags/cl.png); }
+
+.event address.flag-br:before { content: url(flags/br.png); }
+
+.event address.flag-be:before { content: url(flags/be.png); }
+
+.event address.flag-fr:before { content: url(flags/fr.png); }
+
+.event address.flag-ph:before { content: url(flags/ph.png); }
+
+.event address.flag-at:before { content: url(flags/at.png); }
+
+.event address.flag-es:before { content: url(flags/es.png); }
+
+.event address.flag-hu:before { content: url(flags/hu.png); }
+
+.event address.flag-mx:before { content: url(flags/mx.png); }
+
+.event address.flag-in:before { content: url(flags/in.png); }
+
+.event address.flag-uy:before { content: url(flags/uy.png); }
+
+.event address.flag-il:before { content: url(flags/il.png); }
+
+.event address.flag-sg:before { content: url(flags/sg.png); }
+
+.event address.flag-cn:before { content: url(flags/cn.png); }
+
+.event address.flag-jp:before { content: url(flags/jp.png); }
+
+.event address.flag-at:before { content: url(flags/at.png); }
+
+.event address.flag-pt:before { content: url(flags/pt.png); }
+
+.event address.flag-ua:before { content: url(flags/ua.png); }
+
+.event .comment {
+		color: hsl(var(--gray) 30%);
+		font-size: 75%;
+	}
+
+.event .comment a {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+.event .comment a:before {
+				content:none;
+			}
+
