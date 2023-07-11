@@ -51,6 +51,12 @@
 	</div>
 </header>
 
+{% if toc %}
+<aside id="toc">
+	<h4>On this page</h4>
+	{{ content | toc | safe }}
+</aside>
+{% endif %}
 <main>
 {{ content | safe }}
 </main>
