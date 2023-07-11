@@ -1121,3 +1121,8 @@ pre:nth-of-type(3n + 1),
 				content:none;
 			}
 
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1em;
+}
