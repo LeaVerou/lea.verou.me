@@ -27,22 +27,22 @@
 }
 
 :root {
-	--font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	--font-serif: "Hoefler Text", Garamond, "Times New Roman", serif;
 	--font-monospace: Consolas, Menlo, Monaco, source-code-pro, monospace;
 
 	@supports ( font-variation-settings: normal ) {
-		--font-sans: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		--font-sans: "Inter var", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 
 	--color-magenta: #f06;
 	--color-orange: #f73;
-	--color-tirquoise: #0bd;
+	--color-turquoise: #0bd;
 	--color-green: yellowgreen;
 
 	--color-accent: var(--color-magenta);
 	--color-accent2: var(--color-orange);
-	--color-accent2: var(--color-tirquoise);
+	--color-accent3: var(--color-turquoise);
 	--color-accent4: var(--color-green);
 
 	--gray: 220 10%;
@@ -77,6 +77,8 @@
 	@media (width <= 700px) {
 		--content-width: min(var(--width-med), 100vw - 2 * var(--min-padding));
 	}
+
+	--scrolltop: 0; /* Fallback. Actual value updated via JS */
 }
 
 :nth-child(1) { --index: 1; }
@@ -133,30 +135,30 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 
-	&[data-count] {
-		position: relative;
+	&[data-count]::before,
+	.count {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		right: 100%;
+		margin-right: .4em;
+		margin-top: -.25em;
+		background: var(--color-accent);
+		color: white;
+		width: 2em;
+		line-height: 2;
+		box-sizing: content-box;
+		border-radius: 50%;
+		font-size: 75%;
+		font-weight: 300;
 
-		&::before {
-			content: attr(data-count) " ";
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			right: 100%;
-			margin-right: .4em;
-			margin-top: -.25em;
-			background: var(--color-accent);
-			color: white;
-			width: 2em;
-			line-height: 2;
-			box-sizing: content-box;
-			border-radius: 50%;
-			font-size: 75%;
-			font-weight: 300;
-
-			@media (width > 960px) {
-				position: absolute;
-			}
+		@media (width > 960px) {
+			position: absolute;
 		}
+	}
+
+	&[data-count]::before {
+		content: attr(data-count) " ";
 	}
 }
 
@@ -176,12 +178,14 @@ h4 {
 	font-size: 2.4rem;
 }
 
-footer h4,
+h4:not(main > *),
 .callout::after,
 .warning::after,
 .info::after,
 .note::after,
 .tip::after {
+	--offset: .5em;
+
 	padding: .3em 1em;
 	width: max-content;
 	column-span: all;
@@ -191,10 +195,8 @@ footer h4,
 	margin-left: calc(-1 * var(--offset));
 	margin-bottom: .4rem;
 	background: var(--color-accent);
-	font-size: .8em;
+	font: 800 .8rem/1.2 var(--font-sans);
 	text-transform: uppercase;
-	--offset: .5em;
-	font-weight: 800;
 }
 
 h5 {
@@ -213,7 +215,7 @@ p {
 }
 
 ul {
-	margin-left: .5em;
+	padding-left: .6em;
 }
 
 a {
@@ -222,7 +224,7 @@ a {
 
 	&:hover,
 	&:focus {
-		color: var(--color-accent2);
+		color: var(--color-accent3);
 		text-decoration: underline;
 	}
 }
@@ -505,6 +507,7 @@ body > header {
 }
 
 body > main {
+	position: relative;
 	padding: 2rem var(--content-margin) 1rem;
 	font-family: var(--font-serif);
 }
@@ -794,10 +797,6 @@ pre {
 
 			> * {
 				mix-blend-mode: multiply;
-			}
-
-			> ul {
-				padding-left: 0;
 			}
 
 			& a {
@@ -1206,6 +1205,7 @@ pre {
 	margin-top: 1em;
 }
 
+[id=toc],
 .callout,
 .warning,
 .info,
@@ -1215,24 +1215,62 @@ pre {
 	background: var(--color-light-2);
 	padding: 1.2rem 1rem .8rem;
 	border-radius: .3rem;
-	margin-block: 1em;
+	margin-top: 1.6em;
+	margin-bottom: 1em;
 	font-family: var(--font-sans);
 	font-size: 80%;
 	font-weight: 500;
 
-	> :is(p, ul, ol, dl):only-child {
+	> :is(p, ul, ol, dl):where(:only-child, h4 + :last-child) {
 		margin-block: 0;
 	}
 
-	&::after {
+	&:not(:has(>h4))::after {
 		content: var(--label);
-		position: absolute;
-		top: -1em;
-		left: 1.4rem;
-		color: var(--color-light-2);
-		margin-left: -2em;
 	}
 
+	& > h4,
+	&::after {
+		position: absolute;
+		top: -1em;
+		left: 2.5rem;
+		color: var(--color-light-2);
+		margin-left: -2em;
+		margin-bottom: 0;
+	}
+}
+
+[id=toc] {
+	font-size: 75%;
+	color: var(--color-gray-40);
+
+	& a {
+		color: inherit;
+	}
+
+	@media (width > 1700px) {
+		position: absolute;
+		--min-header-height: 12.8rem;
+		top: calc(2.5em + max(0em, var(--scrolltop, 0) * 1px - var(--min-header-height)));
+		left: calc(var(--content-margin) + var(--content-width) + 1em);
+		max-width: calc(var(--content-margin) - 2em);
+		background: none;
+
+		& > h4 {
+			color: white;
+		}
+	}
+
+	@media (width <= 1700px) {
+		margin-top: 3em;
+	}
+}
+
+.callout,
+.warning,
+.info,
+.note,
+.tip {
 	@media (width > 600px) {
 		padding-left: 4.5em;
 
@@ -1249,6 +1287,7 @@ pre {
 			color: var(--color-orange);
 		}
 
+		& > h4,
 		&::after {
 			left: 4.2rem;
 		}
@@ -1256,7 +1295,7 @@ pre {
 }
 
 .warning {
-	--label: "Warning";
+	--label: "Beware";
 	--icon: "\F33A";
 }
 

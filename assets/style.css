@@ -27,18 +27,18 @@
 }
 
 :root {
-	--font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	--font-serif: "Hoefler Text", Garamond, "Times New Roman", serif;
 	--font-monospace: Consolas, Menlo, Monaco, source-code-pro, monospace;
 
 	--color-magenta: #f06;
 	--color-orange: #f73;
-	--color-tirquoise: #0bd;
+	--color-turquoise: #0bd;
 	--color-green: yellowgreen;
 
 	--color-accent: var(--color-magenta);
 	--color-accent2: var(--color-orange);
-	--color-accent2: var(--color-tirquoise);
+	--color-accent3: var(--color-turquoise);
 	--color-accent4: var(--color-green);
 
 	--gray: 220 10%;
@@ -65,12 +65,14 @@
 	--content-width: var(--width-med);
 	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
 	--min-padding: 1rem;
+
+	--scrolltop: 0; /* Fallback. Actual value updated via JS */
 }
 
 @supports ( font-variation-settings: normal ) {
 
 :root {
-		--font-sans: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		--font-sans: "Inter var", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 }
 	}
 
@@ -146,34 +148,55 @@ h1 > a:only-child:hover, h2 > a:only-child:hover, h3 > a:only-child:hover, h4 > 
 			color: inherit;
 		}
 
-h1[data-count], h2[data-count], h3[data-count], h4[data-count], h5[data-count], h6[data-count] {
-		position: relative;
+h1[data-count]::before,
+	h2[data-count]::before,
+	h3[data-count]::before,
+	h4[data-count]::before,
+	h5[data-count]::before,
+	h6[data-count]::before,
+	h1 .count,
+	h2 .count,
+	h3 .count,
+	h4 .count,
+	h5 .count,
+	h6 .count {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		right: 100%;
+		margin-right: .4em;
+		margin-top: -.25em;
+		background: var(--color-accent);
+		color: white;
+		width: 2em;
+		line-height: 2;
+		box-sizing: content-box;
+		border-radius: 50%;
+		font-size: 75%;
+		font-weight: 300;
 	}
-
-h1[data-count]::before, h2[data-count]::before, h3[data-count]::before, h4[data-count]::before, h5[data-count]::before, h6[data-count]::before {
-			content: attr(data-count) " ";
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			right: 100%;
-			margin-right: .4em;
-			margin-top: -.25em;
-			background: var(--color-accent);
-			color: white;
-			width: 2em;
-			line-height: 2;
-			box-sizing: content-box;
-			border-radius: 50%;
-			font-size: 75%;
-			font-weight: 300;
-		}
 
 @media (width > 960px) {
 
-h1[data-count]::before, h2[data-count]::before, h3[data-count]::before, h4[data-count]::before, h5[data-count]::before, h6[data-count]::before {
-				position: absolute;
+h1[data-count]::before,
+	h2[data-count]::before,
+	h3[data-count]::before,
+	h4[data-count]::before,
+	h5[data-count]::before,
+	h6[data-count]::before,
+	h1 .count,
+	h2 .count,
+	h3 .count,
+	h4 .count,
+	h5 .count,
+	h6 .count {
+			position: absolute;
+	}
 		}
-			}
+
+h1[data-count]::before, h2[data-count]::before, h3[data-count]::before, h4[data-count]::before, h5[data-count]::before, h6[data-count]::before {
+		content: attr(data-count) " ";
+	}
 
 h1 {
 	font-size: calc(210% + clamp(0%, 1.5vw, 180%));
@@ -191,12 +214,14 @@ h4 {
 	font-size: 2.4rem;
 }
 
-footer h4,
+h4:not(main > *),
 .callout::after,
 .warning::after,
 .info::after,
 .note::after,
 .tip::after {
+	--offset: .5em;
+
 	padding: .3em 1em;
 	width: max-content;
 	column-span: all;
@@ -206,10 +231,8 @@ footer h4,
 	margin-left: calc(-1 * var(--offset));
 	margin-bottom: .4rem;
 	background: var(--color-accent);
-	font-size: .8em;
+	font: 800 .8rem/1.2 var(--font-sans);
 	text-transform: uppercase;
-	--offset: .5em;
-	font-weight: 800;
 }
 
 h5 {
@@ -228,7 +251,7 @@ p {
 }
 
 ul {
-	margin-left: .5em;
+	padding-left: .6em;
 }
 
 a {
@@ -238,7 +261,7 @@ a {
 
 a:hover,
 	a:focus {
-		color: var(--color-accent2);
+		color: var(--color-accent3);
 		text-decoration: underline;
 	}
 
@@ -528,6 +551,7 @@ body > header h1 {
 	}
 
 body > main {
+	position: relative;
 	padding: 2rem var(--content-margin) 1rem;
 	font-family: var(--font-serif);
 }
@@ -812,10 +836,6 @@ pre:nth-of-type(3n + 1),
 
 .publications > article > .comment > * {
 				mix-blend-mode: multiply;
-			}
-
-.publications > article > .comment > ul {
-				padding-left: 0;
 			}
 
 .publications > article > .comment a {
@@ -1245,6 +1265,7 @@ pre:nth-of-type(3n + 1),
 	margin-top: 1em;
 }
 
+[id=toc],
 .callout,
 .warning,
 .info,
@@ -1254,23 +1275,71 @@ pre:nth-of-type(3n + 1),
 	background: var(--color-light-2);
 	padding: 1.2rem 1rem .8rem;
 	border-radius: .3rem;
-	margin-block: 1em;
+	margin-top: 1.6em;
+	margin-bottom: 1em;
 	font-family: var(--font-sans);
 	font-size: 80%;
 	font-weight: 500;
 }
 
-.callout > :is(p, ul, ol, dl):only-child, .warning > :is(p, ul, ol, dl):only-child, .info > :is(p, ul, ol, dl):only-child, .note > :is(p, ul, ol, dl):only-child, .tip > :is(p, ul, ol, dl):only-child {
+[id=toc] > :is(p, ul, ol, dl):where(:only-child, h4 + :last-child), .callout > :is(p, ul, ol, dl):where(:only-child, h4 + :last-child), .warning > :is(p, ul, ol, dl):where(:only-child, h4 + :last-child), .info > :is(p, ul, ol, dl):where(:only-child, h4 + :last-child), .note > :is(p, ul, ol, dl):where(:only-child, h4 + :last-child), .tip > :is(p, ul, ol, dl):where(:only-child, h4 + :last-child) {
 		margin-block: 0;
 	}
 
-.callout::after, .warning::after, .info::after, .note::after, .tip::after {
+[id=toc]:not(:has(>h4))::after, .callout:not(:has(>h4))::after, .warning:not(:has(>h4))::after, .info:not(:has(>h4))::after, .note:not(:has(>h4))::after, .tip:not(:has(>h4))::after {
 		content: var(--label);
+	}
+
+[id=toc] > h4,
+	.callout > h4,
+	.warning > h4,
+	.info > h4,
+	.note > h4,
+	.tip > h4,
+	[id=toc]::after,
+	.callout::after,
+	.warning::after,
+	.info::after,
+	.note::after,
+	.tip::after {
 		position: absolute;
 		top: -1em;
-		left: 1.4rem;
+		left: 2.5rem;
 		color: var(--color-light-2);
 		margin-left: -2em;
+		margin-bottom: 0;
+	}
+
+[id=toc] {
+	font-size: 75%;
+	color: var(--color-gray-40);
+}
+
+[id=toc] a {
+		color: inherit;
+	}
+
+@media (width > 1700px) {
+
+[id=toc] {
+		position: absolute;
+		--min-header-height: 12.8rem;
+		top: calc(2.5em + max(0em, var(--scrolltop, 0) * 1px - var(--min-header-height)));
+		left: calc(var(--content-margin) + var(--content-width) + 1em);
+		max-width: calc(var(--content-margin) - 2em);
+		background: none;
+}
+
+		[id=toc] > h4 {
+			color: white;
+		}
+	}
+
+@media (width <= 1700px) {
+
+[id=toc] {
+		margin-top: 3em;
+}
 	}
 
 @media (width > 600px) {
@@ -1296,13 +1365,22 @@ pre:nth-of-type(3n + 1),
 			color: var(--color-orange);
 		}
 
-		.callout::after, .warning::after, .info::after, .note::after, .tip::after {
+		.callout > h4,
+		.warning > h4,
+		.info > h4,
+		.note > h4,
+		.tip > h4,
+		.callout::after,
+		.warning::after,
+		.info::after,
+		.note::after,
+		.tip::after {
 			left: 4.2rem;
 		}
 	}
 
 .warning {
-	--label: "Warning";
+	--label: "Beware";
 	--icon: "\F33A";
 }
 

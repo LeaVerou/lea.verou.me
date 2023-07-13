@@ -75,12 +75,12 @@ module.exports = config => {
 
 	config.addPlugin(embedTwitter);
 
-	config.addPlugin(pluginTOC, {
-		tags: ['h2'],
-		wrapper: 'div',
-		ul: true,
-		wrapper: "",
-	});
+	// config.addPlugin(pluginTOC, {
+	// 	tags: ['h2'],
+	// 	wrapper: 'div',
+	// 	ul: true,
+	// 	wrapper: "",
+	// });
 
 	return {
 		markdownTemplateEngine: "njk",
