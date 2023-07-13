@@ -148,6 +148,23 @@ h4 {
 	font-size: 2.4rem;
 }
 
+footer h4,
+.warning::after {
+	padding: .3em 1em;
+	width: max-content;
+	column-span: all;
+	align-self: start;
+	clip-path: polygon(var(--offset) 0, 100% 0, calc(100% - var(--offset)) 100%, 0 100%);
+	margin: 0;
+	margin-left: calc(-1 * var(--offset));
+	margin-bottom: .4rem;
+	background: var(--color-accent);
+	font-size: .8em;
+	text-transform: uppercase;
+	--offset: .5em;
+	font-weight: 800;
+}
+
 h5 {
 	font-size: 2.1rem;
 }
@@ -448,25 +465,12 @@ body > footer {
 	color: white;
 }
 
-body > footer h4 {
-		padding: .3em 1em;
-		width: max-content;
-		column-span: all;
-		align-self: start;
-		margin: 0;
-		margin-bottom: .4rem;
-		background: var(--color-accent);
-		color: hsl(var(--gray) 20%);
-		font-size: .8em;
-		text-transform: uppercase;
-		--offset: .5em;
-		clip-path: polygon(var(--offset) 0, 100% 0, calc(100% - var(--offset)) 100%, 0 100%);
-		margin-left: calc(-1 * var(--offset));
-
-	}
-
 body > footer > :has(> h4) {
 		margin-top: -1.5rem;
+	}
+
+body > footer h4 {
+		color: hsl(var(--gray) 20%);
 	}
 
 body > footer .social {
@@ -553,12 +557,16 @@ body > footer {
 			color: inherit;
 		}
 
-.post-meta >::before {
-		font-family: bootstrap-icons;
-		display: inline-block;
-		vertical-align: -.1em;
-		margin-right: .5em;
+.post-meta > * {
+		font-weight: 500;
 	}
+
+.post-meta > *::before {
+			font-family: bootstrap-icons;
+			display: inline-block;
+			vertical-align: -.1em;
+			margin-right: .5em;
+		}
 
 .post-meta time::before {
 			content: "\F1F6";
@@ -574,9 +582,10 @@ body > footer {
 
 .post-meta .tags::before {
 			content: "\F5B2";
-			font-family: bootstrap-icons;
-			display: inline-block;
-			vertical-align: middle;
+		}
+
+.post-meta .edit-page::before {
+			content: "\F4CA";
 		}
 
 .nutshell {
@@ -937,8 +946,6 @@ pre:nth-of-type(3n + 1),
 	border-bottom: 1px solid silver;
 	text-indent: 0;
 	list-style: none;
-
-
 }
 
 .event:last-child {
@@ -1125,4 +1132,55 @@ pre:nth-of-type(3n + 1),
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1em;
+}
+
+.callout,
+.warning {
+	position: relative;
+	background: var(--color-light-2);
+	padding: .8em 1em;
+	border-radius: .3em;
+	margin-block: 1em;
+	font-family: var(--font-sans);
+	font-size: 80%;
+	font-weight: 500;
+}
+
+.callout::after, .warning::after {
+		content: var(--label);
+		position: absolute;
+		top: -1.4em;
+		left: 1.4rem;
+		color: var(--color-light-2);
+		margin-left: -2em;
+	}
+
+@media (width > 600px) {
+
+.callout,
+.warning {
+		padding-left: 4.5em;
+}
+
+		.callout::before, .warning::before {
+			content: var(--icon);
+			position: absolute;
+			left: .5rem;
+			top: 50%;
+			transform: translateY(-50%);
+			font: 180%/1 bootstrap-icons;
+			background: white;
+			padding: .25em .3em .35em;
+			border-radius: 50%;
+			color: var(--color-orange);
+		}
+
+		.callout::after, .warning::after {
+			left: 4.2rem;
+		}
+	}
+
+.warning {
+	--label: "Warning";
+	--icon: "\F33A";
 }

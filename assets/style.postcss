@@ -136,6 +136,23 @@ h4 {
 	font-size: 2.4rem;
 }
 
+footer h4,
+.warning::after {
+	padding: .3em 1em;
+	width: max-content;
+	column-span: all;
+	align-self: start;
+	clip-path: polygon(var(--offset) 0, 100% 0, calc(100% - var(--offset)) 100%, 0 100%);
+	margin: 0;
+	margin-left: calc(-1 * var(--offset));
+	margin-bottom: .4rem;
+	background: var(--color-accent);
+	font-size: .8em;
+	text-transform: uppercase;
+	--offset: .5em;
+	font-weight: 800;
+}
+
 h5 {
 	font-size: 2.1rem;
 }
@@ -429,25 +446,12 @@ body > footer {
 	border: 0 solid hsl(var(--gray) 95% / .2);
 	color: white;
 
-	& h4 {
-		padding: .3em 1em;
-		width: max-content;
-		column-span: all;
-		align-self: start;
-		margin: 0;
-		margin-bottom: .4rem;
-		background: var(--color-accent);
-		color: hsl(var(--gray) 20%);
-		font-size: .8em;
-		text-transform: uppercase;
-		--offset: .5em;
-		clip-path: polygon(var(--offset) 0, 100% 0, calc(100% - var(--offset)) 100%, 0 100%);
-		margin-left: calc(-1 * var(--offset));
-
-	}
-
 	& > :has(> h4) {
 		margin-top: -1.5rem;
+	}
+
+	& h4 {
+		color: hsl(var(--gray) 20%);
 	}
 
 	& .social {
@@ -530,11 +534,15 @@ body > footer {
 		}
 	}
 
-	>::before {
-		font-family: bootstrap-icons;
-		display: inline-block;
-		vertical-align: -.1em;
-		margin-right: .5em;
+	> * {
+		font-weight: 500;
+
+		&::before {
+			font-family: bootstrap-icons;
+			display: inline-block;
+			vertical-align: -.1em;
+			margin-right: .5em;
+		}
 	}
 
 	& time {
@@ -554,9 +562,12 @@ body > footer {
 
 		&::before {
 			content: "\F5B2";
-			font-family: bootstrap-icons;
-			display: inline-block;
-			vertical-align: middle;
+		}
+	}
+
+	.edit-page {
+		&::before {
+			content: "\F4CA";
 		}
 	}
 }
@@ -1079,12 +1090,57 @@ pre {
 			}
 		}
 	}
-
-
 }
 
 .pagination {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1em;
+}
+
+.callout,
+.warning {
+	position: relative;
+	background: var(--color-light-2);
+	padding: .8em 1em;
+	border-radius: .3em;
+	margin-block: 1em;
+	font-family: var(--font-sans);
+	font-size: 80%;
+	font-weight: 500;
+
+	&::after {
+		content: var(--label);
+		position: absolute;
+		top: -1.4em;
+		left: 1.4rem;
+		color: var(--color-light-2);
+		margin-left: -2em;
+	}
+
+	@media (width > 600px) {
+		padding-left: 4.5em;
+
+		&::before {
+			content: var(--icon);
+			position: absolute;
+			left: .5rem;
+			top: 50%;
+			transform: translateY(-50%);
+			font: 180%/1 bootstrap-icons;
+			background: white;
+			padding: .25em .3em .35em;
+			border-radius: 50%;
+			color: var(--color-orange);
+		}
+
+		&::after {
+			left: 4.2rem;
+		}
+	}
+}
+
+.warning {
+	--label: "Warning";
+	--icon: "\F33A";
 }

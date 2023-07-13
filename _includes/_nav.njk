@@ -1,3 +1,3 @@
 {% for link in nav %}
-<a href="/{{ link.path }}/"{{ "class=selected" if siteArea === link.path }}>{{ link.title }}</a>
+<a href="/{{ link.path or "." }}/"{{ "class=selected" if siteArea === link.path }}>{{ link.title }}</a>
 {% endfor %}

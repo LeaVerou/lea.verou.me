@@ -64,8 +64,32 @@
 	{{ content | toc | safe }}
 </aside>
 {% endif %}
+
 <main>
+
+<section class="warning">
+	You are browsing the <a href="/blog/2023/going-lean/">new, beta version</a> of my website.
+	Some things may not work properly.
+
+	<a href="{{ site.old_domain }}{{ page.url }}">View this page on the current website</a>
+	and if you spot any problems, please <a href="{{ pkg.bugs.url }}">file an issue</a>!
+</section>
+
 {{ content | safe }}
+
+<footer class="post-meta">
+	{% if tags and tags.length > 0 %}
+	<div class="tags">
+		{% for tag in tags %}
+		{% if tag != "blog" %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+		{% endif %}
+
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit on GitHub</a>
+</footer>
 </main>
 
 <footer>
