@@ -693,6 +693,7 @@ body > footer {
 .nutshell {
 	font-family: var(--font-sans);
 	font-size: 150%;
+	text-wrap: balance;
 }
 
 .post .post-meta {
@@ -1388,3 +1389,19 @@ pre:nth-of-type(3n + 1),
 	--label: "Info";
 	--icon: "\F434";
 }
+
+a.call-to-action {
+	font: 800 .8rem/1.2 var(--font-sans);
+	background: var(--color-accent);
+	color: white;
+	padding: .5em 1em;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	border-radius: 9999px;
+}
+
+a.call-to-action:hover {
+		background: var(--color-accent2);
+		text-shadow: 0 0 1em white, 0 0 .5em white;
+	}
