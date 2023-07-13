@@ -1,0 +1,31 @@
+---
+title: Publications
+mavo: true
+---
+
+<figure>
+	<img class="main" src="images/css-secrets-closed.jpg" alt="A photo of the CSS Secrets book, closed, on a wooden surface">
+	<a href="images/spread1.jpg" target="_blank"><img src="images/spread1.jpg" alt="CSS Secrets, open in a spread showing a Conic Gradients section"></a>
+	<a href="images/spread2.jpg" target="_blank"><img src="images/spread2.jpg" alt="CSS Secrets, open in a spread showing a Conic Gradients section"></a>
+	<figcaption>CSS Secrets, O'Reilly Media 2015</figcaption>
+</figure>
+
+<div mv-app="writing" mv-storage="https://github.com/LeaVerou/leaverou.github.io/blob/master/data.json" mv-bar="no-login" mv-plugins="markdown">
+<div property="publicationType" mv-multiple="">
+<h2 property="type" data-count="[count(publication)]" id="[id]">Books</h2>
+<meta property="id" mv-default="[idify(type)]"/>
+<section class="publications">
+ 	<article property="publication" mv-multiple="">
+		<a class="title" property="url" target="_blank" rel="noopener noreferrer"><span property="title"></span></a>
+		<p class="authors">
+			<span property="author" mv-multiple="" mv-optional="" class="author [if(author = 'Lea Verou', 'me')]"></span>
+		</p>
+		<footer>
+			<a class="venue" property="venueUrl" target="_blank" rel="noopener noreferrer"><span property="venue"></span></a>
+			<time property="date" datetime="YYYY-MM" mv-default="[$today]"></time>
+		</footer>
+		<div property="comment" class="info comment markdown"></div>
+	</article>
+</section>
+</div>
+</div>
