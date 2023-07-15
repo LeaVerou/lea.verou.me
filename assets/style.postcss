@@ -701,8 +701,8 @@ pre,
 pre[class*="language-"][class*="language-"] {
 	position: relative;
 	border: 0;
-	padding: 1rem var(--padding-h) .5rem;
-	margin: 0 calc(var(--padding-h) * -1);
+	padding: 1rem var(--content-margin) .5rem;
+	margin: 0 calc(-1 * var(--content-margin));
 	border: 0 solid transparent;
 	border-width: 1.5em 0;
 	box-sizing: content-box;
@@ -724,6 +724,7 @@ pre {
 }
 
 /* Utility classes */
+
 @media not (width > 700px) {
 	.long-text, .gt-sm {
 		display: none !important;
