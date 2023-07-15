@@ -1,0 +1,131 @@
+
+section, article, header, figure, footer, aside { display: block; }
+
+body {
+	margin: 2.2em 5em 0 5em;
+	font-size: 11px;
+	line-height: 1.45;
+	font-family: georgia, serif	;	
+
+}
+    
+p {
+	margin: 0;
+	text-indent: 2em;
+}
+
+a {
+	color: rgb(110, 5, 0);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h2 {
+	line-height: 16px;
+//	display: run-in;
+}
+
+h2:after {
+	//content: " ";
+}
+
+h3 {
+	line-height: 16px;
+	margin-bottom: 17px;
+}
+
+figure img {
+	-o-object-fit: contain;
+	-o-object-position: top right;
+	background-color: black;
+	overflow: hidden;
+	margin-top: 4px;
+	margin-bottom: 2em;
+}
+		
+p:first-of-type, p.intro+p  { text-indent: 0; }
+		
+p.intro {
+	 font-weight: bold;
+	 font-family: Helvetica, arial, sans-serif;
+	 font-size: 10px;
+	 line-height: 1.5;
+	 margin-top: 0;
+	 margin-bottom: 4.45em;
+	 -moz-column-span: all;
+	 -webkit-column-span: all;
+}
+
+header {
+	 margin-bottom: 2.4em;
+	 	moz-column-span: all;
+	 	webkit-column-span: all;
+}
+
+header h1 {
+	font-family: georgia, serif;
+	font-size: 32px;
+	margin: 0;
+	line-height: 1.5;
+	letter-spacing: 1.1px;
+	font-weight: normal;
+}
+
+header dl {
+	border-bottom: 1px solid rgb(205, 205, 205);
+	border-top: 1px solid rgb(205, 205, 205);
+	padding: 0.8em 0;
+	margin-top: 1.8em;
+	position: relative;
+	padding-left: 75px;
+}
+
+header dt {
+	 font-weight: bold;
+	 font-family: Helvetica, arial, sans-serif;
+	 font-size: 11px;
+	 width: 7em;
+	 float: left;
+}
+
+
+dt:after {
+	content: ": ";
+}
+
+header dl img {
+	position: absolute;
+	top:  3px;
+	left: 0px;
+}
+
+article {
+	width:  620px;
+	float: left;
+}
+
+section {
+	-moz-column-count: 2; -webkit-column-count: 2; -moz-column-gap: 1em; -webkit-column-gap: 1em;
+	margin-bottom: 5em;
+}
+
+aside {
+	float: left;
+	width:  130px;
+	margin-top: 14.7em;
+	margin-left: 15.4em;
+
+}
+
+.fusiontext a {
+	color: black;
+	font-family: Helvetica, arial, sans-serif;
+	 font-size: 10px;
+	 line-height: 1.6;
+	 display: block;
+	 margin-top: 1em;
+
+}

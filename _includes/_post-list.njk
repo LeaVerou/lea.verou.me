@@ -10,11 +10,11 @@
 			}) }}</time>
 		</div>
 	</header>
+	{% set summary = post.data.summary or post.data.page.excerpt %}
 	<div class="summary">
-		{% if post.data.summary %}
-			{{ post.data.summary | md | safe }}
-		{% elseif post.data.page.excerpt %}
-			{{ post.data.page.excerpt | md | safe }}
+		{% if summary %}
+			{{ summary | md | safe }}
+			<p><a href="{{ post.url | url }}" class="call-to-action">Continue reading</a></p>
 		{% else %}
 			{{ post.content | md | safe }}
 		{% endif %}

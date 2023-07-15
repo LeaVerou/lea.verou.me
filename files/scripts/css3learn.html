@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-7">
+<title>CSS3 learning tool</title>
+<style type="text/css">
+	body {
+		font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+		max-width:900px;
+		margin:auto;
+		padding:10px;
+		font-size:16px;
+	}
+	
+	h1 {
+		margin:.5em 0;
+	}
+	
+	#description {
+		font-style:italic;
+		color:#888;
+	}
+	
+	#properties {
+		list-style:none;
+		padding:0;
+		margin:10px 0;
+		overflow:hidden;
+	}
+	
+		#properties li {
+			width:250px;
+			float:left;
+		}
+	
+	#demo {
+		padding:8px;
+		margin:15px 0;
+		background:#efd;
+		border:1px solid #4b0;
+		width:200px;
+		font-size:24px;
+	}
+	
+	#samples {
+		font-family: Consolas, "Lucida Console", "Courier New", Courier, monospace;
+		border:none;
+		background:#f4f4f4;
+		width:97%;
+		padding:8px;
+	}
+	
+	.note {
+		font-size:75%;
+	}
+	
+	.note:before {
+		content: 'Note: ';
+		font-weight:bold;
+	}
+	
+	.disabled {
+		color:#888;
+		text-decoration:line-through;
+	}
+	
+	#footer {
+		text-align:center;
+		padding:5px;
+		margin-top:10px;
+		border-top:1px solid #ccc;
+	}
+</style>
+</head>
+
+<body>
+<h1>CSS3 learning tool</h1>
+<p id="description">This is my response to <a href="http://ajaxian.com/archives/interactive-css-3-generator">Ajaxian's challenge</a>.
+It dynamically gets the vendor prefix, checks whether the property is supported with or without it and as one can see from the code, it's
+easily extensible to support more CSS3 properties.</p>
+
+<ul id="properties"></ul>
+
+<p class="note"><span class="disabled">Grayed out properties</span> are not supported in your browser</p>
+
+<p id="demo">Hello CSS3 world</p>
+
+<p>
+	<label>Sample CSS code:<br>
+		<textarea id="samples" rows="5" cols="80" readonly></textarea>
+	</label>
+</p>
+
+<div id="footer">by <a href="http://leaverou.me">Lea Verou</a> (<a href="http://leaverou.me/2009/10/a-css3-learning-tool/">relevant blog post</a>)</div>
+
+<script type="text/javascript">
+	var properties = {
+		'textShadow': '2px 2px 5px black',
+		'borderRadius': '10px',
+		'boxShadow': '4px 4px 10px black',
+		'opacity': '.5',
+		'transform': 'rotate(15deg)',
+		'outline': '1px solid red',
+		'textStroke': '1px grey',
+		'boxReflect': 'below 5px -{prefix}-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white))'
+	},
+	
+	// via http://leaverou.me/2009/02/find-the-vendor-prefix-of-the-current-browser/
+	vendorPrefix = (function() {
+		var regex = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=[A-Z])/;
+	
+		var someScript = document.getElementsByTagName('script')[0];
+	
+		for(var prop in someScript.style)
+		{
+			if(regex.test(prop))
+			{
+				// test is faster than match, so it's better to perform
+				// that on the lot and match only when necessary
+				return prop.match(regex)[0];
+			}
+	
+		}
+	
+		// Nothing found so far? Webkit does not enumerate over the CSS properties of the style object.
+		// However (prop in style) returns the correct value, so we'll have to test for
+		// the precence of a specific property
+		if('WebkitOpacity' in someScript.style) return 'Webkit';
+		if('KhtmlOpacity' in someScript.style) return 'Khtml';
+	
+		return '';
+	})(),
+	
+	demoElement = document.getElementById('demo'),
+	
+	propertyList = document.getElementById('properties'),
+	
+	samples = document.getElementById('samples')
+	
+	deCamelCase = function(property) {
+		return property.replace(/([A-Z])/g,'-$1').toLowerCase();
+	},
+	
+	getSupportedProperty = function(property) {
+		if(property in demoElement.style) {
+			return property;
+		}
+		else if((vendorPrefix + property.charAt(0).toUpperCase() + property.substr(1)) in demoElement.style) {
+			return vendorPrefix + property.charAt(0).toUpperCase() + property.substr(1);
+		}
+		else {
+			return '';
+		}
+	},
+	
+	supportedProperties = {};
+	
+	for(var property in properties) {
+		var li = document.createElement('li'),
+			label = document.createElement('label'),
+			checkbox = document.createElement('input'),
+			labelText = document.createTextNode(deCamelCase(property));
+		
+		checkbox.type = 'checkbox';
+		checkbox.value = property;
+		
+		var supportedProperty = getSupportedProperty(property);
+		
+		if(supportedProperty) {
+			supportedProperties[property] = supportedProperty;
+			
+			checkbox.onclick = function() {
+				var supportedProperty = supportedProperties[this.value];
+				
+				if(supportedProperty) {
+					var value = properties[this.value];
+					
+					if(value && value.indexOf('{prefix}') > -1) {
+						value = value.replace(/\{prefix\}/g, vendorPrefix.toLowerCase());
+					}
+				
+					demoElement.style[supportedProperty] = this.checked? value : '';
+					
+					var sample = deCamelCase(supportedProperty) + ': ' + value + ';';
+					
+					if(this.checked) {
+						samples.value += sample + '\r\n';
+					}
+					else {
+						samples.value = samples.value.replace(sample, '').replace(/(\r|\r?\n){2,}/g, '\r\n').replace(/^(\r|\r?\n)/g, '');
+					}
+				}
+			}
+		}
+		else {
+			checkbox.disabled = true;
+			label.className = 'disabled';
+		}
+		
+		li.appendChild(label).appendChild(checkbox);
+		label.appendChild(labelText);
+		
+		propertyList.appendChild(li);
+	}
+	
+	samples.onclick = function() {
+		this.select();
+	}
+</script>
+</body>
+</html>

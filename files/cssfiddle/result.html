@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style></style>
+<script src="../prefixfree/prefixfree.min.js"></script>
+<script>
+
+/*document.addEventListener('DOMContentLoaded', function(){
+	window.style = document.getElementsByTagName('style')[0];
+	if(location.search) {
+		updateCSS(decode(location.search.slice(1)));
+	}
+	
+	if(location.hash){
+		updateHTML(decode(location.hash.slice(1)));
+	}
+}, false);*/
+
+function updateCSS(code) {
+	var title = (code.match(/^\/\*[\s\*\r\n]+(.+)/) || [,null])[1],
+		raw = code.indexOf('{') > -1;
+
+	document.title = title + ' ✿ CSS fiddle result';
+	
+	if(!raw) {
+		code = 'html{' + code + '}';
+	}
+	
+	style.textContent = StyleFix.fix(code, raw);
+}
+
+function updateHTML(markup) {
+	document.body.innerHTML = markup;
+}
+
+function encode(code) {
+	return btoa(unescape(encodeURIComponent(code)))
+}
+
+function decode(encoded) {
+	return decodeURIComponent(escape(window.atob(encoded)));
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

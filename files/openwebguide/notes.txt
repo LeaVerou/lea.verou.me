@@ -1,0 +1,10 @@
+- To get the hash from location.hash: No split required, just .substr(1) to remove the #
+- Buttons that are only functional with JS, shouldn't be included in the markup but created with JS instead.
+- "this" in an event handler's execution context refers to the element that the handler was bound on, so no need to fiddle with event.target if you don't want to
+- setHidden() checked for the presence of aria-hidden, which was redundant since that condition would always be true since it was only called at init 
+- Other redundant checks include if(location.hash != '') location.hash = '';
+- It's not considered good practice to have that many globals (every function declared this way is a global variable too). Now there are only 2: One for the ImageGallery class and one for the imageGallery instance.
+- You had a variable called twitLinks that also fetched the link for the logo. I assumed you actually wanted to only fetch tweetlinks and used figcaption a as a selector. If you did want all links, tell me.
+- When clicking on the figures, the hash should be updated, to make that "page" bookmarkable/sharable.
+- Bug in the previous script: If while an image is focused, you manually change the hash, both open and aria attributes are messed up. Fixed that in the new script. 
+- Another bug: When you refresh a scrolled page (try it).

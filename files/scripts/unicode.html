@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Unicode characters</title>
+<style type="text/css">
+	* {
+		font-family: 'Lucida Grande', Arial, sans-serif;	
+	}
+	
+	body {
+		font-size:15px;	
+	}
+	
+	h1 {
+		font-size:3em;
+		font-weight:normal;
+	}
+	
+	form {
+		float:left;
+		margin:1em 0;	
+	}
+	
+	p {
+		float:right;	
+	}
+	
+	p, button, input {
+		padding:.2em .5em;	
+	}
+	
+	input {
+		border:1px solid #bbb;	
+	}
+	
+	ul {
+		background:#eee;
+		padding:1px;
+		margin:0;
+		clear:both;
+		overflow:hidden;
+	}
+	
+	li {
+		background:white;
+		padding:2px 6px 4px;
+		margin:0 1px 1px 0;
+		width:1em;
+		height:1em;
+		float:left;
+		list-style:none;
+		text-align:center;
+	}
+	
+	li.highlighted,
+	li:target {
+		background:#faa;	
+	}
+	
+	tr:hover td {
+		background:#ffb;
+	}
+	
+	li:hover {
+		background:#ff8;
+	}	
+	
+	li:hover:before,
+	li:hover + li:before,
+	li:hover + li + li:before,
+	li:hover + li + li + li:before {
+		content:attr(symbol);
+		position:fixed;
+		font-size:8em;
+		top:.2em;
+		left:.2em;
+		background:white;
+		border:1px solid #aaa;
+		padding:5px 10px;
+		min-width:1.5em;
+		text-align:center;
+		line-height:1.5em;
+		z-index:10;
+		-moz-box-shadow:.02em .02em .1em rgba(0,0,0,.6);
+		-webkit-box-shadow:.02em .02em .1em rgba(0,0,0,.6);
+	}
+	
+	li:hover + li:before {
+		font-size:6em;
+		left:2.75em;
+		top:.266em;
+		opacity:.9;
+		z-index:9;
+	}
+	
+	li:hover + li + li:before {
+		font-size:4em;
+		left:7.2em;
+		top:.4em;
+		opacity:.8;
+		z-index:8;
+	}
+	
+	li:hover + li + li + li:before {
+		font-size:2em;
+		left:19em;
+		top:.8em;
+		opacity:.7;
+		z-index:7;
+	}
+</style>
+</head>
+
+<body>
+<h1>Browser supported unicode characters</h1>
+<div>
+	<form>
+		<button type="submit">Go</button>
+
+		<button type="submit" id="previous">&larr;</button>
+		
+		<input type="text" id="part" size="3" maxlength="4" value="0">
+        <label for="total">of</label>
+        <input type="text" id="total" size="3" maxlength="4" value="32" title="Higher value if your computer is slow, otherwise your browser might freeze">
+		
+		
+    	<button type="submit" id="next">&rarr;</button>
+	</form>
+	
+    <p id="fromto"></p>
+    <p>You clicked on <input id="clickedon" size="4" readonly></p>
+</div>
+<ul></ul>
+<script>
+	function $$(tag) {
+		return document.getElementsByTagName(tag);	
+	}
+	
+	function $(id) {
+		return document.getElementById(id);	
+	}
+	
+	function hex(num, digits) {
+		num = num.toString(16);
+		
+		while(num.length < digits) {
+			num = '0' + num;
+		}
+		
+		return num.toUpperCase();
+	};
+	
+	function getCharBlock(symbol) {
+		return '<li id="' + symbol + '" title="' + symbol + '" symbol="&#x' + symbol + ';">&#x' + symbol + ';</li>';
+	}
+	
+	function displayChars(part, total) {
+		total = total || 32;
+		
+		var symbols = '',
+			hexFd = hex(part, 1),
+			chunk = 65536 / total,
+			start = part * chunk,
+			last = start + chunk;
+			
+		$('fromto').innerHTML = 'Showing characters <strong>' + hex(start, 4) + '</strong> to <strong>' + hex(last, 4) + '</strong>';
+		
+		for(var j=start; j<last; j++) {
+			symbols += getCharBlock(hex(j,4));
+		}
+		
+		$$('ul')[0].innerHTML = symbols;
+	}
+	
+	$('next').onclick = $('previous').onclick = function() {
+		var part = $('part'),
+			current = part.value << 0;
+
+		part.value = this.id == 'next'? ++current : --current;
+	}
+	
+	$$('form')[0].onsubmit = function(evt) {
+		evt = evt || window.event;
+		if('preventDefault' in evt) {
+			evt.preventDefault();
+		}
+		else {
+			evt.returnValue = false;
+		}
+		
+		var part = $('part').value << 0 || 0,
+			total = $('total') << 0 || 32;
+			
+		displayChars(part, total);
+		
+		return false;
+	}
+	
+	// Event delegation is the only way to go, there are just too many <li>s to bind individual event handlers
+	document.onclick = function(evt) {
+		evt = evt || window.event;
+		if(!evt.target) evt.target = evt.srcElement;
+		
+		if(evt.target.nodeName == 'LI') {
+			evt.target.className = evt.target.className? '' : 'highlighted';
+			
+			$('clickedon').value = evt.target.title;
+		}
+	}
+	
+</script>
+</body>
+</html>

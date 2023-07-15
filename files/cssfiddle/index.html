@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8" />
+<title>CSS Fiddle</title>
+<link rel="stylesheet" href="style.css" />
+<script src="../prefixfree/prefixfree.min.js"></script>
+</head>
+<body>
+<nav>
+	<a href="?" onclick="return confirm('Are you sure? You will lose any unsaved changes.')">New</a>
+	<button>Save</button>
+	<button id="view-menu">View ▸</button>
+	
+	<div class="views">
+		<input type="radio" name="view" value="behind" id="view-behind" />
+		<label for="view-behind">Behind code</label>
+		
+		<input type="radio" name="view" value="split" id="view-split" />
+		<label for="view-split">Split view (vertical)</label>
+		
+		<input type="radio" name="view" value="split-horizontal" id="view-split-horizontal" checked />
+		<label for="view-split-horizontal">Split view (horizontal)</label>
+		
+		<input type="radio" name="view" value="separate" id="view-separate" />
+		<label for="view-separate">Separate</label>
+	</div>
+	
+	<div class="tabs">
+		<input type="radio" name="page" value="css" id="page-css" checked />
+		<label for="page-css">CSS</label>
+		
+		<input type="radio" name="page" value="markup" id="page-markup"/>
+		<label for="page-markup">HTML</label>
+		
+		<input type="radio" name="page" value="result" id="page-result" />
+		<label for="page-result">Result</label>
+	</div>
+</nav>
+<textarea wrap="off" id="css" class="page">/**
+ * The first line is your dabblet’s title
+ * Click to edit
+ * @author Lea Verou &lt;-- Change this to your name
+ */
+ 
+background: linear-gradient(45deg, yellow, #f06);</textarea>
+ <textarea id="markup" class="page" placeholder="&lt;!-- content to be placed inside &lt;body>…&lt;/body> -->"></textarea>
+<iframe class="page" id="result" name="result" src="result.html"></iframe>
+
+<script src="cssfiddle.js"></script>
+
+</body>
+</html>

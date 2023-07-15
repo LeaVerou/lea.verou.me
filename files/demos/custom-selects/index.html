@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Custom select drop downs with CSS3</title>
+<link href="custom-select.css" rel="stylesheet" />
+<style>
+body {
+	font-family: sans-serif;
+}
+
+footer {
+	display: block;
+	font-size: smaller;
+	padding: .5em;
+	margin: 1em 0;
+	border-top: 1px solid silver;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1>Custom &lt;select&gt; drop downs with CSS3</h1>
+	<label class="custom-select">
+		Select your favorite food:
+		<select>
+			<option>Sushi</option>
+			<option>Blue cheese with crackers</option>
+			<option>Steak</option>
+			<option>Other</option>
+		</select>
+	</label>
+	<footer>By <a href="http://leaverou.me">Lea Verou</a></footer>
+	<script>
+		if(!('pointerEvents' in document.body.style)) {
+			var className = 'no-pointer-events';
+			
+			if(document.body.className) {
+				document.body.className += ' ' + className;
+			}
+			else {
+				document.body.className = className;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body {
+	font: bold 2em/1.5 sans-serif;
+	text-align: center;
+}
+
+body.no-support {
+	color: #c00;
+}
+
+#tv {
+	position: relative;
+	width: 4em;
+	height: 3em;
+	margin: 0 auto;
+	background: black;
+	border-radius: 50% / 10%;
+	
+	color: white;
+	font:bold 300%/3.2 sans-serif;
+	text-align: center;
+	text-indent: .1em;
+}
+
+.no-support > #tv {
+	background: #c00;
+}
+
+#tv:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 10%;  bottom: 10%; 
+	right: -5%; left: -5%;
+	z-index: -1;
+	background: inherit;
+	border-radius: 5% / 50%;
+}
+
+#tv + p {
+	display: none;
+}
+
+.no-support > #tv + p {
+	display: block;
+}

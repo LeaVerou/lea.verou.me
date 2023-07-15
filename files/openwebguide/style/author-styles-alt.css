@@ -1,0 +1,296 @@
+@font-face {
+	/* Juergen font by Hans J. Zinken http://www.zinken.net/ */
+	font-family: "Juergen";
+    src: url("../fonts/Juergen.ttf")
+}
+     	
+section, header, section, footer, figure, figcaption { display: block; }
+
+body {
+	background: rgb(51, 51, 51) url("../images/textures/cork.jpg"); 
+    min-width: 1200px;
+    overflow-x:  hidden;
+    margin: 0 0 0 2em;
+} 
+
+header {
+	background-color: hsla(0,50%,0%,0.85);
+	width: 10em;
+	height: 14em;
+	margin: 0;
+	padding: 0.2em 0;
+	border-bottom: 0.8em solid rgba(164, 8, 0, 0.8);
+	-webkit-box-shadow: 0 0 10px black; -moz-box-shadow: 0 0 10px black;
+	box-shadow: 0 0 10px black;	
+	z-index: 1;
+	position: absolute;
+	text-align: center;
+} 
+
+header h1 { 
+	margin: 0; 
+	padding-top: 0.5em;
+	height: 6em;
+}
+
+object { overflow: hidden; }
+
+article {
+	float:  left;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2em 0 0 14em; 
+}
+
+figure:nth-of-type(3n+1) { clear: both; }
+
+figure {
+	display: block;
+	cursor: pointer;
+	padding: 10px 10px 5px 10px;
+	background: white no-repeat;
+	background-origin: content-box;
+	margin:  10px;
+	-webkit-box-shadow: 0px 0px 10px black; -moz-box-shadow: 0px 0px 15px black;
+	box-shadow: 0px 0px 10px black;
+	width: 240px;
+	float: left;
+	position: relative;
+	
+	-o-transform: scale(0.9);
+	-o-transition: -o-transform 0.5s ease-in-out;
+	-webkit-transition: -webkit-transform 0.5s ease-in-out;
+	-moz-transition: -moz-transform 0.5s ease-in-out;
+	transition: transform 0.5s ease-in-out; 
+}
+
+figure a {
+	float: right;
+	color: rgb(41, 106, 165);
+	text-decoration: none;
+	text-indent: 0;
+
+}
+
+figure:hover {
+	box-shadow: 1px 1px 12px black;
+}
+
+figure img:hover, figure:focus img, figure[aria-pressed="true"] img {
+	opacity: 0;
+}
+
+figure figcaption {
+	font: 16px/1.7 "Juergen", cursive;
+	margin: 0;
+	text-indent: 22px;
+	background: url("../images/flags/flags.gif") no-repeat top left;
+}
+
+section#yaili + figure figcaption {
+	background-position: 0 -242px
+}
+
+section#lea + figure figcaption {
+	background-position: 0 -118px;
+}
+
+section#john + figure figcaption {
+	 background-position: 0 6px;
+}
+
+section#doug + figure figcaption, section#elika + figure figcaption {
+	background-position: 0 -304px;
+}
+
+section#peter + figure figcaption, section#david + figure figcaption {
+	background-position: 0 -56px;
+}
+
+section#joost + figure figcaption {
+	background-position: 0 -180px;
+}
+
+figure:nth-of-type(8n+1) {
+	-o-transform: scale(0.9) rotate(-0.8deg);
+	-webkit-transform: scale(0.9) rotate(-0.8deg);
+	-moz-transform: scale(0.9) rotate(-0.8deg);
+	transform: scale(0.9) rotate(-0.8deg);
+}
+
+figure:nth-of-type(8n+2) {
+	-o-transform: scale(0.9) rotate(1.2deg);
+	-webkit-transform: scale(0.9) rotate(1.2deg);
+	-moz-transform: scale(0.9) rotate(1.2deg);
+	transform: scale(0.9) rotate(1.2deg);
+}
+
+figure:nth-of-type(8n+3) {
+	-o-transform: scale(0.9) rotate(-0.5deg);
+	-webkit-transform: scale(0.9) rotate(-0.5deg);
+	-moz-transform: scale(0.9) rotate(-0.5deg);
+	transform: scale(0.9) rotate(-0.5deg);
+}
+
+figure:nth-of-type(8n+4) {
+	-o-transform: scale(0.9) rotate(0.9deg);
+	-webkit-transform: scale(0.9) rotate(0.9deg);
+	-moz-transform: scale(0.9) rotate(0.9deg);
+	transform: scale(0.9) rotate(0.9deg);
+}
+
+figure:nth-of-type(8n+5) {
+	-o-transform: scale(0.9) rotate(-0.6deg);
+	-webkit-transform: scale(0.9) rotate(-0.6deg);
+	-moz-transform: scale(0.9) rotate(-0.6deg);
+	transform: scale(0.9) rotate(-0.6deg);
+}
+
+figure:nth-of-type(8n+6) {
+	-o-transform: scale(0.9) rotate(0.5deg);
+	-webkit-transform: scale(0.9) rotate(0.5deg);
+	-moz-transform: scale(0.9) rotate(0.5deg);
+	transform: scale(0.9) rotate(0.5deg);
+}
+
+figure:nth-of-type(8n+7) {
+	-o-transform: scale(0.9) rotate(-0.8deg);
+	-webkit-transform: scale(0.9) rotate(-0.8deg);
+	-moz-transform: scale(0.9) rotate(-0.8deg);
+	transform: scale(0.9) rotate(-0.8deg);
+}
+ 
+figure:nth-of-type(8n) {
+	-o-transform: scale(0.9) rotate(1deg);
+	-webkit-transform: scale(0.9) rotate(1deg);
+	-moz-transform: scale(0.9) rotate(1deg);
+	transform: scale(0.9) rotate(1deg);
+}
+
+section:target + figure {
+	z-index: 5;
+	-o-transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1);
+	transform: scale(1);
+}
+
+:focus {
+	outline: 1px dashed rgb(41, 106, 165);
+}
+
+figure:focus {
+	outline-width: 3px;
+	outline-color: rgba(164, 8, 0, 0.9);
+
+}
+
+section:target + figure:focus {
+	outline-color: rgba(164, 8, 0, 0);
+}
+
+a:focus{
+	background-color: rgba(41, 106, 165, 0.2) ;
+	outline-offset: 2px;
+}
+
+section.bio {
+	position: absolute;
+	top:  0em;
+	left: 0em;
+	width: 110%;
+	height: 100%;
+	background-color: hsla(0,0%,0%,0.9);
+	color: white;
+	font: 11px/1.5 "Helvetica Neue", helvetica, arial, san-serif;
+	display: none;
+	-o-transition-delay: 0.5s;
+	-o-transition-duration: 0.2s;
+	-webkit-transition-delay: 0.5s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-delay: 0.5s;
+	-moz-transition-duration: 0.2s;
+	transition-delay: 0.5s;
+	transition-duration: 0.2s;
+	opacity: 0;
+	padding: 4em 0 0 0em;
+	z-index: 1;
+}
+
+section.bio p { width: 30em; }	
+
+section.bio:nth-of-type(3n+1) { padding-left: 50em; }
+
+section.bio:nth-of-type(3n+2) { padding-left: 12em; }
+
+section.bio:nth-of-type(3n+3) { padding-left: 40em; }
+
+section.bio:nth-of-type(n+4) { padding-top: 32em; }
+
+section.bio:nth-of-type(n+7) { padding-top: 60em; }
+			
+.bio:target {
+	display: block;
+	opacity: 1;
+	
+	-o-transition-delay: 0.5s; -webkit-transition-delay: 0.5s; -moz-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+h2 { font: 15px/1.5 "Helvetica Neue", helvetica, arial, san-serif; }
+
+.close {
+	background-color: black;
+	border: 1px solid hsl(0,0%,10%);
+ 	padding: 4px 6px;
+ 	display: inline-block;
+ 	color:  silver;
+ 	font-size: 11px;
+ 	text-decoration: none;
+ 	text-align: center;
+ 	text-shadow: 0 1px 2px dimgrey;
+ 	
+ 	 -webkit-box-shadow: 1px 1px 5px black, inset 0 10px 5px hsl(0,0%,10%); -moz-box-shadow: 1px 1px 5px black, inset 0 10px 5px hsl(0,0%,10%);
+	box-shadow: 1px 1px 5px black, inset 0 10px 5px hsl(0,0%,10%);
+	
+	-webkit-border-radius:  3px; -moz-border-radius:  3px;
+	border-radius:  3px;
+}
+
+.close:active {
+	-webkit-box-shadow: 1px 1px 5px black, inset 0 -10px 5px hsl(0,0%,10%); -moz-box-shadow: 1px 1px 5px black, inset 0 -10px 5px hsl(0,0%,10%);
+	box-shadow: 1px 1px 5px black, inset 0 -10px 5px hsl(0,0%,10%);
+}
+
+@media screen and (max-width: 1080px) {
+	figure:nth-of-type(3n+1) { clear: none; }
+	figure:nth-of-type(2n+3) { clear: both; }
+	
+	section.bio:nth-of-type(2n+1) { padding-left: 47em; }
+	section.bio:nth-of-type(2n+2) { padding-left: 12em; }
+	section.bio:nth-of-type(n+3) { padding-top: 32em; }
+	section.bio:nth-of-type(n+5) { padding-top: 60em; }
+	section.bio:nth-of-type(n+7) { padding-top: 88em; }
+
+	section.bio:nth-of-type(2n+1) p { width: 32%;}
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio:0) {
+	/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
+	header object { display: none; }
+	
+	header h1 { background: url("../images/openwebguide.svgz") no-repeat center top; }
+}
+
+/**
+ * SVG styles for the author pictures
+ */
+image {
+	filter: url(../images/authors/filter.svg#black-white);
+}
+
+image:hover,
+image.active {
+	filter:none;
+	cursor: pointer;
+}		

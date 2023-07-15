@@ -1,0 +1,477 @@
+/* +++ Core Styles ++++ */
+
+/*------------------------------------------------------------------------*/
+
+form {
+/* removes ridiculous gap that *some* browsers interpret for form */
+	margin:0;
+	} 	
+	
+div, p, th, td, li, dd, dl, dt    {
+/* redundant selectors to help NS not forget */
+	font-family: Verdana, Arial, sans-serif;
+    }
+	
+a	{
+/* Default link style for entire application.  Defined for consistency of look and feel. */
+	text-decoration: underline;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 90%;
+	line-height: 1.2em;
+	}
+a:link	{
+	color: #00C;
+	background-color: transparent;
+	}
+a:visited	{
+	color: #00C;
+	background-color: transparent;
+	}
+a:active	{
+	color: #999;
+	background-color: transparent;
+	}
+a:hover	{
+	color: #215501;
+	background-color: transparent;
+	text-decoration:	underline;
+	}
+	
+dt 	{
+	font-weight: bold;
+	}
+	
+dl, dt, dd {
+	line-height: 1.5em;
+	}
+	
+ul, ol, li {
+  	list-style:none;
+	/*margin: 1px;*/
+	/*padding-left:15px;*/
+	}
+
+ul.plain {
+	list-style:none;
+	padding-left:10px;
+	}
+	
+li.plain {
+  	padding-left:5px;
+	line-height: 1.5em;
+	}
+
+p 	{
+	margin-top: 0; 
+	padding-top: 0;
+	padding-left:20px;
+	line-height: 1.5em;
+	font-size: 9pt;
+	}
+		
+h1	{
+	font-size:	150%; 
+	}
+
+h2	{
+	font-size:	115%; 
+	}
+
+h3	{
+	font-size:	90%;
+	}
+
+h4 	{
+	font-size:	80%;
+	}
+
+h5	{
+	font-size:	80%;
+	}
+
+h6	{
+	font-size:	80%;  
+	}
+h1, h2, h3, h4, h5, h6	{
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: bold;
+	color: #215501;
+	background-color: transparent;
+	padding:10px 0px 10px 10px;
+	margin:0px;
+	}
+	
+img	{
+/* turns off gaps around images */
+	border:	0
+	}
+
+img.feature{
+  border:1px dashed #FF5566;
+  padding:7px;
+  background:#FFCCCC;
+  margin:5px; 
+}
+	
+img.thumbnail{
+  
+  border:1px dashed #555;
+  padding:7px;
+  background:#222;
+  margin:5px;
+  display:inline;
+}
+
+code, tt, pre	{
+	font: 12px courier new, courier, monospace;
+	color: #330099;
+	background: transparent;
+	}
+
+
+/*------------------------------------------------------------------------*/	
+
+/******** Form Element Styles *****************/
+
+input.textInput{
+/* This style will be applied for all text field inputs */
+	font-size: 85%; 
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: normal;
+	color: #FF0033;
+	background-color: #ccc; 
+
+}
+
+input.textInputRight {
+/* This style will be applied for all text field inputs */
+	font-size: 85%; 
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: normal;
+	color: #FF0033;
+	background-color: #ccc; 
+	text-align: right;
+}
+
+
+textarea {
+/* Default "catch-all" style will be applied for all text area inputs. */
+	font-size: 85%; 
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: normal;
+	color: #FF0033;
+	background-color: #ccc; 
+	vertical-align: top;
+}
+
+select {
+/* Default "catch-all" style for combo boxes/ pull down menus, will be applied to all pull down menus */
+	font-size: 85%; 
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: normal;
+	background-color:#ccc;
+	color: #FF0033;
+}
+
+
+input.cmdButton {
+/* Definition to be attached to a button type input, for CRUD/command behavior */
+	background-color: #215501;
+	padding: 0px 2px;
+	margin: 1px;
+	margin-right: 2px;
+	margin-left: 2px;
+	font-size: small;
+	font-family: Verdana, Arial, sans-serif;
+	font-weight: bold;
+	border: 1px groove #336666;
+	color: #FFFFFF;
+	vertical-align: top;
+}
+
+label{
+/* Default "catch-all" style for all form labels used in the main content area */
+	font-size: 85%;
+	font-weight: normal;
+	color:  #ccc;
+}
+
+label.labelStyle{
+/* Style for all form labels used in the main content area, for non-required fields */
+	font-size: 85%;
+	font-weight: normal;
+	color:  #ccc;
+	}
+
+label.reqLabelStyle{
+/* Style for all REQUIRED form labels used in the main content area, be sure to include an asterisk */
+	font-size: 85%;
+	font-weight: bold;
+	color:  #FF9999;
+	}
+
+.bold {
+	font-weight: bold;
+}	
+
+.italic {
+	font-style:italic;
+}
+
+.bolditalic {
+	font-weight: bold;
+	font-style:italic;
+}	
+ .required{
+	font-size: 80%;
+	color:  #FF9999;
+   }
+
+		
+/*------------------------------------------------------------------------*/	
+
+/******** Main Layout Styles *****************/
+
+
+	#outerDiv {
+		background: url("../images/gray_checker_bg.gif") repeat;
+		background-position: top;
+		background-attachment: fixed;
+		}
+
+	#frame {
+		/*
+		background-image:url('../images/side_bg.jpg'); 
+		background-repeat:repeat-y; 
+		background-position:0% 100%;
+        */ 
+		width:800px;
+		margin-right:auto;
+		margin-left:auto;
+		margin-top:0px;
+		padding:0px;
+		text-align:left;
+		position:relative;
+		background-color:#fff;
+		border:1px solid #FF3366;
+		}
+
+	#leftCol{
+		background-image:url('../images/tgg_bg.jpg'); 
+		background-repeat:no-repeat; 
+		background-position:100% 0%; 
+		background-color:#FF6666; 
+		float:left; 
+		position:relative;
+		height:auto !important; 
+		width:250px;
+		}
+
+	#leftColMin{
+		height:600px;
+		} html>body #leftColMin {min-height:600px;}
+
+	#rightCol{
+		background-color:#fff;
+		height:auto !important; 
+		float:right; 
+		position:relative; 
+		width:550px;
+		}	
+
+	#rightColMin{
+		height:600px;
+		} html>body #rightColMin {min-height:600px;}
+	
+	#centerCol
+	{
+		background-image:url('../images/tgg_bg_pink.jpg'); 
+		background-repeat:no-repeat; 
+		background-position:0% 0%; 
+		background-color:#fff;
+		height:auto !important; 
+		float:none; 
+		position:relative;  
+		width:800px;
+		}
+			
+	#centerColMin{
+		height:600px;
+		} html>body #centerColMin {min-height:600px;}
+
+		
+	#contentFooter {
+	  	text-align:center;
+		background: #fff;
+		padding:0px;
+		height:25px;
+	}
+			
+
+	#blogfooter {
+		width:800px;
+		margin-right:auto;
+		margin-left:auto;
+		margin-top:0px;
+		padding:0px;
+		text-align:left;
+		position:relative;
+		color:#fff;
+	}		
+
+	#galleryLeft{
+		background-color:#fff;
+		border-right:1px solid #cccc99; 
+		height:350px; 
+		width:399px; 
+		display:inline; 
+		float:left;		
+	}
+
+	#galleryRight{ 
+		height:350px; 
+		width:500px; 
+		display:inline; 
+		float:left;
+		padding-left:15px;		
+	}		
+
+	/*when making a printable style sheet, set the overflow to visible and remove height. */
+	#scrollBox{
+		width:790px; 
+		height:210px; 
+		border:1px solid #ddd; 
+		background-color:#fff; 
+		filter:alpha(opacity=65); 
+		-moz-opacity:0.65;
+		opacity:65%; 
+		overflow:auto;	
+	
+	  }
+	
+	#scrollBoxClear{
+		width:790px; 
+		height:210px; 
+		border:1px solid #ddd; 
+		overflow:auto;
+	}
+	
+	.commandDiv{
+		padding-top:5px;
+		padding-left:5px;
+	}
+
+
+/******** Blog Styles *************/	
+	
+	.alignright {
+	float: right;
+	}
+	
+	.alignleft {
+	float: left;
+	}
+	
+
+	.navigation {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	padding:3px;
+	}
+
+	.post {
+	text-align: justify;
+	margin: 0px 5px 8px 5px;  
+	}
+		
+	.postmetadata {
+	clear: left;
+	}
+
+	.alt {
+	background-color: #444;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+	padding:8px;
+	}
+	
+	.commentalt {
+	 width:85%
+	}
+
+/******** Main Navigation Styles *************/
+
+/* nav bar */
+
+	#navBar {
+		background-image:url('../images/girl_bg.jpg'); 
+		background-repeat:no-repeat; 
+		background-position:100% 100%; 
+		padding:0px; 
+		margin:0px; 
+		float:none; 
+		width:800px;  
+	}
+
+	#navBar ul{
+	 	padding:0px; 
+		margin:0px; 
+	}
+
+	#navBar li{
+	 	list-style:none;
+		padding:0px; 
+		margin:0px;
+		display:inline;
+	}
+
+	#navLeft{
+		background-image:url('../images/white_checker_bg.gif'); 
+		float:left; 
+		position:relative; 
+		height:70px; 
+		width:250px; 
+		padding:0px; 
+		margin:0px;	  
+	  }
+	
+	#navRight{
+		background-image:url('../images/white_checker_bg.gif'); 
+		float:right; 
+		position:relative; 
+		height:70px; 
+		width:550px; 
+		text-align:right; 
+		padding:0px; 
+		margin:0px;	  
+	  }
+	
+	.navBarOff{
+		padding:10px; 
+		margin:0px;
+		border:1px solid #FF6666; 
+		background-color: #ddd; 
+		text-decoration:none; 
+		font-weight:normal;	
+	}
+	
+	.navBarOn{
+		padding:10px; 
+		margin:0px;
+		border:1px solid #FF6666; 
+		background-color: #fff; 
+		text-decoration:none; 
+		font-weight:bold;	
+	}
+	
+	.navBarHover{
+	}
+	
+	a.navLink, a.navLink:link, a.navLink:visited, a.navLink:hover, a.navLink:active {
+	  text-decoration:none;
+	}
+
+/*------------------------------------------------------------------------*/	
+

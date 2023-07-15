@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8" />
+<title>CSS slideshow</title>
+<link rel="stylesheet" href="slideshow.css" />
+<link rel="stylesheet" href="theme.css" />
+<script src="http://leaverou.github.com/prefixfree/prefixfree.min.js" async></script>
+
+</head>
+<body>
+
+<header class="slide" id="slide1">
+	<h1>How to make a CSS slideshow</h1>
+	<p>A short tutorial by <a href="http://lea.verou.me">Lea Verou</a></p>
+</header>
+
+<article class="slide" id="slide2">
+	<h1>Structure</h1>
+	<p>Every slide is an <code>article</code> element, with a class of <code>"slide"</code>
+	except the first one which is a <code>header</code> element and the last one which is a <code>footer</code> element.</p>
+	<p>In more complex slideshows, we could have multiple sections, with their own headers and footers.</p>
+</article>
+
+<article class="slide" id="slide3">
+	<h1>Basic idea</h1>
+	<ul>
+		<li>Every slide has a width and height of 100%, so that it occupies the whole viewport.</li>
+		<li>They also have <code>box-sizing: border-box;</code> to avoid paddings and borders being 
+	added to that 100%, which would cause scrollbars to show and make it hard to use.</li>
+		<li>All slides are hidden except the current one</li>
+	</ul>
+</article>
+
+<article class="slide" id="slide4">
+	<h1>How to reference the current slide?</h1>
+	<p>The current slide can be selected with the <code>:target</code> pseudo-class.</p>
+	<p>However, there are other acceptable
+	solutions too, like:</p>
+	<ul>
+		<li>hiding the body scrollbar with <code>overflow:hidden;</code> (the browser takes care of scrolling to the right place)</li>
+		<li>Positioning the non-current slides off-screen, either with <code>transform: translateX(100%)</code>, <code>left: 100%;</code> or variations of these ideas.</li>
+	</ul>	
+</article>
+
+<article class="slide" id="slide5">
+	<h1>Printing</h1>
+	<ul>
+		<li>You need an <code>@media print { ... }</code> block, with print specific styles.</li>
+		<li>To print 4 slides per page, we have to give them a width and height of at most 50%</li>
+		<li>If we want spacing between them, we have to adjust the width and height to something smaller</li>
+	</ul>
+</article>
+
+<article class="slide" id="slide6">
+	<h1>Font size</h1>
+	<ul>
+		<li>If we don’t use JavaScript, we can’t do much about that. There will always be slides with too little or too much content</li>
+		<li>We can only make sure the base font-size is reasonable, and reasonable differs per screen size</li>
+		<li>Media queries to the rescue!</li>
+	</ul>
+</article>
+
+<footer class="slide" id="slide7">
+	<h1>Thank you!</h1>
+	<p>…especially those of you that put some effort into solving this. ;-)</p>
+</footer>
+
+<!-- This navigation is NOT needed! It’s just an extra touch. You DID NOT have to do this! -->
+<nav>
+	<ul>
+		<li><a href="#slide1">1</a></li>
+		<li><a href="#slide2">2</a></li>
+		<li><a href="#slide3">3</a></li>
+		<li><a href="#slide4">4</a></li>
+		<li><a href="#slide5">5</a></li>
+		<li><a href="#slide6">6</a></li>
+		<li><a href="#slide7">7</a></li>
+	</ul>
+</nav>
+
+</body>
+</html>

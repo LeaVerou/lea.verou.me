@@ -1,0 +1,233 @@
+@font-face {
+  src: local("QuicksandBook-Regular"), url("../fonts/QuicksandBook.otf") format("opentype");
+  font-family: "quicksand";
+  font-style: normal;
+}
+
+article, header, section, footer {
+	display: block;
+}
+
+html {
+	background: grey url("../images/textures/concrete.jpg") repeat;
+}
+
+body {
+	font: 12px/1.5 "Helvetica Neue", helvetica, arial, sans-serif;
+	color: white;
+	background: white url("../images/photos/2049689324_c77cc47f1c_b.jpg") no-repeat;
+	width: 1024px;
+	border: 6px solid ghostwhite;
+	margin: 2.2em auto 0 auto;
+	-webkit-box-shadow: 1px 1px 20px black; -moz-box-shadow: 1px 1px 20px black;
+	box-shadow: 1px 1px 20px black;
+/*	-o-transform: rotate(0.6deg); -webkit-transform: rotate(0.6deg); -moz-transform: rotate(0.6deg);
+	transform: rotate(0.6deg); 
+	-o-transition: -o-transform 2s ease-in; -webkit-transition: -webkit-transform 2s ease-in; -moz-transition: all 2s ease-in;
+	transition: transform 2s ease-in; */
+}
+
+/*body:hover {
+	-o-transform: rotate(0); -webkit-transform: rotate(0); -moz-transform: rotate(0);
+	transform: rotate(0);
+}*/
+
+
+article {
+		background-color: hsla(0,50%,0%,0.85);
+		width: 17.65em;
+		margin: 0;
+		padding: 2em 2.3em 0.85em 2.3em;
+}
+
+header h1 {
+	text-align: center;
+	width: 6em;
+	height: 202px;	
+	margin: 0 auto;	
+} 
+
+object {
+	overflow: hidden;
+}
+
+header ul {
+	background-color: rgb(164, 8, 0);
+	padding: 0.8em 1.5em;
+	list-style: none;
+	display: inline-block;
+	text-align: center;
+	font: 11px "Helvetica Neue", sans-serif;
+	width:  108%;
+	
+	-webkit-transform: rotate(270deg) translate(11em, 13.45em); -moz-transform: rotate(270deg) translate(11.1em, 13.6em); 
+    -o-transform: rotate(270deg) translate(11em, 13.58em);
+    transform: rotate(270deg) translate(10.9em, 13.45em);
+	margin-bottom: 0.5em;
+	margin-left:  -2.3em;
+	border-bottom-left-radius: 3px;
+	text-shadow: 0px 0px 2px black;
+	-webkit-box-shadow: -1px 1px 4px hsla(0, 50%, 0%, 0.6); -moz-box-shadow: -1px 1px 4px hsla(0, 50%, 0%, 0.6);
+	box-shadow: -1px 1px 4px hsla(0, 50%, 0%, 0.6);
+}
+
+header  ul li:nth-last-of-type(2):after {
+	content: " &";
+}
+
+header  ul li:last-of-type:after {
+	content: "…";
+}
+
+li {
+	 display: inline-block;
+} 
+
+li:after {
+	content:  " | ";
+}
+
+li:last-of-type {
+	text-transform: capitalize;
+}
+
+p:first-of-type::first-line, p abbr {
+	font-variant: small-caps;
+	text-transform: lowercase;
+	letter-spacing:0.1em;
+	font-weight: bold;
+}
+
+abbr {
+	border-bottom: none;
+}
+footer h1 {
+	font:  12px/1.4 "quicksand", "Helvetica Neue", sans-serif;
+	text-align: center;
+	margin-top: 4.3em;
+}
+
+footer h1:first-line {
+	font-size: 24px;
+	text-transform: uppercase;
+	
+}
+
+footer {
+	margin-bottom: 1em;
+}
+
+footer ul {
+	font:  9px/1.6 "Helvetica Neue", sans-serif;
+	text-align: center;
+	padding: 0;
+
+}
+
+footer li:nth-of-type(3n):after, footer li:last-of-type:after {
+	content:  "";
+}
+
+footer a {
+	color: inherit;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+aside {
+	position: relative;
+	float: right;
+	bottom: 2.7em;
+	margin-right: 1em;
+	opacity: 0;
+	-o-transition: opacity 0.5s ease-in-out; -webkit-transition: opacity 0.5s ease-in-out; -moz-transition: opacity 0.5s ease-in-out;
+	transition:  opacity 0.5s ease-in-out; 
+}
+
+body:hover aside {
+	opacity: 1;
+	-o-transition: opacity 0.5s ease-in-out; -webkit-transition: opacity 0.5s ease-in-out; -moz-transition: opacity 0.5s ease-in-out;
+	transition:  opacity 0.5s ease-in-out; 
+}
+
+aside a {
+	background: hsla(0,0%,0%,0.85) url("../images/icons/icons.png") no-repeat center;
+	border-radius: 0.3em; -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em;
+	border:  1px solid hsl(0,0%, 8%);
+	box-shadow: 0px 0px 4px hsla(0,50%,0%,0.85); -webkit-box-shadow: 0px 0px 4px hsla(0,50%,0%,0.85); -moz-box-shadow: 0px 0px 4px hsla(0,50%,0%,0.85);
+	display: inline-block;
+	text-indent: -99999px;
+	overflow: hidden;
+	content: "";
+	width: 2.4em;
+	height: 2em;
+	margin-left: 0.3em;
+}
+
+#authors {
+	background-position: 0 3px;
+}
+
+#twitter {
+	background-position: -24px 3px;
+}
+
+#image-attribution {
+	background-image: url("../images/icons/photo.svg");
+	width: 2.5em;
+}
+
+@media handheld, screen and (max-width: 1024px) {
+	html {
+		 background: white none;
+		 overflow: hidden;
+	}
+	
+	body {
+		margin: 0;
+		border: 0;
+	}
+}
+
+@media handheld, screen and (max-width: 320px) {
+	html {
+		overflow: visible;
+		max-width:  100%;
+		background-color: black;
+	}
+	body {
+		background-image: none;
+		width: 100%;
+		height: 100%;
+	}
+	
+	article {
+		background-color: black;
+		width:  auto;
+	}
+	
+	footer {
+		width: 95%;
+	}
+	
+	header ul {
+		-o-transform: none; -webkit-transform: none; -moz-transform: none;
+		transform: none;
+	}
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:0) {
+/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
+	object {
+		display: none;
+	}
+	
+	header h1 {
+		background: url("../images/openwebguide.svgz") no-repeat center top;
+
+	}
+}

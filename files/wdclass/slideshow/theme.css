@@ -1,0 +1,28 @@
+body {
+	font-family: sans-serif;
+	line-height: 1.5;
+	background: slategray;
+}
+
+.slide {
+	color: white;
+	text-shadow: .05em .05em .1em rgba(0,0,0,.3);
+}
+
+a {
+	color: inherit;
+}
+
+code {
+	font-family: Monaco, Consolas, 'Andale Mono', 'Lucida Console', monospace;
+}
+
+h1 {
+	margin-top: 0;
+	line-height: 1;
+}
+
+header.slide > h1 {
+	max-width: 8em;
+	font-size: 300%;
+}

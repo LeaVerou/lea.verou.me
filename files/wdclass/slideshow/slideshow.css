@@ -1,0 +1,125 @@
+html, body {
+	height: 100%;
+}
+
+html {
+	font-size: 250%;
+}
+
+body {
+	margin: 0;
+}
+
+.slide {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 1em;
+	box-sizing: border-box;
+	counter-increment: slide;
+	opacity: 0; /* to use transition, otherwise display: none --> block */
+	transition: .3s opacity;
+}
+
+.slide:target {
+	opacity: 1;
+	z-index: 1;
+}
+
+.slide::before {
+	content: counter(slide);
+	float: right;
+	min-width: 1.2em;
+	line-height: 1.2;
+	padding: .3em;
+	text-align: center;
+	background: rgba(0,0,0,.5);
+	color: white;
+	border-radius: 50%;
+}
+
+/* Set reasonable font-size defaults */
+@media (max-width: 1000px) , (max-height: 600px) {
+	html {
+		font-size: 200%;
+	}
+}
+
+@media (max-width: 700px) , (max-height: 500px) {
+	html {
+		font-size: 150%;
+	}
+}
+
+@media (max-width: 400px) , (max-height: 400px) {
+	html {
+		font-size: 120%;
+	}
+}
+
+/* The navigation was NOT needed. It’s an extra touch */
+nav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	text-align: center;
+}
+
+	nav ul, nav li {
+		display: inline;
+	}
+
+	nav a {
+		display: inline-block;
+		width: .3rem;
+		height: .3rem;
+		text-indent: 20px;
+		overflow: hidden;
+		background: black;
+		border-radius: 50%;
+		opacity: .5;
+	}
+	
+	/* Highlight current link */
+	/* Unfortunately, there’s no generic way to do this w/out JS, we need to refer to each slide */
+	#slide1:target ~ nav a[href="#slide1"],
+	#slide2:target ~ nav a[href="#slide2"],
+	#slide3:target ~ nav a[href="#slide3"],
+	#slide4:target ~ nav a[href="#slide4"],
+	#slide5:target ~ nav a[href="#slide5"],
+	#slide6:target ~ nav a[href="#slide6"],
+	#slide7:target ~ nav a[href="#slide7"] {
+		opacity: 1;
+	}
+	
+/* Set basic print styles */
+@media print {
+	html {
+		font-size: 100%;	
+	}
+	
+	html, body {
+		padding: 0;
+		margin: 0;
+	}
+	
+	.slide {
+		opacity: 1;
+		position: static;
+		float: left;
+		width: 49%;
+		height: 49%;
+		min-height: 20em;
+		border: 1px solid gray;
+		margin: .5%;
+		page-break-inside: avoid;
+	}
+	
+	nav {
+		display: none;
+	}
+}

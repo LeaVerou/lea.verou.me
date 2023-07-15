@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+	<title>border-radius:50% testcases</title>
+	<style>
+		div {
+			height:6em;
+			margin:1em;
+			text-align: center;
+		}
+		
+		.rounded {
+			-moz-border-radius:50%; 
+			border-radius:50%;
+		}
+		
+		.rounded-top-right {
+			-moz-border-radius-topright:50%;
+			border-top-right-radius:50%;
+		}
+		
+		.square {
+			width:6em;
+		}
+		
+		.solid {
+			background: black;
+			color:white;
+		}
+		
+		.hollow {
+			border:10px solid;
+		}
+		
+		.vertical {
+			height: 500px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="rounded hollow">With a border</div>
+	<div class="rounded solid">All corners</div>
+	<div class="rounded-top-right solid">Top right only</div>
+	<div class="rounded solid square">Square</div>
+	<div class="rounded solid vertical">Vertical</div>
+</body>

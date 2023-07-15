@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CSS3 structural pseudo-class selector tester</title>
+<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	max-width:750px;
+	margin:auto;
+	font-family:Helvetica, Arial, sans-serif;
+}
+
+h1, p, form, footer {
+	margin:.5em 0;
+}
+
+h1 {
+	font-size:2.4em;
+	letter-spacing:-2px;
+}
+
+p, #tester {
+	font-family:Georgia, Helvetica, Arial, sans-serif;	
+}
+
+select, input {
+	font:inherit;
+	border:1px solid transparent;
+}
+
+select:hover, input:hover {
+	background:#ffd;
+}
+
+select:focus, input:focus {
+	border-color:#ddb;
+}
+
+button {
+	padding:4px 10px;
+}
+
+footer {
+	display:block;
+	text-align:center;
+	border-top:5px dotted #eee;
+	padding:5px;
+	font-size:x-small;
+}
+
+code {
+	font-family:Consolas, 'Andale Mono', 'Lucida Console', 'Courier New', monospace;	
+}
+
+#tester {
+	font-size:xx-large;
+	text-align:center;
+}
+	
+	#seltype {
+		text-align:right;	
+	}
+	
+	#expression {
+		width:4em;
+		text-align:center;
+	}
+	
+dl {
+	counter-reset:child;	
+	font-size:x-small;
+	font-weight:bold;
+}
+	
+	dl > * {
+		counter-increment:child;
+		border:1px solid #bbb;
+		padding:10px;
+		margin:3px 0;
+	}
+	
+	dl > :hover {
+		background:#fdd;
+	}
+	
+	dl dt {
+		background:#ffd;
+	}
+	
+	dl dt:before {
+		content: "dt (" counter(child) ")";	
+	}
+	
+	dl dd {
+		background:#efd;
+	}
+	
+	dl dd:before {
+		content: "dd (" counter(child) ")";	
+	}
+	
+#modify-dl {
+	text-align:center;
+	margin-top:5px;
+}
+</style>
+<style type="text/css">
+/*  Styles for the selected elements
+	The selector is manipulated on runtime */
+dl > *:nth-child(3n+2) {
+	outline:3px solid red;
+	border-color:#b00;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 <span title="nth-child, nth-last-child, nth-of-type and nth-last-of-type">structural pseudo-class</span> selector tester</h1>
+<p>Helps you understand how the <code>nth-child</code>, <code>nth-last-child</code>, <code>nth-of-type</code> and <code>nth-last-of-type</code> CSS3 selectors work. 
+Uses the native browser algorithm, so you're out of luck if you're on IE (but if you're on IE, you have more serious issues to sort out anyway)</p>
+<form id="tester">
+	<select id="seltype">
+		<option>*</option>
+		<option>dt</option>
+		<option>dd</option>
+	</select>:nth-<select id="selpseudo">
+		<option>child</option>
+		<option>last-child</option>
+		<option>of-type</option>
+		<option>last-of-type</option>
+	</select>(<input type="text" id="expression" 
+		pattern="\s*([\-+]?[0-9]+?[Nn](\s*[\-+]\s*[0-9]+)?|[\-+]? [0-9]+|odd|even)\s*"
+		value="3n+2"
+	>)
+</form>
+<dl title="Click on an element to delete it">
+	<dt></dt>
+	<dt></dt>
+	<dd></dd>
+	<dd></dd>
+	<dt></dt>
+	<dd></dd>
+	<dt></dt>
+	<dd></dd>
+	<dd></dd>
+	<dd></dd>
+	<dd></dd>
+	<dd></dd>
+	<dt></dt>
+	<dd></dd>
+</dl>
+<div id="modify-dl">
+<button id="add-dt">Add <strong>dt</strong></button>
+<button id="add-dd">Add <strong>dd</strong></button>
+</div>
+
+<footer>
+	<a href="http://leaverou.me/2010/03/css3-structural-pseudo-class-selector-tester/">About</a> &bull; By <a href="http://leaverou.me">Lea Verou</a>
+</footer>
+
+<script type="text/javascript">
+var $ = function(id) { return document.getElementById(id); },
+ 	$$ = function(sel) { return document.querySelectorAll(sel) };
+	
+var selects = $$('#tester select');
+for(var i=0; i<selects.length; i++) {
+	selects[i].onchange = selectorChanged;
+}
+
+var inputs = $$('#tester input');
+for(var i=0; i<inputs.length; i++) {
+	inputs[i].onkeyup = selectorChanged;
+}
+
+var dl = $$('dl')[0];
+
+$('add-dt').onclick = function() {
+	dl.appendChild(document.createElement('dt'));
+}
+
+$('add-dd').onclick = function() {
+	dl.appendChild(document.createElement('dd'));
+}
+
+dl.onclick = function(evt) {
+	dl.removeChild(evt.target);
+}
+
+function selectorChanged() {
+	var selector = 'dl > ' + $('seltype').value + ':nth-'	+ $('selpseudo').value + '(' + $('expression').value + ')';
+	
+	// Is it valid?
+	try { $$(selector); } catch(e) { return; }
+	
+	var ruleText = document.styleSheets[1].cssRules[0].cssText.replace(/^(.+?)\s+{/, selector + ' {');
+	
+	document.styleSheets[1].deleteRule(0);
+	document.styleSheets[1].insertRule(ruleText, 0);
+};
+
+selectorChanged();
+</script>
+</body>
+</html>

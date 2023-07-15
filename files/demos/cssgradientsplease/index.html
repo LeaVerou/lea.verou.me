@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS gradients please!</title>
+<meta charset='utf-8' />
+<link href="http://leaverou.me/wp-content/themes/elegant/style.css" rel="stylesheet" />
+<style>
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 99%;
+	min-height: -moz-calc(100% - 20px);
+	min-height: calc(100% - 20px);
+}
+
+form {
+	margin: 1em 0;
+}
+
+input, textarea {
+	width: 100%;
+	padding: 8px 10px 5px;
+	font-family: Consolas, 'Andale Mono', Monaco, monospace;
+	font-size: 100%;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 8px;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.3) inset;
+}
+
+input:focus,
+textarea:focus {
+	background: #FDEED3;
+}
+
+input, button {
+	display: block;
+	margin: .5em auto;
+	font-size: 140%;
+}
+
+#error {
+	margin: .5em 0;
+	color: #c00;
+}
+
+#footer {
+	padding: .5em;
+	margin: 2em 0 0;
+	border-top: 1px solid silver;
+	text-align: center;
+}
+
+</style>
+</head>
+<body>
+<hgroup role="banner"> 
+	<h1 id="site-title"><span><a href="http://leaverou.me/" title="Lea Verou" rel="home">Lea Verou</a></span></h1> 
+	<h2 id="site-description">Web standards, cutting edge front-end development and a sprinkle of web usability every now and then</h2> 
+</hgroup> 
+<section class="demo">
+<hgroup>
+	<h1>CSS gradients please!</h1>
+	<h2>Convert the standard gradient syntax to the prefixed versions</h2>
+</hgroup>
+<p><strong>Note:</strong> Only linear gradients supported right now, radial ones coming soon!</p>
+<form>
+	<label>Property:
+	<select>
+		<option>background</option>
+		<option>background-image</option>
+		<option>border-image</option>
+		<option>list-style-image</option>
+		<option>content</option>
+	</select></label>
+	<input value="linear-gradient(top left, white, #a6f2c0 30%, rgba(180, 200, 210, .9), black)" autofocus>
+	<button type="submit">Convert</button>
+</form>
+<textarea rows="5" wrap="off" readonly="" placeholder="Here's where the CSS will appear once you hit Convert"></textarea>
+<div id="error"></div>
+</section>
+<div id="footer"><a href="http://leaverou.me/2011/03/convert-standard-gradient-syntax-to-webkit-gradient-and-others/">Link to relevant post</a>
+
+<script src="cssgradient.js"></script>
+<script>
+(function(){
+	var $ = function(selector) { return document.querySelector(selector); },
+		form = $('form'),
+		select = $('select'),
+		input = $('input'),
+		textarea = $('textarea'),
+		error = $('#error');
+	
+	// Case insensitive, which we don't want
+	//input.pattern = LinearGradient.regex.linearGradient.source;
+	
+	form.onsubmit = function(evt) {
+		evt.preventDefault();
+		
+		var value = input.value,
+			property = select.value;
+			
+		linearGradient = LinearGradient.parse(value);
+		
+		if(linearGradient) {
+			error.innerHTML = '';
+			
+			var gradients = ['-moz-' + linearGradient, '-ms-' + linearGradient, '-o-' + linearGradient]
+			
+			try {
+				var webkitGradient = linearGradient.toWebkitGradient();
+				
+				gradients.push(webkitGradient);
+			} catch(e) {
+				error.innerHTML = e + ' No -webkit-gradient() equivalent exists.';	
+			}
+			
+			gradients.push('-webkit-' + linearGradient, linearGradient);
+			
+			textarea.value = '';
+			
+			gradients.forEach(function(gradient, i) {
+				if(i > 0) {
+					textarea.value += '\r\n';
+				}
+				textarea.value += property + ': ' + gradient + ';'
+			});
+		}
+		else {
+			error.innerHTML = 'Gradient cannot be parsed :(';
+		}
+	}
+	
+	textarea.onfocus = function() {
+		this.select();
+	}
+})();
+</script>
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-597483-5");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+</body>
+</html>

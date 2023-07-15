@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8" />
+<title></title>
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+<p>Your physical screen size is</p>
+<p id="tv">?</p>
+<p>Unlike IE9+, Firefox and Opera, your browser doesn’t support resolution media queries :-(</p>
+
+
+<footer></footer>
+
+<script src="screen.js"></script>
+<script>
+function $$(expr, con) { return Array.prototype.slice.call((con || document).querySelectorAll(expr)); }
+
+// Make each ID a global variable
+// Many browsers do this anyway (it’s in the HTML5 spec), so it ensures consistency
+$$('[id]').forEach(function(element) { window[element.id] = element; });
+
+if(isNaN(screen.diagonal())) {
+	document.body.className = 'no-support';
+}
+else {
+	tv.textContent = screen.diagonal() + '"';
+}
+</script>
+
+</body>
+</html>

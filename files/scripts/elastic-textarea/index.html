@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>A different approach to elastic textareas</title>
+<style type="text/css">
+	* {
+		font-family:Helvetica, Arial, sans-serif;
+		letter-spacing:-.04em;
+	}
+	
+	body {
+		width:45em;
+		margin:auto;
+	}
+	
+	h1 {
+		font-weight:bold;
+		font-size:3.5em;
+		line-height:1;
+	}
+	
+	p {
+		font-size:1.5em;	
+	}
+	
+	label {
+		display:block;
+		color:#bbb;	
+		font-size:1.2em;
+		margin-top:.5em;
+	}
+	
+	a {
+		color:#f16;
+	}
+	
+	a:visited {
+		color:#bbb;	
+	}
+	
+	h1, a:hover {
+		color:#00BFF2;
+	}
+	
+	textarea {
+		display:block;
+		padding:5px;
+		border:6px solid #00BFF2;
+		font-size:24px;
+		color:#333;
+		max-height:200px;
+		margin:.1em 0 .5em;
+		background:#f8f8f8;
+	}
+	
+	textarea:focus {
+		background:white;	
+	}
+</style>
+</head>
+
+<body>
+
+<h1>A different approach to elastic textareas</h1>
+<p>
+    <label for="demo-textarea">Try it below:</label>
+    <textarea id="demo-textarea" cols="60" rows="2">This textarea is going to grow or shrink as necessary when you fill it with text. Just type a few more words in it and you'll see. </textarea>
+</p>
+
+<p>
+    <label for="demo-textarea-smaller">Another one:</label>
+    <textarea id="demo-textarea-smaller" cols="60" rows="1">Type some text here</textarea>
+</p>
+
+<p><a href="http://leaverou.me/2009/11/a-different-approach-to-elastic-textareas">WTF is this?</a></p>
+
+<script type="text/javascript" src="elastic-textarea.js"></script>
+<script type="text/javascript">
+	elasticize(document.getElementsByTagName('textarea'));
+</script>
+</body>
+</html>

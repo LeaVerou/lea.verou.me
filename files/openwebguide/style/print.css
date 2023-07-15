@@ -1,0 +1,89 @@
+@font-face {
+  src: local("QuicksandBook-Regular"), url("../fonts/QuicksandBook.otf") format("opentype");
+  font-family: "quicksand";
+  font-style: normal;
+}
+
+article, header, section, footer {
+	display: block;
+}
+
+body {
+		margin: 0;
+		background: white url("../images/photos/girl_print.jpg") no-repeat;
+		height: 297mm;
+		width: 210mm;
+		-moz-background-size: auto 100%;
+		background-size: auto 100%;
+		overflow-x: hidden;	
+}
+
+header h1 {
+	text-align: center;
+	width: 5.2em;
+	height: 212px;
+	background-color: hsla(0,50%,0%,0.95);	
+	margin-top: 0;
+	margin-left: 0.6em;
+	padding-top: 0.4em;
+	padding-bottom: 0.5em;
+	-webkit-box-shadow: 1px 1px 5px black; -moz-box-shadow: 1px 1px 5px black;
+	box-shadow: 1px 1px 5px black;
+} 
+
+object {
+	overflow: hidden;
+}
+
+ aside, footer {
+	 display: none;
+}
+
+section {
+	font-family: quicksand;
+	background-color: hsla(0,50%,100%,0.8);
+	position: absolute;
+	bottom: 0px;
+	padding: 0.5em 2em;
+	font-size: 11px;
+	line-height: 1.4;
+	-moz-column-count: 2; -webkit-column-count: 2; -moz-column-gap: 1em; -webkit-column-gap: 1em;	
+}
+
+header ul {
+
+	padding: 0.8em 1.5em;
+	list-style: none;
+	display: inline-block;
+	font: 20px "Helvetica Neue", sans-serif;
+	-webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); 
+    -o-transform: rotate(270deg) ;
+    transform: rotate(270deg);
+	margin-bottom: 0.5em;
+	margin-left:  -2.3em;
+	border-bottom-left-radius: 3px;
+	text-shadow: 0px 0px 2px black;
+	position: absolute;
+	top: 9em;
+	right:  -10em;
+}
+
+header  ul li:nth-last-of-type(2):after {
+	content: " &";
+}
+
+header  ul li:last-of-type:after {
+	content: "…";
+}
+
+li {
+	 display: inline-block;
+} 
+
+li:after {
+	content:  " | ";
+}
+
+li:last-of-type {
+	text-transform: capitalize;
+}

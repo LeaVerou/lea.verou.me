@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<filter id="drop-shadow" width="120%" height="120%">
+        	<feOffset result="offset" in="SourceAlpha" dx="0" dy="5"/>
+        	<feGaussianBlur result="blurred-offset" in="offset" stdDeviation="3"/>
+        	<feBlend in="SourceGraphic" in2="blurred-offset" mode="normal"/>
+    	</filter>
+      
+    	<linearGradient id="rule-gradient" x1="0" x2="1" y1="0" y2="1">
+			<stop offset="0%" stop-color="rgb(221,221,221)"/>
+			<stop offset="100%" stop-color="rgb(207,207,207)"/>
+		</linearGradient>
+		<style>
+			text {
+				font-family: "courier new", courier, monospace;
+				font-size: 9px;
+				font-weight: bold;
+				text-anchor:middle;
+				fill: black;
+			}
+			
+		</style>
+  </defs>
+	<!-- lines for regular grid. Change second value of dasharray for bigger cells and first value for thicker lines. Remember the line takes up a pixel so calculate that in -->
+	<line x1="0" y1="4200" x2="4200" y2="4200" stroke-width="12000" stroke="dimgrey" stroke-opacity="0.2" stroke-dasharray="1 19" />
+	<line x1="4200" y1="0" x2="4200" y2="10000" stroke-width="12000" stroke="dimgrey" stroke-opacity="0.2"  stroke-dasharray="1 19" />
+	
+	<!-- lines for super grid -->
+	<line x1="0" y1="4200" x2="4200" y2="4200" stroke-width="12000" stroke="dimgrey" stroke-opacity="0.3" stroke-dasharray="1 99" />
+	<line x1="4200" y1="0" x2="4200" y2="10000" stroke-width="12000" stroke="dimgrey" stroke-opacity="0.3"  stroke-dasharray="1 99" />
+	
+	<g id="y-rule">
+		<rect x="0" y="0" width="20" height="2100" stroke-width="0.5" stroke="black" stroke-opacity="0.4" fill="url(#rule-gradient)" fill-opacity="0.4" filter="url(#drop-shadow)"/>
+		<line x1="17" y1="0" x2="22" y2="12000" stroke-width="5" stroke="black" stroke-opacity="0.4" stroke-dasharray="1 9" />
+		<line x1="15" y1="0" x2="22" y2="12000" stroke-width="10" stroke="black" stroke-opacity="0.4" stroke-dasharray="1 99" />
+		<text x="9" y="100" transform="rotate(-90, 9, 100)">100</text>
+		<text x="9" y="200" transform="rotate(-90, 9, 200)">200</text>
+		<text x="9" y="300" transform="rotate(-90, 9, 300)">300</text>
+		<text x="9" y="400" transform="rotate(-90, 9, 400)">400</text>
+		<text x="9" y="500" transform="rotate(-90, 9, 500)">500</text>
+		<text x="9" y="600" transform="rotate(-90, 9, 600)">600</text>
+		<text x="9" y="700" transform="rotate(-90, 9, 700)">700</text>
+		<text x="9" y="800" transform="rotate(-90, 9, 800)">800</text>
+		<text x="9" y="900" transform="rotate(-90, 9, 900)">900</text>
+		<text x="9" y="1000" transform="rotate(-90, 9, 1000)">1000</text>
+		<text x="9" y="1100" transform="rotate(-90, 9, 1100)">1100</text>
+		<text x="9" y="1200" transform="rotate(-90, 9, 1200)">1200</text>
+		<text x="9" y="1300" transform="rotate(-90, 9, 1300)">1300</text>
+		<text x="9" y="1400" transform="rotate(-90, 9, 1400)">1400</text>
+		<text x="9" y="1500" transform="rotate(-90, 9, 1500)">1500</text>
+		<text x="9" y="1600" transform="rotate(-90, 9, 1600)">1600</text>
+		<text x="9" y="1700" transform="rotate(-90, 9, 1700)">1700</text>
+		<text x="9" y="1800" transform="rotate(-90, 9, 1800)">1800</text>
+		<text x="9" y="1900" transform="rotate(-90, 9, 1900)">1900</text>
+		<text x="9" y="2000" transform="rotate(-90, 9, 2000)">2000</text>
+		<text x="9" y="2100" transform="rotate(-90, 9, 2100)">2100</text>
+	</g>
+	
+	<g id="x-rule">
+		<rect x="0" y="0" width="2100" height="20" stroke-width="0.5" stroke="black" stroke-opacity="0.4" fill="url(#rule-gradient)" fill-opacity="0.4" filter="url(#drop-shadow)"/>
+		<line x1="0" y1="18" x2="12000" y2="22" stroke-width="5" stroke="black" stroke-opacity="0.4" stroke-dasharray="1 9" />
+		<line x1="0" y1="16" x2="12000" y2="22" stroke-width="10" stroke="black" stroke-opacity="0.4" stroke-dasharray="1 99" />
+		<text x="15" y="9">px</text>
+		<text x="100" y="9">100</text>
+		<text x="200" y="9">200</text>
+		<text x="300" y="9">300</text>
+		<text x="400" y="9">400</text>
+		<text x="500" y="9">500</text>
+		<text x="600" y="9">600</text>
+		<text x="700" y="9">700</text>
+		<text x="800" y="9">800</text>
+		<text x="900" y="9">900</text>
+		<text x="1000" y="9">1000</text>
+		<text x="1100" y="9">1100</text>
+		<text x="1200" y="9">1200</text>
+		<text x="1300" y="9">1300</text>
+		<text x="1400" y="9">1400</text>
+		<text x="1500" y="9">1500</text>
+		<text x="1600" y="9">1600</text>
+		<text x="1700" y="9">1700</text>
+		<text x="1800" y="9">1800</text>
+		<text x="1900" y="9">1900</text>
+		<text x="2000" y="9">2000</text>
+		<text x="2100" y="9">2100</text>
+	</g>
+</svg>

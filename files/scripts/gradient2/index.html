@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Imageless gradients v2 test page</title>
+<style type="text/css">
+
+* {
+	color:#333;
+	font-family:Calibri, "Trebuchet MS", Verdana, sans-serif;
+}
+
+#gradient-container {
+	padding:15px;
+}
+
+code {
+	font-family: Consolas, "Courier New", monospace;
+	background:#eee
+}
+
+h1 {
+	color:#f16;
+}
+
+input {
+	padding:4px;
+}
+
+input, fieldset {
+	border:1px solid #ccc;
+}
+
+h1, fieldset {
+	margin:10px 0;
+}
+
+fieldset {
+	background:#f4f4f4;
+	border-color:#ddd;
+	padding:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+a {
+	color:#0ac;
+}
+</style>
+<script type="text/javascript" src="gradient.js"></script>
+<script type="text/javascript">
+	// Let's make this global, so you can mess around with it in the console ;)
+	var g = new Gradient(400, 200, ['#ff0000','#ffff00','#00ff00','#00ffff','#0000ff','#ff00ff','transparent']);
+	window.onload = function() {
+		$('gradient-container').appendChild(g.canvas);
+
+		$('gwidth').onkeyup = function() {
+			g.resize(this.value);
+		}
+
+		$('gheight').onkeyup = function() {
+			g.resize(null, this.value);
+		}
+
+		$('colors').onkeyup = function(){
+			var nlength = this.value.replace(/transparent/g,'0123456').length;
+
+			if(8*(nlength/7 << 0) - 1 == nlength) {
+				var colors = this.value.split(',');
+				for(var i=0; i<colors.length; i++) {
+					if(colors[i] == 'transpa') return;
+				}
+				try { g.paint(colors); } catch(e) { alert(colors)}
+			}
+		};
+
+		$('direction').onclick = function() {
+			g.direction();
+		};
+
+		$('flip').onclick = function() {
+			g.flip();
+		};
+
+		$('rotate').onclick = function() {
+			g.rotate();
+		};
+
+		$('pattern').onclick = function() {
+			var gc = $('gradient-container');
+
+			gc.style.backgroundImage = gc.style.backgroundImage && gc.style.backgroundImage != 'none'?
+						'' : 'url(http://colourlovers.com.s3.amazonaws.com/images/patterns/455/455418.png)';
+		};
+	};
+
+	var $ = function(id) {
+		return document.getElementById(id);
+	}
+</script>
+</head>
+
+
+<body>
+<h1>Imageless gradients v2 test page</h1>
+<p>
+	<a href="http://leaverou.me/2009/04/cross-browser-imageless-linear-gradients-v2">No idea what this is about? Read the relevant blog post by clicking here.</a>
+</p>
+<p>
+	Note: The <code>Gradient</code> object in this page is in the global variable <code>g</code> so that you may
+	also play around with it in your console. ;-)
+</p>
+<form action="">
+	<fieldset>
+	<label>
+		Width: <input type="text" id="gwidth" size="4" value="400" />
+	</label>
+	<label>
+		Height: <input type="text" id="gheight" size="4" value="200" />
+	</label>
+	<label>
+		Colors: <input type="text" id="colors" size="50" value="#ff0000,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,transparent" />
+	</label>
+	<button type="button" name="direction" id="direction">change direction</button>
+	<button type="button" name="flip" id="flip">flip</button>
+	<button type="button" name="rotate" id="rotate">rotate</button>
+	<button type="button" name="pattern" id="pattern">show/hide pattern</button>
+	</fieldset>
+	<div id="gradient-container">
+
+	</div>
+</form>
+
+</body>
+</html>

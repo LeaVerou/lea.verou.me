@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+
+<meta charset="utf-8" />
+<title>border-image playground</title>	
+<link href="style.css" rel="stylesheet" />
+<link rel="shortcut icon"  type="image/png" href="about:blank" />
+</head> 
+<body> 
+
+<header>
+	<h1>border-image: url(<span id="url">...</span>) <span id="slice">33.3%</span> <span id="repeat">repeat</span>;</h1>
+	<button>Code</button>
+	<div><textarea></textarea></div>
+</header>
+
+
+
+<div id="image"> 
+	<div id="dtop" class="divider-y" style="top:100px"></div>
+	<div id="dright" class="divider-x" style="left:200px"></div>
+	<div id="dbottom" class="divider-y" style="top:200px"></div>
+	<div id="dleft" class="divider-x" style="left:100px"></div>
+
+	<img height="300" width="300" id="curve" src="img/simple.png" />
+</div>
+
+<div id="content">
+	<section id="url-details">
+		<h1>Source</h1>
+		<p>Drag an image from your hard drive to the left or  
+		<label>enter a remote URL here: <input type="url" /></label></p>
+	</section>
+	
+	<section id="slice-details">
+		<h1>Slice</h1>
+		<p>Drag the dividers on the left or use the keyboard arrow keys to fine tune them.</p>
+	</section>
+	
+	<section id="repeat-details">
+		<h1>Repeat</h1>
+		<label><input type="radio" name="repeat" value="stretch" checked /></label>
+		<label><input type="radio" name="repeat" value="round" /></label>
+		<label><input type="radio" name="repeat" value="repeat" /></label>
+		<label><input type="radio" name="repeat" value="space" /></label>
+		<label><input type="radio" name="repeat" value="round stretch" /></label>
+		<label><input type="radio" name="repeat" value="stretch round" /></label>
+	</section>
+	<footer>
+		Made by <a href="http://lea.verou.me">Lea Verou</a> with care 
+		<!-- ✿ <a href="http://lea.verou.me/2011/09/?">About</a> -->
+		✿ <a href="http://www.w3.org/TR/css3-background/" target="_blank">Specification</a>
+		✿ <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=me%40leaverou%2eme&lc=GR&item_name=Lea%20Verou&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" class="button" rel="nofollow">Donate</a>
+	</footer>
+</div>
+
+<script src="../chainvas/chainvas.js"></script> 
+<script src="border-image.js"></script>
+<script src="interaction.js"></script> 
+
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="LeaVerou">Tweet</a>
+<script src="http://platform.twitter.com/widgets.js"></script>
+	 
+<!--<script>_gaq = [['_setAccount', 'UA-597483-5'], ['_trackPageview']];</script>
+<script src="http://www.google-analytics.com/ga.js" async></script>-->
+
+</body>	
+</html>

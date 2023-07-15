@@ -1,0 +1,145 @@
+﻿ 	   
+h1:first-letter
+{
+	color: maroon;
+	text-transform: lowercase;
+	font-size: 85px;
+	font-style: italic;
+	letter-spacing: 5px;
+	bottom: 3px;
+	vertical-align: -8px;
+	font-family: Georgia,"Times New Roman", Times, serif;
+} 
+
+h1
+{
+	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #808080;
+	right: 5px;
+	padding-left: 8px;
+	font-size: 35px;
+}
+ 
+h2
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #808080;
+	display: inline;
+	font-size: larger;
+	padding-left: 8px;
+
+}
+
+input[type="radio"]:checked+label
+{
+	font-weight: bold;
+}
+
+
+.gallery
+{
+	border-top: 6px;
+	border-top-color: gray;
+	border-top-style: solid;
+	width: 70%;
+	padding-left: 0px;
+	padding-top: 9px;
+
+}
+
+input[id="thumbnails"]:checked~ul li
+{
+	border: 8px solid black;
+    height: 120px;
+	width: 180px;
+	margin: 10px;
+	float: left;
+}
+
+input[id="medium"]:checked~ul li
+{
+	border: 8px solid black;
+    height:200px;
+	width:300px;
+	margin: 10px;
+	float:left;
+}
+
+input[id="large"]:checked~ul li
+{
+	border: 8px solid black;
+    height: 400px;
+	width: 600px;
+	margin: 10px;
+	float: left;
+}
+
+input[id="medium"]:checked~ul li p a
+{
+	font-size: 14px;
+}
+
+input[id="large"]:checked~ul li p a
+{
+	font-size: 17px;
+}
+
+ul
+{
+	list-style-type:none;
+	
+}
+
+li img
+{
+	height:inherit;
+	width:inherit;
+	margin-bottom:-65px;
+}
+
+li p
+{
+	background: black;
+	background-position: bottom;
+	border: 5px none black;
+	opacity: 0.7;
+	text-align: center;
+	margin-bottom: 0px;
+	padding-top: 10px;
+	padding-bottom: 14px;
+	vertical-align: top;
+}
+li p a 
+{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-size: 9px;
+}
+
+#footer
+{
+
+	border-top: 6px;
+	border-top-color: gray;
+	border-top-style: solid;
+	width: 70%;
+	float: left;
+	display: block;
+	text-align: center;
+	font-size: medium;
+	color: gray;
+}
+#footer small
+{
+	display: block;
+	text-align: center;
+	font-size: small;
+	color: gray;
+}
+#footer small a
+{
+	color: gray;
+}
+

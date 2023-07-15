@@ -1,0 +1,7 @@
+/**
+ * Class for imageless, cross-browser linear gradients
+ * @author Lea Verou
+ * @version 1.0
+ * MIT-style license
+ */
+function Gradient(c,a,e,d,b){this.canvas=document.createElement("canvas");if(!this.canvas.getContext){this.canvas=document.createElement("span");this.canvas.style.display="inline-block";this.canvas.style.zoom=1}this.resize(c,a);this.paint(e,d,b)}Gradient.prototype={paint:function(e,d,b){this.startColor=e||this.startColor||"#000000";this.endColor=d||this.endColor||"#000000";this.vertical=b!==undefined?!!b:this.vertical;if(this.canvas.getContext){var a=this.canvas.getContext("2d");var c=a.createLinearGradient(0,0,this.vertical?0:this.width,this.vertical?this.height:0);c.addColorStop(0,this.startColor);c.addColorStop(1,this.endColor);a.fillStyle=c;a.fillRect(0,0,this.width,this.height)}else{this.canvas.style.filter="progid:DXImageTransform.Microsoft.Gradient(startColorStr="+this.startColor+",endColorStr="+this.endColor+",gradientType="+(!this.vertical+0)+")"}return this},resize:function(b,a){this.width=b||this.width||0;this.height=a||this.height||0;if(this.canvas.getContext){this.canvas.width=this.width;this.canvas.height=this.height}else{this.canvas.style.width=this.width+"px";this.canvas.style.height=this.height+"px"}return this.paint()},flip:function(){return this.paint(this.endColor,this.startColor)},rotate:function(){var a=this.vertical;return this.paint(a?this.endColor:null,a?this.startColor:null,!a)}};

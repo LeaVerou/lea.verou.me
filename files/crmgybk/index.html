@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-7" />
+<title>crmqyk test</title>
+<script>
+	crmgybk = {
+		init: function(appletPath, CMYKProfile, container) {
+			container = container || document.body;
+			if(!appletPath) throw Error('Please specify a valid applet path');
+			if(!CMYKProfile) throw Error('Please specify a valid ICC Profile path');
+			
+			this.applet = document.createElement('applet');
+				this.applet.code = appletPath;
+				this.applet.width = this.applet.height = 200;
+				this.applet.mayscript = true;
+			var profileParam = document.createElement('param');
+				profileParam.name = 'CMYKProfile';
+				profileParam.value = CMYKProfile;
+			this.applet.appendChild(profileParam);
+			this.applet = container.appendChild(this.applet);
+		},
+		
+		RGBtoCMYK: function RGBtoCMYK(red, green, blue) {
+			var cmyk = [];
+			var cmykTemp = this.applet.RGBtoCMYK(red, green, blue);
+			for(var i=0; i<cmykTemp.length; i++) cmyk[i] = cmykTemp[i];
+			
+			alert(cmyk);
+			return cmyk;
+		},
+		
+		CMYKtoRGB: function CMYKtoRGB(cyan, magenta, yellow, black) {
+			var rgb = [];
+			var rgbTemp = this.applet.CMYKtoRGB(cyan, magenta, yellow, black);
+			for(var i=0; i<rgbTemp.length; i++) rgb[i] = rgbTemp[i];
+			
+			alert(rgb);
+			return rgb;
+		}
+	}
+	
+	window.onload = function() {
+		crmgybk.init(	'ColorApplet.class',
+						'http://leaverou.me/crmgybk/SWOP2006_Coated3v2.icc'
+					);
+	}
+</script>
+</head>
+
+
+<body>
+<button type="button" onclick="crmgybk.CMYKtoRGB(100, 0, 0, 0)">CMYK to RGB</button>
+<button type="button" onclick="crmgybk.RGBtoCMYK(0, 0, 255)">RGB to CMYK</button>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang=en>
+ <head profile="http://www.w3.org/2006/03/hcard">
+		<meta charset="utf-8">
+	<title>CSS Image Values and Replaced Content Module Level 4</title>
+	<link href="http://dev.w3.org/csswg/css-module/default.css" rel=stylesheet>
+	<link href="http://www.w3.org/StyleSheets/TR/W3C-ED.css" rel=stylesheet
+	type="text/css">
+
+	<style>
+		body{
+			background: white;
+		}
+		/* delete this block when you've cleared out all the .replaceme elements */
+		.replaceme {
+			border: solid red;
+			padding: 0 0.5em;
+			margin: 0 0.1em;
+			background: yellow;
+			color: green;
+		}
+		p.replaceme {
+			 margin: 1em 0;
+		}
+		.replaceme:before {
+			 content: "FIXME(";
+			 color: black;
+		}
+		.replaceme:after {
+			 content: ")";
+			 color: black;
+		}
+	</style>
+
+ <body>
+	<div class=head>
+		<h1>CSS Image Values and Replaced Content Module Level 4</h1>
+
+		<h2 class="no-num no-toc" id=longstatus-date>Editor's Draft 22 November 2011</h2>
+		
+		<dl>
+		    <dt>This Version:</dt>
+		   	<dd>
+		   		<a href="http://lea.verou.me/specs/conical-gradient/1.html">http://lea.verou.me/specs/conical-gradient/1.html</a>
+		   	</dd>
+		
+		    <dt>Latest Version:
+		    <dd>
+		    	<a href="http://lea.verou.me/specs/conical-gradient/">http://lea.verou.me/specs/conical-gradient/</a>
+		    </dd>
+		</dt>
+
+		<hr title="Separator for header">
+	</div>
+
+	<h3 id=conical-gradients><span class=secno>4.3. </span> Conical Gradients</h3>
+
+	<p>A conical gradient is created by first specifying the center of a gradient-circle
+		and then several colors placed along its circumference. The image is constructed by
+		creating an infinite canvas and painting it with rays rotated around a fixed 
+		endpoint which is anchored at the center of the gradient-circle. 
+		The color of the painted ray is the color of the gradient-circle 
+		where the two intersect. This produces a smooth fade from each color to the next, 
+		progressing clockwise. With color selections that significantly differ in lightness,
+		the visual result is reminiscent of a cone observed from above, hence the name "conical gradients".
+	</p>
+
+	<!-- ====================================================================== -->
+
+	<h4 class=no-toc id=linear-gradient-syntax><span class=secno>4.3.1. </span>
+		conical-gradient() syntax</h4>
+
+	<pre class=prod><dfn
+ id=ltradial-gradient>&lt;conical-gradient></dfn> = conical-gradient(
+	[ <a href="#ltpositiongt"><var>&lt;position&gt;</var></a> , ]?
+	<var>&lt;color-stop-circular&gt;</var> [ , <var>&lt;color-stop-circular&gt;</var> ]+
+)</pre>
+
+	<p>The first argument to the function determines the center of the gradient. The 
+		<a href="#ltpositiongt"><i>&lt;position&gt;</i></a> notation is defined by
+		the positioning syntax of &lsquo;<code class=css><a
+		href="http://www.w3.org/TR/css3-background/#the-background-position">background-position</a></code>&rsquo;
+		and is resolved in the same way, using the center-point as the subject
+		and the content box as the positioning area. <a href="#CSS21"
+		rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> <a href="#CSS3BG"
+		rel=biblioentry>[CSS3BG]<!--{{!CSS3BG}}--></a> If this argument is
+		omitted, it defaults to &lsquo;<code class=css>center</code>&rsquo;.
+		<span class=note>Note that the CR of CSS3 B&amp;B doesn't yet have a
+		definition of &lt;position> - it's defined in the ED, and an update to
+		B&amp;B is expected.</span></p>
+		
+	<h4 class=no-toc id=linear-gradient-syntax><span class=secno>4.3.2.</span>
+		Placing Color Stops</h4>
+	
+	<p>Color stops are placed across the circumference of a gradient-circle whose
+		center is anchored at the center of the gradient.
+		Its exact radius is not relevant, since every positive radius produces the same results.
+		In other words, there is an infinite number of suitable gradient-circles.
+		0deg points upwards, 90deg points toward the right, and positive angles go clockwise.
+		Percentages can also be used and they correspond to fractions of 1turn.
+		Locations before 0% (0deg) and after 100% (360deg) can be specified; 
+		though out-of-range locations are never directly consulted for rendering, 
+		they can affect the color of in-range locations on the gradient-circle through interpolation.
+		For example, <code class="css">conical-gradient(white, black 125%)</code>
+		will produce the same result as <code class="css">conical-gradient(white, #333)</code>.
+	</p>
+	
+	<p class="issue">Are there enough use cases to warrant the complexity involved in generalizing
+		gradient-circle into a gradient-ellipse?
+	</p>
+	<p class="issue">Should we allow the 0deg point to be customized?</p>
+	
+	<div class="example" style="overflow: hidden;">
+		<img src="img/example1.png" alt="TODO" style="float: right; margin-left: 1em;" />
+		<p>This example illustrates visually how to calculate the placement of color stops on the 
+		gradient-circle, as well as the gradient produced with ‘<code class="css">background:
+		conical-gradient(25% 30%, white, black 60%);</code>’ as a background on a box that is
+		400px wide and 300px tall.</p>
+	</div>
+	
+	<h4 class=no-toc id=linear-gradient-syntax><span class=secno>4.3.3.</span>
+		Conical gradient examples</h4>
+	
+	<p>All of the following ‘conical-gradient()’ examples are presumed to be backgrounds applied 
+		to a box that is 200px wide and 100px tall.
+	</p>
+	
+	<div class="example">
+		<p>These examples demonstrate the basic syntax for conical gradients:</p>
+		
+		<pre><code>conical-gradient(yellow, #f06)
+conical-gradient(center, yellow, #f06)
+conical-gradient(50% 50%, yellow, #f06)
+conical-gradient(yellow 0%, #f06 100%)
+conical-gradient(yellow 0deg, #f06 360deg)
+conical-gradient(yellow, #f06 1turn)</code></pre>
+		<p><img src="img/yellow-pink.png" alt="" /></p>
+		
+		<pre><code>conical-gradient(#f06, yellow, #f06)
+conical-gradient(#f06, yellow 50%, #f06)
+conical-gradient(#f06, yellow 180deg, #f06)</code></pre>
+		<p><img src="img/pink-yellow-pink.png" alt="" /></p>
+		
+		<pre><code>conical-gradient(red, yellow, lime, aqua, blue, fuchsia, red)</code></pre>
+		<p><img src="img/rainbow.png" alt="" /></p>
+	</div>
+	
+	<div class="example">
+		<p>These examples show a gradient originating from somewhere other than the center of the box:</p>
+		
+		<pre><code>conical-gradient(bottom right, white, black)</code></pre>
+		<p><img src="img/bottom-right.png" alt="" /></p>
+		
+		<pre><code>conical-gradient(bottom right, white 75%, black)</code></pre>
+		<p><img src="img/bottom-right-75.png" alt="" /></p>
+		
+		<pre><code>conical-gradient(right, white 50%, black)</code></pre>
+		<p><img src="img/right.png" alt="" /></p>
+	</div>
+	
+	<h3>Examples to add to section 4.3 (Repeating gradients)</h3>
+	<div class="example">
+		<pre><code>repeating-conical-gradient(yellow, #f06 36deg, yellow 72deg)</code></pre>
+		<p><img src="img/repeated-yellow-pink.png" alt="" /></p>
+		
+		<pre><code>repeating-conical-gradient(black, black 5%, #f06 5%, #f06 10%)</code></pre>
+		<p><img src="img/starburst.png" alt="" /></p>
+	</div>
+	
+	<div class="example" id="example-checkerboard">
+		<p>Conical gradients can be used for many different effects. In the following example,
+			a repeating conical gradient is used to produce a checkerboard background pattern:</p>
+		<pre>&lt;!DOCTYPE html>
+&lt;title>Checkerboard example&lt;/title>
+&lt;style>
+html {
+	background-image: repeating-conical-gradient(black, black 90deg, white 90deg, white 180deg);
+	background-size: 100px 100px;
+}
+&lt;/style>
+&lt;body>&lt;/body></pre>
+		<p>Here’s an example rendering:</p>
+		<p><img src="img/checkerboard.png" alt="" /></p>
+	</div>
+	
+	<h3 id=conical-gradients><span class=secno>4.4. </span> Gradient Color Stops</h3>
+	
+	<h4 class=no-toc id=conical-gradient-syntax><span class=secno>4.4.2.</span>
+		Circular Color Stops</h4>
+	<pre class=prod><code><dfn
+	   id=ltcolor-stop>&lt;color-stop-circular></dfn> = &lt;color> [ &lt;percentage> | &lt;angle> ]?</code></pre>
+	   
+	<p class="issue">Should lengths also be allowed? If so, the radius of the gradient-circle needs to be specified</p>
+	<p class="replaceme">What should be here and what in 4.3.2?</p>
+	<p>Circular color stops are very similar to the linear color stops defined above.
+		However, unlike &lt;color-stop>, circular color stops are placed along the circumference a gradient-circle,
+		which can be thought of as a circular gradient-line. 
+		Angles are measured clockwise, starting from the topmost point in the gradient-circle.
+		Percentages refer to fractions of 1turn. Circular color stops are usually placed between 0 and 360 degrees,
+		but that's not required; a color stop can be placed at any angle and still affects the gradient through interpolation.
+	</p>
+</body>
+</html>

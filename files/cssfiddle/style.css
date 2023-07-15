@@ -1,0 +1,189 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.page {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+	background: transparent;
+}
+
+.page {
+	display: none;
+}
+
+textarea {
+	padding: 1.5em;
+	font: 150%/1.5 Monaco, Consolas, monospace;
+	text-shadow: 0 .1em 1px white, 0 -.1em 1px white, .1em 0 1px white, -.1em 0 1px white,
+				 .1em .1em 1px white, -.1em .1em 1px white, .1em -.1em 1px white, -.1em -.1em 1px white;
+	box-shadow: 0 .3em 1em -.6em black inset;
+}
+
+#result {
+	z-index: 0;
+}
+
+body[data-page="css"] #css,
+body[data-page="markup"] #markup,
+body[data-page="result"] #result,
+body[data-view="behind"] #result {
+	display: block;
+}
+
+body[data-view="split"]:not([data-page="result"]) .page {
+	width: 50%;
+	font-size: 100%;
+}
+
+body[data-view="split-horizontal"]:not([data-page="result"]) .page {
+	height: 50%;
+	font-size: 100%;
+}
+
+body[data-view="split"]:not([data-page="result"]) #result {
+	display: block;
+	left: 50%;
+}
+
+body[data-view="split-horizontal"]:not([data-page="result"]) #result {
+	display: block;
+}
+
+body[data-view="split-horizontal"]:not([data-page="result"]) .page:not(#result) {
+	top: 50%;
+}
+
+nav {
+	position: absolute;
+	top: -3em;
+	right: 0;
+	left: 0;
+	z-index: 2;
+	padding: .5em .5em 0;
+	border-bottom: 8px solid black;
+	background: rgba(30,30,30,.7);
+	color: white;
+	text-shadow: .1em .1em .2em black;
+	xopacity: 0;
+	transition: .5s;
+}
+
+nav:hover {
+	top: 0;
+	opacity: 1;
+}
+
+	.tabs {
+		float: right;
+	}
+
+	nav > a,
+	nav > button,
+	.tabs > label {
+		padding: .4em .5em;
+		border: 0;
+		border-radius: .3em;
+		background: inherit;
+		color: inherit;
+		font-size: 100%;
+		line-height: 1.15;
+		font-weight: bold;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	
+	nav > a,
+	nav > button {
+		margin: 0 .1em;
+	}
+	
+	nav input {
+		position: absolute;
+		clip: rect(0,0,0,0);
+	}
+	
+	@keyframes flip {
+		from {
+			transform: perspective(600px) rotate3d(1,0,0,180deg);
+		}
+		
+		to {
+			transform: perspective(600px) rotate3d(1,0,0,0deg);
+		}
+	}
+	
+	.tabs > label {
+		display: inline-block;
+		border-radius: .3em .3em 0 0;
+		background: rgba(0,0,0,.4);
+		font-size: 125%;
+		transform-origin: top;
+	}
+	
+	.tabs > input:checked + label {
+		background: black;
+		position: relative;
+		top: 2.3em;
+		border-radius: 0 0 .3em .3em;
+		animation: 1s flip;
+	}
+	
+	input:focus + label[for] {
+		outline: auto;
+	}
+	
+	nav > a:hover,
+	nav > button:hover,
+	nav label:hover {
+		background: black;
+	}
+	
+	.views {
+		position: absolute;
+		display: none;
+		padding: .5em;
+		border-radius: .5em;
+		margin-left: -.5em;
+		box-shadow: .2em .2em .6em black;
+		background: rgba(50,50,50,.8);
+		color: white;
+	}
+	
+	#view-menu:hover + .views,
+	#view-menu:focus + .views,
+	.views:hover {
+		display: inline-block;
+	}
+	
+		.views > label {
+			display: block;
+			padding: .3em;
+			border-radius: .2em;
+		}
+			
+			.views > label:before {
+				content: '';
+				display: inline-block;
+				width: 1.2em;
+			}
+			
+			.views > input:checked + label:before {
+				content: '✔';
+				color: hsla(0,0%,100%,.5);
+			}

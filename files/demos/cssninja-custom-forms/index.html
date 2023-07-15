@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="The CSS Ninja" />
+	<meta name="keywords" content="Css, CSS Ninja, The CSS Ninja, Javascript, Web, xhtml, html, html5, browsers, javascript, cascading style sheets" />
+	<meta name="description" content="A pure CSS technique for adding custom radio and checkbox inputs without JavaScript that has keyboard support and degrades well" />
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="The CSS Ninja" />
+	
+	<link rel="stylesheet" type="text/css" href="_styles.css" media="screen" />
+	
+	<title>Form replacement using CSS | The CSS Ninja | With minor changes by Lea Verou</title>
+
+</head>
+<body>
+	
+	<form>
+		<fieldset>
+			<legend>Some information about you</legend>
+			
+			<label for="fullname">Name:</label>
+			<input type="text" id="fullname" />
+			
+			<p>Gender:</p>
+			<p><input type="radio" value="male" id="male" name="gender" /> <label for="male">Male</label></p>
+			<p><input type="radio" value="Female" id="female" name="gender" /> <label for="female">Female</label></p>
+			
+			<p>Stuff you like:</p>
+			<p><input type="checkbox" value="CSS3" id="css3" /> <label for="css3">CSS3</label></p>
+			<p><input type="checkbox" value="HTML5" id="html5" /> <label for="html5">HTML5</label></p>
+			<p><input type="checkbox" value="JavaScript" id="javascript" /> <label for="javascript">JavaScript</label></p>
+			<p><input type="checkbox" value="Other" id="other" /> <label for="other">Other</label></p>
+			
+		</fieldset>
+		
+		<fieldset>
+			<legend>What happens when I specify disabled or checked attributes?</legend>
+			
+			<p>Disabling and checking radio inputs:</p>
+			<p><input type="radio" value="disabled" id="disabled" name="disabled" disabled /> <label for="disabled">This is disabled</label></p>
+			<p><input type="radio" value="check" id="check" name="check" checked /> <label for="check">This is checked</label></p>
+			
+			<p>Disabling and checking checkbox inputs:</p>
+			<p><input type="checkbox" value="disabled" id="disabled2" disabled /> <label for="disabled2">This is disabled</label></p>
+			<p><input type="checkbox" value="check" id="check2" checked /> <label for="check2">This is checked</label></p>
+			<p><input type="checkbox" value="Stop" id="stop" disabled checked /> <label for="stop">This is checked and disabled</label></p>
+			<p><input type="checkbox" value="Other" id="other2" /> <label for="other2">Other</label></p>
+			
+		</fieldset>
+		
+		<fieldset>
+			<legend>Contact info</legend>
+			
+			<label>Email:</label>
+			<input type="email" />
+			
+			<p>Subscribe to newsletter:</p>
+			<p><input type="radio" value="yes" id="yes" name="subscribe" /> <label for="yes">Yes</label></p>
+			<p><input type="radio" value="no" id="no" name="subscribe" /> <label for="no">No</label></p>
+			
+			<p>Tick the information you would like to hear about:</p>
+			<p><input type="checkbox" value="Rich" id="rich" /> <label for="rich">I would like to here about the how the CSS Ninja can make me rich</label></p>
+			<p><input type="checkbox" value="Poor" id="poor" /> <label for="poor">How the CSS Ninja can make me poor</label></p>
+			<p><input type="checkbox" value="Stop" id="stop" /> <label for="stop">Please make the CSS Ninja stop from trying to make me rich or poor</label></p>
+			<p><input type="checkbox" value="Other" id="other3" /> <label for="other3">Other</label></p>
+			
+		</fieldset>
+		
+	</form>
+	
+</body>
+</html>

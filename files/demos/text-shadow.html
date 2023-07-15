@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-7" />
+<title>CSS3 text-shadow experiments</title>
+<style type="text/css">
+* {
+	padding:0;
+	margin:0;
+}
+
+body {
+	background:white;
+	color:black;
+	margin:40px;
+	font-family:Helvetica, Arial, "Trebuchet MS", Verdana, sans-serif;
+}
+
+h1 {
+	margin:.5em 0;
+}
+
+pre {
+	font-family: Consolas, 'Andale Mono', 'Lucida Console', 'Courier New', monospace;
+}
+
+#experiments {
+	list-style:none;
+	counter-reset:experiments;
+}
+
+#experiments li {
+	padding:10px 10px 10px 20px;
+	overflow:hidden;
+	font-weight:bold;
+	font-size:24px;
+	border:1px solid black;
+	margin:.5em 0;
+	position:relative;
+}
+
+#experiments li:before {
+	counter-increment:experiments;
+	content:"Experiment #" counter(experiments) ": ";
+	color:white;
+	background:red;
+	margin:5px;
+	padding:0 3px;
+	text-shadow:none;
+	line-height:normal;
+	font-size:24px;
+}
+
+	#experiments li pre {
+		font-size:10px;
+		font-weight:normal;
+		text-shadow:none;
+		line-height:12px;
+		color:#333;
+		background:#eee;
+		float:right;
+		padding:5px;
+		border:3px double #888;
+		min-width:200px;
+	}
+
+#experiments li.apple {
+	text-shadow: 1px 1px 1px white;
+	color:#333;
+	background:#aaa;
+}
+
+#experiments li.glow {
+	background:black;
+	color:white;
+	text-shadow:0 0 .5em,
+				0 0 .3em;
+}
+
+#experiments li.extrude {
+	color:#ddd;
+	text-shadow:2px 1px #777,
+				3px 2px #6e6e6e,
+				4px 3px #666,
+				5px 4px #555,
+				6px 5px #444;
+	filter: Shadow(Color=#000000, 	
+			strength=5,
+			direction=135);
+}
+
+#experiments li.emboss {
+	color:#ccc;
+	background:#ddd;
+	text-shadow:-1px -1px 0 white,
+				1px 1px #333;
+}
+
+#experiments li.blurry {
+	color:transparent;
+	text-shadow:0 0 5px black;
+}
+
+#experiments li.outline {
+	color:white;
+	text-shadow:0 0 1px black,
+				0 0 1px black,
+				0 0 1px black,
+				0 0 1px black,
+				0 0 1px black,
+				0 0 1px black,
+				0 0 1px black,
+				0 0 1px black;
+	filter: DropShadow(Color=#000000, 	
+			OffX=1, OffY=1),
+			DropShadow(Color=#000000, 	
+			OffX=-1, OffY=-1),
+			DropShadow(Color=#000000, 	
+			OffX=-1, OffY=1),
+			DropShadow(Color=#000000, 	
+			OffX=1, OffY=-1);
+}
+
+#experiments li.flaming {
+	background:black;
+	color:white;
+	text-shadow:0 0 4px white,
+				0 -5px 4px #FFFF33,
+				2px -10px 6px #FFDD33,
+				-2px -15px 11px #FF8800,
+				2px -25px 18px #FF2200;
+}
+
+#experiments li.order {
+	color:rgba(0,0,0,.5);
+	text-shadow:2px 2px blue,
+				4px 4px yellow,
+				6px 6px green,
+				8px 8px orange,
+				10px 10px red;
+}
+
+#experiments li.invisible {
+	text-shadow:5px 5px transparent,
+				10px 10px rgba(0, 0, 0, 0),
+				0 0 orange;
+}
+
+</style>
+</head>
+
+<body>
+	<h1>CSS3 text-shadow experiments</h1>
+	<ol id="experiments">
+		<li class="apple">An Apple&reg; a day keeps the doctor away</li>
+		<li class="glow">This text is glowing</li>
+		<li class="extrude">This text is extruded</li>
+		<li class="emboss">This text is embossed</li>
+		<li class="blurry">This text is blurry</li>
+		<li class="outline">This text is outlined</li>
+		<li class="flaming">This text is flaming (via CSS3.info)</li>
+		<li class="order">Testing text-shadow order</li>
+		<li class="invisible">No indication of a shadow should exist here</li>
+	</ol>
+	
+	<script type="text/javascript">
+		var getRuleContents = (function(){
+			var style = document.getElementsByTagName('style')[0].innerHTML;
+			
+			if(style) {
+				return function(selector) {
+					if(!selector) {
+						return null;
+					}
+					
+					// We should be able to do this with regexes but there were some issues due to the string beeing multiline
+					// (in which issues, the m flag doesn't help) :-(
+					var startsAt = style.indexOf(selector),
+						ruleContents = style.substring(startsAt + selector.length + 3, style.indexOf('}', startsAt)),
+						textShadowIndex = ruleContents.indexOf('text-shadow:');
+						
+					return  ruleContents.replace(/^(\r|\r?\n)/,'');
+				};
+			}
+			else {
+				return function(){};
+			}
+		})();
+		
+		var experiments = document.getElementById('experiments').getElementsByTagName('li');
+		for(var i=experiments.length; i; i--) {
+			var experiment = experiments[i-1],
+				pre = document.createElement('pre');
+			
+			pre.innerHTML = getRuleContents('.' + experiment.className)
+										.replace(/^\t/gm,'') // Clear rule indents
+										.replace(/^\t{3}/gm,'\t    ') // In the browser, 1 tab = 8 spaces
+										// Make CSS properties bold
+										.replace(/^/mg, '<strong>')
+										.replace(/:/mg, '</strong>:');
+			
+			experiment.appendChild(pre);
+			
+			// Center the big shadowed text vertically
+			experiment.style.lineHeight = pre.offsetHeight + 'px';
+		}
+	</script>
+</body>
+</html>

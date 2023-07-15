@@ -1,0 +1,156 @@
+@font-face {
+  src: local("IbarraReal-Bold"), url("../fonts/IbarraReal-Bold.otf") format("opentype");
+  font-family: "Ibarra Real";
+  font-style: bold;
+}
+@font-face {
+  src: local("IbarraReal-Regular"), url("../fonts/IbarraReal-Regular.otf") format("opentype");
+  font-family: "Ibarra Real";
+  font-style: normal;
+}
+
+article, header, section, footer {
+	display: block;
+}
+
+html {
+	background: grey url("../images/textures/concrete.jpg") repeat;
+}
+
+body {
+	font: 12px/1.5 "Helvetica Neue", helvetica, arial, sans-serif;
+	color: white;
+	width: 1024px;
+	height: 700px;
+	margin: 2.2em auto 0 auto;
+	-webkit-box-shadow: 1px 1px 20px black; -moz-box-shadow: 1px 1px 20px black;
+	box-shadow: 1px 1px 20px black;
+}
+article {
+	width:  488px;
+	background-color: white;
+	height: inherit;
+	float: left;
+
+}
+
+article:first-of-type {
+		background: url("../images/photos/3566158865_5fc30883c6_b.jpg") no-repeat;
+			padding-left: 2em;
+
+}
+article:nth-of-type(2) {
+		padding: 6px solid;
+
+}
+
+header h1 {
+	margin-top: 0.3em;
+} 
+
+object {
+	overflow: hidden;
+}
+
+header ul {
+
+	background-color: hsla(0, 50%, 0%, 0.5);
+	padding: 0.8em 1.5em;
+	list-style: none;
+	display: inline-block;
+	text-align: center;
+	font: 11px "Helvetica Neue", sans-serif;
+	width: 21em;
+	position: absolute;
+	top: 15px;
+	left: 346px;
+	border-bottom-left-radius: 0.3em
+	}
+
+header  ul li:nth-last-of-type(2):after {
+	content: " &";
+}
+
+header  ul li:last-of-type:after {
+	content: "…";
+}
+li {
+	 display: inline-block;
+} 
+
+li:after {
+	content:  " | ";
+}
+
+li:last-of-type {
+	text-transform: capitalize;
+}
+
+section {
+	font-family:"Ibarra Real", serif;
+	font-weight: 900;
+	text-shadow: 0px 0px 3px black;
+	color: ghostwhite;
+}
+
+section:not(:first-of-type) {
+	background-color:  hsla(0, 50%, 0%, 0.6);
+	padding-left: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	width: 25em;
+}
+
+
+
+section:first-of-type h2 {
+	margin: 5.2em 0 0 0em;
+	font-size: 35px;
+}
+
+section:not(:first-of-type) h2 {
+	margin: 0;
+}
+
+section p {
+	font: 14px/1.3 "Ibarra Real";
+	width: 18em;
+	text-shadow: 0px 0px 3px black;
+			margin-top: -0em;
+
+}
+
+section:first-of-type p {
+	color: black;
+	font: 16px/1.3 "Ibarra Real";
+		margin-top: -0.5em;
+
+}
+abbr {
+	border-bottom: none;
+}
+
+article:nth-of-type(2) {
+	color: black;
+	padding: 1em;
+	height: 680px;
+	font: 12px/1.5 "Ibarra Real", serif;
+}
+
+article:nth-of-type(2) h1 {
+	font-weight: bold;
+	text-align: center;
+	font-size: 36px;
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio:0) {
+/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
+	object {
+		display: none;
+	}
+	
+	header h1 {
+		background: url("../images/openwebguide.svgz") no-repeat center top;
+	}
+}

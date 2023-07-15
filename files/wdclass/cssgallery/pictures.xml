@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="transformation.xsl" ?>
+<!DOCTYPE pictures [
+	<!ELEMENT pictures (picture+)>
+		<!ATTLIST pictures
+			title CDATA ""
+			dir CDATA ""
+		>
+	<!ELEMENT picture (filename, link)>
+		<!ATTLIST picture title CDATA "">
+	<!ELEMENT filename (#PCDATA)>
+	<!ELEMENT link (#PCDATA)>
+]>
+<pictures title="Απλή photo gallery" dir="pictures/">
+
+	<picture title="Linguine with porcini mushrooms">
+		<filename>linguine_porcini.jpg</filename>
+		<link>http://www.flickr.com/photos/mcpig/2079437797/</link>
+	</picture>
+	
+	<picture title="Crème brûlée">
+		<filename>crème_brûlée.jpg</filename>
+		<link>http://www.flickr.com/photos/roboppy/240881250/</link>
+	</picture>
+	
+	<picture title="Sushi">
+		<filename>sushi_variety.jpg</filename>
+		<link>http://www.flickr.com/photos/zeetzjones/442805346/</link>
+	</picture>
+	
+	<picture title="Mango Cheesecake">
+		<filename>mango_cheesecake.jpg</filename>
+		<link>http://www.flickr.com/photos/santos/126910029/</link>
+	</picture>
+	
+	<picture title="Salmon Teriyaki">
+		<filename>salmon_teriyaki.jpg</filename>
+		<link>http://www.flickr.com/photos/hermansaksono/4137053327/</link>
+	</picture>
+	
+	<picture title="Pancakes with maple syrup">
+		<filename>pancakes.jpg</filename>
+		<link>http://www.flickr.com/photos/strausser/131236358/</link>
+	</picture>
+	
+	<picture title="Seaweed salad">
+		<filename>seaweed_salad.jpg</filename>
+		<link>http://www.flickr.com/photos/veganfeast/4052214994/</link>
+	</picture>
+	
+	<picture title="Apple pie with whipped cream">
+		<filename>apple_pie.jpg</filename>
+		<link>http://www.flickr.com/photos/_pixelmaniac_/3471348748/</link>
+	</picture>
+
+</pictures>

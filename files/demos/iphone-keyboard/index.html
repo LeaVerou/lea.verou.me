@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>iPhone Keyboard with CSS3</title>
+	<style type="text/css">
+		/**
+		 * Styles for this demo page
+		 * The styles for the iPhone keyboard are in the external .css file
+		 */
+		 
+		body {
+			margin:0;
+			color:gray;
+			font-family:Helvetica, Arial, sans-serif;
+		}
+		
+		h1 {
+			color:#aaa;
+			border-bottom:1px solid;
+		}
+		
+			h1 sup {
+				color:white;
+				background:#BCEE01;
+				padding:0 .35em;
+				
+				border-radius:50%;
+				-moz-border-radius:1em;
+				-webkit-border-radius:.6em;
+				
+				-moz-transform:rotate(20deg);
+				-webkit-transform:rotate(20deg);
+			}
+		
+		p {
+			font-size:.8em;
+		}
+		
+		#iphone-keyboard-screenshot {
+			background:url(wide_keyboard.png) 50% 0 no-repeat;
+			height:220px;
+		}
+		
+		#footer {
+			font-size:.7em;
+			border-top:1px solid;
+			text-align:center;
+		}
+		
+		h1, p {
+			max-width:480px;
+			text-align:center;
+			margin:.5em auto;
+		}
+		
+		a {
+			font-weight:bold;
+			color:inherit;
+		}
+		
+		@media screen and (max-width: 479px) {
+			#iphone-keyboard-screenshot {
+				background:url(narrow_keyboard.png) 50% 0 no-repeat;	
+			}
+			
+			h1, p {
+				max-width:320px;	
+			}
+		}
+	</style>
+	<link href="iphone-keyboard.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<h1>iPhone keyboard with CSS<sup>3</sup></h1>
+	<p>Wide and narrow (try resizing the window) iPhone keyboard imitation. Top: HTML+CSS keyboard, bottom: Screenshot of the original. No images were used.
+	<strong>Warning: Only looks correctly in Firefox 3.6, Chrome 4 and Safari 4!</strong></p>
+	
+	<ul id="iphone-keyboard">
+		<li>
+			<button type="button">Q</button>
+			<button type="button">W</button>
+			<button type="button">E</button>
+			<button type="button">R</button>
+			<button type="button">T</button>
+			<button type="button">Y</button>
+			<button type="button">U</button>
+			<button type="button">I</button>
+			<button type="button">O</button>
+			<button type="button">P</button>
+		</li>
+		<li>
+			<button type="button">A</button>
+			<button type="button">S</button>
+			<button type="button">D</button>
+			<button type="button">F</button>
+			<button type="button">G</button>
+			<button type="button">H</button>
+			<button type="button">J</button>
+			<button type="button">K</button>
+			<button type="button">L</button>
+		</li>
+		<li>
+			<button type="button" class="specialkey shift">S</button>
+			<button type="button">Z</button>
+			<button type="button">X</button>
+			<button type="button">C</button>
+			<button type="button">V</button>
+			<button type="button">B</button>
+			<button type="button">N</button>
+			<button type="button">M</button>
+			<button type="button" class="specialkey backspace">B</button>
+		</li>
+		<li>
+			<button type="button" class="specialkey numbers">123</button>
+			<button type="button" class="specialkey international">I</button>
+			<button type="button" class="space">space</button>
+			<button type="button" class="specialkey return">return</button>
+		</li>
+	</ul>
+	
+	<p id="iphone-keyboard-screenshot">
+	</p>
+	
+	<p id="footer">
+		By <a href="http://leaverou.me/2010/02/iphone-keyboard-with-css3-no-images/">Lea Verou</a> 
+		<!--[if IE]>
+		&bull; Every time you view this with Internet Explorer a cute little bunny dies.
+		<![endif]-->
+	</p>
+
+</body>
+</html>

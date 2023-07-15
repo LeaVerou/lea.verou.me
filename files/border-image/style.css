@@ -1,0 +1,255 @@
+@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+
+* {
+	margin: 0;
+}
+
+body {
+	position: relative;
+	padding: 2em;
+	margin: 2em 5em;
+	font-family: sans-serif;
+}
+
+h1 {
+	color: black;
+	font-family: Consolas, Monaco, monospace;
+	white-space: nowrap;
+}
+
+button {
+	padding: .4em .6em;
+	border: 0;
+	background: #ddd;
+	color: white;
+	font-size: 120%;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: .3em;
+}
+
+a {
+	color: slategray;
+}
+
+/* header */
+	
+	header:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+	header > h1 {
+		float: left;
+	}
+	
+	header > button {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	
+	header > button:hover {
+		background: slategray;
+	}
+	
+	header > div {
+		position: absolute;
+		top: 2.6em;
+		right: 0;
+		display: none;
+	}
+	
+	header > button.show-code + div {
+		display: block;
+	}
+	
+		textarea {
+			width: 300px;
+			height: 7em;
+			padding: .5em;
+			border: 1px solid #bbb;
+			margin-top: -1px;
+			font: 100%/1.2 Consolas, Monaco, monospace;
+			white-space: nowrap;
+			border-radius: 4px;
+			box-shadow: 1px 3px 5px rgba(0,0,0,.3);
+		}
+		
+		header > div:before,
+		header > div:after {
+			content: '';
+			position: absolute;
+			right: 1.5em;
+			border: 10px solid transparent;
+			pointer-events: none;
+		}
+		
+		header > div:before {
+			top: -22px;
+			border-bottom-color: #bbb;
+			border-width: 11px;
+		}
+	
+		header > div:after {
+			top: -20px;
+			border-bottom-color: white;
+			margin-right: 1px;
+		}
+
+#image {
+	position: absolute;
+	top: 4em;
+	left: 0;
+	margin: 2em 1em 1em 3em;
+	line-height: 0;
+}
+
+#image, #image > * {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+	#image > div {
+		position: absolute;
+		border: 10px solid transparent;
+		outline: none;
+	}
+	
+	#image > div:before {
+		content: attr(data-percentage) '%';
+		padding: .3em;
+		line-height: 1.2;
+		font-weight: bold;
+	}
+	
+	#image > div:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,.8);
+		color: rgba(255,255,255,.5);
+		outline: 1px solid;
+		outline-color: invert;
+	}
+	
+	.divider-x {
+		top: -1.8em;
+		bottom: -1em;
+		width: 1px;
+		margin-left: -10px;
+	}
+	
+	#image > .divider-x:focus {
+		border-top-color: black;
+		border-bottom-color: black;
+	}
+	
+	.divider-x:hover {
+		cursor: col-resize;
+	}
+	
+	.divider-y {
+		left: -4em;
+		right: -1em;
+		height: 1px;
+		margin-top: -10px;
+	}
+	
+	#image > .divider-y:focus {
+		border-left-color: black;
+		border-right-color: black;
+	}
+	
+	.divider-y:hover {
+		cursor: row-resize;
+	}
+	
+	img {
+		width: 300px;
+		outline: 1px solid #eee;
+	}
+	
+#content {
+	margin: 2em 100px 0 380px;
+}
+	
+		h1 > span {
+			color: slategray;
+		}
+	
+	#content > section {
+		color: #777;
+		font: 150% 'Reenie Beanie', cursive;
+	}
+	
+		#content > section > h1 {
+			font-family: inherit;
+		}
+	
+	#content > section#url-details {
+		position: relative;
+		width: 65%;
+		float: left;
+		padding-right: 5%;
+	}
+	
+		#url-details:after {
+			content: '<———';
+			position: absolute;
+			font-size: 200%;
+			top: 50px;
+			right: 105%;
+			color: black;
+			white-space: nowrap;
+			letter-spacing: -.3em;
+			
+			-moz-transform: rotate(-20deg);
+			-webkit-transform: rotate(-20deg);
+			-o-transform: rotate(-20deg);
+			transform: rotate(-20deg);
+		}
+	
+		input[type="url"] {
+			width: 90%;
+		}
+	
+	#content > section#slice-details {
+		width: 30%;
+		float: left;
+	}
+	
+	#content > section#repeat-details {
+		clear: both;
+	}
+	
+		section#repeat-details > label {
+			float: left;
+			padding: .5em;
+			border: 10px solid transparent;
+			margin: 0 .5em .5em 0;
+			color: black;
+			white-space: nowrap;
+		}
+		
+			section#repeat-details > label > input {
+				margin-right: .5em;
+			}
+	
+footer {
+	display: block;
+	clear: both;
+	margin-top: 2em;
+}
+	
+.twitter-share-button {
+	position: absolute;
+	top: 0;
+	left: -70px;
+}

@@ -1,0 +1,46 @@
+.rating-widget {
+	list-style:none;
+	display:inline-block;
+	vertical-align:baseline;
+	padding:0;
+	margin:0;
+}
+
+.rating-widget a {
+	float:right;
+	font-size:180%;
+	line-height:.8;
+	text-shadow: 0 0 3px gray;
+	color:#eee;
+	text-decoration:none;
+}
+
+.rating-widget a.selected,
+.rating-widget a.selected ~ a {
+	color:orange;
+	text-shadow: 0 0 3px;
+}
+
+.rating-widget a.selected-by-me,
+.rating-widget a.selected-by-me ~ a {
+	color:red;
+	text-shadow: 0 0 3px;
+}
+
+.rating-widget a:hover,
+.rating-widget a:hover ~ a,
+.rating-widget a:focus,
+.rating-widget a:focus ~ a{
+	color:#0bf !important;
+	text-shadow: 0 0 3px;
+}
+
+.rating-widget a::after {
+	content: "\2605";
+}
+
+/* progress indicator */
+.rating-widget img {
+	float:right;
+	padding:.2em;
+}

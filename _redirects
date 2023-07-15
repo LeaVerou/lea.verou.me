@@ -1,3 +1,12 @@
-# Blog links using year/month/slug format
+# Interviews page has been merged with Press
 /interviews/ /press/
+
+# Blog links using year/month/slug format
 /20* /blog/20:splat 200
+
+# Static file hosting without cluttering root
+/* /files/:splat 200
+/css3patterns/* https://projects.verou.me/css3patterns/:splat 200
+
+# Redirect PHP files to old website
+/*.php https://lea0.verou.me/:splat 200

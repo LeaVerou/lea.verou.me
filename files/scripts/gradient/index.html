@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Imageless gradients test page</title>
+<style type="text/css">
+
+* {
+	color:#333;
+	font-family:Calibri, "Trebuchet MS", Verdana, sans-serif;
+}
+
+code {
+	font-family: Consolas, "Courier New", monospace;
+	background:#eee
+}
+
+h1 {
+	color:#f16;
+}
+
+input {
+	padding:4px;
+}
+
+input, fieldset {
+	border:1px solid #ccc;
+}
+
+h1, fieldset {
+	margin:10px 0;
+}
+
+fieldset {
+	background:#f4f4f4;
+	border-color:#ddd;
+	padding:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+a {
+	color:#0ac;
+}
+</style>
+<script type="text/javascript" src="gradient.js"></script>
+<script type="text/javascript">
+	// Let's make this global, so you can mess around with it in the console ;)
+	var g = new Gradient(200, 100, '#000000', '#ff1166');
+	window.onload = function() {
+		document.body.appendChild(g.canvas);
+		
+		$('gwidth').onkeyup = function() {
+			g.resize(this.value);
+		}
+		
+		$('gheight').onkeyup = function() {
+			g.resize(null, this.value);
+		}
+		
+		$('startColor').onkeyup = function(){
+			if(this.value.length == 6) {
+				g.paint('#' + this.value);
+			}
+		};
+		
+		$('endColor').onkeyup = function(){
+			if(this.value.length == 6) {
+				g.paint(null, '#' + this.value);
+			}
+		}
+		
+		$('flip').onclick = function() {
+			g.flip();
+		};
+		
+		$('rotate').onclick = function() {
+			g.rotate();
+		};
+	};
+	
+	var $ = function(id) {
+		return document.getElementById(id);
+	}
+</script>
+</head>
+
+
+<body>
+<h1>Imageless gradients test page</h1>
+<p>
+	<a href="http://leaverou.me/2009/03/cross-browser-imageless-linear-gradients">No idea what this is about? Read the relevant blog post by clicking here.</a>
+</p>
+<p>
+	Note: The <code>Gradient</code> object in this page is in the global variable <code>g</code> so that you may
+	also play around with it in your console. ;-)
+</p>
+<form action="">
+	<fieldset>
+	<label>
+		Width: <input type="text" id="gwidth" size="4" value="200" />
+	</label>
+	<label>
+		Height: <input type="text" id="gheight" size="4" value="100" />
+	</label>
+	<label>
+		Start color: #<input type="text" id="startColor" size="6" value="000000" />
+	</label>
+	<label>
+		End color: #<input type="text" id="endColor" size="6" value="ff1166" />
+	</label>
+	<button type="button" name="flip" id="flip">flip</button>
+	<button type="button" name="rotate" id="rotate">rotate</button>
+	</fieldset>
+</form>
+
+</body>
+</html>

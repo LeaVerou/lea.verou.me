@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Linear Gradient regex unit tests</title>
+<meta charset='utf-8' />
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 2em;
+	font: Georgia, serif;
+}
+
+h2 {
+	margin: 1em 0 .2em;
+}
+
+h2 + pre {
+	margin-bottom: .5em;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+ul {
+	overflow: hidden;
+}
+	
+	li {
+		float: left;
+		width: 28em;
+		padding: .5em;
+		margin: .2em;
+		color: rgba(255, 255, 255, .5);
+		list-style: none;
+	}
+	
+		li > strong {
+			color: white;
+		}
+	
+	.pass {
+		background: green;
+	}
+	
+	.fail {
+		background: red;
+	}
+</style>
+</head>
+<body>
+<h1>Linear Gradient regex unit tests</h1>
+<script src="cssgradient.js"></script>
+<script>
+function assert(id, tests) {
+	document.write('<h2>' + id + '</h2>');
+	
+	var regex = LinearGradient.regex[id];
+	
+	document.write('<pre>' + regex + '</pre><ul>');
+	
+	for(var test in tests) {
+		regex.lastIndex = 0;
+		
+		var result = regex.test(test) === tests[test],
+			className = result? 'pass' : 'fail';
+		
+		document.write('<li class="' + className + '"><strong>' + test + '</strong> (' + tests[test] + ')</li>');
+	}
+	
+	document.write('</ul>');
+}
+
+assert('direction', {
+	'top left': true,
+	'left top': true,
+	'top': true,
+	'right': true,
+	'bottom': true,
+	'45deg': true,
+	'-5.5deg': true,
+	'.5deg': true, 
+	'0': true,
+	'\\5deg': false,
+	'a5deg': false
+});
+
+assert('color', {
+	'red': true,
+	'foo': false,
+	'white': true,
+	'lightgoldenrodyellow': true,
+	'rgb(0, 255, 128)': true,
+	'rgb( 0 ,0, 0 )': true,
+	'rgba(0,0,0,0)': true,
+	'hsla(0,0,0,1)': true,
+	'hsla(0,50%,100%,.5)': true,
+	'#8ab': true,
+	'#8AB': true,
+	'#a5f099': true
+});
+
+assert('colorStop', {
+	'white 50%': true,
+	'white 0': true,
+	'white 10px': true,
+	'white .1em': true
+});
+
+assert('linearGradient', {
+	'linear-gradient(white 50%)': false,
+	'linear-gradient(white, black)': true,
+	'linear-gradient(white, red, black)': true,
+	'linear-gradient(white 50%, black)': true,
+	'linear-gradient(white, black 50%)': true,
+	'linear-gradient(white 50%, black 50%)': true,
+	'linear-gradient(white 50%,black 50%)': true,
+	'linear-gradient( white 50%, black 50%)': true,
+	'linear-gradient(white 50%, black 50% )': true,
+	'linear-gradient(white 50% , black 50%)': true,
+	'linear-gradient(white 50%, red , black 50%)': true,
+	'linear-gradient(45deg, white, black)': true,
+	'linear-gradient(45deg , white, black)': true,
+	'linear-gradient( 45deg, white, black)': true,
+	'linear-gradient(top, white, black)': true,
+	'linear-gradient(top ,white, black)': true,
+	'linear-gradient(top, #000 0, #FFF 100%)': true
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Παράδειγμα φορμών HTML</title>
+</head>
+
+<body>
+
+<div class="header">
+	<h1>Παράδειγμα φόρμας</h1>
+</div>
+
+<form action="" method="post" enctype="multipart/form-data">
+	<fieldset>
+		<legend>Προσωπικά στοιχεία</legend>
+		<dl>
+			<dt><label for="fname">Όνομα:</label></dt>
+			<dd><input type="text" name="fname" id="fname"></dd>
+			
+			<dt><label for="lname">Επώνυμο:</label></dt>
+			<dd><input type="text" name="lname" id="lname"></dd>
+			
+			<dt>Φύλο</dt>
+			<dd>
+				<label>
+					<input type="radio" name="gender" value="m">
+					Άνδρας
+				</label>
+				<label>
+					<input type="radio" name="gender" value="f" checked="checked">
+					Γυναίκα
+				</label>
+			</dd>
+			
+			<dt><label for="birthday">Ημ/νία γεννήσεως:</label></dt>
+			<dd><input type="text" name="birthday" id="birthday"></dd>
+			
+			<dt><label for="job">Επάγγελμα:</label></dt>
+			<dd>
+				<select multiple="multiple" size="4" id="job">
+					<optgroup label="Εργάζομαι">
+						<option value="1">Δημόσιος Υπάλληλος</option>
+						<option value="2">Ιδιωτικός Υπάλληλος</option>
+						<option value="3">Ελεύθερος επαγγελματίας</option>
+					</optgroup>
+					<optgroup label="Δεν εργάζομαι">
+						<option value="-1" selected="selected">Φοιτητής</option>
+						<option value="-2">Άνεργος</option>
+					</optgroup>
+				</select>
+			</dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Στοιχεία επικοινωνίας</legend>
+		<dl>
+			<dt><label for="tel">Τηλέφωνο:</label></dt>
+			<dd><input type="text" name="tel" id="tel" value="+30 210 "></dd>
+		
+			<dt><label for="fax">Fax:</label></dt>
+			<dd><input type="text" name="fax" id="fax" value="+30 210 "></dd>
+		
+			<dt><label for="email">Email:</label></dt>
+			<dd><input type="text" name="email" id="email"></dd>
+			
+			<dt><label for="url">Ιστοσελίδα:</label></dt>
+			<dd><input type="text" name="url" id="url"></dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Επιπλέον πληροφορίες</legend>
+		<dl>
+			<dt><label for="picture">Φωτογραφία:</label></dt>
+			<dd><input type="file" name="picture" id="picture" accept="image/png, image/jpeg, image/gif"></dd>
+			
+			<dt><label for="about">Λίγα λόγια για μένα:</label></dt>
+			<dd><textarea id="about" name="about" rows="3" cols="80" ></textarea></dd>
+		</dl>
+	</fieldset>
+	
+	<div class="footer">
+		<p>
+			<label>
+				<input type="checkbox" name="accept-toc" checked="checked">
+				Έχω διαβάσει και αποδέχομαι τους όρους χρήσης
+			</label>
+		</p>
+		<p>
+			<button type="submit">Εγγραφή</button>
+		</p>
+	</div>
+</form>
+
+<div class="footer">
+	Δημιουργήθηκε για τις ανάγκες του μαθήματος "<a href="http://eclass.aueb.gr/courses/INF165/">Τεχνολογίες και Προγραμματισμός Εφαρμογών στον Ιστό</a>" <br>
+	που προσφέρεται στο 8ο εξάμηνο σπουδών του τμήματος <a href="http://www.cs.aueb.gr">Πληροφορικής</a> 
+	του <a href="http://aueb.gr">Οικονομικού Πανεπιστημίου Αθηνών</a>.
+</div>
+
+</body>
+</html>

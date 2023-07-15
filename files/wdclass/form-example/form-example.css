@@ -1,0 +1,115 @@
+* {
+			font-family: Helvetica, Arial, sans-serif;	
+			margin:0;
+			padding:0;
+		}
+		
+		form, h1 {
+			max-width:1000px;
+			min-width:500px;
+			margin:auto;
+		}
+		
+		header {
+			margin:0 0 30px;
+			background:#ae0;
+			display:block;
+		}
+		
+		h1 {
+			color:white;
+			padding:2em 1em 0;
+			letter-spacing:-.03em;
+			line-height: .7;
+			font-size:3em;
+			text-align:right;
+			text-shadow:2px 2px 0 #ae0;
+		}
+		
+		fieldset {
+			border:5px solid #eee;
+			padding:10px;
+			margin:10px 0 5px;
+		}
+		
+			fieldset legend {
+				font-weight:bold;
+				font-size:1.3em;
+				color:gray;
+			}
+			
+			fieldset dt,
+			fieldset dd {
+				display:inline-block;
+				margin:5px 0;
+			}
+			
+			fieldset dt {
+				min-width:20%;
+				text-align:right;
+				vertical-align:top;
+				padding:4px;
+			}
+			
+			fieldset dd {
+				min-width:75%;
+			}
+		
+		input[type="text"],
+		input[type="tel"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"],
+		select, textarea {
+			width:100%;
+			padding:4px;
+			border:1px solid #bbb;
+			border-width: 2px 1px 1px 2px;
+		}
+		
+		input[type="tel"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"] {
+			background:4px 50% no-repeat;
+			padding-left:24px;
+			width:97%;
+		}
+		
+		input[type="tel"] {
+			background-image: url(telephone.png);
+		}
+		
+		input[type="email"] {
+			background-image: url(email.png);
+		}
+		
+		input[type="url"] {
+			background-image: url(link.png);
+		}
+		
+		input[type="date"] {
+			background-image: url(date.png);
+		}
+		
+		button {
+			padding:.4em .8em;
+			font-size:large;
+			font-weight:bold;
+			float:right;
+			text-shadow:1px 1px 1px white;
+		}
+		
+		footer {
+			overflow:hidden;	
+			display:block;
+			padding:1em 0;
+		}
+		
+		body > footer {
+			border-top:1px solid #ccc;
+			color:gray;
+			font-size:x-small;
+			text-align:center;
+			margin-top:10px;
+		}

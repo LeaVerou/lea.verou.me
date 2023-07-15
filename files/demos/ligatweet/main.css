@@ -1,0 +1,191 @@
+* {
+	font-family:Georgia, 'Trebuchet MS', Verdana, sans-serif;
+}
+
+body {
+	width:728px;
+	margin:auto;
+	background:white;
+	color:#222;
+}
+
+header {
+	display:block;
+	overflow:hidden;
+}
+
+h1 {
+	font-size:2em;
+	float:left;
+}
+
+	h1 .subtitle {
+		float:right;
+		font-style:italic;
+		font-size:50%;
+	}
+
+	a, h1 .subtitle, fieldset legend, .logo-text {
+		color:#1cf;
+		text-decoration:none;
+	}
+
+a:hover {
+	background:#cef;
+}
+
+a:hover, button, fieldset legend {
+	text-shadow:1px 1px 1px white;
+}
+
+#info {
+	color:#888;
+	float:right;
+	text-align:right;
+	font-size:110%;
+	line-height:1.4;
+	width:400px;
+}
+
+.results {
+	text-align:right;
+	font-size:1.5em;
+	line-height:2;
+	margin-bottom:-20px;
+}
+
+.close {
+	float:right;
+	font-size:x-large;
+	display:block;
+	padding:0 5px 2px 5px;
+	margin:10px 0 -30px 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	line-height:1;
+}
+
+label, .shade {
+	color:#999;
+}
+
+body.nowhitespace .results .shade {
+	display:none;
+}
+
+textarea, #conversions dl * {
+	font-family:'Lucida Grande',sans-serif;
+}
+
+textarea, input {
+	border:1px solid #aaa;
+}
+
+textarea {
+	font-size:14.4px;
+	width:718px;
+	display:block;
+	padding-left:5px;
+	margin-bottom:10px;
+	overflow:auto;
+}
+
+textarea:focus,
+input:focus {
+	border-color:#1CF;
+}
+
+#ligatweet {
+	margin-bottom:5px;
+}
+
+button {
+	font-size:x-large;
+	padding:5px 20px;
+	display:block;
+	margin:10px auto;
+}
+
+fieldset {
+	border:2px solid #cef;
+	padding:5px;
+}
+	fieldset legend {
+		font-weight:bold;
+		font-style:italic;
+		font-size:120%;
+	}
+
+	fieldset label {
+		color:#222;
+		font-size:90%;
+		display:block;
+		margin:8px 0;
+	}
+
+#tweetcount_container, #results {
+	text-align:right;
+}
+
+#tweetcount_container {
+	margin-bottom:5px;
+}
+
+#results {
+	margin-top:0;
+}
+
+#conversions {
+	overflow:hidden;
+}
+
+	#conversions dl {
+		float:left;
+		width:7.5em;
+		border-right:1px solid #bbb;
+		margin:0;
+	}
+
+	#conversions dl:nth-child(12n+1),
+	#conversions dl:nth-child(12n+2),
+	#conversions dl:nth-child(12n+3),
+	#conversions dl:nth-child(12n+4),
+	#conversions dl:nth-child(12n+5),
+	#conversions dl:nth-child(12n+6){
+		background:#f4f4f4;
+	}
+
+		#conversions dl dt,
+		#conversions dl dd {
+			padding:.5em 1em;
+			float:left;
+			margin:0;
+			height:1em;
+		}
+
+		#conversions dl dt {
+			text-align:right;
+			width:1.8em;
+		}
+
+		#conversions dl dd {
+			width:1.4em;
+		}
+
+#copyright {
+	font-size:70%;
+	color:#888;
+	text-align:center;
+	clear:both;
+	margin:10px 0;
+}
+
+.error {
+	font-weight:bold;
+	color:#b00;
+	padding:10px;
+	background:#fee;
+	margin-bottom:10px;
+	clear:both;
+}

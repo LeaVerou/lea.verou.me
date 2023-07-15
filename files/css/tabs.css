@@ -1,0 +1,10 @@
+#tabs { border-bottom: 0px solid #a0b0e9; margin: 0; height: 24px; width: 100%; white-space: nowrap; }
+#tabs ul { margin: 0; padding: 0 6px; list-style: none; }
+#tabs ul li { display: inline; margin: 0; padding: 0; font-size: 11px; }
+#tabs ul li a, .tabs ul li a:link, .tabs ul li a:active, .tabs ul li a:visited, .tabs ul li a:hover { text-decoration: none; color: #000; }
+#tabs ul li a { float: left; margin: 0 2px 0 0; padding: 0 0 0 18px; vertical-align: bottom; background: #fff url('../img/icons/tabs/tabs-bg.png') repeat-x; }
+#tabs ul li a span { float: left; display: block; margin: 0; padding: 0 18px 0 0; height: 24px; line-height: 24px; cursor: pointer; background: url('../img/icons/tabs/tabs-bg.png') 100% 0 repeat-x; }
+#tabs ul li a:hover { background-position: 0 -100px; }
+#tabs ul li a:hover span { background-position: 100% -100px; }
+#tabs ul li#current a, .tabs ul li#current a:hover { position: relative; margin-bottom: -1px; background-position: 0 -50px; }
+#tabs ul li#current a span, .tabs ul li#current a:hover span { height: 25px; background-position: 100% -50px; }

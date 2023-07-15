@@ -1,0 +1,108 @@
+/* Just some base styles not needed for example to function */
+*, html { font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+body, form, ul, li, p, h1, h2, h3, h4, h5
+{
+	margin: 0;
+	padding: 0;
+}
+body { background-color: #606061; color: #ffffff; }
+img { border: none; }
+p
+{
+	font-size: 1em;
+	margin: 0 0 1em 0;
+}
+
+/* Custom checkbox and radio styles */
+
+fieldset
+{
+	margin: 1em;
+	padding: 20px;
+}	
+fieldset p
+{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+fieldset input[type=text],
+fieldset input[type=email]
+{
+	border: 1px solid #ccc;
+	line-height: 20px;
+	padding: 3px;
+	width: 200px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+label + p,
+input + p
+{
+	margin-top: 20px;
+}
+
+p > input
+{
+	margin: 0 5px 0 0;
+	padding: 0;
+	float: left;
+	opacity: 0;
+}
+p > label { float: left; line-height: 16px; color: #fff; -moz-transition: color 1s ease; -o-transition: color 1s ease; -webkit-transition: color 1s ease; transition: color 1s ease; }
+p:not(#foo) > input:hover + label, p:not(#foo) > input:focus + label		{ text-shadow: 1px 1px 3px #000; color: #2C7AD0; }
+
+p:not(#foo) > input + label:before
+{
+	position: absolute;
+	z-index: 2;
+	left: 16px;
+	content:".";
+	color:transparent;
+	background-image: url(controls.png);
+	display:inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 0 3px 0 -16px;
+	pointer-events: none; /* Allows this to work in Safari iPhone */
+}
+p:not(#foo) > input[type=radio] + label:before 							{ background-position:-32px 0;}
+
+/* Checked styles */
+p:not(#foo) > input[type=radio]:checked + label:before 					{ background-position: -48px 0 !important; }
+p:not(#foo) > input[type=checkbox]:checked + label:before 				{ background-position: -16px 0; }
+p:not(#foo) > input[type=checkbox]:hover:checked + label:before,
+p:not(#foo) > input[type=checkbox]:focus:checked + label:before 			{ background-position: -16px -16px; }
+p:not(#foo) > input[type=radio]:hover:checked + label:before,
+p:not(#foo) > input[type=radio]:focus:checked + label:before 				{ background-position: -48px -16px; }
+
+/* Hover & Focus styles */
+p:not(#foo) > input[type=checkbox]:hover + label:before,
+p:not(#foo) > input[type=checkbox]:focus + label:before 					{ background-position: 0 -16px; }
+p:not(#foo) > input[type=radio]:hover + label:before,
+p:not(#foo) > input[type=radio]:focus + label:before 						{ background-position: -32px -16px; }
+
+/* Active styles */
+p:not(#foo) > input[type=checkbox]:active + label:before					{ background-position: 0 -48px; }
+p:not(#foo) > input[type=radio]:active + label:before 					{ background-position: -32px -48px; }
+p:not(#foo) > input[type=checkbox]:active:checked + label:before			{ background-position: -16px -48px; }
+p:not(#foo) > input[type=radio]:active:checked + label:before 			{ background-position: -48px -48px; }
+
+/* Disabled styles */
+p:not(#foo) > input[type=checkbox]:disabled + label:before 				{ background-position: 0 -32px; }
+p:not(#foo) > input[type=radio]:disabled + label:before 					{ background-position: -32px -32px; }
+p:not(#foo) > input[type=checkbox]:disabled:checked + label:before 		{ background-position: -16px -32px; }
+p:not(#foo) > input[type=radio]:disabled:checked + label:before 			{ background-position: -48px -32px; }
+p:not(#foo) > input[type=checkbox]:hover:disabled + label:before,
+p:not(#foo) > input[type=checkbox]:focus:disabled + label:before 			{ background-position: 0 -32px; }
+p:not(#foo) > input[type=radio]:hover:disabled + label:before,
+p:not(#foo) > input[type=radio]:focus:disabled + label:before 			{ background-position: -32px -32px; }
+p:not(#foo) > input[type=checkbox]:hover:disabled:checked + label:before,
+p:not(#foo) > input[type=checkbox]:focus:disabled:checked + label:before 	{ background-position: -16px -32px; }
+p:not(#foo) > input[type=radio]:hover:disabled:checked + label:before,
+p:not(#foo) > input[type=radio]:focus:disabled:checked + label:before 	{ background-position: -48px -32px; }
+
+/* Preload radio and checkbox states -- removed, not needed any more */

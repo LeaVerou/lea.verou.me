@@ -1,0 +1,234 @@
+/**
+ * CSS3 Reversi
+ * By Lea Verou (http://leaverou.me)
+ * Licensed under an MIT license (http://www.opensource.org/licenses/mit-license.php)
+ */
+
+/**
+ * Stuff related to this particular page
+ */
+
+* {
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+body {
+	margin:20px auto;
+	max-width:506px;
+	color:#222;
+	position:relative;
+	counter-reset:whites blacks;
+}
+
+h1, h2 {
+	letter-spacing:-.05em;
+}
+
+h1 {
+	font-size:4em;
+	color:#ccc;
+	text-shadow:2px 2px 4px #eee;
+	font-weight:normal;
+	padding-left:10px;
+}
+
+h1 .first-letter {
+	font-weight:bold;
+	font-size:75%;
+	color:#111;
+	
+	transform:scaleX(-1);
+	-moz-transform:scaleX(-1);
+	-webkit-transform:scaleX(-1);
+}
+
+	h1 .piece {
+		width:40px;
+		height:40px;
+		position:relative;
+		top:-30px;
+	}
+	
+h2 {
+	color:#aaa;	
+}
+
+header {
+	overflow:hidden;
+}
+
+
+	#board .piece.white {
+		counter-increment:whites;
+	}
+	
+	#board .piece.black {
+		counter-increment:blacks;
+	}
+	
+footer {
+	display:block;
+	text-align:center;
+	padding:5px;
+	margin-top:20px;
+	border-top:1px solid #ccc;
+	color:gray;
+	font-size:80%;
+}
+
+#piececount {
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+	#piececount dl {
+		padding:5px 10px;
+		margin-right:10px;
+		text-align:center;
+	}
+	
+	#piececount dl.white {
+		float:left;
+		background:white;
+		color:#111;
+	}
+	
+	#piececount dl.black {
+		float:right;
+		background:#111;
+		color:white;
+	}
+
+		#piececount dt,
+		#piececount dd {
+			line-height:1;	
+		}
+		
+		#piececount dt {
+			font-size:70%;	
+		}
+		
+		#piececount dd {
+			font-size:250%;	
+		}
+		
+		#piececount dl.white dd::after {
+			content: counter(whites);	
+		}
+		
+		#piececount dl.black dd::after {
+			content: counter(blacks);	
+		}
+
+/**
+ * Generic Reversi (more reusable)
+ */
+.piece {
+	display:inline-block;
+	width:50px;
+	height:50px;
+	margin:-1px 0 0 -1px;
+	border-radius:30px;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+}
+
+.white.piece {
+	background:#ddd;
+	box-shadow:
+			-4px -4px 10px rgba(0,0,0,.6) inset,
+			4px 4px 10px white inset,
+			2px 3px 4px rgba(0,0,0,.6);
+	-moz-box-shadow:
+			-4px -4px 10px rgba(0,0,0,.6) inset,
+			4px 4px 10px white inset,
+			2px 3px 4px rgba(0,0,0,.6);
+	-webkit-box-shadow:
+			-4px -4px 10px rgba(0,0,0,.6) inset,
+			4px 4px 10px white inset,
+			2px 3px 4px rgba(0,0,0,.6);
+}
+
+.black.piece {
+	background:#111;
+	box-shadow:
+			-4px -4px 10px black inset,
+			4px 4px 10px rgba(255,255,255,.4) inset, 
+			2px 3px 4px black;
+	-moz-box-shadow:
+			-4px -4px 10px black inset,
+			4px 4px 10px rgba(255,255,255,.4) inset, 
+			2px 3px 4px black;
+	-webkit-box-shadow:
+			-4px -4px 10px black inset,
+			4px 4px 10px rgba(255,255,255,.4) inset, 
+			2px 3px 4px black;
+}
+
+.board, .board * {
+	margin:0;
+	padding:0;
+}
+
+.board {
+	margin:auto;
+	background:#144915;
+	counter-reset:row;
+	
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow:1px 1px 8px black;
+	-moz-box-shadow:1px 1px 8px black;
+	-webkit-box-shadow:1px 1px 8px black;
+}
+
+	.board tr {
+		counter-increment:row;
+		counter-reset:cell;
+	}
+	
+		.board td {
+			counter-increment:cell;
+			width:60px;
+			height:60px;
+			background:#067001;
+			border:1px solid;
+			border-color:rgba(255,255,255,.5) rgba(0,0,0,.3) rgba(0,0,0,.5) rgba(255,255,255,.3);
+			vertical-align:middle;
+			text-align:center;
+			color:rgba(255,255,255,.03);
+			cursor:default;
+			border-radius:3px;
+			-moz-border-radius:3px;
+			-webkit-border-radius:3px;
+		}
+		
+		.board td:empty:before {
+			content:counter(row, upper-alpha) counter(cell);
+			font-weight:bold;
+			font-size:36px;
+			letter-spacing:-2px;
+		}
+		
+		.board td:hover {
+			color:rgba(255,255,255,.15);
+		}
+		
+		.board td.legal {
+			cursor:pointer;
+			color:rgba(255,255,255,.6);
+		}
+		
+		.board td.legal:active {
+			border-color:rgba(0,0,0,.5) rgba(255,255,255,.3) rgba(255,255,255,.5) rgba(0,0,0,.3);
+		}
+		
+		.board tr:nth-child(odd) td:nth-child(even),
+		.board tr:nth-child(even) td:nth-child(odd) {
+			background: #005C01;
+		}

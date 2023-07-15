@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Simple AJAX rating widget</title>
+	<link href="rating-widget.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="rating-widget-incomplete.js"></script>
+</head>
+<body>
+	<h1>Simple AJAX rating widget</h1>
+	<ul>
+		<li>
+			<form action="response.xml" method="GET" class="rating-widget">
+				<label>Rating:
+					<input type="range" min="1" max="5" value="3" name="rating" />
+				</label>
+				<button type="submit">Rate</button>
+			</form>
+		</li>
+		<li>
+			<form action="response.xml" method="GET" class="rating-widget">
+				<label>Rating with 10 stars:
+					<input type="range" min="1" max="10" value="7" name="rating" />
+				</label>
+				<button type="submit">Rate</button>
+			</form>
+		</li>
+		<li>
+			<form action="response.xml" method="POST" class="rating-widget">
+				<label>Rating via POST:
+					<input type="range" min="1" max="5" value="3" name="rating" />
+				</label>
+				<button type="submit">Rate</button>
+			</form>
+		</li>
+	</ul>
+</body>
+</html>

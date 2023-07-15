@@ -1,0 +1,65 @@
+p {
+	overflow: hidden;
+}
+
+label {
+	float: left;
+	margin: 5px;
+	font-family: sans-serif; /* Helvetica in Mac, Arial in Win */
+	font-weight: bold;
+	font-size: 10px;
+	text-indent: 3px;
+	line-height: 1.5;
+	color: #929497;
+	
+	-webkit-font-smoothing: antialiased; /* to make letters look more like the mockup in Webkit for OSX */
+}
+
+	foo:lang(en), /* hide rule from IE7 and below -- doesn't matter which language you put there */
+	.select-wrapper,
+	.select-wrapper > span {
+		display: block;
+		min-height: 32px;
+		
+		background-image: url('select-bg.png');
+		background-repeat: no-repeat;
+	}
+	
+	foo:lang(en),
+	.select-wrapper {
+		background-position: top right;
+	}
+	
+	foo:lang(en),
+	.select-wrapper > span {
+		margin-right: 8px;
+		display: block;
+		overflow: hidden;
+		background-position: top left;
+	}
+	
+		.select-wrapper select {
+			display: block;
+			padding: 2px 0 0 5px;
+			font-family: inherit;
+			font-size: 23px;
+			color: #929497;
+			line-height: 1.2;
+			background: transparent;
+			border: 0;
+			outline: none;
+			
+			-webkit-appearance:none; /* for Webkit's CSS-only solution */
+			-webkit-font-smoothing: antialiased;
+		}
+		
+		.select-wrapper select:focus {
+			color: #333;
+		}
+		
+		/* for Webkit's CSS-only solution */
+		@media screen and (-webkit-min-device-pixel-ratio:0) { 
+			.select-wrapper select {
+				padding-right:30px;	
+			}
+		}

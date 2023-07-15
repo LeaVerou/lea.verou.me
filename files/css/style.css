@@ -1,0 +1,98 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, strong, ol, ul, li, table, tr, th, td, form { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; background: transparent; }
+table { border-collapse: collapse; border-spacing: 0; }
+input, button{ overflow: visible; }
+html, body { height: 100%; min-height: 100%; }
+body { font: normal 11px/14px tahoma, arial, verdana, sans-serif; text-align:center; color: #333; background: #f6f6f6; }
+p { padding: 0 0 10px; }
+ul { padding: 0 0 0 16px; }
+li { padding: 0 0 8px; }
+a  { text-decoration: none; }
+a:link, a:visited { color: #1d64c1; }
+a:hover, a:active { color: #6687dd; text-decoration: underline; }
+.clear, .box .content { display: inline-block; }
+.clear:after, .box .content:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+* html .clear, * html .box .content { height: 1%; }
+.clear, .box .content { display: block; }
+.none, .hidden { display: none; }
+.page { position: relative; width: 100%; min-width: 750px; min-height: 100%; }
+* html .page { height: 100%; }
+.page .header { width: 100%; height: 53px; text-align: left; background: #363b47 url('../img/common/top_bg.png') 0 0 repeat-x; }
+.page .header .company-logo { float: right; display: block; margin: 9px 20px 0 10px; width: 100px; height: 31px; overflow: hidden; text-indent: -9999px; background: url(../img/common/top-company-logo.gif) no-repeat; }
+.page .header .header-area { height: 53px; }
+.page .header h1 { float: left; width: 210px; height: 50px; text-align: left; }
+.page .header h1 a { display: block; margin: 0 0 0 10px; width: 210px; height: 50px; overflow: hidden; text-indent: -9999px; background: url(../img/common/def_plesk_logo.gif) no-repeat; }
+.page .header .header-text { float: right; font-size: 11px; }
+.page .header .header-text a { float: left; margin: 11px 13px 0 0; color: #506cc6; text-decoration: none; font-size: 11px; }
+.page .header .header-text a.txt-banner { margin-right: 10px; }
+.page .header .header-text a strong { font-weight: normal; }
+.page .header .header-text a.top-copyright { text-align: right; }
+.wrapper { margin: 0 auto; padding: 24px 0 50px; width: 734px; text-align: left; }
+#body { margin: 0 auto; padding: 24px 0 57px 0; width: 734px; text-align:left; }
+.box { position: relative; background: #fff; border: 1px solid #c0c0c0; width:100%; }
+.box .content { padding: 10px; position: relative; }
+.box em { display: block; width: 11px; height: 11px; position: absolute; background: url('../img/common/box-corners.png') no-repeat; overflow: hidden; }
+.box em.tl { background-position: 0 0; left:-1px; top:-1px;}
+.box em.tr { background-position: -29px 0; right:-1px; top:-1px;}
+.box em.bl { background-position: 0 -29px; left:-1px; bottom:-1px;}
+.box em.br { background-position: -29px -29px; right:-1px; bottom:-1px;}
+.globe { float: left; background: url('../img/common/globe.png') 0 0 no-repeat; width: 167px; height: 198px; margin: 0; }
+.welcome { padding: 0 0 0 187px; }
+h2 { margin: 5px 0 10px; padding: 10px 0 3px; font-size: 18px; font-weight: normal; color: #000; }
+h3 { margin: 10px 0 5px 0; }
+.hr { border-top: 1px solid #e0e0e0; margin-top: 5px; padding: 10px 0 0; overflow:hidden; }
+.center { text-align: center; }
+.products { width: 390px; float: right; }
+.new-to-parallels { width: 330px; float: left; }
+.column { width: 180px; }
+.column.left { float: left; }
+.column.right { float: right; }
+.column strong { display: block; margin-bottom: 11px; }
+.column p { display: block; margin-top: 15px; font-size: 10px; }
+.column img { float:left; margin-right: 15px; width: 69px; }
+.page .footer { position: absolute; left: 0; bottom: 0; border-top: 1px solid #c0c7fc; width: 100%; min-width: 300px; height: 38px; background: #d9e9ff url('../img/common/footer_bg.png') 0 0 repeat-x; }
+.page .footer-area { height: 38px; font-size: 11px; text-align: left; color: #000; }
+.page .footer .description { margin: 0; padding: 12px 10px 0; }
+.icons-area { padding: 5px 10px 10px; text-align: center; background: url('../img/common/blocks_bg.png') 0 100% no-repeat; }
+.icon { display: -moz-inline-box; display: inline-block; margin: 0 3px 12px 0; padding: 0; min-height: 32px; font: normal 11px/13px tahoma, arial, helvetica, sans-serif; text-decoration: none; text-align: left; vertical-align: top; color: #000; cursor: pointer; background-position: 50% 0; background-repeat: no-repeat; }
+a.icon:link, a.icon:visited, a.icon:hover, a.icon:active { color: #000; text-decoration: none; }
+.icon span { display: block; padding: 34px 0 0; width: 80px; text-align: center; cursor: pointer; }
+#asp { background-image: url('../img/glyph/btn_asp_bg.gif'); }
+#aspnet { background-image: url('../img/glyph/btn_aspdotnet_bg.gif'); }
+#coldfusion { background-image: url('../img/glyph/btn_coldfusion_bg.gif'); }
+#perl { background-image: url('../img/glyph/btn_perl_bg.gif'); }
+#php { background-image: url('../img/glyph/btn_php_bg.gif'); }
+#python { background-image: url('../img/glyph/btn_python_bg.gif'); }
+#ssi { background-image: url('../img/glyph/btn_ssi_bg.gif'); }
+#fcgi { background-image: url('../img/glyph/btn_fast_cgi_bg.gif'); }
+#miva { background-image: url('../img/glyph/btn_miva_bg.gif'); }
+.test { width: 680px; }
+.test .pathbar { color: #7b7b7b; }
+.test .pathbar a { text-decoration: underline; color: #7b7b7b; }
+.test .pathbar a:hover { color: #39f; }
+.test h2 { margin: 10px 0; font-size: 17px; font-weight: normal; }
+.test .tab-content { border: 1px solid #a0b0e9; padding: 10px; background: #fff; }
+iframe { border: 1px solid #a0b0e9; }
+fieldset { border: 1px solid #e0e0e0; margin: 0; padding: 0 10px 10px; }
+legend { margin: 0; padding: 0 2px 5px; vertical-align: middle; font-weight: bold; color: #000; }
+.form-fields { padding-top: 6px; }
+.formFields { margin: 5px 0; }
+.formFields, .formFields input, .formFields select, .formFields textarea { font: normal 11px 'Segoe UI', Tahoma, Verdana, Arial, Helvetica, sans-serif; }
+.formFields td.name { padding: 0 10px 10px 0; width: 200px; vertical-align: top; font-weight: bold; }
+.buttonsContainer { margin-top: 10px; text-align: right; }
+.buttonsContainer .commonButton { display: inline; margin-left: 14px; }
+.buttonsContainer .commonButton span { display: none; }
+.buttonsContainer .commonButton button { border: 0; width: 91px; height: 21px; text-align: center; white-space: nowrap; cursor: pointer; font: normal 11px 'Segoe UI', Tahoma, Verdana, Arial, Helvetica, sans-serif; background: transparent url('../img/glyph/btn_bg.gif') 0 0 no-repeat; }
+.commonButton button[disabled] { color: #999; background-image: url('../img/glyph/btn_bg-disabled.gif'); }
+#bid-ok button  { padding-left: 8px; background-image: url('../img/glyph/btn_ok_bg.gif'); }
+.commonButton button:hover { background-position: 0 -21px; }
+.commonButton button[disabled]:hover { background-position: 0 0; }
+.testRelults#testFailed { border: 1px solid #ccc; margin: 0 0 10px; padding: 10px 10px 10px 32px; background: #fde9e5 url('../img/icons/fail.gif') 10px 11px no-repeat; }
+.testRelults#testSuccessful { border: 1px solid #ccc; margin: 0 0 10px; padding: 10px 32px; background: #bff7b4 url('../img/icons/success.gif') 10px 11px no-repeat; }
+.testResult { font-weight: bold; }
+.test-data { text-align: left; background: #fff; }
+.test-data table { border-collapse: collapse; margin-bottom: 10px; width: 100%; color: #000; background-color: white; }
+.test-data table th, .test-data table td { padding: 4px 6px; }
+.test-data tr.subhead { background-color: #e8f4fe; }
+.test-data tr.subhead th { border-bottom: 1px solid #b1c1f9; background: #e8f4fe url('../img/common/th-na-bg.gif') 0 0 repeat-x; }
+.test-data th.alt { border-top: 1px solid #b1c1f9; border-bottom: 1px solid #b1c1f9; color: #000; background-color: #dbebff; }
+.test-data tr.alt { background-color: #ebf4ff; }

@@ -1,0 +1,59 @@
+p {
+	overflow: hidden;
+}
+
+label {
+	float: left;
+	font-family: sans-serif; /* Helvetica in Mac, Arial in Win */
+	font-weight: bold;
+	font-size: 10px;
+	color: #929497;
+	
+	
+	
+	margin: 5px;
+	text-indent: 3px;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased; /* to make letters look more like the mockup in Webkit for OSX */
+}
+	foo:lang(en), /* hide rule from IE7 and below -- doesn't matter which language you put there */
+	label .select-wrapper {
+		background-image: url('select-bg.png');
+		background-repeat: no-repeat;
+		display: block;
+		min-height: 32px;
+		overflow: hidden;
+	}
+	
+	foo:lang(en),
+	label > .select-wrapper {
+		padding-right: 8px;
+		background-position: top right;
+	}
+	
+	foo:lang(en),
+	label > .select-wrapper > .select-wrapper {
+		background-position: top left;
+	}
+	
+		select {
+			display: block;
+			padding: 2px 0 0 5px;
+			font-family: inherit;
+			font-size: 23px;
+			color: #929497;
+			line-height: 1.2;
+			background: transparent;
+			border: 0;
+			outline: none;
+			
+			-moz-appearance:none;
+			-webkit-appearance:none;
+			-webkit-font-smoothing: antialiased;
+		}
+		
+		@media screen and (-webkit-min-device-pixel-ratio:0) { 
+			select {
+				padding-right:30px;	
+			}
+		}

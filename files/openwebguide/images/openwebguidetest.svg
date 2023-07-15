@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" width="120" height="200">
+	<title>Open Web Guide</title>
+	<defs>
+		<mask id="word-mark-mask">
+			<circle id="word-mark-disc" cx="60" cy="60" r="50" />
+       		<path id="word-mark-letter" d="M315.904,400h-14.977l-11.616-46.656h-0.192L277.696,400h-15.264l-18.144-68.544h15.072l10.848,46.656h0.192l11.904-46.656h14.112l11.712,47.232h0.192l11.231-47.232h14.784L315.904,400z" transform="translate(-230, -330)" /> 
+    	</mask>
+	
+        <style>   	 
+    	 	@font-face {
+  				src: local("QuicksandLight-Regular"), url("../fonts/Quicksand_Light.otf") format("opentype");
+  				font-family: "quicksand";
+  				font-style: normal;
+			}
+			
+			#word-mark-disc { fill: white; }
+			#word-mark { 
+				fill: white;
+				mask: url("#word-mark-mask");
+			}
+					
+			text {
+				font-family: "Helvetica Neue", helvetica, aria, sans-serif;
+				text-anchor: middle;
+				font-size: 18px;
+				letter-spacing: 1.1px;
+				fill:  white;
+			}
+			tspan {
+				font: 32px "quicksand", "Helvetica Neue", sans-serif;
+				letter-spacing: -0.5px;
+			}
+		
+    	 </style>
+    </defs>
+    <a xlink:href="../index.html" target="_parent">
+  		<image id="word-mark" width="240" height="240" x="1" y="1" xlink:href="authors/lea.jpg" />
+
+    	<text x="60" y="150" id="logo-text">OPEN WEB<tspan x="60" dy="34">GUIDE</tspan></text>
+    </a>
+</svg>

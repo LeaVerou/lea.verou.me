@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ligatweet: tweet shortening that doesn't make you look like a douche!</title>
+	<meta name="keywords" content="Twitter, tweets, longer tweets" />
+	<meta name="description" content="Shorten your tweets with unicode ligatures. Tweet shortening that doesn't make you look like a douche!" />
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+		// IE HTML5 fix
+		document.createElement('header');
+	</script>
+</head>
+<body>
+
+<header>
+<h1>
+	<img src="logo.gif" alt="ligatweet" title="ligatweet: tweet shortening that doesn't make you look like a douche!" id="logo">
+</h1>
+
+<p id="info">
+	<span class="logo-text"><b>liga</b>tweet</span> helps you shorten your tweets by replacing <a href="#conversions">certain triads or pairs of characters</a> with Unicode ligatures or Unicode characters that look like the letters replaced.
+	The exact savings depend on the tweet, but usually they are around 6-12%.
+</p>
+</header>
+
+<noscript><div class="error">This application requires JavaScript to be enabled, sorry.</div></noscript>
+
+<p id="tweetcount_container"><strong id="tweetcount">0</strong> characters initially</p>
+<textarea id="tweet" rows="3" cols="80"></textarea>
+
+<textarea id="ligatweet" rows="2" cols="80" readonly="readonly"></textarea>
+<p id="results">
+	<em>The tweet is already below 140 characters. No changes performed.</em>
+</p>
+
+<fieldset>
+	<legend>Settings</legend>
+	<label>
+		Stop after reaching <input type="text" id="goal" value="140" size="3" maxlength="3"> characters
+	</label>
+	<label>
+		<input type="checkbox" id="case-insensitive">
+		Case insensitive (More savings at the cost of readability)
+	</label>
+</fieldset>
+
+<h2 id="conversions">Conversions performed</h2>
+<p>Listed in the same order that they are performed.<br> Any suggestions for additions? Drop me a line at me&#xFF20;leaverou&#x2024;me!</p>
+<script type="text/javascript" src="ligatweet.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<div id="copyright">
+	Brought to you by <a href="http://fresset.gr">Fresset Ltd</a> |
+	<a href="http://leaverou.me/2009/11/exploring-browser-supported-unicode-characters-and-a-tweet-shortening-experiment/">About</a>
+</div>
+
+<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-597483-5");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
