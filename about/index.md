@@ -40,7 +40,8 @@ You can email me at **lea＠verou.me** ([don’t copy/paste it](/blog/2009/11/y
 
 <!--
 I also have a CV! It’s just as infrequently updated as other CVs, but here it is if you want it:
-[![View my CV](http://lea.verou.me/view-cv.png "View my CV")](https://cv.verou.me/)
+
+<a href="http://lea.verou.me/view-cv.png "View my CV")](https://cv.verou.me/" class="call-to-action">http://lea.verou.me/view-cv.png "View my CV")](https://cv.verou.me/</a>
 -->
 
 &ast; _Until 2013 I officially had both my parents’ last names (Komvouti-Verou / Κομβούτη-Βέρου) though I had been going by Lea Verou for over a decade. In 2013 I finally did the paperwork to only keep my mother’s surname, for simplicity and brevity. I think it’s awesome that my parents left the choice up to me, and not the patriarchy, and I have strong opinions [on last name politics](https://pensieve.verou.me/post/40603145637/on-last-name-politics). Of course, my daughter also has both my and my husband’s last names._ 😊

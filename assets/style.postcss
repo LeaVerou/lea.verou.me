@@ -360,6 +360,41 @@ blockquote {
 	font-style: italic;
 }
 
+button,
+.button,
+.call-to-action {
+	font: 800 80%/1.2 var(--font-sans);
+	background: #f06;
+	color: white;
+	padding: .5em .8em;
+	text-decoration: none !important;
+	text-shadow: 0 0 0 white;
+	transition: .3s;
+
+	:is(p) > &:only-child {
+		display: block;
+		width: fit-content;
+		margin: auto;
+	}
+
+	&:hover,
+	&:focus {
+		background: var(--color-accent2);
+		color: white;
+		text-shadow: 0 0 1em white;
+	}
+
+	&:active {
+		transform: scale(.9);
+	}
+
+	&.call-to-action {
+		padding-inline: 1em;
+		text-transform: uppercase;
+		border-radius: 9999px;
+	}
+}
+
 @property --number {
 	syntax: "<number>";
 	inherits: false;
