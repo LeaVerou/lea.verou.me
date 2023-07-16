@@ -1,6 +1,6 @@
 const tagNames = require("../_data/tag_names.json");
 const capitalizations = require("../_data/capitalizations.json");
-const fakeTags = new Set(["blog", "all"]);
+const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
 const filters = {
 	relative(page) {
