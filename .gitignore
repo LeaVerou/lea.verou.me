@@ -1,6 +1,8 @@
 
 **/index.html
 !files/**/index.html
+assets/style.css
+blog/tag
+
 # Local Netlify folder
 .netlify
-assets/style.css
