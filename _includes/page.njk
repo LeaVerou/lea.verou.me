@@ -14,6 +14,7 @@
 	{{ includes | safe }}
 	<link rel="stylesheet" href="/assets/style.css">
 	{{ includesEnd | safe }}
+	<script src="/assets/global.js" type="module"></script>
 </head>
 <body class="language-css">
 
@@ -78,18 +79,14 @@
 {{ content | safe }}
 
 <footer class="post-meta">
-	{% if tags and tags.length > 0 %}
-	<div class="tags">
-		{% for tag in tags %}
-		{% if tag != "blog" %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-		{% endif %}
-
-		{% endfor %}
-	</div>
-	{% endif %}
+	{% import "_tag-list.njk" as taglist %}
+	{{ taglist.render(tags) | safe }}
 
 	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit on GitHub</a>
 </footer>
+
+{% include "_comments.njk" %}
+
 </main>
 
 <footer>
@@ -112,8 +109,6 @@
 		</a>
 	</small>
 </footer>
-
-<script src="/assets/global.js" type="module"></script>
 
 </body>
 </html>
