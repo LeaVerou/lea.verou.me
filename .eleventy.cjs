@@ -1,7 +1,7 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require('markdown-it-attrs');
-const embedTwitter = require("eleventy-plugin-embed-twitter");
+const embeds = require("eleventy-plugin-embed-everything");
 const pluginTOC = require('eleventy-plugin-toc');
 const filters = require("./assets/filters.cjs");
 
@@ -62,7 +62,7 @@ module.exports = config => {
 		config.addFilter(name, filters[name]);
 	}
 
-	config.addPlugin(embedTwitter);
+	config.addPlugin(embeds);
 
 	// config.addPlugin(pluginTOC, {
 	// 	tags: ['h2'],
