@@ -11,13 +11,20 @@ const filters = {
 	},
 
 	format_date(date, format = "long") {
-		if (format == "iso") {
-			return new Date(date).toISOString().substring(0, 10);
+		try {
+			date = new Date(date);
+		}
+		catch (e) {
+			return `Invalid date (${date})`
 		}
 
-		return new Date(date).toLocaleString("en-GB", {
-			dateStyle: format
-		});
+		if (format == "iso") {
+			return date.toISOString().substring(0, 10);
+		}
+
+		let options = typeof format === "string"? { dateStyle: format } : format;
+
+		return date.toLocaleString("en-GB", options);
 	},
 
 	format_tag(tag) {
@@ -59,6 +66,14 @@ const filters = {
 
 	keys(obj) {
 		return Object.keys(obj);
+	},
+
+	values(obj) {
+		return Object.values(obj);
+	},
+
+	flatten(arr) {
+		return arr.flat();
 	},
 
 	// Dump as JSON, without errors for circular references and with pretty-printing

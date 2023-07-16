@@ -65,18 +65,31 @@ module.exports = config => {
 	config.addPlugin(embeds);
 
 	// Based on https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
-	config.addCollection("postsByYear", (collectionApi) => {
+	config.addCollection("postsByMonth", (collectionApi) => {
 		const posts = collectionApi.getFilteredByTag("blog").reverse();
-		const byYear = {};
+		const ret = {};
 
 		for (let post of posts) {
-			let year = post.date.getFullYear();
-			byYear[year] ??= [];
-			byYear[year].push(post);
+			let key = filters.format_date(post.date, "iso").substring(0, 7);
+			ret[key] ??= [];
+			ret[key].push(post);
 		}
 
-		return byYear;
-	  });
+		return ret;
+	});
+
+	config.addCollection("postsByYear", (collectionApi) => {
+		const posts = collectionApi.getFilteredByTag("postsByMonth").reverse();
+		const ret = {};
+
+		for (let post of posts) {
+			let key = filters.format_date(post.date, "iso").substring(0, 4);
+			ret[key] ??= [];
+			ret[key].push(post);
+		}
+
+		return ret;
+	});
 
 	// config.addPlugin(pluginTOC, {
 	// 	tags: ['h2'],
