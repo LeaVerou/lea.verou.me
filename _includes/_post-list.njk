@@ -21,8 +21,8 @@
 	</div>
 
 	<footer class="post-meta">
-		{% import "_tag-list.njk" as taglist %}
-		{{ taglist.render(post.data.tags) | safe }}
+		{% import "_tags.njk" as tags %}
+		{{ tags.list(post.data.tags) | safe }}
 	</footer>
 </article>
 

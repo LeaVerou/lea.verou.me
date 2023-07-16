@@ -1346,3 +1346,13 @@ pre {
 	--label: "Info";
 	--icon: "\F434";
 }
+
+.tags-index {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+	gap: 0 3em;
+
+	& li::marker {
+		color: var(--color-gray-medium);
+	}
+}
