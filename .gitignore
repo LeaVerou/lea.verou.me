@@ -2,7 +2,8 @@
 **/index.html
 !files/**/index.html
 assets/style.css
-blog/tag
+blog/tags/*
+!blog/tags/index.njk
 
 # Local Netlify folder
 .netlify
