@@ -3,6 +3,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require('markdown-it-attrs');
 const embedTwitter = require("eleventy-plugin-embed-twitter");
 const pluginTOC = require('eleventy-plugin-toc');
+const filters = require("./assets/filters.cjs");
 
 
 module.exports = config => {
@@ -57,21 +58,9 @@ module.exports = config => {
 		return md.renderInline(value);
 	});
 
-	config.addFilter(
-		"relative",
-		page => {
-			let path = page.url.replace(/[^/]+$/, "");
-			let ret = require("path").relative(path, "/");
-
-			return ret || ".";
-		}
-	);
-
-	config.addFilter("format_date", (date, format = "long") => {
-		return new Date(date).toLocaleString("en-GB", {
-			dateStyle: format
-		});
-	});
+	for (let name in filters) {
+		config.addFilter(name, filters[name]);
+	}
 
 	config.addPlugin(embedTwitter);
 
