@@ -64,6 +64,20 @@ module.exports = config => {
 
 	config.addPlugin(embeds);
 
+	// Based on https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
+	config.addCollection("postsByYear", (collectionApi) => {
+		const posts = collectionApi.getFilteredByTag("blog").reverse();
+		const byYear = {};
+
+		for (let post of posts) {
+			let year = post.date.getFullYear();
+			byYear[year] ??= [];
+			byYear[year].push(post);
+		}
+
+		return byYear;
+	  });
+
 	// config.addPlugin(pluginTOC, {
 	// 	tags: ['h2'],
 	// 	wrapper: 'div',

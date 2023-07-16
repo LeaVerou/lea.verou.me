@@ -14,5 +14,5 @@ Sometimes I [blog](/blog/) about all this (and more!).
 
 ## [Blog](/blog/)
 
-{% for post in collections.blog.reverse().slice(0, 20) %}- [{{ post.data.title }}]({{ post.url | url }})
-{% endfor %}
+{% import "_posts.njk" as posts %}
+{{ posts.list(collections.blog.reverse().slice(0, 31), {style: "compact", start: collections.blog.length}) }}

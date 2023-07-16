@@ -11,6 +11,10 @@ const filters = {
 	},
 
 	format_date(date, format = "long") {
+		if (format == "iso") {
+			return new Date(date).toISOString().substring(0, 10);
+		}
+
 		return new Date(date).toLocaleString("en-GB", {
 			dateStyle: format
 		});
@@ -52,6 +56,31 @@ const filters = {
 		console.log(...args);
 		return args[0];
 	},
+
+	keys(obj) {
+		return Object.keys(obj);
+	},
+
+	// Dump as JSON, without errors for circular references and with pretty-printing
+	dump2(obj) {
+		let cache = new WeakSet();
+
+		let json = JSON.stringify(obj, (key, value) => {
+			if (typeof value === "object" && value !== null) {
+				// No circular reference found
+
+				if (cache.has(value)) {
+					return; // Circular reference found!
+				}
+
+				cache.add(value);
+			}
+
+			return value;
+		}, "\t");
+
+		return `<pre class="language-json">${json}</pre>`
+	}
 }
 
 module.exports = filters;

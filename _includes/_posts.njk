@@ -1,0 +1,45 @@
+{% import "_tags.njk" as tags %}
+
+{% macro one(post, o = {}) %}
+{% if o.style === "compact" %}
+<li>
+	<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+	<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("medium") }}</time>
+</li>
+{% else %}
+<article class="post" id="{{post.fileSlug}}">
+	<header>
+		<h2>
+			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+		</h2>
+		<div class="post-meta">
+			<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("long") }}</time>
+		</div>
+	</header>
+	{% set summary = post.data.summary or post.data.page.excerpt %}
+	<div class="summary">
+		{% if summary %}
+			{{ summary | md | safe }}
+			<p><a href="{{ post.url | url }}" class="call-to-action">Continue reading</a></p>
+		{% else %}
+			{{ post.content | md | safe }}
+		{% endif %}
+	</div>
+
+	<footer class="post-meta">
+		{{ tags.list(post.data.tags) | safe }}
+	</footer>
+</article>
+{% endif %}
+{% endmacro %}
+
+{% macro list(posts, o = {}) %}
+{% if o.style === "compact" %}<ol class="subtle-markers posts-list" reversed start="{{ o.start }}">{% endif %}
+{% for post in posts %}
+	{% if not (post.data.draft or post.data.unlisted) %}
+	{{ one(post, o) }}
+	{% if o.style !== "compact" %}<hr>{% endif %}
+	{% endif %}
+{% endfor %}
+{% if o.style === "compact" %}</ol>{% endif %}
+{% endmacro %}
