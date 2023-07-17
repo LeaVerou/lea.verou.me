@@ -91,12 +91,11 @@ module.exports = config => {
 		return ret;
 	});
 
-	// config.addPlugin(pluginTOC, {
-	// 	tags: ['h2'],
-	// 	wrapper: 'div',
-	// 	ul: true,
-	// 	wrapper: "",
-	// });
+	config.addPlugin(pluginTOC, {
+		tags: ['h2'],
+		ul: true,
+		wrapper: "",
+	});
 
 	return {
 		markdownTemplateEngine: "njk",

@@ -59,13 +59,6 @@
 	</div>
 </header>
 
-{% if toc %}
-<aside id="toc">
-	<h4>On this page</h4>
-	{{ content | toc | safe }}
-</aside>
-{% endif %}
-
 <main>
 
 <section class="warning">
@@ -75,6 +68,13 @@
 	<a href="{{ oldURL }}">View this page on the current website</a>
 	and if you spot any problems, please <a href="{{ pkg.bugs.url }}">file an issue</a>!
 </section>
+
+{% if toc %}
+<aside id="toc">
+	<h4>On this page</h4>
+	{{ content | toc | safe }}
+</aside>
+{% endif %}
 
 {{ content | safe }}
 
