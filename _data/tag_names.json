@@ -1,5 +1,9 @@
 {
 	"contrast-ratio-com": "contrast-ratio.com",
 	"csswg": "CSS WG",
-	"html5-1": "HTML5.1"
+	"css-om": "CSS OM",
+	"html5-1": "HTML5.1",
+	"background-attachment": true,
+	"box-shadow": true,
+	"border-radius": true
 }

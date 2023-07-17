@@ -3,6 +3,11 @@ const capitalizations = require("../_data/capitalizations.json");
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
 const filters = {
+	async pluralize(num, word) {
+		let plur = (await import("plur")).default;
+		return num + " " + plur(word, num);
+	},
+
 	relative(page) {
 		let path = page.url.replace(/[^/]+$/, "");
 		let ret = require("path").relative(path, "/");
@@ -29,7 +34,7 @@ const filters = {
 
 	format_tag(tag) {
 		if (tag in tagNames) {
-			return tagNames[tag];
+			return tagNames[tag] === true ? tag : tagNames[tag];
 		}
 
 		tag = tag.replace(/-/g, " ");

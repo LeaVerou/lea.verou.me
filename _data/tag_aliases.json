@@ -1,0 +1,16 @@
+{
+	"accessibiity": "a11y",
+	"conferences": "speaking",
+	"css3": "css",
+	"css3-animations": "css-animations",
+	"css3-colors": "css-color",
+	"css3-gradients": "css-images",
+	"css3-properties": "css-properties",
+	"css3-values": "css-values",
+	"css3-selectors": "selectors",
+	"css3-transforms": "css-transforms",
+	"css3-transitions": "css-transitions",
+	"ecmascript": "es",
+	"javascript": "js",
+	"utf8": "unicode"
+}

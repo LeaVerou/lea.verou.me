@@ -79,8 +79,8 @@
 {{ content | safe }}
 
 <footer class="post-meta">
-	{% import "_tags.njk" as tags %}
-	{{ tags.list(tags) | safe }}
+	{% from "_tags.njk" import list as tagList %}
+	{{ tagList(tags) }}
 
 	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit on GitHub</a>
 </footer>
