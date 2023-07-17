@@ -23,16 +23,16 @@ if (window.CSS && CSS.registerProperty) {
 	});
 
 	// Only apply animation when elements are in view, for performance
-	let intersectionObserver = new IntersectionObserver(entries => {
-		for (let entry of entries) {
-			let element = entry.target;
-			element.classList.toggle("in-view", entry.intersectionRatio > 0);
-		}
-	});
+	// let intersectionObserver = new IntersectionObserver(entries => {
+	// 	for (let entry of entries) {
+	// 		let element = entry.target;
+	// 		element.classList.toggle("in-view", entry.intersectionRatio > 0);
+	// 	}
+	// });
 
-	for (let el of $$("body > header")) {
-		intersectionObserver.observe(el);
-	}
+	// for (let el of $$("body > header")) {
+	// 	intersectionObserver.observe(el);
+	// }
 }
 
 for (let el of $$(".to-top")) {

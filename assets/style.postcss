@@ -484,7 +484,7 @@ body > header {
 	position: relative;
 	padding: var(--min-padding);
 	--header-bg-center: calc(var(--min-padding) + .75em) calc(2em - var(--scrolltop, 0) * 1px);
-	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at var(--header-bg-center), var(--color-light-1) 0 4deg, transparent 0 8deg) fixed;
+	background: repeating-conic-gradient(from calc(var(--scrolltop, 0) * .1deg) at var(--header-bg-center), var(--color-light-1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: var(--color-light-2);
 
 	.site-meta {
@@ -601,7 +601,7 @@ body > footer {
 	gap: 1em;
 	padding: var(--min-padding) var(--content-margin);
 	margin-top: 2em;
-	background: repeating-conic-gradient(from calc(var(--number, 0) * 1turn) at calc(100% + 1em) calc(100% + 1em), rgb(0 0 0 / .1) 0 4deg, transparent 0 8deg) fixed;
+	background: repeating-conic-gradient(from calc(var(--scrolltop, 0) * .1deg) at calc(100% + 1em) calc(100% + 1em), rgb(0 0 0 / .1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: hsl(var(--gray) 23%);
 	border: 0 solid hsl(var(--gray) 95% / .2);
 	color: white;
