@@ -377,6 +377,22 @@ figure {
 				grid-column-end: span 2;
 			}
 		}
+
+		&:not(:has(> .main)) { /* No main image, display all side by side */
+			display: flex;
+			align-items: start;
+			flex-wrap: wrap;
+			gap: .5rem;
+
+			> :not(figcaption) {
+				width: calc(50% - .25rem);
+				object-fit: contain;
+			}
+
+			> figcaption {
+				flex-basis: 100%;
+			}
+		}
 	}
 }
 

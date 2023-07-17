@@ -13,6 +13,9 @@
 
 	{{ includes | safe }}
 	<link rel="stylesheet" href="/assets/style.css">
+	{% if page_css %}
+	<link rel="stylesheet" href="{{ "style.css" if page_css == true else page_css }}">
+	{% endif %}
 	{{ includesEnd | safe }}
 	<script src="/assets/global.js" type="module"></script>
 </head>
