@@ -29,10 +29,12 @@ module.exports = config => {
 	let md = markdownIt({
 		html: true,
 		linkify: true,
+		typographer: true,
 	})
+	.disable("code")
 	.use(markdownItReplaceLink, {
 		processHTML: true,
-		replaceLink: function (link, env, token, htmlToken) {
+		replaceLink: function (link, env) {
 			// console.log(env.url);
 			if (!env.url || /^(?:\/|[a-z]+:)/.test(link)) {
 				// We don’t need to do anything in absolute or root-relative URLs
@@ -54,7 +56,7 @@ module.exports = config => {
 		permalink: markdownItAnchor.permalink.headerLink(),
 		level: 2,
 	})
-	.disable("code");
+	;
 
 	config.setLibrary("md", md);
 

@@ -283,8 +283,6 @@ video, img {
 
 pre, code {
 	font-family: var(--font-monospace);
-	font-size: 80%;
-	font-weight: 500;
 }
 
 figure {
@@ -765,6 +763,8 @@ code:is(code, [class*="language-"]):not(pre *) {
 	border-radius: .15rem;
 	background: var(--color-light-1);
 	mix-blend-mode: multiply;
+	font-size: 80%;
+	font-weight: 500;
 }
 
 pre code:is(code, [class*="language-"]) {
@@ -782,6 +782,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	border-width: 1.5em 0;
 	box-sizing: content-box;
 	background: var(--color-light-2);
+	font-size: 80%;
 
 	clip-path: polygon(var(--clip-top), var(--clip-bottom));
 	--clip-top: 0 0, 100% 2em;
@@ -794,6 +795,10 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	&:nth-of-type(3n + 1),
 	&:nth-of-type(5n + 1) {
 		--clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
+	}
+
+	& p {
+		display: contents;
 	}
 }
 
