@@ -19,10 +19,10 @@
 	{% set summary = post.data.summary or post.data.page.excerpt %}
 	<div class="summary">
 		{% if summary %}
-			{{ summary | md | safe }}
+			{{ summary | md({url: post.data.page.url}) | safe }}
 			<p><a href="{{ post.url | url }}" class="call-to-action">Continue reading</a></p>
 		{% else %}
-			{{ post.content | md | safe }}
+			{{ post.content | md({url: post.data.page.url}) | safe }}
 		{% endif %}
 	</div>
 
