@@ -26,5 +26,10 @@
 	{
 		"title": "About",
 		"path": "about"
+	},
+	{
+		"title": "Repo",
+		"url": "https://github.com/leaverou/lea.verou.me",
+		"location": "footer"
 	}
 ]

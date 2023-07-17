@@ -17,7 +17,7 @@
 	<script src="/assets/global.js" type="module"></script>
 </head>
 <body class="language-{{ defaultLanguage or "css" }}">
-
+{% import "_nav.njk" as nav %}
 <header>
 	<div class="site-meta">
 		<a href="/" class="site-logo">
@@ -25,7 +25,7 @@
 			<span class="site-title" title="Life at the bleeding edge (of the Web)">Lea Verou</span>
 		</a>
 		<div class="social gt-md">{% include "_social.njk" %}</div>
-		<nav class="gt-md">{% include "_nav.njk" %}</nav>
+		<nav class="gt-md">{{ nav.render(nav_links) }}</nav>
 		<a href="#nav" class="🍔 lt-md"><i class="bi bi-list"></i></a>
 	</div>
 	<div class="page-meta">
@@ -72,7 +72,7 @@
 	You are browsing the <a href="/blog/2023/going-lean/">new, beta version</a> of my website.
 	Some things may not work properly.
 
-	<a href="{{ site.old_domain }}{{ page.url | replace("/blog/", "/") }}">View this page on the current website</a>
+	<a href="{{ oldURL }}">View this page on the current website</a>
 	and if you spot any problems, please <a href="{{ pkg.bugs.url }}">file an issue</a>!
 </section>
 
@@ -96,7 +96,7 @@
 	</section>
 	<nav id="nav">
 		<h4>About me</h4>
-		{% include "_nav.njk" %}
+		{{ nav.render(nav_links, "footer") }}
 	</nav>
 
 	<small>

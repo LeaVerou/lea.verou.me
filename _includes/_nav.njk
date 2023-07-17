@@ -1,3 +1,8 @@
-{% for link in nav %}
-<a href="/{{ link.path or "." }}/"{{ "class=selected" if siteArea === link.path }}>{{ link.title }}</a>
+{% macro render(links, location) %}
+{% for link in links %}
+{% if not link.location or link.location == location %}
+{% set url = link.url or ("/" + (link.path or ".") + "/") %}
+<a href="{{ url }}"{{ " class=selected" if siteArea === link.path }}{{ ' target="_blank"' if link.url }}>{{ link.title }}</a>
+{% endif %}
 {% endfor %}
+{% endmacro %}
