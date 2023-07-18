@@ -1,11 +1,16 @@
 
 <div class="nutshell">
 
+<figure class="right">
+<img src="/about/images/smiling-medium.jpg" alt="Photo of me smiling">
+</figure>
+
 Hi, I’m Lea and I wear many hats.
 I design and build [tools](/projects/) that help people create on the Web.
-I [design](/publications/#specifications) and [review](/blog/2022/11/tag-2/) technologies implemented in every browser.
+Your browser implements several web technologies I have [designed](/publications/#specifications) and/or [reviewed](/blog/2022/11/tag-2/).
 I do [scientific research](/publications/#research) at [MIT](https://haystack.csail.mit.edu) on democratizing web development.
-I [speak](/speaking/), [teach](https://designftw.mit.edu), and [write](/publications/) about things I learn and discover.
+I [speak](/speaking/), [teach](https://designftw.mit.edu), and [write](/publications/) about things I learn and discover,
+including a [bestselling book](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20) by O’Reilly, dubbed ["Best CSS book"](https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html).
 Sometimes I [blog](/blog/) about all this (and more!).
 
 <a class="call-to-action" href="/about/">Learn more about me</a>

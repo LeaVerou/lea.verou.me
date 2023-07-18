@@ -439,6 +439,7 @@ button,
 		padding-inline: 1em;
 		text-transform: uppercase;
 		border-radius: 9999px;
+		font-size: 1rem;
 	}
 }
 
@@ -789,8 +790,15 @@ body > footer {
 }
 
 .nutshell {
+	text-wrap: balance;
 	font-family: var(--font-sans);
-	font-size: 150%;
+	font-size: 140%;
+
+	& img {
+		width: 10em;
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+	}
 }
 
 .skip-to-next {

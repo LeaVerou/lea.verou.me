@@ -3,7 +3,7 @@ title: About me
 ---
 
 <figure class="right">
-	<img src="images/smiling-medium.jpg" alt="">
+	<img src="images/smiling-medium.jpg" alt="Photo of me smiling">
 	<figcaption>Photo taken in 2018 by Kelly Benvenuto</figcaption>
 </figure>
 
