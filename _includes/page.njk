@@ -20,7 +20,7 @@
 	<script src="/assets/global.js" type="module"></script>
 </head>
 <body class="language-{{ defaultLanguage or "css" }}">
-{% import "_nav.njk" as nav %}
+{% import "_nav.njk" as nav with context %}
 <header>
 	<div class="site-meta">
 		<a href="/" class="site-logo">
