@@ -1,5 +1,5 @@
-const tagNames = require("../_data/tag_names.json");
-const capitalizations = require("../_data/capitalizations.json");
+const tagNames = require("../data/tag_names.json");
+const capitalizations = require("../data/capitalizations.json");
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
 const filters = {

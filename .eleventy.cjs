@@ -119,6 +119,7 @@ module.exports = config => {
 		markdownTemplateEngine: "njk",
 		templateFormats: ["md", "njk"],
 		dir: {
+			data: "data",
 			output: "."
 		},
 	};
