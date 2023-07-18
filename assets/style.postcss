@@ -812,11 +812,13 @@ body > footer {
 	margin-left: var(--content-width);
 	margin-top: 1.5em;
 	font-size: 200%;
-	transition: .3s opacity;
+	transition: .3s .5s opacity;
+	opacity: 0;
 
-	&:not(:hover, :focus):not(:has(+ .post:is(:hover, :focus-within))) {
-		opacity: 0;
-		transition-delay: .5s;
+	&:is(:hover, :focus),
+	&:is(:has(+ .post:is(:hover, :focus-within))) {
+		opacity: 1;
+		transition-delay: 0s;
 	}
 }
 
