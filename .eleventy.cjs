@@ -32,30 +32,29 @@ module.exports = config => {
 		typographer: true,
 	})
 	.disable("code")
-	.use(markdownItReplaceLink, {
-		processHTML: true,
-		replaceLink: function (link, env) {
-			// console.log(env.url);
-			if (!env.url || /^(?:\/|[a-z]+:)/.test(link)) {
-				// We don’t need to do anything in absolute or root-relative URLs
-				return link;
-			}
+	// .use(markdownItReplaceLink, {
+	// 	processHTML: true,
+	// 	replaceLink: function (link, env) {
+	// 		if (!env.url || /^(?:\/|[a-z]+:)/.test(link)) {
+	// 			// We don’t need to do anything in absolute or root-relative URLs
+	// 			return link;
+	// 		}
 
-			// If we’re here, the link is relative, make it root-relative
-			let host = "https://lea.verou.me";
-			let base = host + env.url;
+	// 		// If we’re here, the link is relative, make it root-relative
+	// 		let host = "https://lea.verou.me";
+	// 		let base = host + env.url;
 
-			link = new URL(link, base) + "";
-			link = link.substr(host.length);
+	// 		link = new URL(link, base) + "";
+	// 		link = link.substr(host.length);
 
-			return link;
-		}
-	})
-	.use(markdownItAttrs)
-	.use(markdownItAnchor, {
-		permalink: markdownItAnchor.permalink.headerLink(),
-		level: 2,
-	})
+	// 		return link;
+	// 	}
+	// })
+	// .use(markdownItAttrs)
+	// .use(markdownItAnchor, {
+	// 	permalink: markdownItAnchor.permalink.headerLink(),
+	// 	level: 2,
+	// })
 	;
 
 	config.setLibrary("md", md);
