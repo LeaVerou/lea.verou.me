@@ -46,7 +46,7 @@
 			</h1>
 		{% endif %}
 		{% if siteArea === "blog" %}
-		<div class="post-meta">
+		<div class="meta">
 			{% if page.date %}
 			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
 				dateStyle: "long"
@@ -81,11 +81,11 @@
 
 {{ content | safe }}
 
-<footer class="post-meta">
+<footer class="meta">
 	{% from "_tags.njk" import list as tagList %}
 	{{ tagList(tags) }}
 
-	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit on GitHub</a>
+	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
 </footer>
 
 {% include "_comments.njk" %}

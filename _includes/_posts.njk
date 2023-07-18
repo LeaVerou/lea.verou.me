@@ -12,7 +12,7 @@
 		<h2>
 			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
 		</h2>
-		<div class="post-meta">
+		<div class="meta">
 			<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("long") }}</time>
 		</div>
 	</header>
@@ -26,7 +26,7 @@
 		{% endif %}
 	</div>
 
-	<footer class="post-meta">
+	<footer class="meta">
 		{{ tags.list(post.data.tags) | safe }}
 	</footer>
 </article>
