@@ -791,7 +791,14 @@ body > footer {
 .nutshell {
 	text-wrap: balance;
 	font-family: var(--font-sans);
-	font-size: 140%;
+	font-size: 130%;
+
+	& figure.right {
+		margin-right: calc(var(--small-figure-outset) + 4.5em);
+		margin-left: 0;
+		margin-bottom: 0;
+		shape-outside: circle(calc(50% + .5rem));
+	}
 
 	& img {
 		width: 10em;
