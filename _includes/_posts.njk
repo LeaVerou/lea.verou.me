@@ -42,7 +42,7 @@
 
 	{% set np = posts[loop.index0 + 1] %}
 	{# No idea why this doesn't work as a macro argument to one()... #}
-	{% if np %}
+	{% if np and o.style !== "compact" %}
 	<a href="#{{ np.fileSlug }}" class="skip-to-next" title="Skip to next post: {{ np.data.title }}"><i class="bi bi-arrow-down-circle"></i></a>
 	{% endif %}
 	{{ one(post, o) }}
