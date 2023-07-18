@@ -88,14 +88,15 @@
 
 		<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
 	</div>
-	<div class="prev-next">
-		{% set previousPost = collections.blog | getPreviousCollectionItem %}
-		{% set nextPost = collections.blog | getNextCollectionItem %}
 
+	{% set previousPost = collections.blog | getPreviousCollectionItem %}
+	{% set nextPost = collections.blog | getNextCollectionItem %}
+	{% if previousPost or nextPost %}
+	<div class="prev-next">
 		{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title }}</a>{% endif %}
 		{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title }}</a>{% endif %}
 	</div>
-
+	{% endif %}
 </footer>
 
 {% include "_comments.njk" %}
