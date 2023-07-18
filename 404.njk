@@ -1,0 +1,19 @@
+---
+title: Page Not Found
+---
+
+<p>The page you were looking for could not be found.
+It might have been removed, renamed, or did not exist in the first place.
+
+<p>Or maybe it was <a href="/blog/2023/going-lean">lost in the shuffle when I moved</a>.
+
+<script>
+let old_domain = "{{ site.old_domain }}";
+let base = location.protocol + "//" + location.host;
+let root_relative = location.href.substring(base.length);
+let old_url = old_domain + root_relative;
+
+// Yes, I did. Bite me. 🤷🏽‍♀️
+document.write(`If it was present in the <a href="${old_url}">old website</a>,
+please <a href="{{ pkg.bugs.url }}/new?template=page-regression.yml&amp;title=Page regression: Missing page&amp;url={{ site.domain }}${ root_relative }" class="call-to-action" target="_blank">file an issue</a>`);
+</script>

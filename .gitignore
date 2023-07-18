@@ -1,6 +1,7 @@
 
 **/index.html
 !files/**/index.html
+404.html
 assets/style.css
 blog/tags/*
 !blog/tags/index.njk
