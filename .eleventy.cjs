@@ -50,11 +50,11 @@ module.exports = config => {
 	// 		return link;
 	// 	}
 	// })
-	// .use(markdownItAttrs)
-	// .use(markdownItAnchor, {
-	// 	permalink: markdownItAnchor.permalink.headerLink(),
-	// 	level: 2,
-	// })
+	.use(markdownItAttrs)
+	.use(markdownItAnchor, {
+		permalink: markdownItAnchor.permalink.headerLink(),
+		level: 2,
+	})
 	;
 
 	config.setLibrary("md", md);
