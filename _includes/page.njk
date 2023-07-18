@@ -47,7 +47,7 @@
 		{% endif %}
 		{% if siteArea === "blog" %}
 		<div class="meta">
-			{% if page.date %}
+			{% if page.date and page.url !== "/blog/" %}
 			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
 				dateStyle: "long"
 			}) }}</time>
