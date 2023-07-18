@@ -182,19 +182,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: calc(210% + clamp(0%, 1.5vw, 180%));
+	font-size: calc((210% + clamp(0%, 1.5vw, 180%)) * var(--font-size-scale, 1));
 }
 
 h2 {
-	font-size: calc(170% + clamp(0%, 1vw, 70%));
+	font-size: calc((150% + clamp(0%, 1vw, 50%)) * var(--font-size-scale, 1));
 }
 
 h3 {
-	font-size: 140%;
+	font-size: calc(140% * var(--font-size-scale, 1));
 }
 
 h4 {
-	font-size: 2.4rem;
+	font-size: calc(2.4rem * var(--font-size-scale, 1));
 }
 
 h4:not(main > *),
@@ -681,6 +681,7 @@ body > footer {
 
 .meta {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 2em;
 	color: var(--color-gray-medium);
 	font-size: .77rem;
@@ -759,6 +760,10 @@ body > footer {
 		& .meta {
 			justify-content: center;
 		}
+	}
+
+	.summary :is(h2, h3, h4, h5, h6) {
+		--font-size-scale: .8;
 	}
 }
 

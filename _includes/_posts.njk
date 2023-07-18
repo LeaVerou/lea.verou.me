@@ -28,6 +28,8 @@
 
 	<footer class="meta">
 		{{ tags.list(post.data.tags) | safe }}
+
+		<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ post.data.page.url }}index.md" class="edit-page">Edit post on GitHub</a>
 	</footer>
 </article>
 {% endif %}
