@@ -15,6 +15,23 @@ const filters = {
 		return ret || ".";
 	},
 
+	relativize_urls(html, base_url) {
+		// Go over <img src> and <a href> and make them relative to url
+		// This is a hack to work around #5
+		return html.replace(/(?<=<(?:img|a)\s+(?:[^>]*?\s+)?(?:src|href)=")([^"]+)(?=")/gi, (url) => {
+			if (!/^(?:\/|[a-z]+:)/.test(url)) {
+
+				// We don’t need to do anything in absolute or root-relative URLs
+				let host = "https://lea.verou.me";
+				let base = new URL(base_url, host);
+				url = new URL(url, base) + "";
+				url = url.substr(host.length);
+			}
+
+			return url;
+		});
+	},
+
 	format_date(date, format = "long") {
 		try {
 			date = new Date(date);

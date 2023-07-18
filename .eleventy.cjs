@@ -1,7 +1,6 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require('markdown-it-attrs');
-const markdownItReplaceLink = require("markdown-it-replace-link");
 const embeds = require("eleventy-plugin-embed-everything");
 const pluginTOC = require('eleventy-plugin-toc');
 const filters = require("./assets/filters.cjs");
@@ -32,24 +31,6 @@ module.exports = config => {
 		typographer: true,
 	})
 	.disable("code")
-	// .use(markdownItReplaceLink, {
-	// 	processHTML: true,
-	// 	replaceLink: function (link, env) {
-	// 		if (!env.url || /^(?:\/|[a-z]+:)/.test(link)) {
-	// 			// We don’t need to do anything in absolute or root-relative URLs
-	// 			return link;
-	// 		}
-
-	// 		// If we’re here, the link is relative, make it root-relative
-	// 		let host = "https://lea.verou.me";
-	// 		let base = host + env.url;
-
-	// 		link = new URL(link, base) + "";
-	// 		link = link.substr(host.length);
-
-	// 		return link;
-	// 	}
-	// })
 	.use(markdownItAttrs)
 	.use(markdownItAnchor, {
 		permalink: markdownItAnchor.permalink.headerLink(),
@@ -64,7 +45,13 @@ module.exports = config => {
 			return value;
 		}
 
-		return md.render(value, o);
+		let ret = md.render(value, o);
+
+		if (o.url) {
+			ret = filters.relativize_urls(ret, o.url);
+		}
+
+		return ret;
 	});
 
 	config.addFilter("md_inline", (value) => {
