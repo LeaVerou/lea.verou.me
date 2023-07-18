@@ -35,10 +35,10 @@
 		--font-sans: "Inter var", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 
-	--color-magenta: #f06;
-	--color-orange: #f73;
-	--color-turquoise: #0bd;
-	--color-green: yellowgreen;
+	--color-magenta: hsl(336 100% 50%);
+	--color-orange: hsl(20 100% 60%);
+	--color-turquoise: hsl(189 100% 43%);
+	--color-green: hsl(80 61% 50%);
 
 	--color-accent: var(--color-magenta);
 	--color-accent2: var(--color-orange);
@@ -57,11 +57,12 @@
 	--color-gray-medium: var(--color-gray-50);
 	--color-gray-light: var(--color-gray-90);
 
-	/* --color-light-1: #dcd7ca; */
-	--color-light-1: hsl(35 100% 90%);
-	/* --color-light-2: #f5efe0; */
-	--color-light-2: hsl(35 100% 95%);
-	--color-light-3: hsl(35 100% 99%);
+	--color-accent-light1: color-mix(in lab, white, var(--color-accent) 20%);
+	--color-accent-light2: color-mix(in lab, white, var(--color-accent) 10%);
+	--color-accent-light3: color-mix(in lab, white, var(--color-accent) 5%);
+	--color-accent2-light1: hsl(35 100% 90%);
+	--color-accent2-light2: hsl(35 100% 95%);
+	--color-accent2-light3: hsl(35 100% 99%);
 
 	--width-med: 50rem;
 	--width-thin: 35rem;
@@ -85,6 +86,10 @@
 	--icon-comments: "\F268";
 	--icon-tags: "\F5B2";
 	--icon-edit: "\F4CA";
+	--icon-arrow-left-short: "\F12C";
+	--icon-arrow-right-short: "\F135";
+	--icon-arrow-left-circle: "\F12A";
+	--icon-arrow-right-circle: "\F134";
 }
 
 :nth-child(1) { --index: 1; }
@@ -125,7 +130,7 @@ html {
 body {
 	display: flex;
 	flex-flow: column;
-	background: var(--color-light-3);
+	background: var(--color-accent2-light3);
 	box-sizing: border-box;
 	margin: 0;
 	min-height: 100vh;
@@ -484,8 +489,8 @@ body > header {
 	position: relative;
 	padding: var(--min-padding);
 	--header-bg-center: calc(var(--min-padding) + .75em) calc(2em - var(--scrolltop, 0) * 1px);
-	background: repeating-conic-gradient(from calc(var(--scrolltop, 0) * .1deg) at var(--header-bg-center), var(--color-light-1) 0 4deg, transparent 0 8deg) fixed;
-	background-color: var(--color-light-2);
+	background: repeating-conic-gradient(from calc(var(--scrolltop, 0) * .1deg) at var(--header-bg-center), var(--color-accent2-light1) 0 4deg, transparent 0 8deg) fixed;
+	background-color: var(--color-accent2-light2);
 
 	.site-meta {
 		display: flex;
@@ -739,6 +744,49 @@ body > footer {
 	}
 }
 
+.prev-next {
+	display: flex;
+	gap: 2em;
+	margin-top: 1em;
+	padding: 1em var(--content-margin);
+	margin: 1em calc(-1 * var(--content-margin));
+	background: var(--color-accent-light2);
+	font: 600 100% var(--font-sans);
+
+	.prev,
+	.next {
+		flex: 1;
+		position: relative;
+	}
+
+	.prev::before,
+	.next::after {
+		position: absolute;
+		top: -.15rem;
+		font-family: bootstrap-icons;
+		font-weight: normal;
+		font-size: 160%;
+	}
+
+	.prev {
+		&::before {
+			content: var(--icon-arrow-left-circle, "←");
+			right: 100%;
+			margin-right: .3em;
+		}
+	}
+
+	.next {
+		text-align: end;
+
+		&::after {
+			content: var(--icon-arrow-right-circle, "→");
+			left: 100%;
+			margin-left: .3em;
+		}
+	}
+}
+
 .nutshell {
 	font-family: var(--font-sans);
 	font-size: 150%;
@@ -772,7 +820,7 @@ body > footer {
 code:is(code, [class*="language-"]):not(pre *) {
 	padding: .25em .3em .18em;
 	border-radius: .15rem;
-	background: var(--color-light-1);
+	background: var(--color-accent2-light1);
 	mix-blend-mode: multiply;
 	font-size: 80%;
 	font-weight: 500;
@@ -792,7 +840,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	border: 0 solid transparent;
 	border-width: 1.5em 0;
 	box-sizing: content-box;
-	background: var(--color-light-2);
+	background: var(--color-accent2-light2);
 	font-size: 80%;
 
 	clip-path: polygon(var(--clip-top), var(--clip-bottom));
@@ -1303,7 +1351,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 .note,
 .tip {
 	position: relative;
-	background: var(--color-light-2);
+	background: var(--color-accent2-light2);
 	padding: 1.2rem 1rem .8rem;
 	border-radius: .3rem;
 	margin-top: 1.6em;
@@ -1325,7 +1373,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 		position: absolute;
 		top: -1em;
 		left: 2.5rem;
-		color: var(--color-light-2);
+		color: var(--color-accent2-light2);
 		margin-left: -2em;
 		margin-bottom: 0;
 	}

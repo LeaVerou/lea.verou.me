@@ -81,11 +81,21 @@
 
 {{ content | safe }}
 
-<footer class="meta">
-	{% from "_tags.njk" import list as tagList %}
-	{{ tagList(tags) }}
+<footer>
+	<div class="meta">
+		{% from "_tags.njk" import list as tagList %}
+		{{ tagList(tags) }}
 
-	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
+		<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
+	</div>
+	<div class="prev-next">
+		{% set previousPost = collections.blog | getPreviousCollectionItem %}
+		{% set nextPost = collections.blog | getNextCollectionItem %}
+
+		{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title }}</a>{% endif %}
+		{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title }}</a>{% endif %}
+	</div>
+
 </footer>
 
 {% include "_comments.njk" %}
