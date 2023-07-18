@@ -70,6 +70,10 @@ const filters = {
 	},
 
 	keys(obj) {
+		if (!obj) {
+			return null;
+		}
+
 		return Object.keys(obj);
 	},
 
@@ -89,7 +93,7 @@ const filters = {
 			if (typeof value === "object" && value !== null) {
 				// No circular reference found
 
-				if (cache.has(value)) {
+				if (cache.has(value) || key === "templateContent") {
 					return; // Circular reference found!
 				}
 

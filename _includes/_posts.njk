@@ -7,7 +7,7 @@
 	<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("medium") }}</time>
 </li>
 {% else %}
-<article class="post" id="{{post.fileSlug}}">
+<article class="post" id="{{ post.fileSlug }}">
 	<header>
 		<h2>
 			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
@@ -39,6 +39,12 @@
 {% if o.style === "compact" %}<ol class="subtle-markers posts-list" reversed start="{{ o.start }}">{% endif %}
 {% for post in posts %}
 	{% if not (post.data.draft or post.data.unlisted) %}
+
+	{% set np = posts[loop.index0 + 1] %}
+	{# No idea why this doesn't work as a macro argument to one()... #}
+	{% if np %}
+	<a href="#{{ np.fileSlug }}" class="skip-to-next" title="Skip to next post: {{ np.data.title }}"><i class="bi bi-arrow-down-circle"></i></a>
+	{% endif %}
 	{{ one(post, o) }}
 	{% if o.style !== "compact" %}<hr>{% endif %}
 	{% endif %}

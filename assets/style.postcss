@@ -90,6 +90,7 @@
 	--icon-arrow-right-short: "\F135";
 	--icon-arrow-left-circle: "\F12A";
 	--icon-arrow-right-circle: "\F134";
+	--icon-arrow-down-circle: "\F119";
 }
 
 :nth-child(1) { --index: 1; }
@@ -790,6 +791,19 @@ body > footer {
 .nutshell {
 	font-family: var(--font-sans);
 	font-size: 150%;
+}
+
+.skip-to-next {
+	position: absolute;
+	margin-left: var(--content-width);
+	margin-top: 1.5em;
+	font-size: 200%;
+	transition: .3s opacity;
+
+	&:not(:hover, :focus):not(:has(+ .post:is(:hover, :focus-within))) {
+		opacity: 0;
+		transition-delay: .5s;
+	}
 }
 
 .post {
