@@ -1,5 +1,8 @@
 import "./prism.js";
 
+// We want to preserve that a snippet is njk, in case there’s a more specialized language definition in the future
+Prism.languages.njk = Prism.languages.liquid;
+
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 let root = document.documentElement;
