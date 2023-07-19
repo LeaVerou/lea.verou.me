@@ -130,7 +130,6 @@ h1, h2, h3, h4, h5, h6, summary {
 	letter-spacing: -0.03em;
 	line-height: 1.1;
 	font-family: var(--font-sans);
-	margin: 3.5rem 0 2rem;
 	text-wrap: balance;
 
 	& a {
@@ -173,6 +172,7 @@ h1, h2, h3, h4, h5, h6, summary {
 }
 
 h1 {
+	margin: 3.5rem 0 2rem;
 	font-size: calc((210% + clamp(0%, 1.5vw, 180%)) * var(--font-size-scale, 1));
 }
 
@@ -193,7 +193,7 @@ h5 {
 	color: var(--color-gray-medium);
 }
 
-h4:not(main > *),
+h4:not(main *),
 .callout::after,
 .warning::after,
 .info::after,
@@ -212,6 +212,7 @@ h4:not(main > *),
 	background: var(--color-accent);
 	font: 800 .8rem/1.2 var(--font-sans);
 	text-transform: uppercase;
+	color: white;
 }
 
 h5 {
