@@ -12,7 +12,10 @@ layout: null
 
 # Static file hosting without cluttering root
 /* /files/:splat 200
-/css3patterns/* https://projects.verou.me/css3patterns/:splat 200
+
+# Redirect projects that now live on GitHub or separate domains
+/css3patterns/* https://projects.verou.me/css3patterns/:splat 301
+/incrementable/* https://incrementable.verou.me/:splat 301
 
 # Redirect PHP files to old website
 /*.php https://lea0.verou.me/:splat 200
