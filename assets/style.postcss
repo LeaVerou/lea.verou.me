@@ -68,8 +68,8 @@
 	--width-thin: 35rem;
 
 	--content-width: var(--width-med);
-	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
 	--min-padding: 1rem;
+	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
 
 	@media (width <= 1280px) {
 		--content-width: var(--width-thin);
@@ -779,17 +779,19 @@ body > footer {
 	font-family: var(--font-sans);
 	font-size: 130%;
 
-	& figure.right {
-		margin-right: calc(var(--small-figure-outset) + 4.5em);
-		margin-left: 0;
-		margin-bottom: 0;
-		shape-outside: circle(calc(50% + .5rem));
-	}
-
 	& img {
-		width: 10em;
+		float: right;
+		margin-right: clamp(-1 * var(--content-margin) + var(--min-padding) / 2, -0.5 * var(--width), 0em);
+		margin-left: .2rem;
+		--width: calc(4em + clamp(0px, 3vw, 6em));
+		width: var(--width);
 		aspect-ratio: 1 / 1;
 		border-radius: 50%;
+		shape-outside: circle(calc(50% + 1rem));
+	}
+
+	& p a.call-to-action {
+		margin-left: 0;
 	}
 }
 

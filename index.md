@@ -1,8 +1,7 @@
 
 <div class="nutshell">
-<figure class="right">
+
 <img src="/about/images/smiling-medium.jpg" alt="Photo of me smiling">
-</figure>
 
 Hi, I’m Lea and I wear many hats.
 I create [tools](/projects/) that make web developers' lives easier.
