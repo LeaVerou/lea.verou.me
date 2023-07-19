@@ -5,5 +5,6 @@
 	"html5-1": "HTML5.1",
 	"background-attachment": true,
 	"box-shadow": true,
-	"border-radius": true
+	"border-radius": true,
+	"css-backgrounds": "CSS Backgrounds & Borders"
 }

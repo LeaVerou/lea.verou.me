@@ -122,7 +122,7 @@ body {
 	min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, summary {
 	position: relative;
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
@@ -184,7 +184,7 @@ h3 {
 	font-size: calc(140% * var(--font-size-scale, 1));
 }
 
-h4, h5, h6 {
+h4, h5, h6, summary {
 	font-size: calc(100% * var(--font-size-scale, 1));
 	margin: .5em 0;
 }
@@ -723,6 +723,10 @@ body > footer {
 
 	.tags {
 		margin-right: auto;
+
+		& .orphan-tag {
+			opacity: .6;
+		}
 
 		&::before {
 			content: var(--icon-tags);

@@ -2,13 +2,15 @@
 {% if tags and tags.length > 0 %}
 <div class="tags">
 	{% for tag in tags | real_tags_only %}
-	{{ one(tag) | safe }}{% if not loop.last %}, {% endif %}
+	{{ one(tag) }}{% if not loop.last %}, {% endif %}
 	{% endfor %}
 </div>
 {% endif %}
 {% endmacro %}
 
 {% macro one(tag) %}
-<a href="/blog/tags/{{ tag }}" title="{{ collections[tag].length }} posts">
-{{ tag | format_tag }}</a>{% endmacro %}
+{% if collections[tag].length > 1 %}
+<a href="/blog/tags/{{ tag }}" title="{{ collections[tag].length - 1 }} other posts with this tag">
+{{ tag | format_tag }}</a>{% else %}
+<span class="orphan-tag" title="No other posts with this tag">{{ tag | format_tag }}</span>{% endif %}{% endmacro %}
 
