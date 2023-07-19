@@ -832,20 +832,27 @@ body > footer {
 
 /* Code */
 
+code .token {
+	mix-blend-mode: multiply;
+}
+
+/* Inline code */
 code:is(code, [class*="language-"]):not(pre *) {
-	padding: .25em .3em .18em;
+	padding: .28em .3em .2em;
 	border-radius: .15rem;
 	background: var(--color-accent2-light1);
 	mix-blend-mode: multiply;
-	font-size: 80%;
-	font-weight: 500;
+	font-size: 85%;
+	font-weight: bold;
 }
 
+/* <code> in blocks */
 pre code:is(code, [class*="language-"]) {
 	background: transparent;
 	padding: 0;
 }
 
+/* Blocks of code */
 pre:is(pre, [class*="language-"][class*="language-"]) {
 	position: relative;
 	border: 0;

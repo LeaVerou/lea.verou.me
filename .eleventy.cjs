@@ -92,7 +92,7 @@ module.exports = config => {
 		const ret = {};
 
 		for (let post of posts) {
-			let key = filters.format_date(post.date, "iso").substring(0, 7);
+			let key = filters.format_date(post.date, "iso").substring(0, 7); // YYYY-MM
 			ret[key] ??= [];
 			ret[key].push(post);
 		}
@@ -101,11 +101,11 @@ module.exports = config => {
 	});
 
 	config.addCollection("postsByYear", (collectionApi) => {
-		const posts = collectionApi.getFilteredByTag("postsByMonth").reverse();
+		const posts = collectionApi.getFilteredByTag("blog").reverse();
 		const ret = {};
 
 		for (let post of posts) {
-			let key = filters.format_date(post.date, "iso").substring(0, 4);
+			let key = post.date.getFullYear();
 			ret[key] ??= [];
 			ret[key].push(post);
 		}
@@ -114,7 +114,7 @@ module.exports = config => {
 	});
 
 	config.addPlugin(pluginTOC, {
-		tags: ['h2'],
+		tags: ["h2", "h3"],
 		ul: true,
 		wrapper: "",
 	});
