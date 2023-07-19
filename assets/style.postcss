@@ -1456,12 +1456,17 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 
 .warning {
 	--label: "Beware";
-	--icon: "\F33A";
+	--icon: var(--icon-exclamation-triangle-fill);
 }
 
 .info {
 	--label: "Info";
-	--icon: "\F434";
+	--icon: var(--icon-info-lg);
+}
+
+.tip {
+	--label: "Tip";
+	--icon: var(--icon-lightbulb-fill);
 }
 
 .tags-index {
