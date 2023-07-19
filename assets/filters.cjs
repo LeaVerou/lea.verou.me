@@ -54,7 +54,7 @@ const filters = {
 			return tagNames[tag] === true ? tag : tagNames[tag];
 		}
 
-		tag = tag.replace(/-/g, " ");
+		tag = (tag + "").replace(/-/g, " ");
 
 		for (let capitalization of capitalizations) {
 			let lowercase = capitalization.toLowerCase();
