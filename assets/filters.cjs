@@ -73,13 +73,6 @@ const filters = {
 		return tags.filter(filters.is_real_tag);
 	},
 
-	taglist (collections) {
-		let tags = Object.keys(collections).filter(filters.is_real_tag);
-		tags.sort((a, b) => collections[b].length - collections[a].length);
-
-		return Object.fromEntries(tags.map(tag => [tag, collections[tag].length]));
-	},
-
 	// Console.log() arguments, for debugging
 	log(...args) {
 		console.log(...args);

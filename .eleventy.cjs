@@ -68,7 +68,25 @@ module.exports = config => {
 
 	config.addPlugin(embeds);
 
-	// Based on https://github.com/11ty/eleventy/issues/1284#issuecomment-1026679407
+	config.addCollection("postsByTag", (collectionApi) => {
+		const posts = collectionApi.getFilteredByTag("blog");
+		let ret = {};
+
+		for (let post of posts) {
+			for (let tag of post.data.tags) {
+				if (filters.is_real_tag(tag)) {
+					ret[tag] ??= [];
+					ret[tag].push(post);
+				}
+			}
+		}
+
+		// Now sort, and reconstruct the object
+		ret = Object.fromEntries(Object.entries(ret).sort((a, b) => b[1].length - a[1].length));
+
+		return ret;
+	});
+
 	config.addCollection("postsByMonth", (collectionApi) => {
 		const posts = collectionApi.getFilteredByTag("blog").reverse();
 		const ret = {};

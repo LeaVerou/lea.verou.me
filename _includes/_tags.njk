@@ -8,5 +8,7 @@
 {% endif %}
 {% endmacro %}
 
-{% macro one(tag) %}<a href="/blog/tags/{{ tag }}">{{ tag | format_tag }}</a>{% endmacro %}
+{% macro one(tag) %}
+<a href="/blog/tags/{{ tag }}" title="{{ collections[tag].length }} posts">
+{{ tag | format_tag }}</a>{% endmacro %}
 
