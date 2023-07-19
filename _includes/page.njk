@@ -83,21 +83,26 @@
 
 <footer>
 	<div class="meta">
-		{% from "_tags.njk" import list as tagList with context %}
-		{{ tagList(tags) }}
+		{% if is_post %}
+			{% from "_tags.njk" import list as tagList with context %}
+			{{ tagList(tags) }}
+		{% endif %}
 
 		<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
 	</div>
 
-	{% set previousPost = collections.blog | getPreviousCollectionItem %}
-	{% set nextPost = collections.blog | getNextCollectionItem %}
-	{% if previousPost or nextPost %}
-	<div class="prev-next">
-		{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title }}</a>{% endif %}
-		{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title }}</a>{% endif %}
-	</div>
+	{% if is_post %}
+		{% set previousPost = collections.blog | getPreviousCollectionItem %}
+		{% set nextPost = collections.blog | getNextCollectionItem %}
+		{% if previousPost or nextPost %}
+		<div class="prev-next">
+			{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title }}</a>{% endif %}
+			{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title }}</a>{% endif %}
+		</div>
+		{% endif %}
 	{% endif %}
 </footer>
+
 
 {% include "_comments.njk" %}
 
