@@ -184,8 +184,13 @@ h3 {
 	font-size: calc(140% * var(--font-size-scale, 1));
 }
 
-h4 {
-	font-size: calc(2.4rem * var(--font-size-scale, 1));
+h4, h5, h6 {
+	font-size: calc(100% * var(--font-size-scale, 1));
+	margin: .5em 0;
+}
+
+h5 {
+	color: var(--color-gray-medium);
 }
 
 h4:not(main > *),
