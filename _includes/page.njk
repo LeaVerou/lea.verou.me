@@ -45,9 +45,9 @@
 				</span>
 			</h1>
 		{% endif %}
-		{% if siteArea === "blog" %}
+		{% if is_post %}
 		<div class="meta">
-			{% if page.date and is_post %}
+			{% if page.date %}
 			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
 				dateStyle: "long"
 			}) }}</time>
