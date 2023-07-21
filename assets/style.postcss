@@ -194,6 +194,7 @@ h5 {
 }
 
 h4:not(main > *, .post *),
+pre > code[data-file]::before,
 .callout::after,
 .warning::after,
 .info::after,
@@ -859,12 +860,6 @@ code:is(code, [class*="language-"]):not(pre *) {
 	font-weight: bold;
 }
 
-/* <code> in blocks */
-pre code:is(code, [class*="language-"]) {
-	background: transparent;
-	padding: 0;
-}
-
 /* Blocks of code */
 pre:is(pre, [class*="language-"][class*="language-"]) {
 	position: relative;
@@ -893,6 +888,29 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 
 	& p {
 		display: contents;
+	}
+
+	& code {
+		background: transparent;
+		padding: 0;
+		text-shadow: none;
+	}
+
+	&:has(> code[data-file]) {
+		--clip-top: 0 -1em, 100% -1em;
+		padding-top: 0;
+		overflow: visible;
+
+		& > code[data-file] {
+			&::before {
+				content: "File: " attr(data-file);
+				position: absolute;
+				top: -2.2em;
+				right: var(--content-margin);
+				margin: 0;
+				background: var(--color-accent2);
+			}
+		}
 	}
 }
 
