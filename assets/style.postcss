@@ -725,7 +725,7 @@ body > footer {
 	.tags {
 		margin-right: auto;
 
-		& .orphan-tag {
+		& .orphan {
 			opacity: .6;
 		}
 
@@ -1489,6 +1489,20 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 	gap: 0 3em;
+
+	.tag {
+		font-family: var(--font-sans);
+		font-weight: 500;
+	}
+
+	.aliases {
+		font-size: 80%;
+		color: var(--color-gray-medium);
+
+		.tag {
+			font-size: 90%;
+		}
+	}
 }
 
 .subtle-markers {

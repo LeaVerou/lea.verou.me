@@ -6,5 +6,6 @@
 	"background-attachment": true,
 	"box-shadow": true,
 	"border-radius": true,
-	"css-backgrounds": "CSS Backgrounds & Borders"
+	"css-backgrounds": "CSS Backgrounds & Borders",
+	"utf8": "UTF-8"
 }

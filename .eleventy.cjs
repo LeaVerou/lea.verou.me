@@ -4,6 +4,7 @@ const markdownItAttrs = require('markdown-it-attrs');
 const embeds = require("eleventy-plugin-embed-everything");
 const pluginTOC = require('eleventy-plugin-toc');
 const filters = require("./assets/filters.cjs");
+const tag_aliases = require("./data/tag_aliases.json")
 
 let foo = false;
 module.exports = config => {
@@ -83,6 +84,15 @@ module.exports = config => {
 
 		// Now sort, and reconstruct the object
 		ret = Object.fromEntries(Object.entries(ret).sort((a, b) => b[1].length - a[1].length));
+
+		// Now add aliases
+		for (let alias in tag_aliases) {
+			let aliasOf = tag_aliases[alias];
+			if (ret[aliasOf]) {
+				ret[aliasOf].aliases ??= [];
+				ret[aliasOf].aliases.push(alias);
+			}
+		}
 
 		return ret;
 	});
