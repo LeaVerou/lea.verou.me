@@ -1,12 +1,14 @@
-
+---
+title: Home
+---
 <div class="nutshell">
 
 <img src="/about/images/smiling-medium.jpg" alt="Photo of me smiling">
 
 Hi, I’m Lea and I wear many hats.
-I create [tools](/projects/) that make web developers' lives easier.
-I [design](/publications/#specifications) and [design review](/blog/2022/11/tag-2/) new web technologies;
-your browser implements several web technologies I’ve worked on.
+I create [tools](/projects/) that make web development easier.
+I [design](/publications/#specifications) new web technologies, and [design review](https://github.com/w3ctag/design-reviews/) dozens more as a [W3C TAG member](https://en.wikipedia.org/wiki/Technical_Architecture_Group);
+your browser implements several of these.
 I've done [HCI research](/publications/#research) at [MIT](https://haystack.csail.mit.edu) on democratizing web development, earning me a PhD.
 I [speak](/speaking/), [teach](https://designftw.mit.edu), and [write](/publications/),
 including a [bestselling book](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20) with [O’Reilly](https://oreilly.com),
