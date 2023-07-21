@@ -7,7 +7,7 @@ mavo: true
 If you want me to speak at your event, I require all expenses to be covered, plus a honorarium, determined on a case by case basis.
 To invite me to speak, please drop me a line at lea〖@〗verou.me.
 
-<div class="talks" mv-app="" mv-storage="https://github.com/leaverou/leaverou.github.io/data.json">
+<div class="talks" mv-app="" mv-storage="https://github.com/leaverou/lea.verou.me/data/speaking.json">
 	<h2>[count(talk)] sessions at [count(event)] events ([count(upcoming)] events upcoming)</h2>
 	<div class="mv-bar mv-ui" mv-bar="no-clear"></div>
 	<article mv-multiple="" property class="event" mv-order="desc">

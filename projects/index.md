@@ -6,7 +6,7 @@ mavo: true
 Here you'll find a list of tools I've developed over the years to make the lives of web designers & developers easier.
 They are ordered mostly by release date, with those with the most impact featured first.
 
-<div mv-app="projects" class="projects" mv-storage="https://github.com/leaverou/leaverou.github.io/data.json" mv-plugins="markdown">
+<div mv-app="projects" class="projects" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
 	<h2>[count(project)] projects ([count(type = &quot;lib&quot;)] libraries and [count(type = &quot;app&quot;)] apps)</h2>
 	<div mv-list>
 		<article property="project" mv-multiple="" mv-list-item mv-order="desc" style="--featured-weight: [featured]" class="type-[type] [if(featured &gt; 0, &quot;featured&quot;)]">
