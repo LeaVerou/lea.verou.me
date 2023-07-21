@@ -47,11 +47,13 @@
 		{% endif %}
 		{% if is_post %}
 		<div class="meta">
-			{% if page.date %}
 			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
 				dateStyle: "long"
 			}) }}</time>
-			{% endif %}
+
+
+			{% set rt = content | reading_time %}
+			<span class="reading-time" title="{{ rt.words }} words">{{ rt.text }}</span>
 
 			{% if disqus_id %}
 			<span class="disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>

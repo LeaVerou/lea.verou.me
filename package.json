@@ -34,6 +34,7 @@
     "plur": "^5",
     "postcss": "^8",
     "postcss-cli": "^10",
-    "postcss-nesting": "^12"
+    "postcss-nesting": "^12",
+    "reading-time": "^1.5.0"
   }
 }

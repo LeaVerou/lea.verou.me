@@ -1,16 +1,18 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 :root {
-	--icon-date: "\F1F6";
-	--icon-comments: "\F268";
-	--icon-tags: "\F5B2";
-	--icon-edit: "\F4CA";
 	--icon-arrow-left-short: "\F12C";
 	--icon-arrow-right-short: "\F135";
 	--icon-arrow-left-circle: "\F12A";
 	--icon-arrow-right-circle: "\F134";
 	--icon-arrow-down-circle: "\F119";
+	--icon-comments: "\F268";
+	--icon-date: "\F1F6";
+	--icon-edit: "\F4CA";
 	--icon-exclamation-triangle-fill: "\F33A";
+	--icon-eyeglasses: "\F343";
 	--icon-info-lg: "\F646";
 	--icon-lightbulb-fill: "\F468";
+	--icon-stopwatch: "\F597";
+	--icon-tags: "\F5B2";
 }

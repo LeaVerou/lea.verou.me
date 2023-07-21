@@ -1,11 +1,16 @@
 const tagNames = require("../data/tag_names.json");
 const capitalizations = require("../data/capitalizations.json");
+const readingTime = require("reading-time");
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
 const filters = {
 	async pluralize(num, word) {
 		let plur = (await import("plur")).default;
 		return num + " " + plur(word, num);
+	},
+
+	reading_time (text) {
+		return readingTime(text);
 	},
 
 	relative(page) {

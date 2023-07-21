@@ -14,6 +14,10 @@
 		</h2>
 		<div class="meta">
 			<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("long") }}</time>
+
+			{% set rt = post.content | reading_time %}
+			<span class="reading-time" title="{{ rt.words }} words">{{ rt.text }}</span>
+
 			{% if post.data.disqus_id %}
 			<span class="disqus-comment-count comment-count" data-disqus-identifier="{{ post.data.disqus_id }}">0 comments</span>
 			<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
