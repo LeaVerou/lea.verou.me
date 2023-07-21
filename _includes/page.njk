@@ -46,19 +46,9 @@
 			</h1>
 		{% endif %}
 		{% if is_post %}
+		{% import "_posts.njk" as posts with context %}
 		<div class="meta">
-			<time datetime="{{ page.date.toISOString() }}">{{ page.date.toLocaleString("en-gb", {
-				dateStyle: "long"
-			}) }}</time>
-
-
-			{% set rt = content | reading_time %}
-			<span class="reading-time" title="{{ rt.words }} words">{{ rt.text }}</span>
-
-			{% if disqus_id %}
-			<span class="disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>
-			<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
-			{% endif %}
+			{{ posts.meta_before(page) }}
 		</div>
 		{% endif %}
 	</div>
@@ -86,11 +76,11 @@
 <footer>
 	<div class="meta">
 		{% if is_post %}
-			{% from "_tags.njk" import list as tagList with context %}
-			{{ tagList(tags) }}
+			{% import "_posts.njk" as posts with context %}
+			{{ posts.meta_after(page) }}
+		{% else %}
+			<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
 		{% endif %}
-
-		<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
 	</div>
 
 	{% if is_post %}

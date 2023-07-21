@@ -1,5 +1,3 @@
-{% import "_tags.njk" as tags %}
-
 {% macro one(post, o = {}) %}
 {% if o.style === "compact" %}
 <li>
@@ -13,15 +11,7 @@
 			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
 		</h2>
 		<div class="meta">
-			<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("long") }}</time>
-
-			{% set rt = post.content | reading_time %}
-			<span class="reading-time" title="{{ rt.words }} words">{{ rt.text }}</span>
-
-			{% if post.data.disqus_id %}
-			<span class="disqus-comment-count comment-count" data-disqus-identifier="{{ post.data.disqus_id }}">0 comments</span>
-			<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
-			{% endif %}
+			{{ meta_before(post) }}
 		</div>
 	</header>
 	{% set summary = post.data.summary or post.data.page.excerpt %}
@@ -35,9 +25,7 @@
 	</div>
 
 	<footer class="meta">
-		{{ tags.list(post.data.tags) | safe }}
-
-		<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ post.data.page.url }}index.md" class="edit-page">Edit post on GitHub</a>
+		{{ meta_after(post) }}
 	</footer>
 </article>
 {% endif %}
@@ -58,4 +46,27 @@
 	{% endif %}
 {% endfor %}
 {% if o.style === "compact" %}</ol>{% endif %}
+{% endmacro %}
+
+{% macro meta_before(post) %}
+	{% set content = post.content or content %}
+	{% set disqus_id = post.data.disqus_id if post.data else disqus_id %}
+
+	<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("long") }}</time>
+
+	{% set rt = content | reading_time %}
+	<span class="reading-time" title="{{ rt.words }} words">{{ rt.text }}</span>
+
+	{% if disqus_id %}
+	<span class="disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>
+	<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
+	{% endif %}
+{% endmacro %}
+
+{% macro meta_after(post) %}
+	{% import "_tags.njk" as tagsUtil with context %}
+	{% set tags = post.data.tags if post.data else tags %}
+	{% set page = post.data.page if post.data else page %}
+	{{ tagsUtil.list(tags) }}
+	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit post on GitHub</a>
 {% endmacro %}
