@@ -308,6 +308,101 @@
 			"venueUrl": "http://www.netmagazine.com/",
 			"date": "2011-8-15"
 		}
+	],
+	"newsletter": [
+		{
+			"name": "CSS Weekly",
+			"id": "css-weekly",
+			"issueUrl": "https://css-weekly.com/issue-",
+			"issue": [
+				"6",
+				"38",
+				"48",
+				"51",
+				"69",
+				"92",
+				"93",
+				"96",
+				"105",
+				"168",
+				"174",
+				"266",
+				"405",
+				"413",
+				"414",
+				"419",
+				"422",
+				"431",
+				"454"
+			],
+			"url": "https://css-weekly.com"
+		},
+		{
+			"name": "Javascript Weekly",
+			"id": "javascript-weekly",
+			"issueUrl": "https://javascriptweekly.com/issues/",
+			"issue": [
+				"230",
+				"262",
+				"443",
+				"490",
+				"494",
+				"507",
+				"508",
+				"515"
+			],
+			"url": "https://javascriptweekly.com"
+		},
+		{
+			"url": "https://frontendfoc.us/",
+			"name": "Frontend Focus",
+			"id": "frontend-focus",
+			"issueUrl": "https://frontendfoc.us/issues/",
+			"issue": [
+				"195",
+				"199",
+				"242",
+				"258",
+				"276",
+				"290",
+				"340",
+				"341",
+				"359",
+				"437",
+				"443",
+				"449",
+				"451",
+				"460",
+				"462",
+				"468",
+				"485"
+			]
+		},
+		{
+			"url": "https://ui.dev",
+			"name": "UI.dev",
+			"id": "uidev",
+			"issueUrl": "https://ui.dev/newsletters/bytes/",
+			"issue": [
+				"2",
+				"6",
+				"15",
+				"16",
+				"18"
+			]
+		},
+		{
+			"url": "https://www.smashingmagazine.com/the-smashing-newsletter/",
+			"name": "Smashing Newsletter",
+			"id": "smashing-newsletter",
+			"issueUrl": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-",
+			"issue": [
+				"50",
+				"165",
+				"257",
+				"276"
+			]
+		}
 	]
 }
 

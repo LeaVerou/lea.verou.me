@@ -1,0 +1,365 @@
+{
+	"publicationType": [
+		{
+			"type": "Books",
+			"publication": [
+				{
+					"title": "CSS Secrets",
+					"venue": "O’Reilly Media",
+					"date": "2015-05",
+					"url": "http://shop.oreilly.com/product/0636920031123.do",
+					"venueUrl": "https://oreilly.com/",
+					"author": [],
+					"comment": "* Sold over 20,000 copies\n* Translated into **8 languages** ([German](http://www.dpunkt.de/buecher/12468/9783960090250-css-secrets.html), [Polish](http://helion.pl/ksiazki/css-bez-tajemnic-47-sekretow-kreatywnego-projektanta-lea-verou,scss47.htm), [Russian](https://www.piter.com/collection/all/product/sekrety-css-idealnye-resheniya-ezhednevnyh-zadach), [Japanese](https://www.amazon.co.jp/CSSシークレット-_47のテクニックでCSSを自在に操る-Lea-Verou/dp/4873117666/), [Simplified Chinese](https://www.amazon.cn/CSS揭秘-希-韦鲁/dp/B01MDS2JQ0/), [Traditional Chinese](http://books.gotop.com.tw/v_A447), [Korean](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788965401421), [Bulgarian](https://www.zest-press.com/taynite-na-css.html))\n* Recommended as the best CSS book by the [Chicago Tribune](https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html) and as \"Best of the Best\" in CSS books by [BestReviews](https://bestreviews.com/best-css-books) (used by Amazon for Editorial Recommendations).\n* Average of **4.6/5** on [Amazon](http://www.amazon.com/CSS-Secrets-Solutions-Everyday-Problems/dp/1449372635/), 182 reviews.\n* Was consistently in the [top 10 Amazon bestsellers on CSS](http://www.amazon.com/gp/bestsellers/books/379357011/ref=pd_zg_hrsr_b_1_5_last) and the [top 30 on User Experience & Usability](http://www.amazon.com/gp/bestsellers/books/4033/ref=pd_zg_hrsr_b_2_4_last), for the first year since its publication date.\n* [Over 1000 endorsements on Twitter](https://twitter.com/csssecretsbook)"
+				},
+				{
+					"title": "Chapter in Smashing Book #3: Restyle, recode, reimagine, with CSS3",
+					"venue": "Smashing Magazine",
+					"date": "2012-04",
+					"url": "https://shop.smashingmagazine.com/smashing-book-3.html",
+					"venueUrl": "https://smashingmagazine.com/",
+					"author": [
+						"Lea Verou",
+						"David Storey"
+					]
+				}
+			],
+			"id": "books"
+		},
+		{
+			"type": "Specifications",
+			"id": "specifications",
+			"publication": [
+				{
+					"url": "https://www.w3.org/TR/css-color-5/",
+					"title": "CSS Color Module Level 5",
+					"author": [
+						"Chris Lilley",
+						"Una Kravets",
+						"Lea Verou",
+						"Adam Argyle"
+					],
+					"venueUrl": "https://w3.org",
+					"venue": "W3C",
+					"date": "2021-12"
+				},
+				{
+					"url": "https://www.w3.org/TR/css-color-4/",
+					"title": "CSS Color Module Level 4",
+					"author": [
+						"Tab Atkins Jr.",
+						"Chris Lilley",
+						"Lea Verou"
+					],
+					"venueUrl": "https://w3.org",
+					"venue": "W3C",
+					"date": "2021-12"
+				},
+				{
+					"url": "https://www.w3.org/TR/css-color-5/",
+					"title": "Color API (Editor’s Draft)",
+					"author": [
+						"Chris Lilley",
+						"Lea Verou",
+						"Tab Atkins Jr."
+					],
+					"venue": "WICG",
+					"date": "2021-08"
+				},
+				{
+					"url": "https://www.w3.org/TR/css-images-4/",
+					"title": "CSS Images Module Level 4",
+					"author": [
+						"Tab Atkins Jr.",
+						"Elika J. Etemad",
+						"Lea Verou"
+					],
+					"venueUrl": "https://w3.org",
+					"venue": "W3C",
+					"date": "2017-04"
+				},
+				{
+					"url": "https://www.w3.org/TR/css-images-3/",
+					"title": "CSS Images Module Level 3",
+					"author": [
+						"Tab Atkins Jr.",
+						"Elika J. Etemad",
+						"Lea Verou"
+					],
+					"venueUrl": "https://w3.org",
+					"venue": "W3C",
+					"date": "2020-12"
+				},
+				{
+					"url": "https://drafts.csswg.org/css-backgrounds-4/",
+					"title": "CSS Backgrounds and Borders Module Level 4 (Editor’s Draft)",
+					"author": [
+						"Bert Bos",
+						"Elika J. Etemad",
+						"Lea Verou"
+					],
+					"venueUrl": "https://w3.org",
+					"venue": "W3C",
+					"date": "2022-01-10"
+				}
+			]
+		},
+		{
+			"type": "Academic Peer-reviewed Papers",
+			"publication": [
+				{
+					"url": "https://dl.acm.org/doi/10.1145/3526113.3545706",
+					"title": "Wikxhibit: Using HTML and Wikidata to Author Applications that Link Data Across the Web",
+					"author": [
+						"Tarfah Alrashed",
+						"Lea Verou",
+						"David Karger"
+					],
+					"venueUrl": "https://uist.acm.org/uist2022/",
+					"venue": "UIST 2022",
+					"date": "2022-10"
+				},
+				{
+					"title": "Shapir: Standardizing and Democratizing Access to Web APIs",
+					"author": [
+						"Tarfah Alrashed",
+						"Lea Verou",
+						"David Karger"
+					],
+					"venueUrl": "https://uist.acm.org/uist2021/",
+					"venue": "UIST 2021",
+					"date": "2021-10"
+				},
+				{
+					"url": "https://dl.acm.org/citation.cfm?id=3242663",
+					"title": "Extending a Reactive Expression Language with Data Update Actions for End-User Application Authoring",
+					"author": [
+						"Lea Verou",
+						"Tarfah Alrashed",
+						"David Karger"
+					],
+					"venueUrl": "https://uist.acm.org/uist2018/",
+					"venue": "UIST 2018",
+					"date": "2018-10"
+				},
+				{
+					"url": "https://dl.acm.org/citation.cfm?id=2998235",
+					"title": "Wikum: Bridging discussion forums and wikis using recursive summarization",
+					"venue": "CSCW 2017",
+					"date": "2017-02",
+					"author": [
+						"Amy X. Zhang",
+						"Lea Verou",
+						"David Karger"
+					]
+				},
+				{
+					"url": "https://dl.acm.org/citation.cfm?id=2984551",
+					"title": "Mavo: creating interactive data-driven web applications by authoring HTML",
+					"venue": "UIST 2016",
+					"date": "2016-10",
+					"author": [
+						"Lea Verou",
+						"Amy X. Zhang",
+						"David Karger"
+					]
+				}
+			],
+			"id": "research"
+		},
+		{
+			"type": "Articles",
+			"publication": [
+				{
+					"url": "https://css-tricks.com/how-the-web-is-really-built/",
+					"title": "How the Web is really built",
+					"author": [],
+					"venueUrl": "https://css-tricks.com/",
+					"venue": "CSS-Tricks",
+					"date": "2020-12"
+				},
+				{
+					"url": "https://almanac.httparchive.org/en/2020/css",
+					"title": "CSS Chapter",
+					"author": [
+						"Lea Verou",
+						"Chris Lilley",
+						"Rachel Andrew"
+					],
+					"venueUrl": "https://almanac.httparchive.org/en/2020/",
+					"venue": "Web Almanac 2020",
+					"date": "2020-12"
+				},
+				{
+					"url": "https://increment.com/frontend/a-users-guide-to-css-variables/",
+					"title": "A user’s guide to CSS variables",
+					"author": [],
+					"venueUrl": "https://increment.com/",
+					"venue": "Increment",
+					"date": "2020-05"
+				},
+				{
+					"url": "https://coding.smashingmagazine.com/2017/05/introducing-mavo/",
+					"title": " Introducing Mavo: Create Web Apps Entirely By Writing HTML!",
+					"venueUrl": "https://smashingmagazine.com/",
+					"venue": "Smashing Magazine",
+					"date": "2018-05",
+					"author": []
+				},
+				{
+					"url": "https://coding.smashingmagazine.com/2017/02/designing-html-apis/",
+					"title": "HTML APIs: What They Are And How To Design A Good One",
+					"venueUrl": "https://smashingmagazine.com/",
+					"venue": "Smashing Magazine",
+					"date": "2017-02",
+					"author": []
+				},
+				{
+					"url": "https://coding.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/",
+					"title": "Designing A Flexible, Maintainable CSS Pie Chart With SVG",
+					"venueUrl": "https://smashingmagazine.com/",
+					"venue": "Smashing Magazine",
+					"date": "2015-07",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: May-June 2013",
+					"venue": ".net magazine",
+					"date": "2013-07-03",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-mayjune-2013",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: March-April 2013",
+					"venue": ".net magazine",
+					"date": "2013-05-01",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-marchapril-2013",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: January-February 2013",
+					"venue": ".net magazine",
+					"date": "2013-03-13",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-januaryfebruary-2013",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: November-December 2012",
+					"venue": ".net magazine",
+					"date": "2012-12-18",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-novemberdecember-2012",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: September-October 2012",
+					"venue": ".net magazine",
+					"date": "2012-11-14",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-septemberoctober-2012",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: July-August 2012",
+					"venue": ".net magazine",
+					"date": "2012-09-10",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-julyaugust-2012",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: June 2012",
+					"venue": ".net magazine",
+					"date": "2012-07-09",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-june-2012",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Hot in web standards: May 2012",
+					"venue": ".net magazine",
+					"date": "2012-05-31",
+					"url": "http://www.netmagazine.com/features/hot-web-standards-css-blending-modes-and-filters-shadow-dom",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "The top 8 web standards myths, debunked",
+					"venue": ".net magazine",
+					"date": "2012-05-08",
+					"url": "http://www.netmagazine.com/features/top-8-web-standards-myths-debunked",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Every Time You Call a Proprietary Feature “CSS3,” a Kitten Dies",
+					"venue": "A List Apart",
+					"date": "2012-02-14",
+					"url": "http://www.alistapart.com/articles/every-time-you-call-a-proprietary-feature-css3-a-kitten-dies/",
+					"venueUrl": "http://www.alistapart.com/",
+					"author": []
+				},
+				{
+					"title": "CSS3 patterns, explained",
+					"venue": "24 ways",
+					"date": "2011-12-15",
+					"url": "http://24ways.org/2011/css3-patterns-explained",
+					"venueUrl": "http://24ways.org/",
+					"author": []
+				},
+				{
+					"title": "“But The Client Wants IE 6 Support!”",
+					"venue": "Smashing Magazine",
+					"date": "2011-11-03",
+					"url": "http://www.smashingmagazine.com/2011/11/03/%E2%80%9Cbut-the-client-wants-ie-6-support%E2%80%9D/",
+					"venueUrl": "http://smashingmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Optimizing Long Lists Of Yes/No Values With JavaScript",
+					"venue": "Smashing Magazine",
+					"date": "2011-10-19",
+					"url": "http://coding.smashingmagazine.com/2011/10/19/optimizing-long-lists-of-yesno-values-with-javascript/",
+					"venueUrl": "http://smashingmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "PrefixFree: Break Free From CSS Prefix Hell",
+					"venue": "Smashing Magazine",
+					"date": "2011-10-12",
+					"url": "http://coding.smashingmagazine.com/2011/10/12/prefixfree-break-free-from-css-prefix-hell/",
+					"venueUrl": "http://smashingmagazine.com/",
+					"author": []
+				},
+				{
+					"title": "Help the community: Report browser bugs",
+					"venue": "Smashing Magazine",
+					"date": "2011-09-10",
+					"url": "http://coding.smashingmagazine.com/2011/09/07/help-the-community-report-browser-bugs/",
+					"venueUrl": "https://smashingmagazine.com/",
+					"author": []
+				},
+				{
+					"url": "https://24ways.org/2011/css3-patterns-explained/",
+					"title": "CSS3 Patterns, Explained",
+					"venueUrl": "https://24ways.org/2011/css3-patterns-explained/",
+					"venue": "24 Ways",
+					"date": "2011-12",
+					"author": []
+				},
+				{
+					"title": "Make your backgrounds shine",
+					"venue": ".net magazine",
+					"date": "2011-12-15",
+					"url": "http://www.netmagazine.com/news/issue-217-sale-now",
+					"venueUrl": "http://www.netmagazine.com/",
+					"author": []
+				}
+			],
+			"id": "articles"
+		}
+	]
+}
