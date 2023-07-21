@@ -1,7 +1,8 @@
 {% macro list(tags) %}
+{% set tags = tags | real_tags_only %}
 {% if tags and tags.length > 0 %}
 <div class="tags">
-	{% for tag in tags | real_tags_only %}
+	{% for tag in tags %}
 	{{ one(tag) }}{% if not loop.last %}, {% endif %}
 	{% endfor %}
 </div>
