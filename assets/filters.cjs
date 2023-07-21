@@ -95,6 +95,10 @@ const filters = {
 		return arr.flat();
 	},
 
+	jsonify(obj, indent = "\t") {
+		return JSON.stringify(obj, null, indent);
+	},
+
 	// Dump as JSON, without errors for circular references and with pretty-printing
 	dump2(obj) {
 		let cache = new WeakSet();

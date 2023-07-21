@@ -5,7 +5,7 @@
 404.html
 assets/style.css
 blog/tags/*
-!blog/tags/index.njk
+**/index.json
 
 # Local Netlify folder
 .netlify
