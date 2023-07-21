@@ -1,10 +1,12 @@
 ---
 permalink: _redirects
 layout: null
+eleventyExcludeFromCollections: true
 ---
 
 # Redirects for domain aliases
-https://lea1.verou.me/* https://lea.verou.me/:splat 301
+{% for domain in site.domain_aliases %}{{ domain }}/* https://lea.verou.me/:splat 301
+{% endfor %}
 
 # Interviews page has been merged with Press
 /interviews/ /press/

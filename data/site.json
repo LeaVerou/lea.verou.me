@@ -1,6 +1,10 @@
 {
 	"domain": "https://lea.verou.me",
+	"domain_aliases": [
+		"https://lea1.verou.me",
+		"https://verou.me"
+	],
 	"old_domain": "https://lea0.verou.me",
 	"repo": "leaverou/lea.verou.me",
-	"repo_file": "https://github.com/LeaVerou/lea.verou.me/tree/main/"
+	"repo_file": "https://github.com/LeaVerou/lea.verou.me/tree/main"
 }
