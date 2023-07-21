@@ -16,10 +16,7 @@ eleventyExcludeFromCollections: true
 /interviews/ /press/
 
 # Blog links using year/month/slug format
-/20* /blog/20:splat 200
-
-# Static file hosting without cluttering root
-/* /files/:splat 200
+/20* /blog/20:splat 301
 
 # Redirect projects that now live on GitHub or separate domains
 /css3patterns/* https://projects.verou.me/css3patterns/:splat 301
@@ -28,3 +25,6 @@ eleventyExcludeFromCollections: true
 # Tag aliases
 {% for alias, tag in tag_aliases %}/blog/tags/{{ alias }}/ /blog/tags/{{ tag }}/ 301
 {% endfor %}
+
+# Static file hosting without cluttering root
+/* /files/:splat 200
