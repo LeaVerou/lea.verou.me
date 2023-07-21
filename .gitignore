@@ -1,4 +1,5 @@
-
+# Built files
+_redirects
 **/index.html
 !files/**/index.html
 404.html
