@@ -8,6 +8,10 @@ eleventyExcludeFromCollections: true
 {% for domain in site.domain_aliases %}{{ domain }}/* https://lea.verou.me/:splat 301
 {% endfor %}
 
+# Redirect PHP files and wp-content/ to old website
+# /*.php https://lea0.verou.me/:splat.php 200 # not working :(
+/wp-content/* https://lea0.verou.me/wp-content/:splat 200
+
 # Interviews page has been merged with Press
 /interviews/ /press/
 
@@ -20,9 +24,6 @@ eleventyExcludeFromCollections: true
 # Redirect projects that now live on GitHub or separate domains
 /css3patterns/* https://projects.verou.me/css3patterns/:splat 301
 /incrementable/* https://incrementable.verou.me/:splat 301
-
-# Redirect PHP files to old website
-/*.php https://lea0.verou.me/:splat 200
 
 # Tag aliases
 {% for alias, tag in tag_aliases %}/tags/{{ alias }}/ /tags/{{ tag }}/ 301
