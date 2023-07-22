@@ -57,6 +57,7 @@
 	--color-magenta: hsl(336 100% 50%);
 	--color-orange: hsl(20 100% 60%);
 	--color-turquoise: hsl(189 100% 42%);
+	--color-blue: var(--color-turquoise);
 	--color-green: hsl(80 61% 48%);
 
 	--color-accent: var(--color-magenta);
@@ -231,7 +232,7 @@ main aside::before,
 	margin: 0;
 	margin-left: calc(-1 * var(--offset));
 	margin-bottom: .4rem;
-	background: var(--color-accent);
+	background: var(--label-color, var(--color-accent));
 	font: 800 .8rem/1.2 var(--font-sans);
 	text-transform: uppercase;
 	color: white;
@@ -1456,8 +1457,9 @@ main aside,
 .info,
 .note,
 .tip {
+	--_color-light: var(--color-light, var(--color-accent2-light2));
 	position: relative;
-	background: var(--color-accent2-light2);
+	background: var(--_color-light);
 	padding: 1.2rem 1rem .8rem;
 	border-radius: .3rem;
 	margin-top: 1.6em;
@@ -1479,7 +1481,7 @@ main aside,
 		position: absolute;
 		top: -1em;
 		left: 2.5rem;
-		color: var(--color-accent2-light2);
+		color: var(--_color-light);
 		margin-left: -2em;
 		margin-bottom: 0;
 	}
@@ -1488,8 +1490,6 @@ main aside,
 main aside {
 	font-size: 75%;
 	color: var(--color-gray-40);
-
-
 
 	&[id=toc] {
 		z-index: 1;
@@ -1538,6 +1538,16 @@ main aside {
 .info,
 .note,
 .tip {
+	@supports (color: color-mix(in lab, white, black)) {
+		--color-lighter: color-mix(in lab, var(--color), white 88%);
+		--color-darker: color-mix(in lab, var(--color), black 20%);
+	}
+
+	a {
+		color: var(--link-color, var(--color, var(--color-accent)));
+		mix-blend-mode: multiply;
+	}
+
 	@media (width > 600px) {
 		padding-left: 4.5em;
 
@@ -1551,7 +1561,7 @@ main aside {
 			background: white;
 			padding: .25em .3em .35em;
 			border-radius: 50%;
-			color: var(--color-orange);
+			color: var(--color, var(--color-orange));
 		}
 
 		& > h4,
@@ -1564,11 +1574,29 @@ main aside {
 .warning {
 	--label: "Beware";
 	--icon: var(--icon-exclamation-triangle-fill);
+	--color: var(--color-orange);
+	--color-light: color-mix(in lab, var(--color), white 88%);
+	--label-color: var(--color-orange);
+	--link-color: var(--color-darker);
 }
 
 .info {
 	--label: "Info";
 	--icon: var(--icon-info-lg);
+	--color: var(--color-blue);
+	--color-light: var(--color-lighter);
+	--label-color: var(--color);
+	--link-color: var(--color-darker);
+}
+
+.note,
+.tip {
+	--label: "Note";
+	--icon: var(--icon-clipboard2-check-fill);
+	--color: var(--color-green);
+	--color-light: var(--color-lighter);
+	--label-color: var(--color);
+	--link-color: var(--color-darker);
 }
 
 .tip {
