@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" vocab="https://schema.org/" data-area="{{ siteArea }}" data-page="{{ page.url }}">
+<html lang="en" vocab="https://schema.org/"
+	data-area="{{ siteArea }}"
+	data-page="{{ page.url }}"
+	data-inputpath="{{ page.inputPath | replace("./", "") }}"
+>
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}{% if title %} &bull; {% endif %}Lea Verou</title>
