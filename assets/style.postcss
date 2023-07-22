@@ -312,9 +312,10 @@ figure {
 		text-align: center;
 	}
 
+	/* Annoying Markdown artifacts */
 	> p,
-	figcaption > p {
-		margin: 0;
+	figcaption > p:only-child {
+		display: contents;
 	}
 
 	& figcaption {
@@ -1572,10 +1573,10 @@ main aside {
 }
 
 .warning {
-	--label: "Beware";
+	--label: "Here Be Dragons";
 	--icon: var(--icon-exclamation-triangle-fill);
 	--color: var(--color-orange);
-	--color-light: color-mix(in lab, var(--color), white 88%);
+	--color-light: var(--color-accent2-light2);
 	--label-color: var(--color-orange);
 	--link-color: var(--color-darker);
 }
