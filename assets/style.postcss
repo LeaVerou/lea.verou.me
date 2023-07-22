@@ -107,6 +107,7 @@ html {
 	color: black;
 	font: 110%/1.5 var(--font-sans);
 	letter-spacing: -0.015em;
+	counter-reset: figure;
 
 	@media (width > 700px) {
 		font-size: 130%;
@@ -195,11 +196,12 @@ h5 {
 
 h4:not(main > *, .post *),
 pre > code[data-file]::before,
-.callout::after,
-.warning::after,
-.info::after,
-.note::after,
-.tip::after {
+main aside::before,
+.callout::before,
+.warning::before,
+.info::before,
+.note::before,
+.tip::before {
 	--offset: .5em;
 
 	padding: .3em 1em;
@@ -286,13 +288,31 @@ pre, code {
 figure {
 	margin: 1em 0;
 
-	> p {
+	&:has(figcaption) {
+		padding: .5rem;
+		margin-inline: -.5em;
+		border: 1px solid var(--color-gray-80);
+		box-shadow: 0 .1em .2em var(--color-gray-95);
+	}
+
+	> p,
+	figcaption > p {
 		margin: 0;
 	}
 
 	& figcaption {
 		font: 500 75% var(--font-sans);
 		color: var(--color-gray-medium);
+		background: var(--color-gray-95);
+		padding: .5rem;
+		margin: -.5rem;
+		margin-top: .5rem;
+		counter-increment: figure;
+
+		&::before {
+			content: "Figure " counter(figure) ": ";
+			font-weight: bold;
+		}
 
 		& a:not(:hover, :focus, :active) {
 			color: inherit;
@@ -387,6 +407,7 @@ figure {
 
 			> figcaption {
 				flex-basis: 100%;
+				box-sizing: content-box;
 			}
 		}
 	}
@@ -1403,7 +1424,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	margin-top: 1em;
 }
 
-[id=toc],
+main aside,
 .callout,
 .warning,
 .info,
@@ -1423,12 +1444,12 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 		margin-block: 0;
 	}
 
-	&:not(:has(>h4))::after {
+	&:not(:has(>h4))::before {
 		content: var(--label);
 	}
 
 	& > h4,
-	&::after {
+	&::before {
 		position: absolute;
 		top: -1em;
 		left: 2.5rem;
@@ -1438,31 +1459,51 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	}
 }
 
-[id=toc] {
-	z-index: 1;
+main aside {
 	font-size: 75%;
 	color: var(--color-gray-40);
-	mix-blend-mode: multiply;
 
-	& a {
-		color: inherit;
-	}
 
-	@media (width > 1700px) {
-		position: absolute;
-		--min-header-height: 12.8rem;
-		top: calc(2.5em + max(0em, var(--scrolltop, 0) * 1px - var(--min-header-height)));
-		left: calc(var(--content-margin) + var(--content-width) + 1em);
-		max-width: calc(var(--content-margin) - 2em);
-		background: none;
 
-		& > h4 {
-			color: white;
+	&[id=toc] {
+		z-index: 1;
+		mix-blend-mode: multiply;
+
+		& a {
+			color: inherit;
+		}
+
+		@media (width > 1700px) {
+			position: absolute;
+			--min-header-height: 12.8rem;
+			top: calc(2.5em + max(0em, var(--scrolltop, 0) * 1px - var(--min-header-height)));
+			left: calc(var(--content-margin) + var(--content-width) + 1em);
+			max-width: calc(var(--content-margin) - 2em);
+			background: none;
+
+			& > h4 {
+				color: white;
+			}
+		}
+
+		@media (width <= 1700px) {
+			margin-top: 3em;
 		}
 	}
 
-	@media (width <= 1700px) {
-		margin-top: 3em;
+	&:not([id=toc]) {
+		&::before {
+			content: "Aside";
+			background: var(--color-accent3);
+		}
+
+		& a {
+			text-decoration: underline;
+
+			&:not(:hover) {
+				color: inherit;
+			}
+		}
 	}
 }
 
@@ -1474,7 +1515,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	@media (width > 600px) {
 		padding-left: 4.5em;
 
-		&::before {
+		&::after {
 			content: var(--icon);
 			position: absolute;
 			left: .5rem;
@@ -1488,7 +1529,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 		}
 
 		& > h4,
-		&::after {
+		&::before {
 			left: 4.2rem;
 		}
 	}
