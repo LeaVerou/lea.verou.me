@@ -782,21 +782,13 @@ body > footer {
 		padding-inline-start: 0;
 	}
 
-	& > li {
-		> div {
-			display: flex;
-			align-items: center;
-			gap: 0 1em;
-			flex-wrap: wrap;
+	.metabit {
+		margin-left: 1em;
+		transition: .3s opacity;
+	}
 
-			.metabit {
-				transition: .3s opacity;
-			}
-
-			> .title:not(:hover, :focus-within) ~ :not(time) {
-				opacity: 0;
-			}
-		}
+	.title:not(:hover, :focus-within) ~ :not(time) {
+		opacity: 0;
 	}
 }
 
