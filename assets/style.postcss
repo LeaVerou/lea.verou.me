@@ -841,7 +841,7 @@ body > footer {
 	font-size: 130%;
 	hyphens: auto;
 
-	& img {
+	img {
 		float: right;
 		margin-right: clamp(-1 * var(--content-margin) + var(--min-padding) / 2, -0.5 * var(--width), 0em);
 		margin-left: .3rem;
@@ -852,7 +852,11 @@ body > footer {
 		shape-outside: circle(calc(50% + 1rem));
 	}
 
-	& p {
+	a:not(:hover, .call-to-action) {
+		filter: brightness(90%);
+	}
+
+	p {
 		margin-bottom: .5em;
 	}
 }
