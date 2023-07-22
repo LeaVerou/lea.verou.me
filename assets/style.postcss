@@ -778,7 +778,9 @@ body > footer {
 }
 
 .posts.compact {
-	padding-inline-start: 0;
+	@media (width > 800px) {
+		padding-inline-start: 0;
+	}
 
 	& > li {
 		> div {
