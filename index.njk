@@ -26,4 +26,6 @@ Sometimes I [blog](/blog/) about all this -- and more!
 {% endcall %}
 
 {% import "_posts.njk" as posts %}
-{{ posts.list(collections.blog.reverse().slice(0, 31), {style: "compact", start: collections.blog.length}) }}
+{{ posts.list(collections.blog.reverse().slice(0, 30), {style: "compact", start: collections.blog.length}) }}
+
+<p><a class="call-to-action" href="/blog/page/3/">More blog posts</a></p>

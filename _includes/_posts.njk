@@ -1,8 +1,10 @@
 {% macro one(post, o = {}) %}
 {% if o.style === "compact" %}
 <li>
-	<a href="{{ post.url | url }}">{{ post.data.title }}</a>
-	<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("medium") }}</time>
+	<div>
+		<a class="title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+		{{ meta_before(post, o) }}
+	</div>
 </li>
 {% else %}
 <article class="post" id="{{ post.fileSlug }}">
@@ -11,36 +13,36 @@
 			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
 		</h2>
 		<div class="meta">
-			{{ meta_before(post) }}
+			{{ meta_before(post, o) }}
 		</div>
 	</header>
 	{% set summary = post.data.summary or post.data.page.excerpt %}
 	<div class="summary">
-		{% if summary %}
+		{%- if summary -%}
 			{{ summary | md({url: post.data.page.url}) | safe }}
 			<p><a href="{{ post.url | url }}" class="call-to-action">Continue reading</a></p>
-		{% else %}
+		{%- else -%}
 			{{ post.content | md({url: post.data.page.url}) | safe }}
-		{% endif %}
+		{%- endif -%}
 	</div>
 
 	<footer class="meta">
-		{{ meta_after(post) }}
+		{{ meta_after(post, o) }}
 	</footer>
 </article>
 {% endif %}
-{% endmacro %}
+{% endmacro -%}
 
-{% macro list(posts, o = {}) %}
-{% if o.style === "compact" %}<ol class="subtle-markers posts-list" reversed start="{{ o.start }}">{% endif %}
+{%- macro list(posts, o = {}) %}
+{% if o.style === "compact" %}<ol class="subtle-markers posts compact" reversed start="{{ o.start }}">{% endif %}
 {% for post in posts %}
-	{% if not (post.data.draft or post.data.unlisted) %}
+	{% if not (post.data.draft or post.data.unlisted) -%}
 
-	{% set np = posts[loop.index0 + 1] %}
+	{%- set np = posts[loop.index0 + 1] -%}
 	{# No idea why this doesn't work as a macro argument to one()... #}
-	{% if np and o.style !== "compact" %}
+	{%- if np and o.style !== "compact" -%}
 	<a href="#{{ np.fileSlug }}" class="skip-to-next" title="Skip to next post: {{ np.data.title }}"><i class="bi bi-arrow-down-circle"></i></a>
-	{% endif %}
+	{%- endif %}
 	{{ one(post, o) }}
 	{% if o.style !== "compact" %}<hr>{% endif %}
 	{% endif %}
@@ -48,25 +50,25 @@
 {% if o.style === "compact" %}</ol>{% endif %}
 {% endmacro %}
 
-{% macro meta_before(post) %}
+{% macro meta_before(post, o = {}) %}
 	{% set content = post.content or content %}
 	{% set disqus_id = post.data.disqus_id if post.data else disqus_id %}
 
-	<time datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("long") }}</time>
+	<time class="metabit" datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("medium" if o.style === "compact" else "long") }}</time>
 
 	{% set rt = content | reading_time %}
-	<span class="reading-time" title="{{ rt.words }} words">{{ rt.text }}</span>
+	<span class="metabit reading-time" title="{{ rt.words }} words">{{ rt.text | replace(" read", "") if o.style === "compact" else rt.text }}</span>
 
 	{% if disqus_id %}
-	<span class="disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>
+	<span class="metabit disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>
 	<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
 	{% endif %}
 {% endmacro %}
 
-{% macro meta_after(post) %}
+{% macro meta_after(post, o = {}) %}
 	{% import "_tags.njk" as tagsUtil with context %}
 	{% set tags = post.data.tags if post.data else tags %}
 	{% set page = post.data.page if post.data else page %}
 	{{ tagsUtil.list(tags) }}
-	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit post on GitHub</a>
+	<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="metabit edit-page">Edit post on GitHub</a>
 {% endmacro %}

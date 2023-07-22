@@ -3,6 +3,7 @@
 	data-area="{{ siteArea }}"
 	data-page="{{ page.url }}"
 	data-inputpath="{{ page.inputPath | replace("./", "") }}"
+	{{ 'class="post-page"' if is_post }}
 >
 <head>
 	<meta charset="UTF-8">
@@ -83,7 +84,7 @@
 			{% import "_posts.njk" as posts with context %}
 			{{ posts.meta_after(page) }}
 		{% else %}
-			<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="edit-page">Edit page on GitHub</a>
+			<a href="https://github.com/LeaVerou/lea.verou.me/edit/main{{ page.url }}index.md" class="metabit edit-page">Edit page on GitHub</a>
 		{% endif %}
 	</div>
 

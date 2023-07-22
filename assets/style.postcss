@@ -62,6 +62,21 @@
 	}
 
 	--scrolltop: 0; /* Fallback. Actual value updated via JS */
+
+	/* stretch extrinsic sizing keyword
+	   https://caniuse.com/intrinsic-width
+	 */
+	--stretch: 100%; /* fallback for very old browsers */
+
+	@supports (width: -webkit-fill-available) {
+		--stretch: -webkit-fill-available;
+	}
+	@supports (width: -moz-available) {
+		--stretch: -moz-available;
+	}
+	@supports (width: stretch) {
+		--stretch: stretch;
+	}
 }
 
 :nth-child(1) { --index: 1; }
@@ -412,7 +427,7 @@ button,
 	text-shadow: 0 0 0 white;
 	transition: .3s;
 
-	:is(p) > &:only-child {
+	&:only-child:is(p > *):is(.post *, .post-page *) {
 		display: block;
 		width: fit-content;
 		margin: auto;
@@ -685,14 +700,13 @@ body > footer {
 	}
 }
 
-.meta {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2em;
+.metabit {
 	color: var(--color-gray-medium);
 	font-size: .77rem;
 	font-family: var(--font-sans);
+	font-weight: 500;
 	-webkit-font-smoothing: initial;
+	white-space: nowrap;
 
 	&:is(body > header *) {
 		justify-content: center;
@@ -707,50 +721,74 @@ body > footer {
 		}
 	}
 
-	> * {
-		font-weight: 500;
+	&::before {
+		content: var(--icon);
+		font-family: bootstrap-icons;
+		display: inline-block;
+		vertical-align: -.1em;
+		margin-right: .5em;
+	}
 
-		&::before {
-			font-family: bootstrap-icons;
-			display: inline-block;
-			vertical-align: -.1em;
-			margin-right: .5em;
+	&:is(time) {
+		--icon: var(--icon-date);
+	}
+
+	&.comment-count {
+		--icon: var(--icon-comments);
+
+		&:not(.compact *)::after {
+			content: " Comments";
+		}
+
+		&:empty {
+			display: none;
 		}
 	}
 
-	& time {
-		&::before {
-			content: var(--icon-date);
-		}
-	}
-
-	& .comment-count {
-		&::before {
-			content: var(--icon-comments);
-		}
-	}
-
-	.tags {
-		margin-right: auto;
+	&.tags {
+		--icon: var(--icon-tags);
 
 		& .orphan {
 			opacity: .6;
 		}
-
-		&::before {
-			content: var(--icon-tags);
-		}
 	}
 
-	.reading-time {
-		&::before {
-			content: var(--icon-stopwatch);
-		}
+	&.reading-time {
+		--icon: var(--icon-stopwatch);
 	}
 
-	.edit-page {
-		&::before {
-			content: var(--icon-edit);
+	&.edit-page {
+		--icon: var(--icon-edit);
+	}
+}
+
+.meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em;
+
+	.tags {
+		margin-right: auto;
+	}
+}
+
+.posts.compact {
+	padding-inline-start: 0;
+
+	& > li {
+		> div {
+			display: flex;
+			align-items: center;
+			gap: 0 1em;
+			flex-wrap: wrap;
+
+			.metabit {
+				transition: .3s opacity;
+			}
+
+			> .title:not(:hover, :focus-within) ~ :not(time) {
+				opacity: 0;
+			}
 		}
 	}
 }
@@ -814,8 +852,8 @@ body > footer {
 		shape-outside: circle(calc(50% + 1rem));
 	}
 
-	& p a.call-to-action {
-		margin-left: 0;
+	& p {
+		margin-bottom: .5em;
 	}
 }
 
@@ -1594,26 +1632,6 @@ main aside {
 
 	&[reversed] li::marker {
 		color: hsl(var(--gray) 50% / calc(1 - var(--index) * .05));
-	}
-}
-
-.posts-list {
-	padding-inline-start: 0;
-
-	& time {
-		margin-left: .5em;
-		color: var(--color-gray-medium);
-		font-family: var(--font-sans);
-		font-size: 75%;
-		font-weight: 500;
-
-		&::before {
-			content: var(--icon-date);
-			display: inline-block;
-			margin-right: .3em;
-			vertical-align: -.1em;
-			font-family: bootstrap-icons;
-		}
 	}
 }
 

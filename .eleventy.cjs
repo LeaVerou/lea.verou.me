@@ -44,7 +44,6 @@ module.exports = config => {
 	config.addFilter("md", (value, o = {}) => {
 		if (typeof value !== "string") {
 			if (value instanceof String) {
-				console.log(value, value + "")
 				value = value + "";
 			}
 			else {
