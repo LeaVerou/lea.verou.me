@@ -839,11 +839,12 @@ body > footer {
 	text-wrap: balance;
 	font-family: var(--font-sans);
 	font-size: 130%;
+	hyphens: auto;
 
 	& img {
 		float: right;
 		margin-right: clamp(-1 * var(--content-margin) + var(--min-padding) / 2, -0.5 * var(--width), 0em);
-		margin-left: .2rem;
+		margin-left: .3rem;
 		--width: calc(4em + clamp(0px, 3vw, 6em));
 		width: var(--width);
 		aspect-ratio: 1 / 1;
