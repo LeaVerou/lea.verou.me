@@ -11,29 +11,48 @@
 }
 
 @font-face {
-	font-family: "Inter var";
+	font-family: Inter;
+	src: url(fonts/Inter-upright-var.woff2) format("woff2");
 	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
 	font-style: normal;
 	font-display: swap;
-	src: url(fonts/Inter-upright-var.woff2) format("woff2");
+
 }
 
 @font-face {
-	font-family: "Inter var";
-	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
+	font-family: Inter;
+	src: url(fonts/Inter-italic-var.woff2) format("woff2");
+	font-weight: 100 900;
 	font-style: italic;
 	font-display: swap;
-	src: url(fonts/Inter-italic-var.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Vollkorn;
+	src: url("fonts/Vollkorn/Vollkorn-VariableFont_wght.woff2") format("woff2");
+	font-weight: 400 900;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Vollkorn;
+	src: url("fonts/Vollkorn/Vollkorn-Italic-VariableFont_wght.woff2") format("woff2");
+	font-weight: 400 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Inconsolata;
+	src: url("fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.woff2");
+	font-weight: 200 900;
+	font-stretch: ultra-condensed ultra-expanded;
 }
 
 :root {
-	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-	--font-serif: "Hoefler Text", Garamond, "Times New Roman", serif;
-	--font-monospace: Consolas, Menlo, Monaco, source-code-pro, monospace;
-
-	@supports ( font-variation-settings: normal ) {
-		--font-sans: "Inter var", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-	}
+	--font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	--font-serif: Vollkorn, "Hoefler Text", Garamond, "Times New Roman", serif;
+	--font-monospace: Inconsolata, Consolas, Noto Sans Mono, Source Code Pro, Roboto Mono, Menlo, Monaco, monospace;
 
 	--color-magenta: hsl(336 100% 50%);
 	--color-orange: hsl(20 100% 60%);
@@ -279,10 +298,6 @@ hr {
 video, img {
 	max-width: 100%;
 	object-fit: cover;
-}
-
-pre, code {
-	font-family: var(--font-monospace);
 }
 
 figure {
@@ -671,6 +686,11 @@ body > footer {
 
 		.copyright {
 			font-weight: bold;
+			color: white;
+
+			&:hover {
+				color: var(--color-accent3);
+			}
 		}
 
 		.credits {
@@ -873,7 +893,12 @@ body > footer {
 	}
 }
 
-/* Code */
+/* All Code */
+:is(pre, code):is(*, [class*="language-"], [class*="language-"]) {
+	font-family: var(--font-monospace);
+	font-weight: 600;
+	font-variant-ligatures: discretionary-ligatures;
+}
 
 code .token {
 	mix-blend-mode: multiply;
@@ -881,12 +906,11 @@ code .token {
 
 /* Inline code */
 code:is(code, [class*="language-"]):not(pre *) {
-	padding: .28em .3em .2em;
+	padding: .2em .3em .2em;
 	border-radius: .15rem;
 	background: var(--color-accent2-light1);
 	mix-blend-mode: multiply;
-	font-size: 85%;
-	font-weight: bold;
+	font-size: 89%;
 }
 
 /* Blocks of code */
