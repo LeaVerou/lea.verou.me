@@ -37,8 +37,8 @@
 
 	--color-magenta: hsl(336 100% 50%);
 	--color-orange: hsl(20 100% 60%);
-	--color-turquoise: hsl(189 100% 43%);
-	--color-green: hsl(80 61% 50%);
+	--color-turquoise: hsl(189 100% 42%);
+	--color-green: hsl(80 61% 48%);
 
 	--color-accent: var(--color-magenta);
 	--color-accent2: var(--color-orange);
@@ -1652,12 +1652,17 @@ main aside {
 
 		}
 
-		&:hover {
+		&:hover,
+		&.selected {
 			--color: var(--color-accent3);
 
 			.result {
 				display: block;
 			}
+		}
+
+		&.selected:hover {
+			--color: var(--color-accent4);
 		}
 	}
 }

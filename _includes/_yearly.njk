@@ -1,0 +1,13 @@
+<div class="bar-chart" style="--max: 50" id="by-year">
+	{% set selectedYear = year %}
+	{% for year, posts in collections.postsByYear %}
+		<a href="/blog/{{ year }}/" style="--p: {{ posts.length }}"
+		{{ 'class=selected' if selectedYear === year}}>
+			<span class="result">
+				<span class="number">{{ posts.length }}</span>
+				post{{ "s" if posts.length !== 1 }}
+			</span>
+			<span class="label">{{ year }}</span>
+		</a>
+	{% endfor %}
+</div>
