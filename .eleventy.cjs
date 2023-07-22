@@ -41,9 +41,16 @@ module.exports = config => {
 
 	config.setLibrary("md", md);
 
-	config.addFilter("md", (value, o) => {
+	config.addFilter("md", (value, o = {}) => {
 		if (typeof value !== "string") {
-			return value;
+			if (value instanceof String) {
+				console.log(value, value + "")
+				value = value + "";
+			}
+			else {
+				return value;
+			}
+
 		}
 
 		let ret = md.render(value, o);

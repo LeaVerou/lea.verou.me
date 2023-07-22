@@ -1,10 +1,14 @@
 ---
 title: Home
 ---
+{% macro md_block() %}
+{{ caller() | md | safe }}
+{% endmacro %}
+
 <div class="nutshell">
 
 <img src="/about/images/smiling-medium.jpg" alt="Photo of me smiling">
-
+{% call md_block() %}
 Hi, I’m Lea and I wear many hats.
 I create [tools](/projects/) that make web development easier.
 I [design](/publications/#specifications) new web technologies, and [design review](https://github.com/w3ctag/design-reviews/) dozens more as a [W3C TAG member](https://en.wikipedia.org/wiki/Technical_Architecture_Group);
@@ -19,6 +23,7 @@ Sometimes I [blog](/blog/) about all this -- and more!
 </div>
 
 ## [Blog](/blog/)
+{% endcall %}
 
 {% import "_posts.njk" as posts %}
 {{ posts.list(collections.blog.reverse().slice(0, 31), {style: "compact", start: collections.blog.length}) }}
