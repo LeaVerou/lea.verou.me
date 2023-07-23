@@ -799,27 +799,23 @@ body > footer {
 	padding: 1em var(--content-margin);
 	margin: 1em calc(-1 * var(--content-margin));
 	background: var(--color-accent-light2);
-	font: 600 100% var(--font-sans);
+	font: 600 80% var(--font-sans);
 
 	.prev,
 	.next {
-		flex: 1;
+		flex-grow: 1;
 		position: relative;
 	}
 
 	.prev::before,
 	.next::after {
-		position: absolute;
-		top: -.15rem;
 		font-family: bootstrap-icons;
 		font-weight: normal;
-		font-size: 160%;
 	}
 
 	.prev {
 		&::before {
 			content: var(--icon-arrow-left-circle, "←");
-			right: 100%;
 			margin-right: .3em;
 		}
 	}
@@ -829,8 +825,30 @@ body > footer {
 
 		&::after {
 			content: var(--icon-arrow-right-circle, "→");
-			left: 100%;
 			margin-left: .3em;
+		}
+	}
+
+	@media (width > 820px) {
+		font-size: 100%;
+
+		.prev::before,
+		.next::after {
+			position: absolute;
+			top: -.15rem;
+			font-size: 160%;
+		}
+
+		.prev {
+			&::before {
+				right: 100%;
+			}
+		}
+
+		.next {
+			&::after {
+				left: 100%;
+			}
 		}
 	}
 }
