@@ -8,6 +8,9 @@ eleventyExcludeFromCollections: true
 {% for domain in site.domain_aliases %}{{ domain }}/* https://lea.verou.me/:splat 301
 {% endfor %}
 
+# Redirect old feed
+/feed/ /feed.xml 301
+
 # Redirect PHP files and wp-content/ to old website
 # /*.php https://lea0.verou.me/:splat.php 200 # not working :(
 /wp-content/* https://lea0.verou.me/wp-content/:splat 200
