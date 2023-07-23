@@ -4,7 +4,8 @@ const markdownItAttrs = require('markdown-it-attrs');
 const embeds = require("eleventy-plugin-embed-everything");
 const pluginTOC = require('eleventy-plugin-toc');
 const filters = require("./assets/filters.cjs");
-const tag_aliases = require("./data/tag_aliases.json")
+const tag_aliases = require("./data/tag_aliases.json");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 let foo = false;
 module.exports = config => {
@@ -74,6 +75,7 @@ module.exports = config => {
 	}
 
 	config.addPlugin(embeds);
+	config.addPlugin(pluginRss);
 
 	config.addCollection("postsByTag", (collectionApi) => {
 		const posts = collectionApi.getFilteredByTag("blog");

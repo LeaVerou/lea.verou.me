@@ -19,12 +19,12 @@ I [speak](/speaking/), [teach](https://designftw.mit.edu), and [write](/publicat
 including a [bestselling book](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20) with [O’Reilly](https://oreilly.com),
 dubbed ["Best CSS book"](https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html).
 I often [blog](/blog/) about all this -- and more!
+{% endcall %}
 
 <p><a class="call-to-action" href="/about/">Learn more about me</a></p>
 </div>
 
-## [Blog](/blog/)
-{% endcall %}
+<h2><a href="/blog/">Blog</a> <a href="/feed.xml" title="Feed" class="feed"></a></h2>
 
 {% import "_posts.njk" as posts %}
 {{ posts.list(collections.blog.reverse().slice(0, 30), {style: "compact", start: collections.blog.length}) }}

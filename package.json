@@ -25,6 +25,7 @@
   "homepage": "https://github.com/leaverou/lea.verou.me#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "concurrently": "^8.0",
     "eleventy-plugin-embed-everything": "^1",
     "eleventy-plugin-toc": "^1",

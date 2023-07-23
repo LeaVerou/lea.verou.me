@@ -1722,3 +1722,17 @@ main aside {
 		}
 	}
 }
+
+a.feed {
+	text-decoration: none;
+	font: 60% bootstrap-icons;
+	vertical-align: 1ex;
+
+	&:not(:hover, :focus) {
+		color: var(--color-orange);
+	}
+
+	&::before {
+		content: var(--icon-rss-fill);
+	}
+}
