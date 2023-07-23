@@ -1,5 +1,6 @@
 # Built files
 _redirects
+feed.xml
 **/index.html
 !files/**/index.html
 404.html
