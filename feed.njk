@@ -5,7 +5,7 @@
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "Lea Verou’s blog",
-    "subtitle": "Software Engineering, Product, Usability, and more",
+    "subtitle": "Web standards, Software Engineering, Product, Usability, and more",
     "language": "en",
     "url": "https://lea.verou.me/",
     "author": {
@@ -28,7 +28,7 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.blog | reverse %}
-  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+  {%- set absolutePostUrl = post.data.compatUrl | absoluteUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
