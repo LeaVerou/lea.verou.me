@@ -716,9 +716,12 @@ body > footer {
 
 	&:is(body > header *) {
 		justify-content: center;
-		margin-bottom: 1em;
 		mix-blend-mode: multiply;
 		font-weight: 500;
+
+		@media (width > 700px) {
+			margin-bottom: 1em;
+		}
 	}
 
 	& a {
@@ -771,7 +774,11 @@ body > footer {
 .meta {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0 2em;
+	column-gap: 1em;
+
+	@media (width > 700px) {
+		column-gap: 2em;
+	}
 
 	.tags {
 		margin-right: auto;
