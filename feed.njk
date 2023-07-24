@@ -28,12 +28,16 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.blog | reverse %}
-  {%- set absolutePostUrl = post.data.compatUrl | absoluteUrl(metadata.url) %}
+  {%- set absolutePostUrl = post.data.compatUrl | absoluteUrl(metadata.url) -%}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
+    {% if post.data.wpid -%}
+    <id>{{ site.domain }}/?p={{ post.data.wpid }}</id>
+    {%- else -%}
     <id>{{ absolutePostUrl }}</id>
+    {%- endif %}
     <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
   {%- endfor %}
