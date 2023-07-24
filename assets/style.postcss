@@ -62,21 +62,6 @@
 	}
 
 	--scrolltop: 0; /* Fallback. Actual value updated via JS */
-
-	/* stretch extrinsic sizing keyword
-	   https://caniuse.com/intrinsic-width
-	 */
-	--stretch: 100%; /* fallback for very old browsers */
-
-	@supports (width: -webkit-fill-available) {
-		--stretch: -webkit-fill-available;
-	}
-	@supports (width: -moz-available) {
-		--stretch: -moz-available;
-	}
-	@supports (width: stretch) {
-		--stretch: stretch;
-	}
 }
 
 :nth-child(1) { --index: 1; }
