@@ -51,7 +51,7 @@
 
 	--content-width: var(--width-med);
 	--min-padding: 1rem;
-	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 25vw);
+	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 100vw);
 
 	@media (width <= 1280px) {
 		--content-width: var(--width-thin);
@@ -59,6 +59,10 @@
 
 	@media (width <= 700px) {
 		--content-width: min(var(--width-med), 100vw - 2 * var(--min-padding));
+	}
+
+	@media (width > 2500px) {
+		--content-width: 50vw;
 	}
 
 	--scrolltop: 0; /* Fallback. Actual value updated via JS */
