@@ -29,5 +29,9 @@ eleventyExcludeFromCollections: true
 {% for alias, tag in tag_aliases %}/blog/tags/{{ alias }}/ /blog/tags/{{ tag }}/ 301
 {% endfor %}
 
+# Old WP URLs
+{% for slug, wpid in wpids %}/?p={{ wpid }} /blog/{{ slug }}/ 301
+{% endfor %}
+
 # Static file hosting without cluttering root
 /* /files/:splat 200
