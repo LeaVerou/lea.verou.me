@@ -8,5 +8,8 @@ assets/style.css
 blog/tags/*
 **/index.json
 
+# Early drafts
+blog/2023/self-closing-defense
+
 # Local Netlify folder
 .netlify
