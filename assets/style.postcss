@@ -741,7 +741,10 @@ body > footer {
 	font-family: var(--font-sans);
 	font-weight: 500;
 	-webkit-font-smoothing: initial;
-	white-space: nowrap;
+
+	&:not(.tags) {
+		white-space: nowrap;
+	}
 
 	&:is(body > header *) {
 		justify-content: center;
