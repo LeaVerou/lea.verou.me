@@ -73,6 +73,13 @@
 	{%- endif %}
 </section>
 
+{%- if draft -%}
+<section class="info" style="--label: 'Someone has been nosy!'">
+	<strong>This is an unpublished draft.</strong> It may be incomplete, contain errors or be completely wrong.
+	Please check back later for the finished version, or <a href="/feed.xml">subscribe</a> to my feed to be notified.
+</section>
+{%- endif %}
+
 {% if toc %}
 <aside id="toc">
 	<h4>On this page</h4>
