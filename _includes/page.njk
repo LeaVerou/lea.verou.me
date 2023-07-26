@@ -65,9 +65,12 @@
 <section class="warning">
 	You are browsing the <a href="/blog/2023/going-lean/">new, beta version</a> of my website.
 	Some things may not work properly.
-
-	<a href="{{ oldURL }}">View this page on the old website</a>
-	and if you spot any problems, please <a href="{{ pkg.bugs.url }}/new?template=broken-page.yml&amp;title=Page regression: {{ title }}&amp;url={{ site.domain }}{{ page.url }}">file an issue</a>!
+	{% if is_old_post -%}
+	<a href="{{ oldURL }}">View this page on the old website</a> and if you spot any problems,
+	please <a href="{{ pkg.bugs.url }}/new?template=broken-page.yml&amp;title=Page regression: {{ title }}&amp;url={{ site.domain }}{{ page.url }}">file an issue</a>!
+	{%- else -%}
+	If you spot any problems, please <a href="{{ pkg.bugs.url }}/new?template=broken-page.yml&amp;title=Broken page: {{ title }}&amp;url={{ site.domain }}{{ page.url }}">file an issue</a>!
+	{%- endif %}
 </section>
 
 {% if toc %}
