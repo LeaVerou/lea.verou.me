@@ -1,32 +1,38 @@
-[
-	{
+{
+	"twitter": {
 		"name": "Twitter",
 		"url": "http://twitter.com/leaverou",
-		"icon": "twitter"
+		"icon": "twitter",
+		"color": "#1DA1F2"
 	},
-	{
+	"github": {
 		"name": "GitHub",
 		"url": "https://github.com/leaverou",
-		"icon": "github"
+		"icon": "github",
+		"color": "#333"
 	},
-	{
+	"mastodon": {
 		"name": "Mastodon",
 		"url": "https://front-end.social/@leaverou",
-		"icon": "mastodon"
+		"icon": "mastodon",
+		"color": "rgb(99 100 255)"
 	},
-	{
+	"linkedin": {
 		"name": "LinkedIn",
 		"url": "https://www.linkedin.com/in/leaverou/",
-		"icon": "linkedin"
+		"icon": "linkedin",
+		"color": "#0A66C2"
 	},
-	{
+	"bluesky": {
 		"name": "BlueSky",
 		"url": "https://bsky.app/profile/lea.verou.me",
-		"icon": "clouds-fill"
+		"icon": "clouds-fill",
+		"color": "#1DA1F2"
 	},
-	{
+	"dribbble": {
 		"name": "Dribbble",
 		"url": "https://dribbble.com/leaverou",
-		"icon": "dribbble"
+		"icon": "dribbble",
+		"color": "#ea4c89"
 	}
-]
+}

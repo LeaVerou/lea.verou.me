@@ -61,6 +61,18 @@
 	<span class="metabit disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>
 	<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
 	{% endif %}
+
+	{%- if social_posts -%}
+	<div class="metabit social">
+	{%- for service, url in social_posts -%}
+		<a href="{{ url }}"
+		   class="{{ service }}"
+		   title="{{ social[service].name }} post"
+		   style="--color: {{ social[service].color }}"
+		   target="_blank"><i class="bi bi-{{ social[service].icon }}"></i></a>
+	{%- endfor -%}
+	</div>
+	{%- endif -%}
 {% endmacro %}
 
 {% macro meta_after(post, o = {}) %}

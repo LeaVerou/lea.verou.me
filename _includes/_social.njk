@@ -1,6 +1,7 @@
-{% for service in social %}
-	<a class="{{ service.name | lower }}"
+{% for id, service in social %}
+	<a class="{{ id }}"
 	href="{{ service.url }}"
 	target="_blank" rel="me"
-	aria-label="{{ service.name }}"><i class="bi bi-{{ service.icon }}"></i></a>
+	aria-label="{{ service.name }}"
+	style="--color: {{ service.color }}"><i class="bi bi-{{ service.icon }}"></i></a>
 {% endfor %}
