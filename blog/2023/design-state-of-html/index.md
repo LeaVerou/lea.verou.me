@@ -46,7 +46,6 @@ which provides value and helps reduce survey fatigue.
 
 Part 2 is more freeform, and usually includes multiple-choice questions about tools and resources, freeform questions about pain points, and of course, demographics.
 
-And another new feature in the recently-closed [State of CSS 2023 survey](https://survey.devographics.com/en-US/survey/state-of-css/2023) is the addition of the **reading list**, a feature that lets you bookmark any survey item you'd like to know more about for later, and gives you a summary of useful links once you've finished the survey. 
 
 One of the novel things I tried in the 2022 State of CSS survey was to [involve the community in the design process](/blog/2022/07/help-design-the-state-of-css-survey-2022/),
 with one-click voting for the features to ask about.
