@@ -1,7 +1,9 @@
 {% for id, service in social %}
+{%- if service.header !== false -%}
 	<a class="{{ id }}"
 	href="{{ service.url }}"
 	target="_blank" rel="me"
 	aria-label="{{ service.name }}"
 	style="--color: {{ service.color }}"><i class="bi bi-{{ service.icon }}"></i></a>
+{%- endif -%}
 {% endfor %}

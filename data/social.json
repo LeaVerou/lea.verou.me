@@ -34,5 +34,12 @@
 		"url": "https://dribbble.com/leaverou",
 		"icon": "dribbble",
 		"color": "#ea4c89"
+	},
+	"facebook": {
+		"header": false,
+		"name": "Facebook",
+		"url": "https://www.facebook.com/leaverou",
+		"icon": "facebook",
+		"color": "#1877F2"
 	}
 }
