@@ -31,7 +31,7 @@
 
 @font-face {
 	font-family: Inconsolata;
-	src: url("fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.woff2");
+	src: url("fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.woff2") format("woff2");
 	font-weight: 200 900;
 	font-stretch: ultra-condensed ultra-expanded;
 }
