@@ -414,6 +414,19 @@ blockquote {
 	font-style: italic;
 }
 
+@property --color {
+	syntax: "<color>";
+	initial-value: transparent;
+	inherits: false;
+}
+
+:target {
+	--color: color-mix(in lab, transparent, var(--color-accent2) calc((1 - var(--number)) * 20%));
+	background: var(--color);
+	box-shadow: 0 0 calc(.2em + .8em * var(--number)) calc(.1em + .8em * var(--number)) var(--color);
+	animation: to1 2s 1s both;
+}
+
 button,
 .button,
 .call-to-action {
