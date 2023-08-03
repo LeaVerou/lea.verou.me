@@ -962,11 +962,17 @@ body > footer {
 }
 
 /* All Code */
-:is(pre, code):is(*, [class*="language-"], [class*="language-"]) {
-	font-family: var(--font-monospace);
-	font-variant-ligatures: discretionary-ligatures;
-	white-space: pre-wrap;
+pre, code {
+	font-weight: 600;
+
+	/* Override Prism’s default styles */
+	&:is(*, [class*="language-"], [class*="language-"]) {
+		font-family: var(--font-monospace);
+		font-variant-ligatures: discretionary-ligatures;
+		white-space: pre-wrap;
+	}
 }
+
 
 code .token {
 	mix-blend-mode: multiply;
