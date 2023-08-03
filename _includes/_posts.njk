@@ -65,11 +65,13 @@
 	{%- if social_posts -%}
 	<div class="metabit social">
 	{%- for service, url in social_posts -%}
+		{% if social[service] -%}
 		<a href="{{ url }}"
 		   class="{{ service }}"
 		   title="{{ social[service].name }} post"
 		   style="--color: {{ social[service].color }}"
 		   target="_blank"><i class="bi bi-{{ social[service].icon }}"></i></a>
+		{%- endif %}
 	{%- endfor -%}
 	</div>
 	{%- endif -%}
