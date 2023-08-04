@@ -7,8 +7,10 @@
 *::after {
 	box-sizing: inherit;
 	-webkit-font-smoothing: antialiased;
+	/*
 	word-break: break-word;
 	word-wrap: break-word;
+	*/
 }
 
 :root {
@@ -445,12 +447,12 @@ table {
 	animation: to1 2s 1s both;
 }
 
-input {
+input, select, textarea {
 	font: inherit;
+}
 
-	&[type=number] {
-		width: 6ch;
-	}
+input[type=number] {
+	width: 6ch;
 }
 
 button,
@@ -1827,6 +1829,8 @@ a.feed {
 	}
 }
 
+/* Footnotes */
+
 @counter-style refs {
 	system: extends decimal;
 	prefix: "[";
@@ -1834,9 +1838,27 @@ a.feed {
 }
 
 .footnotes {
-
+	font-size: 80%;
 
 	ol {
 		list-style: refs;
+	}
+
+	.footnote-backref {
+		display: inline-flex;
+		padding: .6em .4em .2em .3em;
+		transform: rotate(90deg) scaleY(-1);
+		margin-left: .4em;
+		border-radius: .2em;
+		background: var(--color-gray-95);
+		line-height: 1;
+		text-decoration: none;
+		mix-blend-mode: multiply;
+
+		&:hover,
+		&:focus {
+			background: var(--color-accent3);
+			color: white;
+		}
 	}
 }
