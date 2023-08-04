@@ -1826,3 +1826,17 @@ a.feed {
 		content: var(--icon-rss-fill);
 	}
 }
+
+@counter-style refs {
+	system: extends decimal;
+	prefix: "[";
+	suffix: "] ";
+}
+
+.footnotes {
+
+
+	ol {
+		list-style: refs;
+	}
+}
