@@ -1,9 +1,10 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
-const markdownItAttrs = require('markdown-it-attrs');
-const markdownItFootnote = require('markdown-it-footnote');
+const markdownItAttrs = require("markdown-it-attrs");
+const markdownItFootnote = require("markdown-it-footnote");
+const markdownItMathjax3 = require("markdown-it-mathjax3");
 const embeds = require("eleventy-plugin-embed-everything");
-const pluginTOC = require('eleventy-plugin-toc');
+const pluginTOC = require("eleventy-plugin-toc");
 const filters = require("./assets/filters.cjs");
 const tag_aliases = require("./data/tag_aliases.json");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -34,6 +35,7 @@ module.exports = config => {
 		typographer: true,
 	})
 	.disable("code")
+	.use(markdownItMathjax3)
 	.use(markdownItAttrs)
 	.use(markdownItFootnote)
 	.use(markdownItAnchor, {
