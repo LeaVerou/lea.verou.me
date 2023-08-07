@@ -51,8 +51,13 @@
 {% macro meta_before(post, o = {}) %}
 	{% set content = post.content or content %}
 	{% set disqus_id = post.data.disqus_id if post.data else disqus_id %}
+	{% set date_updated = post.data.date_updated if post.data else date_updated %}
 
-	<time class="metabit" datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("medium" if o.style === "compact" else "long") }}</time>
+	<time class="metabit dt-published" datetime="{{ post.date | format_date("iso") }}">{{ post.date | format_date("medium" if o.style === "compact" else "long") }}</time>
+
+	{% if date_updated -%}
+	<time class="metabit dt-updated" datetime="{{ date_updated | format_date("iso") }}" title="Last Updated">{{ date_updated | format_date("medium" if o.style === "compact" else "long") }}</time>
+	{%- endif %}
 
 	{% set rt = content | reading_time %}
 	<span class="metabit reading-time" title="{{ rt.words }} words">{{ rt.text | replace(" read", "") if o.style === "compact" else rt.text }}</span>
