@@ -434,12 +434,6 @@ table {
 	}
 }
 
-@property --color {
-	syntax: "<color>";
-	initial-value: transparent;
-	inherits: false;
-}
-
 :target {
 	--color: color-mix(in lab, transparent, var(--color-accent2) calc((1 - var(--number)) * 20%));
 	background: var(--color);
