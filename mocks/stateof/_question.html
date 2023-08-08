@@ -1,0 +1,131 @@
+<div class="locale-en-US">
+	<div class="modKeyUp">
+		<div class="wrapper" id="wrapper">
+			<main class="main-contents" id="main-contents">
+				<div class="survey-section-wrapper">
+					<div>
+						<div class="survey-layout">
+							<div class="survey-section">
+								<div class="section-contents">
+									<div class="section-questions" id="section-questions">
+										<form>
+											<!-- aspect-ratio -->
+											<div class="form-input" v-for="question of questions">
+												<div>
+													<div>
+														<h3 class="form-label-heading" id="aspect_ratio"><label
+																class="form-label"
+																for="css2023__features__aspect_ratio__experience"><span
+																	class="entity-label"><code>aspect-ratio</code></span></label>
+														</h3>
+														<div class="form-item-contents">
+															<div class="form-item-input">
+																<div class="code-example">
+																	<h5 class="code-example-heading"><span
+																			data-key="general.code_example"
+																			class="i18n-message  t">Code Example</span>
+																	</h5>
+																	<pre><code><span class="hljs-selector-class">.square</span> {
+	aspect-ratio: <span class="hljs-number">1</span> / <span class="hljs-number">1</span>;
+	}</code></pre>
+																</div>
+																<div class="experience-contents">
+																	<div class="experience-options">
+																		<div class="form-check"><label
+																				for="css2023__features__aspect_ratio__experience.0"
+																				class="form-check-label">
+																				<div class="form-input-wrapper"><input
+																						v-model="question.answer"
+																						id="css2023__features__aspect_ratio__experience.0"
+																						class="form-check-input"
+																						type="radio" value="never_heard"
+																						name="css2023__features__aspect_ratio__experience">
+																				</div>
+																				<div class="form-option">
+																					<div class="form-option-item"><span
+																							class="form-option-label"><span
+																								data-key="options.features.never_heard"
+																								class="i18n-message  t"><span>🤷</span>
+																								Never heard of it/Not
+																								sure what it
+																								is</span></span></div>
+																				</div>
+																			</label></div>
+																		<div class="form-check"><label
+																				for="css2023__features__aspect_ratio__experience.1"
+																				class="form-check-label">
+																				<div class="form-input-wrapper"><input
+																						v-model="question.answer"
+																						id="css2023__features__aspect_ratio__experience.1"
+																						class="form-check-input"
+																						type="radio" value="heard"
+																						name="css2023__features__aspect_ratio__experience">
+																				</div>
+																				<div class="form-option">
+																					<div class="form-option-item"><span
+																							class="form-option-label"><span
+																								data-key="options.features.heard"
+																								class="i18n-message  t"><span>✅</span>
+																								Know what it is, but
+																								haven't used
+																								it</span></span></div>
+																				</div>
+																			</label></div>
+																		<div class="form-check"><label
+																				for="css2023__features__aspect_ratio__experience.2"
+																				class="form-check-label">
+																				<div class="form-input-wrapper"><input
+																						v-model="question.answer"
+																						id="css2023__features__aspect_ratio__experience.2"
+																						class="form-check-input"
+																						type="radio" value="used"
+																						name="css2023__features__aspect_ratio__experience">
+																				</div>
+																				<div class="form-option">
+																					<div class="form-option-item"><span
+																							class="form-option-label"><span
+																								data-key="options.features.used"
+																								class="i18n-message  t"><span>👍</span>
+																								I've used
+																								it</span></span></div>
+																				</div>
+																			</label></div>
+																	</div>
+																</div>
+															</div>
+															<div class="comment-trigger-wrapper"><button
+																	class="comment-trigger comment-trigger-inactive"
+																	type="button" aria-describedby="popover-basic"
+																	aria-label="Leave a Comment (optional)"
+																	title="Leave a Comment (optional)"><svg
+																		class="icon-comment"
+																		xmlns="http://www.w3.org/2000/svg" width="24"
+																		height="24" fill="none" stroke-width="1.5"
+																		color="white" viewBox="0 0 24 24">
+																		<path stroke="currentColor"
+																			stroke-linecap="round"
+																			stroke-linejoin="round"
+																			d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.955 9.955 0 0012 22z">
+																		</path>
+																	</svg><span class="visually-hidden"><span
+																			data-key="experience.leave_comment"
+																			class="i18n-message  t">Leave a Comment
+																			(optional)</span></span></button></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="section-sidebar"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+
+		</div>
+		<div class="toast-container form-messages"></div>
+	</div>
+</div>

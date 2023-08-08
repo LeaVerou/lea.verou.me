@@ -3,6 +3,7 @@ _redirects
 feed.xml
 **/index.html
 !files/**/index.html
+!mocks/**/index.html
 404.html
 assets/style.css
 blog/tags/*
