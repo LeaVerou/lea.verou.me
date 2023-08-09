@@ -11,6 +11,8 @@ blog/tags/*
 
 # Early drafts
 blog/2023/self-closing-defense
+blog/2023/product
+blog/2023/eng-momentum-prioritization
 
 # Local Netlify folder
 .netlify
