@@ -1,0 +1,138 @@
+@import url("question.css");
+
+#mockup-selector {
+	display: flex;
+	gap: 1em;
+	border: 1px solid hsl(0 0% 100% / .3);
+	padding: 1em;
+	margin: 1em 0;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+
+.comment-trigger-wrapper {
+	display: inline-flex;
+	align-items: center;
+}
+
+.comment-input-prompt {
+	font-size: 1rem;
+}
+
+.form-option-label {
+	display: flex;
+}
+
+.form-option-item {
+	flex: 1;
+}
+
+.followups, .issues {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .8em;
+
+	.form-check & {
+		margin-left: .8em;
+	}
+}
+
+.followup {
+	--_color: var(--color, var(--bs-blue));
+	border: 1px solid hsl(0 0% 100% / .3);
+	padding: 0.1em 1em 0.05em;
+	border-radius: 999px;
+	background: color-mix(in lab, var(--_color), transparent calc((1 - var(--a, .2)) * 100%)) linear-gradient(hsl(0 0% 100% / .1), transparent) border-box;
+	color: white;
+	animation: fade-in 1s both;
+	font-size: 70%;
+	transition: .1s;
+	white-space: nowrap;
+
+	&:first-child {
+		--color: var(--bs-success);
+	}
+
+	&:nth-child(2) {
+		--color: var(--bs-danger);
+	}
+
+	&.issue {
+		--color: color-mix(in lab, var(--bs-orange), black 30%);
+	}
+
+	&:hover {
+		--a: .6;
+		color: white;
+	}
+
+	&:active {
+		background-image: none;
+		transform: scale(.97) translateY(.1em);
+	}
+
+	&.selected:where(.select *) {
+		position: relative;
+		--a: 1;
+		border-color: hsl(0 0% 100% / .9);
+
+		&::before {
+			content: "✓";
+			position: absolute;
+			top: -.4em;
+			right: -.6em;
+			padding: .2em;
+			border-radius: 50%;
+			background: white;
+			color: var(--_color);
+			font-weight: bold;
+			width: 1em;
+			box-sizing: content-box;
+			font-size: 80%;
+			line-height: 1;
+		}
+	}
+}
+
+/* Proximity to answer */
+.form-check .comment-trigger-wrapper {
+	flex: 1;
+	.comment-trigger {
+		order: 2;
+		margin-left: auto;
+		padding: 0;
+	}
+}
+
+@keyframes comments-open {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+
+.in-answer {
+	.comment-input {
+		z-index: 1;
+		position: relative;
+		--background-color: color-mix(in lab, var(--bg-color), white 25%);
+		background: var(--background-color);
+		margin-left: 5em;
+		margin-top: calc(0em - 3.3em * (2 - var(--selected-index)));
+		margin-right: -5px;
+		border-radius: .2em;
+		filter: drop-shadow(.05em .1em .5em black);
+		animation: .2s comments-open both;
+		transform-origin: calc(100% - 21px) -12px;
+
+		&::after {
+			right: 15px;
+			left: auto;
+			border-bottom-color: var(--background-color);
+		}
+	}
+}
