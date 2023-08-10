@@ -61,7 +61,7 @@
 																	<span>{{ option.icon }}</span>
 																	{{ option.label }}
 																</span>
-																<div class="comment-trigger-wrapper" v-if="selected_mockup.in_answer && question.answer == option.value">
+																<div class="comment-trigger-wrapper" v-if="selected_mockup.in_answer" v-show="question.answer == option.value">
 																	<button type="button"
 																		:class="`comment-trigger comment-trigger-${ question.open_comment? '' : 'in' }active`"
 																		@click="question.open_comment = !question.open_comment"
@@ -82,8 +82,8 @@
 																			issue: i > 1,
 																		  }"
 																		  v-show="i <= 1 || question.selected_followups.has(1) && !selected_mockup.in_answer"
-																		  v-for="(label, i) in followups"
-																		  @click="pick_followup(label, i)">{{ label }}</button>
+																		  v-for="(label, i) in option.sentiment"
+																		  @click="pick_followup(label, i, option)">{{ label }}</button>
 																	</span>
 																</div>
 															</span>

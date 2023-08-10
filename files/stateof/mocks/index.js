@@ -3,7 +3,7 @@ import { createApp, nextTick } from 'https://unpkg.com/vue@3/dist/vue.esm-browse
 globalThis.app = createApp({
 	data() {
 		return {
-			mockup: 4,
+			mockup: 5,
 			question: {
 				selected_followups: new Set()
 			},
@@ -29,6 +29,12 @@ globalThis.app = createApp({
 						label: "In answer",
 						select: true,
 						in_answer: true,
+					},
+					{
+						label: "In answer, sutble",
+						select: true,
+						in_answer: true,
+						open_comment: false,
 					}
 				],
 				options: [
@@ -93,28 +99,42 @@ globalThis.app = createApp({
 	},
 
 	methods: {
-		async pick_followup(followup, i) {
-			let { append, select, in_answer } = this.ui.mockups[this.mockup];
+		pick_option(option) {
+			if (this.question.answer === option.value) {
+				return false;
+			}
 
-			// if (this.mockup <= 3) {
+			this.question.answer = option.value;
+			return true;
+		},
+		async pick_followup(followup, i, option) {
+			let changed = this.pick_option(option);
+			if (changed) {
+				await nextTick();
+			}
+			let { append, select, in_answer, open_comment } = this.ui.mockups[this.mockup];
+
+			if (open_comment !== false) {
 				this.question.open_comment = true;
+			}
 
-				if (select) {
-					if (this.question.selected_followups.has(i)) {
-						// Unselect
-						this.question.selected_followups.delete(i);
-						return;
-					}
-					else {
-						// Select
-						this.question.selected_followups.add(i);
-						// Sentiment is mutually exclusive
-						if (i <= 1) {
-							this.question.selected_followups.delete(i == 0 ? 1 : 0);
-						}
+			if (select) {
+				if (this.question.selected_followups.has(i)) {
+					// Unselect
+					this.question.selected_followups.delete(i);
+					return;
+				}
+				else {
+					// Select
+					this.question.selected_followups.add(i);
+					// Sentiment is mutually exclusive
+					if (i <= 1) {
+						this.question.selected_followups.delete(i == 0 ? 1 : 0);
 					}
 				}
+			}
 
+			if (open_comment !== false) {
 				await nextTick(); // wait for textarea to be shown
 
 				let textarea = this.$refs.comment_area;
@@ -133,7 +153,7 @@ globalThis.app = createApp({
 					// Insert followup
 					document.execCommand('insertText', false, textToInsert);
 				}
-			// }
+			}
 		}
 	},
 

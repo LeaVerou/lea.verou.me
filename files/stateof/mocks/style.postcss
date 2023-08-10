@@ -35,11 +35,11 @@
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: .8em;
-}
 
-.form-check .followups, .form-check .issues {
+	.form-check & {
 		margin-left: .8em;
 	}
+}
 
 .followup {
 	--_color: var(--color, var(--bs-blue));
@@ -52,37 +52,35 @@
 	font-size: 70%;
 	transition: .1s;
 	white-space: nowrap;
-}
 
-.followup:first-child {
+	&:first-child {
 		--color: var(--bs-success);
 	}
 
-.followup:nth-child(2) {
+	&:nth-child(2) {
 		--color: var(--bs-danger);
 	}
 
-.followup.issue {
+	&.issue {
 		--color: color-mix(in lab, var(--bs-orange), black 30%);
 	}
 
-.followup:hover {
+	&:hover {
 		--a: .6;
 		color: white;
 	}
 
-.followup:active {
+	&:active {
 		background-image: none;
 		transform: scale(.97) translateY(.1em);
 	}
 
-.followup.selected:where(.select *) {
+	&.selected:where(.select *):where(.form-check.selected *) {
 		position: relative;
 		--a: 1;
 		border-color: hsl(0 0% 100% / .9);
-	}
 
-.followup.selected:where(.select *)::before {
+		&::before {
 			content: "✓";
 			position: absolute;
 			top: -.4em;
@@ -97,16 +95,18 @@
 			font-size: 80%;
 			line-height: 1;
 		}
+	}
+}
 
 /* Proximity to answer */
 .form-check .comment-trigger-wrapper {
 	flex: 1;
-}
-.form-check .comment-trigger-wrapper .comment-trigger {
+	.comment-trigger {
 		order: 2;
 		margin-left: auto;
 		padding: 0;
 	}
+}
 
 @keyframes comments-open {
 	from {
@@ -115,7 +115,8 @@
 	}
 }
 
-.in-answer .comment-input {
+.in-answer {
+	.comment-input {
 		z-index: 1;
 		position: relative;
 		--background-color: color-mix(in lab, var(--bg-color), white 25%);
@@ -127,10 +128,24 @@
 		filter: drop-shadow(.05em .1em .5em black);
 		animation: .2s comments-open both;
 		transform-origin: calc(100% - 21px) -12px;
-	}
 
-.in-answer .comment-input::after {
+		&::after {
 			right: 15px;
 			left: auto;
 			border-bottom-color: var(--background-color);
 		}
+	}
+
+	.form-check {
+		.comment-trigger-wrapper {
+			display: inline-flex !important;
+			opacity: 0;
+			transition: 0s;
+
+			&:is(.form-check:hover *, .form-check.selected *) {
+				opacity: 1;
+				transition: .6s;
+			}
+		}
+	}
+}

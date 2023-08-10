@@ -35,11 +35,11 @@
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: .8em;
+}
 
-	.form-check & {
+.form-check .followups, .form-check .issues {
 		margin-left: .8em;
 	}
-}
 
 .followup {
 	--_color: var(--color, var(--bs-blue));
@@ -52,35 +52,37 @@
 	font-size: 70%;
 	transition: .1s;
 	white-space: nowrap;
+}
 
-	&:first-child {
+.followup:first-child {
 		--color: var(--bs-success);
 	}
 
-	&:nth-child(2) {
+.followup:nth-child(2) {
 		--color: var(--bs-danger);
 	}
 
-	&.issue {
+.followup.issue {
 		--color: color-mix(in lab, var(--bs-orange), black 30%);
 	}
 
-	&:hover {
+.followup:hover {
 		--a: .6;
 		color: white;
 	}
 
-	&:active {
+.followup:active {
 		background-image: none;
 		transform: scale(.97) translateY(.1em);
 	}
 
-	&.selected:where(.select *) {
+.followup.selected:where(.select *):where(.form-check.selected *) {
 		position: relative;
 		--a: 1;
 		border-color: hsl(0 0% 100% / .9);
+	}
 
-		&::before {
+.followup.selected:where(.select *):where(.form-check.selected *)::before {
 			content: "✓";
 			position: absolute;
 			top: -.4em;
@@ -95,18 +97,16 @@
 			font-size: 80%;
 			line-height: 1;
 		}
-	}
-}
 
 /* Proximity to answer */
 .form-check .comment-trigger-wrapper {
 	flex: 1;
-	.comment-trigger {
+}
+.form-check .comment-trigger-wrapper .comment-trigger {
 		order: 2;
 		margin-left: auto;
 		padding: 0;
 	}
-}
 
 @keyframes comments-open {
 	from {
@@ -115,8 +115,7 @@
 	}
 }
 
-.in-answer {
-	.comment-input {
+.in-answer .comment-input {
 		z-index: 1;
 		position: relative;
 		--background-color: color-mix(in lab, var(--bg-color), white 25%);
@@ -128,11 +127,21 @@
 		filter: drop-shadow(.05em .1em .5em black);
 		animation: .2s comments-open both;
 		transform-origin: calc(100% - 21px) -12px;
+	}
 
-		&::after {
+.in-answer .comment-input::after {
 			right: 15px;
 			left: auto;
 			border-bottom-color: var(--background-color);
 		}
-	}
-}
+
+.in-answer .form-check .comment-trigger-wrapper {
+			display: inline-flex !important;
+			opacity: 0;
+			transition: 0s;
+		}
+
+.in-answer .form-check .comment-trigger-wrapper:is(.form-check:hover *, .form-check.selected *) {
+				opacity: 1;
+				transition: .6s;
+			}

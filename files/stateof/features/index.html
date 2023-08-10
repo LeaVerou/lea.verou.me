@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sync Features to Google Sheets</title>
+	<script src="index.js" type="module"></script>
+</head>
+<body>
+	<div id="toolbar_gh">
+		GitHub:
+		<span class="auth">
+			<button class="login" onclick="github.login()">Login</button>
+			<span class="username"></span>
+			<button class="logout" onclick="github.logout()">Logout</button>
+		</span>
+	</div>
+	<div id="toolbar_gs">
+		Google Sheets:
+		<button id="sync">Sync to Google Sheets</button>
+		<span class="auth">
+			<button class="login" onclick="gsheets.login()">Login</button>
+			<span class="username"></span>
+			<button class="logout" onclick="gsheets.logout()">Logout</button>
+		</span>
+	</div>
+
+	<pre id="csv"></pre>
+</body>
+</html>
