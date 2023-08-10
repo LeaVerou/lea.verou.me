@@ -24,7 +24,7 @@ gsheets.addEventListener("mv-login", e => {
 });
 gsheets.addEventListener("mv-logout", e => username.textContent = "");
 
-let discussions;
+let discussions, csvContent;
 
 github.addEventListener("mv-login", async e => {
 	toolbar_gh.querySelector(".username").textContent = github.user?.username;
@@ -32,7 +32,15 @@ github.addEventListener("mv-login", async e => {
 	discussions = data?.repository?.discussions.nodes;
 	discussions = discussions.sort((a, b) => b.upvoteCount - a.upvoteCount);
 
-	let csvContent = discussions.map(d => Object.values(d).join(",")).join("\n");
+	let csvData = [Object.keys(discussions[0]), ...discussions.map(d => Object.values(d))];
+	// Create CSV content from csvData making sure to escape special characters appropriately
+	csvContent = csvData.map(row => row.map(val => {
+		if (/[,;\t\n"]/.test(val)) {
+			return `"${val.toString().replaceAll('"', '""')}"`
+		}
+
+		return val;
+	}).join(",")).join("\n");
 	csv.textContent = csvContent;
 });
 
@@ -40,3 +48,11 @@ github.addEventListener("mv-login", async e => {
 sync.onclick = e => {
 	gsheets.store(discussions);
 };
+
+download_csv.onmousedown = e => {
+	// Create blob URL for CSV
+	let blob = new Blob([csvContent], { type: "text/csv" });
+	let url = URL.createObjectURL(blob);
+
+	download_csv.href = url;
+}
