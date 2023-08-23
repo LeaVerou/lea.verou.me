@@ -19,10 +19,15 @@
 	flex: 1;
 }
 
+.form-input {
+	container-name: question;
+	container-type: inline-size;
+}
+
 .sentiments {
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: .8em;
+	gap: .6em;
 	margin-left: .8em;
 }
 
@@ -37,9 +42,11 @@
 }
 
 .sentiment {
+	display: flex;
+	align-items: center;
 	--_color: var(--color, var(--bs-blue));
 	border: 1px solid hsl(0 0% 100% / .3);
-	padding: 0.1em .9em 0.05em .75em;
+	padding: 0.1em .8em 0.05em;
 	border-radius: 999px;
 	background: color-mix(in lab, var(--_color), transparent calc((1 - var(--a, .2)) * 100%)) linear-gradient(hsl(0 0% 100% / .1), transparent) border-box;
 	color: white;
@@ -79,7 +86,7 @@
 	}
 
 .sentiment:hover::before {
-			animation: arrow .7s infinite alternate;
+			animation: arrow .7s 3 alternate;
 		}
 
 .sentiment:active {
@@ -111,6 +118,27 @@
 			line-height: 1;
 		}
 
+.sentiment:has(> :checked) .sentiment-label {
+
+
+		}
+
+.sentiment .sentiment-label {
+		transition-duration: .4s;
+		transition-property: letter-spacing, opacity;
+	}
+
+@container question (width <= 500px) {
+			.sentiment:not(:has(> :checked))::before {
+				margin-right: 0;
+			}
+
+			.sentiment:not(:has(> :checked)) .sentiment-label {
+				letter-spacing: -1ch;
+				opacity: 0;
+			}
+	}
+
 .form-check .form-option-label {
 		display: flex;
 		position: relative;
@@ -132,7 +160,6 @@
 .form-check .form-option-label .comment-trigger-wrapper {
 			position: relative;
 			flex: 1;
-			xopacity: 0;
 			z-index: 1;
 			pointer-events: none;
 		}
@@ -146,8 +173,8 @@
 				padding: 0;
 			}
 
-.form-check .form-option-label .comment-trigger-wrapper:is(.form-check:hover *, .form-check.selected *) {
-				opacity: 1;
+.form-check .form-option-label .comment-trigger-wrapper:not(.form-check:is(:hover, :active, :focus-within) *, .form-check.selected *) {
+				opacity: 0;
 			}
 
 @keyframes comments-open {

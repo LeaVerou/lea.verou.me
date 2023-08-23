@@ -63,7 +63,7 @@
 																			@click.stop
 																			v-if="question.answer == option.value"
 																			v-model="question.selected_sentiment" class="visually-hidden">
-																		{{ label }}
+																		<span class="sentiment-label">{{ label }}</span>
 																	</label>
 																</span>
 																<button type="button" v-if="question.answer == option.value"
