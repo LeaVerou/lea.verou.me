@@ -1,13 +1,5 @@
 @import url("question.css");
 
-#mockup-selector {
-	display: flex;
-	gap: 1em;
-	border: 1px solid hsl(0 0% 100% / .3);
-	padding: 1em;
-	margin: 1em 0;
-}
-
 @keyframes fade-in {
 	from {
 		opacity: 0;
@@ -31,7 +23,7 @@
 	flex: 1;
 }
 
-.followups, .issues {
+.sentiments {
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: .8em;
@@ -41,10 +33,10 @@
 	}
 }
 
-.followup {
+.sentiment {
 	--_color: var(--color, var(--bs-blue));
 	border: 1px solid hsl(0 0% 100% / .3);
-	padding: 0.1em 1em 0.05em;
+	padding: 0.1em .8em 0.05em;
 	border-radius: 999px;
 	background: color-mix(in lab, var(--_color), transparent calc((1 - var(--a, .2)) * 100%)) linear-gradient(hsl(0 0% 100% / .1), transparent) border-box;
 	color: white;
@@ -53,16 +45,25 @@
 	transition: .1s;
 	white-space: nowrap;
 
-	&:first-child {
+	&::before {
+		margin-right: .3em;
+	}
+
+	&.positive {
 		--color: var(--bs-success);
+
+		&::before {
+			content: "↑";
+
+		}
 	}
 
-	&:nth-child(2) {
+	&.negative {
 		--color: var(--bs-danger);
-	}
 
-	&.issue {
-		--color: color-mix(in lab, var(--bs-orange), black 30%);
+		&::before {
+			content: "↓";
+		}
 	}
 
 	&:hover {
@@ -75,12 +76,13 @@
 		transform: scale(.97) translateY(.1em);
 	}
 
-	&.selected:where(.select *):where(.form-check.selected *) {
+	/* Selected sentiment inside selected option */
+	&.selected:where(.form-check.selected *) {
 		position: relative;
 		--a: 1;
 		border-color: hsl(0 0% 100% / .9);
 
-		&::before {
+		&::after {
 			content: "✓";
 			position: absolute;
 			top: -.4em;
@@ -101,6 +103,7 @@
 /* Proximity to answer */
 .form-check .comment-trigger-wrapper {
 	flex: 1;
+
 	.comment-trigger {
 		order: 2;
 		margin-left: auto;
@@ -115,37 +118,37 @@
 	}
 }
 
-.in-answer {
-	.comment-input {
-		z-index: 1;
-		position: relative;
-		--background-color: color-mix(in lab, var(--bg-color), white 25%);
-		background: var(--background-color);
-		margin-left: 5em;
-		margin-top: calc(0em - 3.3em * (2 - var(--selected-index)));
-		margin-right: -5px;
-		border-radius: .2em;
-		filter: drop-shadow(.05em .1em .5em black);
-		animation: .2s comments-open both;
-		transform-origin: calc(100% - 21px) -12px;
+.comment-input {
+	z-index: 1;
+	position: relative;
+	--background-color: color-mix(in lab, var(--bg-color), white 25%);
+	background: var(--background-color);
+	margin-left: 5em;
+	margin-top: calc(0em - 3.3em * (2 - var(--selected-index)));
+	margin-right: -5px;
+	border-radius: .2em;
+	filter: drop-shadow(.05em .1em .5em black);
+	animation: .2s comments-open both;
+	transform-origin: calc(100% - 21px) -12px;
 
-		&::after {
-			right: 15px;
-			left: auto;
-			border-bottom-color: var(--background-color);
-		}
+	&::after {
+		right: 15px;
+		left: auto;
+		border-bottom-color: var(--background-color);
 	}
+}
 
-	.form-check {
-		.comment-trigger-wrapper {
-			display: inline-flex !important;
-			opacity: 0;
-			transition: 0s;
+.form-check {
+	.comment-trigger-wrapper {
+		display: inline-flex !important;
+		filter: grayscale();
+		opacity: 0;
+		transition: 0s;
 
-			&:is(.form-check:hover *, .form-check.selected *) {
-				opacity: 1;
-				transition: .6s;
-			}
+		&:is(.form-check:hover *, .form-check.selected *) {
+			opacity: 1;
+			transition: .6s;
+			filter: initial;
 		}
 	}
 }
