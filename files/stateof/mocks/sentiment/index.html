@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Followup mocks</title>
+	<title>Sentiment prototype</title>
 	<link rel="stylesheet" href="style.css">
 	<script type="module" src="index.js"></script>
 </head>
@@ -33,51 +33,56 @@
 									</div>
 									<div class="experience-contents">
 										<div class="experience-options">
-											<div class="form-check" :class="{selected: question.answer == option.value}" v-for="(option, index) in this.ui.options" :key="index">
-												<label :for="'css2023__features__aspect_ratio__experience.' + index" class="form-check-label">
-													<div class="form-input-wrapper">
-														<input v-model="question.answer"
-															   :id="'css2023__features__aspect_ratio__experience.' + index"
-															   class="form-check-input"
-															   type="radio"
-															   :value="option.value"
-															   name="css2023__features__aspect_ratio__experience">
-													</div>
-													<div class="form-option">
-														<div class="form-option-item">
-															<span class="form-option-label">
-																<span :data-key="'options.features.' + option.value" class="i18n-message t">
-																	<span>{{ option.icon }}</span>
-																	{{ option.label }}
-																</span>
-																<div class="comment-trigger-wrapper" v-show="question.answer == option.value">
-																	<button type="button" v-if="question.answer == option.value"
-																		:class="`comment-trigger comment-trigger-${ question.open_comment? '' : 'in' }active`"
-																		@click="question.open_comment = !question.open_comment"
+											<div class="form-check" v-for="(option, index) in this.ui.options" :class="{selected: question.answer == option.value}" :key="index">
+												<div class="form-input-wrapper">
+													<input v-model="question.answer"
+															:id="'css2023__features__aspect_ratio__experience.' + index"
+															class="form-check-input"
+															type="radio"
+															:value="option.value"
+															name="css2023__features__aspect_ratio__experience">
+												</div>
+												<div class="form-option">
+													<div class="form-option-item">
+														<span class="form-option-label">
+															<label :for="'css2023__features__aspect_ratio__experience.' + index" :data-key="'options.features.' + option.value" class="form-check-label i18n-message t">
+																<span>{{ option.icon }}</span>
+																{{ option.label }}
+															</label>
+															<div class="comment-trigger-wrapper">
+																<span class="sentiments">
+																	<label v-for="(label, i) in option.sentiment"
+																		class="sentiment"
+																		:class="i === 0? 'positive' : 'negative'"
+																		@click="pick_sentiment(label, i === 0? 1 : -1, option, $event)"
 																		>
-																		<svg class="icon-comment" width="24" height="24" fill="none" stroke-width="1.5" color="white" viewBox="0 0 24 24">
-																			<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-																				d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.955 9.955 0 0012 22z">
-																			</path>
-																		</svg>
-																		<span class="visually-hidden">
-																			<span data-key="experience.leave_comment" class="i18n-message  t">Leave a Comment (optional)</span></span>
-																	</button>
-																	<span class="sentiments">
-																		<button v-for="(label, i) in option.sentiment"
-																		  class="sentiment"
-																		  :class="{
-																			selected: question.selected_sentiment === i,
-																			positive: i === 0,
-																			negative: i === 1,
-																		  }"
-																		  @click="pick_sentiment(label, i, option)">{{ label }}</button>
-																	</span>
-																</div>
-															</span>
-														</div>
+																		<input type="radio"
+																			:name="question.answer == option.value && 'sentiment'"
+																			:value="i === 0? 1 : -1"
+																			@keyup.esc = "question.selected_sentiment = null"
+																			@click.stop
+																			v-if="question.answer == option.value"
+																			v-model="question.selected_sentiment" class="visually-hidden">
+																		{{ label }}
+																	</label>
+																</span>
+																<button type="button" v-if="question.answer == option.value"
+																	:class="`comment-trigger comment-trigger-${ question.open_comment? '' : 'in' }active`"
+																	@click="question.open_comment = !question.open_comment"
+																	>
+																	<svg class="icon-comment" width="24" height="24" fill="none" stroke-width="1.5" color="white" viewBox="0 0 24 24">
+																		<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+																			d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.955 9.955 0 0012 22z">
+																		</path>
+																	</svg>
+																	<span class="visually-hidden">
+																		<span data-key="experience.leave_comment" class="i18n-message  t">Leave a Comment (optional)</span></span>
+																</button>
+
+															</div>
+														</span>
 													</div>
-												</label>
+												</div>
 											</div>
 										</div>
 									</div>

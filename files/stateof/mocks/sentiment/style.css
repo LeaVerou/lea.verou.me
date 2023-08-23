@@ -15,10 +15,6 @@
 	font-size: 1rem;
 }
 
-.form-option-label {
-	display: flex;
-}
-
 .form-option-item {
 	flex: 1;
 }
@@ -27,27 +23,36 @@
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: .8em;
+	margin-left: .8em;
 }
 
-.form-check .sentiments {
-		margin-left: .8em;
+@keyframes arrow {
+	from, 40% {
+		transform: translateY(var(--animation-offset));
 	}
+
+	20%, 60%, to {
+		transform: none;
+	}
+}
 
 .sentiment {
 	--_color: var(--color, var(--bs-blue));
 	border: 1px solid hsl(0 0% 100% / .3);
-	padding: 0.1em .8em 0.05em;
+	padding: 0.1em .9em 0.05em .75em;
 	border-radius: 999px;
 	background: color-mix(in lab, var(--_color), transparent calc((1 - var(--a, .2)) * 100%)) linear-gradient(hsl(0 0% 100% / .1), transparent) border-box;
 	color: white;
-	animation: fade-in 1s both;
 	font-size: 70%;
 	transition: .1s;
 	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
 }
 
 .sentiment::before {
 		margin-right: .3em;
+		scale: 1.15;
 	}
 
 .sentiment.positive {
@@ -56,7 +61,7 @@
 
 .sentiment.positive::before {
 			content: "↑";
-
+			--animation-offset: -.1em;
 		}
 
 .sentiment.negative {
@@ -65,12 +70,17 @@
 
 .sentiment.negative::before {
 			content: "↓";
+			--animation-offset: .1em;
 		}
 
 .sentiment:hover {
 		--a: .6;
 		color: white;
 	}
+
+.sentiment:hover::before {
+			animation: arrow .7s infinite alternate;
+		}
 
 .sentiment:active {
 		background-image: none;
@@ -79,13 +89,13 @@
 
 /* Selected sentiment inside selected option */
 
-.sentiment.selected:where(.form-check.selected *) {
+.sentiment:has(> :checked) {
 		position: relative;
 		--a: 1;
 		border-color: hsl(0 0% 100% / .9);
 	}
 
-.sentiment.selected:where(.form-check.selected *)::after {
+.sentiment:has(> :checked)::after {
 			content: "✓";
 			position: absolute;
 			top: -.4em;
@@ -101,15 +111,44 @@
 			line-height: 1;
 		}
 
-/* Proximity to answer */
-.form-check .comment-trigger-wrapper {
-	flex: 1;
-}
-.form-check .comment-trigger-wrapper .comment-trigger {
-		order: 2;
-		margin-left: auto;
-		padding: 0;
+.form-check .form-option-label {
+		display: flex;
+		position: relative;
 	}
+
+.form-check .form-option-label > label {
+			gap: .4em;
+			flex: none;
+
+			/* Expand clickable area to whole row */
+		}
+
+.form-check .form-option-label > label::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+			}
+
+.form-check .form-option-label .comment-trigger-wrapper {
+			position: relative;
+			flex: 1;
+			xopacity: 0;
+			z-index: 1;
+			pointer-events: none;
+		}
+
+.form-check .form-option-label .comment-trigger-wrapper > * {
+				pointer-events: auto;
+			}
+
+.form-check .form-option-label .comment-trigger-wrapper .comment-trigger {
+				margin-left: auto;
+				padding: 0;
+			}
+
+.form-check .form-option-label .comment-trigger-wrapper:is(.form-check:hover *, .form-check.selected *) {
+				opacity: 1;
+			}
 
 @keyframes comments-open {
 	from {
@@ -137,16 +176,3 @@
 		left: auto;
 		border-bottom-color: var(--background-color);
 	}
-
-.form-check .comment-trigger-wrapper {
-		display: inline-flex !important;
-		filter: grayscale();
-		opacity: 0;
-		transition: 0s;
-	}
-
-.form-check .comment-trigger-wrapper:is(.form-check:hover *, .form-check.selected *) {
-			opacity: 1;
-			transition: .6s;
-			filter: initial;
-		}

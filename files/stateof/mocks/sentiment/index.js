@@ -3,6 +3,10 @@ import { fetchSurveyCSS } from '../util.js';
 
 fetchSurveyCSS();
 
+async function delay(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 globalThis.app = createApp({
 	data() {
 		return {
@@ -45,11 +49,12 @@ globalThis.app = createApp({
 		},
 
 		selected_sentiment_label() {
-			if (this.question.selected_sentiment === null) {
-				return null;
+			if (!this.selected_option || !this.question.selected_sentiment) {
+				return "";
 			}
 
-			return this.selected_option.sentiment[this.question.selected_sentiment];
+			let i = this.question.selected_sentiment < 0? 1 : 0;
+			return this.selected_option.sentiment[i];
 		},
 	},
 
@@ -63,7 +68,7 @@ globalThis.app = createApp({
 			return true;
 		},
 
-		async pick_sentiment(label, i, option) {
+		async pick_sentiment(label, i, option, $event) {
 			let changed = this.pick_option(option);
 			if (changed) {
 				await nextTick();
@@ -71,18 +76,22 @@ globalThis.app = createApp({
 
 			if (this.question.selected_sentiment === i) {
 				// Clicking on selected sentiment should unselect it
-				this.question.selected_sentiment = null;
+				await nextTick();
+				await delay(0); // no idea 🤷🏽‍♀️
+				this.question.selected_sentiment = 0;
 			}
 			else {
-				// Select
 				this.question.selected_sentiment = i;
 			}
 		}
 	},
 
 	watch: {
-		"question.answer"() {
-			this.question.selected_sentiment = null;
+		async "question.answer"(answer) {
+			if (this.question.selected_sentiment !== 0) {
+				this.question.selected_sentiment = 0;
+			}
+
 			this.question.open_comment = false;
 		}
 	}
