@@ -1,4 +1,7 @@
 import { createApp, nextTick } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import { fetchSurveyCSS } from '../util.js';
+
+fetchSurveyCSS();
 
 globalThis.app = createApp({
 	data() {
