@@ -3,12 +3,6 @@
 /* For demo only */
 body { padding-top: 2em; }
 
-@keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-}
-
 .comment-trigger-wrapper {
 	display: inline-flex;
 	align-items: center;
@@ -16,6 +10,7 @@ body { padding-top: 2em; }
 
 .comment-input-prompt {
 	font-size: 1rem;
+	margin-bottom: .4em;
 }
 
 .form-option-item {
@@ -207,6 +202,19 @@ body { padding-top: 2em; }
 	from {
 		transform: scale(0);
 		opacity: 0;
+		max-height: 0;
+		padding-block: 0;
+	}
+
+	to {
+		max-height: 8em;
+	}
+}
+
+@keyframes comments-open-textarea {
+	from {
+		max-height: calc(100% - 2.3em);
+		min-height: 0;
 	}
 }
 
@@ -215,16 +223,22 @@ body { padding-top: 2em; }
 	position: relative;
 	--background-color: color-mix(in lab, var(--bg-color), white 25%);
 	background: var(--background-color);
-	margin-left: 5em;
-	margin-top: calc(0em - 3.3em * (2 - var(--option-index)));
-	margin-right: -5px;
+	margin: .4em 0;
 	border-radius: .2em;
-	filter: drop-shadow(.05em .1em .5em black);
-	animation: .2s comments-open both;
 	transform-origin: calc(100% - 21px) -12px;
+	overflow: clip;
+	overflow-clip-margin: 12px;
+
+	&, & textarea {
+		animation: .3s comments-open both ease-in;
+	}
+
+	& textarea {
+		animation-name: comments-open-textarea;
+	}
 
 	&::after {
-		right: 15px;
+		right: 10px;
 		left: auto;
 		border-bottom-color: var(--background-color);
 	}

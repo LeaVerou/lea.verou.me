@@ -45,11 +45,23 @@ class Option {
 		if (oldSelected !== selected) {
 			this.selected_sentiment = 0;
 			this.question._changed(this);
+			if (this.open_comment) {
+				this.open_comment = false;
+			}
 		}
 	}
 
 	get selected() {
 		return this._selected;
+	}
+
+	get selected_sentiment_label() {
+		if (!this.selected || !this.selected_sentiment) {
+			return "";
+		}
+
+		let i = this.selected_sentiment < 0? 1 : 0;
+		return this.sentiment[i];
 	}
 }
 
@@ -65,11 +77,7 @@ class Question {
 		this.options.forEach(o => o.selected = false);
 	}
 
-	_changed (option) {
-		if (this.open_comment) {
-			this.open_comment = false;
-		}
-	}
+	_changed (option) {}
 
 	// Sentiment presets
 	static SENTIMENT_INTEREST = [ "Interested", "Not interested" ];
@@ -80,15 +88,6 @@ class Question {
 class SingleChoiceQuestion extends Question {
 	get selected_option() {
 		return this.options.find(o => o.value === this.answer);
-	}
-
-	get selected_sentiment_label() {
-		if (!this.selected_option || !this.selected_sentiment) {
-			return "";
-		}
-
-		let i = this.selected_sentiment < 0? 1 : 0;
-		return this.selected_option.sentiment[i];
 	}
 
 	get answer () {
