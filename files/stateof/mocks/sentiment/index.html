@@ -9,64 +9,65 @@
 </head>
 <body>
 
-<div class="wrapper" id="wrapper" :style="`--selected-index: ${selected_index}`">
+<div class="wrapper" id="wrapper">
 	<div class="survey-section">
 		<div class="section-contents">
 			<div class="section-questions" id="section-questions">
-				<div class="form-input" class="{'open-comment': question.open_comment}">
+				<div v-for="question of questions" class="form-input" class="{'open-comment': question.open_comment}">
 					<div>
 						<div>
-							<h3 class="form-label-heading" id="aspect_ratio">
-								<label class="form-label" for="css2023__features__aspect_ratio__experience">
-									<span class="entity-label"><code>aspect-ratio</code></span>
+							<h3 class="form-label-heading" :id="question.id">
+								<label class="form-label" :for="`css2023__features__${ question.id }__experience`">
+									<span class="entity-label" v-html="question.question"></span>
 								</label>
 							</h3>
 							<div class="form-item-contents">
 								<div class="form-item-input">
-									<div class="code-example">
+									<div class="code-example" v-if="question.code_example">
 										<h5 class="code-example-heading">
-											<span data-key="general.code_example" class="i18n-message  t">Code Example</span>
+											<span data-key="general.code_example" class="i18n-message t">Code Example</span>
 										</h5>
-										<pre><code><span class="hljs-selector-class">.square</span> {
-	aspect-ratio: <span class="hljs-number">1</span> / <span class="hljs-number">1</span>;
-}</code></pre>
+										<div v-html="question.code_example"></div>
 									</div>
 									<div class="experience-contents">
 										<div class="experience-options">
-											<div class="form-check" v-for="(option, index) in this.ui.options" :class="{selected: question.answer == option.value}" :key="index">
+											<div v-for="(option, index) in question.options"
+												:style="`--option-index: ${index}`"
+												class="form-check" :class="{selected: option.selected}"
+												:key="index">
 												<div class="form-input-wrapper">
 													<input v-model="question.answer"
-															:id="'css2023__features__aspect_ratio__experience.' + index"
-															class="form-check-input"
-															type="radio"
-															:value="option.value"
-															name="css2023__features__aspect_ratio__experience">
+														:id="'css2023__features__${ question.id }__experience.' + index"
+														class="form-check-input"
+														:type="question.multiple? 'checkbox' : 'radio'"
+														:value="option.value"
+														name="css2023__features__${ question.id }__experience">
 												</div>
 												<div class="form-option">
 													<div class="form-option-item">
 														<span class="form-option-label">
-															<label :for="'css2023__features__aspect_ratio__experience.' + index" :data-key="'options.features.' + option.value" class="form-check-label i18n-message t">
-																<span>{{ option.icon }}</span>
-																{{ option.label }}
+															<label :for="'css2023__features__${ question.id }__experience.' + index" :data-key="'options.features.' + option.value" class="form-check-label i18n-message t">
+																<span v-if="option.icon">{{ option.icon }}</span>
+																<span v-html="option.label"></span>
 															</label>
 															<div class="comment-trigger-wrapper">
 																<span class="sentiments">
 																	<label v-for="(label, i) in option.sentiment"
 																		class="sentiment"
 																		:class="i === 0? 'positive' : 'negative'"
-																		@click="pick_sentiment(label, i === 0? 1 : -1, option, $event)"
+																		@click="option.pick_sentiment(i === 0? 1 : -1, $event)"
 																		>
 																		<input type="radio"
-																			:name="question.answer == option.value && 'sentiment'"
+																			:name="`css2023__features__${ question.id }__experience.sentiment${ question.multiple ? `[${ index }]` : '' }`"
 																			:value="i === 0? 1 : -1"
-																			@keyup.esc = "question.selected_sentiment = null"
+																			@keyup.esc = "option.selected_sentiment = 0"
 																			@click.stop
-																			v-if="question.answer == option.value"
-																			v-model="question.selected_sentiment" class="visually-hidden">
+																			v-if="option.selected"
+																			v-model="option.selected_sentiment" class="visually-hidden">
 																		<span class="sentiment-label">{{ label }}</span>
 																	</label>
 																</span>
-																<button type="button" v-if="question.answer == option.value"
+																<button type="button" v-if="option.selected && question.optionComments !== false"
 																	:class="`comment-trigger comment-trigger-${ question.open_comment? '' : 'in' }active`"
 																	@click="question.open_comment = !question.open_comment"
 																	>
@@ -89,8 +90,8 @@
 								</div>
 								<div class="comment-input" v-if="question.open_comment">
 									<p class="comment-input-prompt">
-										<template v-if="selected_sentiment_label">
-											{{ selected_sentiment_label }} because…
+										<template v-if="question.selected_sentiment_label">
+											{{ question.selected_sentiment_label }} because…
 										</template>
 										<template v-else>
 											You can optionally add more context…

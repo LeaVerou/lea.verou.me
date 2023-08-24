@@ -13,3 +13,7 @@ export async function fetchSurveyCSS() {
 	document.querySelector("link[rel=stylesheet]").insertAdjacentHTML("beforebegin", `<style>${css}</style>`);
 	console.log(css);
 }
+
+export async function delay(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
