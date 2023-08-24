@@ -37,7 +37,7 @@
 												:key="index">
 												<div class="form-input-wrapper">
 													<input v-model="question.answer"
-														:id="'css2023__features__${ question.id }__experience.' + index"
+														:id="`css2023__features__${ question.id }__experience.${ index }`"
 														class="form-check-input"
 														:type="question.multiple? 'checkbox' : 'radio'"
 														:value="option.value"
@@ -46,7 +46,7 @@
 												<div class="form-option">
 													<div class="form-option-item">
 														<span class="form-option-label">
-															<label :for="'css2023__features__${ question.id }__experience.' + index" :data-key="'options.features.' + option.value" class="form-check-label i18n-message t">
+															<label :for="`css2023__features__${ question.id }__experience.${ index }`" :data-key="'options.features.' + option.value" class="form-check-label i18n-message t">
 																<span v-if="option.icon">{{ option.icon }}</span>
 																<span v-html="option.label"></span>
 															</label>

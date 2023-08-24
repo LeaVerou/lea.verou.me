@@ -176,6 +176,13 @@ body { padding-top: 2em; }
 				padding: 0;
 			}
 
+/*
+			Show if:
+			- hovering over /pointer down on/focus within the row
+			- option selected
+			- TODO: hide if not selected, and another row is being interacted with
+			*/
+
 .form-check .form-option-label .comment-trigger-wrapper:not(.form-check:is(:hover, :active, :focus-within) *, .form-check.selected *) {
 				opacity: 0;
 			}
