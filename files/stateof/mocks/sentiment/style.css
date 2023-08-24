@@ -22,6 +22,7 @@ body { padding-top: 2em; }
 	flex: 1;
 }
 
+/* Question container */
 .form-input {
 	container-name: question;
 	container-type: inline-size;
@@ -29,7 +30,6 @@ body { padding-top: 2em; }
 
 .sentiments {
 	display: inline-flex;
-	flex-wrap: wrap;
 	gap: .6em;
 	margin-left: .8em;
 }
@@ -83,12 +83,13 @@ body { padding-top: 2em; }
 			--animation-offset: .1em;
 		}
 
-.sentiment:hover {
+.sentiment:hover,
+	.sentiment:focus-within {
 		--a: .6;
 		color: white;
 	}
 
-.sentiment:hover::before {
+.sentiment:hover::before, .sentiment:focus-within::before {
 			animation: arrow .7s 3 alternate;
 		}
 
@@ -97,7 +98,16 @@ body { padding-top: 2em; }
 		transform: scale(.97) translateY(.1em);
 	}
 
-/* Selected sentiment inside selected option */
+.sentiment:focus-within {
+		box-shadow: 0 0 .3em .1em var(--_color);
+	}
+
+.sentiment .sentiment-label {
+		transition-duration: .4s;
+		transition-property: letter-spacing, opacity;
+	}
+
+/* Selected sentiment */
 
 .sentiment:has(> :checked) {
 		position: relative;
@@ -126,12 +136,8 @@ body { padding-top: 2em; }
 
 		}
 
-.sentiment .sentiment-label {
-		transition-duration: .4s;
-		transition-property: letter-spacing, opacity;
-	}
-
-@container question (width <= 500px) {
+@container question (width <= 500px) { /* mobile */
+		/* Not selected */
 			.sentiment:not(:has(> :checked))::before {
 				margin-right: 0;
 			}
@@ -141,6 +147,8 @@ body { padding-top: 2em; }
 				opacity: 0;
 			}
 	}
+
+/* Option container */
 
 .form-check .form-option-label {
 		display: flex;
@@ -183,7 +191,16 @@ body { padding-top: 2em; }
 			- TODO: hide if not selected, and another row is being interacted with
 			*/
 
-.form-check .form-option-label .comment-trigger-wrapper:not(.form-check:is(:hover, :active, :focus-within) *, .form-check.selected *) {
+.form-check .form-option-label .comment-trigger-wrapper:not(
+				
+				:has(.sentiment > :checked),
+
+				
+				.form-check:is(:hover, :active, :focus-within) *,
+
+				
+				.form-check.selected *
+			) {
 				opacity: 0;
 			}
 

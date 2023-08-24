@@ -43,6 +43,14 @@ aspect-ratio: <span class="hljs-number">1</span> / <span class="hljs-number">1</
 				"value": "dialog",
 			},
 			{
+				"label": "<code>&lt;form></code>",
+				"value": "form",
+			},
+			{
+				"label": "<code>&lt;input></code>",
+				"value": "input",
+			},
+			{
 				"label": "None of the above",
 				"value": "none",
 				"sentiment": null

@@ -13,6 +13,7 @@
 	<div class="survey-section">
 		<div class="section-contents">
 			<div class="section-questions" id="section-questions">
+				<!-- Question -->
 				<div v-for="question of questions" class="form-input" class="{'open-comment': question.open_comment}">
 					<div>
 						<div>
@@ -30,11 +31,10 @@
 										<div v-html="question.code_example"></div>
 									</div>
 									<div class="experience-contents">
-										<div class="experience-options">
-											<div v-for="(option, index) in question.options"
-												:style="`--option-index: ${index}`"
-												class="form-check" :class="{selected: option.selected}"
-												:key="index">
+										<div class="experience-options form-item-options">
+											<!-- Option -->
+											<div v-for="(option, index) in question.options" class="form-check" :class="{selected: option.selected}"
+												:style="`--option-index: ${index}`">
 												<div class="form-input-wrapper">
 													<input v-model="question.answer"
 														:id="`css2023__features__${ question.id }__experience.${ index }`"
@@ -52,6 +52,7 @@
 															</label>
 															<div class="comment-trigger-wrapper">
 																<span class="sentiments">
+																	<!-- Sentiment chip -->
 																	<label v-for="(label, i) in option.sentiment"
 																		class="sentiment"
 																		:class="i === 0? 'positive' : 'negative'"

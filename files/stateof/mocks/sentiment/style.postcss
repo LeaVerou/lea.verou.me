@@ -22,6 +22,7 @@ body { padding-top: 2em; }
 	flex: 1;
 }
 
+/* Question container */
 .form-input {
 	container-name: question;
 	container-type: inline-size;
@@ -29,7 +30,6 @@ body { padding-top: 2em; }
 
 .sentiments {
 	display: inline-flex;
-	flex-wrap: wrap;
 	gap: .6em;
 	margin-left: .8em;
 }
@@ -82,7 +82,8 @@ body { padding-top: 2em; }
 		}
 	}
 
-	&:hover {
+	&:hover,
+	&:focus-within {
 		--a: .6;
 		color: white;
 
@@ -96,7 +97,16 @@ body { padding-top: 2em; }
 		transform: scale(.97) translateY(.1em);
 	}
 
-	/* Selected sentiment inside selected option */
+	&:focus-within {
+		box-shadow: 0 0 .3em .1em var(--_color);
+	}
+
+	.sentiment-label {
+		transition-duration: .4s;
+		transition-property: letter-spacing, opacity;
+	}
+
+	/* Selected sentiment */
 	&:has(> :checked) {
 		position: relative;
 		--a: 1;
@@ -124,12 +134,8 @@ body { padding-top: 2em; }
 		}
 	}
 
-	.sentiment-label {
-		transition-duration: .4s;
-		transition-property: letter-spacing, opacity;
-	}
-
-	@container question (width <= 500px) {
+	@container question (width <= 500px) { /* mobile */
+		/* Not selected */
 		&:not(:has(> :checked)) {
 			&::before {
 				margin-right: 0;
@@ -143,7 +149,7 @@ body { padding-top: 2em; }
 	}
 }
 
-.form-check {
+.form-check { /* Option container */
 	.form-option-label {
 		display: flex;
 		position: relative;
@@ -181,7 +187,16 @@ body { padding-top: 2em; }
 			- option selected
 			- TODO: hide if not selected, and another row is being interacted with
 			*/
-			&:not(.form-check:is(:hover, :active, :focus-within) *, .form-check.selected *) {
+			&:not(
+				/* Selected sentiments should always show */
+				:has(.sentiment > :checked),
+
+				/* Interacting with the row should reveal sentiments */
+				.form-check:is(:hover, :active, :focus-within) *,
+
+				/* Sentiments of selected row are always visible */
+				.form-check.selected *
+			) {
 				opacity: 0;
 			}
 		}
