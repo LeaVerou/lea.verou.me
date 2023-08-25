@@ -1,4 +1,4 @@
-import { Question, SingleChoiceQuestion, MultiChoiceQuestion } from '../models.js'
+import { Question, SingleChoiceQuestion, MultiChoiceQuestion } from './models.js'
 
 export default [
 	new SingleChoiceQuestion({

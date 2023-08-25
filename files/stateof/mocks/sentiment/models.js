@@ -1,7 +1,7 @@
 import { createApp, nextTick } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 export { createApp, nextTick};
 
-import { delay } from './util.js';
+import { delay } from '../util.js';
 
 class Option {
 	sentiment = 0;
