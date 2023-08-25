@@ -126,8 +126,15 @@ body { padding-top: 2em; }
 			line-height: 1;
 		}
 
+/* Explicitly not selected, i.e. the opposite sentiment is */
+
+.sentiment:not(:has(> :checked)):where(.sentiments:has(:checked) *) {
+			opacity: .6;
+		}
+
 @container question (width <= 500px) { /* mobile */
 		/* Not selected */
+
 			.sentiment:not(:has(> :checked))::before {
 				margin-right: 0;
 			}
@@ -136,7 +143,7 @@ body { padding-top: 2em; }
 				letter-spacing: -1ch;
 				opacity: 0;
 			}
-	}
+		}
 
 /* Option container */
 
@@ -179,7 +186,7 @@ body { padding-top: 2em; }
 				:has(.sentiment > :checked),
 
 				
-				.form-check:is(:hover, :active, :focus-within) *,
+				.form-check:is(:hover, :active) *,
 
 				
 				.form-check.selected *

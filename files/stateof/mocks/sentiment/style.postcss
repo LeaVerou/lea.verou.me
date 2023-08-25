@@ -124,9 +124,15 @@ body { padding-top: 2em; }
 		}
 	}
 
-	@container question (width <= 500px) { /* mobile */
+	&:not(:has(> :checked)) {
+		/* Explicitly not selected, i.e. the opposite sentiment is */
+		&:where(.sentiments:has(:checked) *) {
+			opacity: .6;
+		}
+
+		@container question (width <= 500px) { /* mobile */
 		/* Not selected */
-		&:not(:has(> :checked)) {
+
 			&::before {
 				margin-right: 0;
 			}
@@ -176,7 +182,7 @@ body { padding-top: 2em; }
 				:has(.sentiment > :checked),
 
 				/* Interacting with the row should reveal sentiments */
-				.form-check:is(:hover, :active, :focus-within) *,
+				.form-check:is(:hover, :active) *,
 
 				/* Sentiments of selected row are always visible */
 				.form-check.selected *
