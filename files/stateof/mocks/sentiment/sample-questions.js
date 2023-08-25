@@ -1,4 +1,4 @@
-import { Question, SingleChoiceQuestion, MultiChoiceQuestion } from './models.js'
+import { Question, SingleChoiceQuestion, MultiChoiceQuestion } from '../models.js'
 
 export default [
 	new SingleChoiceQuestion({
@@ -51,7 +51,15 @@ export default [
 				"value": "input",
 			},
 			{
-				"label": "None of the above",
+				"label": "<code>&lt;select></code>",
+				"value": "select",
+			},
+			{
+				"label": "<code>&lt;textarea></code>",
+				"value": "textarea",
+			},
+			{
+				"label": "🚫 None of the above",
 				"value": "none",
 				"sentiments": null
 			}
