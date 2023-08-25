@@ -1,3 +1,6 @@
+import { createApp, nextTick } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+export { createApp, nextTick};
+
 // Fetch survey CSS, log @import statements to console, and insert into page as a fallback
 // No, there is no actual static URL for this, it changes every time the build process runs
 export async function fetchSurveyCSS() {
