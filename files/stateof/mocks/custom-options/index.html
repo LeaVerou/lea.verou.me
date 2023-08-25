@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Custom Options</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="module" src="index.js"></script>
+</head>
+<body>
+
+<div class="wrapper" id="wrapper">
+	<div class="survey-section">
+		<div class="section-contents">
+			<div class="section-questions" id="section-questions">
+				<form>
+				<!-- Question -->
+				<div v-for="question of questions" class="form-input" class="{'open-comment': question.open_comment}" ref="question"
+				@focusout="$event.currentTarget.contains($event.relatedTarget) ? void 0 : question.remove_empty_custom_options()"
+				>
+					<div>
+						<div>
+							<h3 class="form-label-heading" :id="question.id">
+								<label class="form-label" :for="`css2023__features__${ question.id }__experience`">
+									<span class="entity-label" v-html="question.question"></span>
+								</label>
+							</h3>
+
+							<div class="form-item-contents">
+								<span class="form-item-description" v-if="question.description" v-html="question.description"></span>
+								<div class="form-item-input">
+									<div class="code-example" v-if="question.code_example">
+										<h5 class="code-example-heading">
+											<span data-key="general.code_example" class="i18n-message t">Code Example</span>
+										</h5>
+										<div v-html="question.code_example"></div>
+									</div>
+									<div class="experience-contents">
+										<div class="experience-options form-item-options">
+											<!-- Option -->
+											<div v-for="(option, index) in question.options" class="form-check" :class="{selected: option.selected}"
+												:style="`--option-index: ${index}`">
+												<div class="form-input-wrapper">
+													<input v-model="question.answer"
+														:id="`css2023__features__${ question.id }__experience.${ index }`"
+														class="form-check-input"
+														:type="question.multiple? 'checkbox' : 'radio'"
+														:value="option.value"
+														name="css2023__features__${ question.id }__experience">
+												</div>
+												<div class="form-option">
+													<div class="form-option-item">
+														<span class="form-option-label">
+															<label :for="`css2023__features__${ question.id }__experience.${ index }`" :data-key="'options.features.' + option.value" class="form-check-label i18n-message t">
+																<span v-if="option.icon">{{ option.icon }}</span>
+																<span v-html="option.label"></span>
+															</label>
+														</span>
+													</div>
+												</div>
+											</div>
+											<template v-if="question.allowCustom">
+
+												<!-- Custom Option -->
+												<div v-for="(option, index) in question.customOptions"
+													class="form-check custom-option-container"
+													:class="{empty: !option.value, first: index === 0}"
+													:style="`--option-index: ${index}`">
+													<div class="form-input-wrapper">
+														<input v-model="option.selected"
+															class="form-check-input"
+															:type="question.multiple? 'checkbox' : 'radio'"
+															disabled
+															>
+													</div>
+													<div class="form-option">
+														<div class="form-option-item">
+															<span class="form-option-label">
+																<input v-model="option.value"
+																	class="form-control custom-option"
+																	:id="`css2023__features__${ question.id }__experience_custom.${ index }`"
+																	:name="option.value ? `css2023__features__${ question.id }__experience_custom` : ''"
+																	:placeholder="`Type to add a${ index > 0? 'nother' : '' } custom option…`" aria-label="Custom Option"
+																	@input="question.custom_option_changed(index)"
+																	>
+															</span>
+														</div>
+													</div>
+												</div>
+											</template>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+		<div class="section-sidebar"></div>
+	</div>
+</div>
+
+</body>
+</html>

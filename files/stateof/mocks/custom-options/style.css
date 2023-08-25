@@ -1,0 +1,28 @@
+@import url("../question.css");
+
+/* For demo only */
+body { padding-top: 2em; }
+
+.form-option-item {
+	flex: 1;
+}
+
+/* Question container */
+.form-input {
+	container-name: question;
+	container-type: inline-size;
+}
+
+/* Option container */
+
+.form-check .form-option-label {
+		display: flex;
+	}
+
+.form-check .form-option-label > label {
+			flex: 1;
+		}
+
+.custom-option-container {
+
+}
