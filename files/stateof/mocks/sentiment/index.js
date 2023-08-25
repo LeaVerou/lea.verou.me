@@ -1,9 +1,6 @@
 import { createApp } from '../models.js'
-import { fetchSurveyCSS } from '../util.js';
 import questions from '../sample-questions.js';
-
-fetchSurveyCSS();
-
+import { fetchSurveyCSS } from '../util.js';
 
 globalThis.app = createApp({
 	data() {
@@ -11,16 +8,6 @@ globalThis.app = createApp({
 			questions
 		};
 	},
-
-	computed: {
-
-	},
-
-	methods: {
-
-	},
-
-	watch: {
-
-	}
 }).mount(document.body);
+
+fetchSurveyCSS();

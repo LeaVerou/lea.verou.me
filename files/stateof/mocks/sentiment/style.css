@@ -126,11 +126,6 @@ body { padding-top: 2em; }
 			line-height: 1;
 		}
 
-.sentiment:has(> :checked) .sentiment-label {
-
-
-		}
-
 @container question (width <= 500px) { /* mobile */
 		/* Not selected */
 			.sentiment:not(:has(> :checked))::before {
@@ -178,13 +173,6 @@ body { padding-top: 2em; }
 				margin-left: auto;
 				padding: 0;
 			}
-
-/*
-			Show if:
-			- hovering over /pointer down on/focus within the row
-			- option selected
-			- TODO: hide if not selected, and another row is being interacted with
-			*/
 
 .form-check .form-option-label .comment-trigger-wrapper:not(
 				

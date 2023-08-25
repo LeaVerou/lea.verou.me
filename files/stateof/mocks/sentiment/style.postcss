@@ -122,11 +122,6 @@ body { padding-top: 2em; }
 			font-size: 80%;
 			line-height: 1;
 		}
-
-		.sentiment-label {
-
-
-		}
 	}
 
 	@container question (width <= 500px) { /* mobile */
@@ -176,12 +171,6 @@ body { padding-top: 2em; }
 				padding: 0;
 			}
 
-			/*
-			Show if:
-			- hovering over /pointer down on/focus within the row
-			- option selected
-			- TODO: hide if not selected, and another row is being interacted with
-			*/
 			&:not(
 				/* Selected sentiments should always show */
 				:has(.sentiment > :checked),
