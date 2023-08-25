@@ -60,7 +60,7 @@
 																		<label v-for="(label, i) in option.sentiments"
 																			class="sentiment"
 																			:class="i === 0? 'positive' : 'negative'"
-																			@click="option.pick_sentiment(i === 0? 1 : -1, $event)"
+																			@click="option.pick_sentiment(i === 0? 1 : -1)"
 																			>
 																			<input type="radio"
 																				:name="`css2023__features__${ question.id }__experience.sentiment${ question.multiple ? `[${ index }]` : '' }`"

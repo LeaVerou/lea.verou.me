@@ -18,7 +18,7 @@ class Option {
 		}
 	}
 
-	async pick_sentiment(i, $event) {
+	async pick_sentiment(i) {
 		let wasSelected = this.selected;
 		this.selected = true;
 
