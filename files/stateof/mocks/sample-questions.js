@@ -3,35 +3,35 @@ import { Question, SingleChoiceQuestion, MultiChoiceQuestion } from './models.js
 export default [
 	new SingleChoiceQuestion({
 		id: "aspect_ratio",
-		question: "<code>aspect-ratio</code>",
-		code_example: `<pre><code><span class="hljs-selector-class">.square</span> {
-aspect-ratio: <span class="hljs-number">1</span> / <span class="hljs-number">1</span>;
-}</code></pre>`,
+		question: "Popover API",
+		description: "HTML syntax and JS API facilitating popovers such as overlays, popups, menus etc.",
+		code_example: `<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">"foo"</span>&gt;</span>Toggle the popover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"foo"</span> <span class="hljs-attr">popover</span>&gt;</span>Popover content<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>`,
 		options: [
 			{
 				icon: "🤷",
 				label: "Never heard of it",
 				value: "never_heard",
-				sentiment: Question.SENTIMENT_INTEREST,
+				sentiments: Question.SENTIMENTS_INTEREST,
 			},
 			{
 				icon: "👀",
 				label: "Heard of it",
 				value: "heard",
-				sentiment: Question.SENTIMENT_TRY,
+				sentiments: Question.SENTIMENTS_TRY,
 			},
 			{
 				icon: "🤓",
 				label: "Used it",
 				value: "used",
-				sentiment: Question.SENTIMENT_USE,
+				sentiments: Question.SENTIMENTS_USE,
 			},
 		]
 	}),
 	new MultiChoiceQuestion({
 		id: "interactive_elements",
 		question: "Which of the following elements have you used?",
-		sentiment: Question.SENTIMENT_USE,
+		sentiments: Question.SENTIMENTS_USE,
 		optionComments: false,
 		options: [
 			{
@@ -53,7 +53,7 @@ aspect-ratio: <span class="hljs-number">1</span> / <span class="hljs-number">1</
 			{
 				"label": "None of the above",
 				"value": "none",
-				"sentiment": null
+				"sentiments": null
 			}
 		]
 	}),

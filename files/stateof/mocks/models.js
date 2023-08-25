@@ -4,7 +4,7 @@ export { createApp, nextTick};
 import { delay } from './util.js';
 
 class Option {
-	selected_sentiment = 0;
+	sentiment = 0;
 	_selected = false;
 
 	constructor(data, question) {
@@ -13,8 +13,8 @@ class Option {
 
 		// Sentiment labels can live either in the options or in the question
 		// If none are found in the option, use the ones from the question
-		if (this.sentiment === undefined && question.sentiment) {
-			this.sentiment = question.sentiment;
+		if (this.sentiments === undefined && question.sentiments) {
+			this.sentiments = question.sentiments;
 		}
 	}
 
@@ -26,14 +26,14 @@ class Option {
 			await nextTick();
 		}
 
-		if (this.selected_sentiment === i) {
+		if (this.sentiment === i) {
 			// Clicking on selected sentiment should unselect it
 			await nextTick();
 			await delay(0); // no idea 🤷🏽‍♀️
-			this.selected_sentiment = 0;
+			this.sentiment = 0;
 		}
 		else {
-			this.selected_sentiment = i;
+			this.sentiment = i;
 		}
 	}
 
@@ -43,7 +43,7 @@ class Option {
 		this._selected = selected;
 
 		if (oldSelected !== selected) {
-			this.selected_sentiment = 0;
+			this.sentiment = 0;
 			this.question._changed(this);
 			if (this.open_comment) {
 				this.open_comment = false;
@@ -55,13 +55,13 @@ class Option {
 		return this._selected;
 	}
 
-	get selected_sentiment_label() {
-		if (!this.selected || !this.selected_sentiment) {
+	get sentiment_label() {
+		if (!this.selected || !this.sentiment) {
 			return "";
 		}
 
-		let i = this.selected_sentiment < 0? 1 : 0;
-		return this.sentiment[i];
+		let i = this.sentiment < 0? 1 : 0;
+		return this.sentiments[i];
 	}
 }
 
@@ -80,9 +80,9 @@ class Question {
 	_changed (option) {}
 
 	// Sentiment presets
-	static SENTIMENT_INTEREST = [ "Interested", "Not interested" ];
-	static SENTIMENT_TRY = [ "Want to try", "Not interested" ];
-	static SENTIMENT_USE = [ "Want to use again", "Don’t want to use again" ];
+	static SENTIMENTS_INTEREST = [ "Interested", "Not interested" ];
+	static SENTIMENTS_TRY = [ "Want to try", "Not interested" ];
+	static SENTIMENTS_USE = [ "Want to use again", "Don’t want to use again" ];
 }
 
 class SingleChoiceQuestion extends Question {

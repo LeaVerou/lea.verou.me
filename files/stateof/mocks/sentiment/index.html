@@ -13,6 +13,7 @@
 	<div class="survey-section">
 		<div class="section-contents">
 			<div class="section-questions" id="section-questions">
+				<form>
 				<!-- Question -->
 				<div v-for="question of questions" class="form-input" class="{'open-comment': question.open_comment}">
 					<div>
@@ -22,7 +23,9 @@
 									<span class="entity-label" v-html="question.question"></span>
 								</label>
 							</h3>
+
 							<div class="form-item-contents">
+								<span class="form-item-description" v-if="question.description" v-html="question.description"></span>
 								<div class="form-item-input">
 									<div class="code-example" v-if="question.code_example">
 										<h5 class="code-example-heading">
@@ -54,7 +57,7 @@
 																<div class="comment-trigger-wrapper">
 																	<span class="sentiments">
 																		<!-- Sentiment chip -->
-																		<label v-for="(label, i) in option.sentiment"
+																		<label v-for="(label, i) in option.sentiments"
 																			class="sentiment"
 																			:class="i === 0? 'positive' : 'negative'"
 																			@click="option.pick_sentiment(i === 0? 1 : -1, $event)"
@@ -62,10 +65,10 @@
 																			<input type="radio"
 																				:name="`css2023__features__${ question.id }__experience.sentiment${ question.multiple ? `[${ index }]` : '' }`"
 																				:value="i === 0? 1 : -1"
-																				@keyup.esc = "option.selected_sentiment = 0"
+																				@keyup.esc = "option.sentiment = 0"
 																				@click.stop
 																				v-if="option.selected"
-																				v-model="option.selected_sentiment" class="visually-hidden">
+																				v-model="option.sentiment" class="visually-hidden">
 																			<span class="sentiment-label">{{ label }}</span>
 																		</label>
 																	</span>
@@ -89,8 +92,8 @@
 												</div>
 												<div class="comment-input" v-if="option.open_comment">
 													<p class="comment-input-prompt">
-														<template v-if="option.selected_sentiment_label">
-															{{ option.selected_sentiment_label }} because…
+														<template v-if="option.sentiment_label">
+															{{ option.sentiment_label }} because…
 														</template>
 														<template v-else>
 															You can optionally add more context…
@@ -106,6 +109,7 @@
 						</div>
 					</div>
 				</div>
+				</form>
 			</div>
 		</div>
 		<div class="section-sidebar"></div>
