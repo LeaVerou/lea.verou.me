@@ -1,6 +1,12 @@
 
 
-import { delay, nextTick } from '../util.js';
+/**
+ * Models for the questions and options used in this prototype.
+ * Note that these combine all state in the same object:
+ * permanent (e.g. question description) vs ephemeral (e.g. active option),
+ * user state (e.g. selected option) vs survey state (e.g. question description).
+ * This is fine for a prototype, but we may want to separate these down the line.
+ */
 
 class Option {
 	_selected = false;

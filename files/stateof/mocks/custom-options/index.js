@@ -35,6 +35,7 @@ globalThis.app = createApp({
 			// Backspace on an empty option should delete it and focus the previous option (or the next one if there is none)
 			// Unless there are no custom options left, in which case we can't delete the last one (then we won't be able to add any!)
 			if (key === "Backspace" && option.value === "" && options.length > 1) {
+				$event.preventDefault();
 				relOption = options[index - 1] ?? options[index + 1];
 				options.splice(index, 1);
 			}
