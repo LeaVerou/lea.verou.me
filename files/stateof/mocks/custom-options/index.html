@@ -93,7 +93,7 @@
 																	@focus="option.active = true;" @blur="option.active = false;"
 																	v-focus="option.active"
 																	@input="question.custom_option_changed(index)"
-																	@keyup="handle_keyup($event, {question, option, index})"
+																	@keydown="handle_keyup($event, {question, option, index})"
 																	>
 																<textarea v-else
 																	v-model="option.value"
@@ -104,7 +104,7 @@
 																	@focus="option.active = true" @blur="option.active = false"
 																	v-focus="option.active"
 																	@input="question.custom_option_changed(index)"
-																	@keyup="handle_keyup($event, {question, option, index})"
+																	@keydown="handle_keyup($event, {question, option, index})"
 																	></textarea>
 
 															</span>
