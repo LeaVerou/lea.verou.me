@@ -7,12 +7,6 @@ body { padding-top: 2em; }
 	flex: 1;
 }
 
-/* Question container */
-.form-input {
-	container-name: question;
-	container-type: inline-size;
-}
-
 .form-check { /* Option container */
 	.form-option-label {
 		display: flex;
@@ -23,6 +17,13 @@ body { padding-top: 2em; }
 	}
 }
 
-.custom-option-container {
+/* double for specificity */
+.custom-option-container.custom-option-container {
+	padding-block: .3rem;
+}
+
+
+.custom-option {
 
 }
+

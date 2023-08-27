@@ -13,9 +13,14 @@
 	<div class="survey-section">
 		<div class="section-contents">
 			<div class="section-questions" id="section-questions">
-				<form>
+				<form @submit.prevent>
 				<!-- Question -->
-				<div v-for="question of questions" class="form-input" class="{'open-comment': question.open_comment}" ref="question"
+				<div v-for="question of questions" class="form-input"
+				:class="{
+					'open-comment': question.open_comment,
+					'has-predefined-options': question.options.length > 0,
+					'has-custom-options': question.customOptions.length > 0,
+				}"
 				@focusout="$event.currentTarget.contains($event.relatedTarget) ? void 0 : question.remove_empty_custom_options()"
 				>
 					<div>
@@ -60,29 +65,48 @@
 												</div>
 											</div>
 											<template v-if="question.allowCustom">
-
 												<!-- Custom Option -->
 												<div v-for="(option, index) in question.customOptions"
 													class="form-check custom-option-container"
-													:class="{empty: !option.value, first: index === 0}"
-													:style="`--option-index: ${index}`">
+													:class="{empty: !option.value}"
+													:style="`--option-index: ${index}`"
+													>
 													<div class="form-input-wrapper">
-														<input v-model="option.selected"
+														<input v-if="question.options.length > 0" v-model="option.selected"
 															class="form-check-input"
 															:type="question.multiple? 'checkbox' : 'radio'"
 															disabled
 															>
+														<!-- If no predefined options, this is basically a freeform list
+															No point in showing a checkbox, just show an index -->
+														<span v-else>{{ index + 1 }}</span>
 													</div>
 													<div class="form-option">
 														<div class="form-option-item">
 															<span class="form-option-label">
-																<input v-model="option.value"
+																<input v-if="!question.longform"
+																	v-model="option.value"
 																	class="form-control custom-option"
 																	:id="`css2023__features__${ question.id }__experience_custom.${ index }`"
 																	:name="option.value ? `css2023__features__${ question.id }__experience_custom` : ''"
-																	:placeholder="`Type to add a${ index > 0? 'nother' : '' } custom option…`" aria-label="Custom Option"
+																	placeholder="Your own answer…" aria-label="Custom Option"
+																	@focus="option.active = true;" @blur="option.active = false;"
+																	v-focus="option.active"
 																	@input="question.custom_option_changed(index)"
+																	@keyup="handle_keyup($event, {question, option, index})"
 																	>
+																<textarea v-else
+																	v-model="option.value"
+																	class="form-control custom-option"
+																	:id="`css2023__features__${ question.id }__experience_custom.${ index }`"
+																	:name="option.value ? `css2023__features__${ question.id }__experience_custom` : ''"
+																	:placeholder="`${ ord(index + 1) } item`" :aria-label="`${ ord(index + 1) } item`"
+																	@focus="option.active = true" @blur="option.active = false"
+																	v-focus="option.active"
+																	@input="question.custom_option_changed(index)"
+																	@keyup="handle_keyup($event, {question, option, index})"
+																	></textarea>
+
 															</span>
 														</div>
 													</div>

@@ -23,10 +23,18 @@ class Option {
 	get selected() {
 		return this._selected;
 	}
+
+	toJSON () {
+		let ret = {...this};
+		// Prevent cyclical structure errors
+		delete ret.question;
+		return ret;
+	}
 }
 
 class CustomOption {
 	value = "";
+	active = false;
 
 	constructor(question) {
 		this.question = question;
@@ -39,6 +47,13 @@ class CustomOption {
 	// This also improves keyboard UX and a11y by eliminating one pointless tab stop.
 	get selected () {
 		return !!this.value;
+	}
+
+	toJSON () {
+		let ret = {...this};
+		// Prevent cyclical structure errors
+		delete ret.question;
+		return ret;
 	}
 }
 
@@ -101,13 +116,27 @@ class MultiChoiceQuestion extends Question {
 		this.options.forEach(o => o.selected = answer.includes(o.value));
 	}
 
+	get longform () {
+		// If no predefined answers, we assume this is a freeform list
+		// and would benefit from more space to enter answers
+		// In the future we may want to make this configurable
+		// and just default to this when it's not set
+		return this.options.length === 0;
+	}
+
 	custom_option_changed (i) {
 		let option = this.customOptions[i];
 		let nextOption = this.customOptions[i + 1];
 
 		if (option.value && !nextOption) {
-			this.customOptions.push(new CustomOption(this));
+			this.add_custom_option();
 		}
+	}
+
+	add_custom_option (i = this.customOptions.length) {
+		let option = new CustomOption(this);
+		this.customOptions.splice(i, 0, option);
+		return option;
 	}
 
 	remove_empty_custom_options () {

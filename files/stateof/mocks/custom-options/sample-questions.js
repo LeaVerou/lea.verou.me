@@ -9,6 +9,10 @@ export default [
 		allowCustom: true,
 		options: [
 			{
+				"label": "🚫 None",
+				"value": "none",
+			},
+			{
 				"label": "Eleventy",
 				"value": "eleventy",
 			},
@@ -24,19 +28,14 @@ export default [
 				"label": "Jekyll",
 				"value": "jekyll",
 			},
-			{
-				"label": "Next.js",
-				"value": "next",
-			},
-			{
-				"label": "Nuxt.js",
-				"value": "nuxt",
-			},
-			{
-				"label": "🚫 None of the above",
-				"value": "none",
-				"sentiments": null
-			}
+
 		]
+	}),
+	new MultiChoiceQuestion({
+		id: "pain_points",
+		question: "What are your biggest pain points around making Web Components?",
+		optionComments: false,
+		allowCustom: true,
+		options: []
 	}),
 ];
