@@ -32,9 +32,9 @@ globalThis.app = createApp({
 				}
 			}
 
-			// Backspace should delete the current option and focus the previous one (or the next one if there is no previous one)
+			// Backspace on an empty option should delete it and focus the previous option (or the next one if there is none)
 			// Unless there are no custom options left, in which case we can't delete the last one (then we won't be able to add any!)
-			if (key === "Backspace" && options.length > 1) {
+			if (key === "Backspace" && option.value === "" && options.length > 1) {
 				relOption = options[index - 1] ?? options[index + 1];
 				options.splice(index, 1);
 			}
