@@ -45,8 +45,6 @@ export class SingleChoiceQuestion extends Base.SingleChoiceQuestionFactory(Quest
 }
 
 export class MultiChoiceQuestion extends Base.MultiChoiceQuestionFactory(Question) {
-	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
-
 	get longform () {
 		// If no predefined answers, we assume this is a freeform list
 		// and would benefit from more space to enter answers
