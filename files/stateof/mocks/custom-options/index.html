@@ -86,6 +86,11 @@
 													<div class="form-option">
 														<div class="form-option-item">
 															<span class="form-option-label">
+																<!-- These are practically identical,
+																	except that one is <input>, the other <textarea>
+																	and they have different placeholder and aria-label.
+																	In React they probably wouldn't need to be separate.
+																 -->
 																<input v-if="!question.longform"
 																	v-model="option.value"
 																	class="form-control custom-option"
