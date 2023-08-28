@@ -5,8 +5,8 @@ export default [
 		id: "interactive_elements",
 		question: "Static site generators",
 		description: "These generate a set of HTML files from data and templates, during a build step. The website is then served as a static site. Which have you used?",
-		optionComments: false,
 		allowCustom: true,
+		maxCustomCount: 3,
 		options: [
 			{
 				"label": "🚫 None",

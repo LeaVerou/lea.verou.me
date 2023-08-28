@@ -1,7 +1,6 @@
 import * as Base from '../base-models.js'
 
 export const Option = Base.Option;
-export const Question = Base.Question;
 
 export class CustomOption {
 	value = "";
@@ -20,6 +19,25 @@ export class CustomOption {
 		return !!this.value;
 	}
 
+	get_label(i) {
+		let ret;
+
+		if (this.question.options.length > 0) {
+			// Has predefined answers
+			ret = i == 0 ? "Custom answer" : "Another custom answer";
+		}
+		else {
+			// Freeform list, no predefined answers
+			ret = `Item #${ i + 1 }`;
+		}
+
+		if (this.question.maxCustomCount) {
+			ret += ` (up to ${ this.question.maxCustomCount } total)`;
+		}
+
+		return ret;
+	}
+
 	toJSON () {
 		let ret = {...this};
 		// Prevent cyclical structure errors
@@ -28,9 +46,11 @@ export class CustomOption {
 	}
 }
 
-export class SingleChoiceQuestion extends Base.SingleChoiceQuestion {
+export class Question extends Base.Question {
 	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
+}
 
+export class SingleChoiceQuestion extends Base.SingleChoiceQuestionFactory(Question) {
 	custom_option_changed (i) {
 		let customOption = this.customOptions[i].value;
 
@@ -40,9 +60,7 @@ export class SingleChoiceQuestion extends Base.SingleChoiceQuestion {
 	}
 }
 
-export class MultiChoiceQuestion extends Base.MultiChoiceQuestion {
-	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
-
+export class MultiChoiceQuestion extends Base.MultiChoiceQuestionFactory(Question) {
 	constructor (data) {
 		super(data);
 
@@ -69,9 +87,11 @@ export class MultiChoiceQuestion extends Base.MultiChoiceQuestion {
 	}
 
 	add_custom_option (i = this.customOptions.length) {
-		let option = new CustomOption(this);
-		this.customOptions.splice(i, 0, option);
-		return option;
+		if (!this.maxCustomCount || this.customOptions.length < this.maxCustomCount) {
+			let option = new CustomOption(this);
+			this.customOptions.splice(i, 0, option);
+			return option;
+		}
 	}
 
 	remove_empty_custom_options () {
