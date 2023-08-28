@@ -7,23 +7,8 @@ body { padding-top: 2em; }
 	flex: 1;
 }
 
-/* Option container */
-
-.form-check .form-option-label {
-		display: flex;
-	}
-
-.form-check .form-option-label > label {
-			flex: 1;
-		}
-
 /* double for specificity */
 .custom-option-container.custom-option-container {
 	padding-block: .3rem;
-}
-
-
-.custom-option {
-
 }
 
