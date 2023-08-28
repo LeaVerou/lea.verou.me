@@ -108,7 +108,7 @@
 																	class="form-control custom-option"
 																	:id="`css2023__features__${ question.id }__experience_custom.${ index }`"
 																	:name="option.value ? `css2023__features__${ question.id }__experience_custom` : ''"
-																	:placeholder="`${ ord(index + 1) } item`" :aria-label="`${ ord(index + 1) } item`"
+																	:placeholder="`Item #${ index + 1 }`" :aria-label="`Item #${ index + 1 }`"
 																	@focus="option.active = true" @blur="option.active = false"
 																	v-focus="option.active"
 																	@input="question.custom_option_changed(index)"

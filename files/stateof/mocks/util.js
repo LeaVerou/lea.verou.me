@@ -20,18 +20,3 @@ export async function fetchSurveyCSS() {
 export async function delay(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules
-const pr = new Intl.PluralRules("en-US", { type: "ordinal" });
-const suffixes = {
-	one: "st",
-	two: "nd",
-	few: "rd",
-	other: "th",
-};
-export function formatOrdinals (n) {
-	const rule = pr.select(n);
-	const suffix = suffixes[rule];
-	return `${n}${suffix}`;
-};

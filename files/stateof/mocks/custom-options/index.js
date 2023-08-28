@@ -1,5 +1,5 @@
 import questions from './sample-questions.js';
-import { createApp, fetchSurveyCSS, formatOrdinals } from '../util.js';
+import { createApp, fetchSurveyCSS } from '../util.js';
 import VFocus from "https://mavue.mavo.io/v-focus/v-focus.js";
 
 globalThis.app = createApp({
@@ -48,8 +48,6 @@ globalThis.app = createApp({
 				relOption.active = true;
 			}
 		},
-
-		ord: formatOrdinals,
 	},
 
 	directives: {
