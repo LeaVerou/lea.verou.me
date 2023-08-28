@@ -1,6 +1,12 @@
 import { Question, Option, SingleChoiceQuestion, MultiChoiceQuestion as BaseMultiChoiceQuestion } from '../base-models.js'
 
-class CustomOption {
+export {
+	Option,
+	Question,
+	SingleChoiceQuestion,
+}
+
+export class CustomOption {
 	value = "";
 	active = false;
 
@@ -26,7 +32,7 @@ class CustomOption {
 }
 
 
-class MultiChoiceQuestion extends BaseMultiChoiceQuestion {
+export class MultiChoiceQuestion extends BaseMultiChoiceQuestion {
 	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
 
 	get longform () {
@@ -60,12 +66,4 @@ class MultiChoiceQuestion extends BaseMultiChoiceQuestion {
 			}
 		}
 	}
-}
-
-export {
-	Option,
-	CustomOption,
-	Question,
-	SingleChoiceQuestion,
-	MultiChoiceQuestion,
 }
