@@ -1,6 +1,7 @@
 import * as Base from '../base-models.js'
 
 export const Option = Base.Option;
+export const Question = Base.Question;
 
 export class CustomOption {
 	value = "";
@@ -27,15 +28,10 @@ export class CustomOption {
 	}
 }
 
-export class Question extends Base.Question {
+export class SingleChoiceQuestion extends Base.SingleChoiceQuestion {
 	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
 
-	custom_option_changed (i) {}
-}
-
-export class SingleChoiceQuestion extends Base.SingleChoiceQuestionFactory(Question) {
 	custom_option_changed (i) {
-		super.custom_option_changed(i);
 		let customOption = this.customOptions[i].value;
 
 		if (customOption) {
@@ -44,7 +40,17 @@ export class SingleChoiceQuestion extends Base.SingleChoiceQuestionFactory(Quest
 	}
 }
 
-export class MultiChoiceQuestion extends Base.MultiChoiceQuestionFactory(Question) {
+export class MultiChoiceQuestion extends Base.MultiChoiceQuestion {
+	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
+
+	constructor (data) {
+		super(data);
+
+		if (this.allowCustom && this.initialCustomCount > 1) {
+			this.customOptions.push(...Array(this.initialCustomCount - 1).fill(1).map(_ => new CustomOption(this)));
+		}
+	}
+
 	get longform () {
 		// If no predefined answers, we assume this is a freeform list
 		// and would benefit from more space to enter answers
@@ -54,7 +60,6 @@ export class MultiChoiceQuestion extends Base.MultiChoiceQuestionFactory(Questio
 	}
 
 	custom_option_changed (i) {
-		super.custom_option_changed(i);
 		let option = this.customOptions[i];
 		let nextOption = this.customOptions[i + 1];
 

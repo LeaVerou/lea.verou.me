@@ -100,7 +100,7 @@
 																	placeholder="Your own answer…" aria-label="Custom Option"
 																	@focus="option.active = true;" @blur="option.active = false;"
 																	v-focus="option.active"
-																	@input="question.custom_option_changed(index)"
+																	@input="question.custom_option_changed?.(index)"
 																	@keydown="handle_keyup($event, {question, option, index})"
 																	>
 																<textarea v-else
@@ -111,7 +111,7 @@
 																	:placeholder="`Item #${ index + 1 }`" :aria-label="`Item #${ index + 1 }`"
 																	@focus="option.active = true" @blur="option.active = false"
 																	v-focus="option.active"
-																	@input="question.custom_option_changed(index)"
+																	@input="question.custom_option_changed?.(index)"
 																	@keydown="handle_keyup($event, {question, option, index})"
 																	></textarea>
 

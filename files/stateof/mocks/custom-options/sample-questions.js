@@ -29,13 +29,14 @@ export default [
 				"value": "jekyll",
 			},
 
-		]
+		],
 	}),
 	new MultiChoiceQuestion({
 		id: "pain_points",
 		question: "What are your biggest pain points around making Web Components?",
 		allowCustom: true,
-		options: []
+		initialCustomCount: 2,
+		options: [],
 	}),
 	new SingleChoiceQuestion({
 		id: "gender",
@@ -58,6 +59,6 @@ export default [
 				"label": "Non-binary",
 				"value": "nonbinary",
 			}
-		]
+		],
 	})
 ];
