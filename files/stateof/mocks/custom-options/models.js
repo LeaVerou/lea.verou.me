@@ -35,6 +35,7 @@ export class Question extends Base.Question {
 
 export class SingleChoiceQuestion extends Base.SingleChoiceQuestionFactory(Question) {
 	custom_option_changed (i) {
+		super.custom_option_changed(i);
 		let customOption = this.customOptions[i].value;
 
 		if (customOption) {
