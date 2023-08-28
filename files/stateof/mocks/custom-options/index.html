@@ -23,7 +23,7 @@
 					'has-predefined-options': question.options.length > 0,
 					'has-custom-options': question.customOptions.length > 0,
 				}"
-				@focusout="$event.currentTarget.contains($event.relatedTarget) ? void 0 : question.remove_empty_custom_options()"
+				@focusout="$event.currentTarget.contains($event.relatedTarget) ? void 0 : question.remove_empty_custom_options?.()"
 				>
 					<div>
 						<div>
@@ -45,8 +45,7 @@
 									<div class="experience-contents">
 										<div class="experience-options form-item-options">
 											<!-- Option -->
-											<div v-for="(option, index) in question.options" class="form-check" :class="{selected: option.selected}"
-												:style="`--option-index: ${index}`">
+											<div v-for="(option, index) in question.options" class="form-check" :class="{selected: option.selected}">
 												<div class="form-input-wrapper">
 													<input v-model="question.answer"
 														:id="`css2023__features__${ question.id }__experience.${ index }`"
@@ -71,12 +70,14 @@
 												<div v-for="(option, index) in question.customOptions"
 													class="form-check custom-option-container"
 													:class="{empty: !option.value}"
-													:style="`--option-index: ${index}`"
 													>
 													<div class="form-input-wrapper">
-														<input v-if="question.options.length > 0" v-model="option.selected"
+														<input v-if="question.options.length > 0"
+															name="css2023__features__${ question.id }__experience"
+															value="custom"
 															class="form-check-input"
 															:type="question.multiple? 'checkbox' : 'radio'"
+															:checked="!!option.value"
 															disabled
 															>
 														<!-- If no predefined options, this is basically a freeform list

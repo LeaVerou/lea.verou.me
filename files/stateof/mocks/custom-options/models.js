@@ -1,10 +1,6 @@
-import { Question, Option, SingleChoiceQuestion, MultiChoiceQuestion as BaseMultiChoiceQuestion } from '../base-models.js'
+import * as Base from '../base-models.js'
 
-export {
-	Option,
-	Question,
-	SingleChoiceQuestion,
-}
+export const Option = Base.Option;
 
 export class CustomOption {
 	value = "";
@@ -31,8 +27,23 @@ export class CustomOption {
 	}
 }
 
+export class Question extends Base.Question {
+	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
 
-export class MultiChoiceQuestion extends BaseMultiChoiceQuestion {
+	custom_option_changed (i) {}
+}
+
+export class SingleChoiceQuestion extends Base.SingleChoiceQuestionFactory(Question) {
+	custom_option_changed (i) {
+		let customOption = this.customOptions[i].value;
+
+		if (customOption) {
+			this.answer = "custom";
+		}
+	}
+}
+
+export class MultiChoiceQuestion extends Base.MultiChoiceQuestionFactory(Question) {
 	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
 
 	get longform () {
@@ -44,6 +55,7 @@ export class MultiChoiceQuestion extends BaseMultiChoiceQuestion {
 	}
 
 	custom_option_changed (i) {
+		super.custom_option_changed(i);
 		let option = this.customOptions[i];
 		let nextOption = this.customOptions[i + 1];
 

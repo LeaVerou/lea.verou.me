@@ -11,7 +11,11 @@ globalThis.app = createApp({
 
 	methods: {
 		handle_keyup ($event, { question, option, index }) {
-			// Enter should insert a new item underneath, or focus the next item if one exists and is empty
+			// These are only relevant for multiple custom options
+			if (!question.multiple) {
+				return;
+			}
+
 			let options = question.customOptions;
 			let key = $event.key;
 			let relOption;

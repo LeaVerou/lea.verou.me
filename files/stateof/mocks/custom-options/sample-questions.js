@@ -34,8 +34,30 @@ export default [
 	new MultiChoiceQuestion({
 		id: "pain_points",
 		question: "What are your biggest pain points around making Web Components?",
-		optionComments: false,
 		allowCustom: true,
 		options: []
 	}),
+	new SingleChoiceQuestion({
+		id: "gender",
+		question: "Your gender:",
+		allowCustom: true,
+		options: [
+			{
+				"label": "🚫 Prefer not to say",
+				"value": "na",
+			},
+			{
+				"label": "Female",
+				"value": "female",
+			},
+			{
+				"label": "Male",
+				"value": "male",
+			},
+			{
+				"label": "Non-binary",
+				"value": "nonbinary",
+			}
+		]
+	})
 ];
