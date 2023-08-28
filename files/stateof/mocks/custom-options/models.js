@@ -1,42 +1,4 @@
-
-
-/**
- * Models for the questions and options used in this prototype.
- * Note that these combine all state in the same object:
- * permanent (e.g. question description) vs ephemeral (e.g. active option),
- * user state (e.g. selected option) vs survey state (e.g. question description).
- * This is fine for a prototype, but we may want to separate these down the line.
- */
-
-class Option {
-	_selected = false;
-
-	constructor(data, question) {
-		Object.assign(this, data);
-		this.question = question;
-	}
-
-	set selected (selected) {
-		let oldSelected = this._selected;
-
-		this._selected = selected;
-
-		if (oldSelected !== selected) {
-			this.question._changed(this);
-		}
-	}
-
-	get selected() {
-		return this._selected;
-	}
-
-	toJSON () {
-		let ret = {...this};
-		// Prevent cyclical structure errors
-		delete ret.question;
-		return ret;
-	}
-}
+import { Question, Option, SingleChoiceQuestion, MultiChoiceQuestion as BaseMultiChoiceQuestion } from '../base-models.js'
 
 class CustomOption {
 	value = "";
@@ -63,64 +25,9 @@ class CustomOption {
 	}
 }
 
-class Question {
-	options = [];
 
-	constructor(data) {
-		Object.assign(this, data);
-		this.options = this.options.map(o => new Option(o, this));
-	}
-
-	clear () {
-		this.options.forEach(o => o.selected = false);
-	}
-
-	_changed (option) {}
-}
-
-class SingleChoiceQuestion extends Question {
-	get selected_option() {
-		return this.options.find(o => o.value === this.answer);
-	}
-
-	get answer () {
-		return this.options.find(o => o.selected)?.value;
-	}
-
-	set answer (answer) {
-		this.options.forEach(o => o.selected = o.value === answer);
-	}
-
-	_changed (option) {
-		super._changed(option);
-
-		if (option.selected) {
-			// Unselect all other options
-			for (let o of this.options) {
-				if (o !== option) {
-					o.selected = false;
-				}
-			}
-		}
-	}
-}
-
-class MultiChoiceQuestion extends Question {
-	multiple = true;
+class MultiChoiceQuestion extends BaseMultiChoiceQuestion {
 	customOptions = this.allowCustom ? [new CustomOption(this)] : [];
-
-	get selected_options() {
-		let answers = new Set(this.answer);
-		return this.options.filter(o => answers.has(o.value));
-	}
-
-	get answer () {
-		return this.options.filter(o => o.selected).map(o => o.value);
-	}
-
-	set answer (answer) {
-		this.options.forEach(o => o.selected = answer.includes(o.value));
-	}
 
 	get longform () {
 		// If no predefined answers, we assume this is a freeform list

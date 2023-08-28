@@ -1,14 +1,14 @@
-
-
+// Some complexity here is due to the fact that we have separate base models that each prototype extends
+// In the actual implementation in the survey, that separation is not needed
+import * as Base from '../base-models.js'
 import { delay, nextTick } from '../util.js';
 
-class Option {
+
+class Option extends Base.Option {
 	sentiment = 0;
-	_selected = false;
 
 	constructor(data, question) {
-		Object.assign(this, data);
-		this.question = question;
+		super(data, question);
 
 		// Sentiment labels can live either in the options or in the question
 		// If none are found in the option, use the ones from the question
@@ -22,11 +22,13 @@ class Option {
 		this.selected = true;
 
 		if (!wasSelected) {
+			// Give Vue time to propagate changes
 			await nextTick();
 		}
 
 		if (this.sentiment === i) {
 			// Clicking on selected sentiment should unselect it
+			// Give Vue time to propagate changes
 			await nextTick();
 			await delay(0); // no idea 🤷🏽‍♀️
 			this.sentiment = 0;
@@ -36,22 +38,12 @@ class Option {
 		}
 	}
 
-	set selected (selected) {
-		let oldSelected = this._selected;
+	_changed () {
+		this.sentiment = 0;
 
-		this._selected = selected;
-
-		if (oldSelected !== selected) {
-			this.sentiment = 0;
-			this.question._changed(this);
-			if (this.open_comment) {
-				this.open_comment = false;
-			}
+		if (this.open_comment) {
+			this.open_comment = false;
 		}
-	}
-
-	get selected() {
-		return this._selected;
 	}
 
 	get sentiment_label() {
@@ -64,73 +56,12 @@ class Option {
 	}
 }
 
-class Question {
-	options = [];
-
-	constructor(data) {
-		Object.assign(this, data);
-		this.options = this.options.map(o => new Option(o, this));
-	}
-
-	clear () {
-		this.options.forEach(o => o.selected = false);
-	}
-
-	_changed (option) {}
-
+export class Question extends Base.QuestionFactory(Option) {
 	// Sentiment presets
 	static SENTIMENTS_INTEREST = [ "Interested", "Not interested" ];
 	static SENTIMENTS_TRY = [ "Want to try", "Not interested" ];
 	static SENTIMENTS_USE = [ "Want to use again", "Don’t want to use again" ];
 }
 
-class SingleChoiceQuestion extends Question {
-	get selected_option() {
-		return this.options.find(o => o.value === this.answer);
-	}
-
-	get answer () {
-		return this.options.find(o => o.selected)?.value;
-	}
-
-	set answer (answer) {
-		this.options.forEach(o => o.selected = o.value === answer);
-	}
-
-	_changed (option) {
-		super._changed(option);
-
-		if (option.selected) {
-			// Unselect all other options
-			for (let o of this.options) {
-				if (o !== option) {
-					o.selected = false;
-				}
-			}
-		}
-	}
-}
-
-class MultiChoiceQuestion extends Question {
-	multiple = true;
-
-	get selected_options() {
-		let answers = new Set(this.answer);
-		return this.options.filter(o => answers.has(o.value));
-	}
-
-	get answer () {
-		return this.options.filter(o => o.selected).map(o => o.value);
-	}
-
-	set answer (answer) {
-		this.options.forEach(o => o.selected = answer.includes(o.value));
-	}
-}
-
-export {
-	Option,
-	Question,
-	SingleChoiceQuestion,
-	MultiChoiceQuestion,
-}
+export const SingleChoiceQuestion = Base.SingleChoiceQuestionFactory(Question);
+export const MultiChoiceQuestion = Base.MultiChoiceQuestionFactory(Question);
