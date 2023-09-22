@@ -1,7 +1,9 @@
 const tagNames = require("../data/tag_names.json");
+const siteSettings = require("../data/site.json");
 const capitalizations = require("../data/capitalizations.json");
 const readingTime = require("reading-time");
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
+
 
 const filters = {
 	async pluralize(num, word) {
@@ -20,24 +22,26 @@ const filters = {
 		return ret || ".";
 	},
 
-	relativize_urls(html, base_url) {
+	relativize_urls (html, base_url) {
 		// Go over <img src> and <a href> and make them relative to url
 		// This is a hack to work around #5
 		return html.replace(/(?<=<(?:img|a)\s+(?:[^>]*?\s+)?(?:src|href)=")([^"]+)(?=")/gi, (url) => {
-			if (!/^(?:\/|[a-z]+:)/.test(url)) {
-
-				// We don’t need to do anything in absolute or root-relative URLs
-				let host = "https://lea.verou.me";
-				let base = new URL(base_url, host);
-				url = new URL(url, base) + "";
-				url = url.substr(host.length);
+			if (!/^(?:\/|[a-z]+:)/.test(url)) { // We don’t need to do anything in absolute or root-relative URLs
+				let absolute = filters.absolutize(url, base_url);
+				url = absolute.href.substr(absolute.origin);
 			}
 
 			return url;
 		});
 	},
 
-	format_date(date, format = "long") {
+	absolutize (url, base_url) {
+		let host = siteSettings.domain;
+		let base = new URL(base_url, host);
+		return new URL(url, base);
+	},
+
+	format_date (date, format = "long") {
 		try {
 			date = new Date(date);
 		}

@@ -24,6 +24,11 @@
 	{{ includesEnd | safe }}
 	<link rel="alternate" type="application/atom+xml" title="Lea Verou &bull; Feed" href="/feed.xml" />
 	<script src="/assets/global.js" type="module"></script>
+
+	{% if image %}
+	<meta property="og:image" content="{{ image | absolutize(page.url) }}" />
+	<meta name="twitter:image" content="{{ image | absolutize(page.url) }}" />
+	{% endif %}
 </head>
 <body class="language-{{ defaultLanguage or "css" }}">
 {% import "_nav.njk" as nav with context %}
