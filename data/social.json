@@ -41,5 +41,12 @@
 		"url": "https://www.facebook.com/leaverou",
 		"icon": "facebook",
 		"color": "#1877F2"
+	},
+	"threads": {
+		"header": false,
+		"name": "Threads",
+		"url": "https://threads.net/@leaverou",
+		"icon": "threads",
+		"color": "#000000"
 	}
 }
