@@ -1,6 +1,13 @@
 {
 	"articles": [
 		{
+			"title": "Write to the DOM or Not: When JS Frameworks Are Necessary",
+			"url": "https://thenewstack.io/write-to-the-dom-or-not-when-js-frameworks-are-necessary/",
+			"venue": "The New Stack",
+			"venueUrl": "https://thenewstack.io/",
+			"date": "2023-07-28"
+		},
+		{
 			"title": "The best CSS book",
 			"url": "https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html",
 			"venue": "Chicago Tribune",
