@@ -3,8 +3,9 @@
 		{
 			"talk": [
 				{
-					"title": "A story of ice, fire, and CSS Nesting",
-					"type": "Talk"
+					"title": "A story of 🧊 ice, 🔥 fire, and 🪆 CSS Nesting",
+					"type": "Talk",
+					"@context": "https://schema.org/"
 				}
 			],
 			"url": "https://fitc.ca/event/webu/",
@@ -12,15 +13,11 @@
 			"date": "2023-10-14",
 			"city": "Toronto",
 			"country": "ca",
-			"days": 3
+			"days": 3,
+			"@context": "https://schema.org/"
 		},
 		{
-			"talk": [
-				{
-					"title": "TBD",
-					"type": "Talk"
-				}
-			],
+			"talk": [],
 			"url": "https://2023.fronteersconf.org/",
 			"name": "Fronteers",
 			"date": "2023-09-22",
@@ -1529,5 +1526,6 @@
 			"country": "gr",
 			"comment": "The slides from my presentation were featured in SlideShare and many other websites"
 		}
-	]
+	],
+	"@context": "https://schema.org/"
 }
