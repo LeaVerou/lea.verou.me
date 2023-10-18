@@ -17,14 +17,6 @@
 			"@context": "https://schema.org/"
 		},
 		{
-			"talk": [],
-			"url": "https://2023.fronteersconf.org/",
-			"name": "Fronteers",
-			"date": "2023-09-22",
-			"city": "Utrecht",
-			"country": "nl"
-		},
-		{
 			"talk": [
 				{
 					"title": "Dynamic CSS Secrets",
