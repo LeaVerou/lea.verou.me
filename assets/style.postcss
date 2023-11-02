@@ -194,6 +194,7 @@ h5 {
 h4:not(main > *, .post *),
 pre > code[data-file]::before,
 main aside::before,
+.callout > summary,
 .callout::before,
 .warning::before,
 .info::before,
@@ -287,6 +288,7 @@ figure {
 		border: 1px solid var(--color-gray-80);
 		box-shadow: 0 .1em .2em var(--color-gray-95);
 		text-align: center;
+		background: white;
 	}
 
 	/* Annoying Markdown artifacts */
@@ -1589,6 +1591,7 @@ main aside,
 	}
 
 	& > h4,
+	&[open] > summary,
 	&::before {
 		position: absolute;
 		top: -1em;
@@ -1695,13 +1698,21 @@ main aside {
 	--link-color: var(--color-darker);
 }
 
-.info {
-	--label: "FYI";
+.info,
+.question {
 	--icon: var(--icon-info-lg);
 	--color: var(--color-blue);
 	--color-light: var(--color-lighter);
 	--label-color: var(--color);
 	--link-color: var(--color-darker);
+}
+
+.info {
+	--label: "FYI";
+}
+
+.question {
+	--icon: var(--icon-question-lg);
 }
 
 .note,
