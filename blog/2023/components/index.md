@@ -404,3 +404,6 @@ and there is no way to unregister it.
 
 If you *don’t* call `customElements.define()` yourself, then users can register it with any tag name they want, but there is no config-free default.
 *The complex case is possible, but the common case is not easy.*
+
+The best workaround seems to be that the component author registers it with a default name, and if the user wants to register it with a different name,
+they can create a dummy subclass and register that.
