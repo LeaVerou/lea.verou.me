@@ -67,17 +67,6 @@
 
 <main>
 
-<div class="warning">
-	You are browsing the <a href="/blog/2023/going-lean/">new, beta version</a> of my website.
-	Some things may not work properly.
-	{% if is_old_post -%}
-	<a href="{{ oldURL }}">View this page on the old website</a> and if you spot any problems,
-	please <a href="{{ pkg.bugs.url }}/new?template=broken-page.yml&amp;title=Page%20regression:%20{{ title | urlencode }}&amp;url={{ site.domain }}{{ page.url }}">file an issue</a>!
-	{%- else -%}
-	If you spot any problems, please <a href="{{ pkg.bugs.url }}/new?template=broken-page.yml&amp;title=Broken%20page:%20{{ title | urlencode }}&amp;url={{ site.domain }}{{ page.url }}">file an issue</a>!
-	{%- endif %}
-</div>
-
 {%- if draft -%}
 <section class="info" style="--label: 'Someone has been nosy!'">
 	<strong>This is an unpublished draft.</strong> It may be incomplete, contain errors or be completely wrong.
@@ -89,6 +78,11 @@
 <aside id="toc">
 	<h4>On this page</h4>
 	{{ content | toc | safe }}
+
+	<div class="broken-page-container">
+		<h4>Something not working?</h4>
+		{%- include "_broken-page.njk" -%}
+	</div>
 </aside>
 {% endif %}
 
@@ -96,6 +90,7 @@
 
 <footer>
 	<div class="meta">
+		{%- include "_broken-page.njk" -%}
 		{% if is_post %}
 			{% import "_posts.njk" as posts with context %}
 			{{ posts.meta_after(page) }}

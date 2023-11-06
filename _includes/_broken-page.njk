@@ -1,0 +1,7 @@
+{% set report_broken_page_url %}{{ pkg.bugs.url }}/new?template=broken-page.yml&amp;title=Broken%20page:%20{{ title | urlencode }}&amp;url={{ site.domain }}{{ page.url }}{% endset %}
+{% if oldURL -%}
+	{% set report_broken_page_url %}{{ report_broken_page_url }}&amp;oldurl={{ oldURL }}{% endset %}
+{%- endif %}
+<span class="metabit broken-page">
+	<a href="{{ report_broken_page_url }}" target="_blank">Report broken page</a>
+</span>

@@ -196,6 +196,7 @@ pre > code[data-file]::before,
 main aside::before,
 .callout > summary,
 .callout::before,
+.warning > summary,
 .warning::before,
 .info::before,
 .note::before,
@@ -461,6 +462,8 @@ button,
 	text-decoration: none !important;
 	text-shadow: 0 0 0 white;
 	transition: .3s;
+	border: none;
+	cursor: pointer;
 
 	&:only-child:is(p > *):is(.post *, .post-page *) {
 		display: block;
@@ -845,6 +848,18 @@ body > footer {
 
 	&.edit-page {
 		--icon: var(--icon-edit);
+	}
+
+	&.broken-page {
+		--icon: var(--icon-bug);
+
+		&:hover {
+			--icon: var(--icon-github);
+		}
+
+		&::before {
+			margin-right: .3em;
+		}
 	}
 }
 
@@ -1586,19 +1601,31 @@ main aside,
 		margin-block: 0;
 	}
 
-	&:not(:has(>h4))::before {
+	&:not(:has(> h4, > summary))::before {
 		content: var(--label);
 	}
 
-	& > h4,
-	&[open] > summary,
+	& h4,
+	&::before,
+	&[open] > summary {
+		color: var(--_color-light);
+		margin-bottom: 0;
+	}
+
 	&::before {
+		display: block;
+	}
+
+	& h4,
+	&::before {
+		margin-top: -2.2em;
+		margin-bottom: .8em;
+	}
+
+	&[open] > summary {
 		position: absolute;
 		top: -1em;
 		left: 2.5rem;
-		color: var(--_color-light);
-		margin-left: -2em;
-		margin-bottom: 0;
 	}
 }
 
@@ -1607,10 +1634,26 @@ main aside {
 	color: var(--color-gray-40);
 
 	&[id=toc] {
+		/* TOC sidebar */
 		z-index: 1;
 		mix-blend-mode: multiply;
 
+		& > ul {
+			display: flex;
+			flex-flow: column;
+			gap: .8em;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
 		& a {
+			color: inherit;
+		}
+
+		.metabit {
+			font-size: inherit;
+			-webkit-font-smoothing: inherit;
 			color: inherit;
 		}
 
@@ -1627,12 +1670,37 @@ main aside {
 			}
 		}
 
+		@media (width > 1700px) or (width < 1000px) {
+			.broken-page-container {
+				& > h4 {
+					margin-top: 1.5rem;
+				}
+			}
+		}
+
 		@media (width <= 1700px) {
 			margin-top: 3em;
+
+			@media (width > 1000px) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				align-items: start;
+				justify-content: start;
+
+				& > * {
+					grid-column: 1;
+				}
+
+				& > .broken-page-container {
+					grid-column: 2;
+					grid-row: 1 / span 2;
+				}
+			}
 		}
 	}
 
 	&:not([id=toc]) {
+		/* Aside comments in an article */
 		&::before {
 			content: "Aside";
 			background: var(--color-accent3);

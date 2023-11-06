@@ -62,10 +62,14 @@
 	{% set rt = content | reading_time %}
 	<span class="metabit reading-time" title="{{ rt.words }} words">{{ rt.text | replace(" read", "") if o.style === "compact" else rt.text }}</span>
 
-	{% if disqus_id %}
+	{% if disqus_id -%}
 	<span class="metabit disqus-comment-count comment-count" data-disqus-identifier="{{ disqus_id }}">0 comments</span>
 	<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
-	{% endif %}
+	{%- endif %}
+
+	{% if not toc -%}
+	{%- include "_broken-page.njk" -%}
+	{%- endif %}
 
 	{%- if social_posts -%}
 	<div class="metabit social">
