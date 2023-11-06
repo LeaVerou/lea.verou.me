@@ -1660,10 +1660,14 @@ main aside {
 		@media (width > 1700px) {
 			position: absolute;
 			--min-header-height: 12.8rem;
-			top: calc(2.5em + max(0em, var(--scrolltop, 0) * 1px - var(--min-header-height)));
+			top: 2.5em;
 			left: calc(var(--content-margin) + var(--content-width) + 1em);
 			max-width: calc(var(--content-margin) - 2em);
 			background: none;
+
+			&:is(header.out-of-view + main *) {
+				position: fixed;
+			}
 
 			& > h4 {
 				color: white;
