@@ -1,7 +1,13 @@
+import showInvisibles from "./prism-show-invisibles.js";
 import "./prism.js";
 
 // We want to preserve that a snippet is njk, in case there’s a more specialized language definition in the future
 Prism.languages.njk = Prism.languages.liquid;
+
+if (document.body.classList.contains("show-invisibles")) {
+	showInvisibles(Prism);
+	document.body.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="/assets/prism-show-invisibles.css" />`);
+}
 
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);

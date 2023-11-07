@@ -30,7 +30,7 @@
 	<meta name="twitter:image" content="{{ image | absolutize(page.url) }}" />
 	{% endif %}
 </head>
-<body class="language-{{ defaultLanguage or "css" }}">
+<body class="language-{{ defaultLanguage or "css" }} {{ body_classes }}">
 {% import "_nav.njk" as nav with context %}
 <header class="monitor-in-view">
 	<div class="site-meta">
