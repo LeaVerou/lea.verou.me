@@ -1336,20 +1336,19 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 		grid-area: content;
 	}
 
-	& [property="type"] {
-		padding: .3em .5em;
-		border-radius: .2em;
-		background: var(--color, hsl(var(--gray) 50%));
-		color: white;
-		font: bold 75%/1 var(--font-sans);
-		text-transform: uppercase;
-	}
-
 	& h3 {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
 		margin: 0;
+
+		[property="type"] {
+			display: inline-block;
+			vertical-align: .3em;
+			padding: .3em .5em;
+			border-radius: .2em;
+			background: var(--color, hsl(var(--gray) 50%));
+			color: white;
+			font: bold .75rem/1.1 var(--font-sans);
+			text-transform: uppercase;
+		}
 
 		& > a {
 			color: inherit;
@@ -1371,34 +1370,34 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 		align-items: center;
 
 		& > a {
-			padding: .25em 1em .15em;
+			padding: .25em 1em .25em;
 			border-radius: 999px;
 			background: hsl(var(--gray) 90%);
 			white-space: nowrap;
-			font-variant: small-caps;
+			font: bold 75%/1.5 var(--font-sans);
 			text-decoration: none;
-			font-size: 75%;
-			font-weight: bold;
+			color: canvastext;
 
 			&::before {
+				content: var(--icon);
 				display: inline-block;
 				vertical-align: -.1em;
 				margin-right: .5em;
 				height: 1em;
+				font-family: bootstrap-icons;
+				opacity: .5;
 			}
 
-			&[property=url]::before {
-				content: "🌍";
+			&[property=url] {
+				--icon: var(--icon-link-45deg);
 			}
 
-			&[property=blogPost]::before {
-				content: "✍🏼";
+			&[property=blogPost] {
+				--icon: var(--icon-megaphone-fill);
 			}
 
-			&[property="repo"]::before {
-				content: url(favicons/github.svg);
-				width: 1em;
-				vertical-align: -.2em;
+			&[property="repo"] {
+				--icon: var(--icon-github);
 			}
 
 			&:focus,
