@@ -1385,7 +1385,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 				margin-right: .5em;
 				height: 1em;
 				font-family: bootstrap-icons;
-				opacity: .5;
+				color: var(--color-gray-50);
 			}
 
 			&[property=url] {
@@ -1404,6 +1404,10 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 			&:hover {
 				background: var(--color-accent);
 				color: white;
+
+				&::before {
+					color: black;
+				}
 			}
 		}
 
