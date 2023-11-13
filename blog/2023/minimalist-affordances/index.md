@@ -18,7 +18,7 @@ tags:
 
 Usability and aesthetics *usually* go hand in hand.
 In fact, there is even what we call the [*"Aesthetic Usability Effect"*](https://www.nngroup.com/articles/aesthetic-usability-effect/):
-users perceive beautiful interfaces as easier to use and cut them more slack when it comes to minor usabiity issues.
+users perceive beautiful interfaces as easier to use and cut them more slack when it comes to minor usability issues.
 
 Unfortunately, sometimes usability and aesthetics can be at odds, also known as “form over function”.
 
@@ -42,7 +42,7 @@ Look at how the text area smoothly blends with the tab, creating an irregular an
 
 <figcaption>
 
-The new GitHub commenting UI, unfocused.
+The new GitHub commenting UI, is unfocused.
 </figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ The new GitHub commenting UI, unfocused.
 
 <figcaption>
 
-The new GitHub commenting UI, focused. Am I the only one that expected the focus outline to also follow the irregular shape?
+The new GitHub commenting UI, is focused. Am I the only one that expected the focus outline to also follow the irregular shape?
 </figcaption>
 </figure>
 
@@ -72,7 +72,7 @@ The old GitHub commenting UI (focused only — I couldn’t find an unfocused on
 </figure>
 
 While definitely more cluttered, its main UI elements were much more recognizable:
-there is a text field, indicated by the rounded rectangle, and tabs, indicated by the light gray border around the active tab.
+there is a text field, indicated by the rounded rectangle, and tabs, indicated by the light grey border around the active tab.
 By merging the two, both affordances are watered down to the point of being unrecognizable.
 
 Yes, there was more visual clutter, not all of which serves a purpose.
@@ -97,7 +97,7 @@ In the language of user interfaces, affordances and signifiers are the vocabular
 Learnability is not an intrinsic property of a UI; it is a function of the context (cultural and otherwise) in which it is used.
 
 Many affordances and signifiers use metaphors from the physical world to communicate what a user can do.
-For example a button that looks raised reminds us of physical buttons.
+For example, a button that looks raised reminds us of physical buttons.
 Tabs are a metaphor for the tabs in a binder.
 Others are entirely arbitrary and acquire meaning through learning, such as link underlines or the “hamburger” menu icon.
 
@@ -133,9 +133,9 @@ We gradually evolved such that any rectangle around text is perceived as a butto
 Could it be that the new GitHub comment UI is the beginning of a new convention?
 It’s possible, but the odds are slim.
 For new conventions to become established, they need to be widespread.
-Links, buttons, website logos are present on any website, so users get plenty of exposure to any evolution in their design.
+Links, buttons, and website logos are present on any website, so users get plenty of exposure to any evolution in their design.
 Similarly, multiline text fields and tabs are very commonplace UI elements. However, *their combination* is far less common.
-Even if every tabbed text field on the Web begun using the exact same design, the average user would still not get enough exposure to internalize it.
+Even if every tabbed text field on the Web began using the exact same design, the average user would still not get enough exposure to internalize it.
 
 ## UX Stockholm Syndrome
 
@@ -196,7 +196,7 @@ Yet *absolutely nothing* in their representation signifies this.
 You just have to learn it.
 Heck, there’s nothing even indicating whether a symbol produces sound or not!
 Demanding a lot of [knowledge in the head](https://medium.com/@matthewraychiang/doet-knowledge-in-the-head-and-in-the-world-64f901627eb3)
-is not a problem in itself; it’s a common tradeoff when efficiency is higher priority than learnability.
+is not a problem in itself; it’s a common tradeoff when efficiency is a higher priority than learnability.
 E.g. the alphabet is also a set of arbitrary symbols we need to learn to be able to form words.
 But even the best tradeoff is worse than none, aka having your cake and eating it too beats both options.
 Was a tradeoff really necessary here?
