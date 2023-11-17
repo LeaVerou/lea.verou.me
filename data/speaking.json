@@ -352,7 +352,8 @@
 			"talk": [
 				{
 					"title": "JS UX: Writing code for humans",
-					"type": "Keynote"
+					"type": "Keynote",
+					"video": "https://www.youtube.com/watch?v=gweY3L0YA1Y"
 				}
 			],
 			"url": "https://holyjs-piter.ru/en/",
@@ -472,7 +473,8 @@
 			"talk": [
 				{
 					"title": "JS UX: Writing code for humans",
-					"type": "Keynote"
+					"type": "Keynote",
+					"video": "https://www.youtube.com/watch?v=loj3CLHovt0&t=2773s"
 				}
 			],
 			"url": "https://braziljs.org/conf",
@@ -501,7 +503,8 @@
 			"talk": [
 				{
 					"title": "JS UX: Writing code for humans",
-					"type": "Keynote"
+					"type": "Keynote",
+					"video": "https://www.youtube.com/watch?v=5-ux7GIGFBo"
 				}
 			],
 			"url": "http://yougottalovefrontend.com/#page-home",
