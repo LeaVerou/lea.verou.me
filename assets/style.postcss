@@ -1047,19 +1047,26 @@ code:is(code, [class*="language-"]):not(pre *) {
 pre:is(pre, [class*="language-"][class*="language-"]) {
 	position: relative;
 	border: 0;
-	padding: 1rem var(--content-margin) .5rem;
-	margin: 0 calc(-1 * var(--content-margin));
-	border: 0 solid transparent;
-	border-width: 1.5em 0;
+	padding: .5rem 1rem;
+	margin: 0;
+	border-radius: .3rem;
 	box-sizing: content-box;
 	background: var(--color-accent2-light2);
 	overflow: visible;
 	font-size: 80%;
 	font-weight: 500;
 
-	clip-path: polygon(var(--clip-top), var(--clip-bottom));
-	--clip-top: 0 0, 100% 2em;
-	--clip-bottom: 100% calc(100% - 1.5em), 0 100%;
+
+	&:where(main>*, .summary>*) {
+		padding-inline: var(--content-margin);
+		padding-block-start: 1rem;
+		margin-inline: calc(-1 * var(--content-margin));
+		border: 0 solid transparent;
+		border-width: 1.5em 0;
+		clip-path: polygon(var(--clip-top), var(--clip-bottom));
+		--clip-top: 0 0, 100% 2em;
+		--clip-bottom: 100% calc(100% - 1.5em), 0 100%;
+	}
 
 	&:nth-of-type(odd) {
 		--clip-top: 0 2em, 100% 0;
@@ -1415,6 +1422,10 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 			margin-left: auto;
 		}
 	}
+}
+
+.edit-only:not([mv-mode="edit"] *) {
+	display: none;
 }
 
 .event {
