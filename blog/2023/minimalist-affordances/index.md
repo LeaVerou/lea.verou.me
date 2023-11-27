@@ -64,8 +64,8 @@ For comparison, this was the old UI:
 
 <figure>
 
-![Screenshot](images/old-comment-focused.png)
 ![Screenshot](images/old-comment.png)
+![Screenshot](images/old-comment-focused.png)
 
 <figcaption>
 The old GitHub commenting UI, with and without focus.
