@@ -1,6 +1,13 @@
 {
 	"articles": [
 		{
+			"title": "10 Best Software Bloggers in 2023",
+			"url": "https://www.hostingadvice.com/blog/10-best-software-bloggers-in-2023/",
+			"venue": "Hosting Advice",
+			"venueUrl": "https://www.hostingadvice.com/",
+			"date": "2023-11-22"
+		},
+		{
 			"title": "Write to the DOM or Not: When JS Frameworks Are Necessary",
 			"url": "https://thenewstack.io/write-to-the-dom-or-not-when-js-frameworks-are-necessary/",
 			"venue": "The New Stack",
