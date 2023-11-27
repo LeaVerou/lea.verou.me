@@ -64,21 +64,12 @@ For comparison, this was the old UI:
 
 <figure>
 
-![Screenshot](images/old-comment-unfocused.png)
-
-<figcaption>
-
-The old GitHub commenting UI, unfocused.
-</figcaption>
-</figure>
-
-<figure>
-
+![Screenshot](images/old-comment-focused.png)
 ![Screenshot](images/old-comment.png)
 
 <figcaption>
 
-The old GitHub commenting UI, focused.
+The old GitHub commenting UI, with and without focus.
 </figcaption>
 </figure>
 
