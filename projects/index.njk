@@ -3,7 +3,7 @@ title: Projects
 mavo: true
 ---
 
-Here you'll find a list of tools I've developed over the years to make the lives of web designers & developers easier.
+<p>Here you'll find a list of tools I've developed over the years to make the lives of web designers & developers easier.
 They are ordered mostly by release date, with those with the most impact featured first.
 
 <div mv-app="projects" class="projects" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
@@ -13,10 +13,13 @@ They are ordered mostly by release date, with those with the most impact feature
 			<span property="featured" mv-attribute="data-weight" mv-editor-type="range" mv-editor-min="0" mv-editor-max="5" mv-default="0">Featured</span>
 			<a href="[url]" class="image-container"><img property="image"/></a>
 			<div class="main-content">
-				<span property="type" mv-options="lib: Library, app: App"></span>
 				<h3>
+					<span property="type" mv-options="lib: Library, app: App"></span>
 					<a href="[url]" target="_blank" mv-attribute="none" property="name" rel="noopener"></a>
-					<div class="released">Released in <time property="releaseDate" datetime="YYYY-MM" mv-default="[$today]"></time></div>
+					<span class="released">(<time property="releaseDate" datetime="YYYY-MM" mv-default="[$today]">[
+						if(year(releaseDate) >= 2020, month(releaseDate, "shortname") & " ")
+						& year(releaseDate)
+					]</time>)</span>
 				</h3>
 				<div property="description" class="markdown"></div>
 			</div>

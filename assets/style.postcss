@@ -1047,19 +1047,26 @@ code:is(code, [class*="language-"]):not(pre *) {
 pre:is(pre, [class*="language-"][class*="language-"]) {
 	position: relative;
 	border: 0;
-	padding: 1rem var(--content-margin) .5rem;
-	margin: 0 calc(-1 * var(--content-margin));
-	border: 0 solid transparent;
-	border-width: 1.5em 0;
+	padding: .5rem 1rem;
+	margin: 0;
+	border-radius: .3rem;
 	box-sizing: content-box;
 	background: var(--color-accent2-light2);
 	overflow: visible;
 	font-size: 80%;
 	font-weight: 500;
 
-	clip-path: polygon(var(--clip-top), var(--clip-bottom));
-	--clip-top: 0 0, 100% 2em;
-	--clip-bottom: 100% calc(100% - 1.5em), 0 100%;
+
+	&:where(main>*, .summary>*) {
+		padding-inline: var(--content-margin);
+		padding-block-start: 1rem;
+		margin-inline: calc(-1 * var(--content-margin));
+		border: 0 solid transparent;
+		border-width: 1.5em 0;
+		clip-path: polygon(var(--clip-top), var(--clip-bottom));
+		--clip-top: 0 0, 100% 2em;
+		--clip-bottom: 100% calc(100% - 1.5em), 0 100%;
+	}
 
 	&:nth-of-type(odd) {
 		--clip-top: 0 2em, 100% 0;
@@ -1336,20 +1343,19 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 		grid-area: content;
 	}
 
-	& [property="type"] {
-		padding: .3em .5em;
-		border-radius: .2em;
-		background: var(--color, hsl(var(--gray) 50%));
-		color: white;
-		font: bold 75%/1 var(--font-sans);
-		text-transform: uppercase;
-	}
-
 	& h3 {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
 		margin: 0;
+
+		[property="type"] {
+			display: inline-block;
+			vertical-align: .3em;
+			padding: .3em .5em;
+			border-radius: .2em;
+			background: var(--color, hsl(var(--gray) 50%));
+			color: white;
+			font: bold .75rem/1.1 var(--font-sans);
+			text-transform: uppercase;
+		}
 
 		& > a {
 			color: inherit;
@@ -1371,40 +1377,44 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 		align-items: center;
 
 		& > a {
-			padding: .25em 1em .15em;
+			padding: .25em 1em .25em;
 			border-radius: 999px;
 			background: hsl(var(--gray) 90%);
 			white-space: nowrap;
-			font-variant: small-caps;
+			font: bold 75%/1.5 var(--font-sans);
 			text-decoration: none;
-			font-size: 75%;
-			font-weight: bold;
+			color: canvastext;
 
 			&::before {
+				content: var(--icon);
 				display: inline-block;
 				vertical-align: -.1em;
 				margin-right: .5em;
 				height: 1em;
+				font-family: bootstrap-icons;
+				color: var(--color-gray-50);
 			}
 
-			&[property=url]::before {
-				content: "🌍";
+			&[property=url] {
+				--icon: var(--icon-link-45deg);
 			}
 
-			&[property=blogPost]::before {
-				content: "✍🏼";
+			&[property=blogPost] {
+				--icon: var(--icon-megaphone-fill);
 			}
 
-			&[property="repo"]::before {
-				content: url(favicons/github.svg);
-				width: 1em;
-				vertical-align: -.2em;
+			&[property="repo"] {
+				--icon: var(--icon-github);
 			}
 
 			&:focus,
 			&:hover {
 				background: var(--color-accent);
 				color: white;
+
+				&::before {
+					color: black;
+				}
 			}
 		}
 
@@ -1412,6 +1422,10 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 			margin-left: auto;
 		}
 	}
+}
+
+.edit-only:not([mv-mode="edit"] *) {
+	display: none;
 }
 
 .event {

@@ -67,7 +67,7 @@
 	<script id="dsq-count-scr" src="https://leaverou.disqus.com/count.js" async></script>
 	{%- endif %}
 
-	{% if not toc -%}
+	{% if not toc and o.style !== "compact" -%}
 	{%- include "_broken-page.njk" -%}
 	{%- endif %}
 

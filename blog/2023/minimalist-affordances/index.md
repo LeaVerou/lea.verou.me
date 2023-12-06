@@ -1,6 +1,7 @@
 ---
 title: "Minimalist Affordances: Making the right tradeoffs"
 date: 2023-11-02
+date_updated: 2023-11-27
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1720143657238503869
   mastodon: https://front-end.social/@leaverou/111342327439718457
@@ -64,10 +65,10 @@ For comparison, this was the old UI:
 <figure>
 
 ![Screenshot](images/old-comment.png)
+![Screenshot](images/old-comment-focused.png)
 
 <figcaption>
-
-The old GitHub commenting UI (focused only — I couldn’t find an unfocused one).
+The old GitHub commenting UI, with and without focus.
 </figcaption>
 </figure>
 
@@ -201,3 +202,44 @@ E.g. the alphabet is also a set of arbitrary symbols we need to learn to be able
 But even the best tradeoff is worse than none, aka having your cake and eating it too beats both options.
 Was a tradeoff really necessary here?
 Was there really no possible depiction of these symbols that could communicate their purpose, order, and ratios? Or at least a notation that was [memorable by association rather than straight memorization](https://medium.com/@matthewraychiang/doet-knowledge-in-the-head-and-in-the-world-64f901627eb3)?
+
+## Update: GitHub’s response (Nov 20th, 2023)
+
+This post resonated a lot with people on social media.
+Here are some selected responses:
+
+<details>
+<summary>Selected Social Media Replies</summary>
+
+https://twitter.com/jitl/status/1720272221149581493
+
+https://twitter.com/noeldevelops/status/1724509073964487056
+
+https://twitter.com/zisiszikos/status/1720157900620939519
+
+https://twitter.com/manuelmeister/status/1720147908731818249
+
+> @leaverou @github I really thought the page was broken or incompletely loaded until I saw it enough times to try typing in it. It's emotionally uncomfortable to type in, fighting how it looks vs. what I know it is.
+> — [Benjamin @hazula@hachyderm.io](https://front-end.social/@hazula@hachyderm.io), [Nov 3rd, 2023](https://front-end.social/@hazula@hachyderm.io/111345248877999709)
+
+</details>
+
+The [Primer team at GitHub](https://primer.style/) reached out to me to discuss the issue, and I was happy to see that they were very receptive to feedback.
+They then iterated, and came up with a new design that communicates purpose much better, even if less minimalistic:
+
+<figure>
+
+![](images/new-comment-fixed.png)
+![](images/fixed-comment.png)
+
+<figcaption>
+The textarea is now clearly outlined, both before and after focus, clearly indicating that this is a multiline text field.
+</figcaption>
+</figure>
+
+https://twitter.com/natalyathree/status/1729161513636884499
+
+> @leaverou @github thank you for this post. We have shipped improvements to make it easier again to identify the textarea and distinguish between Write and Preview.
+> — [Daniel Adams (@dipree@mastodon.social)](https://front-end.social/@dipree@mastodon.social), [Nov 20th, 2023](https://front-end.social/@dipree@mastodon.social/111444773791934052)
+
+Always great to see an org that is receptive to feedback!
