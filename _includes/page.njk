@@ -68,7 +68,7 @@
 <main>
 
 {%- if draft -%}
-<section class="info" style="--label: 'Someone has been nosy!'">
+<section class="info" style="--label: 'Here be dragons'">
 	<strong>This is an unpublished draft.</strong> It may be incomplete, contain errors or be completely wrong.
 	Please check back later for the finished version, or <a href="/feed.xml">subscribe</a> to my feed to be notified.
 </section>
@@ -99,7 +99,7 @@
 		{% endif %}
 	</div>
 
-	{% if is_post %}
+	{% if is_post and false %}
 		{% set previousPost = collections.blog | getPreviousCollectionItem %}
 		{% set nextPost = collections.blog | getNextCollectionItem %}
 		{% if previousPost or nextPost %}
