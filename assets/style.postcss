@@ -170,6 +170,11 @@ h1, h2, h3, h4, h5, h6, summary {
 	}
 }
 
+summary > :is(h1, h2, h3, h4, h5, h6):only-child {
+	display: inline;
+	pointer-events: none;
+}
+
 h1 {
 	margin: 3.5rem 0 2rem;
 	font-size: calc((210% + clamp(0%, 1.5vw, 180%)) * var(--font-size-scale, 1));
@@ -371,7 +376,14 @@ figure {
 		display: block;
 	}
 
-	&:has(> :nth-last-child(3)) { /* Has multiple images? */
+	/* Has multiple images? */
+	&:has(> :nth-last-child(3), img:nth-of-type(2)),
+	&.multiple {
+		/* Pointless <p> created from Markdown */
+		& > p:has(> img):not(:has(> :not(img))) { /* Only contains img children */
+			display: contents;
+		}
+
 		&:has(> .main) { /* Has main image? */
 			display: grid;
 			grid-template-columns: 3fr 1fr;
@@ -400,7 +412,8 @@ figure {
 			flex-wrap: wrap;
 			gap: .5rem;
 
-			> :not(figcaption) {
+			> :not(figcaption),
+			> p > img {
 				width: calc(50% - .25rem);
 				object-fit: contain;
 			}
