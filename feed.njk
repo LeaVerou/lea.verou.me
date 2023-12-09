@@ -27,9 +27,8 @@
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.blog | reverse %}
+  {%- for post in collections.publishedPosts | reverse %}
   {%- set absolutePostUrl = post.data.compatUrl | absoluteUrl(metadata.url) -%}
-  {%- if not post.data.draft and not post.data.unlisted -%}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
@@ -41,6 +40,5 @@
     {%- endif %}
     <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
-  {%- endif -%}
   {%- endfor %}
 </feed>

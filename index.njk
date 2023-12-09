@@ -27,6 +27,6 @@ I often [blog](/blog/) about all this -- and more!
 <h2><a href="/blog/">Blog</a> <a href="/feed.xml" title="Feed" class="feed"></a></h2>
 
 {% import "_posts.njk" as posts %}
-{{ posts.list(collections.blog.reverse().slice(0, 30), {style: "compact", start: collections.blog.length}) }}
+{{ posts.list(collections.publishedPosts.reverse().slice(0, 30), {style: "compact", start: collections.publishedPosts.length}) }}
 
 <p><a class="call-to-action" href="/blog/page/3/">More blog posts</a></p>

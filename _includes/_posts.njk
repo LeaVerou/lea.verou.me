@@ -34,8 +34,6 @@
 {%- macro list(posts, o = {}) %}
 {% if o.style === "compact" %}<ol class="subtle-markers posts compact" reversed start="{{ o.start }}">{% endif %}
 {% for post in posts %}
-	{% if not (post.data.draft or post.data.unlisted) -%}
-
 	{%- set np = posts[loop.index0 + 1] -%}
 	{# No idea why this doesn't work as a macro argument to one()... #}
 	{%- if np and o.style !== "compact" -%}
@@ -43,7 +41,6 @@
 	{%- endif %}
 	{{ one(post, o) }}
 	{% if o.style !== "compact" %}<hr>{% endif %}
-	{% endif %}
 {% endfor %}
 {% if o.style === "compact" %}</ol>{% endif %}
 {% endmacro %}

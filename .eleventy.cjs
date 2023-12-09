@@ -81,6 +81,10 @@ module.exports = config => {
 	config.addPlugin(embeds);
 	config.addPlugin(pluginRss);
 
+	config.addCollection("publishedPosts", (collectionApi) => {
+		return collectionApi.getFilteredByTag("blog").filter(item => !item.data.draft && !item.data.unlisted);
+	});
+
 	config.addCollection("postsByTag", (collectionApi) => {
 		const posts = collectionApi.getFilteredByTag("blog");
 		let ret = {};
