@@ -34,7 +34,9 @@ const filters = {
 	},
 
 	reading_time (text) {
-		return readingTime(text);
+		return readingTime(text, {
+			wordsPerMinute: 350
+		});
 	},
 
 	relative(page) {
