@@ -27,7 +27,7 @@
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.publishedPosts | reverse %}
+  {%- for post in collections.published | reverse %}
   {%- set absolutePostUrl = post.data.compatUrl | absoluteUrl(metadata.url) -%}
   <entry>
     <title>{{ post.data.title }}</title>

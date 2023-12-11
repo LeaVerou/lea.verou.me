@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "netlify dev -p 8844",
     "build:css": "npx postcss \"**/*.postcss\" --base . --dir . --ext .css --config postcss.config.cjs",
-    "build:html": "npx @11ty/eleventy --config=.eleventy.cjs",
+    "build:html": "npx @11ty/eleventy --config=.eleventy.cjs --quiet",
     "build": "npm run build:html && npm run build:css",
     "watch:css": "npx postcss \"**/*.postcss\" --base . --dir . --ext .css --config postcss.config.cjs --watch",
     "watch:html": "npx @11ty/eleventy --config=.eleventy.cjs --watch --quiet --incremental",

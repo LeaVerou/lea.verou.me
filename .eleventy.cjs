@@ -9,7 +9,20 @@ const filters = require("./assets/filters.cjs");
 const tag_aliases = require("./data/tag_aliases.json");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-let foo = false;
+let published;
+function getPublished (collectionApi) {
+	let posts = collectionApi.getFilteredByTag("blog");
+
+	if (!published) {
+		published = posts.filter(item => !item.data.draft && !item.data.unlisted);
+
+		// Sort by date, descending
+		published.sort((a, b) => b.date - a.date);
+	}
+
+	return published;
+}
+
 module.exports = config => {
 	let data = {
 		layout: "page.njk",
@@ -81,12 +94,10 @@ module.exports = config => {
 	config.addPlugin(embeds);
 	config.addPlugin(pluginRss);
 
-	config.addCollection("publishedPosts", (collectionApi) => {
-		return collectionApi.getFilteredByTag("blog").filter(item => !item.data.draft && !item.data.unlisted);
-	});
+	config.addCollection("published", getPublished);
 
 	config.addCollection("postsByTag", (collectionApi) => {
-		const posts = collectionApi.getFilteredByTag("blog");
+		const posts = getPublished(collectionApi);
 		let ret = {};
 
 		for (let post of posts) {
@@ -114,7 +125,7 @@ module.exports = config => {
 	});
 
 	config.addCollection("postsByMonth", (collectionApi) => {
-		const posts = collectionApi.getFilteredByTag("blog").reverse();
+		const posts = getPublished(collectionApi);
 		const ret = {};
 
 		for (let post of posts) {
@@ -127,7 +138,7 @@ module.exports = config => {
 	});
 
 	config.addCollection("postsByYear", (collectionApi) => {
-		const posts = collectionApi.getFilteredByTag("blog").reverse();
+		const posts = getPublished(collectionApi);
 		const ret = {};
 
 		for (let post of posts) {

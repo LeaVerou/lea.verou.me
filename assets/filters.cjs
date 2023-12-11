@@ -6,6 +6,28 @@ const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
 
 const filters = {
+	is_published (post) {
+		return !post.data.draft && !post.data.unlisted;
+	},
+
+	prev_post (index, posts) {
+		let ret;
+		do {
+			ret = posts[--index];
+		} while(ret && !filters.is_published(ret));
+
+		return ret;
+	},
+
+	next_post (index, posts) {
+		let ret;
+		do {
+			ret = posts[++index];
+		} while(ret && !filters.is_published(ret));
+
+		return ret;
+	},
+
 	async pluralize(num, word) {
 		let plur = (await import("plur")).default;
 		return num + " " + plur(word, num);
