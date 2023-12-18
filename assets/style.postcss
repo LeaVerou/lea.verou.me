@@ -1733,12 +1733,12 @@ main aside {
 
 	&:not([id=toc]) {
 		/* Aside comments in an article */
-		&::before {
+		&:not(:has(> h4))::before {
 			content: "Aside";
 			background: var(--color-accent3);
 		}
 
-		& a {
+		& a:where(:not(h4 > :only-child)) {
 			text-decoration: underline;
 
 			&:not(:hover) {
