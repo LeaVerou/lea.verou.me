@@ -3,6 +3,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const markdownItFootnote = require("markdown-it-footnote");
 const markdownItMathjax3 = require("markdown-it-mathjax3");
+const markdownItDeflist = require("markdown-it-deflist");
 const embeds = require("eleventy-plugin-embed-everything");
 const pluginTOC = require("eleventy-plugin-toc");
 const filters = require("./assets/filters.cjs");
@@ -51,6 +52,7 @@ module.exports = config => {
 	.use(markdownItMathjax3)
 	.use(markdownItAttrs)
 	.use(markdownItFootnote)
+	.use(markdownItDeflist)
 	.use(markdownItAnchor, {
 		permalink: markdownItAnchor.permalink.headerLink(),
 		level: 2,
