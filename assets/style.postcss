@@ -454,9 +454,18 @@ figure {
 }
 
 blockquote {
-	border-inline-start: .15rem solid var(--color-accent);
+	--color: var(--color-accent);
+	border-inline-start: .15rem solid var(--color);
 	margin-inline-start: 0;
-	padding-left: 1em;
+	padding-inline-start: 1.2em;
+	padding-block: .01em;
+	/* Note: color has to be hardcoded in the quote */
+	background:
+		url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">\
+			<rect width="100%" height="100%" fill="yellow" fill-opacity="0" />\
+			<text y=".8em" font-size="90" fill="hsl(336 100% 50%)" fill-opacity=".1">❞</text></svg>')
+			no-repeat bottom right 1em / auto min(8em, 80%)
+		color-mix(in lab, #fff0, var(--color) 4.5%) ;
 	font-style: italic;
 }
 
