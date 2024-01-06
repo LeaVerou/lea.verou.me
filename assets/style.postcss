@@ -280,6 +280,11 @@ a {
 	}
 }
 
+abbr[title] {
+	text-decoration-color: color-mix(in oklch, canvas, currentColor);
+	cursor: help;
+}
+
 hr {
 	background: linear-gradient(to left, currentColor calc(50% - 16px), transparent calc(50% - 16px), transparent calc(50% + 16px), currentColor calc(50% + 16px));
 	background-color: transparent !important;
