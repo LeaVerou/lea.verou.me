@@ -161,13 +161,13 @@
 			"url": "https://contrast-ratio.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2012/10/Screen-Shot-2012-10-14-at-06.08.41--300x254.png",
 			"name": "Contrast Ratio",
-			"description": "An app for testing whether a combination of colors passes accessibility standards. Unlike other tools at the time that required hex codes it supported any CSS color the browser accepts, even semi-transparent colors (by displaying a range of contrasts), which required original research.",
+			"description": "An app for testing whether a combination of colors passes accessibility standards. Unlike other tools at the time that required hex codes it supported any CSS color the browser accepts, even semi-transparent colors (by displaying a range of contrasts), which required original research. Exited to [Siege Media](https://www.siegemedia.com/) in 2023.",
 			"blogPost": "https://lea.verou.me/2012/10/easy-color-contrast-ratios/",
 			"repo": "leaverou/contrast-ratio",
 			"releaseDate": "2012-10",
 			"type": "app",
 			"featured": 1,
-			"impact": "It has become one of the most popular contrast checkers on the Web, and [has been featured in several books](https://www.google.com/search?q=%22contrast-ratio.com%22+OR+%22leaverou.github.io%2Fcontrast-ratio%22&tbm=bks) and talks."
+			"impact": "Became one of the most popular contrast checkers on the Web for years, and [was featured in several books](https://www.google.com/search?q=%22contrast-ratio.com%22+OR+%22leaverou.github.io%2Fcontrast-ratio%22&tbm=bks) and conference talks."
 		},
 		{
 			"url": "https://prismjs.com",
