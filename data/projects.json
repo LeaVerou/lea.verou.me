@@ -179,7 +179,7 @@
 			"releaseDate": "2012-07",
 			"type": "lib",
 			"featured": 2,
-			"impact": "Pretty much my most successful project, used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8 million downloads weekly on npm](https://www.npmjs.com/package/prismjs)."
+			"impact": "Used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8M downloads weekly on npm](https://www.npmjs.com/package/prismjs) and over [1bn cumulative downloads since its launch](https://npm-stat.com/charts.html?package=prismjs&from=2012-01-01)."
 		},
 		{
 			"url": "https://css3test.com",
@@ -197,7 +197,7 @@
 			"url": "https://dabblet.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/12/Screen-shot-2011-12-14-at-23.32.02--300x183.png",
 			"name": "Dabblet",
-			"description": "An interactive CSS playground. Was quite successful for a few years, with thousands of visitors every day. Several popular industry media like [Wired.com’s WebMonkey](http://www.webmonkey.com/2011/12/dabblet-an-interactive-css-playground-in-your-browser/), [CSS-Tricks](http://css-tricks.com/dabblet/), [Smashing Magazine](http://www.smashingmagazine.com/smashing-newsletter-issue-50/) and others wrote about Dabblet’s release. During its first month, it received more than 65,000 unique visitors, 15,000 of which during its first two days.",
+			"description": "An interactive CSS playground. \n\nWas quite successful for a few years, with thousands of visitors every day. Several popular industry media like [Wired.com’s WebMonkey](http://www.webmonkey.com/2011/12/dabblet-an-interactive-css-playground-in-your-browser/), [CSS-Tricks](http://css-tricks.com/dabblet/), [Smashing Magazine](http://www.smashingmagazine.com/smashing-newsletter-issue-50/) and others wrote about Dabblet’s release. During its first month, it received more than 65Κ unique visitors, 15Κ of which during its first two days.",
 			"blogPost": "https://lea.verou.me/2011/12/introducing-dabblet-an-interactive-css-playground/",
 			"repo": "leaverou/dabblet",
 			"releaseDate": "2011-12",
