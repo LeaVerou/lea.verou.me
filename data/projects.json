@@ -161,7 +161,7 @@
 			"url": "https://contrast-ratio.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2012/10/Screen-Shot-2012-10-14-at-06.08.41--300x254.png",
 			"name": "Contrast Ratio",
-			"description": "Contrast Ratio is a modern tool for testing whether a combination of colors passes WCAG 2.0. It accepts any CSS color the browser accepts, including semi-transparent colors, color keywords, HSL(A) colors and the like. You can also share color combinations with others by just sharing the current URL.",
+			"description": "An app for testing whether a combination of colors passes accessibility standards. Unlike other tools at the time that required hex codes it supported any CSS color the browser accepts, even semi-transparent colors (by displaying a range of contrasts), which required original research.",
 			"blogPost": "https://lea.verou.me/2012/10/easy-color-contrast-ratios/",
 			"repo": "leaverou/contrast-ratio",
 			"releaseDate": "2012-10",
