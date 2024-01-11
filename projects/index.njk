@@ -15,8 +15,8 @@ or any of my pre-2011 entrepreneurial work.
 
 <div mv-app="projects" class="projects" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
 	<h2>[count(project)] projects ([count(type = &quot;lib&quot;)] libraries and [count(type = &quot;app&quot;)] apps)</h2>
-	<div mv-list class="projects-list">
-		<article property="project" class="project" mv-list-item mv-order="desc" style="--featured-weight: [featured]" class="type-[type] [if(featured &gt; 0, &quot;featured&quot;)]">
+	<div mv-list class="projects-list" mv-order="desc">
+		<article property="project" class="project" mv-list-item style="--featured-weight: [featured]" class="type-[type] [if(featured &gt; 0, &quot;featured&quot;)]">
 			<span property="featured" mv-attribute="data-weight" mv-editor-type="range" mv-editor-min="0" mv-editor-max="5" mv-default="0">Featured</span>
 			<a href="[url]" class="image-container"><img property="image"/></a>
 			<div class="main-content">
@@ -29,8 +29,8 @@ or any of my pre-2011 entrepreneurial work.
 					]</time>)</span>
 				</h3>
 				<div property="description" class="markdown"></div>
-				<h4>Impact</h4>
-				<div property="description" class="markdown"></div>
+				<h4 class="[if(!impact, 'edit-only')]">Impact</h4>
+				<div property="impact" class="markdown"></div>
 			</div>
 			<footer>
 				<a property="url">[replace(url, &quot;https://&quot;)]</a>

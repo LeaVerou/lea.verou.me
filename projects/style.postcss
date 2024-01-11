@@ -1,6 +1,10 @@
 .projects {
 	container-name: projects;
 	container-type: inline-size;
+
+	--image-coming-soon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><text x="50%" y=".9em" style="font: bold 80px/1 system-ui, sans-serif; text-anchor: middle; fill-opacity: .4; text-transform: uppercase">Image Coming Soon</text></svg>');
+	--image-coming-soon-background: radial-gradient(hsl(var(--gray) 90%), hsl(var(--gray) 60%));
+	--footer-background: var(--color-gray-95);
 }
 
 .projects-list {
@@ -12,7 +16,8 @@
 	}
 }
 
-.project {
+.project,
+.mv-add-project {
 	position: relative;
 	display: flex;
 	flex-flow: column;
@@ -69,7 +74,7 @@
 		}
 	}
 
-	&:not([mv-mode="edit"]) {
+	&:where(:not([mv-mode="edit"])) {
 		order: calc(2 - var(--featured-weight, 0));
 
 		& [property="featured"][data-weight="0"] {
@@ -86,7 +91,7 @@
 	& .image-container {
 		position: relative;
 		overflow: hidden;
-		height: 10em;
+		height: 8rem;
 
 		& img {
 			width: 100%;
@@ -96,8 +101,8 @@
 			&.mv-empty.mv-empty.mv-empty {
 				display: block;
 				height: 100%;
-				background: radial-gradient(hsl(var(--gray) 90%), hsl(var(--gray) 60%));
-				content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><text x="50%" y=".9em" style="font: bold 80px/1 system-ui, sans-serif; text-anchor: middle; fill-opacity: .4; text-transform: uppercase">Image Coming Soon</text></svg>');
+				background: var(--image-coming-soon-background);
+				content: var(--image-coming-soon);
 				object-fit: contain;
 				object-position: center;
 			}
@@ -108,6 +113,15 @@
 		flex: 1;
 		padding: var(--padding);
 		padding-bottom: 0;
+
+		& h4 {
+			all: unset;
+
+			font: 600 80%/1.1 var(--font-sans);
+			text-transform: uppercase;
+			letter-spacing: normal;
+			color: var(--color-gray-60);
+		}
 	}
 
 	& h3 {
@@ -137,7 +151,7 @@
 	}
 
 	& footer {
-		background: var(--color-gray-95);
+		background: var(--footer-background);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1em;
@@ -185,6 +199,16 @@
 	}
 }
 
-.mv-add-project {
+.projects .mv-add-project.mv-add-project {
 	order: -5;
+	color: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 150%;
+	background:
+	var(--image-coming-soon) 50% 3rem,
+	var(--image-coming-soon-background) top / 100% 8rem,
+	linear-gradient(var(--footer-background) 0 100%) bottom / 100% 2rem;
+	background-repeat: no-repeat;
 }
