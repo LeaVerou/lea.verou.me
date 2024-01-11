@@ -9,7 +9,8 @@
 			"description": "A color space agnostic color conversion and manipulation library, developed jointly with [Chris Lilley](https://svgees.us). Used to generate figures and examples for several CSS specifications and influenced the [Color API](https://github.com/wicg/color-api)",
 			"url": "https://colorjs.io",
 			"blogPost": "https://lea.verou.me/2022/06/releasing-colorjs/",
-			"repo": "leaverou/color.js"
+			"repo": "leaverou/color.js",
+			"@context": "https://schema.org/"
 		},
 		{
 			"name": "md-block",
@@ -69,12 +70,13 @@
 			"url": "https://mavo.io",
 			"image": "https://mavo.io/logo.svg",
 			"name": "Mavo",
-			"description": "Mavo helps you turn your static HTML into reactive web applications without a single line of programming code and no server backend. \nDeveloped in the Haystack Group at MIT CSAIL and led by Lea Verou.\n\n**Impact:** Led to the publication of [several research papers](https://lea.verou.me/publications/#research)",
+			"description": "Mavo helps you turn your static HTML into reactive web applications without a single line of programming code and no server backend. \nDeveloped in the Haystack Group at MIT CSAIL and led by Lea Verou.",
 			"blogPost": "https://lea.verou.me/2017/05/introducing-mavo-create-web-apps-entirely-by-writing-html/",
 			"repo": "mavoweb/mavo",
 			"releaseDate": "2017-05",
 			"type": "lib",
-			"featured": 1
+			"featured": 1,
+			"impact": "Led to the publication of [several peer-reviewed research papers](https://lea.verou.me/publications/#research) and 3 Masters theses."
 		},
 		{
 			"url": "http://blissfuljs.com/",
@@ -104,21 +106,23 @@
 			"type": "lib",
 			"name": "Conic gradient polyfill",
 			"releaseDate": "2015-06",
-			"description": "A polyfill for CSS conical gradients.\n\n**Impact:** [Encouraged browsers to implement CSS conic gradients](https://bugs.chromium.org/p/chromium/issues/detail?id=502970). Because the polyfill also implemented the double color stop position syntax, [browsers implemented that alongside](https://chromestatus.com/feature/5712111258828800), just so the examples in the polyfill page work correctly.",
+			"description": "A polyfill for CSS conical gradients.",
 			"url": "https://projects.verou.me/conic-gradient",
 			"blogPost": "https://lea.verou.me/2015/06/conical-gradients-today/",
-			"repo": "leaverou/conic-gradient"
+			"repo": "leaverou/conic-gradient",
+			"impact": "[Encouraged browsers to implement CSS conic gradients](https://bugs.chromium.org/p/chromium/issues/detail?id=502970). Because the polyfill also implemented the double color stop position syntax, [browsers implemented that alongside](https://chromestatus.com/feature/5712111258828800), just so the examples in the polyfill page work correctly."
 		},
 		{
 			"url": "https://projects.verou.me/multirange",
 			"image": "https://lea.verou.me/wp-content/uploads/2016/05/multirange.png",
 			"name": "Multirange",
-			"description": "A tiny polyfill for HTML5 multi-handle sliders.\n\n**Impact:** Was apparently used so much that its custom properties appeared in [Web Almanac's analysis of the top 1000 custom property names](https://almanac.httparchive.org/en/2020/css#naming)",
+			"description": "A tiny polyfill for HTML5 multi-handle sliders.",
 			"blogPost": "https://lea.verou.me/2016/05/introducing-multirange-a-tiny-polyfill-for-html5-two-handle-sliders/",
 			"repo": "leaverou/multirange",
 			"releaseDate": "2016-05",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"impact": "Was apparently used so much that its custom properties appeared in [Web Almanac's analysis of the top 1000 custom property names](https://almanac.httparchive.org/en/2020/css#naming)"
 		},
 		{
 			"url": "https://projects.verou.me/awesomplete",
@@ -157,45 +161,49 @@
 			"url": "https://contrast-ratio.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2012/10/Screen-Shot-2012-10-14-at-06.08.41--300x254.png",
 			"name": "Contrast Ratio",
-			"description": "Contrast Ratio is a modern tool for testing whether a combination of colors passes WCAG 2.0. It accepts any CSS color the browser accepts, including semi-transparent colors, color keywords, HSL(A) colors and the like. You can also share color combinations with others by just sharing the current URL.\n\n**Impact:** It has become one of the most popular contrast checkers on the Web, and [has been featured in several books](https://www.google.com/search?q=%22contrast-ratio.com%22+OR+%22leaverou.github.io%2Fcontrast-ratio%22&tbm=bks) and talks.",
+			"description": "Contrast Ratio is a modern tool for testing whether a combination of colors passes WCAG 2.0. It accepts any CSS color the browser accepts, including semi-transparent colors, color keywords, HSL(A) colors and the like. You can also share color combinations with others by just sharing the current URL.",
 			"blogPost": "https://lea.verou.me/2012/10/easy-color-contrast-ratios/",
 			"repo": "leaverou/contrast-ratio",
 			"releaseDate": "2012-10",
 			"type": "app",
-			"featured": 1
+			"featured": 1,
+			"impact": "It has become one of the most popular contrast checkers on the Web, and [has been featured in several books](https://www.google.com/search?q=%22contrast-ratio.com%22+OR+%22leaverou.github.io%2Fcontrast-ratio%22&tbm=bks) and talks."
 		},
 		{
 			"url": "https://prismjs.com",
 			"image": "images/prism.png",
 			"name": "Prism",
-			"description": "A lightweight, extensible syntax highlighter, built with modern web standards in mind. \n\n**Impact:** Pretty much my most successful project, used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8 million downloads weekly on npm](https://www.npmjs.com/package/prismjs).",
+			"description": "A lightweight, extensible syntax highlighter, built with modern web standards in mind.  ",
 			"blogPost": "https://lea.verou.me/2012/07/introducing-prism-an-awesome-new-syntax-highlighter/",
 			"repo": "prismjs/prism",
 			"releaseDate": "2012-07",
 			"type": "lib",
-			"featured": 2
+			"featured": 2,
+			"impact": "Pretty much my most successful project, used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8 million downloads weekly on npm](https://www.npmjs.com/package/prismjs)."
 		},
 		{
 			"url": "https://css3test.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2012/02/Screen-shot-2012-02-02-at-14.20.15--300x187.png",
 			"name": "The CSS3 Test",
-			"description": "High coverage testsuite for the most stable CSS modules. 50,000 unique visitors on its launch. \n\n**Impact:** Motivated browser vendors such as [Mozilla](https://bugzilla.mozilla.org/show_bug.cgi?id=913153) or [WebKit](https://bugs.webkit.org/show_bug.cgi?id=79073) to support more CSS3 features to increase their scores on it.",
+			"description": "High coverage testsuite for the most stable CSS modules. 50,000 unique visitors on its launch. ",
 			"blogPost": "https://lea.verou.me/2012/02/exactly-how-much-css3-does-your-browser-support/",
 			"repo": "leaverou/css3test",
 			"releaseDate": "2012-02",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"impact": "Motivated browser vendors such as [Mozilla](https://bugzilla.mozilla.org/show_bug.cgi?id=913153) or [WebKit](https://bugs.webkit.org/show_bug.cgi?id=79073) to support more CSS3 features to increase their scores on it."
 		},
 		{
 			"url": "https://dabblet.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/12/Screen-shot-2011-12-14-at-23.32.02--300x183.png",
 			"name": "Dabblet",
-			"description": "An interactive CSS playground. Was quite successful for a few years, with thousands of visitors every day. Several popular industry media like [Wired.com’s WebMonkey](http://www.webmonkey.com/2011/12/dabblet-an-interactive-css-playground-in-your-browser/), [CSS-Tricks](http://css-tricks.com/dabblet/), [Smashing Magazine](http://www.smashingmagazine.com/smashing-newsletter-issue-50/) and others wrote about Dabblet’s release. During its first month, it received more than 65,000 unique visitors, 15,000 of which during its first two days.\n\n**Impact:** Pioneered using Github Gists as a storage backend, and its inline previewers for various value types predate similar features in today's editors.",
+			"description": "An interactive CSS playground. Was quite successful for a few years, with thousands of visitors every day. Several popular industry media like [Wired.com’s WebMonkey](http://www.webmonkey.com/2011/12/dabblet-an-interactive-css-playground-in-your-browser/), [CSS-Tricks](http://css-tricks.com/dabblet/), [Smashing Magazine](http://www.smashingmagazine.com/smashing-newsletter-issue-50/) and others wrote about Dabblet’s release. During its first month, it received more than 65,000 unique visitors, 15,000 of which during its first two days.",
 			"blogPost": "https://lea.verou.me/2011/12/introducing-dabblet-an-interactive-css-playground/",
 			"repo": "leaverou/dabblet",
 			"releaseDate": "2011-12",
 			"type": "app",
-			"featured": 1
+			"featured": 1,
+			"impact": "Pioneered using Github Gists as a storage backend, and its inline previewers for various value types predate similar features in today's editors."
 		},
 		{
 			"url": "https://projects.verou.me/animatable",
@@ -223,12 +231,13 @@
 			"url": "https://cubic-bezier.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/09/Screen-shot-2011-09-14-at-10.33.11--300x204.png",
 			"name": "cubic-bezier.com",
-			"description": "A tool that helps you work with the easing functions of CSS3 transitions & animations and share them with others.\n\n**Impact:** It has been featured on several [books](https://www.google.com/search?tbm=bks&q=%22cubic-bezier.com%22) and talks. Its code was at some point even [included in the Firefox browser](https://hacks.mozilla.org/2014/07/event-listeners-popup-media-sidebar-cubic-bezier-editor-more-firefox-developer-tools-episode-33/) and [Adobe's Brackets editor](https://twitter.com/brackets/status/400678387045642241)",
+			"description": "A tool that helps you work with the easing functions of CSS3 transitions & animations and share them with others.",
 			"blogPost": "https://lea.verou.me/2011/09/a-better-tool-for-cubic-bezier-easing/",
 			"repo": "leaverou/cubic-bezier",
 			"releaseDate": "2011-09",
 			"type": "app",
-			"featured": 1
+			"featured": 1,
+			"impact": "Featured on several [books](https://www.google.com/search?tbm=bks&q=%22cubic-bezier.com%22) and talks. Its code was at some point even [included in the Firefox browser](https://hacks.mozilla.org/2014/07/event-listeners-popup-media-sidebar-cubic-bezier-editor-more-firefox-developer-tools-episode-33/) and [Adobe's Brackets editor](https://twitter.com/brackets/status/400678387045642241)"
 		},
 		{
 			"url": "https://projects.verou.me/css-colors/",
@@ -245,12 +254,13 @@
 			"url": "https://lea.verou.me/css3patterns",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/04/csspatterns-300x177.png",
 			"name": "CSS3 patterns gallery",
-			"description": "An interactive gallery that demonstrated what's possible with just CSS gradients. It also allows you to edit the code, to experiment with gradients yourself.\n\n**Impact:** The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns. It has been [featured in a number of books](https://www.google.com/search?q=%22css3patterns%22&tbm=bks), talks, workshops. It was used by Opera Software to fine-tune their CSS gradients implementation.",
+			"description": "An interactive gallery that demonstrated what's possible with just CSS gradients. It also allows you to edit the code, to experiment with gradients yourself.",
 			"blogPost": "https://lea.verou.me/2011/04/css3-patterns-gallery-and-a-new-pattern/",
 			"repo": "LeaVerou/css3patterns",
 			"releaseDate": "2011-04",
 			"type": "app",
-			"featured": 1
+			"featured": 1,
+			"impact": "The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns. It has been [featured in a number of books](https://www.google.com/search?q=%22css3patterns%22&tbm=bks), talks, workshops. It was used by Opera Software to fine-tune their CSS gradients implementation."
 		},
 		{
 			"url": "https://projects.verou.me/chainvas/",
@@ -337,5 +347,6 @@
 			"type": "lib",
 			"featured": 0
 		}
-	]
+	],
+	"@context": "https://schema.org/"
 }
