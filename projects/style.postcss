@@ -16,8 +16,7 @@
 	}
 }
 
-.project,
-.mv-add-project {
+.project {
 	position: relative;
 	display: flex;
 	flex-flow: column;
@@ -132,9 +131,9 @@
 			vertical-align: .3em;
 			padding: .3em .5em;
 			border-radius: .2em;
-			background: var(--color, hsl(var(--gray) 50%));
+			background: var(--color, var(--color-gray-50));
 			color: white;
-			font: bold .75rem/1.1 var(--font-sans);
+			font: bold .5em/1.1 var(--font-sans);
 			text-transform: uppercase;
 		}
 
@@ -201,14 +200,5 @@
 
 .projects .mv-add-project.mv-add-project {
 	order: -5;
-	color: inherit;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 150%;
-	background:
-	var(--image-coming-soon) 50% 3rem,
-	var(--image-coming-soon-background) top / 100% 8rem,
-	linear-gradient(var(--footer-background) 0 100%) bottom / 100% 2rem;
-	background-repeat: no-repeat;
+	grid-column: 1 / -1;
 }
