@@ -166,7 +166,7 @@
 		},
 		{
 			"url": "https://prismjs.com",
-			"image": "https://lea.verou.me/wp-content/uploads/2012/07/Screen-Shot-2012-07-31-at-18.33.58--300x158.png",
+			"image": "images/prism.png",
 			"name": "Prism",
 			"description": "A lightweight, extensible syntax highlighter, built with modern web standards in mind. \n\n**Impact:** Pretty much my most successful project, used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8 million downloads weekly on npm](https://www.npmjs.com/package/prismjs).",
 			"blogPost": "https://lea.verou.me/2012/07/introducing-prism-an-awesome-new-syntax-highlighter/",
@@ -306,7 +306,7 @@
 			"featured": 0
 		},
 		{
-			"url": "https://projects.verou.me/Incrementable/",
+			"url": "https://incrementable.verou.me/",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/02/incrementable-demo-300x202.png",
 			"name": "Incrementable",
 			"description": "A script that enables incrementing/decrementing multiple numeric values in textfields with the keyboard arrow keys.",

@@ -1,6 +1,9 @@
 ---
 title: Projects
 mavo: true
+page_css: true
+includes: |
+  <link rel="alternate" href="../data/projects.json" type="application/json" />
 ---
 
 <p>Ordered mostly by release date, with those with the most impact featured first.
@@ -12,13 +15,13 @@ or any of my pre-2011 entrepreneurial work.
 
 <div mv-app="projects" class="projects" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
 	<h2>[count(project)] projects ([count(type = &quot;lib&quot;)] libraries and [count(type = &quot;app&quot;)] apps)</h2>
-	<div mv-list>
-		<article property="project" mv-multiple="" mv-list-item mv-order="desc" style="--featured-weight: [featured]" class="type-[type] [if(featured &gt; 0, &quot;featured&quot;)]">
+	<div mv-list class="projects-list">
+		<article property="project" class="project" mv-list-item mv-order="desc" style="--featured-weight: [featured]" class="type-[type] [if(featured &gt; 0, &quot;featured&quot;)]">
 			<span property="featured" mv-attribute="data-weight" mv-editor-type="range" mv-editor-min="0" mv-editor-max="5" mv-default="0">Featured</span>
 			<a href="[url]" class="image-container"><img property="image"/></a>
 			<div class="main-content">
 				<h3>
-					<span property="type" mv-options="lib: Library, app: App"></span>
+					<span property="type" class="type" mv-options="lib: Library, app: App"></span>
 					<a href="[url]" target="_blank" mv-attribute="none" property="name" rel="noopener"></a>
 					<span class="released">(<time property="releaseDate" datetime="YYYY-MM" mv-default="[$today]">[
 						if(year(releaseDate) >= 2020, month(releaseDate, "shortname") & " ")
@@ -26,12 +29,14 @@ or any of my pre-2011 entrepreneurial work.
 					]</time>)</span>
 				</h3>
 				<div property="description" class="markdown"></div>
+				<h4>Impact</h4>
+				<div property="description" class="markdown"></div>
 			</div>
 			<footer>
 				<a property="url">[replace(url, &quot;https://&quot;)]</a>
 				<a property="blogPost">Blog post</a>
 				<a property="repo" href="https://github.com/[repo]" mv-attribute="none" target="_blank" rel="noopener"></a>
-				<img src="https://img.shields.io/github/stars/[repo]?style=social" alt=""/>
+				<img mv-if="repo" src="https://img.shields.io/github/stars/[repo]?style=social" alt=""/>
 			</footer>
 		</article>
 	</div>
