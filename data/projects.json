@@ -9,8 +9,8 @@
 			"description": "A color space agnostic color conversion and manipulation library, developed jointly with [Chris Lilley](https://svgees.us). Used to generate figures and examples for several CSS specifications and influenced the [Color API](https://github.com/wicg/color-api)",
 			"url": "https://colorjs.io",
 			"blogPost": "https://lea.verou.me/2022/06/releasing-colorjs/",
-			"repo": "leaverou/color.js",
-			"@context": "https://schema.org/"
+			"repo": "color-js/color.js",
+			"npm": "colorjs.io"
 		},
 		{
 			"name": "md-block",
@@ -202,6 +202,7 @@
 			"description": "A lightweight, extensible syntax highlighter, built with modern web standards in mind.  ",
 			"blogPost": "https://lea.verou.me/2012/07/introducing-prism-an-awesome-new-syntax-highlighter/",
 			"repo": "prismjs/prism",
+			"npm": "prismjs",
 			"releaseDate": "2012-07",
 			"type": "lib",
 			"featured": 2,
