@@ -1,0 +1,1451 @@
+{
+	"amyxzhang/lucy.js": {
+		"stars": 21
+	},
+	"amyxzhang/wikum": {
+		"stars": 138
+	},
+	"bevacqua/dragula": {
+		"stars": 21742
+	},
+	"cern-hackdays/lmb": {
+		"stars": 104
+	},
+	"color-js/color.js": {
+		"stars": 1610
+	},
+	"csstools/postcss-conic-gradient": {
+		"stars": 60
+	},
+	"cts/abstract-adapter": {
+		"stars": 0
+	},
+	"cts/cts": {
+		"stars": 11
+	},
+	"cts/cts-atom": {
+		"stars": 0
+	},
+	"cts/cts-cli": {
+		"stars": 8
+	},
+	"cts/cts-pygments-lexer": {
+		"stars": 0
+	},
+	"cts/cts-server": {
+		"stars": 1
+	},
+	"cts/cts-ui": {
+		"stars": 1
+	},
+	"cts/cts-wordpress": {
+		"stars": 0
+	},
+	"cts/cts.github.com": {
+		"stars": 2
+	},
+	"cts/engine": {
+		"stars": 0
+	},
+	"cts/firebase-adapter": {
+		"stars": 0
+	},
+	"cts/gsheet-adapter": {
+		"stars": 0
+	},
+	"cts/html-adapter": {
+		"stars": 1
+	},
+	"cts/json-adapter": {
+		"stars": 0
+	},
+	"cts/mockups": {
+		"stars": 1
+	},
+	"cts/model": {
+		"stars": 0
+	},
+	"cts/parser": {
+		"stars": 0
+	},
+	"cts/relations": {
+		"stars": 0
+	},
+	"cts/util": {
+		"stars": 0
+	},
+	"cts/website": {
+		"stars": 0
+	},
+	"cts/wordpress-puppetmaster": {
+		"stars": 0
+	},
+	"cts/wordpress-theme-downloader": {
+		"stars": 1
+	},
+	"designftw/chat-lab": {
+		"stars": 1
+	},
+	"designftw/chat-lib": {
+		"stars": 6
+	},
+	"designftw/hw1-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw1-sabrinahu618": {
+		"stars": 0
+	},
+	"designftw/hw1-starter": {
+		"stars": 2
+	},
+	"designftw/hw1-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw10-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw10-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw11-achaucodes": {
+		"stars": 0
+	},
+	"designftw/hw11-atkatary": {
+		"stars": 0
+	},
+	"designftw/hw11-ayeshaali": {
+		"stars": 0
+	},
+	"designftw/hw11-happymeex": {
+		"stars": 0
+	},
+	"designftw/hw11-incoherentbutter": {
+		"stars": 0
+	},
+	"designftw/hw11-isabelbaez": {
+		"stars": 0
+	},
+	"designftw/hw11-jessica55wu": {
+		"stars": 0
+	},
+	"designftw/hw11-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw11-ncybul": {
+		"stars": 0
+	},
+	"designftw/hw11-neild0": {
+		"stars": 0
+	},
+	"designftw/hw11-ngkuru": {
+		"stars": 0
+	},
+	"designftw/hw11-niekyw": {
+		"stars": 0
+	},
+	"designftw/hw11-nik-ab": {
+		"stars": 0
+	},
+	"designftw/hw11-nmorale5": {
+		"stars": 0
+	},
+	"designftw/hw11-sabrinahu618": {
+		"stars": 0
+	},
+	"designftw/hw11-sharonlin1029": {
+		"stars": 0
+	},
+	"designftw/hw11-spwing": {
+		"stars": 0
+	},
+	"designftw/hw11-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw12-starter": {
+		"stars": 1
+	},
+	"designftw/hw2-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw2-starter": {
+		"stars": 0
+	},
+	"designftw/hw2-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw3-ayeshaali": {
+		"stars": 0
+	},
+	"designftw/hw3-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw3-maur1ciomd": {
+		"stars": 0
+	},
+	"designftw/hw3-ngkuru": {
+		"stars": 0
+	},
+	"designftw/hw3-nmorale5": {
+		"stars": 0
+	},
+	"designftw/hw3-sabrinahu618": {
+		"stars": 0
+	},
+	"designftw/hw3-starter": {
+		"stars": 0
+	},
+	"designftw/hw3-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw4-ayeshaali": {
+		"stars": 0
+	},
+	"designftw/hw4-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw4-starter": {
+		"stars": 0
+	},
+	"designftw/hw4-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw5-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw5-starter": {
+		"stars": 0
+	},
+	"designftw/hw5-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw6-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw6-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw7-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw7-sabrinahu618": {
+		"stars": 0
+	},
+	"designftw/hw7-starter": {
+		"stars": 0
+	},
+	"designftw/hw7-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw8-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw8-yonas39": {
+		"stars": 0
+	},
+	"designftw/hw9-ayeshaali": {
+		"stars": 0
+	},
+	"designftw/hw9-limedosa": {
+		"stars": 0
+	},
+	"designftw/hw9-nmorale5": {
+		"stars": 0
+	},
+	"designftw/hw9-yonas39": {
+		"stars": 0
+	},
+	"designftw/sabrinahu": {
+		"stars": 0
+	},
+	"designftw/studio1-starter": {
+		"stars": 2
+	},
+	"designftw/studio3-starter": {
+		"stars": 1
+	},
+	"designftw/studio7-starter": {
+		"stars": 1
+	},
+	"designftw/studio9-starter": {
+		"stars": 0
+	},
+	"designftw-2022/components": {
+		"stars": 1
+	},
+	"devographics/2018-charts-catalogue": {
+		"stars": 4
+	},
+	"devographics/capture": {
+		"stars": 3
+	},
+	"devographics/charts-playground-2020": {
+		"stars": 0
+	},
+	"devographics/data-normalization": {
+		"stars": 1
+	},
+	"devographics/data-tools": {
+		"stars": 1
+	},
+	"devographics/docs": {
+		"stars": 0
+	},
+	"devographics/entities": {
+		"stars": 4
+	},
+	"devographics/images": {
+		"stars": 0
+	},
+	"devographics/locale-am-et": {
+		"stars": 1
+	},
+	"devographics/locale-ar-eg": {
+		"stars": 0
+	},
+	"devographics/locale-bn-bd": {
+		"stars": 0
+	},
+	"devographics/locale-ca-es": {
+		"stars": 0
+	},
+	"devographics/locale-cs-cz": {
+		"stars": 0
+	},
+	"devographics/locale-de-de": {
+		"stars": 1
+	},
+	"devographics/locale-el-gr": {
+		"stars": 4
+	},
+	"devographics/locale-en-us": {
+		"stars": 29
+	},
+	"devographics/locale-es-es": {
+		"stars": 0
+	},
+	"devographics/locale-fa-ir": {
+		"stars": 1
+	},
+	"devographics/locale-fr-fr": {
+		"stars": 1
+	},
+	"devographics/locale-gl-es": {
+		"stars": 0
+	},
+	"devographics/locale-hi-in": {
+		"stars": 0
+	},
+	"devographics/locale-hr-hr": {
+		"stars": 0
+	},
+	"devographics/locale-hu-hu": {
+		"stars": 0
+	},
+	"devographics/locale-id-id": {
+		"stars": 4
+	},
+	"devographics/locale-it-it": {
+		"stars": 2
+	},
+	"devographics/locale-ja-jp": {
+		"stars": 0
+	},
+	"devographics/locale-ko-kr": {
+		"stars": 7
+	},
+	"devographics/locale-nl-nl": {
+		"stars": 0
+	},
+	"devographics/locale-pl-pl": {
+		"stars": 1
+	},
+	"devographics/locale-pt-br": {
+		"stars": 7
+	},
+	"devographics/locale-pt-pt": {
+		"stars": 0
+	},
+	"devographics/locale-ro-ro": {
+		"stars": 0
+	},
+	"devographics/locale-ru-ru": {
+		"stars": 2
+	},
+	"devographics/locale-sk-sk": {
+		"stars": 0
+	},
+	"devographics/locale-so-so": {
+		"stars": 0
+	},
+	"devographics/locale-sv-se": {
+		"stars": 0
+	},
+	"devographics/locale-th-th": {
+		"stars": 1
+	},
+	"devographics/locale-tr-tr": {
+		"stars": 1
+	},
+	"devographics/locale-ua-ua": {
+		"stars": 2
+	},
+	"devographics/locale-vi-vn": {
+		"stars": 3
+	},
+	"devographics/locale-zh-hans": {
+		"stars": 3
+	},
+	"devographics/locale-zh-hant": {
+		"stars": 1
+	},
+	"devographics/monorepo": {
+		"stars": 99
+	},
+	"devographics/reports-end-to-end-testing": {
+		"stars": 0
+	},
+	"devographics/state-of-js-graphql-results-api": {
+		"stars": 64
+	},
+	"devographics/state-of-query-builder": {
+		"stars": 0
+	},
+	"devographics/stateofcss-2019": {
+		"stars": 54
+	},
+	"devographics/stateofcss-2020": {
+		"stars": 44
+	},
+	"devographics/stateofcss-homepage": {
+		"stars": 8
+	},
+	"devographics/stateofjs-2019": {
+		"stars": 144
+	},
+	"devographics/stateofjs-2020": {
+		"stars": 102
+	},
+	"devographics/stateofjs-homepage": {
+		"stars": 24
+	},
+	"devographics/stateofjs-legacy": {
+		"stars": 372
+	},
+	"devographics/stateofjs-vulcan": {
+		"stars": 18
+	},
+	"devographics/survey-builder": {
+		"stars": 3
+	},
+	"devographics/surveys": {
+		"stars": 31
+	},
+	"devographics/translations": {
+		"stars": 0
+	},
+	"devographics/whatsmissingfromcss": {
+		"stars": 0
+	},
+	"ericsmekens/jsep": {
+		"stars": 792
+	},
+	"googlechromelabs/tooling.report": {
+		"stars": 838
+	},
+	"haystack/datapress": {
+		"stars": 6
+	},
+	"haystack/datapress-drupal": {
+		"stars": 1
+	},
+	"haystack/dracl": {
+		"stars": 3
+	},
+	"haystack/exhibit-tutorial": {
+		"stars": 3
+	},
+	"haystack/eyebrowse-chrome-ext": {
+		"stars": 12
+	},
+	"haystack/eyebrowse-firefox-ext": {
+		"stars": 0
+	},
+	"haystack/eyebrowse-server": {
+		"stars": 26
+	},
+	"haystack/feedme-rss": {
+		"stars": 0
+	},
+	"haystack/flotr-extension": {
+		"stars": 2
+	},
+	"haystack/listit": {
+		"stars": 9
+	},
+	"haystack/listit-server": {
+		"stars": 2
+	},
+	"haystack/murmur": {
+		"stars": 24
+	},
+	"haystack/nb": {
+		"stars": 11
+	},
+	"haystack/nbclient": {
+		"stars": 2
+	},
+	"haystack/old-picker": {
+		"stars": 0
+	},
+	"haystack/picker": {
+		"stars": 1
+	},
+	"haystack/thejit-extension": {
+		"stars": 1
+	},
+	"haystack/tipsy": {
+		"stars": 31
+	},
+	"haystack/tipsy-site": {
+		"stars": 0
+	},
+	"haystack/website": {
+		"stars": 2
+	},
+	"haystack/youps": {
+		"stars": 10
+	},
+	"httparchive/almanac.httparchive.org": {
+		"stars": 583
+	},
+	"httparchive/custom-metrics": {
+		"stars": 14
+	},
+	"httparchive/httparchive.org": {
+		"stars": 306
+	},
+	"httparchive/legacy.httparchive.org": {
+		"stars": 326
+	},
+	"juliancheal/juliancheal.github.io": {
+		"stars": 1
+	},
+	"juliancheal/sphero-colour": {
+		"stars": 1
+	},
+	"leaverou/animatable": {
+		"stars": 2578
+	},
+	"leaverou/awesomplete": {
+		"stars": 6929
+	},
+	"leaverou/bliss": {
+		"stars": 2382
+	},
+	"leaverou/browser-compat-data": {
+		"stars": 0
+	},
+	"leaverou/bubbly": {
+		"stars": 50
+	},
+	"leaverou/bytesizematters": {
+		"stars": 8
+	},
+	"leaverou/chainvas": {
+		"stars": 262
+	},
+	"leaverou/chroma-zone": {
+		"stars": 21
+	},
+	"leaverou/community-fund": {
+		"stars": 0
+	},
+	"leaverou/conic-gradient": {
+		"stars": 485
+	},
+	"leaverou/contacts": {
+		"stars": 1
+	},
+	"leaverou/content": {
+		"stars": 0
+	},
+	"leaverou/corner-shape": {
+		"stars": 75
+	},
+	"leaverou/cross-project-council": {
+		"stars": 0
+	},
+	"leaverou/css-almanac": {
+		"stars": 33
+	},
+	"leaverou/css-colors": {
+		"stars": 62
+	},
+	"leaverou/css-diner": {
+		"stars": 6
+	},
+	"leaverou/css-sandbox": {
+		"stars": 1
+	},
+	"leaverou/css.land": {
+		"stars": 215
+	},
+	"leaverou/css3patterns": {
+		"stars": 1420
+	},
+	"leaverou/css3test": {
+		"stars": 212
+	},
+	"leaverou/cubic-bezier": {
+		"stars": 169
+	},
+	"leaverou/dabblet": {
+		"stars": 809
+	},
+	"leaverou/dom-slot-assign": {
+		"stars": 0
+	},
+	"leaverou/dpi": {
+		"stars": 746
+	},
+	"leaverou/dragula2": {
+		"stars": 15
+	},
+	"leaverou/duoload": {
+		"stars": 131
+	},
+	"leaverou/eleventy-upgrade-help": {
+		"stars": 0
+	},
+	"leaverou/expenses": {
+		"stars": 4
+	},
+	"leaverou/fb-amstelvar": {
+		"stars": 1
+	},
+	"leaverou/feedback": {
+		"stars": 5
+	},
+	"leaverou/font-level-up": {
+		"stars": 2
+	},
+	"leaverou/forkgasm": {
+		"stars": 32
+	},
+	"leaverou/hci.mit.edu": {
+		"stars": 12
+	},
+	"leaverou/homesearch": {
+		"stars": 6
+	},
+	"leaverou/htest": {
+		"stars": 17
+	},
+	"leaverou/html-syntax-guidelines": {
+		"stars": 47
+	},
+	"leaverou/html5-progress-polyfill": {
+		"stars": 178
+	},
+	"leaverou/human-colours": {
+		"stars": 7
+	},
+	"leaverou/hw4-starter": {
+		"stars": 0
+	},
+	"leaverou/icons": {
+		"stars": 0
+	},
+	"leaverou/ietf-justfont": {
+		"stars": 0
+	},
+	"leaverou/incrementable": {
+		"stars": 84
+	},
+	"leaverou/inspire.js": {
+		"stars": 1717
+	},
+	"leaverou/instagram-export": {
+		"stars": 0
+	},
+	"leaverou/issue-closing": {
+		"stars": 15
+	},
+	"leaverou/jquery": {
+		"stars": 1
+	},
+	"leaverou/jsbin": {
+		"stars": 1
+	},
+	"leaverou/lea.verou.me": {
+		"stars": 21
+	},
+	"leaverou/leaverou.github.io": {
+		"stars": 10
+	},
+	"leaverou/legacy.httparchive.org": {
+		"stars": 0
+	},
+	"leaverou/markapp": {
+		"stars": 133
+	},
+	"leaverou/mavo-firebase": {
+		"stars": 0
+	},
+	"leaverou/mavo-php": {
+		"stars": 0
+	},
+	"leaverou/mavo.io": {
+		"stars": 3
+	},
+	"leaverou/mavoice": {
+		"stars": 15
+	},
+	"leaverou/md-block": {
+		"stars": 290
+	},
+	"leaverou/microsoft-drop-ice": {
+		"stars": 0
+	},
+	"leaverou/missing-slice": {
+		"stars": 12
+	},
+	"leaverou/mit-study": {
+		"stars": 0
+	},
+	"leaverou/monorepo": {
+		"stars": 5
+	},
+	"leaverou/multirange": {
+		"stars": 605
+	},
+	"leaverou/mv-data": {
+		"stars": 2
+	},
+	"leaverou/mv-data-1": {
+		"stars": 0
+	},
+	"leaverou/my-lifesheets": {
+		"stars": 4
+	},
+	"leaverou/mygraine": {
+		"stars": 9
+	},
+	"leaverou/netlify-photo-gallery": {
+		"stars": 0
+	},
+	"leaverou/nudeui": {
+		"stars": 201
+	},
+	"leaverou/parsel": {
+		"stars": 364
+	},
+	"leaverou/play.csssecrets.io": {
+		"stars": 119
+	},
+	"leaverou/polyfill-service": {
+		"stars": 2
+	},
+	"leaverou/prefixfree": {
+		"stars": 3838
+	},
+	"leaverou/regexplained": {
+		"stars": 275
+	},
+	"leaverou/rety": {
+		"stars": 383
+	},
+	"leaverou/rework-utils": {
+		"stars": 3
+	},
+	"leaverou/rgba.php": {
+		"stars": 175
+	},
+	"leaverou/serverless-webrtc": {
+		"stars": 12
+	},
+	"leaverou/share-on-mastodon": {
+		"stars": 4
+	},
+	"leaverou/standards": {
+		"stars": 0
+	},
+	"leaverou/stateof": {
+		"stars": 0
+	},
+	"leaverou/status": {
+		"stars": 0
+	},
+	"leaverou/stretchy": {
+		"stars": 1272
+	},
+	"leaverou/stronglytyped": {
+		"stars": 70
+	},
+	"leaverou/studio1-starter": {
+		"stars": 0
+	},
+	"leaverou/talks": {
+		"stars": 91
+	},
+	"leaverou/talks-list": {
+		"stars": 29
+	},
+	"leaverou/testlib": {
+		"stars": 2
+	},
+	"leaverou/tweeplus": {
+		"stars": 11
+	},
+	"leaverou/uist2017": {
+		"stars": 6
+	},
+	"leaverou/vue.draggable.next": {
+		"stars": 2
+	},
+	"leaverou/webaudio-playground": {
+		"stars": 0
+	},
+	"leaverou/website": {
+		"stars": 1
+	},
+	"leaverou/whathecolor": {
+		"stars": 47
+	},
+	"leaverou/zoe-eats": {
+		"stars": 1
+	},
+	"leaverou/zoelearns.com": {
+		"stars": 1
+	},
+	"leph83/btnwrk": {
+		"stars": 0
+	},
+	"lifesheets-templates/my-lifesheets": {
+		"stars": 3
+	},
+	"lizziew/mavo-firebase": {
+		"stars": 15
+	},
+	"madatajs/auth-php": {
+		"stars": 0
+	},
+	"madatajs/auth-serverless": {
+		"stars": 0
+	},
+	"madatajs/madata": {
+		"stars": 30
+	},
+	"mavoweb/create": {
+		"stars": 17
+	},
+	"mavoweb/data": {
+		"stars": 2
+	},
+	"mavoweb/groupby": {
+		"stars": 0
+	},
+	"mavoweb/inspector": {
+		"stars": 2
+	},
+	"mavoweb/mavo": {
+		"stars": 2809
+	},
+	"mavoweb/mavo-ssr": {
+		"stars": 4
+	},
+	"mavoweb/mavo.io": {
+		"stars": 49
+	},
+	"mavoweb/mavue": {
+		"stars": 3
+	},
+	"mavoweb/plugins": {
+		"stars": 7
+	},
+	"mavoweb/sort": {
+		"stars": 0
+	},
+	"mavoweb/test": {
+		"stars": 2
+	},
+	"mavoweb/todomvc": {
+		"stars": 7
+	},
+	"mavoweb/vastly": {
+		"stars": 9
+	},
+	"mit-csail-hci/hci.csail.mit.edu": {
+		"stars": 2
+	},
+	"openjs-foundation/artwork": {
+		"stars": 18
+	},
+	"openjs-foundation/code-and-learn": {
+		"stars": 12
+	},
+	"openjs-foundation/code-of-conduct": {
+		"stars": 1
+	},
+	"openjs-foundation/community-fund": {
+		"stars": 9
+	},
+	"openjs-foundation/cross-project-council": {
+		"stars": 406
+	},
+	"openjs-foundation/easycla": {
+		"stars": 4
+	},
+	"openjs-foundation/meet": {
+		"stars": 2
+	},
+	"openjs-foundation/open-office-hours": {
+		"stars": 9
+	},
+	"openjs-foundation/open-visualization": {
+		"stars": 2
+	},
+	"openjs-foundation/openvis-collab-space": {
+		"stars": 3
+	},
+	"openjs-foundation/package-json-research": {
+		"stars": 7
+	},
+	"openjs-foundation/package-metadata-interoperability-collab-space": {
+		"stars": 6
+	},
+	"openjs-foundation/pkg-vuln-collab-space": {
+		"stars": 79
+	},
+	"openjs-foundation/project-status": {
+		"stars": 11
+	},
+	"openjs-foundation/security-collab-space": {
+		"stars": 13
+	},
+	"openjs-foundation/standards": {
+		"stars": 71
+	},
+	"openjs-foundation/standards-ed-site": {
+		"stars": 4
+	},
+	"openjs-foundation/summit": {
+		"stars": 126
+	},
+	"openjs-foundation/tech-strategy": {
+		"stars": 3
+	},
+	"openjs-foundation/user-feedback": {
+		"stars": 2
+	},
+	"prismjs/live": {
+		"stars": 91
+	},
+	"prismjs/prism": {
+		"stars": 11808
+	},
+	"prismjs/prism-pretty": {
+		"stars": 8
+	},
+	"prismjs/prism-themes": {
+		"stars": 1309
+	},
+	"siege-media/contrast-ratio": {
+		"stars": 2463
+	},
+	"siege-media/hippo-states": {
+		"stars": 0
+	},
+	"siege-media/kob-automation": {
+		"stars": 0
+	},
+	"siege-media/migratory": {
+		"stars": 0
+	},
+	"siege-media/sd-emissions-calculator": {
+		"stars": 0
+	},
+	"siege-media/simple-dollar-fuel-calc": {
+		"stars": 0
+	},
+	"simile-widgets/exhibit": {
+		"stars": 172
+	},
+	"svgeesus/css4-color-talk": {
+		"stars": 13
+	},
+	"svgeesus/font-level-up": {
+		"stars": 42
+	},
+	"svgeesus/slice-tmp": {
+		"stars": 0
+	},
+	"svgeesus/svgeesus.github.io": {
+		"stars": 14
+	},
+	"svgeesus/talks": {
+		"stars": 3
+	},
+	"tarfahalrashed/shapir": {
+		"stars": 11
+	},
+	"tc39/agendas": {
+		"stars": 981
+	},
+	"tc39/agreements": {
+		"stars": 2
+	},
+	"tc39/dataset": {
+		"stars": 35
+	},
+	"tc39/ecma262": {
+		"stars": 14556
+	},
+	"tc39/ecma402": {
+		"stars": 502
+	},
+	"tc39/ecma402-mdn": {
+		"stars": 6
+	},
+	"tc39/ecmarkdown": {
+		"stars": 79
+	},
+	"tc39/ecmarkup": {
+		"stars": 203
+	},
+	"tc39/faq": {
+		"stars": 61
+	},
+	"tc39/how-we-work": {
+		"stars": 181
+	},
+	"tc39/incubator-agendas": {
+		"stars": 13
+	},
+	"tc39/js-outreach-groups": {
+		"stars": 61
+	},
+	"tc39/logo": {
+		"stars": 13
+	},
+	"tc39/notes": {
+		"stars": 554
+	},
+	"tc39/process-document": {
+		"stars": 29
+	},
+	"tc39/proposal-array-find-from-last": {
+		"stars": 125
+	},
+	"tc39/proposal-array-from-async": {
+		"stars": 164
+	},
+	"tc39/proposal-array-is-template-object": {
+		"stars": 33
+	},
+	"tc39/proposal-array-unique": {
+		"stars": 130
+	},
+	"tc39/proposal-arraybuffer-base64": {
+		"stars": 183
+	},
+	"tc39/proposal-asset-references": {
+		"stars": 268
+	},
+	"tc39/proposal-async-do-expressions": {
+		"stars": 106
+	},
+	"tc39/proposal-async-explicit-resource-management": {
+		"stars": 54
+	},
+	"tc39/proposal-await.ops": {
+		"stars": 306
+	},
+	"tc39/proposal-bigint-math": {
+		"stars": 35
+	},
+	"tc39/proposal-binary-ast": {
+		"stars": 942
+	},
+	"tc39/proposal-built-in-modules": {
+		"stars": 882
+	},
+	"tc39/proposal-call-this": {
+		"stars": 71
+	},
+	"tc39/proposal-change-array-by-copy": {
+		"stars": 507
+	},
+	"tc39/proposal-class-brand-check": {
+		"stars": 18
+	},
+	"tc39/proposal-class-static-block": {
+		"stars": 106
+	},
+	"tc39/proposal-cleanup-some": {
+		"stars": 15
+	},
+	"tc39/proposal-collection-normalization": {
+		"stars": 37
+	},
+	"tc39/proposal-csprng": {
+		"stars": 69
+	},
+	"tc39/proposal-decimal": {
+		"stars": 382
+	},
+	"tc39/proposal-declarations-in-conditionals": {
+		"stars": 79
+	},
+	"tc39/proposal-decorator-metadata": {
+		"stars": 106
+	},
+	"tc39/proposal-decorators": {
+		"stars": 2584
+	},
+	"tc39/proposal-deep-path-properties-for-record": {
+		"stars": 93
+	},
+	"tc39/proposal-defer-import-eval": {
+		"stars": 170
+	},
+	"tc39/proposal-deiter": {
+		"stars": 69
+	},
+	"tc39/proposal-destructuring-private": {
+		"stars": 41
+	},
+	"tc39/proposal-dynamic-code-brand-checks": {
+		"stars": 13
+	},
+	"tc39/proposal-dynamic-import-host-adjustment": {
+		"stars": 16
+	},
+	"tc39/proposal-emitter": {
+		"stars": 91
+	},
+	"tc39/proposal-eventual-send": {
+		"stars": 42
+	},
+	"tc39/proposal-explicit-resource-management": {
+		"stars": 654
+	},
+	"tc39/proposal-extended-numeric-literals": {
+		"stars": 72
+	},
+	"tc39/proposal-extensions": {
+		"stars": 143
+	},
+	"tc39/proposal-first-class-protocols": {
+		"stars": 348
+	},
+	"tc39/proposal-function-implementation-hiding": {
+		"stars": 97
+	},
+	"tc39/proposal-function-once": {
+		"stars": 44
+	},
+	"tc39/proposal-function.sent": {
+		"stars": 32
+	},
+	"tc39/proposal-get-intrinsic": {
+		"stars": 33
+	},
+	"tc39/proposal-grouped-and-auto-accessors": {
+		"stars": 50
+	},
+	"tc39/proposal-hashbang": {
+		"stars": 147
+	},
+	"tc39/proposal-intl-duration-format": {
+		"stars": 136
+	},
+	"tc39/proposal-intl-eradisplay": {
+		"stars": 10
+	},
+	"tc39/proposal-intl-extend-timezonename": {
+		"stars": 8
+	},
+	"tc39/proposal-intl-locale-info": {
+		"stars": 46
+	},
+	"tc39/proposal-intl-localematcher": {
+		"stars": 30
+	},
+	"tc39/proposal-intl-messageformat": {
+		"stars": 79
+	},
+	"tc39/proposal-intl-numberformat-v3": {
+		"stars": 52
+	},
+	"tc39/proposal-iterator.range": {
+		"stars": 459
+	},
+	"tc39/proposal-json-modules": {
+		"stars": 248
+	},
+	"tc39/proposal-limited-arraybuffer": {
+		"stars": 10
+	},
+	"tc39/proposal-module-declarations": {
+		"stars": 298
+	},
+	"tc39/proposal-module-expressions": {
+		"stars": 414
+	},
+	"tc39/proposal-number-fromstring": {
+		"stars": 63
+	},
+	"tc39/proposal-oom-fails-fast": {
+		"stars": 11
+	},
+	"tc39/proposal-operator-overloading": {
+		"stars": 597
+	},
+	"tc39/proposal-pattern-matching": {
+		"stars": 5230
+	},
+	"tc39/proposal-readonly-collections": {
+		"stars": 31
+	},
+	"tc39/proposal-regex-escaping": {
+		"stars": 313
+	},
+	"tc39/proposal-regexp-buffer-boundaries": {
+		"stars": 7
+	},
+	"tc39/proposal-regexp-modifiers": {
+		"stars": 21
+	},
+	"tc39/proposal-regexp-r-escape": {
+		"stars": 5
+	},
+	"tc39/proposal-regexp-v-flag": {
+		"stars": 74
+	},
+	"tc39/proposal-regexp-x-mode": {
+		"stars": 24
+	},
+	"tc39/proposal-resizablearraybuffer": {
+		"stars": 157
+	},
+	"tc39/proposal-rm-builtin-subclassing": {
+		"stars": 19
+	},
+	"tc39/proposal-set-methods": {
+		"stars": 534
+	},
+	"tc39/proposal-setmap-offrom": {
+		"stars": 38
+	},
+	"tc39/proposal-shadowrealm": {
+		"stars": 1303
+	},
+	"tc39/proposal-slice-notation": {
+		"stars": 514
+	},
+	"tc39/proposal-smart-unit-preferences": {
+		"stars": 22
+	},
+	"tc39/proposal-source-phase-imports": {
+		"stars": 107
+	},
+	"tc39/proposal-standardized-debug": {
+		"stars": 34
+	},
+	"tc39/proposal-structs": {
+		"stars": 204
+	},
+	"tc39/proposal-symbols-as-weakmap-keys": {
+		"stars": 90
+	},
+	"tc39/proposal-type-annotations": {
+		"stars": 3945
+	},
+	"tc39/proposal-typedarray-stride": {
+		"stars": 24
+	},
+	"tc39/proposal-upsert": {
+		"stars": 163
+	},
+	"tc39/proposal-uuid": {
+		"stars": 462
+	},
+	"tc39/proposal-wavy-dot": {
+		"stars": 43
+	},
+	"tc39/proposals": {
+		"stars": 17534
+	},
+	"tc39/tc39.github.io": {
+		"stars": 311
+	},
+	"tc39/tg3": {
+		"stars": 9
+	},
+	"tc39-transfer/issues": {
+		"stars": 9
+	},
+	"w3c/css-a11y": {
+		"stars": 31
+	},
+	"w3c/css-houdini-drafts": {
+		"stars": 1833
+	},
+	"w3c/csswg-apiclient": {
+		"stars": 0
+	},
+	"w3c/csswg-drafts": {
+		"stars": 4169
+	},
+	"w3c/csswg-test": {
+		"stars": 115
+	},
+	"w3c/csswg-www": {
+		"stars": 4
+	},
+	"w3c/fxtf-drafts": {
+		"stars": 63
+	},
+	"w3c/tr-design": {
+		"stars": 62
+	},
+	"w3c/w3c.github.io": {
+		"stars": 135
+	},
+	"w3c/webcomponents-cg": {
+		"stars": 157
+	},
+	"w3ctag/accessibility-questionnaire": {
+		"stars": 0
+	},
+	"w3ctag/bfcache-guide": {
+		"stars": 3
+	},
+	"w3ctag/caching-bundling-sustainability": {
+		"stars": 0
+	},
+	"w3ctag/capability-urls": {
+		"stars": 32
+	},
+	"w3ctag/client-certificates": {
+		"stars": 15
+	},
+	"w3ctag/design-principles": {
+		"stars": 151
+	},
+	"w3ctag/design-reviews": {
+		"stars": 309
+	},
+	"w3ctag/distributed-content": {
+		"stars": 6
+	},
+	"w3ctag/eme": {
+		"stars": 3
+	},
+	"w3ctag/encryption-finding": {
+		"stars": 4
+	},
+	"w3ctag/ethical-web-principles": {
+		"stars": 57
+	},
+	"w3ctag/evergreen-web": {
+		"stars": 6
+	},
+	"w3ctag/extending-html-responsibly": {
+		"stars": 8
+	},
+	"w3ctag/extensible-web-report-card": {
+		"stars": 36
+	},
+	"w3ctag/jsidl": {
+		"stars": 23
+	},
+	"w3ctag/meetings": {
+		"stars": 44
+	},
+	"w3ctag/obsoletion": {
+		"stars": 5
+	},
+	"w3ctag/packaging-on-the-web": {
+		"stars": 61
+	},
+	"w3ctag/placeholder": {
+		"stars": 2
+	},
+	"w3ctag/polyfills": {
+		"stars": 18
+	},
+	"w3ctag/presentations": {
+		"stars": 5
+	},
+	"w3ctag/privacy-principles": {
+		"stars": 42
+	},
+	"w3ctag/private-browsing-modes": {
+		"stars": 5
+	},
+	"w3ctag/private-mode": {
+		"stars": 16
+	},
+	"w3ctag/process": {
+		"stars": 2
+	},
+	"w3ctag/promises-guide": {
+		"stars": 191
+	},
+	"w3ctag/secure-the-web": {
+		"stars": 11
+	},
+	"w3ctag/security-questionnaire": {
+		"stars": 22
+	},
+	"w3ctag/societal-impact-questionnaire": {
+		"stars": 3
+	},
+	"w3ctag/subclassable-apis-guide": {
+		"stars": 3
+	},
+	"w3ctag/tag.w3.org": {
+		"stars": 24
+	},
+	"w3ctag/tagdocs": {
+		"stars": 2
+	},
+	"w3ctag/tools": {
+		"stars": 0
+	},
+	"w3ctag/tracking-issues": {
+		"stars": 3
+	},
+	"w3ctag/unsanctioned-tracking": {
+		"stars": 2
+	},
+	"w3ctag/url": {
+		"stars": 3
+	},
+	"w3ctag/urls-in-data": {
+		"stars": 2
+	},
+	"w3ctag/web-https": {
+		"stars": 18
+	},
+	"w3ctag/web-without-3p-cookies": {
+		"stars": 7
+	},
+	"w3ctag/webarch": {
+		"stars": 28
+	},
+	"w3ctag/webcomponents-design-guidelines": {
+		"stars": 7
+	},
+	"w3ctag/wiki": {
+		"stars": 6
+	},
+	"w3ctag/with-credentials": {
+		"stars": 3
+	},
+	"wicg/color-api": {
+		"stars": 117
+	}
+}

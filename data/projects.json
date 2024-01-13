@@ -20,7 +20,9 @@
 			"blogPost": "https://lea.verou.me/2021/11/on-yak-shaving-and-md-block-an-html-element-for-markdown/",
 			"repo": "leaverou/md-block",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 290,
+			"repo_stars_formatted": 290
 		},
 		{
 			"image": "https://lea.verou.me/wp-content/uploads/2020/09/image.png",
@@ -31,7 +33,9 @@
 			"blogPost": "https://lea.verou.me/2020/09/parsel-a-tiny-permissive-css-selector-parser/",
 			"repo": "leaverou/parsel",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 364,
+			"repo_stars_formatted": 364
 		},
 		{
 			"image": "https://lea.verou.me/wp-content/uploads/2020/07/image.png",
@@ -42,7 +46,9 @@
 			"blogPost": "https://lea.verou.me/2020/07/releasing-mavoice-a-free-app-to-vote-on-repo-issues/#more-3081",
 			"repo": "leaverou/mavoice",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 15,
+			"repo_stars_formatted": 15
 		},
 		{
 			"image": "http://lea.verou.me/wp-content/uploads/2020/04/image-1.png",
@@ -53,7 +59,9 @@
 			"blogPost": "https://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/",
 			"repo": "leaverou/css.land",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 215,
+			"repo_stars_formatted": 215
 		},
 		{
 			"image": "https://lea.verou.me/wp-content/uploads/2019/12/image.png",
@@ -64,7 +72,9 @@
 			"blogPost": "https://lea.verou.me/2019/12/issue-closing-stats-for-any-repo/",
 			"repo": "leaverou/issue-closing",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 15,
+			"repo_stars_formatted": 15
 		},
 		{
 			"url": "https://mavo.io",
@@ -76,7 +86,9 @@
 			"releaseDate": "2017-05",
 			"type": "lib",
 			"featured": 1,
-			"impact": "Led to the publication of [several peer-reviewed research papers](https://lea.verou.me/publications/#research) and 3 Masters theses."
+			"impact": "Led to the publication of [several peer-reviewed research papers](https://lea.verou.me/publications/#research) and 3 Masters theses.",
+			"repo_stars": 2809,
+			"repo_stars_formatted": "2.8 K"
 		},
 		{
 			"url": "http://blissfuljs.com/",
@@ -87,7 +99,9 @@
 			"repo": "leaverou/bliss",
 			"releaseDate": "2015-12",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 2382,
+			"repo_stars_formatted": "2.4 K"
 		},
 		{
 			"url": "https://stretchy.verou.me/",
@@ -98,7 +112,9 @@
 			"repo": "leaverou/stretchy",
 			"releaseDate": "2015-07",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 1272,
+			"repo_stars_formatted": 1272
 		},
 		{
 			"featured": 1,
@@ -110,7 +126,9 @@
 			"url": "https://projects.verou.me/conic-gradient",
 			"blogPost": "https://lea.verou.me/2015/06/conical-gradients-today/",
 			"repo": "leaverou/conic-gradient",
-			"impact": "[Encouraged browsers to implement CSS conic gradients](https://bugs.chromium.org/p/chromium/issues/detail?id=502970). Because the polyfill also implemented the double color stop position syntax, [browsers implemented that alongside](https://chromestatus.com/feature/5712111258828800), just so the examples in the polyfill page work correctly."
+			"impact": "[Encouraged browsers to implement CSS conic gradients](https://bugs.chromium.org/p/chromium/issues/detail?id=502970). Because the polyfill also implemented the double color stop position syntax, [browsers implemented that alongside](https://chromestatus.com/feature/5712111258828800), just so the examples in the polyfill page work correctly.",
+			"repo_stars": 485,
+			"repo_stars_formatted": 485
 		},
 		{
 			"url": "https://projects.verou.me/multirange",
@@ -122,7 +140,9 @@
 			"releaseDate": "2016-05",
 			"type": "lib",
 			"featured": 0,
-			"impact": "Was apparently used so much that its custom properties appeared in [Web Almanac's analysis of the top 1000 custom property names](https://almanac.httparchive.org/en/2020/css#naming)"
+			"impact": "Was apparently used so much that its custom properties appeared in [Web Almanac's analysis of the top 1000 custom property names](https://almanac.httparchive.org/en/2020/css#naming)",
+			"repo_stars": 605,
+			"repo_stars_formatted": 605
 		},
 		{
 			"url": "https://projects.verou.me/awesomplete",
@@ -133,7 +153,9 @@
 			"repo": "leaverou/awesomplete",
 			"releaseDate": "2015-02",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 6929,
+			"repo_stars_formatted": "6.9 K"
 		},
 		{
 			"url": "https://dpi.lv",
@@ -144,7 +166,9 @@
 			"repo": "leaverou/dpi",
 			"releaseDate": "2013-06",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 746,
+			"repo_stars_formatted": 746
 		},
 		{
 			"url": "https://projects.verou.me/corner-shape",
@@ -155,7 +179,9 @@
 			"repo": "leaverou/corner-shape",
 			"releaseDate": "2013-03",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 75,
+			"repo_stars_formatted": 75
 		},
 		{
 			"url": "https://contrast-ratio.com",
@@ -179,7 +205,9 @@
 			"releaseDate": "2012-07",
 			"type": "lib",
 			"featured": 2,
-			"impact": "Used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8M downloads weekly on npm](https://www.npmjs.com/package/prismjs) and over [1bn cumulative downloads since its launch](https://npm-stat.com/charts.html?package=prismjs&from=2012-01-01)."
+			"impact": "Used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8M downloads weekly on npm](https://www.npmjs.com/package/prismjs) and over [1bn cumulative downloads since its launch](https://npm-stat.com/charts.html?package=prismjs&from=2012-01-01).",
+			"repo_stars": 11808,
+			"repo_stars_formatted": "11.8 K"
 		},
 		{
 			"url": "https://css3test.com",
@@ -191,7 +219,9 @@
 			"releaseDate": "2012-02",
 			"type": "app",
 			"featured": 0,
-			"impact": "Motivated browser vendors such as [Mozilla](https://bugzilla.mozilla.org/show_bug.cgi?id=913153) or [WebKit](https://bugs.webkit.org/show_bug.cgi?id=79073) to support more CSS3 features to increase their scores on it."
+			"impact": "Motivated browser vendors such as [Mozilla](https://bugzilla.mozilla.org/show_bug.cgi?id=913153) or [WebKit](https://bugs.webkit.org/show_bug.cgi?id=79073) to support more CSS3 features to increase their scores on it.",
+			"repo_stars": 212,
+			"repo_stars_formatted": 212
 		},
 		{
 			"url": "https://dabblet.com",
@@ -203,7 +233,9 @@
 			"releaseDate": "2011-12",
 			"type": "app",
 			"featured": 1,
-			"impact": "Pioneered using Github Gists as a storage backend, and its inline previewers for various value types predate similar features in today's editors."
+			"impact": "Pioneered using Github Gists as a storage backend, and its inline previewers for various value types predate similar features in today's editors.",
+			"repo_stars": 809,
+			"repo_stars_formatted": 809
 		},
 		{
 			"url": "https://projects.verou.me/animatable",
@@ -214,7 +246,9 @@
 			"repo": "leaverou/animatable",
 			"releaseDate": "2011-10",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 2578,
+			"repo_stars_formatted": "2.6 K"
 		},
 		{
 			"url": "https://projects.verou.me/prefixfree",
@@ -225,7 +259,9 @@
 			"repo": "leaverou/prefixfree",
 			"releaseDate": "2011-10",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 3838,
+			"repo_stars_formatted": "3.8 K"
 		},
 		{
 			"url": "https://cubic-bezier.com",
@@ -237,7 +273,9 @@
 			"releaseDate": "2011-09",
 			"type": "app",
 			"featured": 1,
-			"impact": "Featured on several [books](https://www.google.com/search?tbm=bks&q=%22cubic-bezier.com%22) and talks. Its code was at some point even [included in the Firefox browser](https://hacks.mozilla.org/2014/07/event-listeners-popup-media-sidebar-cubic-bezier-editor-more-firefox-developer-tools-episode-33/) and [Adobe's Brackets editor](https://twitter.com/brackets/status/400678387045642241)"
+			"impact": "Featured on several [books](https://www.google.com/search?tbm=bks&q=%22cubic-bezier.com%22) and talks. Its code was at some point even [included in the Firefox browser](https://hacks.mozilla.org/2014/07/event-listeners-popup-media-sidebar-cubic-bezier-editor-more-firefox-developer-tools-episode-33/) and [Adobe's Brackets editor](https://twitter.com/brackets/status/400678387045642241)",
+			"repo_stars": 169,
+			"repo_stars_formatted": 169
 		},
 		{
 			"url": "https://projects.verou.me/css-colors/",
@@ -245,10 +283,12 @@
 			"name": "CSS Colors",
 			"description": "A tool that helps you convert between the different CSS-accepted color formats (including name keywords) as well as share them with others.",
 			"blogPost": "https://lea.verou.me/2011/09/css-coloratum-convert-and-share-css-colors/",
-			"repo": "LeaVerou/css-colors",
+			"repo": "leaverou/css-colors",
 			"releaseDate": "2011-09",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 62,
+			"repo_stars_formatted": 62
 		},
 		{
 			"url": "https://lea.verou.me/css3patterns",
@@ -256,11 +296,13 @@
 			"name": "CSS3 patterns gallery",
 			"description": "An interactive gallery that demonstrated what's possible with just CSS gradients. It also allows you to edit the code, to experiment with gradients yourself.",
 			"blogPost": "https://lea.verou.me/2011/04/css3-patterns-gallery-and-a-new-pattern/",
-			"repo": "LeaVerou/css3patterns",
+			"repo": "leaverou/css3patterns",
 			"releaseDate": "2011-04",
 			"type": "app",
 			"featured": 1,
-			"impact": "The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns. It has been [featured in a number of books](https://www.google.com/search?q=%22css3patterns%22&tbm=bks), talks, workshops. It was used by Opera Software to fine-tune their CSS gradients implementation."
+			"impact": "The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns. It has been [featured in a number of books](https://www.google.com/search?q=%22css3patterns%22&tbm=bks), talks, workshops. It was used by Opera Software to fine-tune their CSS gradients implementation.",
+			"repo_stars": 1420,
+			"repo_stars_formatted": 1420
 		},
 		{
 			"url": "https://projects.verou.me/chainvas/",
@@ -271,7 +313,9 @@
 			"repo": "leaverou/chainvas",
 			"releaseDate": "2011-09",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 262,
+			"repo_stars_formatted": 262
 		},
 		{
 			"url": "https://lea.verou.me/demos/cssgradientsplease/",
@@ -302,7 +346,9 @@
 			"repo": "leaverou/html5-progress-polyfill",
 			"releaseDate": "2011-07",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 178,
+			"repo_stars_formatted": 178
 		},
 		{
 			"url": "https://github.com/leaverou/stronglytyped/",
@@ -313,7 +359,9 @@
 			"repo": "leaverou/stronglytyped",
 			"releaseDate": "2011-05",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 70,
+			"repo_stars_formatted": 70
 		},
 		{
 			"url": "https://incrementable.verou.me/",
@@ -324,7 +372,9 @@
 			"repo": "leaverou/incrementable",
 			"releaseDate": "2011-02",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 84,
+			"repo_stars_formatted": 84
 		},
 		{
 			"url": "https://inspirejs.org",
@@ -335,7 +385,9 @@
 			"repo": "leaverou/inspire.js",
 			"releaseDate": "2010-10",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"repo_stars": 1717,
+			"repo_stars_formatted": 1717
 		},
 		{
 			"url": "https://lea.verou.me/rgba.php/",
