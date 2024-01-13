@@ -10,7 +10,11 @@
 			"url": "https://colorjs.io",
 			"blogPost": "https://lea.verou.me/2022/06/releasing-colorjs/",
 			"repo": "color-js/color.js",
-			"npm": "colorjs.io"
+			"npm": "colorjs.io",
+			"repo_stars": 1610,
+			"repo_stars_formatted": 1610,
+			"npm_downloads": 1622520,
+			"npm_downloads_formatted": "1.6 M"
 		},
 		{
 			"name": "md-block",
@@ -208,7 +212,9 @@
 			"featured": 2,
 			"impact": "Used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8M downloads weekly on npm](https://www.npmjs.com/package/prismjs) and over [1bn cumulative downloads since its launch](https://npm-stat.com/charts.html?package=prismjs&from=2012-01-01).",
 			"repo_stars": 11808,
-			"repo_stars_formatted": "11.8 K"
+			"repo_stars_formatted": "12 K",
+			"npm_downloads": 1204392482,
+			"npm_downloads_formatted": "1.2 Bn"
 		},
 		{
 			"url": "https://css3test.com",

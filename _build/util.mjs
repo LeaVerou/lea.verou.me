@@ -31,14 +31,14 @@ export function writeJSON (path, data, o) {
 export function formatLargeInteger (n) {
 	if (n > 2000) {
 		let suffixes = {
-			bn: 10 ** 9,
+			Bn: 10 ** 9,
 			M: 10 ** 6,
 			K: 10 ** 3,
 		}
 
 		for (let [suffix, limit] of Object.entries(suffixes)) {
 			if (n >= limit) {
-				return `${Math.round(10 * n / limit) / 10} ${suffix}`;
+				return `${(n / limit).toPrecision(2)} ${suffix}`;
 			}
 		}
 	}
