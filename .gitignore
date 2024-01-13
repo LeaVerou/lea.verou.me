@@ -1,21 +1,33 @@
-# Built files
+# Build artifacts
+# ----------------
 _redirects
 feed.xml
+
+# HTML files
 **/index.html
 !files/**/index.html
 !mocks/**/index.html
 404.html
-assets/style.css
 blog/tags/*
+
+# CSS files
+assets/style.css
+projects/style.css
+
+# Data files
 **/index.json
 
 # Early drafts
+# ----------------
 blog/2023/self-closing-defense
 blog/2023/product
 blog/2023/eng-momentum
 blog/2023/text-based-formats
 blog/2024/case-study-sentiment-ui
 blog/2024/web-standards-product-hard-mode
+
+# Other
+# ----------------
 
 # Local Netlify folder
 .netlify
