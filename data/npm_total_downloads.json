@@ -1,10 +1,4 @@
-/*
-To update:
-Visit https://npm-stat.com/charts.html?author=leaverou&from=2010-11-12
-select the table, and run:
-let o = Object.fromEntries([...$0.rows].map(tr => [tr.cells[0].textContent, +tr.cells[1].textContent.replaceAll(",", "")])); delete o.package; copy(o);
-*/
-module.exports = {
+{
 	"prismjs": 1204392482,
 	"jsep": 45162185,
 	"dragula": 41811466,
@@ -42,4 +36,4 @@ module.exports = {
 	"rety": 175,
 	"vastly": 77,
 	"Σ": 1343162698
-};
+}
