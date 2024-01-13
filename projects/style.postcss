@@ -158,13 +158,17 @@
 		padding-inline: calc(var(--padding) - .2em);
 		padding-block: calc(var(--padding) / 2);
 
-		& > a {
+		& a:where(:not(:hover, .focus)) {
+			color: inherit;
+		}
+
+		& > :is(a, span) {
 			white-space: nowrap;
 			font: 500 90%/1.5 var(--font-sans);
 			text-decoration: none;
-			color: canvastext;
 
-			&::before {
+			&::before,
+			.stat::before {
 				content: var(--icon);
 				display: inline-block;
 				vertical-align: -.15em;
@@ -174,21 +178,55 @@
 			}
 
 			&[property=url] {
-				--icon: var(--icon-link-45deg);
-				--icon: var(--bi-globe-americas);
+				--icon: var(--icon-globe-americas);
+
+				&::before {
+					vertical-align: -.25em;
+				}
 			}
 
 			&[property=blogPost] {
 				--icon: var(--icon-newspaper);
 			}
 
-			&[property="repo"] {
+			&.repo {
 				--icon: var(--icon-github);
+
+				.stars {
+					--icon: var(--icon-star-fill);
+				}
+			}
+
+			&.npm {
+				--icon: var(--icon-box-seam);
+
+				.downloads {
+					--icon: var(--icon-download);
+				}
 			}
 
 			&:focus,
 			&:hover {
 				color: var(--color-accent);
+			}
+
+			.stat {
+				display: inline-block;
+				vertical-align: .1em;
+				background: var(--color-gray-20a);
+				padding: .2em .7em;
+				border-radius: 99em;
+				font-weight: 700;
+				font-size: 75%;
+
+				&::before {
+					content: var(--icon);
+					display: inline-block;
+					vertical-align: -.09em;
+					margin-right: .3em;
+					font: 100% bootstrap-icons;
+					opacity: .4;
+				}
 			}
 		}
 

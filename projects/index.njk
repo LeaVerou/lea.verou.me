@@ -16,7 +16,8 @@ or any of my pre-2011 entrepreneurial work.
 <div mv-app="projects" class="projects" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
 	<h2>[count(project)] projects ([count(type = &quot;lib&quot;)] libraries and [count(type = &quot;app&quot;)] apps)</h2>
 	<div mv-list class="projects-list" mv-order="desc">
-		<article property="project" mv-list-item style="--featured-weight: [featured]" class="project type-[type] [if(featured &gt; 0, &quot;featured&quot;)]">
+		<article property="project" mv-list-item style="--featured-weight: [featured]"
+		  class="project type-[type] [if(featured &gt; 0, &quot;featured&quot;)] [if(!image, 'no-image')]">
 			<span property="featured" mv-attribute="data-weight" mv-editor-type="range" mv-editor-min="0" mv-editor-max="5" mv-default="0">Featured</span>
 			<a href="[url]" class="image-container"><img property="image"/></a>
 			<div class="main-content">
@@ -34,9 +35,18 @@ or any of my pre-2011 entrepreneurial work.
 			</div>
 			<footer>
 				<a property="url">[replace(url, &quot;https://&quot;)]</a>
-				<a property="blogPost">Blog post</a>
-				<a property="repo" href="https://github.com/[repo]" mv-attribute="none" target="_blank" rel="noopener"></a>
-				<img mv-if="repo" src="https://img.shields.io/github/stars/[repo]?style=social" alt=""/>
+				<a property="blogPost">Launch</a>
+				<span class="repo" class="[if(!repo, 'edit-only')]">
+					<a property="repo" href="https://github.com/[repo]" target="_blank" mv-attribute="none"></a>
+					<a mv-if="repo_stars > 999" href="https://github.com/[repo]/stargazers" target="_blank" class="stat stars"
+						property="repo_stars_formatted" mv-attribute="none" title="[repo_stars] stars on GitHub"></a>
+				</span>
+				<span class="npm" class="[if(!npm, 'edit-only')]">
+					<a property="npm" href="https://www.npmjs.com/package/[npm]" mv-attribute="none" target="_blank"></a>
+					<a mv-if="npm_downloads > 9999" href="https://npm-stat.com/charts.html?package=[npm]&from=[releaseDate]" target="_blank" class="stat downloads"
+						property="npm_downloads_formatted" mv-attribute="none"
+						title="[npm_downloads] total npm downloads"></a>
+				</span>
 			</footer>
 		</article>
 	</div>
