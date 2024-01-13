@@ -26,6 +26,10 @@ blog/2023/text-based-formats
 blog/2024/case-study-sentiment-ui
 blog/2024/web-standards-product-hard-mode
 
+# Sensitive info
+# ----------------
+_build/GITHUB_ACCESS_TOKEN.txt
+
 # Other
 # ----------------
 
