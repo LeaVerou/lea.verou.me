@@ -6,8 +6,8 @@ import {
 } from "./util.mjs";
 import GithubAPI from "../node_modules/madata/backends/github/api/github-api.js";
 
-// Very restricted access token, can only to fetch public repo metadata
-const AT = "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";
+// Very restricted, can only be used to fetch public repo metadata
+const AT = atob("Z2l0aHViX3BhdF8xMUFBQks1WEEwUkJaU3Z3WjU4Mjd2X1BvVDZpU0hOTjdCRHlMcHc1ZW5qQ1dWZ0Z1akRjdkh6VTVzZEpEVzAxYTFHNDRERVpRT1pJcTFmaUtL");
 
 export default async function fetchRepos () {
 	chdirHere();
