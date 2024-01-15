@@ -41,7 +41,7 @@ or any of my pre-2011 entrepreneurial work.
 					<a mv-if="repo_stars > 999" href="https://github.com/[repo]/stargazers" target="_blank" class="stat stars"
 						property="repo_stars_formatted" mv-attribute="none" title="[repo_stars] stars on GitHub"></a>
 				</span>
-				<span class="npm" class="[if(!npm, 'edit-only')]">
+				<span class="npm [if(!npm, 'edit-only')]">
 					<a property="npm" href="https://www.npmjs.com/package/[npm]" mv-attribute="none" target="_blank"></a>
 					<a mv-if="npm_downloads > 9999" href="https://npm-stat.com/charts.html?package=[npm]&from=[releaseDate]" target="_blank" class="stat downloads"
 						property="npm_downloads_formatted" mv-attribute="none"

@@ -158,8 +158,11 @@
 		padding-inline: calc(var(--padding) - .2em);
 		padding-block: calc(var(--padding) / 2);
 
-		& a:where(:not(:hover, .focus)) {
-			color: inherit;
+		& a {
+			mix-blend-mode: multiply;
+			&:where(:not(:hover, .focus)) {
+				color: inherit;
+			}
 		}
 
 		& > :is(a, span) {
@@ -205,11 +208,6 @@
 				}
 			}
 
-			&:focus,
-			&:hover {
-				color: var(--color-accent);
-			}
-
 			.stat {
 				display: inline-block;
 				vertical-align: .1em;
@@ -218,6 +216,16 @@
 				border-radius: 99em;
 				font-weight: 700;
 				font-size: 75%;
+				text-decoration: none;
+
+				&:hover {
+					background: var(--color-accent2);
+					color: white;
+
+					&::before {
+						opacity: .7;
+					}
+				}
 
 				&::before {
 					content: var(--icon);
