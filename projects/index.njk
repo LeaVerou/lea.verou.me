@@ -24,10 +24,10 @@ or any of my pre-2011 entrepreneurial work.
 				<h3>
 					<span property="type" class="type" mv-options="lib: Library, app: App"></span>
 					<a href="[url]" target="_blank" mv-attribute="none" property="name" rel="noopener"></a>
-					<span class="released">(<time property="releaseDate" datetime="YYYY-MM" mv-default="[$today]">[
-						if(year(releaseDate) >= 2020, month(releaseDate, "shortname") & " ")
-						& year(releaseDate)
-					]</time>)</span>
+					<span class="released">(<a property="launch" title="View launch announcement"><time property="date" datetime="YYYY-MM" mv-default="[$today]">[
+						if(year(date) >= 2020, month(date, "shortname") & " ")
+						& year(date)
+					]</time>)</a></span>
 				</h3>
 				<div property="description" class="markdown"></div>
 				<h4 class="[if(!impact, 'edit-only')]">Impact</h4>
@@ -35,7 +35,6 @@ or any of my pre-2011 entrepreneurial work.
 			</div>
 			<footer>
 				<a property="url">[replace(url, &quot;https://&quot;)]</a>
-				<a property="blogPost">Launch</a>
 				<span class="repo" class="[if(!repo, 'edit-only')]">
 					<a property="repo" href="https://github.com/[repo]" target="_blank" mv-attribute="none"></a>
 					<a mv-if="repo_stars > 999" href="https://github.com/[repo]/stargazers" target="_blank" class="stat stars"
@@ -43,7 +42,7 @@ or any of my pre-2011 entrepreneurial work.
 				</span>
 				<span class="npm [if(!npm, 'edit-only')]">
 					<a property="npm" href="https://www.npmjs.com/package/[npm]" mv-attribute="none" target="_blank"></a>
-					<a mv-if="npm_downloads > 9999" href="https://npm-stat.com/charts.html?package=[npm]&from=[releaseDate]" target="_blank" class="stat downloads"
+					<a mv-if="npm_downloads > 9999" href="https://npm-stat.com/charts.html?package=[npm]&from=[date]" target="_blank" class="stat downloads"
 						property="npm_downloads_formatted" mv-attribute="none"
 						title="[npm_downloads] total npm downloads"></a>
 				</span>
