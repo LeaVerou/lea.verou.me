@@ -144,8 +144,7 @@
 			"repo": "leaverou/conic-gradient",
 			"impact": "[Encouraged browsers to implement CSS conic gradients](https://bugs.chromium.org/p/chromium/issues/detail?id=502970). Because the polyfill also implemented the double color stop position syntax, [browsers implemented that alongside](https://chromestatus.com/feature/5712111258828800), just so the examples in the polyfill page work correctly.",
 			"repo_stars": 485,
-			"repo_stars_formatted": 485,
-			"size": "minor"
+			"repo_stars_formatted": 485
 		},
 		{
 			"url": "https://projects.verou.me/multirange",
@@ -159,8 +158,7 @@
 			"featured": 0,
 			"impact": "Was apparently used so much that its custom properties appeared in [Web Almanac's analysis of the top 1000 custom property names](https://almanac.httparchive.org/en/2020/css#naming)",
 			"repo_stars": 605,
-			"repo_stars_formatted": 605,
-			"size": "minor"
+			"repo_stars_formatted": 605
 		},
 		{
 			"url": "https://projects.verou.me/awesomplete",
@@ -316,8 +314,7 @@
 			"type": "app",
 			"featured": 0,
 			"repo_stars": 62,
-			"repo_stars_formatted": 62,
-			"size": "minor"
+			"repo_stars_formatted": 62
 		},
 		{
 			"url": "https://lea.verou.me/css3patterns",
@@ -357,8 +354,7 @@
 			"launch": "https://lea.verou.me/2011/03/convert-standard-gradient-syntax-to-webkit-gradient-and-others/",
 			"date": "2011-03",
 			"type": "app",
-			"featured": 0,
-			"size": "minor"
+			"featured": 0
 		},
 		{
 			"url": "https://lea.verou.me/demos/nth.html",
@@ -368,8 +364,7 @@
 			"launch": "https://lea.verou.me/2010/03/css3-structural-pseudo-class-selector-tester/",
 			"date": "2010-03",
 			"type": "app",
-			"featured": 0,
-			"size": "minor"
+			"featured": 0
 		},
 		{
 			"url": "https://lea.verou.me/polyfills/progress/",
@@ -382,8 +377,7 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 178,
-			"repo_stars_formatted": 178,
-			"size": "minor"
+			"repo_stars_formatted": 178
 		},
 		{
 			"url": "https://github.com/leaverou/stronglytyped/",
@@ -396,8 +390,7 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 70,
-			"repo_stars_formatted": 70,
-			"size": "minor"
+			"repo_stars_formatted": 70
 		},
 		{
 			"url": "https://incrementable.verou.me/",
@@ -423,8 +416,7 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 1717,
-			"repo_stars_formatted": 1717,
-			"size": "major"
+			"repo_stars_formatted": 1717
 		},
 		{
 			"url": "https://lea.verou.me/rgba.php/",
@@ -434,8 +426,7 @@
 			"launch": "https://lea.verou.me/2009/02/bulletproof-cross-browser-rgba-backgrounds/",
 			"date": "2009-02",
 			"type": "lib",
-			"featured": 0,
-			"size": "minor"
+			"featured": 0
 		}
 	],
 	"@context": "https://schema.org/"
