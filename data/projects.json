@@ -6,7 +6,7 @@
 			"type": "lib",
 			"name": "Color.js",
 			"date": "2022-06-29",
-			"description": "A color space agnostic color conversion and manipulation library, developed jointly with [Chris Lilley](https://svgees.us). Used to generate figures and examples for several CSS specifications and influenced the [Color API](https://github.com/wicg/color-api)",
+			"description": "Color conversion and manipulation library, developed jointly with [Chris Lilley](https://svgees.us). ",
 			"url": "https://colorjs.io",
 			"launch": "https://lea.verou.me/2022/06/releasing-colorjs/",
 			"repo": "color-js/color.js",
@@ -14,7 +14,10 @@
 			"repo_stars": 1610,
 			"repo_stars_formatted": 1610,
 			"npm_downloads": 1622520,
-			"npm_downloads_formatted": "1.6 M"
+			"npm_downloads_formatted": "1.6 M",
+			"innovation": "Possibly the first entirely color space agnostic JS library, pioneered several API innovations.",
+			"impact": "Used to generate figures and examples for several CSS specifications and influenced the [Color API](https://github.com/wicg/color-api)",
+			"@context": "https://schema.org/"
 		},
 		{
 			"name": "md-block",
@@ -45,7 +48,7 @@
 			"image": "https://lea.verou.me/wp-content/uploads/2020/07/image.png",
 			"name": "MaVoice",
 			"date": "2020-07",
-			"description": "A free app to vote on repo issues for any repo, that uses GitHub Issues under the hood. Made with Mavo.",
+			"description": "A free app to vote on repo issues for any repo, that uses GitHub Issues as a backend. Made with Mavo.",
 			"url": "https://projects.verou.me/mavoice",
 			"launch": "https://lea.verou.me/2020/07/releasing-mavoice-a-free-app-to-vote-on-repo-issues/#more-3081",
 			"repo": "leaverou/mavoice",
@@ -84,15 +87,16 @@
 			"url": "https://mavo.io",
 			"image": "https://mavo.io/logo.svg",
 			"name": "Mavo",
-			"description": "Mavo helps you turn your static HTML into reactive web applications without a single line of programming code and no server backend. \nDeveloped in the Haystack Group at MIT CSAIL and led by Lea Verou.",
+			"description": "Mavo is a programming language for non-programmers, empowering them to create full stack data-driven web applications by simply writing HTML.\n\nThis was the flagship project of my PhD, in the [Haystack Group at MIT CSAIL](https://haystack.csail.mit.edu/). I also supervised 3 Master’s students and 10 undergraduates and led them to meaningful contributions.",
 			"launch": "https://lea.verou.me/2017/05/introducing-mavo-create-web-apps-entirely-by-writing-html/",
 			"repo": "mavoweb/mavo",
 			"date": "2017-05",
 			"type": "lib",
 			"featured": 1,
-			"impact": "Led to the publication of [several peer-reviewed research papers](https://lea.verou.me/publications/#research) and 3 Masters theses.",
+			"impact": "Mavo’s innovations led to the publication of [several peer-reviewed research papers](https://lea.verou.me/publications/#research) and 3 Masters theses.",
 			"repo_stars": 2809,
-			"repo_stars_formatted": "2.8 K"
+			"repo_stars_formatted": "2.8 K",
+			"innovation": "* Hassle-free remote storage, simply by providing a URL, the rest is taken care for you.\n* A formula language with several features that make it easier for novices.\n* Removes the need to think about data modeling: novices generate their data schemas by simply designing their UI and annotating it\n* Editing interface that is largely automatically generated to follow the UI"
 		},
 		{
 			"url": "http://blissfuljs.com/",
@@ -191,13 +195,14 @@
 			"url": "https://contrast-ratio.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2012/10/Screen-Shot-2012-10-14-at-06.08.41--300x254.png",
 			"name": "Contrast Ratio",
-			"description": "An app for testing whether a combination of colors passes accessibility standards. Unlike other tools at the time that required hex codes it supported any CSS color the browser accepts, even semi-transparent colors (by displaying a range of contrasts), which required original research. Exited to [Siege Media](https://www.siegemedia.com/) in 2023.",
+			"description": "An app for testing whether a combination of CSS colors passes accessibility standards. Exited to [Siege Media](https://www.siegemedia.com/) in 2023.",
 			"launch": "https://lea.verou.me/2012/10/easy-color-contrast-ratios/",
 			"repo": "leaverou/contrast-ratio",
 			"date": "2012-10",
 			"type": "app",
 			"featured": 1,
-			"impact": "Became one of the most popular contrast checkers on the Web for years, and [was featured in several books](https://www.google.com/search?q=%22contrast-ratio.com%22+OR+%22leaverou.github.io%2Fcontrast-ratio%22&tbm=bks) and conference talks."
+			"impact": "Became one of the most popular contrast checkers on the Web for years, and [was featured in several books](https://www.google.com/search?q=%22contrast-ratio.com%22+OR+%22leaverou.github.io%2Fcontrast-ratio%22&tbm=bks) and conference talks.",
+			"innovation": "Unlike other tools at the time that only accepted hex codes it supported any CSS color the browser supported, even semi-transparent colors (by displaying a range of contrasts), which required original research. "
 		},
 		{
 			"url": "https://prismjs.com",
@@ -214,7 +219,8 @@
 			"repo_stars": 11808,
 			"repo_stars_formatted": "12 K",
 			"npm_downloads": 1204392482,
-			"npm_downloads_formatted": "1.2 Bn"
+			"npm_downloads_formatted": "1.2 Bn",
+			"innovation": "* Low floor: Entirely frictionless to get started, simply drop it in your page\n* Very high ceiling: Pioneered an extensibility mechanism allowing plugins to completely change how it works\n* Pioneered a declarative, hierarchical syntax for defining language grammars that made it easy for anyone who understood regular expressions to add support for a new language, which helped getting it to 300 languages very quickly."
 		},
 		{
 			"url": "https://css3test.com",
@@ -234,15 +240,16 @@
 			"url": "https://dabblet.com",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/12/Screen-shot-2011-12-14-at-23.32.02--300x183.png",
 			"name": "Dabblet",
-			"description": "An interactive CSS playground. \n\nWas quite successful for a few years, with thousands of visitors every day. Several popular industry media like [Wired.com’s WebMonkey](http://www.webmonkey.com/2011/12/dabblet-an-interactive-css-playground-in-your-browser/), [CSS-Tricks](http://css-tricks.com/dabblet/), [Smashing Magazine](http://www.smashingmagazine.com/smashing-newsletter-issue-50/) and others wrote about Dabblet’s release. During its first month, it received more than 65Κ unique visitors, 15Κ of which during its first two days.",
+			"description": "An interactive CSS playground. ",
 			"launch": "https://lea.verou.me/2011/12/introducing-dabblet-an-interactive-css-playground/",
 			"repo": "leaverou/dabblet",
 			"date": "2011-12",
 			"type": "app",
 			"featured": 1,
-			"impact": "Pioneered using Github Gists as a storage backend, and its inline previewers for various value types predate similar features in today's editors.",
+			"impact": "Was quite successful for a few years, with thousands of visitors every day. Several popular industry media like [Wired.com’s WebMonkey](http://www.webmonkey.com/2011/12/dabblet-an-interactive-css-playground-in-your-browser/), [CSS-Tricks](http://css-tricks.com/dabblet/), [Smashing Magazine](http://www.smashingmagazine.com/smashing-newsletter-issue-50/) and others wrote about Dabblet’s release. During its first month, it received more than 65Κ unique visitors, 15Κ of which during its first two days.",
 			"repo_stars": 809,
-			"repo_stars_formatted": 809
+			"repo_stars_formatted": 809,
+			"innovation": "* Pioneered a distributed serverless architecture using almost entirely client-side code, with Github Gists as a storage backend.\n* Its inline previewers for various value types predate similar features in today's editors."
 		},
 		{
 			"url": "https://projects.verou.me/animatable",
@@ -261,14 +268,15 @@
 			"url": "https://projects.verou.me/prefixfree",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/10/Screen-shot-2011-11-15-at-14.33.38--300x187.png",
 			"name": "-prefix-free",
-			"description": "-prefix-free was a library that allowed authors to write standard, prefix-less CSS and have the necessary prefixes added on runtime. It used feature detection for almost everything instead of hardcoded lists, allowing it to remain extremely lightweight and always up-to-date regardless of its version. Was gradually abandoned as browsers moved away from vendor prefixes, since the problem it was solving all but disappeared.",
+			"description": "-prefix-free was a library that allowed authors to write standard, prefix-less CSS and have the necessary prefixes added on runtime. Was gradually abandoned as browsers moved away from vendor prefixes, so the problem it was solving practically disappeared.",
 			"launch": "https://coding.smashingmagazine.com/2011/10/12/prefixfree-break-free-from-css-prefix-hell/",
 			"repo": "leaverou/prefixfree",
 			"date": "2011-10",
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 3838,
-			"repo_stars_formatted": "3.8 K"
+			"repo_stars_formatted": "3.8 K",
+			"innovation": "Used feature detection for almost everything instead of hardcoded lists, allowing it to remain extremely lightweight and always up-to-date regardless of its version. "
 		},
 		{
 			"url": "https://cubic-bezier.com",
@@ -307,9 +315,10 @@
 			"date": "2011-04",
 			"type": "app",
 			"featured": 1,
-			"impact": "The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns. It has been [featured in a number of books](https://www.google.com/search?q=%22css3patterns%22&tbm=bks), talks, workshops. It was used by Opera Software to fine-tune their CSS gradients implementation.",
+			"impact": " It has been [featured in a number of books](https://www.google.com/search?q=%22css3patterns%22&tbm=bks), talks, workshops. It was used by Opera Software to fine-tune their CSS gradients implementation.",
 			"repo_stars": 1420,
-			"repo_stars_formatted": 1420
+			"repo_stars_formatted": 1420,
+			"innovation": "The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns and other graphics."
 		},
 		{
 			"url": "https://projects.verou.me/chainvas/",
@@ -322,7 +331,8 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 262,
-			"repo_stars_formatted": 262
+			"repo_stars_formatted": 262,
+			"innovation": "Uses reflection to read what methods are available and wrap them, making it generic enough that it can work with any API, no need to know anything about it in advance."
 		},
 		{
 			"url": "https://lea.verou.me/demos/cssgradientsplease/",
@@ -348,7 +358,7 @@
 			"url": "https://lea.verou.me/polyfills/progress/",
 			"image": "https://lea.verou.me/wp-content/uploads/2011/07/Screen-shot-2011-11-15-at-15.02.37--300x219.png",
 			"name": "HTML5 <progress> polyfill",
-			"description": "A very thorough (perhaps too thorough) polyfill for the HTML5 &lt;progress&gt; element.",
+			"description": "A very thorough polyfill for the HTML5 `<progress>` element.",
 			"launch": "https://lea.verou.me/2011/07/a-polyfill-for-html5-progress-element-the-obsessive-perfectionist-way/",
 			"repo": "leaverou/html5-progress-polyfill",
 			"date": "2011-07",
