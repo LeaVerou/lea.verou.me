@@ -241,11 +241,12 @@ h6 {
 
 p {
 	line-height: 1.5;
-	margin: .2em 0 1em;
+	margin-block: .2em 1em;
 }
 
 ul {
 	padding-left: .6em;
+	margin-block: .2em 1em;
 }
 
 dl {
@@ -1288,7 +1289,8 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	}
 }
 
-.edit-only:not([mv-mode="edit"] *) {
+.edit-only:not([mv-mode="edit"] *),
+.edit-only-if-empty.mv-empty:not([mv-mode="edit"] *) {
 	display: none !important;
 }
 

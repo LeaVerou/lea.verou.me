@@ -4,6 +4,7 @@ mavo: true
 page_css: true
 includes: |
   <link rel="alternate" href="../data/projects.json" type="application/json" />
+  <script src="https://nudeui.com/meter-discrete/meter-discrete.js" type="module"></script>
 ---
 
 <p>Ordered mostly by release date, with those with the most impact featured first.
@@ -38,14 +39,17 @@ or any of my pre-2011 entrepreneurial work.
 					<div property="innovation" class="markdown"></div>
 				</section>
 				<section class="[if(!impact, 'edit-only')]">
-					<h4>Impact</h4>
+					<h4>
+						Impact
+						<meter-discrete class="[if(!impact_rating, 'edit-only')]" property="impact_rating" min="1" max="3" step="1" mv-edit-as="meter" icon="🔥"></meter-discrete>
+					</h4>
 					<div property="impact" class="markdown"></div>
 				</section>
 
 			</div>
 			<footer>
 				<a property="url">[replace(url, &quot;https://&quot;)]</a>
-				<span class="repo" class="[if(!repo, 'edit-only')]">
+				<span class="repo [if(!repo, 'edit-only')]">
 					<a href="https://github.com/[repo]" target="_blank" mv-attribute="none">[ if(starts(repo, 'leaverou/'), from(repo, "leaverou/"), repo)]</a>
 					<a mv-if="repo_stars > 999" href="https://github.com/[repo]/stargazers" target="_blank" class="stat stars"
 						property="repo_stars_formatted" mv-attribute="none" title="[repo_stars] stars on GitHub"></a>
