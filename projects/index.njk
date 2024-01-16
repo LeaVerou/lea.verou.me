@@ -13,7 +13,7 @@ Please note that this mainly contains open source tools I’ve developed, and is
 For example, it does not contain any of my work designing web technologies, documenting web platform design principles as a TAG member,
 or any of my pre-2011 entrepreneurial work.
 
-<div mv-app="projects" class="projects" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
+<div mv-app="projects" class="projects" mv-source="../data/projects.json" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
 	<h2>[count(project)] projects ([count(type = &quot;lib&quot;)] libraries and [count(type = &quot;app&quot;)] apps)</h2>
 	<div mv-list class="projects-list" mv-order="desc">
 		<article property="project" mv-list-item style="--featured-weight: [featured]"
@@ -22,16 +22,26 @@ or any of my pre-2011 entrepreneurial work.
 			<a href="[url]" class="image-container"><img property="image"/></a>
 			<div class="main-content">
 				<h3>
-					<span property="type" class="type" mv-options="lib: Library, app: App"></span>
 					<a href="[url]" target="_blank" mv-attribute="none" property="name" rel="noopener"></a>
 					<span class="released">(<a property="launch" title="View launch announcement"><time property="date" datetime="YYYY-MM" mv-default="[$today]">[
 						if(year(date) >= 2020, month(date, "shortname") & " ")
 						& year(date)
 					]</time>)</a></span>
 				</h3>
+				<div class="project-meta">
+					<span property="type" class="type" mv-options="lib: Library, app: App"></span>
+					<span property="size" class="size" mv-options=": (No size), major, minor"></span>
+				</div>
 				<div property="description" class="markdown"></div>
-				<h4 class="[if(!impact, 'edit-only')]">Impact</h4>
-				<div property="impact" class="markdown"></div>
+				<section class="[if(!innovation, 'edit-only')]">
+					<h4>Innovation(s)</h4>
+					<div property="innovation" class="markdown"></div>
+				</section>
+				<section class="[if(!impact, 'edit-only')]">
+					<h4>Impact</h4>
+					<div property="impact" class="markdown"></div>
+				</section>
+
 			</div>
 			<footer>
 				<a property="url">[replace(url, &quot;https://&quot;)]</a>

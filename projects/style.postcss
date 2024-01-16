@@ -30,18 +30,6 @@
 	--padding: 1rem;
 	font-size: 75%;
 
-	&.type-app {
-		--color: var(--color-accent);
-	}
-
-	&.type-lib {
-		--color: var(--color-accent2);
-	}
-
-	&.featured {
-
-	}
-
 	& [property="featured"] {
 		aspect-ratio: 2 / 1;
 		position: absolute;
@@ -92,18 +80,24 @@
 		overflow: hidden;
 		height: 8rem;
 
+		&:not([mv-mode="edit"] *):has(img.mv-empty) {
+			display: none;
+		}
+
 		& img {
 			width: 100%;
 			object-fit: cover;
 			object-position: top;
 
 			&.mv-empty.mv-empty.mv-empty {
-				display: block;
-				height: 100%;
-				background: var(--image-coming-soon-background);
-				content: var(--image-coming-soon);
-				object-fit: contain;
-				object-position: center;
+				&:is([mv-mode="edit"] *) {
+					display: block;
+					height: 100%;
+					background: var(--image-coming-soon-background);
+					content: var(--image-coming-soon);
+					object-fit: contain;
+					object-position: center;
+				}
 			}
 		}
 	}
@@ -126,17 +120,6 @@
 	& h3 {
 		margin: 0;
 
-		.type {
-			display: inline-block;
-			vertical-align: .3em;
-			padding: .3em .5em;
-			border-radius: .2em;
-			background: var(--color, var(--color-gray-50));
-			color: white;
-			font: bold .5em/1.1 var(--font-sans);
-			text-transform: uppercase;
-		}
-
 		& > a {
 			color: inherit;
 		}
@@ -146,6 +129,33 @@
 			color: hsl(var(--gray) 50%);
 			font: italic .9em var(--font-serif);
 			letter-spacing: normal;
+		}
+	}
+
+	.project-meta {
+		display: flex;
+		gap: .4em;
+		margin-bottom: 1em;
+
+		> span {
+			display: inline-block;
+			vertical-align: .3em;
+			padding: .3em .5em;
+			border-radius: .2em;
+			background: var(--color, var(--color-gray-50));
+			color: white;
+			font: bold 75%/1.1 var(--font-sans);
+			text-transform: uppercase;
+		}
+
+		.type {
+			.type-app & {
+				--color: var(--color-accent);
+			}
+
+			.type-lib & {
+				--color: var(--color-accent2);
+			}
 		}
 	}
 
@@ -186,10 +196,6 @@
 				&::before {
 					vertical-align: -.25em;
 				}
-			}
-
-			&[property=blogPost] {
-				--icon: var(--icon-newspaper);
 			}
 
 			&.repo {
