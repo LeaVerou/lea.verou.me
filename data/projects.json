@@ -18,7 +18,8 @@
 			"innovation": "Possibly the first entirely color space agnostic JS library, pioneered several API innovations.",
 			"impact": "Used to generate figures and examples for several CSS specifications and influenced the [Color API](https://github.com/wicg/color-api)",
 			"@context": "https://schema.org/",
-			"size": "major"
+			"size": "major",
+			"impact_rating": 2
 		},
 		{
 			"name": "md-block",
@@ -31,7 +32,8 @@
 			"featured": 0,
 			"repo_stars": 290,
 			"repo_stars_formatted": 290,
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 0
 		},
 		{
 			"image": "https://lea.verou.me/wp-content/uploads/2020/09/image.png",
@@ -45,7 +47,9 @@
 			"featured": 0,
 			"repo_stars": 364,
 			"repo_stars_formatted": 364,
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 2,
+			"impact": "- Developed to aid Web Almanac’s analysis, and used to this day.\n- Used by Google’s Puppeteer project"
 		},
 		{
 			"image": "https://lea.verou.me/wp-content/uploads/2020/07/image.png",
@@ -59,7 +63,8 @@
 			"featured": 0,
 			"repo_stars": 15,
 			"repo_stars_formatted": 15,
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 0
 		},
 		{
 			"image": "http://lea.verou.me/wp-content/uploads/2020/04/image-1.png",
@@ -73,7 +78,8 @@
 			"featured": 0,
 			"repo_stars": 215,
 			"repo_stars_formatted": 215,
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 0
 		},
 		{
 			"image": "https://lea.verou.me/wp-content/uploads/2019/12/image.png",
@@ -87,7 +93,8 @@
 			"featured": 0,
 			"repo_stars": 15,
 			"repo_stars_formatted": 15,
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 0
 		},
 		{
 			"url": "https://mavo.io",
@@ -103,7 +110,8 @@
 			"repo_stars": 2809,
 			"repo_stars_formatted": "2.8 K",
 			"innovation": "* Hassle-free remote storage, simply by providing a URL, the rest is taken care for you.\n* A formula language with several features that make it easier for novices.\n* Removes the need to think about data modeling: novices generate their data schemas by simply designing their UI and annotating it\n* Editing interface that is largely automatically generated to follow the UI",
-			"size": "major"
+			"size": "major",
+			"impact_rating": 0
 		},
 		{
 			"url": "http://blissfuljs.com/",
@@ -116,7 +124,8 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 2382,
-			"repo_stars_formatted": "2.4 K"
+			"repo_stars_formatted": "2.4 K",
+			"impact_rating": 0
 		},
 		{
 			"url": "https://stretchy.verou.me/",
@@ -130,7 +139,8 @@
 			"featured": 0,
 			"repo_stars": 1272,
 			"repo_stars_formatted": 1272,
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 0
 		},
 		{
 			"featured": 1,
@@ -144,7 +154,8 @@
 			"repo": "leaverou/conic-gradient",
 			"impact": "[Encouraged browsers to implement CSS conic gradients](https://bugs.chromium.org/p/chromium/issues/detail?id=502970). Because the polyfill also implemented the double color stop position syntax, [browsers implemented that alongside](https://chromestatus.com/feature/5712111258828800), just so the examples in the polyfill page work correctly.",
 			"repo_stars": 485,
-			"repo_stars_formatted": 485
+			"repo_stars_formatted": 485,
+			"impact_rating": 2
 		},
 		{
 			"url": "https://projects.verou.me/multirange",
@@ -158,20 +169,23 @@
 			"featured": 0,
 			"impact": "Was apparently used so much that its custom properties appeared in [Web Almanac's analysis of the top 1000 custom property names](https://almanac.httparchive.org/en/2020/css#naming)",
 			"repo_stars": 605,
-			"repo_stars_formatted": 605
+			"repo_stars_formatted": 605,
+			"impact_rating": 2
 		},
 		{
 			"url": "https://projects.verou.me/awesomplete",
 			"image": "https://lea.verou.me/wp-content/uploads/2015/02/awesomplete-300x248.png",
 			"name": "Awesomplete",
-			"description": "Ultra lightweight, customizable, simple autocomplete widget with zero dependencies. Featured on Github’s weekly Github Explore newsletter when it launched.",
+			"description": "Ultra lightweight, customizable, simple autocomplete widget with zero dependencies. ",
 			"launch": "https://lea.verou.me/2015/02/awesomplete-2kb-autocomplete-with-zero-dependencies/",
 			"repo": "leaverou/awesomplete",
 			"date": "2015-02",
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 6929,
-			"repo_stars_formatted": "6.9 K"
+			"repo_stars_formatted": "6.9 K",
+			"impact_rating": 0,
+			"impact": "Featured on Github’s weekly Github Explore newsletter when it launched."
 		},
 		{
 			"url": "https://dpi.lv",
@@ -184,7 +198,8 @@
 			"type": "app",
 			"featured": 0,
 			"repo_stars": 746,
-			"repo_stars_formatted": 746
+			"repo_stars_formatted": 746,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://projects.verou.me/corner-shape",
@@ -197,7 +212,8 @@
 			"type": "app",
 			"featured": 0,
 			"repo_stars": 75,
-			"repo_stars_formatted": 75
+			"repo_stars_formatted": 75,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://contrast-ratio.com",
@@ -210,7 +226,8 @@
 			"type": "app",
 			"featured": 1,
 			"impact": "Became one of the most popular contrast checkers on the Web for years, and [was featured in several books](https://www.google.com/search?q=%22contrast-ratio.com%22+OR+%22leaverou.github.io%2Fcontrast-ratio%22&tbm=bks) and conference talks.",
-			"innovation": "Unlike other tools at the time that only accepted hex codes it supported any CSS color the browser supported, even semi-transparent colors (by displaying a range of contrasts), which required original research. "
+			"innovation": "Unlike other tools at the time that only accepted hex codes it supported any CSS color the browser supported, even semi-transparent colors (by displaying a range of contrasts), which required original research. ",
+			"impact_rating": 2
 		},
 		{
 			"url": "https://prismjs.com",
@@ -229,7 +246,8 @@
 			"npm_downloads": 1204392482,
 			"npm_downloads_formatted": "1.2 Bn",
 			"innovation": "* Low floor: Entirely frictionless to get started, simply drop it in your page\n* Very high ceiling: Pioneered an extensibility mechanism allowing plugins to completely change how it works\n* Pioneered a declarative, hierarchical syntax for defining language grammars that made it easy for anyone who understood regular expressions to add support for a new language, which helped getting it to 300 languages very quickly.",
-			"size": "major"
+			"size": "major",
+			"impact_rating": 3
 		},
 		{
 			"url": "https://css3test.com",
@@ -243,7 +261,8 @@
 			"featured": 0,
 			"impact": "Motivated browser vendors such as [Mozilla](https://bugzilla.mozilla.org/show_bug.cgi?id=913153) or [WebKit](https://bugs.webkit.org/show_bug.cgi?id=79073) to support more CSS3 features to increase their scores on it.",
 			"repo_stars": 212,
-			"repo_stars_formatted": 212
+			"repo_stars_formatted": 212,
+			"impact_rating": 2
 		},
 		{
 			"url": "https://dabblet.com",
@@ -259,7 +278,8 @@
 			"repo_stars": 809,
 			"repo_stars_formatted": 809,
 			"innovation": "* Pioneered a distributed serverless architecture using almost entirely client-side code, with Github Gists as a storage backend.\n* Its inline previewers for various value types predate similar features in today's editors.",
-			"size": "major"
+			"size": "major",
+			"impact_rating": 2
 		},
 		{
 			"url": "https://projects.verou.me/animatable",
@@ -273,7 +293,8 @@
 			"featured": 0,
 			"repo_stars": 2578,
 			"repo_stars_formatted": "2.6 K",
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 0
 		},
 		{
 			"url": "https://projects.verou.me/prefixfree",
@@ -287,7 +308,8 @@
 			"featured": 0,
 			"repo_stars": 3838,
 			"repo_stars_formatted": "3.8 K",
-			"innovation": "Used feature detection for almost everything instead of hardcoded lists, allowing it to remain extremely lightweight and always up-to-date regardless of its version. "
+			"innovation": "Used feature detection for almost everything instead of hardcoded lists, allowing it to remain extremely lightweight and always up-to-date regardless of its version. ",
+			"impact_rating": 0
 		},
 		{
 			"url": "https://cubic-bezier.com",
@@ -301,7 +323,8 @@
 			"featured": 1,
 			"impact": "Featured on several [books](https://www.google.com/search?tbm=bks&q=%22cubic-bezier.com%22) and talks. Its code was at some point even [included in the Firefox browser](https://hacks.mozilla.org/2014/07/event-listeners-popup-media-sidebar-cubic-bezier-editor-more-firefox-developer-tools-episode-33/) and [Adobe's Brackets editor](https://twitter.com/brackets/status/400678387045642241)",
 			"repo_stars": 169,
-			"repo_stars_formatted": 169
+			"repo_stars_formatted": 169,
+			"impact_rating": 2
 		},
 		{
 			"url": "https://projects.verou.me/css-colors/",
@@ -314,7 +337,8 @@
 			"type": "app",
 			"featured": 0,
 			"repo_stars": 62,
-			"repo_stars_formatted": 62
+			"repo_stars_formatted": 62,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://lea.verou.me/css3patterns",
@@ -329,7 +353,8 @@
 			"impact": " It has been [featured in a number of books](https://www.google.com/search?q=%22css3patterns%22&tbm=bks), talks, workshops. It was used by Opera Software to fine-tune their CSS gradients implementation.",
 			"repo_stars": 1420,
 			"repo_stars_formatted": 1420,
-			"innovation": "The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns and other graphics."
+			"innovation": "The gallery and the corresponding blog posts started the — now widespread — practice of using hard stops in CSS gradients to easily create background patterns and other graphics.",
+			"impact_rating": 0
 		},
 		{
 			"url": "https://projects.verou.me/chainvas/",
@@ -344,7 +369,8 @@
 			"repo_stars": 262,
 			"repo_stars_formatted": 262,
 			"innovation": "Uses reflection to read what methods are available and wrap them, making it generic enough that it can work with any API, no need to know anything about it in advance.",
-			"size": "minor"
+			"size": "minor",
+			"impact_rating": 0
 		},
 		{
 			"url": "https://lea.verou.me/demos/cssgradientsplease/",
@@ -354,7 +380,8 @@
 			"launch": "https://lea.verou.me/2011/03/convert-standard-gradient-syntax-to-webkit-gradient-and-others/",
 			"date": "2011-03",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://lea.verou.me/demos/nth.html",
@@ -364,7 +391,8 @@
 			"launch": "https://lea.verou.me/2010/03/css3-structural-pseudo-class-selector-tester/",
 			"date": "2010-03",
 			"type": "app",
-			"featured": 0
+			"featured": 0,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://lea.verou.me/polyfills/progress/",
@@ -377,7 +405,8 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 178,
-			"repo_stars_formatted": 178
+			"repo_stars_formatted": 178,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://github.com/leaverou/stronglytyped/",
@@ -390,7 +419,8 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 70,
-			"repo_stars_formatted": 70
+			"repo_stars_formatted": 70,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://incrementable.verou.me/",
@@ -403,7 +433,8 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 84,
-			"repo_stars_formatted": 84
+			"repo_stars_formatted": 84,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://inspirejs.org",
@@ -416,7 +447,8 @@
 			"type": "lib",
 			"featured": 0,
 			"repo_stars": 1717,
-			"repo_stars_formatted": 1717
+			"repo_stars_formatted": 1717,
+			"impact_rating": 0
 		},
 		{
 			"url": "https://lea.verou.me/rgba.php/",
@@ -426,7 +458,8 @@
 			"launch": "https://lea.verou.me/2009/02/bulletproof-cross-browser-rgba-backgrounds/",
 			"date": "2009-02",
 			"type": "lib",
-			"featured": 0
+			"featured": 0,
+			"impact_rating": 0
 		}
 	],
 	"@context": "https://schema.org/"
