@@ -58,7 +58,7 @@
 				</span>
 			</h1>
 		{% endif %}
-		{% if is_post %}
+		{% if is_post or is_doc %}
 		{% import "_posts.njk" as posts with context %}
 		<div class="meta">
 			{{ posts.meta_before(page) }}
