@@ -36,7 +36,9 @@ Some popular examples of such design systems:
 [Material](https://m2.material.io/design/color/the-color-system.html#color-theme-creation) | 17 | 2 | 10 | 50-900 | 100 | 50 |
 [Adobe Spectrum](https://spectrum.adobe.com/page/color-palette/) | 13 | 1 | 13 | 100 - 1300 | 100 | Gray 50, Gray 75 |
 [GitHub Primer](https://primer.style/foundations/color/base-scales) | 8 | 1 | 10 | 0 - 9  | 1 | |
+[Ant Design](https://ant.design/docs/spec/colors) | 12 | 1 | 10 (13 for grays) | 1 - 10 | 1 | |
 [IBM Design Language](https://www.ibm.com/design/language/color/) | 7 | 3 | 10 | 10 - 100 | 10 | |
+[Radix UI](https://www.radix-ui.com/themes/docs/theme/color) | 25 | 6 | 12 | 1 - 12 | 1 | |
 
 In terms of CSS variables, this translates to variables like e.g. `--color-red-600`, `--color-gray-10` etc on `:root`. A LOT of them.
 
@@ -71,7 +73,8 @@ Note that this applies regardless of whether the tints and shades are precompute
 This is also a problem when adopting external libraries and design systems.
 Currently, most libaries, design systems, icon libraries etc. have to use lengthy namespacing to avoid conflicts.
 E.g. [Adobe Spectrum](https://spectrum.adobe.com/page/color-palette/) prefixes each color with `--spectrum-global-color-` (e.g. `--spectrum-global-color-celery-100`).
-The effort needed for an author to remap all of these to more reasonable names is non-trivial.
+They also often use color names that the author may want to remap to simpler names.
+The effort needed for an author to remap all of these to more reasonable names is non-trivial (Radix UI even has [a section on this](https://www.radix-ui.com/themes/docs/theme/color#aliasing-colors) — note that this is *just* for one color!).
 
 ### Pain point 2: Repetitiveness and verbosity
 
