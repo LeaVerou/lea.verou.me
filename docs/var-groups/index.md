@@ -465,9 +465,11 @@ E.g. suppose we have `--spectrum-global-color-celery-100` to `--spectrum-global-
 }
 ```
 
-## Alternative decomposed design
+## Alternative decomposed design { #decomposed-alternative }
 
-We could decouple this into three separate features that add value individually and could ship separately.
+We could decouple this into three separate features.
+This is likely easier to implement as a whole, but also these features can ship independently and add value on their own.
+However, it also makes it less ambitious, as it becomes harder to add some of the more advanced features (e.g. continuous variations).
 
 ### A function to map CSS variables with a common prefix to a different prefix
 
