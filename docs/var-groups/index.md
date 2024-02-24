@@ -111,7 +111,7 @@ What if we allowed them to do _just that_?
 
 ### Defining and using a variable group
 
-This proposal allows authors to do define groups of variables with the same prefix, by using braces:
+This proposal allows authors to define groups of variables with the same prefix, by using braces:
 
 ```css
 --color-green: {
@@ -230,7 +230,7 @@ Another possibility is to allow groups to be used as a shorthand’s whole value
 
 ### Nested variable groups
 
-Variable groups can be nested, which allows a single variable to hold an entire color palette:
+Variable groups can be infinitely nested, which allows a single variable to hold an entire color palette:
 
 ```css
 --color: {
@@ -420,12 +420,22 @@ This would also allow mapping design tokens to a different naming scheme and red
 E.g. suppose we have `--spectrum-global-color-celery-100` to `--spectrum-global-color-celery-1300` and we want to map them to `--color-green-1` to `--color-green-13`:
 
 ```css
+/* Turn Spectrum colors into a group */
+--spectrum-global-color: {};
+--spectrum-global-color-celery: {};
 
-## Other solutions
+--color-green: {
+	default: --spectrum-global-color-celery(calc(arg / 100));
+}
+```
 
-### Functions?
+## Other ideas explored
 
-At first glance it appears that custom functions can solve all of these issues.
+Some of the following may be useful in their own right, but I don’t think solve the pain points equally well.
+
+### Custom Functions
+
+At first glance it appears that [custom functions](https://github.com/w3c/csswg-drafts/issues/9350) can solve all of these issues.
 Instead of defining tokens like `--color-red-200` authors would instead be defining `--color-red(200)`.
 
 However, there are several issues with this approach, the main one being that it is still unclear to me however how that would solve the aliasing problem.
