@@ -282,17 +282,15 @@ In fact, together with nesting, one could imagine passing *entire* design system
 --design: var(--primer);
 ```
 
-With compatible naming schemes, authors could even mix and match! E.g. using the Primer design system, with the Open Color color palette:
+With compatible naming schemes, authors could even compose their design system by mixing and matching from existing design systems.
+E.g. using the Primer design system, with the Open Color color palette:
 
 ```css
 /* primer.css */
 --primer: {
-	--color: {
-		/* ... */
-	},
-	--font: {
-		/* ... */
-	},
+	color: {/* ... */};
+	font: {/* ... */};
+	size: {/* ... */};
 	/* ... */
 }
 
@@ -310,6 +308,16 @@ With compatible naming schemes, authors could even mix and match! E.g. using the
 
 Note that as currently defined, the pattern above would *override* Primer’s colors with Open Color’s,
 so `--primer-color` would *also* resolve to `var(--oc)`.
+To avoid this, authors could alias each top-level group separately:
+
+```css
+--design: {
+	color: var(--oc);
+	font: var(--primer-font);
+	size: var(--primer-size);
+	/* ... */
+}
+```
 </div>
 
 ### Tweaking the default value without destroying the group
