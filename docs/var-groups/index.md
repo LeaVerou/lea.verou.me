@@ -42,7 +42,22 @@ Some popular examples of such design systems:
 
 In terms of CSS variables, this translates to variables like e.g. `--color-red-600`, `--color-gray-10` etc on `:root`. A LOT of them.
 
-### Biggest pain point: Aliasing colors
+### Summary of pain points & requirements
+
+Distilling these pain points into their essence, it looks like the actual pain points are:
+1. **Aliasing**: Aliasing a set of variables with a common prefix to a different prefix is very commonly needed, and requires *a lot* of CSS.
+Even when using a build tool to automate this, the size of the resulting CSS is huge, and it is hard to debug as it clogs up the devtools.
+2. Defining these tokens requires manually defining every single one, even when it could be computed via interpolation.
+3. Getting arbitrary tokens (e.g. through a calculation) is impossible.
+
+Any solution would need to meet the following requirements:
+1. Subtree scoped: It needs to be possible to alias a set of variables to a different prefix on a subtree, so `@property` and any new tree-scoped @-rules are out.
+2. Pave the cowpaths: Assuming a web app involves three classes of users (page authors, design system authors, web component authors)
+the syntax should not require opt-in from all parties at once.
+Individual classes of users should be able to derive value without all other parties having to change anything.
+3. It should not require more than one declaration to style a single design aspect (e.g. the primary color) of a subtree or web component.
+
+#### Biggest pain point: Aliasing
 
 Then, to be used in the UI, the colors are also assigned *semantic* meaning: brand color, primary (or accent) color, secondary color, success, danger, etc. Pure hues can still be used directly for certain cases.
 
@@ -76,11 +91,11 @@ E.g. [Adobe Spectrum](https://spectrum.adobe.com/page/color-palette/) prefixes e
 They also often use color names that the author may want to remap to simpler names.
 The effort needed for an author to remap all of these to more reasonable names is non-trivial (Radix UI even has [a section on this](https://www.radix-ui.com/themes/docs/theme/color#aliasing-colors) — note that this is *just* for one color!).
 
-### Pain point 2: Repetitiveness and verbosity
+#### Pain point 2: Repetitiveness and verbosity
 
 First, it is important to note that aesthetically pleasing color palettes are not completely perceptually uniform.
 Chroma and hue often get skewed as you move towards the lightness edges, and they are skewed in different ways depending on the hue.
-As the most obvious example, look at how yellows become orange as they darken:
+As the most obvious example, look at how yellows become orange as they darken in both of these but even more so in OC:
 
 <figure>
 <img width="789" alt="image" src="images/yellow-tailwind.png">
@@ -93,7 +108,7 @@ As the most obvious example, look at how yellows become orange as they darken:
 </figure>
 
 
-**That said**, while we could not generate all tints through interpolation,
+*That said*, while we could not generate all tints through interpolation,
 interpolation could approximate at least *some of them*.
 But right now, the best we can do is something like this:
 
@@ -103,7 +118,10 @@ But right now, the best we can do is something like this:
 /* ... */
 ```
 
-### Pain point 3: Cannot reference tokens programmatically
+Now suppose we don't like the interpolated `--color-green-300` and want to tweak it.
+We’d *also* need to tweak `--color-green-200` if we want it to use that!
+
+#### Pain point 3: Cannot reference tokens programmatically
 
 Since these are variables and variable names cannot be composed dynamically,
 there is no way to transform a number (e.g. `200`) or a keyword (e.g. `red`) to a color token,
