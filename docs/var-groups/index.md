@@ -104,7 +104,7 @@ Since these are variables and variable names cannot be composed dynamically,
 there is no way to transform a number (e.g. `200`) or a keyword (e.g. `red`) to a color token,
 which could have allowed components to abstract away the specifics of the design system.
 
-## The Proposal: CSS Variable Groups
+## The Proposal: CSS Variable Groups { #proposal }
 
 The underlying pain point here is that authors need to be able to map *a set* of CSS variables to a different name, reactively.
 What if we allowed them to do _just that_?
