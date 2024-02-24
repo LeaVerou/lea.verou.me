@@ -345,7 +345,7 @@ One way would be to expose special properties like `base` like regular custom pr
 
 And as a bonus, this facilitates debugging, and allows customizing more than just the default value.
 
-## Facilitating continuous variations
+## Facilitating continuous variations { #continuous }
 
 So far, this proposal has been about facilitating the use of predefined static tokens.
 But what if we could support *dynamic* variations, where only a few key values are defined, and the rest are interpolated within them?
