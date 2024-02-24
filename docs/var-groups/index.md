@@ -458,12 +458,12 @@ It is unclear how a set of predefined tints would look like as something like th
 4. The migration path from existing design systems is rocky, whereas nested groups paves the cowpaths by allowing the same syntax to continue to be used and even provides a way to convert *existing* tokens to a group (and potentially [allowing a functional syntax *as well*](#functional-syntax)).
 5. This only allows a single level, so entire palettes or design systems cannot be passed around unless the entire design system is encapsulated in a single function.
 
-### Handle tints and shades in CSS …automagically?
+### Handle tints and shades in CSS …automagically? { #tint-shade }
 
 Eliminate the need for precomputed variations by simply doing it in CSS. E.g. `color-tint(var(--color-yellow) 30%)`.
 While these functions would be useful in their own right, it is incredibly difficult (and likely impossible) to design something that would completely remove the need for custom designer intervention due to the lack of uniformity in the current manual palettes.
 
-### Make design systems a first-class citizen
+### Make design systems a first-class citizen { #design-systems-syntax }
 
 This would involve standardizing a dedicated syntax and naming scheme (for the low level common denominator things — tints, hues, fonts, etc.) for design tokens,
 and providing authors with a whole different syntax for passing design tokens around.
