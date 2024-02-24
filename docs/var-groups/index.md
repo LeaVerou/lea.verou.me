@@ -82,15 +82,20 @@ First, it is important to note that aesthetically pleasing color palettes are no
 Chroma and hue often get skewed as you move towards the lightness edges, and they are skewed in different ways depending on the hue.
 As the most obvious example, look at how yellows become orange as they darken:
 
-Tailwind:
+<figure>
 <img width="789" alt="image" src="images/yellow-tailwind.png">
+<figcaption>Tailwind’s yellow palette</figcaption>
+</figure>
 
-Open color:
+<figure>
 <img width="1527" alt="image" src="images/yellow-oc.png">
+<figcaption>Open Color’s yellow palette</figcaption>
+</figure>
+
 
 **That said**, while we could not generate all tints through interpolation,
 interpolation could approximate at least *some of them*.
-But right now, the best we could do is something like this:
+But right now, the best we can do is something like this:
 
 ```css
 --color-green-200: color-mix(in oklch, var(--color-green-100) 20%, var(--color-green-500));
@@ -109,9 +114,10 @@ which could have allowed components to abstract away the specifics of the design
 The underlying pain point here is that authors need to be able to map *a set* of CSS variables to a different name, reactively.
 What if we allowed them to do _just that_?
 
-### Defining and using a variable group
+### Defining and using a variable group { #defining-using }
 
-This proposal allows authors to define groups of variables with the same prefix, by using braces:
+This proposal allows authors to define groups of variables with the same prefix, by using braces
+and then pass the whole group around to other variables:
 
 ```css
 --color-green: {
@@ -119,7 +125,7 @@ This proposal allows authors to define groups of variables with the same prefix,
 	200: oklch(95% 15% 135);
 	/* ... */
 	900: oklch(25% 20% 135);
-}
+};
 ```
 
 Then this is equivalent to creating `--color-green-100`, `--color-green-200`, etc. variables.
@@ -130,6 +136,36 @@ But with one difference. When doing:
 ```
 
 This is passing a structured object behind the scenes so you *automatically* get `--color-primary-100`, `--color-primary-200` etc.
+
+This allows patterns like:
+
+```css
+/* Author CSS */
+:root {
+	--color-green: {
+		100: oklch(95% 13% 135);
+		200: oklch(95% 15% 135);
+		/* ... */
+		900: oklch(25% 20% 135);
+	};
+}
+
+some-component,
+.callout-note {
+	--color-primary: var(--color-green);
+}
+
+.callout-note {
+	background: var(--color-primary-200);
+}
+
+/* some-component.css */
+:host {
+	background: var(--color-primary-100);
+	border: var(--color-primary-400);
+	color: var(--color-primary-900);
+}
+```
 
 <div class="note">
 
@@ -429,6 +465,55 @@ E.g. suppose we have `--spectrum-global-color-celery-100` to `--spectrum-global-
 }
 ```
 
+## Alternative decomposed design
+
+We could decouple this into three separate features that add value individually and could ship separately.
+
+### A function to map CSS variables with a common prefix to a different prefix
+
+A `var()`-like function (e.g. `vars()`, `group()`) for mapping many variables with a common prefix to a different prefix.
+```css
+--color-primary: group(--color-green);
+```
+
+Maybe even `var()` itself, where we’d distinguish between the two because the var reference would include an asterisk:
+```css
+--color-primary: var(--color-green-*);
+```
+
+The downside of this is that it’s unclear whether that also sets `--color-primary` to `var(--color-green)`.
+Perhaps we should give up on base values and do:
+
+```css
+--color-primary: var(--color-green);
+--color-primary-*: var(--color-green-*);
+```
+
+That is certainly more explicit, at the cost of verbosity and potential for error.
+
+### A nesting syntax for setting multiple variables with the same prefix at once
+
+This would look just like the one above, but instead of specifying a group, it is just syntactic sugar for setting many variables at once.
+
+### Continuous variations?
+
+If nesting is merely syntactic sugar, that definitely makes it harder to add continuous variations as a feature.
+It would need to be a separate feature that does not depend on nesting.
+
+Perhaps something like this could work:
+
+```css
+--color-green-*: color-mix(in oklch, var(--color-green-100) calc((100 - arg / 10) * 1%), var(--color-green-900));
+```
+
+or:
+
+```css
+--color-green-[tint]: color-mix(in oklch, var(--color-green-100) calc((100 - tint / 10) * 1%), var(--color-green-900));
+```
+
+It is unclear whether these are possible syntax-wise, since we had to introduce a bunch of restrictions to future syntax to make `&`-less nesting work.
+
 ## Other ideas explored { #other-ideas }
 
 Some of the following may be useful in their own right, but I don’t think solve the pain points equally well.
@@ -449,6 +534,7 @@ There are several issues with this approach.
 	result: --color-red(var(--tint));
 }
 ```
+2. Which part is variable is part of the syntax, so e.g. in the example above, there is no clear path to defining a `--color()` function from that.
 2. There is no way to pass a few key colors to a component or subtree and have the rest be computed from them.
 In fact, we cannot pass functions around at all, only the result of their invocation.
 2. Functions are global, whereas things like "primary color" often need to be scoped to a subtree.
@@ -460,8 +546,8 @@ It is unclear how a set of predefined tints would look like as something like th
 
 ### Handle tints and shades in CSS …automagically? { #tint-shade }
 
-Eliminate the need for precomputed variations by simply doing it in CSS. E.g. `color-tint(var(--color-yellow) 30%)`.
-While these functions would be useful in their own right, it is incredibly difficult (and likely impossible) to design something that would completely remove the need for custom designer intervention due to the lack of uniformity in the current manual palettes.
+This idea involves trying to eliminate the need for precomputed variations by simply doing it in CSS. E.g. `color-tint(var(--color-yellow) 30%)`.
+While these functions would be useful in their own right, it is incredibly difficult (and likely impossible) to design something that would completely remove the need for custom designer intervention due to the [lack of uniformity in the current manual palettes]().
 
 ### Make design systems a first-class citizen { #design-systems-syntax }
 
@@ -480,3 +566,10 @@ Variables get you a lot out of the box, that with this would need to redefine.
 E.g. it would be very important to pass design tokens to SVGs, but [SVG params](https://tabatkins.github.io/specs/svg-params/) are designed around variables.
 
 It is also unclear if baking a naming scheme into CSS, even just for the lowest common denominator things, is feasible, given the amount of variation out there.
+
+------
+
+I ran this by a couple design systems folks I know, and the response so far has been overwhelmingly "I NEED THIS YESTERDAY".
+While I’m pretty sure the design can use a lot of refinement (especially around continuous values) and I have not yet checked with implementors about feasibility, I’m really hoping we can prioritize solving this problem.
+
+Note that beyond design systems, this would also address many (most?) of the use cases around maps that keep coming up (don't have time to track them down right now, but maybe someone else can).
