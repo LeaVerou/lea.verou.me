@@ -410,7 +410,7 @@ This is the least fleshed out part of this proposal, but I think it could be a v
 
 ### The `default` property
 
-I’m thinking of a `default` special property, that would be a catch-all for any undefined value.
+I’m thinking of a `default` special property (other potential names: `any`, `other`, `else`, `*` (if possible)), that would be a catch-all for any undefined value.
 The key would be passed to the expression as a predefined keyword (e.g. `arg`), but that can be customized.
 
 ```css
@@ -464,14 +464,24 @@ It could even be specified with *just* `default`:
 }
 ```
 
-## Exposing group properties as a function { #functional-syntax }
+### Issues
+
+One issue is that while defining tokens via interpolation can be convenient, design system authors often do not want to expose the entire spectrum,
+but only a few carefully chosen tokens.
+So even if we allow the token values to be specified via a formula, we may need to introduce a way to optionally limit the keys that are exposed.
+Potential solutions:
+- A `default-keys` property (potentially a shorthand) that defines the min/max/step for the keys that are exposed.
+- A way to list specific keys, rather than a catch-all `default`
+
+## Getting group properties dynamically { #functional-syntax }
 
 Currently, we can only access properties via static offsets, even when dynamic variations are allowed.
-If we automatically exposed a function for every group, we could select the right token on the fly, possibly as a result of calculations.
-Nested groups would create functions with more than one argument.
+If we automatically exposed a functional syntax for every group, we could select the right token on the fly, possibly as a result of calculations.
+Nested groups would simply involve more than one argument.
 
 This would also allow mapping design tokens to a different naming scheme and reducing verbosity.
-E.g. suppose we have `--spectrum-global-color-celery-100` to `--spectrum-global-color-celery-1300` and we want to map them to `--color-green-1` to `--color-green-13`:
+E.g. suppose we have `--spectrum-global-color-celery-100` to `--spectrum-global-color-celery-1300` and we want to map them to `--color-green-1` to `--color-green-13`,
+i.e. not just a different prefix, but also a different scale:
 
 ```css
 /* Turn Spectrum colors into a group */
@@ -482,6 +492,19 @@ E.g. suppose we have `--spectrum-global-color-celery-100` to `--spectrum-global-
 	default: --spectrum-global-color-celery(calc(arg / 100));
 }
 ```
+
+One downside to simply making these functions is that they could potentially clash with custom functions.
+Roma Komarov [proposed](https://github.com/w3c/csswg-drafts/issues/9992#issuecomment-1962321439) a separate `get()` function that would take the prefix as its first argument.
+I quite like this, and it means it can ship separately, as it can be based on property naming, not groups.
+This also means it does not require converting anything into groups.
+So the example above would be way simpler:
+
+```css
+--color-green: {
+	default: get(--spectrum-global-color-celery, calc(arg / 100));
+}
+```
+
 
 ## Alternative decomposed design { #decomposed-alternative }
 
