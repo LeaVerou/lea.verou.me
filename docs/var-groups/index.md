@@ -410,7 +410,7 @@ It could even be specified with *just* `default`:
 }
 ```
 
-## Exposing group properties as a function
+## Exposing group properties as a function { #functional-syntax }
 
 Currently, we can only access properties via static offsets, even when dynamic variations are allowed.
 If we automatically exposed a function for every group, we could select the right token on the fly, possibly as a result of calculations.
@@ -438,22 +438,25 @@ Some of the following may be useful in their own right, but I don’t think solv
 At first glance it appears that [custom functions](https://github.com/w3c/csswg-drafts/issues/9350) can solve all of these issues.
 Instead of defining tokens like `--color-red-200` authors would instead be defining `--color-red(200)`.
 
-However, there are several issues with this approach, the main one being that it is still unclear to me however how that would solve the aliasing problem.
-
+There are several issues with this approach.
+1. Aliasing becomes extremely heavyweight as it requires a whole new function:
 ```css
---color-primary: --color-red();
+@function --color-red(--tint: 40) {
+	/* ... */
+}
 
-/* In the component */
-accent-color: var(--color-primary);
-background-color: /* Lighter version of var(--color-primary), how?? */
+@function --color-primary(--tint: 40) {
+	result: --color-red(var(--tint));
+}
 ```
-
-Additionally:
+2. There is no way to pass a few key colors to a component or subtree and have the rest be computed from them.
+In fact, we cannot pass functions around at all, only the result of their invocation.
+2. Functions are global, whereas things like "primary color" often need to be scoped to a subtree.
 2. The fallback story is unclear (see [#9990](https://github.com/w3c/csswg-drafts/issues/9990))
 3. This approach works far better for tints that are generated as samples on a continuous axis.
 It is unclear how a set of predefined tints would look like as something like that.
-4. The migration path from existing design systems is unclear, whereas nested groups paves the cowpaths by allowing the same syntax to continue to be used (and potentially allowing a functional syntax *as well*).
-5. This only allows a single level, so entire palettes or design systems cannot be passed around.
+4. The migration path from existing design systems is rocky, whereas nested groups paves the cowpaths by allowing the same syntax to continue to be used and even provides a way to convert *existing* tokens to a group (and potentially [allowing a functional syntax *as well*](#functional-syntax)).
+5. This only allows a single level, so entire palettes or design systems cannot be passed around unless the entire design system is encapsulated in a single function.
 
 ### Handle tints and shades in CSS …automagically?
 
@@ -462,16 +465,18 @@ While these functions would be useful in their own right, it is incredibly diffi
 
 ### Make design systems a first-class citizen
 
-This would involve standardizing a naming scheme for design tokens,
+This would involve standardizing a dedicated syntax and naming scheme (for the low level common denominator things — tints, hues, fonts, etc.) for design tokens,
 and providing authors with a whole different syntax for passing design tokens around.
 In some ways a bit like `accent-color` on steroids.
 
-There are certainly pros:
+There is certainly some value in such an endeavor:
 - Something like this would work *wonders* for making it easier to integrate web components into a page without having to tweak a ton of knobs (since even with variable groups, the component needs to be aware of the naming scheme used for the variations)
 - Similarly, authors could experiment with different themes without having to tweak anything in their own CSS or page.
 - They would be visible everywhere, even in non tree-abiding pseudo-elements and `@-rules` (but we could solve that in a much simpler way, e.g. via a `@document` or `::document` rule).
 
-But also a pretty big con: This would be a far bigger undertaking and the Impact / Effort is not favorable.
+However, this would be a far bigger undertaking and the Impact / Effort does not seem favorable.
 It is unclear if there is any advantage other than standardizing names (which could simply be "standardized" by convention).
 Variables get you a lot out of the box, that with this would need to redefine.
 E.g. it would be very important to pass design tokens to SVGs, but [SVG params](https://tabatkins.github.io/specs/svg-params/) are designed around variables.
+
+It is also unclear if baking a naming scheme into CSS, even just for the lowest common denominator things, is feasible, given the amount of variation out there.
