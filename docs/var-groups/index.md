@@ -429,7 +429,7 @@ E.g. suppose we have `--spectrum-global-color-celery-100` to `--spectrum-global-
 }
 ```
 
-## Other ideas explored
+## Other ideas explored { #other-ideas }
 
 Some of the following may be useful in their own right, but I don’t think solve the pain points equally well.
 
