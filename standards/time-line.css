@@ -1,0 +1,62 @@
+/* Shadow DOM CSS */
+:host(time-line) {
+	display: grid;
+	grid-template-columns: auto repeat(var(--increments), 1fr);
+	position: relative;
+}
+
+:host(time-line) #range {
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-column: 2 / -1;
+	color: var(--color-gray-medium);
+}
+
+:host(time-line) #range .increment {
+	--padding-inline-start: .2em;
+	padding-inline-start: var(--padding-inline-start);
+}
+
+:host(time-line) #range .increment::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: var(--color-gray-30a, hsl(220 10 50 / 30%));
+	width: 1px;
+	margin-inline-start: calc(-1 * var(--padding-inline-start));
+}
+
+/* Light DOM CSS */
+time-line dl {
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-column: 1 / -1;
+	margin-top: .2em;
+
+	dt, dd {
+		border-block: 0;
+		padding-block: .3em;
+
+		&:nth-of-type(even) {
+			background: var(--color-gray-5a, hsl(220 10 50 / 5%));
+		}
+	}
+
+	dt {
+		grid-column: 1;
+		padding-inline-start: .5em;
+	}
+
+	dd {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-column: 2 / span var(--increments);
+		padding-inline: 0;
+
+		> * {
+			grid-column: calc(var(--offset) + 1) / -1;
+			margin-left: calc(var(--sub-offset) * 100% / var(--increments));
+		}
+	}
+}
