@@ -4,7 +4,7 @@ let statuses = [
 	{
 		id: "shipped-baseline",
 		name: "Baseline",
-		description: "The feature is available in all major browsers.",
+		description: "The feature has been shipped in all major browsers.",
 	},
 	{
 		id: "shipped",
@@ -33,20 +33,20 @@ let statuses = [
 	},
 ]
 
-const stats = {};
-stats.status = {};
-
-for (let proposal of proposals) {
-	let status = proposal.status;
-	stats.status[status] ??= 0;
-	stats.status[status]++;
-}
-
 for (let status of statuses) {
-	status.count = stats.status[status.id] ?? 0;
+	status.proposals = [];
 }
 
 // Convert array to object
 statuses = Object.fromEntries(statuses.map(status => [status.id, status]));
 
-module.exports = {stats, statuses};
+for (let proposal of proposals) {
+	let statusId = proposal.status;
+	let status = statuses[statusId];
+
+	status.proposals.push(proposal);
+}
+
+
+
+module.exports = {statuses};

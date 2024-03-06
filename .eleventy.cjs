@@ -86,7 +86,7 @@ module.exports = config => {
 			return value;
 		}
 
-		return md.renderInline(value, o);
+		return md.renderInline(value);
 	});
 
 	for (let name in filters) {

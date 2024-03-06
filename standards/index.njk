@@ -1,7 +1,6 @@
 ---
 title: Web Standards Work
 includes: '<script type=module src="/standards/time-line.js"></script>'
-toc: true
 page_css: true
 ---
 {% macro print_status (ref) -%}
@@ -21,25 +20,34 @@ page_css: true
 		{%- if milestone.type == "shipped" %} in {{ milestone.browser | capitalize }} {{ milestone.version }}{% endif -%}
 	{%- endset %}
 {% endif %}
-{% if milestone.url -%}
-[{{ milestone_title | trim | safe }}]({{ milestone.url }}) {% if milestone.by %}_(by {{ milestone.by }})_{% endif %}
-{%- else -%}
-{{ milestone_title | trim | safe }} {% if milestone.by %}_(by {{ milestone.by | safe }})_{% endif %}
-{%- endif %}
-: <time datetime="{{ milestone.date }}"></time>
+<dt class="{{ milestone.browser }}">
+	{% if milestone.url -%}
+	<a href="{{ milestone.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
+	{%- else -%}
+	{{ milestone_title | trim | md_inline | safe }}
+	{%- endif %}
+	{% if milestone.by %}<em>(by {{ milestone.by }})</em>{% endif %}
+</dt>
+<dd class="{{ milestone.browser }}">
+	{% if milestone.date %}
+	<time datetime="{{ milestone.date }}"></time>
+	{% endif %}
+</dd>
 {% endmacro %}
 
 {% macro print_standard (tech, hLevel) %}
 <section class="tech {{ tech.status }}">
 
-##{{ "#" if hLevel == 3 }} {{ tech.title | safe }} {{ print_status(tech.status) }}
+<h{{ hLevel or 2 }} id="{{ tech.id }}"> {{ tech.title | md_inline | safe }} {{ print_status(tech.status) }}</h{{ hLevel or 2 }}>
 
 {{ tech.description | safe }}
 
 <time-line>
+<dl>
 {% for milestone in tech.milestones %}
 {{ print_milestone(milestone) }}
 {% endfor %}
+</dl>
 </time-line>
 {{ tech.note }}
 
@@ -50,13 +58,12 @@ page_css: true
 This section contains an overview of my contributions to web standards since 2012.
 </div>
 
-## Status legend
+<h2>Status legend</h2>
 
-<table>
+<table class="status-legend">
 	<thead>
 		<tr>
 			<th>Status</th>
-			<th>Count</th>
 			<th>Description</th>
 		</tr>
 	</thead>
@@ -64,8 +71,16 @@ This section contains an overview of my contributions to web standards since 201
 		{% for id, status in proposal_meta.statuses %}
 		<tr>
 			<td>{{ print_status(status) }}</td>
-			<td>{{ status.count }}</td>
-			<td>{{ status.description }}</td>
+			<td>{{ status.description }}
+				<details>
+					<summary>{{ status.proposals.length }} proposal{{ "s" if status.proposals.length != 1 }}</summary>
+					<ul>
+						{% for proposal in status.proposals -%}
+						<li><a href="{{ proposal.url }}">{{ proposal.title }}</a></li>
+						{%- endfor %}
+					</ul>
+				</details>
+			</td>
 		</tr>
 		{% endfor %}
 	</tbody>
@@ -73,10 +88,11 @@ This section contains an overview of my contributions to web standards since 201
 
 {% for tech in standards -%}
 {% if tech.parts %}
-## {{ tech.title | safe }}
-{{ tech.description | safe }}
+<h2>{{ tech.title | md_inline | safe }}</h2>
+
+{{ tech.description | md | safe }}
 	{% for part in tech.parts -%}
-	{{ print_standard(part, 3) }}
+		{{ print_standard(part, 3) }}
 	{%- endfor %}
 {% else -%}
 {{ print_standard(tech) }}

@@ -8,7 +8,7 @@
 	font: 800 calc(.5rem + .15em)/1 var(--font-sans);
 	letter-spacing: normal;
 	background: var(--color, var(--color-gray-medium));
-
+	white-space: nowrap;
 }
 
 .shipped-baseline {
@@ -34,4 +34,67 @@
 
 .proposal {
 	--color: var(--color-cyan);
+}
+
+.status-legend {
+	td {
+		vertical-align: top;
+	}
+
+	details {
+		font-size: 80%;
+		color: var(--color-gray-40);
+		font-family: var(--font-sans);
+
+		summary {
+			font-weight: 500;
+		}
+
+		ul {
+			padding-inline-start: 1em;
+			font-size: 85%;
+			font-weight: 500;
+			color: var(--color-gray-30);
+
+			a:not(:hover) {
+				color: inherit;
+			}
+		}
+
+		code {
+			background: transparent;
+			font-size: 110%;
+			color: var(--color-gray-20);
+		}
+	}
+}
+
+time-line dt {
+	&.chrome,
+	&.firefox,
+	&.safari {
+		&::before {
+			content: var(--icon);
+			color: var(--color);
+			display: inline-block;
+			vertical-align: -.1em;
+			font: 85%/1 bootstrap-icons;
+			margin-right: .25em;
+		}
+	}
+}
+
+.chrome {
+	--color: var(--color-green);
+	--icon: var(--icon-chrome);
+}
+
+.firefox {
+	--color: var(--color-orange);
+	--icon: var(--icon-firefox);
+}
+
+.safari {
+	--color: var(--color-cyan);
+	--icon: var(--icon-safari);
 }

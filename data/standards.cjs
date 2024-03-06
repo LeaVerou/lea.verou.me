@@ -261,16 +261,42 @@ const proposals = [
 		]
 	},
 	{
-		title: "Auto-sizing form elements (now \`field-sizing\`)",
+		title: "Auto-sizing `<input>` and `<select>` elements by their contents",
 		description: `A way to specify that form elements should be sized by their input value.
-		This is a big pain point for authors, as it is very commonly needed (especially for multiline text fields),
+		This is a big pain point for authors, as it is very commonly needed
 		and quite tricky to implement manually.`,
 		milestones: [
 			{
 				type: "proposal",
+				title: "Initial proposal for `<textarea>`",
+				by: "Ian Kilpatrick",
+				url: "https://github.com/w3c/csswg-drafts/issues/7542",
+				date: "2022-07-28"
+			},
+			{
+				type: "proposal",
+				title: "Proposal to extend to `<input>` and `<select>`",
+				by: "me",
 				url: "https://github.com/w3c/csswg-drafts/issues/7552",
 				date: "2022-08-01"
-			}
+			},
+			{
+				type: "specced",
+				by: "Florian & Kent Tamura",
+				url: "https://github.com/w3c/csswg-drafts/commit/97a360ac1a9f514305b072f81e1171dec14e11db",
+				date: "2023-10-27"
+			},
+			{
+				type: "shipped",
+				browser: "chrome",
+				version: "119",
+				flag: true,
+			},
+			// {
+			// 	type: "shipped",
+			// 	browser: "chrome",
+			// 	version: "123",
+			// }
 		]
 	},
 	{
@@ -331,9 +357,10 @@ const proposals = [
 	},
 	{
 		title: "Relaxed `box-shadow` syntax",
-		description: `Perhaps my first CSS proposal.
+		status: "shipped-baseline",
+		description: `One of my first web standards proposals.
 		Relaxed the syntax of \`box-shadow\` to minimize author errors.
-		Gave birth to one of CSS’s design principles, dubbed ["Lea Verou reordering principle"](https://wiki.csswg.org/ideas/principles?s[]=reordering).`,
+		Gave birth to one of CSS’s design principles, which Elika called ["Lea Verou reordering principle"](https://wiki.csswg.org/ideas/principles?s[]=reordering).`,
 		milestones: [
 			{
 				type: "proposal",
@@ -479,6 +506,7 @@ const proposals = [
 	},
 	{
 		title: "`inherit()`",
+		description: `Allow authors to read arbitary properties from their parent and use them in calculations, solving several diverse use cases at once.`,
 		milestones: [
 			{
 				type: "proposal",
@@ -492,7 +520,7 @@ const proposals = [
 			},
 			{
 				type: "resolution",
-				title: "Second WG resolution (naming & scope reduction)",
+				title: "Second WG resolution (naming & MVP)",
 				url: "https://github.com/w3c/csswg-drafts/issues/2864#issuecomment-1645794662",
 				date: "2023-07-21"
 			}
@@ -500,6 +528,7 @@ const proposals = [
 	},
 	{
 		title: "`@image`",
+		description: `A new at-rule to define and manipulate images in CSS, solving several image-related pain points at once.`,
 		milestones: [
 			{
 				type: "proposal",
@@ -515,6 +544,7 @@ const proposals = [
 	},
 	{
 		title: "`color-extract()`",
+		description: `A function to extract individual color components (e.g. lightness) from an arbitrary CSS color, facilitating the creation of dynamic design systems.`,
 		milestones: [
 			{
 				type: "proposal",
@@ -529,7 +559,8 @@ const proposals = [
 		]
 	},
 	{
-		title: "Conditionless CQs",
+		title: "Conditionless container queries",
+		description: `Make the query part of container queries optional.`,
 		milestones: [
 			{
 				type: "proposal",
@@ -562,6 +593,7 @@ function walkStandards (callback) {
 }
 
 walkStandards(proposal => {
+	proposal.id ??= proposal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 	proposal.status ??= getStatus(proposal);
 
 	for (let milestone of proposal.milestones) {
@@ -586,7 +618,7 @@ function getStatus (tech) {
 
 		if (shippedNoFlag.length === 0) {
 			// Only shipped under a flag
-			return "shipped-flag";
+			return "shipped-flagged";
 		}
 
 		// Could it be baseline?
