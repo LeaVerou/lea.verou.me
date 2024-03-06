@@ -102,6 +102,7 @@ const proposals = [
 			},
 			{
 				type: "resolution",
+				url: "https://github.com/w3c/csswg-drafts/issues/3187#issuecomment-499206254",
 				date: "2019-06-05"
 			},
 			{
@@ -128,6 +129,11 @@ const proposals = [
 				browser: "chrome",
 				version: "119",
 				date: "2023-10-30"
+			},
+			{
+				title: "Interop 2024 focus area",
+				url: "https://web.dev/blog/interop-2024",
+				date: "2024-02-01"
 			}
 		]
 	},

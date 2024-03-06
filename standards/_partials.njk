@@ -15,7 +15,8 @@
 			{%- if m.type == "shipped" %} in {{ m.browser | capitalize }} {{ m.version }}{% endif -%}
 		{%- endset %}
 	{% endif -%}
-	<dt class="{{ m.browser }}">
+	<dt class="{{ m.browser }}{{ ' flag' if m.flag }}">
+		{% if m.flag %}<span class="flag"></span>{% endif %}
 		{% if m.url -%}
 		<a href="{{ m.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
 		{%- else -%}

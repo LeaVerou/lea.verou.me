@@ -99,6 +99,17 @@ time-line dt {
 	--icon: var(--icon-safari);
 }
 
+span.flag {
+	display: inline-block;
+	vertical-align: -0.3em;
+	margin-left: -1.3em;
+	font: 60%/1 bootstrap-icons;
+
+	&::before {
+		content: var(--icon-flag-fill);
+	}
+}
+
 .tech {
 	h2, h3 {
 		display: flex;
