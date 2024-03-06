@@ -10,6 +10,7 @@ tags:
 
 CSS Variable Groups is a way to define multiple properties under the same namespace and pass the entire group around,
 addressing several pain points around design tokens, design systems, and integrating third-party components.
+The proposal has been [posted](https://github.com/w3c/csswg-drafts/issues/9992) to the CSS WG repo and received significant attention by the community.
 
 </div>
 
@@ -438,7 +439,35 @@ Customizing the arg name (both for readabiity and to facilitate nested use cases
 
 ### Piecewise interpolation
 
-The previous example always calculates mid points from the ends of the spectrum. However, it would serve use cases far better to be able to set spot colors to course correct and have the intermediate tints compute from them, similar to how gradient color stops work.
+The previous example always calculates mid points from the ends of the spectrum.
+However, it would serve use cases far better to be able to set spot colors to course correct and have the intermediate tints compute from them, similar to how gradient color stops work.
+
+An earlier version of this proposal included syntax for this,
+but I now think this was overfit, and should not be handled in the variable group syntax.
+
+Since the main pain point for piecewise interpolation is color tokens,
+I think it’s better addressed by adding syntax that allows defining a color scale
+(like a gradient line without the gradient) and picking an arbitrary color along it.
+I posted [a proposal for a `color-scale()` function](https://github.com/w3c/csswg-drafts/issues/10034) that could serve as a starting point for this discussion.
+
+Then, assuming we have a `default` keyword, piecewise interpolation becomes as simple as:
+
+```css
+--color-green: {
+	100: oklch(95% 13% 135);
+	400: oklch(65% 50% 135);
+	default: color-scale(
+		calc(progress(arg from 100 to 900) * 100%) / in oklch,
+		var(--color-green-100), var(--color-green-400) 37.5%, var(--color-green-900));
+	900: oklch(25% 20% 135);
+};
+```
+
+Admittedly it lacks the ability to set stops dynamically by the design system user (the scale needs to be hardcoded by the design system author),
+but on balance I think that’s okay.
+
+<details>
+<summary>Original text</summary>
 
 Perhaps numerical keys could be auto-detected and the closest min and max keys and values could be made available to the expression as keywords.
 Potential names: `min` and `max` for values, `min-key`, `max-key` for the keys.
@@ -463,6 +492,7 @@ It could even be specified with *just* `default`:
 	default: color-mix(in oklab, white calc(1% * arg), black);
 }
 ```
+</details>
 
 ### Issues
 
@@ -538,24 +568,33 @@ That is certainly more explicit, at the cost of verbosity and potential for erro
 
 This would look just like the one above, but instead of specifying a group, it is just syntactic sugar for setting many variables at once.
 
-### Continuous variations?
+### Continuous variations
 
-If nesting is merely syntactic sugar, that definitely makes it harder to add continuous variations as a feature.
-It would need to be a separate feature that does not depend on nesting.
+To support continuous variations we'd basically need a destructuring syntax that works for *any* CSS variable, not just groups.
+This also makes it a more powerful feature, but I suspect its implications for the cascade might make it far too tricky to implement.
 
-Perhaps something like this could work:
+Syntactically, a more limited form with one argument could look like this:
 
 ```css
 --color-green-*: color-mix(in oklch, var(--color-green-100) calc((100 - arg / 10) * 1%), var(--color-green-900));
 ```
 
-or:
+We could also make it more powerful and allow naming the argument, which would also open the floodgates for *multiple* arguments:
 
 ```css
 --color-green-[tint]: color-mix(in oklch, var(--color-green-100) calc((100 - tint / 10) * 1%), var(--color-green-900));
 ```
 
 It is unclear whether these are possible syntax-wise, since we had to introduce a bunch of restrictions to future syntax to make `&`-less nesting work.
+
+### Arbitrary function call syntax
+
+This was [an idea by Tab](https://github.com/w3c/csswg-drafts/issues/9992#issuecomment-1972003164) to facilitate some of these use cases via functions:
+We could introduce a syntax for dynamic dispatch, that performs function calls by taking the function name as a parameter.
+
+You can read his proposal in the link.
+As with the other components of a decomposed design, this is a feature that is more broadly useful,
+even beyond design systems use cases.
 
 ## Other ideas explored { #other-ideas }
 
