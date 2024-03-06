@@ -76,7 +76,7 @@ This section contains an overview of my contributions to web standards since 201
 					<summary>{{ status.proposals.length }} proposal{{ "s" if status.proposals.length != 1 }}</summary>
 					<ul>
 						{% for proposal in status.proposals -%}
-						<li><a href="{{ proposal.url }}">{{ proposal.title }}</a></li>
+						<li><a href="{{ proposal.url }}">{{ proposal.title | md_inline | safe }}</a></li>
 						{%- endfor %}
 					</ul>
 				</details>
