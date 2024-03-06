@@ -39,7 +39,7 @@ const filters = {
 		});
 	},
 
-	relative(page) {
+	relative (page) {
 		let path = page.url.replace(/[^/]+$/, "");
 		let ret = require("path").relative(path, "/");
 

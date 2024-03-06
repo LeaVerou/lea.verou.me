@@ -4,35 +4,35 @@ includes: '<script type=module src="/standards/time-line.js"></script>'
 page_css: true
 ---
 {% macro print_status (ref) -%}
-{% set status = ref if ref.id else proposal_meta.statuses[ref] %}
-{%- if status -%}
-<span class="tech-status {{ status.id }}">{{ status.name }}</span>
-{%- else -%}
-<span class="tech-status {{ ref }}">{{ ref | capitalize }}</span>
-{%- endif %}
+	{% set status = ref if ref.id else proposal_meta.statuses[ref] %}
+	{%- if status -%}
+	<span class="tech-status {{ status.id }}">{{ status.name }}</span>
+	{%- else -%}
+	<span class="tech-status {{ ref }}">{{ ref | capitalize }}</span>
+	{%- endif %}
 {%- endmacro %}
 
 {% macro print_milestone (milestone) %}
-{% set milestone_title = milestone.title %}
-{%- if not milestone_title %}
-	{% set milestone_title -%}
-		{{ "WG" if milestone.type == "resolution" }} {{ milestone.type | capitalize }}
-		{%- if milestone.type == "shipped" %} in {{ milestone.browser | capitalize }} {{ milestone.version }}{% endif -%}
-	{%- endset %}
-{% endif -%}
-<dt class="{{ milestone.browser }}">
-	{% if milestone.url -%}
-	<a href="{{ milestone.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
-	{%- else -%}
-	{{ milestone_title | trim | md_inline | safe }}
-	{%- endif %}
-	{% if milestone.by %}<em>(by {{ milestone.by }})</em>{% endif %}
-</dt>
-<dd class="{{ milestone.browser }}">
-	{% if milestone.date %}
-	<time datetime="{{ milestone.date }}"></time>
-	{% endif %}
-</dd>
+	{% set milestone_title = milestone.title %}
+	{%- if not milestone_title %}
+		{% set milestone_title -%}
+			{{ "WG" if milestone.type == "resolution" }} {{ milestone.type | capitalize }}
+			{%- if milestone.type == "shipped" %} in {{ milestone.browser | capitalize }} {{ milestone.version }}{% endif -%}
+		{%- endset %}
+	{% endif -%}
+	<dt class="{{ milestone.browser }}">
+		{% if milestone.url -%}
+		<a href="{{ milestone.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
+		{%- else -%}
+		{{ milestone_title | trim | md_inline | safe }}
+		{%- endif %}
+		{% if milestone.by %}<em>(by {{ milestone.by }})</em>{% endif %}
+	</dt>
+	<dd class="{{ milestone.browser }}">
+		{% if milestone.date %}
+		<time datetime="{{ milestone.date }}"></time>
+		{% endif %}
+	</dd>
 {% endmacro %}
 
 {% macro print_standard (tech, hLevel = 2) %}
