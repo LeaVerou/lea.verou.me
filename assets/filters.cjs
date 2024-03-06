@@ -109,6 +109,11 @@ const filters = {
 			let months = months_total % 12;
 			let years = Math.floor(months_total / 12);
 
+			if (years >= 2 && months > 6 || months > 9) {
+				years++;
+				months = 0;
+			}
+
 			if (years >= 1) {
 				parts.push({ unit: "y", value: years});
 			}

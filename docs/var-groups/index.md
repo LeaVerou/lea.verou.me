@@ -1,6 +1,7 @@
 ---
 title: "Proposal: CSS Variable Groups"
 toc: true
+date: 2024-02-23
 tags:
   - css
   - proposal

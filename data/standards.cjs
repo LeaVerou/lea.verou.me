@@ -189,7 +189,7 @@ const proposals = [
 	},
 	{
 		id: "where",
-		title: "A way to decouple selector logic from specificity (\`:where()\` pseudo-class)",
+		title: "Decouple selector logic from specificity (\`:where()\`)",
 		description: `
 			Traditionally, CSS included a heuristic that inferred selector importance from its querying logic.
 			Often this inference was wrong, and authors had little recourse, giving rise to patterns like [BEM](http://getbem.com/)
@@ -274,7 +274,7 @@ const proposals = [
 		]
 	},
 	{
-		title: "Auto-sizing `<input>` and `<select>` elements by their contents",
+		title: "Auto-size text fields and dropdowns",
 		description: `A way to specify that form elements should be sized by their input value.
 		This is a big pain point for authors, as it is very commonly needed
 		and quite tricky to implement manually.`,
@@ -314,8 +314,10 @@ const proposals = [
 	},
 	{
 		id: "in-space",
+		status: "shipped-baseline",
 		title: "CSS-wide syntax for color interpolation",
-		description: `Defined the \`in <space>\` token used across CSS to specify a color space for color interpolation.`,
+		description: `Defined the \`in <space>\` token used across CSS to specify a color space for color interpolation,
+		used in \`color-mix()\`, gradients, and more.`,
 		milestones: [
 			{
 				type: "specced",
@@ -338,6 +340,12 @@ const proposals = [
 				type: "resolution",
 				url: "https://github.com/w3c/csswg-drafts/issues/7948#issuecomment-1479941072",
 				date: "2023-03-22"
+			},
+			{
+				type: "specced",
+				by: "Chris Lilley",
+				url: "https://github.com/w3c/csswg-drafts/commit/cc85d46b321003cc3849bd028ed5280a4e71c82b",
+				date: "2023-07-05"
 			}
 		]
 	},
@@ -386,6 +394,28 @@ const proposals = [
 				type: "proposal",
 				url: "https://lists.w3.org/Archives/Public/www-style/2012Oct/0313.html",
 				date: "2012-10-12"
+			}
+		]
+	},
+	{
+		title: "Color API",
+		area: "JS",
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://lists.w3.org/Archives/Public/www-archive/2021Jul/att-0004/Towards_a_Color_API_for_the_Web_Platform.pdf",
+			},
+			{
+				type: "resolution",
+				url: "https://lists.w3.org/Archives/Public/www-style/2021Jul/0012.html",
+				date: "2021-07-26",
+			},
+			{
+				type: "specced",
+				title: "Initial spec draft",
+				by: "me & Chris Lilley",
+				url: "https://github.com/wicg/color-api",
+				date: "2021-05-24",
 			}
 		]
 	},
@@ -596,7 +626,35 @@ const proposals = [
 				date: "2023-11-01"
 			}
 		]
-	}
+	},
+	{
+		id: "var-groups",
+		title: "CSS Variable Groups",
+		tags: ["Design systems", "Web Components"],
+		description: `A way to group related variables and pass them around, to make it less painful to write CSS for design systems and to integrate third-party components.`,
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/w3c/csswg-drafts/issues/9992",
+				date: "2024-02-23"
+			}
+		]
+	},
+	{
+		id: "color-scale",
+		title: "CSS Color Scales",
+		tags: ["Design systems"],
+		description: `A way to define continuous color scales in CSS and pick arbitrary colors on them, to facilitate the creation of dynamic design systems.`,
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/w3c/csswg-drafts/issues/10034",
+				date: "2024-03-05"
+			}
+		]
+	},
+	// TODO custom attributes
+	// TODO HTML refs
 ];
 
 const relevantStatuses = ["shipped", "specced", "resolution", "proposal"];

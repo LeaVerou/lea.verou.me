@@ -48,6 +48,10 @@
 	{%- endif %}
 </h{{ hLevel }}>
 
+<div class="description">
+{{ tech.description | md_inline | safe }}
+</div>
+
 {% if tech.status != "proposal" and tech.keyDates.length > 1 %}
 <div class="progress">
 {% for transition in tech.keyDates %}
@@ -70,9 +74,7 @@
 </div>
 {# <pre>{{ tech.keyDates | jsonify }}</pre> #}
 {% endif %}
-<div class="description">
-{{ tech.description | md_inline | safe }}
-</div>
+
 {% if tech.parts %}
 {% for part in tech.parts -%}
 		{{ standard(part, hLevel + 1) }}
