@@ -47,7 +47,7 @@ const proposals = [
 				note: "Note: Firefox shipped the North Star syntax directly (see below), without shipping the interim syntax."
 			},
 			{
-				title: "North Star syntax",
+				title: "North Star CSS Nesting Syntax",
 				description: `This was the ideal syntax where the nesting selector (\`&\`) is only needed to express user intent,
 				and never for technical reasons.
 				We knew all along that this was the ideal syntax, but for many years it was considered infeasible.`,
@@ -182,9 +182,15 @@ const proposals = [
 		]
 	},
 	{
-		title: "A pseudo-class to reduce specificity: \`:where()\`",
-		description: `\`:where()\` was a new pseudo-class that allows
-		CSS authors to include querying criteria in their selectors without affecting specificity (the selector score that determines precedence).`,
+		id: "where",
+		title: "A way to decouple selector logic from specificity (\`:where()\` pseudo-class)",
+		description: `
+			Traditionally, CSS included a heuristic that inferred selector importance from its querying logic.
+			Often this inference was wrong, and authors had little recourse, giving rise to patterns like [BEM](http://getbem.com/)
+			that avoided the issue by giving up on most querying logic altogether.
+			\`:where()\` was a new pseudo-class that allows
+			CSS authors to include querying criteria in their selectors without affecting specificity (the selector score that determines precedence),
+			decoupling the two.`,
 		milestones: [
 			{
 				type: "proposal",
@@ -301,6 +307,7 @@ const proposals = [
 		]
 	},
 	{
+		id: "in-space",
 		title: "CSS-wide syntax for color interpolation",
 		description: `Defined the \`in <space>\` token used across CSS to specify a color space for color interpolation.`,
 		milestones: [
@@ -310,14 +317,10 @@ const proposals = [
 				url: "https://github.com/w3c/csswg-drafts/commit/3efd360d4e13227ef9b3c0466bc0296028ae5b2b",
 				date: "2021-11-01"
 			},
-			{
-				type: "proposal",
-				url: "https://github.com/w3c/csswg-drafts/issues/7948",
-				date: "2022-10-24"
-			},
 		]
 	},
 	{
+		id: "oklab-default",
 		title: "Color interpolation in Oklab by default",
 		milestones: [
 			{
@@ -606,47 +609,69 @@ function walkStandards (callback) {
 	}
 }
 
+function getDate (str) {
+	let ret = new Date(str);
+	// Adjust for timezone
+	ret.setMinutes(ret.getMinutes() + ret.getTimezoneOffset());
+	return ret;
+}
+
+let statuses = ["shipped-baseline", "shipped", "shipped-flagged", "specced", "resolution", "proposal"];
+
 walkStandards(proposal => {
-	proposal.id ??= proposal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-	proposal.status ??= getStatus(proposal);
+	proposal.id ??= proposal.title.toLowerCase().replace(/[^\w]+/g, " ").trim().replace(/\s+/g, "-");
+	proposal.keyDates = {};
+	proposal.shipped_in = new Set();
 
 	// Add browser release dates where missing
 	for (let milestone of proposal.milestones) {
 		if (milestone.browser && !milestone.date) {
 			milestone.date = browsers[milestone.browser][milestone.version];
 		}
+
+		if (!milestone.date) {
+			continue;
+		}
+
+		if (!relevantStatuses.includes(milestone.type)) {
+			continue;
+		}
+
+		let date = getDate(milestone.date);
+
+		let key = milestone.type;
+		if (milestone.type === "shipped") {
+			key = milestone.flag ? "shipped-flagged" : "shipped";
+			if (milestone.flag) {
+				key = "shipped-flagged";
+			}
+			else {
+				proposal.shipped_in.add(milestone.browser);
+			}
+
+			if (proposal.shipped_in.size >= 3) {
+				key = "shipped-baseline";
+			}
+		}
+
+		if (!proposal.keyDates[key] || proposal.keyDates[key] > date) {
+			proposal.keyDates[key] = date;
+		}
+
+		if (!proposal.minDate || date < proposal.minDate) {
+			proposal.minDate = date;
+		}
+
+		if (!this.maxDate || date > proposal.maxDate) {
+			proposal.maxDate = date;
+		}
 	}
+
+	// Find best status that applies
+	proposal.status ??= statuses.find(s => s in proposal.keyDates);
+
+	// Sort key dates by date and convert to array
+	proposal.keyDates = Object.entries(proposal.keyDates).map(([k, v]) => ({status: k, date: v})).sort((a, b) => a.date - b.date);
 });
-
-function getStatus (tech) {
-	if (!tech || !tech.milestones) {
-		return "unknown";
-	}
-
-	let relevantMilestones = tech.milestones.filter(m => relevantStatuses.includes(m.type));
-	let statuses = new Set(relevantMilestones.map(m => m.type));
-
-	if (statuses.has("shipped")) {
-		// Find what kind of shipped
-		let shippedMilestones = relevantMilestones.filter(m => m.type === "shipped");
-		let shippedNoFlag = shippedMilestones.filter(m => !m.flag);
-
-		if (shippedNoFlag.length === 0) {
-			// Only shipped under a flag
-			return "shipped-flagged";
-		}
-
-		// Could it be baseline?
-		let browsers = new Set(shippedNoFlag.map(m => m.browser));
-		if (browsers.has("chrome") && browsers.has("firefox") && browsers.has("safari")) {
-			return "shipped-baseline";
-		}
-
-		return "shipped";
-	}
-	else {
-		return relevantStatuses.find(s => statuses.has(s));
-	}
-}
 
 module.exports = proposals;

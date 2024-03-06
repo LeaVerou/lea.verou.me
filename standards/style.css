@@ -1,6 +1,6 @@
 .tech-status {
 	display: inline-flex;
-	vertical-align: middle;
+	align-self: center;
 	padding: .35em .5em;
 	border-radius: .25em;
 	color: white;
@@ -97,4 +97,116 @@ time-line dt {
 .safari {
 	--color: var(--color-cyan);
 	--icon: var(--icon-safari);
+}
+
+.tech {
+	h2, h3 {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: .25em;
+
+		.dates {
+			font-size: 1rem;
+		}
+
+		code {
+			line-height: 1;
+		}
+	}
+}
+
+.dates {
+	color: var(--color-gray-50);
+	font-style: italic;
+	font-family: var(--font-serif);
+	font-weight: normal;
+	letter-spacing: normal;
+	margin-left: auto;
+}
+
+.progress {
+	position: relative;
+	display: flex;
+	gap: .4em;
+	margin-block: 1em;
+	background: var(--color-gray-95);
+	padding: .8em 1em;
+	border-radius: .2em;
+
+	&::before {
+		content: "Timeline";
+		position: absolute;
+		left: 50%;
+		top: -.8em;
+		transform: translateX(-50%);
+		background: linear-gradient(to bottom, var(--color-gray-90), var(--color-gray-95));
+		padding: .4em .6em;
+		border-radius: .2em;
+		color: var(--color-gray-60);
+		text-transform: uppercase;
+		font: 600 75%/1 var(--font-sans);
+		letter-spacing: normal;
+	}
+
+	.to {
+		--_arrow-thickness: var(--arrow-thickness, .1em);
+		--_arrow-head-length: var(--arrow-head-length, .6em);
+
+		flex: 1;
+		display: flex;
+		gap: .2em;
+		align-items: center;
+
+		&.y {
+			color: color-mix(in oklab, var(--color-red) 80%, canvastext);
+		}
+
+		&.d,
+		&.w {
+			color: color-mix(in oklab, var(--color-green) 80%, canvastext);
+		}
+
+		.interval {
+			display: flex;
+			align-items: baseline;
+			gap: .05em;
+
+			.value {
+				font-weight: bold;
+			}
+
+			.unit {
+				font-style: italic;
+			}
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			background: var(--color-gray-70);
+			height: .7em;
+			flex: 1;
+
+		}
+
+		&::before {
+			height: var(--_arrow-thickness);
+		}
+
+		&::after {
+			clip-path: polygon(
+				0 calc(50% - var(--_arrow-thickness) / 2), 0 calc(50% + var(--_arrow-thickness) / 2),
+				calc(100% - var(--_arrow-head-length)) calc(50% + var(--_arrow-thickness) / 2), calc(100% - var(--_arrow-head-length)) 100%,
+				100% 50%,
+				calc(100% - var(--_arrow-head-length)) 0, calc(100% - var(--_arrow-head-length)) calc(50% - var(--_arrow-thickness) / 2),
+				0 calc(50% - var(--_arrow-thickness) / 2)
+			);
+		}
+	}
+}
+
+.description {
+	margin-block: 1em;
+	font-style: italic;
 }

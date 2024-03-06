@@ -4,7 +4,6 @@ const capitalizations = require("../data/capitalizations.json");
 const readingTime = require("reading-time");
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
-
 const filters = {
 	is_published (post) {
 		return !post.data.draft && !post.data.unlisted;
@@ -77,9 +76,61 @@ const filters = {
 			return date.toISOString().substring(0, 10);
 		}
 
-		let options = typeof format === "string"? { dateStyle: format } : format;
+		let options = format;
+
+		if (typeof format === "string") {
+			options = { dateStyle: format };
+		}
 
 		return date.toLocaleString("en-GB", options);
+	},
+
+	from (start, end, o = {}) {
+		if (!start || !end) {
+			return "";
+		}
+
+		let diff = Math.abs(end - start);
+
+		// Throw away sub-day units, we don’t need it here
+		let days = Math.round(diff / (24 * 60 * 60 * 1000));
+		let parts = [];
+		let maxUnit = "ms";
+
+		if (days < 7) {
+			parts.push({ unit: "d", value: days });
+
+		}
+		else if (days < 28) {
+			parts.push({ unit: "w", value: Math.round(days / 7) });
+		}
+		else {
+			let months_total = Math.round(days / 30.437);
+			let months = months_total % 12;
+			let years = Math.floor(months_total / 12);
+
+			if (years >= 1) {
+				parts.push({ unit: "y", value: years});
+			}
+
+			if (months > 0 && years < 2 && (years === 0 || months_total > 2)) {
+				parts.push({ unit: "m", value: months });
+			}
+		}
+
+		// This should never happen
+		if (parts.length === 0) {
+			parts.push({ unit: "ms", value: diff });
+		}
+		else {
+			maxUnit = parts[0].unit;
+		}
+
+		if (o.structured) {
+			return {maxUnit, parts};
+		}
+
+		return parts.map(({unit, value}) => `${value}${unit}`).join(" ");
 	},
 
 	format_tag(tag) {

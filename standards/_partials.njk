@@ -34,12 +34,44 @@
 <section class="tech {{ tech.status }}">
 
 <h{{ hLevel }} id="{{ tech.id }}">
-	{{ tech.title | md_inline | safe }}
+	<a href="#{{ tech.id }}">{{ tech.title | md_inline | safe }}</a>
 	{{ status_badge(tech.status) }}
+	{% if tech.minDate %}
+	<span class="dates">
+		(<time>{{ tech.minDate | format_date({"year": "numeric", month: "short"}) }}</time>
+		&ndash;
+		{% if tech.status == "shipped-baseline" or tech.status == "superseded" %}
+		<time>{{ tech.maxDate | format_date({"year": "numeric", month: "short"}) }}</time>
+		{%- endif %})
+	</span>
+	{%- endif %}
 </h{{ hLevel }}>
 
+{% if tech.status != "proposal" and tech.keyDates.length > 1 %}
+<div class="progress">
+{% for transition in tech.keyDates %}
+	{% if transition.date %}
+		{% if prevDate %}
+			{% set interval = transition.date | from(prevDate, {structured: true}) %}
+			<span class="to {{ interval.maxUnit }}">
+				{% for part in interval.parts %}
+					<span class="interval">
+						<span class="value">{{ part.value }}</span>
+						<span class="unit">{{ part.unit }}</span>
+					</span>
+				{% endfor %}
+			</span>
+		{% endif %}
+		{{ status_badge(transition.status) }}
+		{% set prevDate = transition.date %}
+	{% endif %}
+{% endfor %}
+</div>
+{# <pre>{{ tech.keyDates | jsonify }}</pre> #}
+{% endif %}
+<div class="description">
 {{ tech.description | md_inline | safe }}
-
+</div>
 {% if tech.parts %}
 {% for part in tech.parts -%}
 		{{ standard(part, hLevel + 1) }}

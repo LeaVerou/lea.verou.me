@@ -55,8 +55,13 @@ time-line dl {
 		padding-inline: 0;
 
 		> * {
+			width: 0;
 			grid-column: calc(var(--offset) + 1) / -1;
 			margin-left: calc(var(--sub-offset) * 100% / var(--increments));
+		}
+
+		time {
+			white-space: nowrap;
 		}
 	}
 }
