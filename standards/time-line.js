@@ -41,11 +41,16 @@ export default class TimeLine extends HTMLElement {
 	}
 
 	connectedCallback () {
-		this.#dl = this.querySelector(":scope > dl:only-child");
+		if (this.children.length === 0) {
+			// Empty <time-line> is a no-op
+			return;
+		}
+
+		this.#dl = this.querySelector("dl");
 		this.#range = this.shadowRoot.querySelector("#range");
 
-		if (!this.#dl) {
-			throw new Error("TimeLine component must contain a single <dl> element");
+		if (!this.#dl || this.#dl.previousElementSibling || this.#dl.nextElementSibling || this.#dl.parentElement !== this) {
+			console.warn("TimeLine component must contain a single <dl> element", this);
 		}
 
 		this.#processDates();
@@ -62,7 +67,7 @@ export default class TimeLine extends HTMLElement {
 
 		let times = this.querySelectorAll("time[datetime]");
 		for (let time of times) {
-			let date = new Date(time.getAttribute("datetime"));
+			let date = getDate(time.getAttribute("datetime"));
 			time.dateObject = date;
 
 			if (!time.textContent) {
@@ -87,7 +92,7 @@ export default class TimeLine extends HTMLElement {
 
 		for (let time of times) {
 			let year = time.dateObject.getFullYear();
-			let subOffset = (time.dateObject - new Date(year + "-01-01")) / msInYear;
+			let subOffset = (time.dateObject - getDate(year + "-01-01")) / msInYear;
 			time.style.setProperty("--offset", year - minYear);
 			time.style.setProperty("--sub-offset", subOffset);
 		}
@@ -97,6 +102,13 @@ export default class TimeLine extends HTMLElement {
 		this.style.setProperty("--increments", years.length);
 		this.#range.innerHTML = years.map(year => `<time datetime="${year}" class="increment" style="--offset: ${ year - minYear }">${year}</time>`).join("\n");
 	}
+}
+
+function getDate (str) {
+	let ret = new Date(str);
+	// Adjust for timezone
+	ret.setMinutes(ret.getMinutes() + ret.getTimezoneOffset());
+	return ret;
 }
 
 customElements.define("time-line", TimeLine);

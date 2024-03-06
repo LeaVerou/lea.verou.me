@@ -1,0 +1,37 @@
+.tech-status {
+	display: inline-flex;
+	vertical-align: middle;
+	padding: .35em .5em;
+	border-radius: .25em;
+	color: white;
+	text-transform: uppercase;
+	font: 800 calc(.5rem + .15em)/1 var(--font-sans);
+	letter-spacing: normal;
+	background: var(--color, var(--color-gray-medium));
+
+}
+
+.shipped-baseline {
+	--color: color-mix(in oklab, oklch(0 .3 150) 40%, var(--color-green));
+}
+
+.shipped {
+	--color: color-mix(in oklab, oklch(0 .3 150) 20%, var(--color-green));
+
+}
+
+.shipped-flagged {
+	--color: var(--color-green);
+}
+
+.specced {
+	--color: color-mix(in oklab, var(--color-green) 60%, var(--color-yellow));
+}
+
+.resolution {
+	--color: color-mix(in oklab, var(--color-green) 40%, var(--color-yellow));
+}
+
+.proposal {
+	--color: var(--color-cyan);
+}
