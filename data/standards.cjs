@@ -9,10 +9,11 @@ const proposals = [
 			{
 				title: "Interim syntax",
 				status: "superseded",
-				description: `This was originally known as “Lea’s proposal”, and later “Option 3”.
-
-				This was a proposal for a CSS nesting syntax that would get us halfway to North Star syntax.
-				It significantly reduced the use cases that had to explicitly include a nesting selector (\`&\`)`,
+				description: `
+				This was a proposal for a simplified CSS nesting syntax
+				that significantly reduced the use cases that had to explicitly include a nesting selector (\`&\`).
+				It was also fully compatible with the North Star syntax, and basically got us halfway there.
+				Originally known as _“Lea’s proposal”_, and later as _“Option 3”_ due to its position in the [pros & cons table](https://github.com/w3c/csswg-drafts/blob/main/css-nesting-1/proposals.md).`,
 				milestones: [
 					{
 						type: "proposal",

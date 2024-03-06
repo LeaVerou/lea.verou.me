@@ -40,7 +40,7 @@ page_css: true
 
 <h{{ hLevel or 2 }} id="{{ tech.id }}"> {{ tech.title | md_inline | safe }} {{ print_status(tech.status) }}</h{{ hLevel or 2 }}>
 
-{{ tech.description | safe }}
+{{ tech.description | md_inline | safe }}
 
 <time-line>
 <dl>
