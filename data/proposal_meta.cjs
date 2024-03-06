@@ -44,6 +44,7 @@ for (let proposal of proposals) {
 	let statusId = proposal.status;
 	let status = statuses[statusId];
 
+	status.proposals ??= [];
 	status.proposals.push(proposal);
 }
 

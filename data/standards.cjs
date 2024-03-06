@@ -301,9 +301,8 @@ const proposals = [
 		]
 	},
 	{
-		title: "CSS-wide color interpolation handling",
-		description: `Defined the \`in <space>\` token used across CSS to specify a color space for color interpolation,
-		and specified defaults.`,
+		title: "CSS-wide syntax for color interpolation",
+		description: `Defined the \`in <space>\` token used across CSS to specify a color space for color interpolation.`,
 		milestones: [
 			{
 				type: "specced",
@@ -316,8 +315,19 @@ const proposals = [
 				url: "https://github.com/w3c/csswg-drafts/issues/7948",
 				date: "2022-10-24"
 			},
+		]
+	},
+	{
+		title: "Color interpolation in Oklab by default",
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/w3c/csswg-drafts/issues/7948",
+				date: "2022-10-24"
+			},
 			{
 				type: "resolution",
+				url: "https://github.com/w3c/csswg-drafts/issues/7948#issuecomment-1479941072",
 				date: "2023-03-22"
 			}
 		]
@@ -600,6 +610,7 @@ walkStandards(proposal => {
 	proposal.id ??= proposal.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 	proposal.status ??= getStatus(proposal);
 
+	// Add browser release dates where missing
 	for (let milestone of proposal.milestones) {
 		if (milestone.browser && !milestone.date) {
 			milestone.date = browsers[milestone.browser][milestone.version];

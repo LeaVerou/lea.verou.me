@@ -14,12 +14,12 @@ page_css: true
 
 {% macro print_milestone (milestone) %}
 {% set milestone_title = milestone.title %}
-{% if not milestone_title %}
+{%- if not milestone_title %}
 	{% set milestone_title -%}
 		{{ "WG" if milestone.type == "resolution" }} {{ milestone.type | capitalize }}
 		{%- if milestone.type == "shipped" %} in {{ milestone.browser | capitalize }} {{ milestone.version }}{% endif -%}
 	{%- endset %}
-{% endif %}
+{% endif -%}
 <dt class="{{ milestone.browser }}">
 	{% if milestone.url -%}
 	<a href="{{ milestone.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
@@ -35,21 +35,31 @@ page_css: true
 </dd>
 {% endmacro %}
 
-{% macro print_standard (tech, hLevel) %}
+{% macro print_standard (tech, hLevel = 2) %}
 <section class="tech {{ tech.status }}">
 
-<h{{ hLevel or 2 }} id="{{ tech.id }}"> {{ tech.title | md_inline | safe }} {{ print_status(tech.status) }}</h{{ hLevel or 2 }}>
+<h{{ hLevel }} id="{{ tech.id }}">
+	{{ tech.title | md_inline | safe }}
+	{{ print_status(tech.status) }}
+</h{{ hLevel }}>
 
 {{ tech.description | md_inline | safe }}
 
+{% if tech.parts %}
+{% for part in tech.parts -%}
+		{{ print_standard(part, hLevel + 1) }}
+	{%- endfor %}
+{% elif tech.milestones %}
 <time-line>
 <dl>
-{% for milestone in tech.milestones %}
-{{ print_milestone(milestone) }}
-{% endfor %}
+	{% for milestone in tech.milestones -%}
+	{{ print_milestone(milestone) }}
+	{%- endfor %}
 </dl>
 </time-line>
-{{ tech.note }}
+{%- endif %}
+
+{{- tech.note -}}
 
 </section>
 {% endmacro %}
@@ -87,15 +97,5 @@ This section contains an overview of my contributions to web standards since 201
 </table>
 
 {% for tech in standards -%}
-{% if tech.parts %}
-<h2>{{ tech.title | md_inline | safe }}</h2>
-
-{{ tech.description | md | safe }}
-	{% for part in tech.parts -%}
-		{{ print_standard(part, 3) }}
-	{%- endfor %}
-{% else -%}
 {{ print_standard(tech) }}
-{%- endif %}
-
 {%- endfor %}
