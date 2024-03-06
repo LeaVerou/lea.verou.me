@@ -1,0 +1,60 @@
+{% macro status_badge (ref) -%}
+	{% set status = ref if ref.id else proposal_meta.statuses[ref] %}
+	{%- if status -%}
+	<span class="tech-status {{ status.id }}">{{ status.name }}</span>
+	{%- else -%}
+	<span class="tech-status {{ ref }}">{{ ref | capitalize }}</span>
+	{%- endif %}
+{%- endmacro %}
+
+{% macro milestone (m) %}
+	{% set milestone_title = m.title %}
+	{%- if not milestone_title %}
+		{% set milestone_title -%}
+			{{ "WG" if m.type == "resolution" }} {{ m.type | capitalize }}
+			{%- if m.type == "shipped" %} in {{ m.browser | capitalize }} {{ m.version }}{% endif -%}
+		{%- endset %}
+	{% endif -%}
+	<dt class="{{ m.browser }}">
+		{% if m.url -%}
+		<a href="{{ m.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
+		{%- else -%}
+		{{ milestone_title | trim | md_inline | safe }}
+		{%- endif %}
+		{% if m.by %}<em>(by {{ m.by }})</em>{% endif %}
+	</dt>
+	<dd class="{{ m.browser }}">
+		{% if m.date %}
+		<time datetime="{{ m.date }}"></time>
+		{% endif %}
+	</dd>
+{% endmacro %}
+
+{% macro standard (tech, hLevel = 2) %}
+<section class="tech {{ tech.status }}">
+
+<h{{ hLevel }} id="{{ tech.id }}">
+	{{ tech.title | md_inline | safe }}
+	{{ status_badge(tech.status) }}
+</h{{ hLevel }}>
+
+{{ tech.description | md_inline | safe }}
+
+{% if tech.parts %}
+{% for part in tech.parts -%}
+		{{ standard(part, hLevel + 1) }}
+	{%- endfor %}
+{% elif tech.milestones %}
+<time-line>
+<dl>
+	{% for m in tech.milestones -%}
+	{{ milestone(m) }}
+	{%- endfor %}
+</dl>
+</time-line>
+{%- endif %}
+
+{{- tech.note -}}
+
+</section>
+{% endmacro %}

@@ -1,71 +1,21 @@
 ---
-title: Web Standards Work
+title: Web Technologies
 includes: '<script type=module src="/standards/time-line.js"></script>'
 page_css: true
 ---
-{% macro print_status (ref) -%}
-	{% set status = ref if ref.id else proposal_meta.statuses[ref] %}
-	{%- if status -%}
-	<span class="tech-status {{ status.id }}">{{ status.name }}</span>
-	{%- else -%}
-	<span class="tech-status {{ ref }}">{{ ref | capitalize }}</span>
-	{%- endif %}
-{%- endmacro %}
+{% import "standards/_partials.njk" as partials with context %}
 
-{% macro print_milestone (milestone) %}
-	{% set milestone_title = milestone.title %}
-	{%- if not milestone_title %}
-		{% set milestone_title -%}
-			{{ "WG" if milestone.type == "resolution" }} {{ milestone.type | capitalize }}
-			{%- if milestone.type == "shipped" %} in {{ milestone.browser | capitalize }} {{ milestone.version }}{% endif -%}
-		{%- endset %}
-	{% endif -%}
-	<dt class="{{ milestone.browser }}">
-		{% if milestone.url -%}
-		<a href="{{ milestone.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
-		{%- else -%}
-		{{ milestone_title | trim | md_inline | safe }}
-		{%- endif %}
-		{% if milestone.by %}<em>(by {{ milestone.by }})</em>{% endif %}
-	</dt>
-	<dd class="{{ milestone.browser }}">
-		{% if milestone.date %}
-		<time datetime="{{ milestone.date }}"></time>
-		{% endif %}
-	</dd>
-{% endmacro %}
 
-{% macro print_standard (tech, hLevel = 2) %}
-<section class="tech {{ tech.status }}">
+<div class="nutshell">
+This section contains an overview of web technologies I have designed or helped design.
+It includes a list of proposals, their current status, and a timeline of their development.
+In addition to listing my body of work, I’m hoping it can provide insight into the process with which new web technologies are developed.
+</div>
 
-<h{{ hLevel }} id="{{ tech.id }}">
-	{{ tech.title | md_inline | safe }}
-	{{ print_status(tech.status) }}
-</h{{ hLevel }}>
-
-{{ tech.description | md_inline | safe }}
-
-{% if tech.parts %}
-{% for part in tech.parts -%}
-		{{ print_standard(part, hLevel + 1) }}
-	{%- endfor %}
-{% elif tech.milestones %}
-<time-line>
-<dl>
-	{% for milestone in tech.milestones -%}
-	{{ print_milestone(milestone) }}
-	{%- endfor %}
-</dl>
-</time-line>
-{%- endif %}
-
-{{- tech.note -}}
-
-</section>
-{% endmacro %}
-
-<div class=nutshell>
-This section contains an overview of my contributions to web standards since 2012.
+<div class="note">
+	This does not currently incude any of my <a href="https://tag.w3.org/">W3C TAG</a> web architecture work,
+namely <a href="https://github.com/w3ctag/design-reviews/">design reviews of other web technology proposals</a>,
+and <a href="https://w3.org/TR/design-principles">Design Principles for the Web Platform</a>.
 </div>
 
 <h2>Index ({{ standards.length }} proposals)</h2>
@@ -80,7 +30,7 @@ This section contains an overview of my contributions to web standards since 201
 	<tbody>
 		{% for id, status in proposal_meta.statuses %}
 		<tr>
-			<td>{{ print_status(status) }}</td>
+			<td>{{ partials.status_badge(status) }}</td>
 			<td>{{ status.description }}
 				<details>
 					<summary>{{ status.proposals.length }} proposal{{ "s" if status.proposals.length != 1 }}</summary>
@@ -97,5 +47,5 @@ This section contains an overview of my contributions to web standards since 201
 </table>
 
 {% for tech in standards -%}
-{{ print_standard(tech) }}
+{{ partials.standard(tech) }}
 {%- endfor %}
