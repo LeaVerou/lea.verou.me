@@ -1,6 +1,7 @@
 @import url("prism.css");
 @import url("bootstrap-icons.css");
 @import url("fonts.css");
+@import url("tokens.css");
 
 *,
 *::before,
@@ -14,38 +15,13 @@
 }
 
 :root {
-	--font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-	--font-serif: Vollkorn, "Hoefler Text", Garamond, "Times New Roman", serif;
-	--font-monospace: Inconsolata, Consolas, Noto Sans Mono, Source Code Pro, Roboto Mono, Menlo, Monaco, monospace;
-
-	--color-magenta: hsl(336 100% 50%);
-	--color-orange: hsl(20 100% 60%);
-	--color-turquoise: hsl(189 100% 42%);
-	--color-blue: var(--color-turquoise);
-	--color-green: hsl(80 61% 48%);
+	--color-gray-medium: var(--color-gray-50);
+	--color-gray-light: var(--color-gray-90);
 
 	--color-accent: var(--color-magenta);
 	--color-accent2: var(--color-orange);
 	--color-accent3: var(--color-turquoise);
 	--color-accent4: var(--color-green);
-
-	--gray: 220 10%;
-	--color-gray-20: hsl(var(--gray) 20%);
-	--color-gray-40: hsl(var(--gray) 40%);
-	--color-gray-50: hsl(var(--gray) 50%);
-	--color-gray-60: hsl(var(--gray) 60%);
-	--color-gray-80: hsl(var(--gray) 80%);
-	--color-gray-90: hsl(var(--gray) 90%);
-	--color-gray-95: hsl(var(--gray) 95%);
-
-	--color-gray-40a: hsl(var(--gray) 50% / 40%);
-	--color-gray-30a: hsl(var(--gray) 50% / 30%);
-	--color-gray-20a: hsl(var(--gray) 50% / 20%);
-	--color-gray-10a: hsl(var(--gray) 50% / 10%);
-	--color-gray-5a: hsl(var(--gray) 50% / 5%);
-
-	--color-gray-medium: var(--color-gray-50);
-	--color-gray-light: var(--color-gray-90);
 
 	--color-accent-light1: color-mix(in lab, white, var(--color-accent) 20%);
 	--color-accent-light2: color-mix(in lab, white, var(--color-accent) 10%);

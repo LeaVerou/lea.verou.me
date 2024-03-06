@@ -1,0 +1,33 @@
+:root {
+	--font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	--font-serif: Vollkorn, "Hoefler Text", Garamond, "Times New Roman", serif;
+	--font-monospace: Inconsolata, Consolas, Noto Sans Mono, Source Code Pro, Roboto Mono, Menlo, Monaco, monospace;
+
+	--color-magenta: oklch(64% 0.26 10);
+	--color-cyan: oklch(65% 0.15 210);
+	--color-blue: oklch(60% 0.2 248);
+	--color-green: oklch(70% 0.2 135);
+	--color-yellow: oklch(88% 0.2 95);
+	--color-orange: hsl(20 100% 60%);
+	--color-red: oklch(55% 0.2 25);
+	--color-purple: oklch(55% 0.2 285);
+
+	--gray: 220 10%;
+	--color-gray-20: hsl(var(--gray) 20%);
+	--color-gray-40: hsl(var(--gray) 40%);
+	--color-gray-50: hsl(var(--gray) 50%);
+	--color-gray-60: hsl(var(--gray) 60%);
+	--color-gray-80: hsl(var(--gray) 80%);
+	--color-gray-90: hsl(var(--gray) 90%);
+	--color-gray-95: hsl(var(--gray) 95%);
+
+	--color-gray-40a: hsl(var(--gray) 50% / 40%);
+	--color-gray-30a: hsl(var(--gray) 50% / 30%);
+	--color-gray-20a: hsl(var(--gray) 50% / 20%);
+	--color-gray-10a: hsl(var(--gray) 50% / 10%);
+	--color-gray-5a: hsl(var(--gray) 50% / 5%);
+
+	/* Aliases */
+	--color-gray: var(--color-gray-50);
+	--color-turquoise: var(--color-cyan);
+}
