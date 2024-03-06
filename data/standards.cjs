@@ -420,7 +420,8 @@ const proposals = [
 		]
 	},
 	{
-		title: "Easy continuous image borders via `background-clip: border-area;`",
+		title: "Continuous image borders",
+		description: `Address a common pain point by adding a \`border-area\` keyword to \`background-clip\``,
 		milestones: [
 			{
 				type: "proposal",
@@ -435,7 +436,8 @@ const proposals = [
 		]
 	},
 	{
-		title: "Easy arbitrary rounded polygons, via rounding parameters in `polygon()`",
+		title: "Arbitrary rounded polygons",
+		description: `This proposal allows authors to add rounding to arbitrary polygon shapes, addressing a common pain point that previously required pre-generated images`,
 		milestones: [
 			{
 				type: "proposal",
@@ -450,7 +452,8 @@ const proposals = [
 		]
 	},
 	{
-		title: "Simplify value clamping in one direction by allowing `none` values for `clamp()`",
+		title: "Value clamping in one direction",
+		description: "…by allowing `none` values for `clamp()`",
 		milestones: [
 			{
 				type: "proposal",
@@ -465,7 +468,7 @@ const proposals = [
 		]
 	},
 	{
-		title: "`stripes()`",
+		title: "Multi-color borders via `stripes()`",
 		description: `This is a reusable primitive that was designed to allow borders of multiple colors,
 		something that was requested by accessiblity groups.`,
 		milestones: [
@@ -487,7 +490,7 @@ const proposals = [
 		]
 	},
 	{
-		title: "`::tooltip`",
+		title: "Tooltip styling (`::tooltip`)",
 		description: `Styling tooltips in a custom way is a huge author pain point.
 		Since browser-generated tooltips cannot be styled, authors end up having to recreate the tooltip functionality entirely from scratch,
 		with significantly worse DX and accessibility.
@@ -506,7 +509,7 @@ const proposals = [
 		]
 	},
 	{
-		title: "`inherit()`",
+		title: "Reading parent values of arbitrary CSS properties via `inherit()`",
 		description: `Allow authors to read arbitary properties from their parent and use them in calculations, solving several diverse use cases at once.`,
 		milestones: [
 			{
