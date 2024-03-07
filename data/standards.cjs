@@ -234,7 +234,7 @@ const proposals = [
 		]
 	},
 	{
-		title: "CSS Trigonomeric functions",
+		title: "CSS Trigonometric functions",
 		description: `Adds trigonometric functions to CSS, to facilitate the creation of complex shapes and animations.`,
 		milestones: [
 			{
