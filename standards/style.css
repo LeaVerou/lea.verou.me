@@ -139,6 +139,7 @@ span.flag {
 .progress {
 	position: relative;
 	display: flex;
+	flex-wrap: wrap;
 	gap: .4em;
 	margin-block: 1em;
 	background: var(--color-gray-95);
