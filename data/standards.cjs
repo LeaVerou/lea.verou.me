@@ -513,6 +513,12 @@ const proposals = [
 				type: "resolution",
 				url: "https://github.com/w3c/csswg-drafts/issues/9713#issuecomment-1944449961",
 				date: "2024-02-14"
+			},
+			{
+				type: "specced",
+				by: "Tab",
+				url: "https://github.com/w3c/csswg-drafts/commit/393a7fcdf641c5031fbd143a02f3d3fa9ff7ead8",
+				date: "2024-03-07"
 			}
 		]
 	},
