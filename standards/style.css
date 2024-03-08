@@ -18,6 +18,7 @@
 	--color-specced: color-mix(in oklab, var(--color-green) 60%, var(--color-yellow));
 	--color-resolution: color-mix(in oklab, var(--color-green) 40%, var(--color-yellow));
 	--color-proposal: var(--color-cyan);
+	--color-other: var(--color-gray-50);
 }
 
 .shipped-baseline {
@@ -31,6 +32,7 @@
 .specced { --color: var(--color-specced); }
 .resolution { --color: var(--color-resolution); }
 .proposal { --color: var(--color-proposal); }
+.other { --color: var(--color-other); }
 
 .status-legend {
 	td {
