@@ -7,7 +7,30 @@
 	{%- endif %}
 {%- endmacro %}
 
-{% macro milestone (m) %}
+{% macro timeline(keyDates) %}
+<div class="progress">
+{% for transition in keyDates %}
+	{% if transition.date %}
+		{% if prevDate %}
+			{% set interval = transition.date | from(prevDate, {structured: true}) %}
+			<span class="to {{ interval.maxUnit }}">
+				{% for part in interval.parts %}
+					<span class="interval">
+						<span class="value">{{ part.value }}</span>
+						<span class="unit">{{ part.unit }}</span>
+					</span>
+				{% endfor %}
+			</span>
+		{% endif %}
+		{{ status_badge(transition.status) }}
+		{% set prevDate = transition.date %}
+	{% endif %}
+{% endfor %}
+</div>
+{# <pre>{{ keyDates | jsonify }}</pre> #}
+{% endmacro %}
+
+{% macro milestone (m, index) %}
 	{% set milestone_title = m.title %}
 	{%- if not milestone_title %}
 		{% set milestone_title -%}
@@ -15,7 +38,8 @@
 			{%- if m.type == "shipped" %} in {{ m.browser | capitalize }} {{ m.version }}{% endif -%}
 		{%- endset %}
 	{% endif -%}
-	<dt class="{{ m.browser }}{{ ' flag' if m.flag }}">
+	{% set class %}{{ m.type or 'other' }} {{ m.browser }}{{ ' flag' if m.flag }}{% endset %}
+	<dt class="{{ class }}" style="--row: {{ index }}">
 		{% if m.flag %}<span class="flag"></span>{% endif %}
 		{% if m.url -%}
 		<a href="{{ m.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
@@ -24,7 +48,7 @@
 		{%- endif %}
 		{% if m.by %}<em>(by {{ m.by }})</em>{% endif %}
 	</dt>
-	<dd class="{{ m.browser }}">
+	<dd class="{{ class }}" style="--row: {{ index }}">
 		{% if m.date %}
 		<time datetime="{{ m.date }}"></time>
 		{% endif %}
@@ -53,26 +77,7 @@
 </div>
 
 {% if tech.status != "proposal" and tech.keyDates.length > 1 %}
-<div class="progress">
-{% for transition in tech.keyDates %}
-	{% if transition.date %}
-		{% if prevDate %}
-			{% set interval = transition.date | from(prevDate, {structured: true}) %}
-			<span class="to {{ interval.maxUnit }}">
-				{% for part in interval.parts %}
-					<span class="interval">
-						<span class="value">{{ part.value }}</span>
-						<span class="unit">{{ part.unit }}</span>
-					</span>
-				{% endfor %}
-			</span>
-		{% endif %}
-		{{ status_badge(transition.status) }}
-		{% set prevDate = transition.date %}
-	{% endif %}
-{% endfor %}
-</div>
-{# <pre>{{ tech.keyDates | jsonify }}</pre> #}
+{{ timeline(tech.keyDates) }}
 {% endif %}
 
 {% if tech.parts %}
@@ -83,7 +88,7 @@
 <time-line>
 <dl>
 	{% for m in tech.milestones -%}
-	{{ milestone(m) }}
+	{{ milestone(m, loop.index) }}
 	{%- endfor %}
 </dl>
 </time-line>

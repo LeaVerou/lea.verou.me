@@ -38,8 +38,8 @@ time-line dl {
 		border-block: 0;
 		padding-block: .3em;
 
-		&:nth-of-type(even) {
-			background: var(--color-gray-5a, hsl(220 10 50 / 5%));
+		&:where(:nth-of-type(even)) {
+			background-color: var(--color-gray-5a, hsl(220 10 50 / 5%));
 		}
 	}
 
@@ -62,6 +62,48 @@ time-line dl {
 
 		time {
 			white-space: nowrap;
+		}
+	}
+
+
+
+	time {
+		--_circle-diameter: var(--circle-diameter, .4em);
+		--_line-thickness: var(--line-thickness, .1em);
+		--_line-height: var(--line-height, 1.7em);
+		--_color: var(--color, var(--color-gray-50));
+
+		padding-left: -.7em;
+		transition: max(.2s, .05s * var(--row));
+		cursor: help;
+
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			width: var(--_circle-diameter);
+			background:
+				radial-gradient(closest-side circle, var(--_color) 99%, transparent 100%) no-repeat bottom / var(--_circle-diameter) var(--_circle-diameter),
+				linear-gradient(var(--color), var(--color)) no-repeat 50% 0 / var(--_line-thickness) var(--_line-height);
+			top: 0;
+			padding-top: .9em;
+			height: calc(var(--row) * 2.1em);
+			margin-left: -.7em;
+			transition: inherit;
+		}
+	}
+
+	dt:hover,
+	dt:hover + dd,
+	dd:hover,
+	dt:has(+ dd:hover) {
+		background-color: var(--hover-color);
+
+		time {
+			--line-thickness: .15em;
+			--line-height: calc(100% - var(--_circle-diameter));
+			z-index: 1;
+			color: color-mix(in oklch, canvastext, var(--_color) 70%);
 		}
 	}
 }

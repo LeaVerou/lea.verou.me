@@ -69,6 +69,12 @@ const proposals = [
 						date: "2023-04-19"
 					},
 					{
+						type: "specced",
+						by: "Tab",
+						url: "https://github.com/w3c/csswg-drafts/commit/ea43cbf4474e7d16364064f70abe9c6b83bb248b",
+						date: "2023-05-12"
+					},
+					{
 						type: "shipped",
 						browser: "firefox",
 						version: "117",
@@ -713,12 +719,18 @@ walkStandards(proposal => {
 		if (milestone.type === "shipped") {
 			key = milestone.flag ? "shipped-flagged" : "shipped";
 			if (milestone.flag) {
+				if (proposal.shipped_in.size > 0) {
+					// If it shipped unflagged in a browser before this, we don't have this status in the timeline
+					continue;
+				}
+
 				key = "shipped-flagged";
 			}
 			else {
 				proposal.shipped_in.add(milestone.browser);
 			}
 
+			// Baseline = shopped in all three browsers unflagged
 			if (proposal.shipped_in.size >= 3) {
 				key = "shipped-baseline";
 			}
@@ -740,8 +752,11 @@ walkStandards(proposal => {
 	// Find best status that applies
 	proposal.status ??= statuses.find(s => s in proposal.keyDates);
 
-	// Sort key dates by date and convert to array
-	proposal.keyDates = Object.entries(proposal.keyDates).map(([k, v]) => ({status: k, date: v})).sort((a, b) => a.date - b.date);
+	// Sort key dates by date, drop empty dates, and convert to array
+	proposal.keyDates = Object.entries(proposal.keyDates)
+		.filter(([k, v]) => v)
+		.map(([k, v]) => ({status: k, date: v}))
+		.sort((a, b) => a.date - b.date);
 });
 
 module.exports = proposals;

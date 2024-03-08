@@ -18,8 +18,8 @@ let statuses = [
 	},
 	{
 		id: "specced",
-		name: "Specced",
-		description: "The feature has been added to a specification, but has not yet shipped in any browser.",
+		name: "In spec",
+		description: "The feature became part of the official specification. Keep in mind that often additional fleshing out may be needed to flesh out the spec and bring it to a state that it can be used by browsers for implementation.",
 	},
 	{
 		id: "resolution",

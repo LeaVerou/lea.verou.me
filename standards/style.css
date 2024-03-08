@@ -11,30 +11,26 @@
 	white-space: nowrap;
 }
 
+:root {
+	--color-baseline: color-mix(in oklab, oklch(0 .3 150) 40%, var(--color-green));
+	--color-shipped: color-mix(in oklab, oklch(0 .3 150) 20%, var(--color-green));
+	--color-flagged: var(--color-green);
+	--color-specced: color-mix(in oklab, var(--color-green) 60%, var(--color-yellow));
+	--color-resolution: color-mix(in oklab, var(--color-green) 40%, var(--color-yellow));
+	--color-proposal: var(--color-cyan);
+}
+
 .shipped-baseline {
-	--color: color-mix(in oklab, oklch(0 .3 150) 40%, var(--color-green));
+	--color: var(--color-baseline);
 }
-
-.shipped {
-	--color: color-mix(in oklab, oklch(0 .3 150) 20%, var(--color-green));
-
+.shipped { --color: var(--color-shipped); }
+.shipped-flagged,
+.shipped.flag {
+	--color: var(--color-flagged);
 }
-
-.shipped-flagged {
-	--color: var(--color-green);
-}
-
-.specced {
-	--color: color-mix(in oklab, var(--color-green) 60%, var(--color-yellow));
-}
-
-.resolution {
-	--color: color-mix(in oklab, var(--color-green) 40%, var(--color-yellow));
-}
-
-.proposal {
-	--color: var(--color-cyan);
-}
+.specced { --color: var(--color-specced); }
+.resolution { --color: var(--color-resolution); }
+.proposal { --color: var(--color-proposal); }
 
 .status-legend {
 	td {
@@ -69,33 +65,51 @@
 	}
 }
 
-time-line dt {
-	&.chrome,
-	&.firefox,
-	&.safari {
-		&::before {
-			content: var(--icon);
-			color: var(--color);
-			display: inline-block;
-			vertical-align: -.1em;
-			font: 85%/1 bootstrap-icons;
-			margin-right: .25em;
+time-line {
+	dt:nth-child(n + 3 of dt.shipped:not(.flag)),
+	dd:nth-child(n + 3 of dd.shipped:not(.flag)) {
+		--color: var(--color-baseline);
+	}
+
+	dt, dd {
+		--_color: var(--color, var(--color-gray-50));
+	}
+
+	dt:hover,
+	dt:hover + dd,
+	dd:hover,
+	dt:has(+ dd:hover) {
+		--hover-color: color-mix(in oklab, var(--_color) 0%, oklab(none none none / 15%));
+	}
+
+	dt {
+		&.chrome,
+		&.firefox,
+		&.safari {
+			&::before {
+				content: var(--icon);
+				color: var(--browser-color);
+				display: inline-block;
+				vertical-align: -.1em;
+				font: 85%/1 bootstrap-icons;
+				margin-right: .25em;
+			}
 		}
 	}
 }
 
 .chrome {
-	--color: var(--color-green);
+	--browser-color: var(--color-green);
 	--icon: var(--icon-chrome);
 }
 
 .firefox {
-	--color: var(--color-orange);
+	--browser-color: var(--color-orange);
 	--icon: var(--icon-firefox);
 }
 
 .safari {
-	--color: var(--color-cyan);
+	--browser-color: var(--color-cyan);
 	--icon: var(--icon-safari);
 }
 
