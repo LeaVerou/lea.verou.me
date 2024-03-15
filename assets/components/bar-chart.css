@@ -23,6 +23,8 @@
 		justify-content: center;
 		height: calc(var(--p) / var(--max) * 100%);
 		color: white;
+		container-name: bar-chart-item;
+		container-type: inline-size;
 
 		/* Since --p is a positive integer, this will only gray out items with --p: 0
 		*  Yes, this is a terrible hack because we don’t have if() yet.
@@ -33,6 +35,11 @@
 			position: absolute;
 			top: calc(100% + .3em);
 			color: var(--color);
+
+			@container bar-chart-item (width < 2em) {
+				writing-mode: vertical-rl;
+				rotate: .5turn;
+			}
 		}
 
 		.result {
