@@ -488,7 +488,7 @@ const proposals = [
 			{
 				type: "resolution",
 				url: "https://github.com/w3c/csswg-drafts/issues/9456#issuecomment-1944470563",
-				date: "2023-02-14"
+				date: "2024-02-14"
 			}
 		]
 	},
