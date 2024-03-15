@@ -563,7 +563,7 @@ const proposals = [
 			{
 				type: "proposal",
 				url: "https://github.com/w3c/csswg-drafts/issues/8930",
-				date: "2023-08-06"
+				date: "2023-06-07"
 			},
 			{
 				type: "resolution",
