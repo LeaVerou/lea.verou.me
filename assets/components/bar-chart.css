@@ -9,9 +9,11 @@
 	border-right: 0;
 	font: 500 80% var(--font-sans);
 
+	/* Bar */
 	> * {
-		position: relative;
 		--color: var(--color-accent);
+
+		position: relative;
 		display: flex;
 		align-items: flex-end;
 		flex: 1;
@@ -21,6 +23,11 @@
 		justify-content: center;
 		height: calc(var(--p) / var(--max) * 100%);
 		color: white;
+
+		/* Since --p is a positive integer, this will only gray out items with --p: 0
+		*  Yes, this is a terrible hack because we don’t have if() yet.
+		*/
+		filter: grayscale(calc(.85 - var(--p)));
 
 		.label {
 			position: absolute;
@@ -44,8 +51,6 @@
 				line-height: 1;
 				font-weight: 500;
 			}
-
-
 		}
 
 		&:hover,
