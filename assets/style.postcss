@@ -159,11 +159,12 @@ summary > :is(h1, h2, h3, h4, h5, h6):only-child {
 	pointer-events: none;
 }
 
-h1, h2 {
+h1, h2, h3 {
 	code:is(.foo, :not(.foo)) {
 		padding: 0;
 		font-size: 100%;
 		font-size-adjust: .545;
+		line-height: 1;
 		background: none;
 
 		&:not(:has(*)) {
@@ -853,7 +854,8 @@ body > footer {
 		margin-right: .5em;
 	}
 
-	&:is(time) {
+	&:is(time),
+	&.date {
 		--icon: var(--icon-date);
 	}
 

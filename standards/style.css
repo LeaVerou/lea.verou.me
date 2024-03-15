@@ -18,6 +18,7 @@
 	--color-specced: color-mix(in oklab, var(--color-green) 60%, var(--color-yellow));
 	--color-resolution: color-mix(in oklab, var(--color-green) 40%, var(--color-yellow));
 	--color-proposal: var(--color-cyan);
+	--color-superseded: var(--color-gray-60);
 	--color-other: var(--color-gray-50);
 }
 
@@ -32,6 +33,7 @@
 .specced { --color: var(--color-specced); }
 .resolution { --color: var(--color-resolution); }
 .proposal { --color: var(--color-proposal); }
+.superseded { --color: var(--color-superseded) }
 .other { --color: var(--color-other); }
 
 .status-legend {
@@ -133,23 +135,10 @@ span.flag {
 		align-items: baseline;
 		gap: .25em;
 
-		.dates {
-			font-size: 1rem;
-		}
-
-		code {
-			line-height: 1;
+		&:has(+ .meta) {
+			margin-block-end: .4em;
 		}
 	}
-}
-
-.dates {
-	color: var(--color-gray-50);
-	font-style: italic;
-	font-family: var(--font-serif);
-	font-weight: normal;
-	letter-spacing: normal;
-	margin-left: auto;
 }
 
 .progress {

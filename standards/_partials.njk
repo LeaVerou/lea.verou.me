@@ -58,19 +58,34 @@
 {% macro standard (tech, hLevel = 2) %}
 <section class="tech {{ tech.status }}">
 
-<h{{ hLevel }} id="{{ tech.id }}">
-	<a href="#{{ tech.id }}">{{ tech.title | md_inline | safe }}</a>
-	{{ status_badge(tech.status) }}
-	{% if tech.minDate %}
-	<span class="dates">
-		(<time>{{ tech.minDate | format_date({"year": "numeric", month: "short"}) }}</time>
-		&ndash;
-		{% if tech.status == "shipped-baseline" or tech.status == "superseded" %}
-		<time>{{ tech.maxDate | format_date({"year": "numeric", month: "short"}) }}</time>
-		{%- endif %})
-	</span>
-	{%- endif %}
-</h{{ hLevel }}>
+<header>
+	<h{{ hLevel }} id="{{ tech.id }}">
+		<a href="#{{ tech.id }}">{{ tech.title | md_inline | safe }}</a>
+
+		{{ status_badge(tech.status) }}
+	</h{{ hLevel }}>
+
+	<div class="meta">
+		{% if tech.minDate %}
+		<div class="metabit date">
+			<time>{{ tech.minDate | format_date({"year": "numeric", month: "short"}) }}</time>
+			&ndash;
+			{% if tech.status == "shipped-baseline" or tech.status == "superseded" %}
+			<time>{{ tech.maxDate | format_date({"year": "numeric", month: "short"}) }}</time>
+			{%- endif %}
+		</div>
+		{%- endif %}
+
+		{%- if tech.tags %}
+		<div class="metabit tags">
+			{% for tag in tech.tags -%}
+				<a class="tag">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+			{%- endfor %}
+		</div>
+		{%- endif %}
+	</div>
+
+</header>
 
 <div class="description">
 {{ tech.description | md_inline | safe }}

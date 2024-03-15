@@ -1,6 +1,7 @@
 const browsers = require("./browsers.json");
 const proposals = [
 	{
+		id: "relaxed-css-nesting",
 		title: "Relaxed CSS Nesting Syntax",
 		description: `Drove several milestones to progressively refine and simplify the syntax in a way that prioritizes user needs
 		by reducing boilerplate and thus inreasing efficiency, readability, and reducing error-proneness.`,
@@ -113,7 +114,6 @@ const proposals = [
 			},
 			{
 				type: "specced",
-				by: "me",
 				url: "https://github.com/w3c/csswg-drafts/commit/a7dbe90440958c46c0eae27cb1c46ebe4ce6e361",
 				date: "2019-12-20"
 			},
@@ -156,7 +156,6 @@ const proposals = [
 			},
 			{
 				type: "specced",
-				by: "me",
 				url: "https://lea.verou.me/specs/conical-gradient/",
 				date: "2011-11-22"
 			},
@@ -169,7 +168,6 @@ const proposals = [
 			},
 			{
 				title: "Polyfill",
-				by: "me",
 				url: "https://lea.verou.me/blog/2015/06/conical-gradients-today/",
 				date: "2015-06-18"
 			},
@@ -295,7 +293,6 @@ const proposals = [
 			{
 				type: "proposal",
 				title: "Proposal to extend to `<input>` and `<select>`",
-				by: "me",
 				url: "https://github.com/w3c/csswg-drafts/issues/7552",
 				date: "2022-08-01"
 			},
@@ -322,12 +319,12 @@ const proposals = [
 		id: "in-space",
 		status: "shipped-baseline",
 		title: "CSS-wide syntax for color interpolation",
-		description: `Defined the \`in <space>\` token used across CSS to specify a color space for color interpolation,
-		used in \`color-mix()\`, gradients, and more.`,
+		description: `Defined the syntax used across CSS to specify how color interpolate.
+		It is currently used in \`color-mix()\` and gradients, and soon in transitions, animations, and more.`,
+		tags: ["Color"],
 		milestones: [
 			{
 				type: "specced",
-				by: "me",
 				url: "https://github.com/w3c/csswg-drafts/commit/3efd360d4e13227ef9b3c0466bc0296028ae5b2b",
 				date: "2021-11-01"
 			},
@@ -335,7 +332,8 @@ const proposals = [
 	},
 	{
 		id: "oklab-default",
-		title: "Color interpolation in Oklab by default",
+		title: "Use OKLab for gradient color interpolation by default",
+		tags: ["Minor feature", "Color"],
 		milestones: [
 			{
 				type: "proposal",
@@ -395,6 +393,7 @@ const proposals = [
 		description: `One of my first web standards proposals.
 		Relaxed the syntax of \`box-shadow\` to minimize author errors.
 		Gave birth to one of CSS’s design principles, which Elika called ["Lea Verou reordering principle"](https://wiki.csswg.org/ideas/principles?s[]=reordering).`,
+		tags: ["Minor feature"],
 		milestones: [
 			{
 				type: "proposal",
@@ -405,7 +404,9 @@ const proposals = [
 	},
 	{
 		title: "Color API",
-		area: "JS",
+		description: `A proposal for a \`Color\` object API for the web platform.
+		The purpose is twofold: to give APIs a way to represent color inputs and outputs that does not depend on strings, and to give authors a way to manipulate colors.`,
+		tags: ["JS", "Color"],
 		milestones: [
 			{
 				type: "proposal",
@@ -430,6 +431,7 @@ const proposals = [
 		description: `Automatically generating contrasting colors is a big author pain point, but discussusions around fleshing out a full \`contrast-color()\` function were taking too long.
 		I proposed an MVP that would cover the most common use cases, and got it accepted.
 		While I did not initially propose \`contrast-color()\`, I drove aggressively reducing scope to facilitate shipping an MVP that would cover >80% of use cases.`,
+		tags: ["a11y", "Color", "MVP"],
 		milestones: [
 			{
 				type: "proposal",
@@ -444,7 +446,6 @@ const proposals = [
 			},
 			{
 				type: "specced",
-				by: "me",
 				url: "https://github.com/w3c/csswg-drafts/commit/39f469149abb5575505b6d2d54b8bddf119f896d",
 				date: "2024-02-16"
 			}
@@ -456,6 +457,7 @@ const proposals = [
 		in a different way.
 		It built on an existing proposal that had been removed,
 		but simplified it to cover the most common use cases without the complexity of the previous proposal.`,
+		tags: ["Selectors"],
 		milestones: [
 			{
 				type: "proposal",
@@ -509,6 +511,7 @@ const proposals = [
 	{
 		title: "Value clamping in one direction",
 		description: "…by allowing `none` values for `clamp()`",
+		tags: ["Minor feature"],
 		milestones: [
 			{
 				type: "proposal",
@@ -572,6 +575,7 @@ const proposals = [
 	{
 		title: "Reading parent values of arbitrary CSS properties via `inherit()`",
 		description: `Allow authors to read arbitary properties from their parent and use them in calculations, solving several diverse use cases at once.`,
+		tags: ["Web Components"],
 		milestones: [
 			{
 				type: "proposal",
@@ -610,6 +614,7 @@ const proposals = [
 	{
 		title: "`color-extract()`",
 		description: `A function to extract individual color components (e.g. lightness) from an arbitrary CSS color, facilitating the creation of dynamic design systems.`,
+		tags: ["Color"],
 		milestones: [
 			{
 				type: "proposal",
@@ -626,6 +631,7 @@ const proposals = [
 	{
 		title: "Conditionless container queries",
 		description: `Make the query part of container queries optional.`,
+		tags: ["Minor feature"],
 		milestones: [
 			{
 				type: "proposal",
@@ -642,7 +648,7 @@ const proposals = [
 	{
 		id: "var-groups",
 		title: "CSS Variable Groups",
-		tags: ["Design systems", "Web Components"],
+		tags: ["Design systems", "Web Components", "Color"],
 		description: `A way to group related variables and pass them around, to make it less painful to write CSS for design systems and to integrate third-party components.`,
 		milestones: [
 			{
@@ -655,7 +661,7 @@ const proposals = [
 	{
 		id: "color-scale",
 		title: "CSS Color Scales",
-		tags: ["Design systems"],
+		tags: ["Design systems", "Color"],
 		description: `A way to define continuous color scales in CSS and pick arbitrary colors on them, to facilitate the creation of dynamic design systems.`,
 		milestones: [
 			{
@@ -665,12 +671,42 @@ const proposals = [
 			}
 		]
 	},
+	{
+		id: "element-refs",
+		title: "Improve DX of element reference attributes by allowing relative references instead of only ids",
+		description: `An attempt to improve usability of HTML across several APIs by improving the ergonomics of how an element can reference another.`,
+		tags: ["HTML", "Web Components", "a11y"],
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/whatwg/html/issues/10143",
+				date: "2024-02-18"
+			}
+		]
+	},
+	{
+		id: "custom-attributes",
+		title: "Custom attributes",
+		description: "An ambitious attempt to solve several web components pain points at once",
+		tags: ["Web Components"],
+		milestones: [
+			{
+				type: "proposal",
+				title: "Original proposal (naming only)",
+				url: "https://github.com/whatwg/html/issues/2271",
+				date: "2017-01-17"
+			},
+			{
+				type: "proposal",
+				url: "https://github.com/WICG/webcomponents/issues/1029",
+				date: "2023-09-13"
+			}
+		]
+	}
 	// TODO custom attributes
-	// TODO HTML refs
 ];
 
 const relevantStatuses = ["shipped", "specced", "resolution", "proposal"];
-
 
 function walkStandards (callback) {
 	for (let standard of proposals) {

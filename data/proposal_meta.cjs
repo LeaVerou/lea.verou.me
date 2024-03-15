@@ -19,12 +19,13 @@ let statuses = [
 	{
 		id: "specced",
 		name: "In spec",
-		description: "The feature became part of the official specification. Keep in mind that often additional fleshing out may be needed to flesh out the spec and bring it to a state that it can be used by browsers for implementation.",
+		description: `The feature has been added to the official specification (by me or someone else).
+		Keep in mind that often additional fleshing out may be needed to bring the spec to a state that it can be implemented in browsers.`,
 	},
 	{
 		id: "resolution",
 		name: "Accepted",
-		description: "There is WG resolution to work on the feature, but it has not yet been specced.",
+		description: "There a resolution that there is Working Group consesnsus to work on the feature, but it has not yet been added to the specification.",
 	},
 	{
 		id: "proposal",
@@ -48,6 +49,35 @@ for (let proposal of proposals) {
 	status.proposals.push(proposal);
 }
 
+let proposalsByYear = {};
 
+let maxYear = (new Date).getFullYear();
+let minYear = maxYear;
 
-module.exports = {statuses};
+for (let proposal of proposals) {
+	if (!proposal.minDate) {
+		continue;
+	}
+
+	let year = proposal.minDate.getFullYear();
+
+	if (year < minYear) {
+		minYear = year;
+	}
+}
+
+for (let i=minYear; i<=maxYear; i++) {
+	proposalsByYear[i] = [];
+}
+
+for (let proposal of proposals) {
+	if (!proposal.minDate) {
+		continue;
+	}
+
+	let year = proposal.minDate.getFullYear();
+
+	proposalsByYear[year].push(proposal);
+}
+
+module.exports = {statuses, proposalsByYear};

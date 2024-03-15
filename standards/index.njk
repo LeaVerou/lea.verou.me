@@ -1,6 +1,6 @@
 ---
 title: Web Technologies
-includes: '<script type=module src="/assets/elements/time-line/time-line.js"></script>'
+includes: '<script type=module src="/assets/elements/bar-chart/bar-chart.js"></script><script type=module src="/assets/elements/time-line/time-line.js"></script>'
 page_css: true
 ---
 {% import "standards/_partials.njk" as partials with context %}
@@ -13,9 +13,24 @@ In addition to listing my body of work, I’m hoping it can provide insight into
 </div>
 
 <div class="note">
-	This does not currently incude any of my <a href="https://tag.w3.org/">W3C TAG</a> web architecture work,
-namely <a href="https://github.com/w3ctag/design-reviews/">design reviews of other web technology proposals</a>,
-and <a href="https://w3.org/TR/design-principles">Design Principles for the Web Platform</a>.
+	This does not incude any of my high level web architecture work as a <a href="https://en.wikipedia.org/wiki/Technical_Architecture_Group">W3C TAG</a> member,
+spread across two areas:
+a)&nbsp;<a href="https://github.com/w3ctag/design-reviews/">design reviews of web technology proposals</a>,
+and
+b)&nbsp;documenting <a href="https://w3.org/TR/design-principles">Design Principles for the Web Platform</a>,
+an effort I took the lead on since my early days as a TAG member.
+</div>
+
+<div class="bar-chart" style="--max: 6" id="by-year">
+	{% for year, proposals in proposal_meta.proposalsByYear %}
+		<a style="--p: {{ proposals.length }}">
+			<span class="result">
+				<span class="number">{{ proposals.length }}</span>
+				proposal{{ "s" if proposals.length !== 1 }}
+			</span>
+			<span class="label">{{ year }}</span>
+		</a>
+	{% endfor %}
 </div>
 
 <h2>Index ({{ standards.length }} proposals)</h2>
@@ -36,7 +51,7 @@ and <a href="https://w3.org/TR/design-principles">Design Principles for the Web 
 					<summary>{{ status.proposals.length }} proposal{{ "s" if status.proposals.length != 1 }}</summary>
 					<ul>
 						{% for proposal in status.proposals -%}
-						<li><a href="{{ proposal.url }}">{{ proposal.title | md_inline | safe }}</a></li>
+						<li><a href="#{{ proposal.id }}">{{ proposal.title | md_inline | safe }}</a></li>
 						{%- endfor %}
 					</ul>
 				</details>
