@@ -6,7 +6,7 @@
  * - Customizable granularity (currently hardcoded to years)
  */
 
-const styleURL = new URL("./time-line.css", import.meta.url);
+const styleURL = import.meta.url.replace(/\.js$/, ".css");
 const msInYear = 1000 * 60 * 60 * 24 * 365.25;
 
 export default class TimeLine extends HTMLElement {
