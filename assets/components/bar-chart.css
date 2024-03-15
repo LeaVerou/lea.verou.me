@@ -1,0 +1,64 @@
+.bar-chart {
+	position: relative;
+	display: flex;
+	align-items: end;
+	gap: .5em;
+	height: 6em;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+	border-right: 0;
+	font: 500 80% var(--font-sans);
+
+	> * {
+		position: relative;
+		--color: var(--color-accent);
+		display: flex;
+		align-items: flex-end;
+		flex: 1;
+		padding: .3em 0;
+		font-weight: bold;
+		background: var(--color);
+		justify-content: center;
+		height: calc(var(--p) / var(--max) * 100%);
+		color: white;
+
+		.label {
+			position: absolute;
+			top: calc(100% + .3em);
+			color: var(--color);
+		}
+
+		.result {
+			content: attr(data-title);
+			position: absolute;
+			bottom: calc(100% + .5em);
+			font-weight: 650;
+			color: var(--color);
+			text-align: center;
+			font-size: 80%;
+			display: none;
+
+			& .number {
+				display: block;
+				font-size: 1rem;
+				line-height: 1;
+				font-weight: 500;
+			}
+
+
+		}
+
+		&:hover,
+		&.selected {
+			--color: var(--color-accent3);
+
+			.result {
+				display: block;
+			}
+		}
+
+		&.selected:hover {
+			--color: var(--color-accent4);
+		}
+	}
+}
