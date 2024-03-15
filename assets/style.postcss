@@ -159,6 +159,20 @@ summary > :is(h1, h2, h3, h4, h5, h6):only-child {
 	pointer-events: none;
 }
 
+h1, h2 {
+	code:is(.foo, :not(.foo)) {
+		padding: 0;
+		font-size: 100%;
+		font-size-adjust: .545;
+		background: none;
+
+		&:not(:has(*)) {
+			/* No point in displaying part of a heading in monospace if it doesn't have any highlighting */
+			font: inherit;
+		}
+	}
+}
+
 h1 {
 	margin: 3.5rem 0 2rem;
 	font-size: calc((210% + clamp(0%, 1.5vw, 180%)) * var(--font-size-scale, 1));
@@ -445,7 +459,7 @@ table {
 	background: white;
 
 	th, td {
-		border: 1px solid var(--color-gray-80);
+		border: 1px solid var(--color-gray-40a);
 		padding: .2rem .4rem;
 	}
 
@@ -453,7 +467,7 @@ table {
 		text-align: left;
 		font-size: 80%;
 		font-family: var(--font-sans);
-		background: var(--color-accent);
+		background: var(--color-accent3);
 		color: white;
 	}
 
@@ -1060,7 +1074,7 @@ code .token {
 }
 
 /* Inline code */
-code:is(code, [class*="language-"]):not(pre *) {
+code:is(code, [class*="language-"]):where(:not(pre *)) {
 	padding: .2em .3em .2em;
 	border-radius: .15rem;
 	background: var(--code-background, var(--color-accent2-light1));
