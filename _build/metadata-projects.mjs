@@ -18,8 +18,8 @@ export default async function addProjectMetadata() {
 	/*
 	To update:
 	Visit https://npm-stat.com/charts.html?author=leaverou&from=2010-11-12
-	select the table, and run:
-	let o = Object.fromEntries([...$0.rows].map(tr => [tr.cells[0].textContent, +tr.cells[1].textContent.replaceAll(",", "")])); delete o.package; copy(o);
+	wait for the data to load, then run:
+	let o = Object.fromEntries([...$$("table").pop().rows].map(tr => [tr.cells[0].textContent, +tr.cells[1].textContent.replaceAll(",", "")])); delete o.package; copy(o);
 	*/
 	let npm_total_downloads = readJSON("../data/npm_total_downloads.json");
 
