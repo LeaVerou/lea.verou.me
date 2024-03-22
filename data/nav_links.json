@@ -8,6 +8,10 @@
 		"path": "blog"
 	},
 	{
+		"title": "Specs",
+		"path": "specs"
+	},
+	{
 		"title": "Projects",
 		"path": "projects"
 	},
