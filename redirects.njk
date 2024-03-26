@@ -25,6 +25,16 @@ eleventyExcludeFromCollections: true
 /css3patterns/* https://projects.verou.me/css3patterns/:splat 301
 /incrementable/* https://incrementable.verou.me/:splat 301
 /files/stateof/* https://projects.verou.me/stateof/:splat 301
+/chainvas/* https://projects.verou.me/chainvas/:splat 301
+
+# Specs
+/standards/* /specs/:splat 301
+/docs/* /specs/:splat 301
+
+# Static file hosting without cluttering root
+/* /files/:splat 200
+
+
 
 # Tag aliases
 {% for alias, tag in tag_aliases %}/blog/tags/{{ alias }}/ /blog/tags/{{ tag }}/ 301
@@ -34,8 +44,3 @@ eleventyExcludeFromCollections: true
 {% for slug, wpid in wpids %}/?p={{ wpid }} /blog/{{ slug }}/ 301
 {% endfor %}
 
-# Static file hosting without cluttering root
-/* /files/:splat 200
-
-/standards/* /specs/:splat 301
-/docs/* /specs/:splat 301
