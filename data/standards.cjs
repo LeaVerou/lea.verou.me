@@ -308,6 +308,11 @@ const proposals = [
 				version: "119",
 				flag: true,
 			},
+			{
+				type: "shipped",
+				browser: "chrome",
+				version: "123",
+			},
 			// {
 			// 	type: "shipped",
 			// 	browser: "chrome",
