@@ -1,6 +1,18 @@
 {
 	"project": [
 		{
+			"featured": 0,
+			"image": "https://cdn.jsdelivr.net/gh/DmitrySharabin/lea.verou.me@cb74caf0088c9dc743711af3fa9e4605fc476013/data/images/rety.png",
+			"name": "Rety",
+			"date": "2022-07",
+			"type": "lib",
+			"description": "Rety is a library that allows you to record the edits you make on one or more pieces of text (usually code) and replay them later to recreate the same typing flow.\n\nThis is particularly useful for orchestrating live demos that run without your presence.",
+			"innovation": "The same progressive development, which is the primary benefit of live coding, but without the fumbling, delays, or mistakes that often come with it.",
+			"impact_rating": 0,
+			"url": "https://rety.verou.me",
+			"npm": "rety"
+		},
+		{
 			"featured": "0",
 			"image": "https://lea.verou.me/wp-content/uploads/2022/06/image-2.png",
 			"type": "lib",
