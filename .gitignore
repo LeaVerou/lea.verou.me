@@ -8,6 +8,7 @@ feed.xml
 !files/**/index.html
 !specs/conical-gradient/index.html
 !mocks/**/index.html
+!**/research/index.html
 404.html
 blog/tags/*
 
