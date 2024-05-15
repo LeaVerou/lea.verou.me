@@ -1,13 +1,8 @@
 h4:not(main > *, .post *),
+:is(.callout, .warning, .info, .note, .tip) > summary,
 pre > code[data-file]::before,
 main aside::before,
-.callout > summary,
-.callout::before,
-.warning > summary,
-.warning::before,
-.info::before,
-.note::before,
-.tip::before {
+:is(.callout, .warning, .info, .note, .tip)::before {
 	--offset: .5em;
 
 	padding: .3em 1em;
@@ -70,6 +65,11 @@ main aside,
 		position: absolute;
 		top: -1em;
 		left: 2.5rem;
+	}
+
+	code:not(pre > *) {
+		font-size: 100%;
+		background: none;
 	}
 }
 
@@ -150,8 +150,8 @@ main aside {
 	&:not([id=toc]) {
 		/* Aside comments in an article */
 		&:not(:has(> h4))::before {
-			content: "Aside";
-			background: var(--color-accent3);
+			content: var(--label, "Aside");
+			background: var(--color, var(--color-accent3));
 		}
 
 		& a:where(:not(h4 > :only-child)) {
