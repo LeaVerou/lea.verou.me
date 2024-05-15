@@ -1074,24 +1074,23 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 	font-weight: 500;
 
 
-	&:where(main>*, .summary>*) {
-		padding-inline: var(--content-margin);
-		padding-block-start: 1rem;
-		margin-inline: calc(-1 * var(--content-margin));
+	&:where(main > *, .summary > *) {
+		--skew: .8em;
+		padding-inline: .8rem;
+		padding-block: .6rem;
+		max-width: max-content;
 		border: 0 solid transparent;
-		border-width: 1.5em 0;
-		clip-path: polygon(var(--clip-top), var(--clip-bottom));
-		--clip-top: 0 0, 100% 2em;
-		--clip-bottom: 100% calc(100% - 1.5em), 0 100%;
+		border-width: 0 var(--skew);
+		margin-inline: calc(-1 * var(--skew));
+		margin-block: .5rem 1rem;
+
+		clip-path: polygon(
+			var(--skew) 0%, 100% 0%, calc(100% - var(--skew)) 100%, 0% 100%
+		)
 	}
 
 	&:nth-of-type(odd) {
-		--clip-top: 0 2em, 100% 0;
-	}
-
-	&:nth-of-type(3n + 1),
-	&:nth-of-type(5n + 1) {
-		--clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
+		clip-path: polygon(0% 0%, calc(100% - var(--skew)) 0%, 100% 100%, var(--skew) 100%);
 	}
 
 	& p {
