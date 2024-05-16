@@ -27,7 +27,7 @@ table {
 
 tr {
 	background: canvas;
-	background: color-mix(in oklab, canvas 90%, oklab(none none none / 0%));
+	background: color-mix(in oklab, canvas 80%, oklab(none none none / 0%));
 	color: canvastext;
 }
 
@@ -39,7 +39,7 @@ th, td {
 th {
 	font-family: var(--font-sans);
 	font-size: 90%;
-	background: var(--color-gray-10a);
+	background: var(--color-gray-95);
 	--tint-amount: 25%;
 
 	&:where(:first-child, tbody *) {
@@ -53,12 +53,15 @@ th {
 	&:has(.divider) {
 		/* Text between two columns */
 		position: relative;
+		white-space: nowrap;
+		font-weight: normal;
 
 		.divider {
 			position: absolute;
-			background: var(--color-gray-80);
-			border-radius: 1em;
-			padding: .05em .4em 0;
+			background: var(--color-gray-95);
+			line-height: 1;
+			margin-top: .25em;
+			font-weight: bold;
 
 			&.before {
 				left: -1px;
@@ -70,6 +73,14 @@ th {
 				transform: translateX(50%);
 			}
 		}
+	}
+
+	&:has(.divider.before) {
+		padding-inline-start: 1.8em;
+	}
+
+	&:has(.divider.after) {
+		padding-inline-end: 1.8em;
 	}
 
 	small {
