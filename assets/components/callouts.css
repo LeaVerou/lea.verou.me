@@ -26,6 +26,7 @@ main aside,
 .note,
 .tip {
 	--_color-light: var(--color-light, var(--color-accent2-light2));
+
 	position: relative;
 	background: var(--_color-light);
 	padding: 1.2rem 1rem .8rem;
@@ -57,7 +58,7 @@ main aside,
 
 	& h4,
 	&::before {
-		margin-top: -2.2em;
+		margin-top: -2em;
 		margin-bottom: .8em;
 	}
 
@@ -71,11 +72,19 @@ main aside,
 		font-size: 100%;
 		background: none;
 	}
+
+	pre[class*="language-"][class*="language-"] {
+		padding: .5em .8em;
+		background: color-mix(in lab, var(--color) 10%, lab(none none none / 0%));
+	}
 }
 
 main aside {
 	font-size: 75%;
-	color: var(--color-gray-40);
+
+	&:not([class]) {
+		color: var(--color-gray-40);
+	}
 
 	&[id=toc] {
 		/* TOC sidebar */
