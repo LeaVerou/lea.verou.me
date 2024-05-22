@@ -98,7 +98,7 @@ const proposals = [
 		]
 	},
 	{
-		title: "Relative Colors",
+		title: "Relative Colors (RCS)",
 		description: `Adds the capability of creating new colors by tweaking the components of existing colors in any color space,
 		to facilitate dynamic design systems that generate several hues and tints from a few input colors.`,
 		milestones: [
@@ -140,7 +140,13 @@ const proposals = [
 				title: "Interop 2024 focus area",
 				url: "https://web.dev/blog/interop-2024",
 				date: "2024-02-01"
-			}
+			},
+			{
+				type: "shipped",
+				browser: "firefox",
+				version: "128",
+				date: "2024-07-09"
+			},
 		]
 	},
 	{
