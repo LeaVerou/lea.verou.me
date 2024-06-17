@@ -463,6 +463,23 @@ const proposals = [
 		]
 	},
 	{
+		title: "Inline `if()` MVP",
+		description: "An inline `if()` function that will allow branching based on custom property values, media queries, and supports conditions, on the element itself, allowing web components to implement higher level CSS properties.",
+		tags: ["MVP", "Web Components"],
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/w3c/csswg-drafts/issues/10064",
+				date: "2024-03-12",
+			},
+			{
+				type: "resolution",
+				url: "https://github.com/w3c/csswg-drafts/issues/10064#issuecomment-2165157958",
+				date: "2024-06-13",
+			},
+		],
+	},
+	{
 		title: "Simplified `:local-link`",
 		description: `This addresses the common author pain point of styling links to the current page (e.g. in a navigation menu)
 		in a different way.
