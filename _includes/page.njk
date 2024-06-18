@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}{% if title %} &bull; {% endif %}Lea Verou</title>
-	<link rel="shortcut icon" href="/mark.svg" />
+	<link rel="shortcut icon" href="{{ page | relative }}/mark.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lea Verou">
 	{% if draft or unlisted %}<meta name="robots" content="noindex">{% endif %}
@@ -19,13 +19,13 @@
 	{% endif %}
 
 	{{ includes | safe }}
-	<link rel="stylesheet" href="/assets/style.css">
+	<link rel="stylesheet" href="{{ page | relative }}/assets/style.css">
 	{% if page_css %}
 	<link rel="stylesheet" href="{{ "style.css" if page_css == true else page_css }}">
 	{% endif %}
 	{{ includesEnd | safe }}
-	<link rel="alternate" type="application/atom+xml" title="Lea Verou &bull; Feed" href="/feed.xml" />
-	<script src="/assets/global.js" type="module"></script>
+	<link rel="alternate" type="application/atom+xml" title="Lea Verou &bull; Feed" href="{{ page | relative }}/feed.xml" />
+	<script src="{{ page | relative }}/assets/global.js" type="module"></script>
 
 	{% if image %}
 	<meta property="og:image" content="{{ image | absolutize(page.url) }}" />
@@ -36,8 +36,8 @@
 {% import "_nav.njk" as nav with context %}
 <header class="monitor-in-view">
 	<div class="site-meta">
-		<a href="/" class="site-logo">
-			<img property="image" src="/mark.svg" alt="">
+		<a href="{{ page | relative }}/" class="site-logo">
+			<img property="image" src="{{ page | relative }}/mark.svg" alt="">
 			<span class="site-title" title="Life at the bleeding edge (of the Web)">Lea Verou</span>
 		</a>
 		<div class="social gt-md">{% include "_social.njk" %}</div>
@@ -72,7 +72,7 @@
 {%- if draft -%}
 <section class="info" style="--label: 'Here be dragons'">
 	<strong>This is an unpublished draft.</strong> It may be incomplete, contain errors or be completely wrong.
-	Please check back later for the finished version, or <a href="/feed.xml">subscribe</a> to my feed to be notified.
+	Please check back later for the finished version, or <a href="{{ page | relative }}/feed.xml">subscribe</a> to my feed to be notified.
 </section>
 {%- endif %}
 
@@ -130,8 +130,8 @@
 	</nav>
 
 	<small>
-		<a href="/credits/#licensing" title="Licensing details" class="copyright">&copy;2009&ndash;{{ currentYear }} Lea Verou</a>
-		<span class="credits">Powered by <a href="https://11ty.dev/">Eleventy</a>, <a href="https://netlify.com">Netlify</a>, and <a href="/credits/">more</a></span>
+		<a href="{{ page | relative }}/credits/#licensing" title="Licensing details" class="copyright">&copy;2009&ndash;{{ currentYear }} Lea Verou</a>
+		<span class="credits">Powered by <a href="https://11ty.dev/">Eleventy</a>, <a href="https://netlify.com">Netlify</a>, and <a href="{{ page | relative }}/credits/">more</a></span>
 		<a href="#" class="to-top">
 			<span class="long-text">To the top</span>
 			<span class="short-text">Up</span>
