@@ -463,6 +463,7 @@ const proposals = [
 		]
 	},
 	{
+		id: "if-mvp",
 		title: "Inline `if()` MVP",
 		description: "An inline `if()` function that will allow branching based on custom property values, media queries, and supports conditions, on the element itself, allowing web components to implement higher level CSS properties.",
 		tags: ["MVP", "Web Components"],
