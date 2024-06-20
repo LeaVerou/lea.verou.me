@@ -6,7 +6,8 @@ table {
 	border-spacing: 0;
 	border-collapse: collapse;
 	margin-bottom: 1em;
-	background: white;
+	font-size: 80%;
+	/* background: white; */
 
 	.black, .dark {
 		color-scheme: dark;
@@ -26,28 +27,31 @@ table {
 }
 
 tr {
-	background: canvas;
-	background: color-mix(in oklab, canvas 80%, oklab(none none none / 0%));
+	/* background: canvas; */
+	/* background: color-mix(in oklab, canvas 80%, oklab(none none none / 0%)); */
 	color: canvastext;
 }
 
 th, td {
-	border: 1px solid var(--color-gray-40a);
+	border-block: 1px solid var(--color-gray-40a);
 	padding: .2rem .4rem;
 }
 
 th {
 	font-family: var(--font-sans);
 	font-size: 90%;
-	background: var(--color-gray-95);
+	/* background: var(--color-gray-95); */
 	--tint-amount: 25%;
+	text-align: left;
 
-	&:where(:first-child, tbody *) {
-		text-align: left;
+	:where(thead) & {
+		border-block-start: none;
+		border-block-end-width: .2em;
 	}
 
 	:where(tbody) & {
-		background: var(--color-gray-5a);
+		/* background: var(--color-gray-5a); */
+		vertical-align: top;
 	}
 
 	&:has(.divider) {
@@ -93,4 +97,5 @@ th {
 td {
 	font-variant-numeric: tabular-nums;
 	background: color-mix(in oklab, var(--color-tint) var(--tint-amount, 15%), oklab(none none none / 0%));
+	vertical-align: top;
 }
