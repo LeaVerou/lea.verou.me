@@ -1,6 +1,19 @@
 {
 	"event": [
 		{
+			"date": "2024-06-27",
+			"talk": [
+				{
+					"title": "API Design is UI Design",
+					"type": "Talk"
+				}
+			],
+			"url": "https://dotjs.io",
+			"name": "DotJS",
+			"city": "Paris",
+			"country": "fr"
+		},
+		{
 			"talk": [
 				{
 					"title": "A story of 🧊 ice, 🔥 fire, and 🪆 CSS Nesting",
