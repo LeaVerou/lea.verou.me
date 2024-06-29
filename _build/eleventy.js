@@ -1,14 +1,17 @@
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItAttrs = require("markdown-it-attrs");
-const markdownItFootnote = require("markdown-it-footnote");
-const markdownItMathjax3 = require("markdown-it-mathjax3");
-const markdownItDeflist = require("markdown-it-deflist");
-const embeds = require("eleventy-plugin-embed-everything");
-const pluginTOC = require("eleventy-plugin-toc");
-const filters = require("./assets/filters.cjs");
-const tag_aliases = require("./data/tag_aliases.json");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+import { createRequire } from "module";
+import markdownIt from "markdown-it";
+import * as filters from "./filters.js";
+import tag_aliases  from "../data/tag_aliases.json" with { type: "json" };
+import pluginRss from "@11ty/eleventy-plugin-rss";
+
+const require = createRequire(import.meta.url);
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItFootnote from "markdown-it-footnote";
+import markdownItMathjax3 from "markdown-it-mathjax3";
+import markdownItDeflist from "markdown-it-deflist";
+import embeds from "eleventy-plugin-embed-everything";
+import pluginTOC from "eleventy-plugin-toc";
 
 let published;
 function getPublished (collectionApi) {
@@ -24,7 +27,7 @@ function getPublished (collectionApi) {
 	return published;
 }
 
-module.exports = config => {
+export default config => {
 	let data = {
 		layout: "page.njk",
 		permalink: "{{ page.filePathStem }}.html",

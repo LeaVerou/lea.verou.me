@@ -1,5 +1,5 @@
 
-module.exports = {
+export default {
 	oldURL (data) {
 		let {site, page} = data;
 		let url = page.url;
