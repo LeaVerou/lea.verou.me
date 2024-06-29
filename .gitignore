@@ -12,10 +12,6 @@ feed.xml
 404.html
 blog/tags/*
 
-# CSS files
-assets/style.css
-projects/style.css
-
 # Data files
 **/index.json
 
