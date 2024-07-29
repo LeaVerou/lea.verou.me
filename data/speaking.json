@@ -5,13 +5,16 @@
 			"talk": [
 				{
 					"title": "API Design is UI Design",
-					"type": "Talk"
+					"type": "Talk",
+					"video": "https://www.youtube.com/watch?v=g92XUzc1OHY",
+					"@context": "https://schema.org/"
 				}
 			],
 			"url": "https://dotjs.io",
 			"name": "DotJS",
 			"city": "Paris",
-			"country": "fr"
+			"country": "fr",
+			"@context": "https://schema.org/"
 		},
 		{
 			"talk": [
