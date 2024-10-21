@@ -186,7 +186,7 @@ One idea would be to use ratios, as they have this nice property where they are 
 
 The ratio of $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}}$ is < <var>1</var> for <var>L</var> ≤ <var>L<sub>threshold</sub></var> and > <var>1</var> when <var>L</var> > <var>L<sub>threshold</sub></var>.
 This means that $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}} - 1$ will be a negative number for <var>L</var> < <var>L<sub>threshold</sub></var> and a positive one for <var>L</var> > <var>L<sub>threshold</sub></var>.
-Then all we need to do is multiply that expression by a huge number so that the positive number is guaranteed to be over <var>1</var>.
+Then all we need to do is multiply that expression by a huge (in magnitude) negative number so that the positive number is guaranteed to be under <var>0</var>.
 
 Putting it all together, it looks like this:
 
