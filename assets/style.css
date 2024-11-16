@@ -1328,6 +1328,10 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 			background: var(--color-accent);
 			color: white;
 		}
+
+		& a.mv-empty:not([mv-mode=edit]) {
+			display: none;
+		}
 	}
 
 	& .venue {
