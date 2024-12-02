@@ -23,6 +23,8 @@ blog/2024/eng-momentum
 blog/2024/text-based-formats
 blog/2024/case-study-sentiment-ui
 blog/2024/web-standards-product-hard-mode
+blog/2024/composable-web-ui
+blog/2024/phd
 
 # Sensitive info
 # ----------------
@@ -30,6 +32,8 @@ _build/GITHUB_ACCESS_TOKEN.txt
 
 # Other
 # ----------------
+node_modules
+.DS_Store
 
 # Local Netlify folder
 .netlify
