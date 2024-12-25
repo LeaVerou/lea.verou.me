@@ -120,6 +120,7 @@
 					"date": "2022-10"
 				},
 				{
+					"url": "https://dl.acm.org/doi/10.1145/3472749.3474822",
 					"title": "Shapir: Standardizing and Democratizing Access to Web APIs",
 					"author": [
 						"Tarfah Alrashed",
