@@ -7,7 +7,7 @@
 >
 <head>
 	<meta charset="UTF-8">
-	<title>{{ title }}{% if title %} &bull; {% endif %}Lea Verou</title>
+	<title>{{ title | md_inline | striptags }}{% if title %} &bull; {% endif %}Lea Verou</title>
 	<link rel="shortcut icon" href="{{ page | relative }}/mark.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lea Verou">
@@ -51,7 +51,7 @@
 					{% if heading %}
 						{{ heading }}
 					{% elseif title %}
-						{{ title }}
+						{{ title | md_inline | safe }}
 					{% else %}
 						Lea Verou
 					{% endif %}
