@@ -1,8 +1,15 @@
-import tagNames from "../data/tag_names.json" with { type: "json" };
-import siteSettings from "../data/site.json" with { type: "json" };
-import capitalizations from "../data/capitalizations.json" with { type: "json" };
 import readingTime from "reading-time";
 import path from "path";
+
+// Workaround for https://github.com/11ty/eleventy-dependency-tree-esm/issues/4
+// import tagNames from "../data/tag_names.json" with { type: "json" };
+// import siteSettings from "../data/site.json" with { type: "json" };
+// import capitalizations from "../data/capitalizations.json" with { type: "json" };
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const tagNames = require("../data/tag_names.json");
+const siteSettings = require("../data/site.json");
+const capitalizations = require("../data/capitalizations.json");
 
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
