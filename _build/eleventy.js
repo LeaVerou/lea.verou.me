@@ -1,10 +1,7 @@
-import { createRequire } from "module";
 import markdownIt from "markdown-it";
 import * as filters from "./filters.js";
-import tag_aliases  from "../data/tag_aliases.json" with { type: "json" };
 import pluginRss from "@11ty/eleventy-plugin-rss";
 
-const require = createRequire(import.meta.url);
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItFootnote from "markdown-it-footnote";
@@ -12,6 +9,12 @@ import markdownItMathjax3 from "markdown-it-mathjax3";
 import markdownItDeflist from "markdown-it-deflist";
 import embeds from "eleventy-plugin-embed-everything";
 import pluginTOC from "eleventy-plugin-toc";
+
+// Workaround for https://github.com/11ty/eleventy-dependency-tree-esm/issues/4
+// import tag_aliases  from "../data/tag_aliases.json" with { type: "json" };
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const tag_aliases = require("../data/tag_aliases.json");
 
 let published;
 function getPublished (collectionApi) {
