@@ -427,6 +427,8 @@ figure {
 			> :not(figcaption),
 			> p > img {
 				width: calc(50% - .25rem);
+				min-width: 0;
+				flex: 1;
 				object-fit: contain;
 			}
 

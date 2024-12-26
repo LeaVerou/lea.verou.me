@@ -45,7 +45,6 @@ th {
 	padding-block: .2rem;
 	font-family: var(--font-sans);
 	--tint-amount: 25%;
-	text-align: start;
 
 	:where(thead) & {
 		border-block-start: none;
