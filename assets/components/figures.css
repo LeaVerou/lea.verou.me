@@ -53,26 +53,24 @@ figure {
 		margin-inline: auto;
 	}
 
-	&.left,
-	&.right,
 	&.float {
 		--small-figure-max-width: 200px;
 		--small-figure-min-width: 100px;
+		/* Max width is the margin width */
 		--small-figure-width: calc(50vw - var(--content-width) / 2 - 2em);
 		--small-figure-clamped-width: clamp(var(--small-figure-min-width), var(--small-figure-width), var(--small-figure-max-width));
+		/* Margin */
 		--small-figure-outset: calc(-1em - var(--small-figure-clamped-width));
 
 		max-width: var(--small-figure-clamped-width);
 		margin: 0;
 
-		&:where(.left),
 		&:where(.float) {
 			float: left;
 			margin-right: 1em;
 			margin-left: var(--small-figure-outset);
 		}
 
-		&:where(.right),
 		&:where(.float:nth-child(odd of .float)) {
 			float: right;
 			margin-left: 1em;
