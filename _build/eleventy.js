@@ -67,33 +67,38 @@ export default config => {
 
 	config.setLibrary("md", md);
 
-	config.addFilter("md", (value, o = {}) => {
-		if (typeof value !== "string") {
-			if (value instanceof String) {
-				value = value + "";
+	let markdown = {
+		block: (value, o = {}) => {
+			if (typeof value !== "string") {
+				if (value instanceof String) {
+					value = value + "";
+				}
+				else {
+					return value;
+				}
+
 			}
-			else {
+
+			let ret = md.render(value, o);
+
+			if (o.url) {
+				ret = filters.relativize_urls(ret, o.url);
+			}
+
+			return ret;
+		},
+		inline: (value) => {
+			if (typeof value !== "string") {
 				return value;
 			}
 
-		}
+			return md.renderInline(value);
+		},
+	}
 
-		let ret = md.render(value, o);
-
-		if (o.url) {
-			ret = filters.relativize_urls(ret, o.url);
-		}
-
-		return ret;
-	});
-
-	config.addFilter("md_inline", (value) => {
-		if (typeof value !== "string") {
-			return value;
-		}
-
-		return md.renderInline(value);
-	});
+	config.addFilter("md", markdown.block);
+	config.addPairedShortcode("markdown", markdown.block);
+	config.addFilter("md_inline", markdown.inline);
 
 	for (let name in filters) {
 		config.addFilter(name, filters[name]);

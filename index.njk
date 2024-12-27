@@ -1,27 +1,21 @@
 ---
 title: Home
 ---
-{% macro md_block() %}
-{{ caller() | md | safe }}
-{% endmacro %}
-
 <div class="nutshell">
 
-<img src="/about/images/smiling-medium.jpg" alt="Photo of me smiling">
-{% call md_block() %}
-Hi, I’m Lea and I love making things.
-Ι [design new web technologies](/specs/),
-and [tools](/projects/) used by millions of developers.
-As a [W3C TAG member](https://en.wikipedia.org/wiki/Technical_Architecture_Group),
-I [review](https://github.com/w3ctag/design-reviews/) web technology proposals to ensure they benefit the Web.
-I've done [HCI research](/publications/#research) at [MIT](https://haystack.csail.mit.edu) on democratizing web development, earning me a PhD.
-I [speak](/speaking/), [teach](https://designftw.mit.edu), and [write](/publications/),
-including a [bestselling book](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20) with [O’Reilly](https://oreilly.com),
-dubbed ["Best CSS book"](https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html).
-I often [blog](/blog/) about all this -- and more!
-{% endcall %}
+<img src="/about/images/lightsaber.jpg" alt="Photo of me with a lightsaber">
+{% markdown %}
+**Hi, I’m Lea!** 👋🏼 I love making things that help people make things. <br>
+I work as Product Lead at [Font Awesome](https://fontawesome.com/), building the next generation of web design tools.
+Ι also [make web technologies better](/specs/),
+and launch [open source tools](/projects/) used by millions of developers.
+I've done [HCI research](/publications/#research) at [MIT](https://mit.edu), earning me a PhD
+(_yes, I also answer to Dr Verou_ 😅).
+I love sharing knowledge via [speaking](/speaking/), [teaching](https://designftw.mit.edu), and [writing](/publications/).
+Here, I [blog](/blog/) about product design, web technologies, and more.
+{% endmarkdown %}
 
-<p><a class="call-to-action" href="/about/">Learn more about me</a></p>
+<p><a class="call-to-action" href="/about/">More about me</a></p>
 </div>
 
 <h2><a href="/blog/">Blog</a> <a href="/feed.xml" title="Feed" class="feed"></a></h2>

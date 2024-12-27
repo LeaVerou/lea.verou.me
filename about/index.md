@@ -53,7 +53,7 @@ While secondary to making stuff, **I love sharing knowledge** (and blending the 
 In the past, I have…
 
 - …[given over 100 invited talks at web conferences around the world](http://lea.verou.me/speaking),
-- …written a [bestselling book on advanced CSS](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20) that was translated into 8 languages,
+- …written a [bestselling book on advanced CSS](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20) that was translated into 8 languages and dubbed ["Best CSS book"](https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html),
 - …taught usability & web technologies at MIT, and co-created an [MIT course combining the two](https://designftw.mit.edu) that became a permanent subject
 - …written several [articles](https://lea.verou.me/publications/#articles),
 - …worked at [W3C/MIT](http://w3.org) as a Developer Advocate.

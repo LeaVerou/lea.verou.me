@@ -355,6 +355,7 @@ figure {
 		--small-figure-width: calc(50vw - var(--content-width) / 2 - 2em);
 		--small-figure-clamped-width: clamp(var(--small-figure-min-width), var(--small-figure-width), var(--small-figure-max-width));
 		--small-figure-outset: calc(-1em - var(--small-figure-clamped-width));
+
 		max-width: var(--small-figure-clamped-width);
 		margin: 0;
 
@@ -986,13 +987,13 @@ body > footer {
 	text-wrap: balance;
 	font-family: var(--font-sans);
 	font-size: 130%;
-	hyphens: auto;
+	hyphens: manual;
 
 	img {
 		float: right;
 		margin-right: clamp(-1 * var(--content-margin) + var(--min-padding) / 2, -0.5 * var(--width), 0em);
 		margin-left: .3rem;
-		--width: calc(4em + clamp(0px, 3vw, 6em));
+		--width: calc(4em + clamp(0px, 4svw + 3svh, 6em));
 		width: var(--width);
 		aspect-ratio: 1 / 1;
 		border-radius: 50%;
