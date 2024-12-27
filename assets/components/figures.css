@@ -21,6 +21,7 @@ figure {
 	> video,
 	> p > img,
 	> p > video {
+		width: 100%;
 		max-height: 75svh;
 	}
 
@@ -54,43 +55,51 @@ figure {
 	}
 
 	&.float {
-		--small-figure-max-width: 200px;
-		--small-figure-min-width: 100px;
-		/* Max width is the margin width */
-		--small-figure-width: calc(50vw - var(--content-width) / 2 - 2em);
-		--small-figure-clamped-width: clamp(var(--small-figure-min-width), var(--small-figure-width), var(--small-figure-max-width));
+		--page-margin: calc(50vw - var(--content-width) / 2);
+		--figure-max-width: calc(var(--content-width) / 2 - 2em);
+		--figure-min-width: 200px;
+
+		float: inline-start;
+		min-width: var(--figure-min-width);
+		max-width: var(--figure-max-width);
+		margin-block: 0 1em;
+
 		/* Margin */
-		--small-figure-outset: calc(-1em - var(--small-figure-clamped-width));
+		--figure-clamped-width: clamp(var(--figure-min-width), 100%, var(--figure-max-width));
+		--figure-max-outset: calc(min(var(--figure-clamped-width), var(--page-margin)) - 1em);
+		--figure-outset: min(3em, var(--figure-max-outset));
 
-		max-width: var(--small-figure-clamped-width);
-		margin: 0;
+		margin-inline: calc(-1 * var(--figure-outset)) 1em;
 
-		&:where(.float) {
-			float: left;
-			margin-right: 1em;
-			margin-left: var(--small-figure-outset);
+		&:where(:nth-child(odd of .float)) {
+			float: inline-end;
+			margin-inline: 1em calc(-1 * var(--figure-outset));
 		}
 
-		&:where(.float:nth-child(odd of .float)) {
-			float: right;
-			margin-left: 1em;
-			margin-right: var(--small-figure-outset);
+		/* Link figures can be smaller */
+		&:where(:has(> a > img)) {
+			--figure-max-width: 200px;
+			--figure-min-width: 100px;
 		}
 
-		@media (width < 1200px) {
-			/* Simple floats */
-			--small-figure-width: calc(25vw - 2em);
-			--small-figure-outset: 0;
-			margin-bottom: 1em;
-		}
+		@media (width > 1200px) {
+			/* Place figure in margin if possible */
+			&.margin {
+				--figure-width: calc(var(--page-margin) - 2em);
+				--figure-outset: var(--figure-max-outset);
 
-		@media (width < 600px) {
-			float: none;
-			margin: 1em 0;
-			display: grid;
-			gap: 1em;
-			max-width: calc(3 * var(--small-figure-max-width));
-			grid-template-columns: var(--small-figure-max-width) 1fr;
+				max-width: var(--figure-clamped-width);
+				margin-block-end: 0;
+			}
+		}
+	}
+
+	&.caption-h {
+		display: flex;
+		gap: 1em;
+
+		figcaption {
+			flex: 1;
 		}
 	}
 

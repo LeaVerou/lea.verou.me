@@ -5,7 +5,7 @@ title: About me
 
 
 <figure class="full-width">
-<img src="images/lightsaber.jpg" alt="Photo of me smiling">
+<img src="images/lightsaber.jpg" alt="Photo of me smiling" style="max-height: min(75vh, 500px); object-position: 50% 31%">
 <figcaption>
 
 Photo taken in 2024 by [Max Wilkinson](https://madebyprisma.com/).
@@ -33,7 +33,7 @@ I have also been been one of the few Invited Experts of the [W3C CSS Working Gro
 If you’re a Web developer, **you use bits of [my standards work](/specs/) daily**.
 
 
-<figure class="float">
+<figure class="float margin">
 	<img src="images/smiling-medium.jpg" alt="Photo of me smiling">
 	<figcaption>Photo taken in 2018 by Kelly Benvenuto</figcaption>
 </figure>
@@ -44,7 +44,7 @@ Perhaps the two most popular ones are:
 - [PrismJS](http://prismjs.com), a widely used syntax highlighter with [millions of weekly downloads](https://www.npmjs.com/package/prismjs) and ~1 **billion** total downloads),
 - [Color.js](https://colorjs.io), a popular color manipulation library with over [10M npm downloads](https://limonte.dev/total-npm-downloads/?package=colorjs.io)
 
-<figure class="float">
+<figure class="float margin">
 	<img src="images/rainbow-hair.jpg" alt="">
 	<figcaption>Selfie from 2018 to commemorate my (still unbroken) personal record number of hair colors 😅</figcaption>
 </figure>
