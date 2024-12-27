@@ -7,11 +7,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "netlify dev -p 8844",
+    "serve": "npx @11ty/eleventy --config=_build/eleventy.js --serve --quiet",
     "build:fetch": "node _build/fetch.mjs",
     "build:html": "npx @11ty/eleventy --config=_build/eleventy.js --quiet",
     "build": "npm run build:html",
-    "watch:html": "npx @11ty/eleventy --config=_build/eleventy.js --watch --quiet --incremental",
-    "watch": "npx concurrently -n w: npm:watch:*"
+    "watch": "npx @11ty/eleventy --config=_build/eleventy.js --watch --quiet --incremental"
   },
   "repository": {
     "type": "git",

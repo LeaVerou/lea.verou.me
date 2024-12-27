@@ -312,7 +312,9 @@ figure {
 	}
 
 	> img,
-	> p > img {
+	> video,
+	> p > img,
+	> p > video {
 		max-height: 75svh;
 	}
 
@@ -346,7 +348,8 @@ figure {
 	}
 
 	&.left,
-	&.right {
+	&.right,
+	&.float {
 		--small-figure-max-width: 200px;
 		--small-figure-min-width: 100px;
 		--small-figure-width: calc(50vw - var(--content-width) / 2 - 2em);
@@ -355,13 +358,15 @@ figure {
 		max-width: var(--small-figure-clamped-width);
 		margin: 0;
 
-		&:where(.left) {
+		&:where(.left),
+		&:where(.float) {
 			float: left;
 			margin-right: 1em;
 			margin-left: var(--small-figure-outset);
 		}
 
-		&:where(.right) {
+		&:where(.right),
+		&:where(.float:nth-child(odd of .float)) {
 			float: right;
 			margin-left: 1em;
 			margin-right: var(--small-figure-outset);
