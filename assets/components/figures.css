@@ -71,8 +71,14 @@ figure {
 		margin-inline: calc(-1 * var(--figure-outset)) 1em;
 
 		&:where(:nth-child(odd of .float)) {
+			/* Right floats */
 			float: inline-end;
 			margin-inline: 1em calc(-1 * var(--figure-outset));
+
+			&:where(:root.has-toc *) {
+				/* Do not collide with TOC */
+				--figure-outset: 0em;
+			}
 		}
 
 		/* Link figures can be smaller */

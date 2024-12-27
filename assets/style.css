@@ -177,7 +177,8 @@ h1, h2, h3 {
 }
 
 h1 {
-	margin: 3.5rem 0 2rem;
+	margin-block: 3.5rem 2rem;
+	margin-inline: -.1em;
 	font-size: calc((210% + clamp(0%, 1.5vw, 180%)) * var(--font-size-scale, 1));
 }
 
@@ -549,7 +550,8 @@ body > header {
 	}
 
 	.page-meta {
-		padding: 0 var(--content-margin);
+		/* The parent has var(--min-padding) padding so we need to offset that */
+		padding: 0 max(0em, var(--content-margin) - var(--min-padding));
 	}
 
 	.meta {
