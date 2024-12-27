@@ -222,3 +222,13 @@ export function dump2(obj) {
 
 	return `<pre class="language-json">${json}</pre>`
 }
+
+export function token_if (attribute, map) {
+	let value = Object.entries(map).filter(([key, value]) => value).map(([key,]) => key).join(" ");
+
+	if (value) {
+		return ` ${attribute}="${value}"`;
+	}
+
+	return "";
+}

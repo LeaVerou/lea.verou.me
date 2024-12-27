@@ -3,7 +3,7 @@
 	data-area="{{ siteArea }}"
 	data-page="{{ page.url }}"
 	data-inputpath="{{ page.inputPath | replace("./", "") }}"
-	{{ 'class="post-page"' if is_post }}
+	{{ "class" | token_if({'has-toc': toc, 'post-page': is_post}) | safe }}
 >
 <head>
 	<meta charset="UTF-8">
