@@ -841,11 +841,12 @@ body > footer {
 	font-size: 130%;
 	hyphens: manual;
 
+	/* Homepage */
 	img {
 		float: right;
 		margin-right: clamp(-1 * var(--content-margin) + var(--min-padding) / 2, -0.5 * var(--width), 0em);
 		margin-left: .3rem;
-		--width: calc(4em + clamp(0px, 4svw + 3svh, 6em));
+		--width: calc(4em + clamp(0px, 5svw + 4svh, 6em));
 		width: var(--width);
 		aspect-ratio: 1 / 1;
 		border-radius: 50%;
