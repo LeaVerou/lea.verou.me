@@ -13,6 +13,7 @@
 	<title>{{ title_plain }}</title>
 	<meta property="og:title" content="{{ title_plain }}" />
 	<meta name="twitter:title" content="{{ title_plain }}" />
+
 	<link rel="shortcut icon" href="{{ page | relative }}/mark.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lea Verou">
@@ -49,8 +50,10 @@
 
 	{% set summary = nutshell or page.excerpt %}
 	{% if summary -%}
-	<meta property="og:description" content="{{ summary | md | striptags }}" />
-	<meta name="twitter:description" content="{{ summary | md | striptags }}" />
+	{% set summary_plain = summary | md | striptags %}
+	<meta name="description" content="{{ summary_plain }}" />
+	<meta property="og:description" content="{{ summary_plain }}" />
+	<meta name="twitter:description" content="{{ summary_plain }}" />
 	{%- endif %}
 
 	{% if image -%}
