@@ -1321,6 +1321,7 @@ a.feed {
 
 	&::before {
 		content: var(--icon-square-rss);
+		font-weight: 900;
 	}
 }
 
