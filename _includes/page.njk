@@ -32,11 +32,32 @@
 	<link rel="alternate" type="application/atom+xml" title="Lea Verou &bull; Feed" href="{{ page | relative }}/feed.xml" />
 	<script src="{{ page | relative }}/assets/global.js" type="module"></script>
 
-	{% if image %}
+	{% if is_post -%}
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="Lea Verou" />
+		{% if date -%}
+			<meta property="article:published_time" content="{{ date | format_date('iso') }}" />
+			{% if date_updated -%}
+			<meta property="article:modified_time" content="{{ date_updated | format_date('iso') }}" />
+			{%- endif %}
+		{%- endif %}
+
+		{% for tag in tags -%}
+		<meta property="article:tag" content="{{ tag | format_tag }}" />
+		{%- endfor %}
+	{%- endif %}
+
+	{% set summary = nutshell or page.excerpt %}
+	{% if summary -%}
+	<meta property="og:description" content="{{ summary | md | striptags }}" />
+	<meta name="twitter:description" content="{{ summary | md | striptags }}" />
+	{%- endif %}
+
+	{% if image -%}
 	<meta property="og:image" content="{{ image | absolutize(page.url) }}" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content="{{ image | absolutize(page.url) }}" />
-	{% endif %}
+	{%- endif %}
 </head>
 <body class="language-{{ defaultLanguage or "css" }} {{ body_classes }}">
 {% import "_nav.njk" as nav with context %}
@@ -88,6 +109,10 @@
 	{{ content | toc | safe }}
 </aside>
 {% endif %}
+
+{% if nutshell -%}
+<div class="nutshell">{{ nutshell | md | safe }}</div>
+{%- endif %}
 
 {{ content | safe }}
 
