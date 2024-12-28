@@ -11,9 +11,9 @@
 <body>
 	<hgroup>
 		<h1>HTML5 &lt;progress&gt; polyfill</h1>
-		<h2><a href="http://leaverou.me">by Lea Verou</a> &bull; <a href="http://leaverou.me/2011/07/a-polyfill-for-html5-progress-element">Story</a> &bull; <a href="https://github.com/LeaVerou/HTML5-Progress-polyfill">Github</a></h2>
+		<h2><a href="http://leaverou.me">by Lea Verou</a> • <a href="http://leaverou.me/2011/07/a-polyfill-for-html5-progress-element">Story</a> • <a href="https://github.com/LeaVerou/HTML5-Progress-polyfill">Github</a></h2>
 	</hgroup>
-	
+
 	<h2>Demos</h2>
 	<ul>
 		<li>
@@ -39,7 +39,7 @@
 			</label>
 		</li>
 	</ul>
-	
+
 	<h2>Features</h2>
 	<ul>
 		<li>Accessible (WAI-ARIA-enabled)</li>
@@ -48,16 +48,16 @@
 		<li>Will fix new progress elements as well, through mutation events</li>
 		<li>No extra HTML elements needed and none added through script</li>
 	</ul>
-	
+
 	<h2>Browser support</h2>
 	<p>The progress element is natively supported in: Firefox 6+, Opera 11+, Chrome, Safari 5.1</p>
 	<p>This polyfill adds almost full support in: Firefox 3.5-5, Opera 10.5-10.63, IE9-10</p>
 	<p>This polyfill adds partial support in: IE8</p>
 	<p>Supporting Safari 5 was impossible, as it completely drops the progress tags and gives you an error</p>
-	
+
 	<h2>How to use</h2>
 	<p>Just add <code>progress-polyfill.css</code> in the head section and <code>progress-polyfill.js</code> near the body closing tag.
-	
+
 	<h2>Unit tests</h2>
 	<p style="display:none">
 		<label><progress max="0.8" value="0.6" id="progress4"></progress></label>
@@ -65,9 +65,9 @@
 		<progress max="100" id="progress0"></progress>
 		<progress max="0" id="progress5"></progress>
 	</p>
-	
+
 	<div id="unit-test-results"></div>
-	
+
 	<script src="progress-polyfill.js"></script>
 	<script src="tests.js"></script>
 </body>

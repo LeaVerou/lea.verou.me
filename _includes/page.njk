@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	{%- set title_plain -%}
-		{{ title | md_inline | striptags }}{% if title %} &bull; {% endif %}Lea Verou
+		{{ title | md_inline | striptags }}{% if title %} • {% endif %}Lea Verou
 	{%- endset -%}
 	<title>{{ title_plain }}</title>
 	<meta property="og:title" content="{{ title_plain }}" />
@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="{{ "style.css" if page_css == true else page_css }}">
 	{% endif %}
 	{{ includesEnd | safe }}
-	<link rel="alternate" type="application/atom+xml" title="Lea Verou &bull; Feed" href="{{ page | relative }}/feed.xml" />
+	<link rel="alternate" type="application/atom+xml" title="Lea Verou • Feed" href="{{ page | relative }}/feed.xml" />
 	<script src="{{ page | relative }}/assets/global.js" type="module"></script>
 
 	{% if is_post -%}

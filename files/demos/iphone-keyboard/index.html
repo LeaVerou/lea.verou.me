@@ -8,64 +8,64 @@
 		 * Styles for this demo page
 		 * The styles for the iPhone keyboard are in the external .css file
 		 */
-		 
+
 		body {
 			margin:0;
 			color:gray;
 			font-family:Helvetica, Arial, sans-serif;
 		}
-		
+
 		h1 {
 			color:#aaa;
 			border-bottom:1px solid;
 		}
-		
+
 			h1 sup {
 				color:white;
 				background:#BCEE01;
 				padding:0 .35em;
-				
+
 				border-radius:50%;
 				-moz-border-radius:1em;
 				-webkit-border-radius:.6em;
-				
+
 				-moz-transform:rotate(20deg);
 				-webkit-transform:rotate(20deg);
 			}
-		
+
 		p {
 			font-size:.8em;
 		}
-		
+
 		#iphone-keyboard-screenshot {
 			background:url(wide_keyboard.png) 50% 0 no-repeat;
 			height:220px;
 		}
-		
+
 		#footer {
 			font-size:.7em;
 			border-top:1px solid;
 			text-align:center;
 		}
-		
+
 		h1, p {
 			max-width:480px;
 			text-align:center;
 			margin:.5em auto;
 		}
-		
+
 		a {
 			font-weight:bold;
 			color:inherit;
 		}
-		
+
 		@media screen and (max-width: 479px) {
 			#iphone-keyboard-screenshot {
-				background:url(narrow_keyboard.png) 50% 0 no-repeat;	
+				background:url(narrow_keyboard.png) 50% 0 no-repeat;
 			}
-			
+
 			h1, p {
-				max-width:320px;	
+				max-width:320px;
 			}
 		}
 	</style>
@@ -76,7 +76,7 @@
 	<h1>iPhone keyboard with CSS<sup>3</sup></h1>
 	<p>Wide and narrow (try resizing the window) iPhone keyboard imitation. Top: HTML+CSS keyboard, bottom: Screenshot of the original. No images were used.
 	<strong>Warning: Only looks correctly in Firefox 3.6, Chrome 4 and Safari 4!</strong></p>
-	
+
 	<ul id="iphone-keyboard">
 		<li>
 			<button type="button">Q</button>
@@ -119,14 +119,14 @@
 			<button type="button" class="specialkey return">return</button>
 		</li>
 	</ul>
-	
+
 	<p id="iphone-keyboard-screenshot">
 	</p>
-	
+
 	<p id="footer">
-		By <a href="http://leaverou.me/2010/02/iphone-keyboard-with-css3-no-images/">Lea Verou</a> 
+		By <a href="http://leaverou.me/2010/02/iphone-keyboard-with-css3-no-images/">Lea Verou</a>
 		<!--[if IE]>
-		&bull; Every time you view this with Internet Explorer a cute little bunny dies.
+		• Every time you view this with Internet Explorer a cute little bunny dies.
 		<![endif]-->
 	</p>
 

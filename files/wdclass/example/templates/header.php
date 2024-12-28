@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Παράδειγμα Μαθήματος &bull; <?php echo $pagetitle; ?></title>
+	<title>Παράδειγμα Μαθήματος • <?php echo $pagetitle; ?></title>
 	<link href="css/default.css" rel="stylesheet" type="text/css">
 <?php if(isset($headinclude)) echo "\t" . $headinclude; ?>
 </head>
