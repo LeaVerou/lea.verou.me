@@ -7,7 +7,12 @@
 >
 <head>
 	<meta charset="UTF-8">
-	<title>{{ title | md_inline | striptags }}{% if title %} &bull; {% endif %}Lea Verou</title>
+	{%- set title_plain -%}
+		{{ title | md_inline | striptags }}{% if title %} &bull; {% endif %}Lea Verou
+	{%- endset -%}
+	<title>{{ title_plain }}</title>
+	<meta property="og:title" content="{{ title_plain }}" />
+	<meta name="twitter:title" content="{{ title_plain }}" />
 	<link rel="shortcut icon" href="{{ page | relative }}/mark.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lea Verou">
