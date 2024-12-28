@@ -75,12 +75,13 @@ export function absolutize (url, base_url) {
 	return new URL(url, base);
 }
 
-export function format_date (date, format = "long") {
-	try {
-		date = new Date(date);
-	}
-	catch (e) {
-		return `Invalid date (${date})`
+export function format_date (inputDate, format = "long") {
+	let date = inputDate instanceof Date ? inputDate : new Date(inputDate);
+
+	if (isNaN(date)) {
+		// Invalid date
+		console.warn(`Invalid date (${inputDate})`);
+		return inputDate;
 	}
 
 	if (format == "iso") {
@@ -90,7 +91,7 @@ export function format_date (date, format = "long") {
 	let options = format;
 
 	if (typeof format === "string") {
-		options = { dateStyle: format };
+		options = { timeZone: "UTC", dateStyle: format };
 	}
 
 	return date.toLocaleString("en-GB", options);
