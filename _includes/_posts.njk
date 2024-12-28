@@ -1,14 +1,14 @@
 {% macro one(post, o = {}) %}
 {% if o.style === "compact" %}
 <li>
-	<a class="title" href="{{ post.url | url }}">{{ post.data.title }}</a>
+	<a class="title" href="{{ post.url | url }}">{{ post.data.title | md_inline | safe }}</a>
 	{{ meta_before(post, o) }}
 </li>
 {% else %}
 <article class="post" id="{{ post.fileSlug }}">
 	<header>
 		<h2>
-			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+			<a href="{{ post.url | url }}">{{ post.data.title | md_inline | safe }}</a>
 		</h2>
 		<div class="meta">
 			{{ meta_before(post, o) }}
@@ -37,7 +37,7 @@
 	{%- set np = posts[loop.index0 + 1] -%}
 	{# No idea why this doesn't work as a macro argument to one()... #}
 	{%- if np and o.style !== "compact" -%}
-	<a href="#{{ np.fileSlug }}" class="skip-to-next" title="Skip to next post: {{ np.data.title }}"><i class="bi bi-arrow-down-circle"></i></a>
+	<a href="#{{ np.fileSlug }}" class="skip-to-next" title="Skip to next post: {{ np.data.title | md_inline | striptags }}"><i class="bi bi-arrow-down-circle"></i></a>
 	{%- endif %}
 	{{ one(post, o) }}
 	{% if o.style !== "compact" %}<hr>{% endif %}
