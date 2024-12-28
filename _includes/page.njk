@@ -15,6 +15,7 @@
 	<meta name="twitter:title" content="{{ title_plain }}" />
 
 	<link rel="shortcut icon" href="{{ page | relative }}/mark.svg" />
+	<link rel="dns-prefetch" href="https://kit.fontawesome.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lea Verou">
 	{% if draft or unlisted %}<meta name="robots" content="noindex">{% endif %}
@@ -72,7 +73,7 @@
 		</a>
 		<div class="social gt-md">{% include "_social.njk" %}</div>
 		<nav class="gt-md">{{ nav.render(nav_links) }}</nav>
-		<a href="#nav" class="🍔 lt-md"><i class="bi bi-list"></i></a>
+		<a href="#nav" class="🍔 lt-md"><i class="fa-solid fa-burger"></i></a>
 	</div>
 	<div class="page-meta">
 		{% if page.url and page.url !== "/" %}

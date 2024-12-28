@@ -194,7 +194,8 @@ main aside {
 			left: .5rem;
 			top: 50%;
 			transform: translateY(-50%);
-			font: 180%/1 bootstrap-icons;
+			font: var(--icon-font);
+			font-size: 180%;
 			background: white;
 			padding: .25em .3em .35em;
 			border-radius: 50%;
@@ -216,7 +217,7 @@ main aside {
 
 .warning {
 	--label: "Here Be Dragons";
-	--icon: var(--icon-exclamation-triangle-fill);
+	--icon: var(--icon-triangle-exclamation);
 	--color: var(--color-orange);
 	--color-light: var(--color-accent2-light2);
 	--label-color: var(--color-orange);
@@ -225,7 +226,7 @@ main aside {
 
 .info,
 .question {
-	--icon: var(--icon-info-lg);
+	--icon: var(--icon-info);
 	--color: var(--color-blue);
 	--color-light: var(--color-lighter);
 	--label-color: var(--color);
@@ -237,13 +238,13 @@ main aside {
 }
 
 .question {
-	--icon: var(--icon-question-lg);
+	--icon: var(--icon-question);
 }
 
 .note,
 .tip {
 	--label: "Note";
-	--icon: var(--icon-clipboard2-check-fill);
+	--icon: var(--icon-clipboard-check);
 	--color: var(--color-green);
 	--color-light: var(--color-lighter);
 	--label-color: var(--color);
@@ -252,5 +253,5 @@ main aside {
 
 .tip {
 	--label: "Tip";
-	--icon: var(--icon-lightbulb-fill);
+	--icon: var(--icon-lightbulb);
 }

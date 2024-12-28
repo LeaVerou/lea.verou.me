@@ -11,6 +11,12 @@
 		"icon": "github",
 		"color": "#333"
 	},
+	"bluesky": {
+		"name": "BlueSky",
+		"url": "https://bsky.app/profile/lea.verou.me",
+		"icon": "bluesky",
+		"color": "#1DA1F2"
+	},
 	"mastodon": {
 		"name": "Mastodon",
 		"url": "https://front-end.social/@leaverou",
@@ -20,14 +26,15 @@
 	"linkedin": {
 		"name": "LinkedIn",
 		"url": "https://www.linkedin.com/in/leaverou/",
-		"icon": "linkedin",
+		"icon": "linkedin-in",
 		"color": "#0A66C2"
 	},
-	"bluesky": {
-		"name": "BlueSky",
-		"url": "https://bsky.app/profile/lea.verou.me",
-		"icon": "clouds-fill",
-		"color": "#1DA1F2"
+	"threads": {
+		"header": false,
+		"name": "Threads",
+		"url": "https://threads.net/@leaverou",
+		"icon": "threads",
+		"color": "#000000"
 	},
 	"dribbble": {
 		"name": "Dribbble",
@@ -39,14 +46,7 @@
 		"header": false,
 		"name": "Facebook",
 		"url": "https://www.facebook.com/leaverou",
-		"icon": "facebook",
+		"icon": "facebook-f",
 		"color": "#1877F2"
-	},
-	"threads": {
-		"header": false,
-		"name": "Threads",
-		"url": "https://threads.net/@leaverou",
-		"icon": "threads",
-		"color": "#000000"
 	}
 }

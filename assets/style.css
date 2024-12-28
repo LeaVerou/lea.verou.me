@@ -389,6 +389,7 @@ var {
 		& a {
 			display: flex;
 			gap: .5em;
+			text-align: center;
 
 			&::after {
 				font-weight: bold;
@@ -396,6 +397,8 @@ var {
 
 			& i {
 				display: inline-flex;
+				align-items: center;
+				justify-content: center;
 				width: 1em;
 				line-height: 1;
 				padding: .3em;
@@ -404,6 +407,7 @@ var {
 				background: var(--color-accent);
 				color: white;
 				transition: .2s transform;
+
 
 				&:is(:hover > *) {
 					background: var(--color-accent2);
@@ -687,23 +691,22 @@ body > footer {
 
 	&::before {
 		content: var(--icon);
-		font-family: bootstrap-icons;
+		font: var(--icon-font);
 		display: inline-block;
-		vertical-align: -.1em;
 		margin-right: .5em;
 	}
 
 	&:is(time),
 	&.date {
-		--icon: var(--icon-date);
+		--icon: var(--icon-calendar-day);
 	}
 
 	&.dt-updated {
-		--icon: var(--icon-edit);
+		--icon: var(--icon-pen-to-square);
 	}
 
 	&.comment-count {
-		--icon: var(--icon-comments);
+		--icon: var(--icon-comment);
 
 		&:not(.compact *)::after {
 			content: " Comments";
@@ -723,11 +726,11 @@ body > footer {
 	}
 
 	&.reading-time {
-		--icon: var(--icon-stopwatch);
+		--icon: var(--icon-timer);
 	}
 
 	&.edit-page {
-		--icon: var(--icon-edit);
+		--icon: var(--icon-pen-to-square);
 	}
 
 	&.broken-page {
@@ -789,8 +792,7 @@ body > footer {
 
 	.prev::before,
 	.next::after {
-		font-family: bootstrap-icons;
-		font-weight: normal;
+		font: var(--icon-font);
 	}
 
 	.prev {
@@ -1309,7 +1311,8 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 
 a.feed {
 	text-decoration: none;
-	font: 60% bootstrap-icons;
+	font: var(--icon-font);
+	font-size: 60%;
 	vertical-align: 1ex;
 
 	&:not(:hover, :focus) {
@@ -1317,7 +1320,7 @@ a.feed {
 	}
 
 	&::before {
-		content: var(--icon-rss-fill);
+		content: var(--icon-square-rss);
 	}
 }
 

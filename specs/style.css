@@ -95,7 +95,8 @@ time-line {
 				color: var(--browser-color);
 				display: inline-block;
 				vertical-align: -.1em;
-				font: 85%/1 bootstrap-icons;
+				font: var(--icon-font);
+				font-size: 85%;
 				margin-right: .25em;
 			}
 		}
@@ -121,10 +122,12 @@ span.flag {
 	display: inline-block;
 	vertical-align: -0.3em;
 	margin-left: -1.3em;
-	font: 60%/1 bootstrap-icons;
+	font: var(--icon-font);
+	font-size: 60%;
 
 	&::before {
-		content: var(--icon-flag-fill);
+		content: var(--icon-flag);
+		font-weight: 900;
 	}
 }
 

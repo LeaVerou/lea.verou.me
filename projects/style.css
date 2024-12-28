@@ -184,33 +184,29 @@
 			.stat::before {
 				content: var(--icon);
 				display: inline-block;
-				vertical-align: -.15em;
 				margin-right: .3em;
-				font-family: bootstrap-icons;
+				font: var(--icon-font);
 				opacity: .4;
 			}
 
 			&[property=url] {
-				--icon: var(--icon-globe-americas);
-
-				&::before {
-					vertical-align: -.25em;
-				}
+				--icon: var(--icon-link);
 			}
 
 			&.repo {
 				--icon: var(--icon-github);
 
 				.stars {
-					--icon: var(--icon-star-fill);
+					--icon: var(--icon-star);
+					--icon-weight: bold;
 				}
 			}
 
 			&.npm {
-				--icon: var(--icon-box-seam);
+				--icon: var(--icon-npm);
 
 				.downloads {
-					--icon: var(--icon-download);
+					--icon: var(--icon-arrow-down-to-line);
 				}
 			}
 
@@ -236,9 +232,9 @@
 				&::before {
 					content: var(--icon);
 					display: inline-block;
-					vertical-align: -.09em;
 					margin-right: .3em;
-					font: 100% bootstrap-icons;
+					font: var(--icon-font, var(--icon-font));
+					font-weight:  var(--icon-weight, inherit);
 					opacity: .4;
 				}
 			}
