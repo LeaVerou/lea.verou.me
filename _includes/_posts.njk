@@ -14,10 +14,13 @@
 			{{ meta_before(post, o) }}
 		</div>
 	</header>
-	{% set summary = post.data.summary or post.data.page.excerpt %}
+	{% if post.data.nutshell -%}
+		<div class="nutshell">{{ post.data.nutshell | md | safe }}</div>
+	{%- endif %}
+
 	<div class="summary">
-		{%- if summary -%}
-			{{ summary | md({url: post.data.page.url}) | safe }}
+		{% if post.data.page.excerpt %}
+			{{ post.data.page.excerpt | md({url: post.data.page.url}) | safe }}
 			<p><a href="{{ post.url | url }}" class="call-to-action">Continue reading</a></p>
 		{%- else -%}
 			{{ post.content | md({url: post.data.page.url}) | safe }}
