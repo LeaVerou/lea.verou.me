@@ -146,6 +146,10 @@
 			color: white;
 			font: bold 75%/1.1 var(--font-sans);
 			text-transform: uppercase;
+
+			&.mv-empty:not([mv-mode=edit]) {
+				display: none;
+			}
 		}
 
 		.type {
