@@ -88,6 +88,14 @@ html {
 	letter-spacing: -0.015em;
 	counter-reset: figure;
 
+	&.use-disqus {
+		/*
+			Disqus fails to parse the accent color from the stylesheet (i.e., it doesn't understand the `oklch()` function),
+			so to make it work again (and show the comments), we need to set the accent color in the format Disqus can parse.
+		*/
+		--color-accent: hsl(336 100% 50%);
+	}
+
 	@media (width > 700px) {
 		font-size: 130%;
 	}

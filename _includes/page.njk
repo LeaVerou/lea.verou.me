@@ -3,7 +3,7 @@
 	data-area="{{ siteArea }}"
 	data-page="{{ page.url }}"
 	data-inputpath="{{ page.inputPath | replace("./", "") }}"
-	{{ "class" | token_if({'has-toc': toc, 'post-page': is_post}) | safe }}
+	{{ "class" | token_if({'has-toc': toc, 'post-page': is_post, 'use-disqus': disqus_id}) | safe }}
 >
 <head>
 	<meta charset="UTF-8">
