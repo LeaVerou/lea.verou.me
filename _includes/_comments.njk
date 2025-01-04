@@ -1,4 +1,5 @@
-{% if disqus_id and is_post %}
+{% if is_post %}
+{% if disqus_id %}
 <div id="disqus_thread"></div>
 <script>
 	/**
@@ -28,4 +29,22 @@
 		(d.head || d.body).appendChild(s);
 	})();
 </script>
+{% else %}
+<script src="https://giscus.app/client.js"
+		data-repo="leaverou/lea.verou.me"
+		data-repo-id="R_kgDOJdBMuA"
+		data-category="Blog Comments"
+		data-category-id="DIC_kwDOJdBMuM4CliEq"
+		data-mapping="og:title"
+		data-strict="1"
+		data-reactions-enabled="1"
+		data-emit-metadata="0"
+		data-input-position="top"
+		data-theme="preferred_color_scheme"
+		data-lang="en"
+		data-loading="lazy"
+		crossorigin="anonymous"
+		async>
+</script>
+{% endif %}
 {% endif %}
