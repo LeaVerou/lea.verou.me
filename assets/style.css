@@ -931,6 +931,10 @@ code:is(code, [class*="language-"]):where(:not(pre *)) {
 	border-radius: .15rem;
 	background: var(--code-background, var(--color-accent2-light1));
 	font-size: 89%;
+
+	&:is(strong *) {
+		font-weight: 700;
+	}
 }
 
 /* Blocks of code */
