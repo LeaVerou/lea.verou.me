@@ -2,7 +2,8 @@
 figure {
 	margin: 1em 0;
 
-	&:has(figcaption) {
+	&:has(figcaption),
+	&.outlined {
 		padding: .5rem;
 		margin-inline: -.5em;
 		border: 1px solid var(--color-gray-80);
