@@ -136,8 +136,8 @@
 		{% set nextPost = collections.blog | getCollectionItemIndex | next_post(collections.blog) %}
 		{% if previousPost or nextPost %}
 		<div class="prev-next">
-			{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title }}</a>{% endif %}
-			{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title }}</a>{% endif %}
+			{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title | md_inline | safe }}</a>{% endif %}
+			{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title | md_inline | safe }}</a>{% endif %}
 		</div>
 		{% else %}
 		NOTHING
