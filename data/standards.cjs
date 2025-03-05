@@ -820,7 +820,7 @@ walkStandards(proposal => {
 				proposal.shipped_in.add(milestone.browser);
 			}
 
-			// Baseline = shopped in all three browsers unflagged
+			// Baseline = shipped in all three browsers unflagged
 			if (proposal.shipped_in.size >= 3) {
 				key = "shipped-baseline";
 			}
