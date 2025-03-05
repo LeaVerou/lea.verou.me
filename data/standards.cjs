@@ -318,12 +318,8 @@ const proposals = [
 				type: "shipped",
 				browser: "chrome",
 				version: "123",
+				date: "2024-03-19",
 			},
-			// {
-			// 	type: "shipped",
-			// 	browser: "chrome",
-			// 	version: "123",
-			// }
 		]
 	},
 	{
