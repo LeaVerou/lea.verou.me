@@ -478,6 +478,23 @@ const proposals = [
 				url: "https://github.com/w3c/csswg-drafts/issues/10064#issuecomment-2165157958",
 				date: "2024-06-13",
 			},
+			{
+				type: "specced",
+				by: "Elika",
+				url: "https://github.com/w3c/csswg-drafts/commit/f70deb43d3fec5985470e20f948c8f80da52242a",
+				date: "2024-10-25",
+			},
+			{
+				title: "Blink: Intent to ship",
+				url: "https://groups.google.com/a/chromium.org/g/blink-dev/c/EOz7NK6Y0cE/m/VsZveC-fAwAJ",
+				date: "2025-02-25"
+			},
+			// {
+			// 	type: "shipped",
+			// 	browser: "chrome",
+			// 	version: "136",
+			// 	date: "2025-MM-DD",
+			// }
 		],
 	},
 	{
@@ -518,7 +535,19 @@ const proposals = [
 				type: "resolution",
 				url: "https://github.com/w3c/csswg-drafts/issues/9456#issuecomment-1944470563",
 				date: "2024-02-14"
-			}
+			},
+			{
+				type: "specced",
+				by: "Elika",
+				url: "https://github.com/w3c/csswg-drafts/commit/cd55aea7535683ebf9ef621f55e19b23a1434b6e",
+				date: "2024-08-06",
+			},
+			{
+				type: "shipped",
+				browser: "safari",
+				version: "18.2",
+				date: "2024-12-09",
+			},
 		]
 	},
 	{
