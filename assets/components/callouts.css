@@ -197,9 +197,11 @@ main aside {
 			font: var(--icon-font);
 			font-size: 180%;
 			background: white;
-			padding: .25em .3em .35em;
+			min-width: 1.65em;
+			padding: .25em .45em .35em;
 			border-radius: 50%;
 			color: var(--color, var(--color-orange));
+			text-align: center;
 		}
 
 		& > h4,
