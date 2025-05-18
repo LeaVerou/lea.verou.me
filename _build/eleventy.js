@@ -33,7 +33,7 @@ function getPublished (collectionApi) {
 export default config => {
 	let data = {
 		layout: "page.njk",
-		permalink: "{{ page.filePathStem }}.html",
+		permalink: "{{ page | permalink }}",
 		currentYear: new Date().getFullYear(),
 	};
 

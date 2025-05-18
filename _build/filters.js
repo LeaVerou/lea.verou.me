@@ -13,6 +13,12 @@ const capitalizations = require("../data/capitalizations.json");
 
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
+export function permalink(page) {
+	let {filePathStem} = page;
+	let filename = filePathStem.split('/').pop();
+
+	return filePathStem +  (filename.includes('.') ? '' : '.html');
+}
 
 export function is_published (post) {
 	return !post.data.draft && !post.data.unlisted;
