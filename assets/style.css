@@ -1371,3 +1371,9 @@ a.feed {
 		}
 	}
 }
+
+a.contact {
+	&:not(.no-after)::after {
+		content: " at lea@verou.me";
+	}
+}

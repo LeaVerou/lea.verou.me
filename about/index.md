@@ -52,7 +52,7 @@ I stopped when I realized that most people had no idea that ["Lesbian" literally
 
 If any of this seems relevant,
 I am open to particularly interesting [consulting](/consulting) opportunities in a limited capacity.
-Email me at `lea＠verou.me` ([don’t copy/paste it](/blog/2009/11/yet-another-email-hiding-technique/)) for more.
+<a class="contact">Email me</a> for more.
 
 <!--
 I also have a CV! It’s just as infrequently updated as other CVs, but here it is if you want it:
