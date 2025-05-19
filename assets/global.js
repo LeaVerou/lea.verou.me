@@ -53,5 +53,5 @@ for (let el of $$(".to-top")) {
 
 $$("a.contact:is(:not([href]), [href=''])").forEach(a => {
 	let subject = a.dataset.subject ?? "Consulting inquiry";
-	a.href = "mailto:lea@verou.me?subject=" + encodeURIComponent(subject);
+	a.href = "mailto:lea@" + "verou.me?subject=" + encodeURIComponent(subject);
 });

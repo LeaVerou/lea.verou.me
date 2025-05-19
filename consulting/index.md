@@ -16,7 +16,7 @@ I have deep experience in product and [API design](https://www.youtube.com/watch
 I can add value at any stage of the process, from researching user needs to brainstorming solutions or by authoring [design reviews](https://en.wikipedia.org/wiki/Design_review) of existing solutions.
 
 A good [design review](https://en.wikipedia.org/wiki/Design_review) can uncover several usability issues, **saving your company hours of user testing and development time**.
-It is not a substitute for user testing, but rather a way to make the most of it, by getting the bulk of usability issues out of the way before that stage.
+It is not a substitute for user testing, but rather a way to make the most of it, by getting a good chunk of usability issues out of the way before that stage.
 
 The scope of a design review can vary from **individual features to audits of entire products**.
 Design reviews can take varying amounts of time, from **a day to several weeks**.
