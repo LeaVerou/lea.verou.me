@@ -4,11 +4,21 @@ toc: true
 ---
 
 I have limited time for consulting, and thus am very selective about which projects I accept.
-I prefer to take on challenging and/or impactful projects that are particularly relevant to my interests and areas of expertise, and where I feel I can add the most value.
+I prefer to take on projects where I can add the most value, i.e. challenging and/or impactful projects that are relevant to my interests and areas of expertise.
 
-I’m very open to unusual projects, and I love working with companies across the spectrum of size and maturity.
-<a class="contact">Email me</a> and we can discuss.
-Some ideas from past projects are below.
+I work with companies across the spectrum of size and maturity, from giants like Google to tiny startups doing cool work.
+Some areas I frequently consult on are described below, but I’m generally very open to unusual projects, so don’t be discouraged if your project doesn’t fit neatly into one of these categories; <a class="contact">email me</a> and we can discuss!
+
+My areas of expertise include:
+- Web standards and web platform design
+- Product and API design, with a focus on usability and user needs
+- Open source software and open standards
+- Strategy and product vision, especially for products targeting web developers and web designers
+- CSS (designing language features, and coming up with novel solutions to hard CSS problems)
+- Color science, especially in the context of web technologies
+- Web Components
+- Design Systems and Design Tokens, especially as they are used on the Web
+- Qualitative and quantitative research methods
 
 ## Product & API design
 
