@@ -8,7 +8,14 @@ import GithubAPI from "../node_modules/madata/backends/github/api/github-api.js"
 
 // Very restricted, can only be used to fetch public repo metadata
 chdirHere();
-let GITHUB_ACCESS_TOKEN = process.env?.GITHUB_ACCESS_TOKEN ?? fs.readFileSync("./GITHUB_ACCESS_TOKEN.txt", "utf8").trim();
+
+let GITHUB_ACCESS_TOKEN = process.env?.GITHUB_ACCESS_TOKEN;
+try {
+	GITHUB_ACCESS_TOKEN = fs.readFileSync("./GITHUB_ACCESS_TOKEN.txt", "utf8").trim();
+} catch (e) {
+	console.warn("Place a GitHub access token in _build/GITHUB_ACCESS_TOKEN.txt. Only permission to fetch public repo metadata is needed.");
+	process.exit(1);
+}
 
 export default async function fetchRepos () {
 	chdirHere();

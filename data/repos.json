@@ -1,531 +1,24 @@
 {
 	"amyxzhang/lucy.js": {
-		"stars": 21
+		"stars": 22
 	},
 	"amyxzhang/wikum": {
-		"stars": 139
+		"stars": 144
 	},
 	"bevacqua/dragula": {
-		"stars": 21767
+		"stars": 22183
 	},
 	"cern-hackdays/lmb": {
-		"stars": 104
-	},
-	"color-js/color.js": {
-		"stars": 1698
+		"stars": 107
 	},
 	"csstools/postcss-conic-gradient": {
-		"stars": 60
-	},
-	"cts/abstract-adapter": {
-		"stars": 0
-	},
-	"cts/cts": {
-		"stars": 11
-	},
-	"cts/cts-atom": {
-		"stars": 0
-	},
-	"cts/cts-cli": {
-		"stars": 8
-	},
-	"cts/cts-pygments-lexer": {
-		"stars": 0
-	},
-	"cts/cts-server": {
-		"stars": 1
-	},
-	"cts/cts-ui": {
-		"stars": 1
-	},
-	"cts/cts-wordpress": {
-		"stars": 0
-	},
-	"cts/cts.github.com": {
-		"stars": 2
-	},
-	"cts/engine": {
-		"stars": 0
-	},
-	"cts/firebase-adapter": {
-		"stars": 0
-	},
-	"cts/gsheet-adapter": {
-		"stars": 0
-	},
-	"cts/html-adapter": {
-		"stars": 1
-	},
-	"cts/json-adapter": {
-		"stars": 0
-	},
-	"cts/mockups": {
-		"stars": 1
-	},
-	"cts/model": {
-		"stars": 0
-	},
-	"cts/parser": {
-		"stars": 0
-	},
-	"cts/relations": {
-		"stars": 0
-	},
-	"cts/util": {
-		"stars": 0
-	},
-	"cts/website": {
-		"stars": 0
-	},
-	"cts/wordpress-puppetmaster": {
-		"stars": 0
-	},
-	"cts/wordpress-theme-downloader": {
-		"stars": 1
-	},
-	"designftw/chat-lab": {
-		"stars": 1
-	},
-	"designftw/chat-lib": {
-		"stars": 6
-	},
-	"designftw/hw1-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw1-sabrinahu618": {
-		"stars": 0
-	},
-	"designftw/hw1-starter": {
-		"stars": 2
-	},
-	"designftw/hw1-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw10-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw10-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw11-achaucodes": {
-		"stars": 0
-	},
-	"designftw/hw11-atkatary": {
-		"stars": 0
-	},
-	"designftw/hw11-ayeshaali": {
-		"stars": 0
-	},
-	"designftw/hw11-happymeex": {
-		"stars": 0
-	},
-	"designftw/hw11-incoherentbutter": {
-		"stars": 0
-	},
-	"designftw/hw11-isabelbaez": {
-		"stars": 0
-	},
-	"designftw/hw11-jessica55wu": {
-		"stars": 0
-	},
-	"designftw/hw11-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw11-ncybul": {
-		"stars": 0
-	},
-	"designftw/hw11-neild0": {
-		"stars": 0
-	},
-	"designftw/hw11-ngkuru": {
-		"stars": 0
-	},
-	"designftw/hw11-niekyw": {
-		"stars": 0
-	},
-	"designftw/hw11-nik-ab": {
-		"stars": 0
-	},
-	"designftw/hw11-nmorale5": {
-		"stars": 0
-	},
-	"designftw/hw11-sabrinahu618": {
-		"stars": 0
-	},
-	"designftw/hw11-sharonlin1029": {
-		"stars": 0
-	},
-	"designftw/hw11-spwing": {
-		"stars": 0
-	},
-	"designftw/hw11-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw12-starter": {
-		"stars": 1
-	},
-	"designftw/hw2-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw2-starter": {
-		"stars": 0
-	},
-	"designftw/hw2-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw3-ayeshaali": {
-		"stars": 0
-	},
-	"designftw/hw3-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw3-maur1ciomd": {
-		"stars": 0
-	},
-	"designftw/hw3-ngkuru": {
-		"stars": 0
-	},
-	"designftw/hw3-nmorale5": {
-		"stars": 0
-	},
-	"designftw/hw3-sabrinahu618": {
-		"stars": 0
-	},
-	"designftw/hw3-starter": {
-		"stars": 0
-	},
-	"designftw/hw3-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw4-ayeshaali": {
-		"stars": 0
-	},
-	"designftw/hw4-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw4-starter": {
-		"stars": 0
-	},
-	"designftw/hw4-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw5-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw5-starter": {
-		"stars": 0
-	},
-	"designftw/hw5-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw6-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw6-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw7-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw7-sabrinahu618": {
-		"stars": 0
-	},
-	"designftw/hw7-starter": {
-		"stars": 0
-	},
-	"designftw/hw7-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw8-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw8-yonas39": {
-		"stars": 0
-	},
-	"designftw/hw9-ayeshaali": {
-		"stars": 0
-	},
-	"designftw/hw9-limedosa": {
-		"stars": 0
-	},
-	"designftw/hw9-nmorale5": {
-		"stars": 0
-	},
-	"designftw/hw9-yonas39": {
-		"stars": 0
-	},
-	"designftw/sabrinahu": {
-		"stars": 0
-	},
-	"designftw/studio1-starter": {
-		"stars": 2
-	},
-	"designftw/studio3-starter": {
-		"stars": 1
-	},
-	"designftw/studio7-starter": {
-		"stars": 1
-	},
-	"designftw/studio9-starter": {
-		"stars": 0
-	},
-	"designftw-2022/components": {
-		"stars": 1
-	},
-	"devographics/2018-charts-catalogue": {
-		"stars": 4
-	},
-	"devographics/capture": {
-		"stars": 3
-	},
-	"devographics/charts-playground-2020": {
-		"stars": 0
-	},
-	"devographics/data-normalization": {
-		"stars": 1
-	},
-	"devographics/data-tools": {
-		"stars": 1
-	},
-	"devographics/docs": {
-		"stars": 0
-	},
-	"devographics/entities": {
-		"stars": 5
-	},
-	"devographics/images": {
-		"stars": 0
-	},
-	"devographics/locale-am-et": {
-		"stars": 1
-	},
-	"devographics/locale-ar-eg": {
-		"stars": 0
-	},
-	"devographics/locale-bn-bd": {
-		"stars": 0
-	},
-	"devographics/locale-ca-es": {
-		"stars": 0
-	},
-	"devographics/locale-cs-cz": {
-		"stars": 0
-	},
-	"devographics/locale-de-de": {
-		"stars": 1
-	},
-	"devographics/locale-el-gr": {
-		"stars": 4
-	},
-	"devographics/locale-en-us": {
-		"stars": 29
-	},
-	"devographics/locale-es-es": {
-		"stars": 0
-	},
-	"devographics/locale-fa-ir": {
-		"stars": 1
-	},
-	"devographics/locale-fr-fr": {
-		"stars": 1
-	},
-	"devographics/locale-gl-es": {
-		"stars": 0
-	},
-	"devographics/locale-hi-in": {
-		"stars": 0
-	},
-	"devographics/locale-hr-hr": {
-		"stars": 0
-	},
-	"devographics/locale-hu-hu": {
-		"stars": 0
-	},
-	"devographics/locale-id-id": {
-		"stars": 4
-	},
-	"devographics/locale-it-it": {
-		"stars": 2
-	},
-	"devographics/locale-ja-jp": {
-		"stars": 0
-	},
-	"devographics/locale-ko-kr": {
-		"stars": 7
-	},
-	"devographics/locale-nl-nl": {
-		"stars": 0
-	},
-	"devographics/locale-pl-pl": {
-		"stars": 1
-	},
-	"devographics/locale-pt-br": {
-		"stars": 7
-	},
-	"devographics/locale-pt-pt": {
-		"stars": 0
-	},
-	"devographics/locale-ro-ro": {
-		"stars": 0
-	},
-	"devographics/locale-ru-ru": {
-		"stars": 2
-	},
-	"devographics/locale-sk-sk": {
-		"stars": 0
-	},
-	"devographics/locale-so-so": {
-		"stars": 0
-	},
-	"devographics/locale-sv-se": {
-		"stars": 0
-	},
-	"devographics/locale-th-th": {
-		"stars": 1
-	},
-	"devographics/locale-tr-tr": {
-		"stars": 1
-	},
-	"devographics/locale-ua-ua": {
-		"stars": 2
-	},
-	"devographics/locale-vi-vn": {
-		"stars": 3
-	},
-	"devographics/locale-zh-hans": {
-		"stars": 3
-	},
-	"devographics/locale-zh-hant": {
-		"stars": 1
-	},
-	"devographics/monorepo": {
-		"stars": 104
-	},
-	"devographics/reports-end-to-end-testing": {
-		"stars": 0
-	},
-	"devographics/state-of-js-graphql-results-api": {
-		"stars": 64
-	},
-	"devographics/state-of-query-builder": {
-		"stars": 0
-	},
-	"devographics/stateofcss-2019": {
-		"stars": 54
-	},
-	"devographics/stateofcss-2020": {
-		"stars": 44
-	},
-	"devographics/stateofcss-homepage": {
-		"stars": 8
-	},
-	"devographics/stateofjs-2019": {
-		"stars": 143
-	},
-	"devographics/stateofjs-2020": {
-		"stars": 102
-	},
-	"devographics/stateofjs-homepage": {
-		"stars": 24
-	},
-	"devographics/stateofjs-legacy": {
-		"stars": 372
-	},
-	"devographics/stateofjs-vulcan": {
-		"stars": 18
-	},
-	"devographics/survey-builder": {
-		"stars": 3
-	},
-	"devographics/surveys": {
-		"stars": 32
-	},
-	"devographics/translations": {
-		"stars": 0
-	},
-	"devographics/whatsmissingfromcss": {
-		"stars": 0
+		"stars": 61
 	},
 	"ericsmekens/jsep": {
-		"stars": 805
+		"stars": 904
 	},
 	"googlechromelabs/tooling.report": {
-		"stars": 841
-	},
-	"haystack/datapress": {
-		"stars": 6
-	},
-	"haystack/datapress-drupal": {
-		"stars": 1
-	},
-	"haystack/dracl": {
-		"stars": 3
-	},
-	"haystack/exhibit-tutorial": {
-		"stars": 3
-	},
-	"haystack/eyebrowse-chrome-ext": {
-		"stars": 13
-	},
-	"haystack/eyebrowse-firefox-ext": {
-		"stars": 0
-	},
-	"haystack/eyebrowse-server": {
-		"stars": 27
-	},
-	"haystack/feedme-rss": {
-		"stars": 0
-	},
-	"haystack/flotr-extension": {
-		"stars": 2
-	},
-	"haystack/listit": {
-		"stars": 9
-	},
-	"haystack/listit-server": {
-		"stars": 2
-	},
-	"haystack/murmur": {
-		"stars": 24
-	},
-	"haystack/nb": {
-		"stars": 11
-	},
-	"haystack/nbclient": {
-		"stars": 2
-	},
-	"haystack/old-picker": {
-		"stars": 0
-	},
-	"haystack/picker": {
-		"stars": 1
-	},
-	"haystack/thejit-extension": {
-		"stars": 1
-	},
-	"haystack/tipsy": {
-		"stars": 31
-	},
-	"haystack/tipsy-site": {
-		"stars": 0
-	},
-	"haystack/website": {
-		"stars": 2
-	},
-	"haystack/youps": {
-		"stars": 10
-	},
-	"httparchive/almanac.httparchive.org": {
-		"stars": 595
-	},
-	"httparchive/custom-metrics": {
-		"stars": 15
-	},
-	"httparchive/httparchive.org": {
-		"stars": 315
-	},
-	"httparchive/legacy.httparchive.org": {
-		"stars": 327
+		"stars": 852
 	},
 	"juliancheal/juliancheal.github.io": {
 		"stars": 1
@@ -534,94 +27,97 @@
 		"stars": 1
 	},
 	"leaverou/animatable": {
-		"stars": 2579
+		"stars": 2589
 	},
 	"leaverou/awesomplete": {
-		"stars": 6932
+		"stars": 6976
 	},
 	"leaverou/bliss": {
-		"stars": 2384
+		"stars": 2394
+	},
+	"leaverou/blissful-hooks": {
+		"stars": 9
 	},
 	"leaverou/browser-compat-data": {
 		"stars": 0
 	},
 	"leaverou/bubbly": {
-		"stars": 51
+		"stars": 53
 	},
 	"leaverou/bytesizematters": {
-		"stars": 8
+		"stars": 9
 	},
 	"leaverou/chainvas": {
-		"stars": 263
+		"stars": 262
 	},
 	"leaverou/chroma-zone": {
-		"stars": 21
+		"stars": 22
 	},
 	"leaverou/community-fund": {
 		"stars": 0
 	},
 	"leaverou/conic-gradient": {
-		"stars": 485
+		"stars": 488
 	},
 	"leaverou/contacts": {
 		"stars": 1
 	},
 	"leaverou/content": {
-		"stars": 0
+		"stars": 1
 	},
 	"leaverou/corner-shape": {
 		"stars": 75
 	},
 	"leaverou/cross-project-council": {
-		"stars": 0
+		"stars": 1
 	},
 	"leaverou/css-almanac": {
-		"stars": 33
+		"stars": 34
 	},
 	"leaverou/css-colors": {
-		"stars": 62
+		"stars": 63
 	},
 	"leaverou/css-diner": {
 		"stars": 6
 	},
 	"leaverou/css-sandbox": {
-		"stars": 1
+		"stars": 2
 	},
 	"leaverou/css.land": {
-		"stars": 216
+		"stars": 227
 	},
 	"leaverou/css3patterns": {
-		"stars": 1422
+		"stars": 1450
 	},
 	"leaverou/css3test": {
-		"stars": 212
+		"stars": 215
 	},
 	"leaverou/cubic-bezier": {
-		"stars": 169
+		"stars": 178
 	},
 	"leaverou/dabblet": {
-		"stars": 810
+		"stars": 819
 	},
 	"leaverou/dom-slot-assign": {
 		"stars": 0
 	},
 	"leaverou/dpi": {
-		"stars": 748
+		"stars": 764
 	},
 	"leaverou/dragula2": {
-		"stars": 16
+		"stars": 17
 	},
 	"leaverou/duoload": {
 		"stars": 131
 	},
 	"leaverou/eleventy-upgrade-help": {
-		"stars": 0
+		"stars": 1
 	},
 	"leaverou/elocuent": {
 		"stars": 0
 	},
 	"leaverou/expenses": {
-		"stars": 4
+		"stars": 5
 	},
 	"leaverou/fb-amstelvar": {
 		"stars": 1
@@ -641,20 +137,14 @@
 	"leaverou/homesearch": {
 		"stars": 6
 	},
-	"leaverou/htest": {
-		"stars": 18
-	},
 	"leaverou/html-syntax-guidelines": {
-		"stars": 47
+		"stars": 46
 	},
 	"leaverou/html5-progress-polyfill": {
 		"stars": 178
 	},
 	"leaverou/human-colours": {
-		"stars": 7
-	},
-	"leaverou/icons": {
-		"stars": 0
+		"stars": 8
 	},
 	"leaverou/ietf-justfont": {
 		"stars": 0
@@ -663,7 +153,7 @@
 		"stars": 84
 	},
 	"leaverou/inspire.js": {
-		"stars": 1721
+		"stars": 1742
 	},
 	"leaverou/instagram-export": {
 		"stars": 0
@@ -677,17 +167,23 @@
 	"leaverou/jsbin": {
 		"stars": 1
 	},
+	"leaverou/labelizer": {
+		"stars": 1
+	},
 	"leaverou/lea.verou.me": {
-		"stars": 25
+		"stars": 77
 	},
 	"leaverou/leaverou.github.io": {
-		"stars": 10
+		"stars": 12
 	},
 	"leaverou/legacy.httparchive.org": {
 		"stars": 0
 	},
 	"leaverou/markapp": {
 		"stars": 133
+	},
+	"leaverou/markdown-it-footnote": {
+		"stars": 2
 	},
 	"leaverou/mavo-firebase": {
 		"stars": 0
@@ -702,7 +198,7 @@
 		"stars": 15
 	},
 	"leaverou/md-block": {
-		"stars": 295
+		"stars": 343
 	},
 	"leaverou/microsoft-drop-ice": {
 		"stars": 0
@@ -717,61 +213,61 @@
 		"stars": 5
 	},
 	"leaverou/multirange": {
-		"stars": 605
+		"stars": 608
 	},
 	"leaverou/mv-data": {
-		"stars": 2
+		"stars": 3
 	},
 	"leaverou/mv-data-1": {
 		"stars": 0
 	},
 	"leaverou/my-lifesheets": {
-		"stars": 4
+		"stars": 5
 	},
 	"leaverou/mygraine": {
-		"stars": 9
+		"stars": 10
 	},
 	"leaverou/netlify-photo-gallery": {
-		"stars": 0
+		"stars": 1
 	},
 	"leaverou/nosedive": {
 		"stars": 4
 	},
-	"leaverou/nudeui": {
-		"stars": 203
-	},
 	"leaverou/parsel": {
-		"stars": 376
+		"stars": 390
 	},
 	"leaverou/play.csssecrets.io": {
-		"stars": 119
-	},
-	"leaverou/polyfill-service": {
-		"stars": 2
+		"stars": 120
 	},
 	"leaverou/prefixfree": {
-		"stars": 3837
+		"stars": 3814
+	},
+	"leaverou/prettier-plugin-space-before-function-paren": {
+		"stars": 2
+	},
+	"leaverou/refresh-it": {
+		"stars": 21
 	},
 	"leaverou/regexplained": {
-		"stars": 273
+		"stars": 274
 	},
 	"leaverou/rety": {
-		"stars": 390
+		"stars": 396
 	},
 	"leaverou/rework-utils": {
 		"stars": 3
 	},
 	"leaverou/rgba.php": {
-		"stars": 176
+		"stars": 177
 	},
 	"leaverou/serverless-webrtc": {
-		"stars": 12
+		"stars": 13
 	},
 	"leaverou/share-on-mastodon": {
-		"stars": 4
+		"stars": 5
 	},
 	"leaverou/standards": {
-		"stars": 0
+		"stars": 1
 	},
 	"leaverou/stateof": {
 		"stars": 0
@@ -780,22 +276,28 @@
 		"stars": 0
 	},
 	"leaverou/stretchy": {
-		"stars": 1272
+		"stars": 1271
 	},
 	"leaverou/stronglytyped": {
-		"stars": 70
+		"stars": 71
 	},
 	"leaverou/studio1-starter": {
-		"stars": 0
+		"stars": 1
+	},
+	"leaverou/style-observer": {
+		"stars": 492
+	},
+	"leaverou/svelte-scrolly": {
+		"stars": 10
 	},
 	"leaverou/talks": {
-		"stars": 91
+		"stars": 93
 	},
 	"leaverou/talks-list": {
 		"stars": 29
 	},
 	"leaverou/testlib": {
-		"stars": 2
+		"stars": 3
 	},
 	"leaverou/tweeplus": {
 		"stars": 11
@@ -804,22 +306,25 @@
 		"stars": 6
 	},
 	"leaverou/vue.draggable.next": {
-		"stars": 2
+		"stars": 3
 	},
 	"leaverou/webaudio-playground": {
 		"stars": 0
 	},
 	"leaverou/website": {
-		"stars": 1
+		"stars": 2
 	},
 	"leaverou/whathecolor": {
-		"stars": 47
+		"stars": 48
+	},
+	"leaverou/wpt": {
+		"stars": 0
 	},
 	"leaverou/zoe-eats": {
 		"stars": 1
 	},
 	"leaverou/zoelearns.com": {
-		"stars": 1
+		"stars": 4
 	},
 	"leph83/btnwrk": {
 		"stars": 0
@@ -830,152 +335,8 @@
 	"lizziew/mavo-firebase": {
 		"stars": 15
 	},
-	"madatajs/auth-php": {
-		"stars": 0
-	},
-	"madatajs/auth-serverless": {
-		"stars": 0
-	},
-	"madatajs/madata": {
-		"stars": 32
-	},
-	"mavoweb/create": {
-		"stars": 18
-	},
-	"mavoweb/data": {
-		"stars": 2
-	},
-	"mavoweb/groupby": {
-		"stars": 0
-	},
-	"mavoweb/inspector": {
-		"stars": 2
-	},
-	"mavoweb/mavo": {
-		"stars": 2818
-	},
-	"mavoweb/mavo-ssr": {
-		"stars": 4
-	},
-	"mavoweb/mavo.io": {
-		"stars": 50
-	},
-	"mavoweb/mavue": {
-		"stars": 4
-	},
-	"mavoweb/plugins": {
-		"stars": 7
-	},
-	"mavoweb/sort": {
-		"stars": 0
-	},
-	"mavoweb/test": {
-		"stars": 2
-	},
-	"mavoweb/todomvc": {
-		"stars": 7
-	},
-	"mavoweb/treecle": {
-		"stars": 6
-	},
-	"mavoweb/vastly": {
-		"stars": 11
-	},
-	"mit-csail-hci/hci.csail.mit.edu": {
-		"stars": 2
-	},
-	"openjs-foundation/artwork": {
-		"stars": 18
-	},
-	"openjs-foundation/code-and-learn": {
-		"stars": 12
-	},
-	"openjs-foundation/code-of-conduct": {
-		"stars": 1
-	},
-	"openjs-foundation/community-fund": {
-		"stars": 9
-	},
-	"openjs-foundation/cross-project-council": {
-		"stars": 411
-	},
-	"openjs-foundation/easycla": {
-		"stars": 5
-	},
-	"openjs-foundation/meet": {
-		"stars": 2
-	},
-	"openjs-foundation/open-office-hours": {
-		"stars": 9
-	},
-	"openjs-foundation/open-visualization": {
-		"stars": 2
-	},
-	"openjs-foundation/openvis-collab-space": {
-		"stars": 6
-	},
-	"openjs-foundation/package-json-research": {
-		"stars": 15
-	},
-	"openjs-foundation/package-metadata-interoperability-collab-space": {
-		"stars": 20
-	},
-	"openjs-foundation/pkg-vuln-collab-space": {
-		"stars": 79
-	},
-	"openjs-foundation/project-status": {
-		"stars": 11
-	},
-	"openjs-foundation/security-collab-space": {
-		"stars": 17
-	},
-	"openjs-foundation/standards": {
-		"stars": 73
-	},
-	"openjs-foundation/standards-ed-site": {
-		"stars": 4
-	},
-	"openjs-foundation/summit": {
-		"stars": 129
-	},
-	"openjs-foundation/tech-strategy": {
-		"stars": 3
-	},
-	"openjs-foundation/user-feedback": {
-		"stars": 2
-	},
-	"prismjs/live": {
-		"stars": 94
-	},
-	"prismjs/prism": {
-		"stars": 11948
-	},
-	"prismjs/prism-pretty": {
-		"stars": 8
-	},
-	"prismjs/prism-themes": {
-		"stars": 1327
-	},
-	"siege-media/contrast-ratio": {
-		"stars": 2453
-	},
-	"siege-media/hippo-states": {
-		"stars": 0
-	},
-	"siege-media/kob-automation": {
-		"stars": 0
-	},
-	"siege-media/migratory": {
-		"stars": 0
-	},
-	"siege-media/sd-emissions-calculator": {
-		"stars": 0
-	},
-	"siege-media/simple-dollar-fuel-calc": {
-		"stars": 0
-	},
 	"simile-widgets/exhibit": {
-		"stars": 172
+		"stars": 178
 	},
 	"svgeesus/css4-color-talk": {
 		"stars": 13
@@ -987,477 +348,15 @@
 		"stars": 0
 	},
 	"svgeesus/svgeesus.github.io": {
-		"stars": 15
+		"stars": 17
 	},
 	"svgeesus/talks": {
-		"stars": 3
+		"stars": 5
 	},
 	"tarfahalrashed/shapir": {
-		"stars": 11
-	},
-	"tc39/agendas": {
-		"stars": 1001
-	},
-	"tc39/agreements": {
-		"stars": 2
-	},
-	"tc39/dataset": {
-		"stars": 39
-	},
-	"tc39/ecma262": {
-		"stars": 14672
-	},
-	"tc39/ecma402": {
-		"stars": 509
-	},
-	"tc39/ecma402-mdn": {
-		"stars": 6
-	},
-	"tc39/ecmarkdown": {
-		"stars": 79
-	},
-	"tc39/ecmarkup": {
-		"stars": 207
-	},
-	"tc39/faq": {
-		"stars": 71
-	},
-	"tc39/how-we-work": {
-		"stars": 181
-	},
-	"tc39/incubator-agendas": {
-		"stars": 14
-	},
-	"tc39/js-outreach-groups": {
-		"stars": 62
-	},
-	"tc39/logo": {
-		"stars": 13
-	},
-	"tc39/notes": {
-		"stars": 576
-	},
-	"tc39/process-document": {
-		"stars": 29
-	},
-	"tc39/proposal-array-find-from-last": {
-		"stars": 124
-	},
-	"tc39/proposal-array-from-async": {
-		"stars": 168
-	},
-	"tc39/proposal-array-is-template-object": {
-		"stars": 34
-	},
-	"tc39/proposal-array-unique": {
-		"stars": 133
-	},
-	"tc39/proposal-arraybuffer-base64": {
-		"stars": 206
-	},
-	"tc39/proposal-asset-references": {
-		"stars": 268
-	},
-	"tc39/proposal-async-do-expressions": {
-		"stars": 106
-	},
-	"tc39/proposal-async-explicit-resource-management": {
-		"stars": 54
-	},
-	"tc39/proposal-await.ops": {
-		"stars": 307
-	},
-	"tc39/proposal-bigint-math": {
-		"stars": 35
-	},
-	"tc39/proposal-binary-ast": {
-		"stars": 944
-	},
-	"tc39/proposal-built-in-modules": {
-		"stars": 888
-	},
-	"tc39/proposal-call-this": {
-		"stars": 71
-	},
-	"tc39/proposal-change-array-by-copy": {
-		"stars": 509
-	},
-	"tc39/proposal-class-brand-check": {
-		"stars": 18
-	},
-	"tc39/proposal-class-static-block": {
-		"stars": 106
-	},
-	"tc39/proposal-cleanup-some": {
-		"stars": 15
-	},
-	"tc39/proposal-collection-normalization": {
-		"stars": 37
-	},
-	"tc39/proposal-csprng": {
-		"stars": 69
-	},
-	"tc39/proposal-decimal": {
-		"stars": 399
-	},
-	"tc39/proposal-declarations-in-conditionals": {
-		"stars": 81
-	},
-	"tc39/proposal-decorator-metadata": {
-		"stars": 114
-	},
-	"tc39/proposal-decorators": {
-		"stars": 2627
-	},
-	"tc39/proposal-deep-path-properties-for-record": {
-		"stars": 94
-	},
-	"tc39/proposal-defer-import-eval": {
-		"stars": 174
-	},
-	"tc39/proposal-deiter": {
-		"stars": 70
-	},
-	"tc39/proposal-destructuring-private": {
-		"stars": 42
-	},
-	"tc39/proposal-dynamic-code-brand-checks": {
-		"stars": 15
-	},
-	"tc39/proposal-dynamic-import-host-adjustment": {
-		"stars": 16
-	},
-	"tc39/proposal-emitter": {
-		"stars": 93
-	},
-	"tc39/proposal-eventual-send": {
-		"stars": 43
-	},
-	"tc39/proposal-explicit-resource-management": {
-		"stars": 674
-	},
-	"tc39/proposal-extended-numeric-literals": {
-		"stars": 72
-	},
-	"tc39/proposal-extensions": {
-		"stars": 147
-	},
-	"tc39/proposal-first-class-protocols": {
-		"stars": 349
-	},
-	"tc39/proposal-function-implementation-hiding": {
-		"stars": 97
-	},
-	"tc39/proposal-function-once": {
-		"stars": 44
-	},
-	"tc39/proposal-function.sent": {
-		"stars": 34
-	},
-	"tc39/proposal-get-intrinsic": {
-		"stars": 32
-	},
-	"tc39/proposal-grouped-and-auto-accessors": {
-		"stars": 51
-	},
-	"tc39/proposal-hashbang": {
-		"stars": 148
-	},
-	"tc39/proposal-intl-duration-format": {
-		"stars": 141
-	},
-	"tc39/proposal-intl-eradisplay": {
-		"stars": 9
-	},
-	"tc39/proposal-intl-extend-timezonename": {
-		"stars": 8
-	},
-	"tc39/proposal-intl-locale-info": {
-		"stars": 47
-	},
-	"tc39/proposal-intl-localematcher": {
-		"stars": 31
-	},
-	"tc39/proposal-intl-messageformat": {
-		"stars": 90
-	},
-	"tc39/proposal-intl-numberformat-v3": {
-		"stars": 52
-	},
-	"tc39/proposal-iterator.range": {
-		"stars": 461
-	},
-	"tc39/proposal-json-modules": {
-		"stars": 257
-	},
-	"tc39/proposal-limited-arraybuffer": {
-		"stars": 10
-	},
-	"tc39/proposal-module-declarations": {
-		"stars": 311
-	},
-	"tc39/proposal-module-expressions": {
-		"stars": 419
-	},
-	"tc39/proposal-number-fromstring": {
-		"stars": 63
-	},
-	"tc39/proposal-oom-fails-fast": {
-		"stars": 11
-	},
-	"tc39/proposal-operator-overloading": {
-		"stars": 606
-	},
-	"tc39/proposal-pattern-matching": {
-		"stars": 5297
-	},
-	"tc39/proposal-readonly-collections": {
-		"stars": 34
-	},
-	"tc39/proposal-regex-escaping": {
-		"stars": 319
-	},
-	"tc39/proposal-regexp-buffer-boundaries": {
-		"stars": 7
-	},
-	"tc39/proposal-regexp-modifiers": {
-		"stars": 25
-	},
-	"tc39/proposal-regexp-r-escape": {
-		"stars": 5
-	},
-	"tc39/proposal-regexp-v-flag": {
-		"stars": 75
-	},
-	"tc39/proposal-regexp-x-mode": {
-		"stars": 24
-	},
-	"tc39/proposal-resizablearraybuffer": {
-		"stars": 162
-	},
-	"tc39/proposal-rm-builtin-subclassing": {
-		"stars": 22
-	},
-	"tc39/proposal-set-methods": {
-		"stars": 559
-	},
-	"tc39/proposal-setmap-offrom": {
-		"stars": 38
-	},
-	"tc39/proposal-shadowrealm": {
-		"stars": 1356
-	},
-	"tc39/proposal-slice-notation": {
-		"stars": 516
-	},
-	"tc39/proposal-smart-unit-preferences": {
-		"stars": 21
-	},
-	"tc39/proposal-source-phase-imports": {
-		"stars": 116
-	},
-	"tc39/proposal-standardized-debug": {
-		"stars": 34
-	},
-	"tc39/proposal-structs": {
-		"stars": 212
-	},
-	"tc39/proposal-symbols-as-weakmap-keys": {
-		"stars": 90
-	},
-	"tc39/proposal-type-annotations": {
-		"stars": 4059
-	},
-	"tc39/proposal-typedarray-stride": {
-		"stars": 24
-	},
-	"tc39/proposal-upsert": {
-		"stars": 165
-	},
-	"tc39/proposal-uuid": {
-		"stars": 462
-	},
-	"tc39/proposal-wavy-dot": {
-		"stars": 43
-	},
-	"tc39/proposals": {
-		"stars": 17726
-	},
-	"tc39/tc39.github.io": {
-		"stars": 313
-	},
-	"tc39/tg3": {
-		"stars": 10
-	},
-	"tc39-transfer/.github": {
-		"stars": 9
-	},
-	"vis-society/world-bank-data-by-indicators": {
-		"stars": 0
-	},
-	"w3c/css-a11y": {
-		"stars": 31
-	},
-	"w3c/css-houdini-drafts": {
-		"stars": 1833
-	},
-	"w3c/csswg-apiclient": {
-		"stars": 0
-	},
-	"w3c/csswg-drafts": {
-		"stars": 4239
-	},
-	"w3c/csswg-test": {
-		"stars": 115
-	},
-	"w3c/csswg-www": {
-		"stars": 4
-	},
-	"w3c/fxtf-drafts": {
-		"stars": 65
-	},
-	"w3c/tr-design": {
-		"stars": 62
-	},
-	"w3c/w3c.github.io": {
-		"stars": 135
-	},
-	"w3c/webcomponents-cg": {
-		"stars": 172
-	},
-	"w3ctag/accessibility-questionnaire": {
-		"stars": 0
-	},
-	"w3ctag/bfcache-guide": {
-		"stars": 3
-	},
-	"w3ctag/caching-bundling-sustainability": {
-		"stars": 0
-	},
-	"w3ctag/capability-urls": {
-		"stars": 33
-	},
-	"w3ctag/client-certificates": {
-		"stars": 15
-	},
-	"w3ctag/design-principles": {
-		"stars": 154
-	},
-	"w3ctag/design-reviews": {
-		"stars": 314
-	},
-	"w3ctag/distributed-content": {
-		"stars": 6
-	},
-	"w3ctag/eme": {
-		"stars": 3
-	},
-	"w3ctag/encryption-finding": {
-		"stars": 4
-	},
-	"w3ctag/ethical-web-principles": {
-		"stars": 59
-	},
-	"w3ctag/evergreen-web": {
-		"stars": 6
-	},
-	"w3ctag/extending-html-responsibly": {
-		"stars": 8
-	},
-	"w3ctag/extensible-web-report-card": {
-		"stars": 36
-	},
-	"w3ctag/jsidl": {
-		"stars": 23
-	},
-	"w3ctag/meetings": {
-		"stars": 45
-	},
-	"w3ctag/obsoletion": {
-		"stars": 5
-	},
-	"w3ctag/packaging-on-the-web": {
-		"stars": 61
-	},
-	"w3ctag/placeholder": {
-		"stars": 2
-	},
-	"w3ctag/polyfills": {
-		"stars": 18
-	},
-	"w3ctag/presentations": {
-		"stars": 5
-	},
-	"w3ctag/privacy-principles": {
-		"stars": 44
-	},
-	"w3ctag/private-browsing-modes": {
-		"stars": 5
-	},
-	"w3ctag/private-mode": {
-		"stars": 16
-	},
-	"w3ctag/process": {
-		"stars": 2
-	},
-	"w3ctag/promises-guide": {
-		"stars": 191
-	},
-	"w3ctag/secure-the-web": {
-		"stars": 11
-	},
-	"w3ctag/security-questionnaire": {
-		"stars": 23
-	},
-	"w3ctag/societal-impact-questionnaire": {
-		"stars": 3
-	},
-	"w3ctag/subclassable-apis-guide": {
-		"stars": 3
-	},
-	"w3ctag/tag.w3.org": {
-		"stars": 24
-	},
-	"w3ctag/tagdocs": {
-		"stars": 2
-	},
-	"w3ctag/the-web-is-not-versioned": {
-		"stars": 4
-	},
-	"w3ctag/tools": {
-		"stars": 0
-	},
-	"w3ctag/tracking-issues": {
-		"stars": 3
-	},
-	"w3ctag/unsanctioned-tracking": {
-		"stars": 3
-	},
-	"w3ctag/url": {
-		"stars": 3
-	},
-	"w3ctag/urls-in-data": {
-		"stars": 2
-	},
-	"w3ctag/web-https": {
-		"stars": 18
-	},
-	"w3ctag/web-without-3p-cookies": {
-		"stars": 7
-	},
-	"w3ctag/webarch": {
-		"stars": 29
-	},
-	"w3ctag/webcomponents-design-guidelines": {
-		"stars": 7
-	},
-	"w3ctag/wiki": {
-		"stars": 6
-	},
-	"w3ctag/with-credentials": {
-		"stars": 3
+		"stars": 12
 	},
 	"wicg/color-api": {
-		"stars": 122
+		"stars": 135
 	}
 }
