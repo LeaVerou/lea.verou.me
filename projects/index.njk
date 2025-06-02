@@ -1,6 +1,5 @@
 ---
 title: Open Source Projects
-mavo: true
 page_css: true
 includes: |
   <link rel="alternate" href="../data/projects.json" type="application/json" />
@@ -22,53 +21,75 @@ This is also in **_your_ best interest**, as it makes me more likely to prioriti
 
 {% endmarkdown %}
 
-<div mv-app="projects" class="projects" mv-source="../data/projects.json" mv-storage="https://github.com/leaverou/lea.verou.me/data/projects.json" mv-plugins="markdown">
-	<h2>[count(project)] projects ([count(type = &quot;lib&quot;)] libraries and [count(type = &quot;app&quot;)] apps)</h2>
-	<div mv-list class="projects-list" mv-order="desc">
-		<article property="project" mv-list-item style="--featured-weight: [featured]"
-		  class="project type-[type] [if(featured &gt; 0, &quot;featured&quot;)] [if(!image, 'no-image')]">
-			<span property="featured" mv-attribute="data-weight" mv-editor-type="range" mv-editor-min="0" mv-editor-max="5" mv-default="0">Featured</span>
-			<a href="[url]" class="image-container"><img property="image"/></a>
+<div class="projects">
+	<h2>{{ projects.length }} projects</h2>
+	<div class="projects-list">
+		{% for project in projects %}
+		<article style="--featured-weight: {{ project.featured }}"
+		  class="project type-{{ project.type }} {{ 'featured' if project.featured }} {{ 'no-image' if not project.image }}">
+		  {% if project.featured %}
+			<span class="featured" data-weight="{{ project.featured }}">Featured</span>
+		  {% endif %}
+		  	{% if project.image %}
+			<a href="{{ project.url }}" class="image-container"><img src="{{ project.image }}" alt="{{ project.name }}" /></a>
+			{% endif %}
 			<div class="main-content">
 				<h3>
-					<a href="[url]" target="_blank" mv-attribute="none" property="name" rel="noopener"></a>
-					<span class="released">(<a property="launch" title="View launch announcement"><time property="date" datetime="YYYY-MM" mv-default="[$today]">[
-						if(year(date) >= 2020, month(date, "shortname") & " ")
-						& year(date)
-					]</time>)</a></span>
+					<a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>
+					<span class="released">(<a property="launch" title="View launch announcement">
+						<time property="date" datetime="{{ project.date | format_date("iso") }}">
+							{% set projectYear = project.date | format_date({year: "numeric"}) %}
+							{% if projectYear >= 2020 %}
+							{{ project.date | format_date({month: "short"}) }}
+							{% endif %}
+							{{ projectYear }}
+						</time>)</a></span>
 				</h3>
 				<div class="project-meta">
-					<span property="type" class="type" mv-options="lib: Library, app: App"></span>
-					<span property="size" class="size" mv-options=": (No size), major, minor"></span>
+					{% if project.type %}
+					<span class="type">{{ { lib: "Library", app: "App" }[project.type] }}</span>
+					{% endif %}
+					{% if project.size %}
+					<span class="size">{{ { major: "major", minor: "minor" }[project.size] }}</span>
+					{% endif %}
 				</div>
-				<div property="description" class="markdown"></div>
-				<section class="[if(!innovation, 'edit-only')]">
+				{% if project.description %}
+				<div class="description">{{ project.description | md_block }}</div>
+				{% endif %}
+				{% if project.innovation %}
+				<section>
 					<h4>Innovation(s)</h4>
-					<div property="innovation" class="markdown"></div>
+					<div class="innovation">{{ project.innovation | md_block }}</div>
 				</section>
-				<section class="[if(!impact, 'edit-only')]">
+				{% endif %}
+				{% if project.impact %}
+				<section>
 					<h4>
 						Impact
-						<meter-discrete class="[if(!impact_rating, 'edit-only')]" property="impact_rating" min="1" max="3" step="1" mv-edit-as="meter" icon="🔥"></meter-discrete>
+						<meter-discrete value="{{ project.impact_rating }}" min="1" max="3" step="1" icon="🔥"></meter-discrete>
 					</h4>
-					<div property="impact" class="markdown"></div>
+					<div class="impact">{{ project.impact | md_block }}</div>
 				</section>
-
+				{% endif %}
 			</div>
 			<footer>
-				<a property="url">[replace(url, &quot;https://&quot;)]</a>
-				<span class="repo [if(!repo, 'edit-only')]">
-					<a href="https://github.com/[repo]" target="_blank" mv-attribute="none">[ if(starts(repo, 'leaverou/'), from(repo, "leaverou/"), repo)]</a>
-					<a mv-if="repo_stars > 999" href="https://github.com/[repo]/stargazers" target="_blank" class="stat stars"
-						property="repo_stars_formatted" mv-attribute="none" title="[repo_stars] stars on GitHub"></a>
+				<a class="url">{{ project.url | format_url }}</a>
+				<span class="repo">
+					<a href="https://github.com/{{ project.repo }}" target="_blank">{{ project.repo | replace("leaverou/", "") }}</a>
+					{% if project.repo_stars > 999 %}
+					<a href="https://github.com/{{ project.repo }}/stargazers" target="_blank" class="stat stars"
+						title="{{ project.repo_stars | format_number }} stars on GitHub">{{ project.repo_stars | format_number }}</a>
+					{% endif %}
 				</span>
-				<span class="npm [if(!npm, 'edit-only')]">
-					<a property="npm" href="https://www.npmjs.com/package/[npm]" mv-attribute="none" target="_blank"></a>
-					<a mv-if="npm_downloads > 9999" href="https://npm-stat.com/charts.html?package=[npm]&from=[date]" target="_blank" class="stat downloads"
-						property="npm_downloads_formatted" mv-attribute="none"
-						title="[npm_downloads] total npm downloads"></a>
+				<span class="npm">
+					<a class="npm" href="https://www.npmjs.com/package/{{ project.npm }}" target="_blank"></a>
+					{% if project.npm_downloads > 9999 %}
+					<a href="https://npm-stat.com/charts.html?package={{ project.npm }}&from={{ project.date }}" target="_blank" class="stat downloads"
+						title="{{ project.npm_downloads | format_number }} total npm downloads">{{ project.npm_downloads | format_number }}</a>
+					{% endif %}
 				</span>
 			</footer>
 		</article>
+		{% endfor %}
 	</div>
 </div>

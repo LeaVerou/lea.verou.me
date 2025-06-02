@@ -103,6 +103,20 @@ export function format_date (inputDate, format = "long") {
 	return date.toLocaleString("en-GB", options);
 }
 
+export function format_number (n, options = {notation: "compact"}) {
+	n = Number(n);
+
+	if (isNaN(n)) {
+		return n;
+	}
+
+	return n.toLocaleString("en-GB", options);
+}
+
+export function format_url (url) {
+	return url.replace(/^https:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+}
+
 export function from (start, end, o = {}) {
 	if (!start || !end) {
 		return "";

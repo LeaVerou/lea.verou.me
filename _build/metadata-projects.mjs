@@ -10,7 +10,7 @@ import {
 export default async function addProjectMetadata() {
 	chdirHere();
 
-	let project_data = readJSON("../data/projects.json");
+	let projects = readJSON("../data/projects.json");
 
 	// To update: node fetch-repos.mjs
 	let repos = readJSON("../data/repos.json");
@@ -23,26 +23,22 @@ export default async function addProjectMetadata() {
 	*/
 	let npm_total_downloads = readJSON("../data/npm_total_downloads.json");
 
-	let projects = project_data.project;
-
 	for (let project of projects) {
 		if (project.repo) {
 			project.repo = project.repo?.toLowerCase();
 
 			if (project.repo in repos) {
 				project.repo_stars = repos[project.repo].stars;
-				project.repo_stars_formatted = formatLargeInteger(project.repo_stars);
 			}
 		}
 
 		if (project.npm && project.npm in npm_total_downloads) {
 			let downloads = npm_total_downloads[project.npm];
 			project.npm_downloads = downloads;
-			project.npm_downloads_formatted = formatLargeInteger(downloads);
 		}
 	}
 
-	writeJSON("../data/projects.json", project_data);
+	writeJSON("../data/projects.json", projects);
 }
 
 if (isEntryPoint(import.meta.url)) {
