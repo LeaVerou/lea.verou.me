@@ -1,5 +1,19 @@
 [
 	{
+		"url": "https://observe.style",
+		"image": "../blog/2025/style-observer/images/social.gif",
+		"name": "Style Observer",
+		"description": "A library to observe CSS property changes on an element.",
+		"launch": "https://lea.verou.me/blog/2025/style-observer/",
+		"repo": "leaverou/style-observer",
+		"date": "2025-02",
+		"type": "library",
+		"featured": 0,
+		"repo_stars": 492,
+		"npm_downloads": 21671,
+		"impact_rating": 0
+	},
+	{
 		"featured": 0,
 		"image": "images/rety.png",
 		"name": "Rety",
@@ -27,7 +41,7 @@
 		"repo": "color-js/color.js",
 		"npm": "colorjs.io",
 		"repo_stars": 1698,
-		"npm_downloads": 2682558,
+		"npm_downloads": 37691222,
 		"innovation": "Possibly the first entirely color space agnostic JS library, pioneered several API innovations.",
 		"impact": "Used to generate figures and examples for several CSS specifications and influenced the [Color API](https://github.com/wicg/color-api)",
 		"@context": "https://schema.org/",
@@ -248,7 +262,7 @@
 		"impact": "Used in a number of high profile websites like [Mozilla Developer Network](https://developer.mozilla.org/), Google’s [web.dev](https://web.dev/), [Sitepoint](https://www.sitepoint.com/), [Smashing Magazine](http://smashingmagazine.com), [A List Apart](http://alistapart.com), [CSS Tricks](http://css-tricks.com) and many others. Over [8M downloads weekly on npm](https://www.npmjs.com/package/prismjs) and over [1bn cumulative downloads since its launch](https://npm-stat.com/charts.html?package=prismjs&from=2012-01-01).",
 		"repo_stars": 11948,
 		"repo_stars_formatted": "12 K",
-		"npm_downloads": 1348897379,
+		"npm_downloads": 1813388339,
 		"innovation": "* Low floor: Entirely frictionless to get started, simply drop it in your page\n* Very high ceiling: Pioneered an extensibility mechanism allowing plugins to completely change how it works\n* Pioneered a declarative, hierarchical syntax for defining language grammars that made it easy for anyone who understood regular expressions to add support for a new language, which helped getting it to 300 languages very quickly.",
 		"size": "major",
 		"impact_rating": 3
