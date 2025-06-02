@@ -52,7 +52,7 @@ an effort I took the lead on since my early days as a TAG member.
 					<summary>{{ status.proposals.length }} proposal{{ "s" if status.proposals.length != 1 }}</summary>
 					<ul>
 						{% for proposal in status.proposals -%}
-						<li><a href="#{{ proposal.id }}">{{ proposal.title | md_inline | safe }}</a></li>
+						<li><a href="#{{ proposal.id }}">{{ proposal.title | md }}</a></li>
 						{%- endfor %}
 					</ul>
 				</details>

@@ -1,29 +1,29 @@
 {% macro one(post, o = {}) %}
 {% if o.style === "compact" %}
 <li>
-	<a class="title" href="{{ post.url | url }}">{{ post.data.title | md_inline | safe }}</a>
+	<a class="title" href="{{ post.url | url }}">{{ post.data.title | md }}</a>
 	{{ meta_before(post, o) }}
 </li>
 {% else %}
 <article class="post" id="{{ post.fileSlug }}">
 	<header>
 		<h2>
-			<a href="{{ post.url | url }}">{{ post.data.title | md_inline | safe }}</a>
+			<a href="{{ post.url | url }}">{{ post.data.title | md }}</a>
 		</h2>
 		<div class="meta">
 			{{ meta_before(post, o) }}
 		</div>
 	</header>
 	{% if post.data.nutshell -%}
-		<div class="nutshell">{{ post.data.nutshell | md | safe }}</div>
+		<div class="nutshell">{{ post.data.nutshell | md_block }}</div>
 	{%- endif %}
 
 	<div class="summary">
 		{% if post.data.page.excerpt %}
-			{{ post.data.page.excerpt | md({url: post.data.page.url}) | safe }}
+			{{ post.data.page.excerpt | md_block({url: post.data.page.url}) }}
 			<p><a href="{{ post.url | url }}" class="call-to-action">Continue reading</a></p>
 		{%- else -%}
-			{{ post.content | md({url: post.data.page.url}) | safe }}
+			{{ post.content | md_block({url: post.data.page.url}) }}
 		{%- endif -%}
 	</div>
 
@@ -40,7 +40,7 @@
 	{%- set np = posts[loop.index0 + 1] -%}
 	{# No idea why this doesn't work as a macro argument to one()... #}
 	{%- if np and o.style !== "compact" -%}
-	<a href="#{{ np.fileSlug }}" class="skip-to-next" title="Skip to next post: {{ np.data.title | md_inline | striptags }}"><i class="fa-regular fa-circle-arrow-down"></i></a>
+	<a href="#{{ np.fileSlug }}" class="skip-to-next" title="Skip to next post: {{ np.data.title | md | striptags }}"><i class="fa-regular fa-circle-arrow-down"></i></a>
 	{%- endif %}
 	{{ one(post, o) }}
 	{% if o.style !== "compact" %}<hr>{% endif %}

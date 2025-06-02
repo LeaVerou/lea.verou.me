@@ -96,9 +96,16 @@ export default config => {
 		},
 	}
 
-	config.addFilter("md", markdown.block);
 	config.addPairedShortcode("markdown", markdown.block);
-	config.addFilter("md_inline", markdown.inline);
+	config.addFilter("md_block", function(value) {
+		let safe = this.env.filters.safe;
+		return safe(markdown.block(value));
+	});
+
+	config.addFilter("md", function(value) {
+		let safe = this.env.filters.safe;
+		return safe(markdown.inline(value));
+	});
 
 	for (let name in filters) {
 		config.addFilter(name, filters[name]);

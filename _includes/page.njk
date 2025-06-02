@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	{%- set title_plain -%}
-		{{ title | md_inline | striptags }}{% if title %} • {% endif %}Lea Verou
+		{{ title | md | striptags }}{% if title %} • {% endif %}Lea Verou
 	{%- endset -%}
 	<title>{{ title_plain }}</title>
 	<meta property="og:title" content="{{ title_plain }}" />
@@ -51,7 +51,7 @@
 
 	{% set summary = nutshell or page.excerpt %}
 	{% if summary -%}
-	{% set summary_plain = summary | md | striptags %}
+	{% set summary_plain = summary | md_block | striptags %}
 	<meta name="description" content="{{ summary_plain }}" />
 	<meta property="og:description" content="{{ summary_plain }}" />
 	<meta name="twitter:description" content="{{ summary_plain }}" />
@@ -82,7 +82,7 @@
 					{% if heading %}
 						{{ heading }}
 					{% elseif title %}
-						{{ title | md_inline | safe }}
+						{{ title | md }}
 					{% else %}
 						Lea Verou
 					{% endif %}
@@ -115,7 +115,7 @@
 {% endif %}
 
 {% if nutshell -%}
-<div class="nutshell">{{ nutshell | md | safe }}</div>
+<div class="nutshell">{{ nutshell | md_block }}</div>
 {%- endif %}
 
 {{ content | safe }}
@@ -136,8 +136,8 @@
 		{% set nextPost = collections.blog | getCollectionItemIndex | next_post(collections.blog) %}
 		{% if previousPost or nextPost %}
 		<div class="prev-next">
-			{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title | md_inline | safe }}</a>{% endif %}
-			{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title | md_inline | safe }}</a>{% endif %}
+			{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title | md }}</a>{% endif %}
+			{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title | md }}</a>{% endif %}
 		</div>
 		{% else %}
 		NOTHING

@@ -42,9 +42,9 @@
 	<dt class="{{ class }}" style="--row: {{ index }}">
 		{% if m.flag %}<span class="flag"></span>{% endif %}
 		{% if m.url -%}
-		<a href="{{ m.url }}">{{ milestone_title | trim | md_inline | safe }}</a>
+		<a href="{{ m.url }}">{{ milestone_title | trim | md }}</a>
 		{%- else -%}
-		{{ milestone_title | trim | md_inline | safe }}
+		{{ milestone_title | trim | md }}
 		{%- endif %}
 		{% if m.by %}<em>(by {{ m.by }})</em>{% endif %}
 	</dt>
@@ -60,7 +60,7 @@
 
 <header>
 	<h{{ hLevel }} id="{{ tech.id }}">
-		<a href="#{{ tech.id }}">{{ tech.title | md_inline | safe }}</a>
+		<a href="#{{ tech.id }}">{{ tech.title | md }}</a>
 
 		{{ status_badge(tech.status) }}
 	</h{{ hLevel }}>
@@ -88,7 +88,7 @@
 </header>
 
 <div class="description">
-{{ tech.description | md_inline | safe }}
+{{ tech.description | md }}
 </div>
 
 {% if tech.status != "proposal" and tech.keyDates.length > 1 %}
