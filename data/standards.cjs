@@ -485,12 +485,12 @@ const proposals = [
 				url: "https://groups.google.com/a/chromium.org/g/blink-dev/c/EOz7NK6Y0cE/m/VsZveC-fAwAJ",
 				date: "2025-02-25"
 			},
-			// {
-			// 	type: "shipped",
-			// 	browser: "chrome",
-			// 	version: "136",
-			// 	date: "2025-MM-DD",
-			// }
+			{
+				type: "shipped",
+				browser: "chrome",
+				version: "137",
+				date: "2025-05-27",
+			},
 		],
 	},
 	{
