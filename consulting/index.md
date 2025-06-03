@@ -9,15 +9,15 @@ I prefer to take on projects where I can add the most value, i.e. challenging an
 I work with companies across the spectrum of size and maturity, from giants like Google to tiny startups doing cool work.
 Some areas I frequently consult on are described below, but I’m generally very open to unusual projects, so don’t be discouraged if your project doesn’t fit neatly into one of these categories; <a class="contact">email me</a> and we can discuss!
 
-My areas of expertise include:
+On a high level, my areas of expertise span product, usability, and web standards, including:
 - Web standards and web platform design
 - Product and API design, with a focus on usability and user needs
 - Open source software and open standards
-- Strategy and product vision, especially for products targeting web developers and web designers
-- CSS (designing language features, and coming up with novel solutions to hard CSS problems)
+- Strategy and product vision for products targeting web developers and web designers
+- CSS (both designing language features, and coming up with novel solutions to hard CSS problems)
 - Color science, especially in the context of web technologies
 - Web Components
-- Design Systems and Design Tokens, especially as they are used on the Web
+- Design systems and design tokens, especially as they are used on the Web
 - Qualitative and quantitative research methods
 
 ## Product & API design
