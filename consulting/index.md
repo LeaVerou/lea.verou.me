@@ -9,7 +9,8 @@ I prefer to take on projects where I can add the most value, i.e. challenging an
 I work with companies across the spectrum of size and maturity, from giants like Google to tiny startups doing cool work.
 Some areas I frequently consult on are described below, but I’m generally very open to unusual projects, so don’t be discouraged if your project doesn’t fit neatly into one of these categories; <a class="contact">email me</a> and we can discuss!
 
-On a high level, my areas of expertise span product, usability, and web standards, including:
+On a high level, my areas of expertise span product, usability, and web standards.
+This includes:
 - Web standards and web platform design
 - Product and API design, with a focus on usability and user needs
 - Open source software and open standards
@@ -17,7 +18,7 @@ On a high level, my areas of expertise span product, usability, and web standard
 - CSS (both designing language features, and coming up with novel solutions to hard CSS problems)
 - Color science, especially in the context of web technologies
 - Web Components
-- Design systems and design tokens, especially as they are used on the Web
+- Design systems and design tokens, especially around their use for Web UIs
 - Qualitative and quantitative research methods
 
 ## Product & API design
@@ -38,7 +39,7 @@ Designing good solutions that balance tradeoffs well takes a lot longer, so shor
 I hold a PhD in usability ([Human-Computer Interaction](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction)) from [MIT](https://mit.edu), and have taught usability to MIT students for years.
 Additionally, I have launched dozens of software artifacts, which often succeeded against competition mainly on the basis of superior UX/DX.
 
-My software engineering expertise combine with my usability and product design background give me a unique ability to design solutions that balance user needs and implementation effort.
+My software engineering expertise combined with my usability and product design background give me a unique ability to design solutions that balance user needs and implementation effort.
 
 **It is important to me that my work adds value.**
 While I’m open to reviewing any software artifact, I tend to be a better fit when the product is related to design or development.
