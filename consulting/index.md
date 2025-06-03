@@ -51,13 +51,18 @@ Struggling to work around certain [web platform](https://en.wikipedia.org/wiki/W
 Have you considered fixing the core problem instead?
 Or maybe there is already a feature that does what you need, but is not yet implemented across all browsers and you want to help move it along faster.
 
+Many companies want to get involved in web standards, but the process seems opaque and intimidating.
+I can help you navigate it; together, we can scope down your pain points to a set of concrete proposals that can be implemented in a reasonable time frame and advise you on their odds of success depending on your budget.
+I can also train your team on how it all works and how to get involved,
+so that they can contribute themselves in the future.
+
+If you want to invest in implementation across browsers, I can guide you through the available options and facilitate the process.
+As an added bonus, since this benefits everyone working with web technologies,
+I can help you make the most of your investment by framing it appropriately to the public.
+
 It was previously thought that web standards work is only for large companies like Google that can afford to play the long game.
-However, in recent years, there have been many success stories of major web technologies going from conception to baseline in two years (e.g. [CSS Cascade Layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)), and smaller features in a few months, a timespan that is shorter than many product cycles.
-
-
-Together, we can scope down your pain points to a set of concrete proposals that can be implemented in a reasonable time frame and advise you on their odds of success depending on your budget.
-If you want to invest in implementation in browsers, I can guide you through the available options and facilitate the process.
-As an added bonus, since this benefits everyone working with web technologies, I can help you make the most of your investment by framing it appropriately to the public.
+However, in recent years, there have been many success stories of major web technologies going from conception to baseline in less than two years,
+and smaller features in a matter of months, a timespan that is shorter than many product development cycles.
 
 <article class="note" style="--label: 'Why me?'">
 
