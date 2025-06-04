@@ -37,6 +37,7 @@
 	},
 	{
 		"title": "Repo",
-		"url": "https://github.com/leaverou/lea.verou.me"
+		"url": "https://github.com/leaverou/lea.verou.me",
+		"location": "footer"
 	}
 ]
