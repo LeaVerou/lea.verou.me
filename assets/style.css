@@ -319,11 +319,8 @@ blockquote {
 	font-style: italic;
 }
 
-:target {
-	--color: color-mix(in lab, transparent, var(--color-accent2) calc((1 - var(--number)) * 20%));
-	background: var(--color);
-	box-shadow: 0 0 calc(.2em + .8em * var(--number)) calc(.1em + .8em * var(--number)) var(--color);
-	animation: to1 2s 1s both;
+var {
+	font-variant-numeric: lining-nums;
 }
 
 input, select, textarea {
@@ -428,15 +425,6 @@ button,
 	initial-value: 0;
 }
 
-@keyframes to1 {
-	from { --number: 0; }
-	to { --number: 1; }
-}
-
-var {
-	font-variant-numeric: lining-nums;
-}
-
 .icon-before::before,
 .cta::before,
 .icon-after::after {
@@ -452,6 +440,18 @@ var {
 
 .icon-after::after {
 	margin-inline-start: .4em;
+}
+
+@keyframes to1 {
+	from { --number: 0; }
+	to { --number: 1; }
+}
+
+:target {
+	--color: color-mix(in lab, transparent, var(--color-accent2) calc((1 - var(--number)) * 20%));
+	background: var(--color);
+	box-shadow: 0 0 calc(.2em + .8em * var(--number)) calc(.1em + .8em * var(--number)) var(--color);
+	animation: to1 2s 1s both;
 }
 
 .social {
