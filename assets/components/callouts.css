@@ -128,42 +128,9 @@ main aside {
 			}
 		}
 
-		@media (width > 1700px) or (width < 1000px) {
-			.broken-page-container {
-				& > h4 {
-					margin-top: 1.5rem;
-				}
-			}
-		}
-
 		@media (width <= 960px) {
 			/* At the top of content */
 			margin-top: 3em;
-
-			@media (width > 700px) {
-				/* 2 columns */
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				align-items: start;
-				justify-content: start;
-
-				> h4 {
-					grid-column: 1 / -1;
-				}
-
-				& > ul {
-					display: contents;
-				}
-
-				& > * {
-					grid-column: 1;
-				}
-
-				& > .broken-page-container {
-					grid-column: 2;
-					grid-row: 1 / span 2;
-				}
-			}
 		}
 	}
 
