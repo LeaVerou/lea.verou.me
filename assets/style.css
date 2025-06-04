@@ -374,9 +374,11 @@ button,
 }
 
 .cta {
+	padding-block: .62em .55em;
 	padding-inline: 1.3em;
 	text-transform: uppercase;
 	border-radius: 9999px;
+	box-shadow: 0 .15em .5em -.4em rgb(0 0 0 / .2);
 
 	&.larger {
 		font-size: 1rem;
@@ -396,6 +398,30 @@ button,
 	}
 }
 
+.cta-container {
+	display: flex;
+	flex-flow: column;
+	gap: .2em;
+	align-items: center;
+	margin-block: 1em;
+
+	> small {
+		color: var(--color-gray-medium);
+		font-size: .77rem;
+		font-family: var(--font-sans);
+		font-weight: 500;
+		-webkit-font-smoothing: initial;
+	}
+}
+
+.sponsor {
+	--icon: var(--icon-heart);
+
+	&.cta:hover::before {
+		font-weight: bold;
+	}
+}
+
 @property --number {
 	syntax: "<number>";
 	inherits: false;
@@ -409,6 +435,23 @@ button,
 
 var {
 	font-variant-numeric: lining-nums;
+}
+
+.icon-before::before,
+.cta::before,
+.icon-after::after {
+	content: var(--icon);
+	font: var(--icon-font);
+	display: inline-block;
+}
+
+.icon-before::before,
+.cta::before {
+	margin-inline-end: .4em;
+}
+
+.icon-after::after {
+	margin-inline-start: .4em;
 }
 
 .social {

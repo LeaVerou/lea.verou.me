@@ -123,6 +123,12 @@
 {{ content | safe }}
 
 <footer>
+	{% if is_post %}
+		<div class="cta-container">
+			<small>Enjoyed this post? Want more like it?</small>
+			<a href="https://ko-fi.com/leaverou" target="_blank" class="cta larger sponsor">Pay what you can</a>
+		</div>
+	{% endif %}
 	<div class="meta">
 		{%- include "_broken-page.njk" -%}
 		{% if is_post %}
@@ -141,8 +147,6 @@
 			{% if previousPost %}<a href="{{ previousPost.url }}" class="prev">{{ previousPost.data.title | md }}</a>{% endif %}
 			{% if nextPost %}<a href="{{ nextPost.url }}" class="next">{{ nextPost.data.title | md }}</a>{% endif %}
 		</div>
-		{% else %}
-		NOTHING
 		{% endif %}
 	{% endif %}
 </footer>
