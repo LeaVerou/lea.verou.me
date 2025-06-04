@@ -143,4 +143,4 @@ which they used as a sample of what can be achieved with such a pipeline.
 Rates do vary by scope, project type, and length, and I do offer a sliding scale for nonprofit organizations, projects with strong social impact, and organizations in low-income countries.
 Please reach out to discuss what’s feasible for your budget.
 
-<a href="" class="contact no-after call-to-action">Work with me</a>
+<a href="" class="contact no-after cta">Work with me</a>

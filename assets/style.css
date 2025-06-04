@@ -336,16 +336,18 @@ input[type=number] {
 
 button,
 .button,
-.call-to-action {
-	font: 800 .8rem/1.2 var(--font-sans);
-	background: #f06;
+.cta {
+	font: 700 .8rem/1.2 var(--font-sans);
+	background: var(--color-accent);
 	color: white;
-	padding: .52em .8em .45em;
+	padding-block: .52em .45em;
+	padding-inline: .8em;
 	text-decoration: none !important;
 	text-shadow: 0 0 0 white;
 	transition: .3s;
 	border: none;
 	cursor: pointer;
+	text-shadow: 0 0 .2em rgb(0 0 0 / .15);
 
 	&:only-child:is(p > *):is(.post *, .post-page *) {
 		display: block;
@@ -363,11 +365,34 @@ button,
 	&:active {
 		transform: scale(.9);
 	}
+}
 
-	&.call-to-action {
-		padding-inline: 1em;
-		text-transform: uppercase;
-		border-radius: 9999px;
+@keyframes cta-hover {
+	to {
+		background-position: -200% 0;
+	}
+}
+
+.cta {
+	padding-inline: 1.3em;
+	text-transform: uppercase;
+	border-radius: 9999px;
+
+	&.larger {
+		font-size: 1rem;
+	}
+
+	&:hover {
+		scale: 1.05;
+		background-image: linear-gradient(to right, var(--color-accent), var(--color-accent2), var(--color-accent));
+		background-size: 200% 100%;
+		background-position: 0% 0;
+		animation: cta-hover 2s infinite ease-in-out;
+		box-shadow: 0 .2em 1em -.5em rgb(0 0 0 / .5);
+	}
+
+	&:active {
+		scale: .9;
 	}
 }
 
@@ -867,7 +892,7 @@ body > footer {
 		shape-outside: circle(calc(50% + 1rem));
 	}
 
-	a:not(:hover, .call-to-action) {
+	a:not(:hover, .cta) {
 		filter: brightness(90%);
 	}
 

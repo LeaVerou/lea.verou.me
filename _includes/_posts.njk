@@ -21,7 +21,7 @@
 	<div class="summary">
 		{% if post.data.page.excerpt %}
 			{{ post.data.page.excerpt | md_block({url: post.data.page.url}) }}
-			<p><a href="{{ post.url | url }}" class="call-to-action">Continue reading</a></p>
+			<p><a href="{{ post.url | url }}" class="cta">Continue reading</a></p>
 		{%- else -%}
 			{{ post.content | md_block({url: post.data.page.url}) }}
 		{%- endif -%}

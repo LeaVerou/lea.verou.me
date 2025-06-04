@@ -57,7 +57,7 @@ I am open to particularly interesting [consulting](/consulting) opportunities in
 <!--
 I also have a CV! It’s just as infrequently updated as other CVs, but here it is if you want it:
 
-<a href="http://lea.verou.me/view-cv.png "View my CV")](https://cv.verou.me/" class="call-to-action">http://lea.verou.me/view-cv.png "View my CV")](https://cv.verou.me/</a>
+<a href="http://lea.verou.me/view-cv.png "View my CV")](https://cv.verou.me/" class="cta">http://lea.verou.me/view-cv.png "View my CV")](https://cv.verou.me/</a>
 -->
 
 
