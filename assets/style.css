@@ -18,6 +18,18 @@
 	*/
 }
 
+@property --content-margin-start {
+	syntax: "<length-percentage>";
+	inherits: true;
+	initial-value: 0px;
+}
+
+@property --content-margin-end {
+	syntax: "<length-percentage>";
+	inherits: true;
+	initial-value: 0px;
+}
+
 :root {
 	--color-gray-medium: var(--color-gray-50);
 	--color-gray-light: var(--color-gray-90);
@@ -34,26 +46,46 @@
 	--color-accent2-light2: hsl(35 100% 95%);
 	--color-accent2-light3: hsl(35 100% 99%);
 
-	--width-med: 50rem;
-	--width-thin: 35rem;
+	--content-width-l: 50vw;
+	--content-width-m: 50rem;
+	--content-width-s: 35rem;
 
-	--content-width: var(--width-med);
-	--min-padding: 1rem;
-	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 100vw);
+	--sidebar-width: clamp(10rem, 20vw, 20rem);
+	--sidebar-gutter: 1rem;
+
+	--min-padding: 3rem;
+	--min-padding-block: 1rem;
+
+	--content-width: var(--content-width-m);
+	--content-margin-end: max(var(--min-padding), var(--sidebar-width) + var(--sidebar-gutter) + var(--min-padding), 50vw - var(--content-width)/2);
+	--content-margin-start: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 100vw - var(--content-width) - var(--content-margin-end));
+	--content-margin-min: min(var(--content-margin-start), var(--content-margin-end));
+
+	@media (width > 2500px) {
+		--content-width: var(--content-width-l);
+	}
 
 	@media (width <= 1280px) {
-		--content-width: var(--width-thin);
+		--content-width: var(--content-width-s);
+		--min-padding: 3rem;
+	}
+
+	@media (width <= 960px) {
+		--content-width: var(--content-width-m);
+		--sidebar-width: 0px;
 	}
 
 	@media (width <= 700px) {
-		--content-width: min(var(--width-med), 100vw - 2 * var(--min-padding));
-	}
+		--content-width: min(var(--content-width-m), 100vw - 2 * var(--min-padding));
+		--min-padding: 1rem;
 
-	@media (width > 2500px) {
-		--content-width: 50vw;
 	}
 
 	--scrolltop: 0; /* Fallback. Actual value updated via JS */
+}
+
+:root:not(.has-toc) {
+	--sidebar-width: 0px;
 }
 
 :nth-child(1) { --index: 1; }
@@ -530,15 +562,15 @@ body > footer {
 body > header {
 	z-index: 1;
 	position: relative;
-	padding: var(--min-padding);
-	--header-bg-center: calc(var(--min-padding) + .75em) calc(2em - var(--scrolltop, 0) * 1px);
-
+	padding: var(--min-padding-block) var(--min-padding);
+	--header-bg-center: calc(var(--min-padding-block) + .75em) calc(2em - var(--scrolltop, 0) * 1px);
 	background: repeating-conic-gradient(from var(--background-gradient-start, 0deg) at var(--header-bg-center), var(--color-accent2-light1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: var(--color-accent2-light2);
 
 	.site-meta {
 		display: flex;
 		align-items: center;
+		margin-inline-start: calc(-1 * (var(--min-padding) - var(--min-padding-block)));
 
 		.site-logo {
 			display: flex;
@@ -637,7 +669,8 @@ body > header {
 
 	.page-meta {
 		/* The parent has var(--min-padding) padding so we need to offset that */
-		padding: 0 max(0em, var(--content-margin) - var(--min-padding));
+		padding-block: 0;
+		padding-inline: max(0em, var(--content-margin-start) - var(--min-padding)) max(0em, var(--content-margin-end) - var(--min-padding));
 	}
 
 	.meta {
@@ -652,14 +685,16 @@ body > header {
 body > main {
 	flex: 1;
 	position: relative;
-	padding: 2rem var(--content-margin) 1rem;
+	padding-block: 2rem 1rem;
+	padding-inline: var(--content-margin-start) var(--content-margin-end);
 	font-family: var(--font-serif);
 }
 
 body > footer {
 	display: grid;
 	gap: 1em;
-	padding: var(--min-padding) var(--content-margin);
+	padding-block: var(--min-padding-block);
+	padding-inline: var(--content-margin-start) var(--content-margin-end);
 	margin-top: 2em;
 	background: repeating-conic-gradient(from var(--background-gradient-start, 0deg) at calc(100% + 1em) calc(100% + 1em), rgb(0 0 0 / .1) 0 4deg, transparent 0 8deg) fixed;
 	background-color: hsl(var(--gray) 23%);
@@ -861,8 +896,10 @@ body > footer {
 	display: flex;
 	gap: 2em;
 	margin-top: 1em;
-	padding: 1em var(--content-margin);
-	margin: 1em calc(-1 * var(--content-margin));
+	padding-block: 1em;
+	padding-inline: var(--content-margin-start) var(--content-margin-end);
+	margin-block: 1em;
+	margin-inline: calc(-1 * var(--content-margin-start)) calc(-1 * var(--content-margin-end));
 	background: var(--color-accent-light2);
 	font: 600 80% var(--font-sans);
 
@@ -926,8 +963,8 @@ body > footer {
 	/* Homepage */
 	img {
 		float: right;
-		margin-right: clamp(-1 * var(--content-margin) + var(--min-padding) / 2, -0.5 * var(--width), 0em);
-		margin-left: .3rem;
+		margin-inline-end: clamp(-1 * var(--content-margin-start) + var(--min-padding) / 2, -0.5 * var(--width), 0em);
+		margin-inline-start: .3rem;
 		--width: calc(4em + clamp(0px, 5svw + 4svh, 6em));
 		width: var(--width);
 		aspect-ratio: 1 / 1;
@@ -1064,7 +1101,7 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 				content: "File: " attr(data-file);
 				position: absolute;
 				top: -2.2em;
-				right: var(--content-margin);
+				right: var(--content-margin-end);
 				margin: 0;
 				background: var(--color-accent);
 			}

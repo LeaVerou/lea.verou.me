@@ -66,7 +66,7 @@ figure {
 
 		/* Margin */
 		--figure-clamped-width: clamp(var(--figure-min-width), 100%, var(--figure-max-width));
-		--figure-max-outset: calc(min(var(--figure-clamped-width), var(--content-margin)) - 1em);
+		--figure-max-outset: calc(min(var(--figure-clamped-width), var(--content-margin-min)) - 1em);
 		--figure-outset: min(3em, var(--figure-max-outset));
 
 		margin-inline: calc(-1 * var(--figure-outset)) 1em;
@@ -91,7 +91,7 @@ figure {
 		@media (width > 1200px) {
 			/* Place figure in margin if possible */
 			&.margin {
-				--figure-width: calc(var(--content-margin) - 2em);
+				--figure-width: calc(var(--content-margin-min) - 2em);
 				--figure-outset: var(--figure-max-outset);
 
 				max-width: var(--figure-clamped-width);

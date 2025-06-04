@@ -110,12 +110,13 @@ main aside {
 			color: inherit;
 		}
 
-		@media (width > 1700px) {
+		@media (width > 960px) {
+			/* Sidebar */
 			position: absolute;
 			--min-header-height: 12.8rem;
 			top: 2.5em;
-			left: calc(var(--content-margin) + var(--content-width) + 1em);
-			max-width: calc(var(--content-margin) - 2em);
+			inset-inline-end: 1em;
+			width: calc(var(--content-margin-end) - 2em);
 			background: none;
 
 			&:is(header.out-of-view + main *) {
@@ -135,14 +136,24 @@ main aside {
 			}
 		}
 
-		@media (width <= 1700px) {
+		@media (width <= 960px) {
+			/* At the top of content */
 			margin-top: 3em;
 
-			@media (width > 1000px) {
+			@media (width > 700px) {
+				/* 2 columns */
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				align-items: start;
 				justify-content: start;
+
+				> h4 {
+					grid-column: 1 / -1;
+				}
+
+				& > ul {
+					display: contents;
+				}
 
 				& > * {
 					grid-column: 1;
