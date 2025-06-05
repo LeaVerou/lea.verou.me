@@ -151,7 +151,29 @@
 	{% endif %}
 </footer>
 
+{% if is_post %}
+
+
+{% if social_posts.bluesky %}
+<h2>Reactions</h2>
+<script src="https://unpkg.com/bluesky-likes" type="module"></script>
+<section id="bluesky-likes">
+	<h3>
+		<bluesky-likes src="{{ social_posts.bluesky }}"></bluesky-likes>
+		likes on Bluesky
+	</h3>
+
+	<bluesky-likers src="{{ social_posts.bluesky }}"></bluesky-likers>
+	<p>
+		<a href="{{ social_posts.bluesky }}" target="_blank">Like this post on Bluesky to see your face on this page</a>
+	</p>
+</section>
+
+<h3>Comments</h3>
+{% endif %}
+
 {%- include "_comments.njk" -%}
+{% endif %}
 
 </main>
 

@@ -432,7 +432,7 @@ button,
 	flex-flow: column;
 	gap: .2em;
 	align-items: center;
-	margin-block: 1em;
+	margin-block: 1em 3em;
 
 	> small {
 		color: var(--color-gray-medium);
