@@ -330,7 +330,7 @@ hr {
 	}
 }
 
-video, img {
+video, img, object {
 	max-width: 100%;
 	object-fit: cover;
 }
@@ -376,6 +376,7 @@ button,
 	transition: .3s;
 	border: none;
 	cursor: pointer;
+
 	text-shadow: 0 0 .2em rgb(0 0 0 / .15);
 
 	&:only-child:is(p > *):is(.post *, .post-page *) {
@@ -409,8 +410,12 @@ button,
 	border-radius: 9999px;
 	box-shadow: 0 .15em .5em -.4em rgb(0 0 0 / .2);
 
-	&.larger {
+	&.large {
 		font-size: 1rem;
+	}
+
+	&.small {
+		font-size: .6rem;
 	}
 
 	&:hover {

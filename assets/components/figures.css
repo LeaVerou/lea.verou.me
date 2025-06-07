@@ -41,7 +41,7 @@ figure {
 			font-weight: bold;
 		}
 
-		& a:not(:hover, :focus, :active) {
+		& a:where(:not(:hover, :focus, :active)) {
 			color: inherit;
 			text-decoration: underline;
 			text-decoration-color: color-mix(in lab, currentColor, transparent 70%);
@@ -53,6 +53,19 @@ figure {
 	&.center {
 		width: fit-content;
 		margin-inline: auto;
+	}
+
+	&.no-padding {
+		padding: 0;
+		margin-inline: 0;
+
+		> figcaption {
+			margin: 0;
+		}
+
+		> img {
+			display: block;
+		}
 	}
 
 	&.float {
