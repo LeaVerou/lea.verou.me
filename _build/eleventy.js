@@ -97,14 +97,14 @@ export default config => {
 	}
 
 	config.addPairedShortcode("markdown", markdown.block);
-	config.addFilter("md_block", function(value) {
+	config.addFilter("md_block", function(value, options) {
 		let safe = this.env.filters.safe;
-		return safe(markdown.block(value));
+		return safe(markdown.block(value, options));
 	});
 
-	config.addFilter("md", function(value) {
+	config.addFilter("md", function(value, options) {
 		let safe = this.env.filters.safe;
-		return safe(markdown.inline(value));
+		return safe(markdown.inline(value, options));
 	});
 
 	for (let name in filters) {
