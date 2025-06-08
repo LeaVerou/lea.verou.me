@@ -404,6 +404,7 @@ button,
 }
 
 .cta {
+	display: inline-block;
 	padding-block: .62em .55em;
 	padding-inline: 1.3em;
 	text-transform: uppercase;
@@ -429,6 +430,11 @@ button,
 
 	&:active {
 		scale: .9;
+	}
+
+	i {
+		margin-inline-end: .2em;
+		vertical-align: middle;
 	}
 }
 
