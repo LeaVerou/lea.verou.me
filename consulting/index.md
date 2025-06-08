@@ -2,21 +2,23 @@
 title: Consulting Services
 toc: true
 ---
+<style>.whyme { --label: 'Why me?' }</style>
 
 I have limited time for consulting, and thus am very selective about which projects I accept.
 I prefer to take on projects where I can add the most value, i.e. challenging and/or impactful projects that are relevant to my interests and areas of expertise.
 
-I work with companies across the spectrum of size and maturity, from giants like Google to tiny startups doing cool work.
-Some areas I frequently consult on are described below, but I’m generally very open to unusual projects, so don’t be discouraged if your project doesn’t fit neatly into one of these categories; <a class="contact">email me</a> and we can discuss!
+I work with companies across the spectrum of size and maturity, from MAANGs to tiny startups doing cool work.
+Some areas I frequently consult on are described below, but I’m very open to unusual projects, so don’t be discouraged if your project doesn’t fit neatly into one of these categories.
+Just <a class="contact">drop me an email</a> and we can discuss.
 
-On a high level, my areas of expertise span product, usability, and web standards.
+On a high level, my areas of expertise span **product**, **usability**, and **web standards**.
 This includes:
 - Web standards and web platform design
 - Product and API design, with a focus on usability and user needs
 - Open source software and open standards
 - Strategy and product vision for products targeting web developers and web designers
 - CSS (both designing language features, and coming up with novel solutions to hard CSS problems)
-- Color science, especially in the context of web technologies
+- Color science, especially as it relates to web technologies
 - Web Components
 - Design systems and design tokens, especially around their use for Web UIs
 - Qualitative and quantitative research methods
@@ -34,7 +36,7 @@ Design reviews can take varying amounts of time, from **a day to several weeks**
 We can discuss the scope, goals, and budget together.
 Designing good solutions that balance tradeoffs well takes a lot longer, so shorter design reviews focus more on identifying issues, while longer ones also include potential solutions that balance tradeoffs well and maximize Impact/Effort.
 
-<article class="note" style="--label: 'Why me?'">
+<article class="whyme note">
 
 I hold a PhD in usability ([Human-Computer Interaction](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction)) from [MIT](https://mit.edu), and have taught usability to MIT students for years.
 Additionally, I have launched dozens of software artifacts, which often succeeded against competition mainly on the basis of superior UX/DX.
@@ -65,7 +67,7 @@ It was previously thought that web standards work is only for large companies li
 However, in recent years, there have been many success stories of major web technologies going from conception to baseline in less than two years,
 and smaller features in a matter of months, a timespan that is shorter than many product development cycles.
 
-<article class="note" style="--label: 'Why me?'">
+<article class="whyme note">
 
 I have a track record of designing, reviewing, and getting web technologies shipped in browsers for {{ currentYear - 2012 }} years. I have not only [designed web technologies](/specs) that got accepted, but pushed them to implementation across browsers, often in the face of strong initial opposition.
 
@@ -85,7 +87,7 @@ If I cannot meet all of them, I will explain the tradeoffs and help you decide.
 I will also provide a detailed explanation of how the solution works, so that your engineers can understand it and maintain it in the future.
 These tend to be shorter engagements, usually a few hours to a few days.
 
-<article class="note" style="--label: 'Why me?'">
+<article class="whyme note">
 
 I have literally written a [bestselling CSS book](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20) on this exact topic: **better solutions to hard CSS problems**.
 It was a smashing success, it got translated into 8 languages and dubbed ["Best CSS book" by the Chicago Tribune](https://www.chicagotribune.com/consumer-reviews/sns-bestreviews-electronics-the-best-css-book-20200701-kda2pyikobda5o3c4ivi4wzfui-story.html).
@@ -96,22 +98,29 @@ or details about how CSS works that I can leverage to create better solutions.
 
 </article>
 
-## Research
+## Developer-focused Research
 
-Looking for someone who both understands web designers and developers and has a solid research background? Look no further.
+It is widely known that poor user experience directly translates to lost revenue.
+However, improving UX on a product that targets web developers and designers is a unique challenge,
+as it requires both usability and domain expertise, and very few UX researchers have both.
+It’s also a myth that UX research is only for visual UIs: you can absolutely do usability studies for syntax, and I have done it many times.
+It’s also a myth that usability testing is a big undertaking: low-fi usability testing can be done in a few hours,
+and even [as few as five users uncover > 80% of usability issues](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/).
 
-I’m happy to help you design and run surveys, interviews, or use other research methods to get the data you need.
-I can also help you analyze the data and draw conclusions.
+I can help you design and run surveys, interviews, and user studies to improve developer experience,
+distill the findings into actionable insights, and design and implement changes needed to improve it.
+I can also train your team on how to do this themselves in the future.
 
-I’m also open to being part of scientific research projects in relevant areas in a Research Scientist capacity or similar.
-
-<article class="note" style="--label: 'Why me?'">
+<article class="whyme note">
 
 I have a unique combination of skills that make me a great fit for this kind of work:
 a solid connection to web designers & developers fostered over {{ currentYear - 2009 }} years of developer advocacy,
-and the foundation of scientific research and data analysis from my MIT PhD days.
+personal experience as a web developer and designer,
+a solid foundation of scientific research and data analysis from my MIT PhD days,
+and a decade of experience running user studies for technical products.
 
-I have previously been sponsored by **Google** to help design major web development surveys, such as [State of CSS](https://stateofcss.com) and the inaugural [State of HTML](https://stateofhtml.com/) (which also resulted in [novel survey UI](/blog/2024/context-chips/)), both taken by tens of thousands of developers every year and breaking participation records for the years I was involved.
+I have run user studies for scientific research at MIT, and for developer research, some of which was funded by Google.
+I have also been sponsored by **Google** to help design major web development surveys, such as [State of CSS](https://stateofcss.com) and the inaugural [State of HTML](https://stateofhtml.com/) (which also resulted in [novel survey UI](/blog/2024/context-chips/)), both taken by tens of thousands of developers every year and breaking participation records for the years I was involved.
 
 I have also led [research efforts into web development practices via scraping](https://almanac.httparchive.org/en/2020/css), which is another avenue we can explore.
 
@@ -122,7 +131,7 @@ I have also led [research efforts into web development practices via scraping](h
 I’m open to doing training and on-site workshops on topics related to web technologies, usability, API design, and general software product design principles.
 These can be tailored to your team’s needs, and can be either hands-on or higher level.
 
-<article class="note" style="--label: 'Why me?'">
+<article class="whyme note">
 
 I have a track record of {{ currentYear - 2009 }} years of teaching web technologies and usability to various audiences, from professionals to MIT students.
 
