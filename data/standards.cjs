@@ -455,7 +455,13 @@ const proposals = [
 				type: "specced",
 				url: "https://github.com/w3c/csswg-drafts/commit/39f469149abb5575505b6d2d54b8bddf119f896d",
 				date: "2024-02-16"
-			}
+			},
+			{
+				type: "shipped",
+				browser: "safari",
+				version: "26 beta",
+				date: "2025-06-09",
+			},
 		]
 	},
 	{
