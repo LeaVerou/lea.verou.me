@@ -337,29 +337,29 @@ const proposals = [
 			},
 		]
 	},
-	{
-		id: "oklab-default",
-		title: "Use OKLab for gradient color interpolation by default",
-		tags: ["Minor feature", "Color"],
-		milestones: [
-			{
-				type: "proposal",
-				url: "https://github.com/w3c/csswg-drafts/issues/7948",
-				date: "2022-10-24"
-			},
-			{
-				type: "resolution",
-				url: "https://github.com/w3c/csswg-drafts/issues/7948#issuecomment-1479941072",
-				date: "2023-03-22"
-			},
-			{
-				type: "specced",
-				by: "Chris Lilley",
-				url: "https://github.com/w3c/csswg-drafts/commit/cc85d46b321003cc3849bd028ed5280a4e71c82b",
-				date: "2023-07-05"
-			}
-		]
-	},
+	// {
+	// 	id: "oklab-default",
+	// 	title: "Use OKLab for gradient color interpolation by default",
+	// 	tags: ["Minor feature", "Color"],
+	// 	milestones: [
+	// 		{
+	// 			type: "proposal",
+	// 			url: "https://github.com/w3c/csswg-drafts/issues/7948",
+	// 			date: "2022-10-24"
+	// 		},
+	// 		{
+	// 			type: "resolution",
+	// 			url: "https://github.com/w3c/csswg-drafts/issues/7948#issuecomment-1479941072",
+	// 			date: "2023-03-22"
+	// 		},
+	// 		{
+	// 			type: "specced",
+	// 			by: "Chris Lilley",
+	// 			url: "https://github.com/w3c/csswg-drafts/commit/cc85d46b321003cc3849bd028ed5280a4e71c82b",
+	// 			date: "2023-07-05"
+	// 		}
+	// 	]
+	// },
 	{
 		title: "`caret-color`",
 		description: "`caret-color` is a property that allows authors to customize the color of the text input caret.",
@@ -455,7 +455,13 @@ const proposals = [
 				type: "specced",
 				url: "https://github.com/w3c/csswg-drafts/commit/39f469149abb5575505b6d2d54b8bddf119f896d",
 				date: "2024-02-16"
-			}
+			},
+			{
+				type: "shipped",
+				browser: "safari",
+				version: "26 beta",
+				date: "2025-06-09",
+			},
 		]
 	},
 	{
