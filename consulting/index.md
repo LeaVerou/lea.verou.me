@@ -1,14 +1,11 @@
 ---
 title: Consulting Services
+toc: true
 ---
-<style>.whyme { --label: 'Why me?' }</style>
 
-I have limited time for consulting, and thus am very selective about which projects I accept.
-I prefer to take on projects where I can add the most value, i.e. challenging and/or impactful projects that are relevant to my interests and areas of expertise.
+## How can I help?
 
-I work with companies across the spectrum of size and maturity, from MAANGs to tiny startups doing cool work.
-Some areas I frequently consult on are described below, but I’m very open to unusual projects, so don’t be discouraged if your project doesn’t fit neatly into one of these categories.
-Just <a class="contact">drop me an email</a> and we can discuss.
+Given limited availability, I prioritize consulting projects where I can have the greatest impact — typically those that are both challenging and aligned with my expertise.
 
 On a high level, my areas of expertise span **product**, **usability**, and **web architecture**.
 This includes:
@@ -23,20 +20,188 @@ This includes:
 
 My involvement can take many forms, depending on what fits your needs and budget.
 For example:
-- Short, one-off mentorship sessions to help you or your team with a specific problem
-- Design reviews and audits of products or APIs (existing or 0→1)
-- Short- or medium-term research projects to explore a specific problem or investigate designer/developer needs in a specific area
-- Design web standards solutions for a specific problem, drive developer interest and implementation across browsers
-- Coaching
+- Short, [one-off mentorship sessions](#one-hour-session)
+- [Design reviews](#design-reviews) and audits of products or APIs (existing or 0→1)
+- Short- or medium-term research projects to explore a specific problem, investigate user needs in a specific area, or drive web standards forwards through developer evangelism
+- Coaching sessions
+- Joining your company Slack for async help
 - On-site or remote sessions or workshops tailored to your team’s needs
-- Fractional positions (technical fellow, product manager, etc) when you need expertise on an ongoing basis but don’t need a full-time hire
+- Talks and articles (for conferences, magazines, etc.)
+- Fractional positions (technical fellow, product manager, etc) when you need expertise on an ongoing basis but not a full-time hire
 
 These are only examples, and I’m very open to discussing other ways my expertise can add value and help you out.
+Unusual projects are often the most interesting.
+Just <a class="contact">drop me an email</a> and we can discuss.
 
-Rates do vary by scope, project type, and length, and I do offer a sliding scale for nonprofit organizations, projects with strong social impact, and organizations in low-income countries.
+Rates do vary by scope, project type, and length, and I do offer a sliding scale for nonprofit organizations, or organizations in low-income countries, and projects with strong social impact or that provide public benefit.
 Please <a class="contact">reach out</a> for more details, and to discuss what’s feasible for your budget.
 
 <a href="" class="contact no-after cta">Work with me</a>
+
+## Who I've Worked With
+
+I work with companies across the spectrum of size and maturity, from Fortune 500 companies to tiny startups doing cool work.
+Some of the companies I’ve worked with include:
+
+<div class="clients">
+<style>
+.clients ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	padding: 0;
+}
+.clients li {
+	list-style: none;
+}
+</style>
+
+- [Google](https://google.com)
+- [Mozilla](https://mozilla.org)
+- [Wix](https://wix.com)
+- [O'Reilly Media](https://oreilly.com)
+- [Stripe](https://stripe.com)
+- [McKinsey & Company](https://mckinsey.com)
+- [Font Awesome](https://fontawesome.com)
+- [Smashing Media](https://smashingmagazine.com)
+</div>
+
+## 1 Hour Mentorship Session { #one-hour-session }
+
+If you have a specific problem you need help with, I can help you out in a one-off mentorship session.
+You pay **$500**, get one hour of my time and you can use it as you see fit.
+We can brainstorm solutions to a specific problem, you can ask me about web standards or a CSS feature you struggle with,
+or anything else you want to discuss that is relevant to my experience and/or areas of expertise.
+You can bring only yourself, or your entire team.
+There are no guarantees or deliverables.
+
+**I’m currently gauging interest in these sessions.**
+Please enter your email below to be notified when they become available:
+
+<form netlify name="mentorship" style="display: flex; gap: .3em">
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" placeholder="foo@bar.com" required>
+  <button type="submit">Notify me</button>
+</form>
+
+
+## Web Platform Consulting & Education
+
+Many companies see web technologies (CSS, HTML, etc.) as something handed down from the gods on stone tablets.
+Or, maybe they understand that that is not the case, but the web standards process seems opaque and intimidating.
+As a result, they invest so much time and effort working around [web platform](https://en.wikipedia.org/wiki/Web_platform) limitations (or perceived limitations)
+that it would actually be **much cheaper to fix the core problem instead**.
+
+### Web Platform Consulting
+
+I will listen to your team’s pain points around a specific area and we’ll take it from there,
+depending on whether a solution already exists, and what its implementation status is if so.
+
+Often, it turns out that better solutions already exist in the web platform and are widely implemented, but the team is not aware of them.
+This is not a fault with the team; the web platform moves so fast that _no_ development team can keep up with it.
+In that case, this will turn into an  **education** session,
+where I will explain the existing solutions, their tradeoffs, and how to utilize them to address your pain points (which is often non-obvious).
+Often, this is all that is needed.
+
+Other times, solutions do exist, but they are not implemented in all browsers yet.
+In these cases, there are options:
+- **Progressive enhancement**: Many web features can add value even before they are implemented in all browsers, through progressive enhancement.
+- **Polyfills** can fill the gap for browsers that do not implement the feature yet, and I can help you find or build one that meets your needs.
+- **Driving implementation**: If you are invested in getting these features implemented across browsers, there are two core avenues:
+  1. Driving developer interest to put pressure on browser vendors through evangelism, polyfills, etc. More affordable, but also slower and less certain.
+  2. Funding implementation work directly. Costlier, but faster and more certain. I can help you navigate options for this and interface with the companies doing that kind of work.
+
+Lastly, sometimes there is no existing solution.
+In that case, I can use my experience to design and propose a solution that meets your needs, and help you drive it forward.
+Depending on your case, your budget, and level of investment, it can range from a day of work to months of work.
+
+<article class="callout warning">
+
+When proposing new web technologies, it is important to manage expectations.
+Working with someone that has experience in the web standards process (_\*gently gestures at self\*_) can significantly increase the odds of success,
+but there are no guarantees.
+That said, I will advise you on odds of success upfront,
+and if implementation feasibility comes up as an issue, that happens very early in the process so I will help you make an informed decision on whether to invest further.
+</article>
+
+This type of work is essentially a public service, which can be a **great PR opportunity**, and I can help you frame it appropriately in your public communications.
+For the same reason, I charge a reduced hourly rate for this type of work, as I consider it an investment in the web platform and the community.
+
+### Demystifying the web standards process
+
+Additionally, many companies whose livelihood depends on the web platform in some way want to get involved in web standards,
+but **the process seems opaque and intimidating**.
+I can help you navigate it and train your team on how to get involved in the future.
+Through a series of sessions, I can demystify the process with a bias towards action:
+explain how web standards work, what makes a proposal effective and increases its odds of success, how to get involved,
+and how to evaluate tradeoffs for your involvement to ensure you get the most bang for your buck.
+
+Understanding how the standards process works and what drives implementations is not only valuable for proposing new features,
+but also for evaluating the current state of the web platform and strategic planning.
+I will teach you how to tell the difference between web platform features that are _just about_ to become [Baseline](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) and those that are years away.
+
+### Co-designing the web platform
+
+If you are interested in both of the above, this is the perfect combination.
+After the demystification sessions, we can work on designing new web platform features that address your team’s pain points and writing up proposals for them **together**,
+which can serve as an excellent hands-on case study
+so your team can get first-hand practical experience with how the web sausage is made.
+
+### "Aren’t web standards only for MAANGs that can play the long game?"
+
+When looking at web standards timelines from the outside, it often seems like the process is slow.
+However, in most cases, work stalls because no-one is driving it forward, not because of inherent resistance or dysfunction.
+
+There are many success stories of **major** web technologies going from conception to [baseline](https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility) in less than two years (e.g. [CSS Cascade Layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)),
+and smaller features in a matter of months.
+This is shorter than many product development cycles!
+
+Additionally, web standards work delivers a lot of short-term value too:
+- **Progressive enhancement**: Many web features can add value even before they are implemented in all browsers, through polyfills and/or progressive enhancement.
+- **Strategy**: Knowing what the web platform landscape will look like in the near-future can help you make better product decisions today, and give you a leg up over competitors.
+- **PR**: This type of work is a public service, which can be a great PR opportunity.
+
+
+<!-- <article class="whyme note">
+
+I have a track record of designing, reviewing, and getting web technologies shipped in browsers for {{ currentYear - 2012 }} years. I have not only [designed web technologies](/specs) that got accepted, but pushed them to implementation across browsers, often in the face of strong initial opposition.
+
+As a longtime [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_Group) member, I [co-edit several W3C specifications](/publications/#specifications), and have [designed web technologies](/specs) that have shipped in every browser and are used by millions of developers.
+
+I have also been an elected [W3C TAG](https://en.wikipedia.org/wiki/Technical_Architecture_Group) member for 4 years, reviewing web technologies across the entire stack for usability and architectural consistency, giving me unique insight into the process.
+</article> -->
+
+## Usability Research & Product Consulting
+
+I have deep experience in product and API design, and specialize in:
+- **Creative products**, especially those that facilitate web design and development, either for professional web developers and designers, as well as products democratizing it and making it accessible to a wider audience.
+- **API Design**, especially for the Web
+
+With my unique combination of usability/product and deep software engineering expertise,
+I can help you design user interfaces and/or APIs that users love, while using my deep technical expertise to
+prioritize directions that maximize Impact/Effort.
+
+My involvement can range from async design reviews / audits, to mentorship sessions with your team, and even hands-on research work.
+
+### What is a design review? { #design-reviews }
+
+Broadly speaking, a [design review](https://en.wikipedia.org/wiki/Design_review) is a structured process where an expert evaluates a product or API against usability principles and best practices, identifying potential issues and areas for improvement.
+The deliverable is a report that outlines the findings, including specific usability issues, potential solutions, and recommendations for improvement.
+
+A good design review can uncover several usability issues, **saving your company hours of user testing and development time**.
+It can also be completed much faster than user testing (typically 1-3 weeks), as it does not require recruiting participants, scheduling sessions, and analyzing results.
+It is not a substitute for user testing, but rather a way to make the most of it, by getting a good chunk of usability issues out of the way before that stage.
+
+Design reviews can be conducted at all stages in the design cycle, provided that there is a prototype with sufficient detail.
+Since they are based on inspection, as opposed to actual use by a real user, they can be used to evaluate much more abstract or scoped down versions of a user interface that would be hard or impossible to test with participants, e.g. a set of specifications, an isolated segment of a design, such as a single dialog box, or a [microinteraction](https://www.nngroup.com/articles/microinteractions/).
+
+### What about APIs?
+
+[API Design is UI Design](https://www.youtube.com/watch?v=g92XUzc1OHY),
+but doing user research of these types of UIs does require a very specific type of expertise.
+In addition to design reviews, interviews, or surveys,
+I am one of the few usability researchers that have run user studies where the UI being tested was purely textual (e.g. a programming language or API),
+and I can help you do the same.
 
 <!--
 ## Product & API design
@@ -64,33 +229,7 @@ While I’m open to reviewing any software artifact, I tend to be a better fit w
 If I determine early on in the process that I’m not a good fit for reviewing your product, I will let you know and refund your deposit. This is very rare.
 </article>
 
-## Web Standards
 
-Struggling to work around certain [web platform](https://en.wikipedia.org/wiki/Web_platform) limitations?
-Have you considered fixing the core problem instead?
-Or maybe there is already a feature that does what you need, but is not yet implemented across all browsers and you want to help move it along faster.
-
-Many companies want to get involved in web standards, but the process seems opaque and intimidating.
-I can help you navigate it; together, we can scope down your pain points to a set of concrete proposals that can be implemented in a reasonable time frame and advise you on their odds of success depending on your budget.
-I can also train your team on how it all works and how to get involved,
-so that they can contribute themselves in the future.
-
-If you want to invest in implementation across browsers, I can guide you through the available options and facilitate the process.
-As an added bonus, since this benefits everyone working with web technologies,
-I can help you make the most of your investment by framing it appropriately to the public.
-
-It was previously thought that web standards work is only for large companies like Google that can afford to play the long game.
-However, in recent years, there have been many success stories of major web technologies going from conception to baseline in less than two years,
-and smaller features in a matter of months, a timespan that is shorter than many product development cycles.
-
-<article class="whyme note">
-
-I have a track record of designing, reviewing, and getting web technologies shipped in browsers for {{ currentYear - 2012 }} years. I have not only [designed web technologies](/specs) that got accepted, but pushed them to implementation across browsers, often in the face of strong initial opposition.
-
-As a longtime [CSS Working Group](https://en.wikipedia.org/wiki/CSS_Working_Group) member, I [co-edit several W3C specifications](/publications/#specifications), and have [designed web technologies](/specs) that have shipped in every browser and are used by millions of developers.
-
-I have also been an elected [W3C TAG](https://en.wikipedia.org/wiki/Technical_Architecture_Group) member for 4 years, reviewing web technologies across the entire stack for usability and architectural consistency, giving me unique insight into the process.
-</article>
 
 ## Solutions to hard CSS problems
 
@@ -172,19 +311,30 @@ I have a track record of {{ currentYear - 2009 }} years of teaching web technolo
 I have travelled the world [giving over 100 invited talks at web conferences in 4 continents](http://lea.verou.me/speaking), written a [bestselling CSS book](http://www.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635?tag=leaverou-20), [co-designed and co-taught an MIT course](https://designftw.mit.edu) on usability and web technologies which became a permanent subject, and written several [articles](https://lea.verou.me/publications/#articles) in well-known industry publications.
 
 </article>
+-->
+
+## Hands-on Product Development
+
+While **we do not typically undertake freelance web design & development or graphic design projects** (e.g. _“I need a website for my business”_),
+there are a few cases where I’m open to doing hands-on implementation work, especially in conjunction with other types of consulting.
+Some examples of such projects include developing…
+- Prototypes and proofs-of-concept
+- Polyfills
+- Web components
+- Flexible, maintainable CSS solutions to specific problems
+- Adding a new feature to any of my open source projects
+- Web Platform Tests
+- Tooling to facilitate all of the above
 
 ## What else?
 
-If your project doesn't fit any of these categories, but it sounds like I might be the perfect person to help, don’t hesitate to reach out.
-I’m very open to unusual, challenging projects and am very comfortable with ambiguity.
+If it sounds like I might be the perfect person to help, but you’re not quite sure how,
+or your project doesn’t fit any of the categories above, don’t hesitate to <a class="contact">reach out</a>.
+I love unusual, challenging projects and am very comfortable with ambiguity.
 
-As an example, one of my most unusual consulting projects was designing a (print) book layout in HTML and CSS for [O’Reilly Media](https://oreilly.com) (one of the biggest tech publishers) back in 2015,
-which they used as a sample of what can be achieved with such a pipeline.
-
-**I do not typically undertake freelance web design & development or graphic design projects** (e.g. _“I need a website for my business”_), but I may make exceptions for projects that are particularly interesting or relevant to my work.
-
-Rates do vary by scope, project type, and length, and I do offer a sliding scale for nonprofit organizations, projects with strong social impact, and organizations in low-income countries.
-Please reach out to discuss what’s feasible for your budget.
+As an example, a consulting project I remember very fondly, was when [O’Reilly Media](https://oreilly.com) (one of the biggest tech publishers)
+asked me to design a print book layout in HTML and CSS which they used as a sample of what can be achieved with such a pipeline.
+Nothing like this had been done with CSS before, and I _loved_ exploring (and pushing) the boundaries of what is possible.
 
 <a href="" class="contact no-after cta">Work with me</a>
--->
+
