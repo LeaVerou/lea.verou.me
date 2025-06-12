@@ -78,9 +78,10 @@ There are no guarantees or deliverables.
 **I’m currently gauging interest in these sessions.**
 Please enter your email below to be notified when they become available:
 
-<form netlify name="mentorship" style="display: flex; gap: .3em">
+<form netlify name="mentorship" style="display: flex; gap: .3em" netlify-honeypot="bot-field">
   <label for="email">Email:</label>
   <input type="email" name="email" id="email" placeholder="foo@bar.com" required>
+  <label hidden>Don’t fill this out if you’re human: <input name="bot-field" /></label>
   <button type="submit">Notify me</button>
 </form>
 
