@@ -38,7 +38,7 @@ Please <a class="contact">reach out</a> for more details, and to discuss what’
 
 <a href="" class="contact no-after cta">Work with me</a>
 
-## Who I've Worked With
+### Who I've Worked With
 
 I work with companies across the spectrum of size and maturity, from Fortune 500 companies to tiny startups doing cool work.
 Some of the companies I’ve worked with include:
