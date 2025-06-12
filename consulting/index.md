@@ -1,6 +1,5 @@
 ---
 title: Consulting Services
-toc: true
 ---
 <style>.whyme { --label: 'Why me?' }</style>
 
@@ -11,18 +10,35 @@ I work with companies across the spectrum of size and maturity, from MAANGs to t
 Some areas I frequently consult on are described below, but I’m very open to unusual projects, so don’t be discouraged if your project doesn’t fit neatly into one of these categories.
 Just <a class="contact">drop me an email</a> and we can discuss.
 
-On a high level, my areas of expertise span **product**, **usability**, and **web standards**.
+On a high level, my areas of expertise span **product**, **usability**, and **web architecture**.
 This includes:
-- Web standards and web platform design
-- Product and API design, with a focus on usability and user needs
+- Web standards and web platform design, especially CSS
+- Product design, strategy, and vision for products targeting web developers and designers
+- API design for the Web
 - Open source software and open standards
-- Strategy and product vision for products targeting web developers and web designers
-- CSS (both designing language features, and coming up with novel solutions to hard CSS problems)
 - Color science, especially as it relates to web technologies
 - Web Components
 - Design systems and design tokens, especially around their use for Web UIs
 - Qualitative and quantitative research methods
 
+My involvement can take many forms, depending on what fits your needs and budget.
+For example:
+- Short, one-off mentorship sessions to help you or your team with a specific problem
+- Design reviews and audits of products or APIs (existing or 0→1)
+- Short- or medium-term research projects to explore a specific problem or investigate designer/developer needs in a specific area
+- Design web standards solutions for a specific problem, drive developer interest and implementation across browsers
+- Coaching
+- On-site or remote sessions or workshops tailored to your team’s needs
+- Fractional positions (technical fellow, product manager, etc) when you need expertise on an ongoing basis but don’t need a full-time hire
+
+These are only examples, and I’m very open to discussing other ways my expertise can add value and help you out.
+
+Rates do vary by scope, project type, and length, and I do offer a sliding scale for nonprofit organizations, projects with strong social impact, and organizations in low-income countries.
+Please <a class="contact">reach out</a> for more details, and to discuss what’s feasible for your budget.
+
+<a href="" class="contact no-after cta">Work with me</a>
+
+<!--
 ## Product & API design
 
 I have deep experience in product and [API design](https://www.youtube.com/watch?v=g92XUzc1OHY), and I can help you design user interfaces and/or APIs that users love and maximize Impact/Effort.
@@ -126,6 +142,24 @@ I have also led [research efforts into web development practices via scraping](h
 
 </article>
 
+## Web Architecture Consulting
+
+Looking to build a new web product or modernize existing infrastructure?
+Maybe you have performance or maintenance challenges with your current approach.
+Or maybe you want a sanity check that you’re making the right architectural decisions.
+Perhaps you aren't sure how to leverage modern web standards to achieve the best outcomes for your business and customers.
+Though a series of 2 - 4 hour sessions, I'll meet with your technical leaders to work through key architecture decisions that will help you achieve your goals by leveraging the best of the modern Web.
+
+## Web Components
+
+I can help audit your web component APIs for usability and consistency, or even hands-on architect new web components you need.
+
+<article class="whyme note">
+I am very active in the web components community and at the forefront of web platform API development for web components.
+I was a founding member of the Web Components Community Group.
+I have worked at Font Awesome as Product Lead, with a focus on Web Awesome, its web component focused UI toolkit.
+</article>
+
 ## Training & Education
 
 I’m open to doing training and on-site workshops on topics related to web technologies, usability, API design, and general software product design principles.
@@ -153,3 +187,4 @@ Rates do vary by scope, project type, and length, and I do offer a sliding scale
 Please reach out to discuss what’s feasible for your budget.
 
 <a href="" class="contact no-after cta">Work with me</a>
+-->
