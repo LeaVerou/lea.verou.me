@@ -65,7 +65,7 @@ export function relative (page) {
 export function relativize_urls (html, base_url) {
 	// Go over <img src> and <a href> and make them relative to url
 	// This is a hack to work around #5
-	return html.replace(/(?<=<(?:img|a)\s+(?:[^>]*?\s+)?(?:src|href)=")([^"]+)(?=")/gi, (url) => {
+	return html.replace(/(?<=<(?:img|a|object)\s+(?:[^>]*?\s+)?(?:data|src|href)=")([^"]+)(?=")/gi, (url) => {
 		if (!/^(?:\/|[a-z]+:)/.test(url)) { // We don’t need to do anything in absolute or root-relative URLs
 			let absolute = absolutize(url, base_url);
 			url = absolute.href.substr(absolute.origin);
