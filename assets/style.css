@@ -340,7 +340,7 @@ blockquote {
 	border-inline-start: .15rem solid var(--color);
 	margin-inline-start: 0;
 	padding-inline-start: 1.2em;
-	padding-block: .01em;
+	padding-block: .8em .01em;
 	/* Note: color has to be hardcoded in the quote */
 	background:
 		url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">\
