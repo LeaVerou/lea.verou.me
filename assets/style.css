@@ -1048,7 +1048,7 @@ code .token {
 }
 
 /* Inline code */
-code:is(code, [class*="language-"]):where(:not(pre *)) {
+code:is(code, [class*="language-"]):is(:not(pre *)) {
 	padding: .2em .3em .2em;
 	border-radius: .15rem;
 	background: var(--code-background, var(--color-accent2-light1));
