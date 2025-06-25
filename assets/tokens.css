@@ -14,6 +14,7 @@
 
 	--gray: 220 10%;
 	--color-gray-20: hsl(var(--gray) 20%);
+	--color-gray-30: hsl(var(--gray) 30%);
 	--color-gray-40: hsl(var(--gray) 40%);
 	--color-gray-50: hsl(var(--gray) 50%);
 	--color-gray-60: hsl(var(--gray) 60%);
