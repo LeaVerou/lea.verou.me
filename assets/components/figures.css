@@ -12,6 +12,10 @@ figure {
 		background: white;
 	}
 
+	&:has(figcaption) {
+		counter-increment: figure;
+	}
+
 	/* Annoying Markdown artifacts */
 	> p,
 	figcaption > p:only-child {
@@ -34,7 +38,6 @@ figure {
 		padding: .5rem;
 		margin: -.5rem;
 		margin-top: .5rem;
-		counter-increment: figure;
 		text-align: left;
 
 		&::before {
