@@ -235,3 +235,55 @@ main aside {
 	--label: "Tip";
 	--icon: var(--icon-lightbulb);
 }
+
+details.with-preview {
+	--preview-max-height: 20em;
+	--preview-fade-height: 10em;
+	--toggle-label-open: "Show less";
+	--toggle-label-closed: "Show more";
+
+	position: relative;
+	margin-block-end: 3.5rem;
+
+	> summary {
+		position: static;
+		cursor: pointer;
+
+		&::after {
+			content: var(--toggle-label-open);
+			position: absolute;
+			z-index: 1;
+			inset-inline: 0;
+			inset-block-start: 100%;
+			margin-block-start: .5em;
+			padding: .5rem;
+			text-align: center;
+			background: var(--color-accent2-light2);
+			font-size: .8em;
+		}
+
+		&:hover::after {
+			background: var(--color-accent2-light1);
+		}
+	}
+
+	&::details-content {
+		content-visibility: visible;
+		transition: .4s allow-discrete;
+		transition-property: max-height, mask;
+		max-height: calc-size(max-content, size);
+	}
+
+	&:not([open]) {
+		> summary::after {
+			content: var(--toggle-label-closed);
+		}
+
+		&::details-content {
+			max-height: min(50vh, var(--preview-max-height));
+			overflow: hidden;
+			mask-image: linear-gradient(to bottom, white calc(100% - var(--preview-fade-height)), transparent);
+			user-select: none;
+		}
+	}
+}
