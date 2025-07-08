@@ -1,0 +1,25 @@
+/* Utility classes */
+
+@media not (width > 700px) {
+	.long-text, .gt-sm {
+		display: none !important;
+	}
+}
+@media (width > 700px) {
+	.short-text, .lt-sm {
+		display: none !important;
+	}
+}
+
+@media not (width > 960px) {
+	.gt-md {
+		display: none !important;
+	}
+}
+@media (width > 960px) {
+	.lt-md {
+		display: none !important;
+	}
+}
+
+

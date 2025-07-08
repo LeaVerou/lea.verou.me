@@ -3,6 +3,7 @@
 @import url("tokens-2.css");
 @import url("prism.css");
 @import url("icons.css");
+@import url("utils.css");
 @import url("components/figures.css");
 @import url("components/callouts.css");
 @import url("components/bar-chart.css");
@@ -117,9 +118,13 @@ h1, h2, h3, h4, h5, h6, summary {
 	}
 }
 
-summary > :is(h1, h2, h3, h4, h5, h6):only-child {
-	display: inline;
-	pointer-events: none;
+summary {
+	cursor: pointer;
+
+	> :is(h1, h2, h3, h4, h5, h6):only-child {
+		display: inline;
+		pointer-events: none;
+	}
 }
 
 h1, h2, h3 {
@@ -1063,30 +1068,6 @@ pre:is(pre, [class*="language-"][class*="language-"]) {
 				background: var(--color-accent);
 			}
 		}
-	}
-}
-
-/* Utility classes */
-
-@media not (width > 700px) {
-	.long-text, .gt-sm {
-		display: none !important;
-	}
-}
-@media (width > 700px) {
-	.short-text, .lt-sm {
-		display: none !important;
-	}
-}
-
-@media not (width > 960px) {
-	.gt-md {
-		display: none !important;
-	}
-}
-@media (width > 960px) {
-	.lt-md {
-		display: none !important;
 	}
 }
 
