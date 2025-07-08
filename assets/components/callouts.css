@@ -77,9 +77,20 @@ main aside,
 		padding: .5em .8em;
 		background: color-mix(in lab, var(--color) 10%, lab(none none none / 0%));
 	}
+
+	&.plain,
+	&.no-icon {
+		--icon: initial;
+	}
+
+	&.plain {
+		--label: initial;
+		padding: .8rem 1.2rem .8rem;
+	}
 }
 
 main aside {
+	--label: "Aside";
 	font-size: 75%;
 
 	&:not([class]) {
@@ -137,7 +148,7 @@ main aside {
 	&:not([id=toc]) {
 		/* Aside comments in an article */
 		&:not(:has(> h4))::before {
-			content: var(--label, "Aside");
+			content: var(--label);
 			background: var(--color, var(--color-accent3));
 		}
 
@@ -164,7 +175,9 @@ main aside {
 	}
 
 	@media (width > 600px) {
-		padding-left: 4.5em;
+		&:not(.plain, .no-icon) {
+			padding-left: 4.5em;
+		}
 
 		&::after {
 			content: var(--icon);
