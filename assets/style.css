@@ -317,7 +317,7 @@ button,
 .cta {
 	font: 700 .8rem/1.2 var(--font-sans);
 	background: var(--color-accent);
-	color: white;
+	color: var(--color-accent-text);
 	padding-block: .52em .45em;
 	padding-inline: .8em;
 	text-decoration: none !important;
@@ -325,7 +325,6 @@ button,
 	transition: .3s;
 	border: none;
 	cursor: pointer;
-
 	text-shadow: 0 0 .2em rgb(0 0 0 / .15);
 
 	&:only-child:is(p > *):is(.post *, .post-page *) {
@@ -335,7 +334,8 @@ button,
 	}
 
 	&:hover,
-	&:focus {
+	&:focus,
+	&.secondary {
 		background: var(--color-accent2);
 		color: white;
 		text-shadow: 0 0 1em white;
@@ -343,6 +343,15 @@ button,
 
 	&:active {
 		transform: scale(.9);
+	}
+
+	&.secondary {
+		border: .1em solid var(--color-accent);
+		background: transparent;
+		color: var(--color-accent);
+
+		--highlight-gradient-color-1: var(--color-accent-light1);
+		--highlight-gradient-color-2: var(--color-accent2-light1);
 	}
 }
 
@@ -360,6 +369,9 @@ button,
 	border-radius: 9999px;
 	box-shadow: 0 .15em .5em -.4em rgb(0 0 0 / .2);
 
+	--highlight-gradient-color-1: var(--color-accent);
+	--highlight-gradient-color-2: var(--color-accent2);
+
 	&.large {
 		font-size: 1rem;
 	}
@@ -370,7 +382,7 @@ button,
 
 	&:hover {
 		scale: 1.05;
-		background-image: linear-gradient(to right, var(--color-accent), var(--color-accent2), var(--color-accent));
+		background-image: linear-gradient(to right, var(--highlight-gradient-color-1), var(--highlight-gradient-color-2), var(--highlight-gradient-color-1));
 		background-size: 200% 100%;
 		background-position: 0% 0;
 		animation: cta-hover 2s infinite ease-in-out;

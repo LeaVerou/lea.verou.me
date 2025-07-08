@@ -22,4 +22,8 @@
 	}
 }
 
-
+.row {
+	display: flex;
+	gap: .75rem;
+	align-items: center;
+}

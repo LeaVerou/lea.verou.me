@@ -10,6 +10,11 @@
 	--color-accent3: var(--color-turquoise);
 	--color-accent4: var(--color-green);
 
+	--color-accent-text: white;
+	--color-accent2-text: white;
+	--color-accent3-text: white;
+	--color-accent4-text: white;
+
 	--color-accent-light1: color-mix(in lab, white, var(--color-accent) 20%);
 	--color-accent-light2: color-mix(in lab, white, var(--color-accent) 10%);
 	--color-accent-light3: color-mix(in lab, white, var(--color-accent) 5%);
