@@ -1,0 +1,56 @@
+/* Tier 2 tokens */
+
+:root {
+	--color-gray-mediumdark: var(--color-gray-30);
+	--color-gray-medium: var(--color-gray-50);
+	--color-gray-light: var(--color-gray-90);
+
+	--color-accent: var(--color-magenta);
+	--color-accent2: var(--color-orange);
+	--color-accent3: var(--color-turquoise);
+	--color-accent4: var(--color-green);
+
+	--color-accent-light1: color-mix(in lab, white, var(--color-accent) 20%);
+	--color-accent-light2: color-mix(in lab, white, var(--color-accent) 10%);
+	--color-accent-light3: color-mix(in lab, white, var(--color-accent) 5%);
+	--color-accent2-light1: hsl(35 100% 90%);
+	--color-accent2-light2: hsl(35 100% 95%);
+	--color-accent2-light3: hsl(35 100% 99%);
+
+	--content-width-l: 50vw;
+	--content-width-m: 50rem;
+	--content-width-s: 35rem;
+
+	--sidebar-width: clamp(10rem, 20vw, 20rem);
+	--sidebar-gutter: 1rem;
+
+	--min-padding: 3rem;
+	--min-padding-block: 1rem;
+
+	--content-width: var(--content-width-m);
+	--content-margin-end: max(var(--min-padding), var(--sidebar-width) + var(--sidebar-gutter) + var(--min-padding), 50vw - var(--content-width)/2);
+	--content-margin-start: clamp(var(--min-padding), 50vw - var(--content-width) / 2, 100vw - var(--content-width) - var(--content-margin-end));
+	--content-margin-min: min(var(--content-margin-start), var(--content-margin-end));
+
+	@media (width > 2500px) {
+		--content-width: var(--content-width-l);
+	}
+
+	@media (width <= 1280px) {
+		--content-width: var(--content-width-s);
+		--min-padding: 3rem;
+	}
+
+	@media (width <= 960px) {
+		--content-width: var(--content-width-m);
+		--sidebar-width: 0px;
+	}
+
+	@media (width <= 700px) {
+		--content-width: min(var(--content-width-m), 100vw - 2 * var(--min-padding));
+		--min-padding: 1rem;
+
+	}
+
+	--scrolltop: 0; /* Fallback. Actual value updated via JS */
+}
