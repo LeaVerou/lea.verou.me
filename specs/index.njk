@@ -1,25 +1,32 @@
 ---
 title: Web Specs
-includes: '<script type=module src="/assets/elements/time-line/time-line.js"></script>'
 page_css: true
 override:tags: []
 ---
+{% block head %}
+<script type=module src="/assets/elements/time-line/time-line.js"></script>
+{% endblock %}
+
 {% import "specs/_partials.njk" as partials with context %}
 
 
-<div class="nutshell">
+<p class="nutshell">
 This section contains an overview of web technologies I have designed, proposed, or significantly influenced.
 Each feature includes a complete timeline from proposal to shipping across browsers.
-Beyond listing my body of work, I’m hoping it can provide insight into the process and timeline of how the Web evolves.
-</div>
+</p>
+
+<p>
+	Beyond listing my body of work, I’m hoping it can provide insight into the process and timeline of how the Web evolves.
+</p>
+
+<p>Are you fed up working around your web platform pain points and want to fix the root cause but web standards seem opaque and scary?
+	<a href="/consulting">I can help!</a>
 
 <div class="note">
-	This does not include any of my high level web architecture work as a <a href="https://en.wikipedia.org/wiki/Technical_Architecture_Group">W3C TAG</a> member,
-spread across two areas:
-a)&nbsp;<a href="https://github.com/w3ctag/design-reviews/">design reviews of web technology proposals</a>,
-and
-b)&nbsp;documenting <a href="https://w3.org/TR/design-principles">Design Principles for the Web Platform</a>,
-an effort I took the lead on since my early days as a TAG member.
+	This page only lists my own standards work (both funded and personal).
+	It does not include my work <a href="https://github.com/w3ctag/design-reviews/">reviewing over 100+ web technology proposals</a>
+	or leading the <a href="https://w3.org/TR/design-principles">Web Platform Design Principles</a> effort
+	in the 4 years I spent as a <a href="https://en.wikipedia.org/wiki/Technical_Architecture_Group">W3C Technical Architecture Group (TAG)</a> member.
 </div>
 
 <div class="bar-chart" style="--max: 6" id="by-year">

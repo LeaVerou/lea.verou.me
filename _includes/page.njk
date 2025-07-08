@@ -25,12 +25,11 @@
 	<script src="https://get.mavo.io/mavo.js"></script>
 	{% endif %}
 
-	{{ includes | safe }}
 	<link rel="stylesheet" href="{{ page | relative }}/assets/style.css">
 	{% if page_css %}
 	<link rel="stylesheet" href="{{ "style.css" if page_css == true else page_css }}">
 	{% endif %}
-	{{ includesEnd | safe }}
+
 	<link rel="alternate" type="application/atom+xml" title="Lea Verou • Feed" href="{{ page | relative }}/feed.xml" />
 	<script src="{{ page | relative }}/assets/global.js" type="module"></script>
 	<link rel="stylesheet" href="https://kit.fontawesome.com/040e756b7e.css" crossorigin="anonymous" />
