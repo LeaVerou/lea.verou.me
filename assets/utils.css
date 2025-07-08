@@ -26,4 +26,9 @@
 	display: flex;
 	gap: .75rem;
 	align-items: center;
+	flex-wrap: wrap;
+
+	&.centered {
+		justify-content: center;
+	}
 }

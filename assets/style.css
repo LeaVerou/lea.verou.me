@@ -91,7 +91,7 @@ body {
 	accent-color: var(--color-accent);
 }
 
-h1, h2, h3, h4, h5, h6, summary {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, summary {
 	position: relative;
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
@@ -127,7 +127,7 @@ summary {
 	}
 }
 
-h1, h2, h3 {
+h1, h2, h3, .h1, .h2, .h3 {
 	code:is(.foo, :not(.foo)) {
 		padding: 0;
 		font-size: 100%;
@@ -142,34 +142,34 @@ h1, h2, h3 {
 	}
 }
 
-h1 {
+h1, .h1 {
 	margin-block: 3.5rem 2rem;
 	margin-inline: -.1em;
 	font-size: calc((210% + clamp(0%, 1.5vw, 180%)) * var(--font-size-scale, 1));
 }
 
-h2 {
+h2, .h2 {
 	font-size: calc((150% + clamp(0%, 1vw, 50%)) * var(--font-size-scale, 1));
 }
 
-h3 {
+h3, .h3 {
 	font-size: calc(140% * var(--font-size-scale, 1));
 }
 
-h4, h5, h6, summary {
+h4, h5, h6, .h4, .h5, .h6, summary {
 	font-size: calc(100% * var(--font-size-scale, 1));
 	margin: .5em 0;
 }
 
-h5 {
+h5, .h5 {
 	color: var(--color-gray-medium);
 }
 
-h5 {
+h5, .h5 {
 	font-size: 2.1rem;
 }
 
-h6 {
+h6, .h6 {
 	font-size: 1.6rem;
 	letter-spacing: 0.03125em;
 	text-transform: uppercase;
@@ -315,15 +315,15 @@ input[type=number] {
 button,
 .button,
 .cta {
+	padding-block: .42em .35em;
+	padding-inline: .7em;
+	border: .1em solid transparent;
 	font: 700 .8rem/1.2 var(--font-sans);
 	background: var(--color-accent);
 	color: var(--color-accent-text);
-	padding-block: .52em .45em;
-	padding-inline: .8em;
 	text-decoration: none !important;
 	text-shadow: 0 0 0 white;
 	transition: .3s;
-	border: none;
 	cursor: pointer;
 	text-shadow: 0 0 .2em rgb(0 0 0 / .15);
 
@@ -346,7 +346,7 @@ button,
 	}
 
 	&.secondary {
-		border: .1em solid var(--color-accent);
+		border-color: var(--color-accent);
 		background: transparent;
 		color: var(--color-accent);
 
@@ -415,12 +415,23 @@ button,
 	}
 }
 
+.sponsor,
+.work-with-me {
+	&.cta:hover::before {
+		font-weight: bold;
+	}
+}
+
 .sponsor {
 	--icon: var(--icon-heart);
 
 	&.cta:hover::before {
 		font-weight: bold;
 	}
+}
+
+.work-with-me {
+	--icon: var(--icon-briefcase);
 }
 
 @property --number {
@@ -1177,5 +1188,20 @@ a.feed {
 a.contact {
 	&:not(.no-after)::after {
 		content: " at lea@" "verou.me";
+	}
+}
+
+.post-ctas {
+	gap: 1.5rem;
+	margin-block: 2rem 3rem;
+	align-items: end;
+
+	h2 {
+		margin-block: 0 .3em;
+		color: var(--color-accent);
+	}
+
+	.cta-container {
+		margin-block: 0;
 	}
 }
