@@ -1,0 +1,120 @@
+.publications {
+	> article {
+		padding: .5em .1em;
+		border-bottom: 1px solid var(--color-gray-light);
+
+		.type {
+			color: var(--color-gray-medium);
+		}
+
+		.title {
+			display: block;
+		}
+
+		.authors {
+			margin: 0;
+
+			> .author {
+				&.me {
+					font-weight: bold;
+				}
+
+				&:not(:last-of-type)::after {
+					content: ", ";
+				}
+			}
+		}
+
+		> footer {
+			font-size: 80%;
+			color: var(--color-gray-medium);
+
+			> :not(:first-child)::before {
+				content: " • ";
+				opacity: .7;
+			}
+		}
+
+		.venue {
+			color: inherit;
+
+			[data-area="press"] & {
+				color: black;
+			}
+		}
+
+		> .comment {
+			font-size: 75%;
+			color: var(--color-gray-40);
+
+			> * {
+				mix-blend-mode: multiply;
+			}
+
+			& a {
+				color: inherit;
+				text-decoration: underline;
+				text-decoration-thickness: 1px;
+			}
+		}
+	}
+}
+
+.newsletter {
+	> h3 {
+		margin: 0;
+	}
+
+	.issues {
+		margin: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: .4em;
+	}
+
+	.issue > a {
+		background: var(--color-gray-medium);
+		padding: .3em .5em;
+		border-radius: .2em;
+		color: white;
+		text-decoration: none;
+		font-family: var(--font-sans);
+		font-size: 80%;
+
+		&:hover {
+			background: var(--color-accent);
+		}
+
+		.issue-number {
+			font-weight: bold;
+		}
+	}
+}
+
+[data-count]::before,
+.count {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	right: 100%;
+	margin-right: .4em;
+	margin-top: -.25em;
+	background: var(--color-accent);
+	color: white;
+	width: 2em;
+	line-height: 2;
+	box-sizing: content-box;
+	border-radius: 50%;
+	font-size: 75%;
+	font-weight: 300;
+
+	@media (width > 960px) {
+		position: absolute;
+	}
+}
+
+[data-count]::before {
+	content: attr(data-count) " ";
+}
+

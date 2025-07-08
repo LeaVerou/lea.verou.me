@@ -63,6 +63,8 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content="{{ image | absolutize(page.url) }}" />
 	{%- endif %}
+
+	{% block head %}{% endblock %}
 </head>
 <body class="language-{{ defaultLanguage or "css" }} {{ body_classes }}">
 {% import "_nav.njk" as nav with context %}
