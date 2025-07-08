@@ -1,0 +1,164 @@
+.event {
+	display: grid;
+	grid-template-columns: minmax(5em, auto) 1fr;
+	gap: .5em;
+	padding: .8em 0;
+	border-bottom: 1px solid silver;
+	text-indent: 0;
+	list-style: none;
+
+	&:last-child {
+		border-bottom: 5px solid #eee;
+	}
+
+	&:before {
+		content:none;
+	}
+
+	& .talk,
+	& .venue,
+	& address,
+	& .comment {
+		line-height: inherit;
+	}
+
+	& .talk,
+	& .venue {
+		font-size: 100%;
+	}
+
+	& .talk,
+	& .venue,
+	& p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	& .talk {
+		& .type {
+			color: var(--color-gray-medium);
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		& span.type:before {
+			content: ' (';
+		}
+
+		& span.type:after {
+			content: ')';
+		}
+
+		& a {
+			display: inline-block;
+			vertical-align: .1em;
+			padding: .4em .4em .25em;
+			margin-left: .5em;
+			color: white;
+			text-shadow: 0;
+			font-size: 75%;
+			line-height: 1;
+			text-transform: uppercase;
+			border-radius: .3em;
+		}
+
+		& a.slides {
+			background: var(--color-orange);
+		}
+
+		& a.details {
+			background: var(--color-accent3);
+		}
+
+		& a.video {
+			background: var(--color-accent4);
+		}
+
+		& a:hover {
+			background: var(--color-accent);
+			color: white;
+		}
+
+		& a.mv-empty:not([mv-mode=edit]) {
+			display: none;
+		}
+	}
+
+	& .venue {
+		margin-bottom:.6em;
+	}
+
+	& .date {
+		color: var(--color-gray-medium);
+		font-variant:small-caps;
+	}
+
+	& address,
+	& .comment,
+	.comment[property="comment"] {
+		font-size:75%;
+		font-style:normal;
+	}
+
+	& address {
+		&:before {
+			display:inline-block;
+			margin-right:.4em;
+			vertical-align:-1px;
+		}
+
+		&:not([class*="flag-"]):before {
+			content: url(/assets/flags/online.png);
+			vertical-align:-3px;
+		}
+
+		&.flag-nl:before { content: url(/assets/flags/nl.png); }
+		&.flag-nz:before { content: url(/assets/flags/nz.png); }
+		&.flag-gb:before { content: url(/assets/flags/gb.png); }
+		&.flag-se:before { content: url(/assets/flags/se.png); }
+		&.flag-fi:before { content: url(/assets/flags/fi.png); }
+		&.flag-ru:before { content: url(/assets/flags/ru.png); }
+		&.flag-no:before { content: url(/assets/flags/no.png); }
+		&.flag-pl:before { content: url(/assets/flags/pl.png); }
+		&.flag-gr:before { content: url(/assets/flags/gr.png); }
+		&.flag-ch:before { content: url(/assets/flags/ch.png); }
+		&.flag-de:before { content: url(/assets/flags/de.png); }
+		&.flag-it:before { content: url(/assets/flags/it.png); }
+		&.flag-us:before { content: url(/assets/flags/us.png); }
+		&.flag-au:before { content: url(/assets/flags/au.png); }
+		&.flag-cz:before { content: url(/assets/flags/cz.png); }
+		&.flag-ca:before { content: url(/assets/flags/ca.png); }
+		&.flag-cl:before { content: url(/assets/flags/cl.png); }
+		&.flag-br:before { content: url(/assets/flags/br.png); }
+		&.flag-be:before { content: url(/assets/flags/be.png); }
+		&.flag-fr:before { content: url(/assets/flags/fr.png); }
+		&.flag-ph:before { content: url(/assets/flags/ph.png); }
+		&.flag-at:before { content: url(/assets/flags/at.png); }
+		&.flag-es:before { content: url(/assets/flags/es.png); }
+		&.flag-hu:before { content: url(/assets/flags/hu.png); }
+		&.flag-mx:before { content: url(/assets/flags/mx.png); }
+		&.flag-in:before { content: url(/assets/flags/in.png); }
+		&.flag-uy:before { content: url(/assets/flags/uy.png); }
+		&.flag-il:before { content: url(/assets/flags/il.png); }
+		&.flag-sg:before { content: url(/assets/flags/sg.png); }
+		&.flag-cn:before { content: url(/assets/flags/cn.png); }
+		&.flag-jp:before { content: url(/assets/flags/jp.png); }
+		&.flag-at:before { content: url(/assets/flags/at.png); }
+		&.flag-pt:before { content: url(/assets/flags/pt.png); }
+		&.flag-ua:before { content: url(/assets/flags/ua.png); }
+	}
+
+	.comment {
+		color: hsl(var(--gray) 30%);
+		font-size: 75%;
+
+		& a {
+			color: inherit;
+			text-decoration: underline;
+
+			&:before {
+				content:none;
+			}
+		}
+	}
+}

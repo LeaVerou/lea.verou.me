@@ -3,7 +3,11 @@ title: Speaking
 mavo: true
 ---
 
-<details open>
+{% block head %}
+<link rel="stylesheet" href="./style.css">
+{% endblock %}
+
+<details>
 	<summary>Want me to speak at your event?</summary>
 {% markdown %}
 I'm currently very selective about the speaking engagements I accept.
@@ -24,7 +28,7 @@ If all of the above doesn't scare you, <a class="contact" data-subject="Speaking
 </details>
 
 <div class="talks" mv-app="" mv-storage="https://github.com/leaverou/lea.verou.me/data/speaking.json">
-	<h2>[count(talk)] sessions at [count(event)] events ([count(upcoming)] events upcoming)</h2>
+	<h2>[count(talk)] sessions at [count(event)] events <span mv-if="count(upcoming) > 0">([count(upcoming)] events upcoming)</span></h2>
 	<div class="mv-bar mv-ui" mv-bar="no-clear"></div>
 	<article mv-multiple="" property class="event" mv-order="desc">
 		<p class="date"><time property="date"></time></p>
