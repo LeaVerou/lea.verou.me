@@ -762,7 +762,25 @@ const proposals = [
 				date: "2023-09-13"
 			}
 		]
-	}
+	},
+	{
+		id: "accent-color",
+		title: "Accessing the `accent-color` value",
+		description: "A way for authors to have access to `accent-color` value in their CSS.",
+		tags: ["Color"],
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/w3c/csswg-drafts/issues/5900",
+				date: "2021-01-27",
+			},
+			{
+				type: "resolution",
+				url: "https://github.com/w3c/csswg-drafts/issues/5900#issuecomment-2380321760",
+				date: "2024-09-28",
+			},
+		],
+	},
 	// TODO custom attributes
 ];
 
