@@ -244,6 +244,15 @@ main aside {
 	--link-color: var(--color-darker);
 }
 
+.todo {
+	--label: "TODO";
+	--icon: var(--icon-clipboard-check);
+	--color: var(--color-orange);
+	--color-light: var(--color-lighter);
+	--label-color: var(--color);
+	--link-color: var(--color-darker);
+}
+
 .tip {
 	--label: "Tip";
 	--icon: var(--icon-lightbulb);
