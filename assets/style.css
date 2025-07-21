@@ -328,7 +328,6 @@ button,
 	text-shadow: 0 0 .2em rgb(0 0 0 / .15);
 
 	&:only-child:is(p > *):is(.post *, .post-page *) {
-		display: block;
 		width: fit-content;
 		margin: auto;
 	}
