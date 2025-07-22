@@ -2,6 +2,7 @@
 	--icon-font: var(--fa-font-regular), var(--fa-style-family-brands);
 
 	--icon-arrow-down-to-line: "\f33d";
+	--icon-arrow-up-right-from-square: "\f08e";
 	--icon-circle-arrow-left: "\f0a8";
 	--icon-circle-arrow-right: "\f0a9";
 	--icon-ballot-check: "\f733";
@@ -11,6 +12,7 @@
 	--icon-clipboard-check: "\f46c";
 	--icon-comment: "\f075";
 	--icon-calendar-day: "\f783";
+	--icon-flask: "\f0c3";
 	--icon-pen-to-square: "\f044";
 	--icon-triangle-exclamation: "\f071";
 	--icon-firefox: "\f269";
@@ -18,6 +20,8 @@
 	--icon-github: "\f09b";
 	--icon-link: "\f0c1";
 	--icon-info: "\f129";
+	--icon-js: "\f3b8";
+	--icon-language: "\f1ab";
 	--icon-lightbulb: "\f0eb";
 	--icon-newspaper: "\f1ea";
 	--icon-npm: "\f3d4";
@@ -26,6 +30,7 @@
 	--icon-safari: "\f267";
 	--icon-timer: "\e29e";
 	--icon-star: "\f005";
+	--icon-sparkles: "\f890";
 	--icon-tags: "\f02c";
 	--icon-heart: "\f004";
 }
