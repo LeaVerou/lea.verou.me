@@ -30,6 +30,16 @@ function getPublished (collectionApi) {
 	return published;
 }
 
+// When having comments in an MD file, the closing comment tag is rendered by markdown-it as “–-&gt;” instead of “-->”.
+// It breaks the list of blogs (and possibly other things as well). See https://github.com/LeaVerou/lea.verou.me/issues/112
+function fixCommentClosing (md) {
+	let defaultRender = md.renderer.render;
+	md.renderer.render = function (tokens, options, env) {
+		let html = defaultRender.call(this, tokens, options, env);
+		return html.replace(/\-\-&gt;/g, "-->");
+	};
+}
+
 export default config => {
 	let data = {
 		layout: "page.njk",
@@ -63,7 +73,7 @@ export default config => {
 		permalink: markdownItAnchor.permalink.headerLink(),
 		level: 2,
 	})
-	;
+	.use(fixCommentClosing);
 
 	config.setLibrary("md", md);
 
