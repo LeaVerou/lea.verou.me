@@ -62,8 +62,7 @@ export default config => {
 	.use(markdownItAnchor, {
 		permalink: markdownItAnchor.permalink.headerLink(),
 		level: 2,
-	})
-	;
+	});
 
 	config.setLibrary("md", md);
 
