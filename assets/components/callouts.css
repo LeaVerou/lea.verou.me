@@ -258,6 +258,12 @@ main aside {
 	--icon: var(--icon-lightbulb);
 }
 
+details.callout {
+	> summary > p {
+		display: contents;
+	}
+}
+
 details.with-preview {
 	--preview-max-height: 20em;
 	--preview-fade-height: 10em;
