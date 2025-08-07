@@ -1,8 +1,8 @@
 h4:not(main > *, .post *),
-:is(.callout, .warning, .info, .note, .tip) > summary,
+:is(.callout, .warning, .info, .note, .tip, .example) > summary,
 pre > code[data-file]::before,
-main aside::before,
-:is(.callout, .warning, .info, .note, .tip)::before {
+main aside:where(:not(.pullquote))::before,
+:is(.callout, .warning, .info, .note, .tip, .example)::before {
 	--offset: .5em;
 
 	padding: .3em 1em;
@@ -19,12 +19,13 @@ main aside::before,
 	color: white;
 }
 
-main aside,
+main aside:where(:not(.pullquote)),
 .callout,
 .warning,
 .info,
 .note,
-.tip {
+.tip,
+.example {
 	--_color-light: var(--color-light, var(--color-accent2-light2));
 
 	position: relative;
@@ -89,7 +90,7 @@ main aside,
 	}
 }
 
-main aside {
+main aside:where(:not(.pullquote)) {
 	--label: "Aside";
 	font-size: 75%;
 
@@ -166,7 +167,8 @@ main aside {
 .warning,
 .info,
 .note,
-.tip {
+.tip,
+.example {
 	--code-background: hsl(0 0% 100% / .8);
 
 	@supports (color: color-mix(in lab, white, black)) {
@@ -235,13 +237,19 @@ main aside {
 }
 
 .note,
-.tip {
+.tip,
+.example {
 	--label: "Note";
 	--icon: var(--icon-clipboard-check);
 	--color: var(--color-green);
 	--color-light: var(--color-lighter);
 	--label-color: var(--color);
 	--link-color: var(--color-darker);
+}
+
+.example {
+	--label: "Example";
+	--icon: var(--icon-lightbulb);
 }
 
 .todo {

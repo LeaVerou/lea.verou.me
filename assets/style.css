@@ -284,20 +284,46 @@ video, img, object {
 	object-fit: cover;
 }
 
-blockquote {
+blockquote,
+aside.pullquote {
+	--color: var(--color-accent);
+	--icon-open: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect width="100%" height="100%" fill="yellow" fill-opacity="0" /><text y=".8em" font-size="90" fill="hsl(336 100% 50%)" fill-opacity=".1">❝</text></svg>');
+	--icon-close: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect width="100%" height="100%" fill="yellow" fill-opacity="0" /><text y=".8em" font-size="90" fill="hsl(336 100% 50%)" fill-opacity=".1">❞</text></svg>');
+}
+
+blockquote:where(:not(.pullquote > *)) {
 	--color: var(--color-accent);
 	border-inline-start: .15rem solid var(--color);
 	margin-inline-start: 0;
 	padding-inline-start: 1.2em;
 	padding-block: .8em .01em;
 	/* Note: color has to be hardcoded in the quote */
-	background:
-		url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">\
-			<rect width="100%" height="100%" fill="yellow" fill-opacity="0" />\
-			<text y=".8em" font-size="90" fill="hsl(336 100% 50%)" fill-opacity=".1">❞</text></svg>')
-			no-repeat bottom right 1em / auto min(8em, 80%)
-		color-mix(in lab, #fff0, var(--color) 4.5%) ;
+	background: var(--icon-close) no-repeat bottom right 1em / auto min(8em, 80%) color-mix(in lab, #fff0, var(--color) 4.5%) ;
 	font-style: italic;
+}
+
+aside.pullquote {
+	--color: var(--color-accent);
+	float: inline-end;
+	max-width: 25em;
+	margin-inline: 1em -5em;
+	margin-block-start: -1rem;
+	text-wrap: balance;
+	font-family: var(--font-sans);
+	font-size: 150%;
+	hyphens: manual;
+
+	color: oklab(from var(--color) clamp(0, l, 0.52) a b);
+	background: var(--icon-open) no-repeat 0 0 / auto min(8em, 80%) ;
+	font-weight: 500;
+
+	@container (width < 25rem) {
+		float: none;
+		max-width: none;
+		margin-inline: auto;
+		margin-block: 1em;
+		font-size: 130%;
+	}
 }
 
 var {
