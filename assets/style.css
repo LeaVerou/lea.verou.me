@@ -306,7 +306,7 @@ aside.pullquote {
 	--color: var(--color-accent);
 	float: inline-end;
 	max-width: 25em;
-	margin-inline: 1em -5em;
+	margin-inline: 1em -3em;
 	margin-block-start: -1rem;
 	text-wrap: balance;
 	font-family: var(--font-sans);
