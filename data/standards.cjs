@@ -781,6 +781,25 @@ const proposals = [
 			},
 		],
 	},
+	{
+		id: "color-math",
+		title: "Color math involving more than one color",
+		description:
+			"An attempt to address use cases that require doing math on components from more than one color.",
+		tags: ["Color"],
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/w3c/csswg-drafts/issues/11533",
+				date: "2025-01-18",
+			},
+			{
+				type: "resolution",
+				url: "https://github.com/w3c/csswg-drafts/issues/11533#issuecomment-2625624517",
+				date: "2025-01-30",
+			},
+		],
+	},
 	// TODO custom attributes
 ];
 
