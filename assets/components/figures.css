@@ -54,9 +54,14 @@ figure {
 
 	/* Variations */
 
-	&.center {
+	&.center,
+	&.width-m {
 		width: fit-content;
 		margin-inline: auto;
+	}
+
+	&.width-m {
+		max-width: var(--content-width-s);
 	}
 
 	&.no-padding {
