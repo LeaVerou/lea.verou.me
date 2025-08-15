@@ -175,6 +175,8 @@ export default config => {
 		wrapper: "",
 	});
 
+	config.setServerOptions({ port: 8081 });
+
 	return {
 		markdownTemplateEngine: "njk",
 		templateFormats: ["md", "njk"],
