@@ -731,19 +731,19 @@ const proposals = [
 			}
 		]
 	},
-	{
-		id: "element-refs",
-		title: "Improve DX of element reference attributes by allowing relative references instead of only ids",
-		description: `An attempt to improve usability of HTML across several APIs by improving the ergonomics of how an element can reference another.`,
-		tags: ["HTML", "Web Components", "a11y"],
-		milestones: [
-			{
-				type: "proposal",
-				url: "https://github.com/whatwg/html/issues/10143",
-				date: "2024-02-18"
-			}
-		]
-	},
+	// {
+	// 	id: "element-refs",
+	// 	title: "Improve DX of element reference attributes by allowing relative references instead of only ids",
+	// 	description: `An attempt to improve usability of HTML across several APIs by improving the ergonomics of how an element can reference another.`,
+	// 	tags: ["HTML", "Web Components", "a11y"],
+	// 	milestones: [
+	// 		{
+	// 			type: "proposal",
+	// 			url: "https://github.com/whatwg/html/issues/10143",
+	// 			date: "2024-02-18"
+	// 		}
+	// 	]
+	// },
 	{
 		id: "custom-attributes",
 		title: "Custom attributes",
