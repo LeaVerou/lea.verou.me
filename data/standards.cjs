@@ -800,6 +800,24 @@ const proposals = [
 			},
 		],
 	},
+	{
+		id: "at-supports-query",
+		title: "`@supports-query`, for larger feature queries and named reuse",
+		description:
+			"A new at-rule that can be used to store and reference conditions that can accept any parseable CSS syntax. It can then be used naked in `@supports` and resolves to `true` if the rules nested within the new at-rule do not produce any parse errors.",
+		milestones: [
+			{
+				type: "proposal",
+				url: "https://github.com/w3c/csswg-drafts/issues/12622",
+				date: "2025-08-19",
+			},
+			{
+				type: "resolution",
+				url: "https://github.com/w3c/csswg-drafts/issues/12622#issuecomment-3204959140",
+				date: "2025-08-20",
+			},
+		],
+	},
 	// TODO custom attributes
 ];
 
