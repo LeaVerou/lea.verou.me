@@ -1,8 +1,14 @@
 
 export default {
 	oldURL (data) {
+
 		let {site, page} = data;
 		let url = page.url;
+
+		if (!url) {
+			return url;
+		}
+
 		let newURL = url.replace("/blog/", "/");
 		if (url.startsWith("/blog/")) {
 			if (url.startsWith("/blog/tags/")) {
@@ -19,6 +25,6 @@ export default {
 	},
 
 	siteArea (data) {
-		return data.page.url.match(/^\/?([^/]+)/)?.[1] ?? "";
+		return data.page.url.match?.(/^\/?([^/]+)/)?.[1] ?? "";
 	}
 };

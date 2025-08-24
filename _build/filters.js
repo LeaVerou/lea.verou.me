@@ -56,6 +56,10 @@ export function reading_time (text) {
 }
 
 export function relative (page) {
+	if (!page.url) {
+		return ".";
+	}
+
 	let pagePath = page.url.replace(/[^/]+$/, "");
 	let ret = path.relative(pagePath, "/");
 
