@@ -1,6 +1,6 @@
 ---
-title: On making simple things easy and complex things possible
-nutshell: The holy grail of good API design is making complex things possible and simple things easy. But is it enough?
+title: The economy of user effort
+nutshell: The holy grail of good UI and API design is making complex things possible and simple things easy. But it's far from enough.
 draft: true
 toc: true
 tags:
@@ -95,20 +95,52 @@ The lower down the better (lower user effort), but higher up is **acceptable**.
 But even if we get these two points — **what about all the points in between?**
 There are a ton of different ways to connect them, and they produce vastly different overall user experiences.
 
-Meet the power-to-effort curve, the most important usability metric you've never heard of.
+<figure class="outlined width-m">
+  <object data="images/curve-multiple.svg"></object>
+  <figcaption>
 
-### Avoid usability cliffs
+  For delightful user experiences, **making simple things easy and complex things possible is not enough — the transition between the two should also be smooth**.
+  </figcaption>
+</figure>
+
+Meet the **complexity-to-effort curve**, the most important usability metric you've never heard of.
+
+## User effort is a currency
+
+Simple use cases are often the [spherical cows in space](https://en.wikipedia.org/wiki/Spherical_cow) of product design.
+They work _great_ for prototypes to convince stakeholders, or in marketing demos, but the real world is messy.
+For most products, there is a host of use cases that are _mostly_ simple — just with a wart here or there.
 
 <aside class="pullquote">
 
-> User effort should be proportional to value gained.
-> Users should not be thrown into the deep end when their use case becomes only slightly more complex
+> **Avoid usability cliffs.**
+> Don’t throw users into the deep end when their use case becomes only slightly more complex.
+> Incremental user effort cost should be proportional to incremental value gained.
+
+
 </aside>
 
-Simple use cases are often the [spherical cows in space](https://en.wikipedia.org/wiki/Spherical_cow) of product design.
-They work _great_ for prototypes to convince stakeholders, but the real world is messy.
-It is very easy once someone starts _really_ using a product to start encountering use cases that are still conceptually simple — just with a few warts here and there.
-If users are thrown into the deep end when that happens, overall user experience is very poor, because the use case still feels like it _should_ be simple.
+A model with surprising predictive power is to **treat user effort like a currency** that users are spending to buy solutions to their problems.
+Nobody likes paying it;
+in an ideal world software would read our mind and execute perfectly with zero effort.
+But since we don’t live in such a world, users are typically willing to pay more in effort when they feel their use case warrants it.
+Imagine ordering pizza, and finding that adding ham to a margherita increases the price 300%.
+Unfair, right? Infuriating, right?
+
+When a slight increase in complexity results in a significant increase in user effort cost, we have a **usability cliff**.
+Usability cliffs make users feel cheated, just like you felt when ordering that fictitious pizza.
+
+<figure class="width-m">
+  <object data="images/curve-cliff.svg"></object>
+  <figcaption>
+
+    A usability cliff is when a small increase in use case complexity requires a large increase in user effort.
+  </figcaption>
+</figure>
+
+
+
+<article class="example">
 
 Let’s take the HTML `<video>` element as an example.
 Simple things are certainly easy: all we need to get a nice sleek toolbar that works well on every device is a single attribute: `controls`.
@@ -127,33 +159,61 @@ Now let’s suppose use case complexity increases _juuuust a little bit_.
 Maybe I want to add buttons to jump 10 seconds back or forwards. Or a language picker for subtitles. Or key moment indicators, like YouTube. Or just to hide the volume control on a video that has no audio track.
 None of these are particularly niche, but the default controls are all-or-nothing: the only way to change them is to reimplement the whole toolbar from scratch, which takes hundreds of lines of HTML, CSS, and JavaScript to do well.
 
-<figure class="width-m">
-  <object data="images/curve-cliff.svg"></object>
-  <figcaption>
-
-    A usability cliff is when a small increase in use case complexity requires a large increase in user effort.
-  </figcaption>
-</figure>
-
 Simple things are easy and complex things are possible.
 But once use case complexity crosses a certain (low) threshold, user effort abruptly shoots up.
+**That's a usability cliff.**
 
-This is called a **usability cliff**, and is common when products make simple things easy and complex things possible by providing two distinct interfaces:
-a very high level one that caters to the most common use case, and a very low-level one that is an escape hatch: it lets users do whatever but they have to reimplement everything from scratch.
+Usability cliffs are common when products make simple things easy and complex things possible by providing two entirely disjoint flows:
+a very high level one that caters to the most common use case, and a very low-level one that is an escape hatch: it lets users do whatever but they have to recreate the solution to the simple use case from scratch before they can tweak it.
 
-For delightful user experiences, **making simple things easy and complex things possible is not enough — the transition between the two should also be smooth**.
-The user effort required to achieve incremental value should be proportional to the value gained.
+</article>
+
+<aside class="pullquote">
+
+> **No, you can’t uncover friction by asking users.**
+> Users will be vocal about things not being possible, but rarely about things being hard.
+</aside>
+
+Now imagine you’re starving, and this pizzeria is the only place that is currently open.
+You would likely still order it, but you’re not happy about the transaction.
+
+Unreasonable user-effort costs universally lead to poor user experiences.
+Your product is not producing delight, but dissatisfaction and resentment.
+These negative feelings pile up, and negatively impact nearly all metrics (churn, conversion, etc.), yet are hard to measure directly as they are _"death by a thousand paper cuts"_.
+There is no KPI for this.
+Even if you ask customers directly, few have the awareness to correctly identify and attribute the dissatisfaction (those who do are typically those with a background in usability/HCI/product or similar).
+
+Novices often misattribute the blame altogether, e.g. to themselves, or to computers being hard.
+Experts often forget about the friction once they've figured out how to solve the problem.
+And most users have been so conditioned to expect poor user experiences that they often _expect them_
+^[When I was running user studies at MIT, I’ve often had users exclaim “I can't believe it! I tried to do the obvious simple thing and it actually worked!”]
+**So no, you can’t uncover friction by asking users.**
+This is a common misconception of many engineers.
+If I had a dollar for every time I’ve heard “users have not complained about this”, I would buy a new house.
+**Users will be much more vocal about things not being possible, than about things not being easy.**
+That also means that if users reach the point of complaining about something being too hard, you better listen.
+
+So then how do you find these issues?
+1. **Usability testing** lets you actually observe firsthand what things are hard instead of having them filtered through users' memories and perceptions.
+2. [**Design reviews/audits**](/consulting/#design-reviews) by usability experts is complementary to usability testing, as it often uncovers different issues. Design reviews are also great for maximizing the effectiveness of usability testing by getting the low-hanging fruit issues out of the way before it.
+3. **Dogfooding** can be unparalleled as a discovery tool.
+However, it's important to keep in mind that **you are not the typical user**, and avoid overindexing on your own needs.
+E.g. you’re probably such a power user, you would also surface issues no-one else has.
+To actually evaluate and prioritize the issues it surfaces, you still need user research.
+
+
+
+## Takeaways
+
+- **Treat user effort like a currency, not a free gift.**
+The more you waste, the less happy your users will be.
+- **Avoid usability cliffs.**
+Don’t throw users into the deep end when their use case becomes only slightly more complex.
+Evaluate all points of the curve, not just the two extremes.
+- **The user effort required to achieve incremental value should be proportional to the value gained.**
 There should be no point where incremental value requires orders of magnitude more user effort.
+- **No, you cannot just ask users.**
 
-You can visualize this like that:
-
-<figure class="width-m">
-  <object data="images/curve-delightful.svg"></object>
-  <figcaption>
-    A delightful user experience has a smooth power-to-effort curve without cliffs.
-	The slower the rare of increase, the better.
-  </figcaption>
-</figure>
 
 ### Apply the principle _recursively_
 
@@ -382,6 +442,14 @@ The [floor and ceiling model](../../2023/eigensolutions/#floor-ceiling) also exp
 
 ## Respect user effort
 
+If you like eating out, this may be a familiar scenario:
+
+> — I would like the rib-eye, medium-rare please.
+> — Thank you sir. And how would you like your steak cooked?
+
+Infuriating, right?
+And yet, this is how a ton of UIs and APIs work.
+
 <aside class="pullquote">
 
 > Keep user effort close to the minimum necessary to declare _intent_
@@ -529,6 +597,8 @@ whereas this is about reducing physical effort by not requiring manual effort th
 
 
 Let’s take an example from Bootstrap:
+
+@@@@@
 
 
 
