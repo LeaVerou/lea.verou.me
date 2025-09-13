@@ -119,7 +119,7 @@ Depending on your case, your budget, and level of investment, it can range from 
 <article class="callout warning">
 
 When proposing new web technologies, it is important to manage expectations.
-Working with someone that has experience in the web standards process (_\*gently gestures at self\*_) can significantly increase the odds of success,
+Working with someone that has experience in the web standards process can significantly increase the odds of success,
 but there are no guarantees.
 That said, I will advise you on odds of success upfront,
 and if implementation feasibility comes up as an issue, that happens very early in the process so I will help you make an informed decision on whether to invest further.
@@ -317,7 +317,7 @@ I have travelled the world [giving over 100 invited talks at web conferences in 
 ## Hands-on Product Development
 
 While **we do not typically undertake freelance web design & development or graphic design projects** (e.g. _“I need a website for my business”_),
-there are a few cases where I’m open to doing hands-on implementation work, especially in conjunction with other types of consulting.
+there are a few cases where we’re open to doing hands-on implementation work, especially in conjunction with other types of consulting.
 Some examples of such projects include developing…
 - Prototypes and proofs-of-concept
 - Polyfills
