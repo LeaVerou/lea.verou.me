@@ -17,6 +17,10 @@ main aside:where(:not(.pullquote))::before,
 	font: 800 .8rem/1.2 var(--font-sans);
 	text-transform: uppercase;
 	color: white;
+
+	> a {
+		color: inherit;
+	}
 }
 
 main aside:where(:not(.pullquote)),

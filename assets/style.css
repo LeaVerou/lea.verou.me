@@ -291,7 +291,7 @@ aside.pullquote {
 	--icon-close: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect width="100%" height="100%" fill="yellow" fill-opacity="0" /><text y=".8em" font-size="90" fill="hsl(336 100% 50%)" fill-opacity=".1">❞</text></svg>');
 }
 
-blockquote:where(:not(.pullquote > *)) {
+blockquote:where(:not(.pullquote, .pullquote > *)) {
 	--color: var(--color-accent);
 	border-inline-start: .15rem solid var(--color);
 	margin-inline-start: 0;
@@ -302,7 +302,7 @@ blockquote:where(:not(.pullquote > *)) {
 	font-style: italic;
 }
 
-aside.pullquote {
+.pullquote {
 	--color: var(--color-accent);
 	float: inline-end;
 	max-width: 25em;
