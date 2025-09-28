@@ -58,7 +58,18 @@ but is quite limited in its capabilities; there are many things it simply cannot
 While there is a lot of room for improvement, making significantly more complex things possible is largely out of scope as beyond a certain point it would require domain expertise that Instagram's target audience lacks.
 
 
+----
 
+It is easier to define which interfaces it does _not_ apply to:
+
+What might such a reason be?
+-	The scope is very **narrow and well-defined**. E.g. a weather app.
+- A high-level solution can avoid **security & privacy** vulnerabilities that would be inherent in a low-level solution.
+E.g. a high-level font picker control where the browser communicates the selected font to the web app can be much more privacy preserving than a low-level API to list all fonts in the user’s system, which is a [fingerprinting](https://en.wikipedia.org/wiki/Device_fingerprint) vector.
+- A high-level solution can optimize for **performance** in a way that multiple composable low-level primitives cannot.
+For example, the more generic [`:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) took a lot longer than the much more specific [`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within), as it was a lot harder to implement performantly.
+
+----
 
 
 ### Security & privacy

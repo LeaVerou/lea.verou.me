@@ -29,45 +29,34 @@ It isn’t just a design ideal — it’s a call to continually balance friction
 
 Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientist, his quote is typically framed as a <abbr title="Programming Language">PL</abbr> or API design principle.
 But that sells it short.
-While it’s hard to precisely pinpoint the exact set of interfaces that benefit from this principle, it’s clear that it extends a lot more broadly.
-Instead, it seems to be a process of elimination:
-**If there is no specific reason that an interface _shouldn't_ follow it, then it likely should.**
+It applies to a much, _much_ broader class of interfaces.
 
-What might such a reason be?
--	The scope is very **narrow and well-defined**. E.g. a weather app.
-- A high-level solution can avoid **security & privacy** vulnerabilities that would be inherent in a low-level solution.
-E.g. a high-level font picker control where the browser communicates the selected font to the web app can be much more privacy preserving than a low-level API to list all fonts in the user’s system, which is a [fingerprinting](https://en.wikipedia.org/wiki/Device_fingerprint) vector.
-- A high-level solution can optimize for **performance** in a way that multiple composable low-level primitives cannot.
-For example, the more generic [`:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) took a lot longer than the much more specific [`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within), as it was a lot harder to implement performantly.
+I’m not aware of a name for this class, but it seems to have a lot to do with the _distribution of use cases_.
+Products often cut scope by figuring out the ~20% of use cases that drive ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
+However, there are products with such diverse use cases that the Pareto Principle cannot apply to the product as a whole.
+There are certainly common use cases and niche ones, but there is no clean 20% subset that drives 80% of usage — or anything close to it.
+Instead, there is such a **long tail of niche use cases, that they become significant in aggregate**.
+For lack of a better term, let's call these *long-tail products* (let me know if you’re aware of a better name, because this one sucks).
 
-**Which use cases are complex depends on product scope.**
-Many products succeed by focusing on making common things easy and explicitly defining complex things as out of scope.
-However, this doesn't mean Kay's principle doesn't apply, it just applies more narrowly.
-Instagram’s complex cases are vastly different than Photoshop’s complex cases — but both have a range.
-
-It seems that the single most important factor has to do with the _distribution of use cases_.
-The reason Kay’s principle matters so much for creative tools (design tools, development environments, programming languages, APIs, etc) is exactly the variability of their use cases.
-**The niche use cases are so numerous that they become significant in aggregate.**
-For lack of a better term, let's call these *Long-Tail products*.
-
-There is no way to meaningfully apply the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle) to a Long-Tail product as a whole.
-What’s the 20% of use cases that drives 80% of usage scenarios for a programming language? Or a graphics editor? Or a spreadsheet?
-The only way to carve out such a set is to define it so broadly (e.g. "making apps/graphics/calculations") that it becomes meaningless.
-That said, the 80/20 rule still applies to smaller parts of their interfaces.
-For example, < 20% of spreadsheet formulas do drive 80% of formula usage.
-
-
+Nearly all creative tools are long-tail products.
+That’s why it works so well for programming languages and APIs — because they are all creative tools.
+But so are graphics editors, word processors, spreadsheets, and countless other interfaces that help humans create artifacts — even some you would never describe as a creative tool.
 
 <article class="example" style="display: flex; flex-flow: row wrap; gap: 1rem; align-items: start">
 
 <!-- No idea why this gets the wrong color with a heading anchor -->
 <h4>Example: Google Calendar</h4>
 
-While arguably a tool that helps humans create artifacts (calendar events), Google Calendar is not a creative tool,
-but it is definitely a Long-Tail product.
-Its use cases are sufficiently varied that there is a set of common, conceptually simple cases,
+You wouldn't describe Google Calendar as a creative tool, but it is definitely a tool that helps humans create artifacts (calendar events).
+It is also a long-tail product:
+there is a set of common, conceptually simple cases (one-off events at a specific time and date),
 and a long tail of complex needs (recurring events, guests, multiple calendars, timezones, etc.).
+
 Indeed, Kay’s maxim has clearly been used in its design.
+The simple case has been so optimized that you can literally add a one hour calendar event with a single click (using a placeholder title).
+A different duration can be set after that first click through dragging
+^[Yes, typing can be faster than dragging, but minimizing homing between input devices improves efficiency more, see [KLM](https://en.wikipedia.org/wiki/Keystroke-level_model)].
+But almost every possible edge case is also catered to — with additional user effort.
 
 <figure>
   <video src="videos/google-calendar.mp4" muted autoplay loop loading="lazy"></video>
@@ -76,21 +65,19 @@ Indeed, Kay’s maxim has clearly been used in its design.
   </figcaption>
 </figure>
 
-The simple case has been so optimized that you can literally add a one hour calendar event with a single click (using a placeholder title).
-A different duration can be set after that first click through dragging
-^[Yes, typing can be faster than dragging, but minimizing homing between input devices improves efficiency more, see [KLM](https://en.wikipedia.org/wiki/Keystroke-level_model)].
-But almost every possible edge case is also catered to — with additional user effort.
-
 Google Calendar is also an example of an interface that digitally encodes real-life,
 demonstrating that complex use cases do not necessarily come from power users.
-Often, the complexity is driven by real-life.
-E.g. your taxes may be complex without you being a power user of your tax software,
-or you can have a complex family structure that a country’s visa application form cannot handle without you being a power user of the form (what even is that?)
+Often, the complexity is driven by life itself.
+E.g. your taxes may be complex without you being a power user of tax software,
+and your family situation may be unusual without you being a power user of every form that asks about it.
 
 </article>
 
+The Pareto Principle is still useful for individual features, as they tend to be more narrowly defined.
+E.g. there _is_ a set of spreadsheet formulas (actually much smaller than 20%) that do drive >80% of formula usage.
+
 While creative tools are the poster child of long-tail products,
-there are long-tail _components_ in many [transactional](https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7) interfaces such as e-commerce or meal delivery (e.g. result filtering & sorting, product personalization interfaces, etc.).
+there are _long-tail components_ in many [transactional](https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7) interfaces such as e-commerce or meal delivery (e.g. result filtering & sorting, product personalization interfaces, etc.).
 
 <figure class="width-m">
 
@@ -102,14 +89,17 @@ Airbnb’s filtering UI here is definitely making an effort to make simple thing
 </figcaption>
 </figure>
 
-
+**Which use cases are complex depends on product scope.**
+Many products succeed by focusing on making common things easy and explicitly defining complex things as out of scope.
+Kay's principle still applies — just more narrowly.
+Instagram’s complex cases are vastly different than Photoshop’s complex cases, but both have a range.
 
 ## It’s all about the curve { #curve }
 
 Picture a plane with two axes: the horizontal axis being the **complexity** of the desired task from the user's perspective,
 and the Y axis the **effort** (cognitive and/or physical) users need to expend to accomplish their task using a given interface.
 
-If Alan Kay's maxim is followed, it guarantees that these two points exist:
+Following Kay’s maxim guarantees these two points:
 - _Simple things being easy_ guarantees a point on the lower left (low use case complexity → low user effort).
 - _Complex things being possible_ guarantees a point _somewhere_ on the far right.
 The lower user effort the better, but higher up is **acceptable**.
