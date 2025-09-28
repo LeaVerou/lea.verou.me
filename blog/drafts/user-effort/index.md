@@ -27,20 +27,20 @@ or even [inversely correlated](#poc), as user experience is about encapsulating 
 Alan Kay’s maxim is deceptively simple, but its implications run deep.
 It isn’t just a design ideal — it’s a call to continually balance friction, scope, and tradeoffs in service of the people using our products.
 
-Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientist, his quote is typically framed as a <abbr title="Programming Language">PL</abbr> or API design principle.
-But that sells it short.
+Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientist, his quote is typically framed as a <abbr title="Programming Language">PL</abbr> or API design principle,
+but that sells it short.
 It applies to a much, _much_ broader class of interfaces.
 
 I’m not aware of a name for this class, but it seems to have a lot to do with the _distribution of use cases_.
-Products often cut scope by figuring out the ~20% of use cases that drive ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
-However, there are products with such diverse use cases that the Pareto Principle cannot apply to the product as a whole.
+Products often cut scope by figuring out the ~20% of use cases that drives ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
+However, there are products with such diverse use cases that the Pareto Principle does not (meaningfully) apply to the product as a whole.
 There are certainly common use cases and niche ones, but there is no clean 20% subset that drives 80% of usage — or anything close to it.
-Instead, there is such a **long tail of niche use cases, that they become significant in aggregate**.
+**The long tail of niche use cases is so numerous, they are significant in aggregate**.
 For lack of a better term, let's call these *long-tail products* (let me know if you’re aware of a better name, because this one sucks).
 
-Nearly all creative tools are long-tail products.
-That’s why it works so well for programming languages and APIs — because they are all creative tools.
-But so are graphics editors, word processors, spreadsheets, and countless other interfaces that help humans create artifacts — even some you would never describe as a creative tool.
+**Nearly all creative tools are long-tail products.**
+That’s why it works so well for programming languages and APIs — both are types of creative interfaces.
+But so are graphics editors, word processors, spreadsheets, and countless other interfaces that help humans create artifacts — even some you would never describe as creative.
 
 <article class="example" style="display: flex; flex-flow: row wrap; gap: 1rem; align-items: start">
 
@@ -73,8 +73,8 @@ and your family situation may be unusual without you being a power user of every
 
 </article>
 
-The Pareto Principle is still useful for individual features, as they tend to be more narrowly defined.
-E.g. there _is_ a set of spreadsheet formulas (actually much smaller than 20%) that do drive >80% of formula usage.
+The Pareto Principle is still useful for individual **features**, as they tend to be more narrowly defined.
+E.g. there _is_ a set of spreadsheet formulas (actually much smaller than 20%) that drives >80% of formula usage.
 
 While creative tools are the poster child of long-tail products,
 there are _long-tail components_ in many [transactional](https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7) interfaces such as e-commerce or meal delivery (e.g. result filtering & sorting, product personalization interfaces, etc.).
@@ -253,9 +253,9 @@ But too much noise increases friction and obfuscates signal.
 **Boilerplate is the UX version of red tape**: hoops you need to jump through to accomplish your goal, that serve no obvious purpose in furthering said goal except for the fact that they are required.
 And we all know how people feel about red tape.
 
-A short yet demonstrative example is the web platform’s DOM methods for removing an element from the DOM tree.
-To signal _intent_, the user needs to communicate two things:
-(a) **what** they want to do (remove an element) the element to remove, and (b) **which element** they want to remove.
+A short yet demonstrative example is the web platform’s methods for programmatically removing an element from the page.
+To signal _intent_ in this case, the user needs to communicate two things:
+(a) **what** they want to do (remove an element), and (b) **which element** they want to remove.
 Anything beyond that is noise.
 
 The modern [`element.remove()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) DOM method has an extremely high signal-to-noise ratio.
@@ -268,9 +268,9 @@ developers had to write a much noisier `if (element.parentNode) element.parentNo
 ^[Yes, today it would have been `element.parentNode?.removeChild(element)`, which is a little less noisy, but this was before the optional chaining operator.]
 
 It may seem small, but this is only because the overall code is small.
-The actual difference in signal-to-noise ratio is staggering.
-The exact numbers (81% vs 20% here) vary based on specifics,
-but when the difference is meaningful, it is so large it transcends such details.
+The actual difference in signal-to-noise ratio is staggering
+^[The exact numbers (81% vs 20% here) vary based on specifics such as variable names,
+but when the difference is meaningful, it is so large it transcends such details.].
 
 <figure class="width-m">
   <object data="images/code-signal-to-noise.svg"></object>
@@ -279,16 +279,19 @@ but when the difference is meaningful, it is so large it transcends such details
   </figcaption>
 </figure>
 
+Of course, it was usually encapsulated in utility functions, which provided the same signal-to-noise ratio as the modern method.
+However, user-defined abstractions also come with a user effort tax, just with different economics.
+
 As an exercise for the reader, try to calculate the signal-to-noise ratio of a [Bootstrap accordion](https://getbootstrap.com/docs/5.3/components/accordion/#example).
 This is exactly why the industry gravitated towards component architectures: they increase signal-to-noise ratio by encapsulating boilerplate.
 
-When you view user effort as a currency, **overpriced** interfaces with low signal-to-noise ratio make users feel **ripped off**.
-On the contrary, interfaces where every bit of user effort required is meaningful and produces tangible value are a joy to use.
-When the interface is on their side, gently helping them along with every step, instead of treating their time and energy as disposable.
-The user feels like they’re getting a sweet deal: they get to spend _less_ than they had budgeted for!
-Doesn't that feel great?
+When you view user effort as a currency, the antithesis of **overpriced** interfaces that make users feel **ripped off**
+are interfaces where every bit of user effort required is meaningful and produces tangible value.
+The interface is on the user's side, gently helping them along with every step, instead of treating their time and energy as disposable.
+The user feels like they’re getting a **deal**: they get to spend _less_ than they had budgeted for!
+And we all know how motivating deals are.
 
-It does not always have to be a radical innovation;
+User effort deals don't have to be radical innovations;
 don't underestimate the power of small touches.
 A zip code input that auto-fills city and state,
 a web component that automatically adapts to its context without additional configuration,
@@ -345,14 +348,14 @@ The list goes on.
 
 Unfortunately, friction is hard to quantify, to the dismay of those who think they can replace product vision with a good spreadsheet.
 With good telemetry you can detect some friction (e.g. through dead clicks), but there is no KPI to measure friction as a whole.
-And no, [NPS](https://en.wikipedia.org/wiki/Net_promoter_score) isn't it, and [you’re using it wrong anyway](https://jmspool.medium.com/net-promoter-score-considered-harmful-and-what-ux-professionals-can-do-about-it-fe7a132f4430).
-Instead, the negative emotions from friction will erode nearly all metrics (churn, conversion, etc.), and product folks will run circles like [blind men touching an elephant](https://en.wikipedia.org/wiki/Blind_men_and_an_elephant) trying to figure out why.
-This is why it is so important for data to be supplemented by actual **product vision** and **proactive, [first-principles](https://www.intercom.com/blog/peeling-back-to-first-principles/) design**.
+And no, [NPS](https://en.wikipedia.org/wiki/Net_promoter_score) isn't it, and [you’re probably using it wrong anyway](https://jmspool.medium.com/net-promoter-score-considered-harmful-and-what-ux-professionals-can-do-about-it-fe7a132f4430).
+Instead, the negative emotions from friction will erode nearly all metrics (churn, conversion, etc.), and product folks will run circles trying to figure out why like [blind men touching an elephant](https://en.wikipedia.org/wiki/Blind_men_and_an_elephant).
+This is why it is so important for data to be supplemented by actual **product vision** and **proactive, [first-principles](https://www.intercom.com/blog/peeling-back-to-first-principles/) product leadership**.
 
 [Steve Jobs](https://en.wikipedia.org/wiki/Steve_Jobs) may have had his flaws, but he was exactly the kind of visionary who proactively and aggressively eliminated friction.
 He disrupted entire industries by challenging the status quo and pushing back on friction that was presented as inevitable.
 He saw every unnecessary choice, delay, or piece of jargon as friction to be eliminated, and did not need KPIs to tell him so.
-_Do mice really need multiple buttons? Do computers really need a manual?
+_Do mice really need multiple buttons?
 Does installing software really need multiple steps?
 Do smartphones really need a stylus?_
 Of course, this only worked because he did not have a manager to convince.
@@ -448,7 +451,7 @@ Developers are just one type of producer.
 
 The web platform has multiple tiers of producers:
 - **Specification writers** are at the bottom of the hierarchy, and thus, can handle the most pain (_ow!_ 🥴)
-- **Browser developers** ("_user agent implementors_" in the PoC) are consumers when it comes to specifications, but producers when it comes to the web platform
+- **Browser developers** ("_user agent implementors_" in the principle) are consumers when it comes to specifications, but producers when it comes to the web platform
 - **Web developers** are consumers when it comes to the web platform, but producers when it comes to their own websites
 
 Even within the same tier there are producer vs consumer dynamics.
