@@ -42,11 +42,13 @@ main aside:where(:not(.pullquote)),
 	font-size: 80%;
 	font-weight: 500;
 
+	--code-background: color-mix(in lab, var(--color) 10%, lab(none none none / 0%));
+
 	> :is(p, ul, ol, dl):where(:only-child, h4 + :last-child) {
 		margin-block: 0;
 	}
 
-	&:not(:has(> h4, > summary))::before {
+	&:not(:has(h4, ummary))::before {
 		content: var(--label);
 	}
 
@@ -80,7 +82,7 @@ main aside:where(:not(.pullquote)),
 
 	pre[class*="language-"][class*="language-"] {
 		padding: .5em .8em;
-		background: color-mix(in lab, var(--color) 10%, lab(none none none / 0%));
+		background: var(--code-background);
 	}
 
 	&.plain,
@@ -173,15 +175,13 @@ main aside:where(:not(.pullquote)) {
 .note,
 .tip,
 .example {
-	--code-background: hsl(0 0% 100% / .8);
-
 	@supports (color: color-mix(in lab, white, black)) {
 		--color-lighter: color-mix(in lab, var(--color), white 88%);
 		--color-darker: color-mix(in lab, var(--color), black 20%);
 	}
 
 	@media (width > 600px) {
-		&:not(.plain, .no-icon) {
+		&:where(:not(.plain, .no-icon)) {
 			padding-left: 4.5em;
 		}
 
@@ -253,7 +253,8 @@ main aside:where(:not(.pullquote)) {
 
 .example {
 	--label: "Example";
-	--icon: var(--icon-lightbulb);
+	--icon: initial;
+	padding-inline: 2em;
 }
 
 .todo {

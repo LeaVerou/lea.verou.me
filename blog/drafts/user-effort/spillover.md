@@ -84,3 +84,37 @@ This is the reason why [`inherits`](https://developer.mozilla.org/en-US/docs/Web
 the default that would be best for users (`true`) is also the slowest, but making `false` the default would mean that registered properties behave differently from native properties by default.
 Instead, it was decided to not have a default, and make the descriptor mandatory.
 
+### In defense of magic
+
+The examples above are the straightforward kind of inference: when you can infer user intent with 100% certainty.
+Usually, buy-in for these is easy, all it takes is prioritization — getting the resources to implement it.
+
+It starts getting murky when you _can_ predict user intent with a high degree of confidence, but not with certainty.
+Then, you’re faced with three options, with different tradeoffs:
+1. **Escapable magic**: Infer as an overridable default, so that there is an escape hatch for when the interface guesses wrong. The ideal visibility and discoverability of the escape hatch depend on your confidence: the less likely the override is to be needed, the more hidden it can be.
+1. **Inescapable magic**: Infer with no way out. Use cases in the minority are simply ruled out of scope for now.
+2. **No magic**: everything is explicit and everyone needs to expend additional effort to provide the input.
+
+I have seen many engineers argue for explicit input parameters even for things where we can predict user intent with a very high degree of confidence,
+because if we’re not sure it’s "magic" and _everyone knows that magic is _bad_.
+I beg to differ.
+
+From a user perspective _Escapable magic_ is the best of both worlds: simple things require less work for the majority, but complex things are possible through the override.
+However, _Escapable magic_ comes at the cost of additional design, implementation, and documentation work, and thus it’s a tougher sell.
+When resources are constrained, it often boils down to _Inescapable magic_ vs _No magic_, at least in the short term.
+Improve user experience for the majority at the expense of leaving the minority out in the cold, or shoot for the lowest common denominator?
+There is no right answer, and a lot depends on your degree of confidence.
+If the interface guesses wrong 1% of the time, it may be acceptable to rule that 1% out of scope.
+But if it's more like 20%, Option 2 is probably not a good idea.
+
+
+
+_Inescapable magic_ is where most people’s hatred of "magic" comes from.
+When "magic" is well designed and escapable, it can produce delightful user experiences that feel like a breeze.
+Users rarely have to override the inference, and when they do, it’s straightforward how to do so.
+We don’t even realize how poor user interfaces would be if everything truly was explicit.
+
+What most people refer to when they hate on "magic", is interfaces that attempted to infer user intent poorly, *and* provided no way to override the inference.
+This is a recipe for frustration!
+**Bad magic is far worse than no magic.**
+

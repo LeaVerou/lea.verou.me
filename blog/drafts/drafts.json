@@ -1,3 +1,4 @@
 {
-	"draft": true
+	"draft": true,
+	"eleventyExcludeFromCollections": true
 }
