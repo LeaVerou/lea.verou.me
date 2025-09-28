@@ -1,6 +1,6 @@
 ---
-title: The economy of user effort
-nutshell: The holy grail of good UI and API design is making simple things easy and complex things possible. But it's far from enough.
+title: Designing for the economy of user effort
+nutshell: Making simple things easy and complex things possible is a great start, but it's not enough.
 draft: true
 toc: true
 tags:
