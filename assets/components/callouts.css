@@ -38,6 +38,7 @@ main aside:where(:not(.pullquote)),
 	border-radius: .3rem;
 	margin-top: 1.6em;
 	margin-bottom: 1em;
+	container: callout / inline-size;
 	font-family: var(--font-sans);
 	font-size: 80%;
 	font-weight: 500;
@@ -252,9 +253,18 @@ main aside:where(:not(.pullquote)) {
 }
 
 .example {
+	--color: var(--color-blue);
 	--label: "Example";
 	--icon: initial;
 	padding-inline: 2em;
+
+	&.bad {
+		--color: var(--color-red);
+	}
+
+	&.good {
+		--color: var(--color-green);
+	}
 }
 
 .todo {
