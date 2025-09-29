@@ -1,6 +1,6 @@
 ---
-title: Designing for the economy of user effort
-nutshell: Making simple things easy and complex things possible is a great start, but it's not enough.
+title: In the economy of user effort, be a bargain, not a scam
+nutshell: User effort is a currency. To create a product users love, design the tradeoffs of use case complexity to user effort with the same care you design your pricing scheme.
 draft: true
 toc: true
 tags:
@@ -16,7 +16,7 @@ tags:
 ---
 
 <figure class="float" style="max-width: 12em; position: relative; z-index: 1;">
-<img src="images/Alan_Kay.jpg.webp">
+<img src="images/Alan_Kay.jpg.webp" alt="Alan Kay">
 <figcaption>
 
 Alan Kay [[source]](https://aes2.org/community/technical-council/richard-c-heyser-memorial-lecture-series/details-of-heyser-lectures/memorial-lecture-at-109th-alan-kay-the-computer-revolution-hasnt-happened-yet/)</figcaption>
@@ -25,21 +25,35 @@ Alan Kay [[source]](https://aes2.org/community/technical-council/richard-c-heyse
 One of my favorite product design principles of all time is Alan Kay’s _“Simple things should be simple, complex things should be possible”_.
 ^[[Kay himself replied on Quora and provided background on this quote](https://www.quora.com/What-is-the-story-behind-Alan-Kay-s-adage-Simple-things-should-be-simple-complex-things-should-be-possible). Don’t you just love the internet?]
 I had been saying it almost verbatim long before I heard of Kay's quote.
+Kay’s maxim is deceptively simple, but its implications run deep.
+It isn’t just a design ideal — it’s a call to continually balance friction, scope, and tradeoffs in service of the people using our products.
 
-Of course, _simple_ refers to use cases that are **simple from the user’s perspective**, i.e. the most common use cases.
-They may not be at all simple to implement, and interface simplicity is usually [inversely correlated](#poc) with implementation simplicity.
-And which things are _complex_, depends on **product scope** to some degree.
+This philosophy played a big part in [Prism’s](https://prismjs.com) success back in 2012,
+allowing it to become the web’s de facto syntax highlighter for years, and total over **2 billion** npm downloads.
+All it took to highlight blocks of code on a page was including its two files.
+Nothing to modify in the rest of the page.
+Styling was done through nicely readable CSS class names.
+Even adding new languages (the most common "complex" use case) was engineered to require much less technical knowledge and effort than alternatives.
+But it also came with a deep extensibility model that allowed plugin authors to dynamically patch its internals and dramatically alter its behavior.
+All of these design decisions took sacrifices: the nice styling API meant higher risk of clashes, and the deep extensibility meant less encapsulation.
+
+<aside class="note">
+
+<h4>What things are simple and what things are complex?</h4>
+
+_Simple_ refers to use cases that are **simple from the user’s perspective**, i.e. the most common use cases.
+They may not be at all simple to implement, and interface simplicity is often [inversely correlated](#poc) with implementation simplicity.
+And which things are _complex_, depends on **product scope**.
 Instagram’s complex cases are vastly different than Photoshop’s complex cases, but as long as there is a range, Kay's principle still applies.
 
-His maxim is deceptively simple, but its implications run deep.
-It isn’t just a design ideal — it’s a call to continually balance friction, scope, and tradeoffs in service of the people using our products.
+</aside>
 
 Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientist, his quote is typically framed as a <abbr title="Programming Language">PL</abbr> or API design principle,
 but that sells it short.
 It applies to a much, _much_ broader class of interfaces.
 
 I’m not aware of a name for this class, but it seems to have a lot to do with the _distribution of use cases_.
-Products often cut scope by figuring out the ~20% of use cases that drives ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
+Products often cut scope by figuring out the ~20% of use cases that drive ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
 However, there are products with such diverse use cases that the Pareto Principle does not (meaningfully) apply to the product as a whole.
 There are certainly common use cases and niche ones, but there is no clean 20% subset that drives 80% of usage — or anything close to it.
 **The long tail of niche use cases is so numerous, they are significant in aggregate**.
@@ -55,8 +69,8 @@ Yes, **programming languages and APIs are types of user interfaces**.
 If this surprises you, watch my [DotJS 2024 talk titled "API Design is UI Design"](https://www.youtube.com/watch?v=g92XUzc1OHY).
 It’s only 20 minutes, but covers a lot of ground, including some of the ideas in this post.
 
-This is also why I try to include both code and GUI examples in my product/usability posts — to drive exactly this point home.
-If you only work on GUIs and the code examples don't make sense to you, you can skip them and the post still makes sense.
+This is also why I try to include both code and GUI examples in these posts — to drive exactly this point home.
+If you only work on visual interfaces and the API examples don't make sense to you, you can skip them and the post should still make sense.
 
 </aside>
 
@@ -113,12 +127,12 @@ Airbnb’s filtering UI here is definitely making an effort to make simple thing
 ## It’s all about the curve { #curve }
 
 Picture a plane with two axes: the horizontal axis being the **complexity** of the desired task (again from the user's perspective, nothing to do with implementation complexity),
-and the Y axis the cognitive and/or physical **effort** users need to expend to accomplish their task using a given interface.
+and the vertical axis the cognitive and/or physical **effort** users need to expend to accomplish their task using a given interface.
 
 Following Kay’s maxim guarantees these two points:
 - _Simple things being easy_ guarantees a point on the lower left (low use case complexity → low user effort).
 - _Complex things being possible_ guarantees a point _somewhere_ on the far right.
-The lower down the better, but higher up is **acceptable**.
+The lower down, the better — but higher up is **acceptable**.
 
 <figure class="outlined width-m">
   <object data="images/curve-alankay.svg"></object>
@@ -267,7 +281,7 @@ Another nice touch: "And" is not just communicating how multiple filters are com
 
 </figure>
 
-Defining high-level abstractions in terms of low-level primitives is a great way to achieve a smooth power-to-effort curve,
+Defining high-level abstractions in terms of low-level primitives is a great way to achieve a smooth complexity-to-effort curve,
 as it allows you to expose tweaking at various intermediate levels and scopes.
 The downside is that it can sometimes constrain the types of high-level solutions that can be implemented.
 Whether the tradeoff is worth it depends on the product and use cases.
@@ -316,7 +330,7 @@ There is zero reason to ask for it separately.
 Beyond wasting user effort, duplicating input that can be derived introduces an **unnecessary error condition** that you now need to handle:
 what happens when the entered type is not consistent with the entered number?
 
-User actions that meaningfully communicate intent to the interface, are **signal**.
+User actions that meaningfully communicate intent to the interface are **signal**.
 Any other step users need to take to accomplish their goal, is **noise**.
 This includes communicating the same input more than once,
 providing input separately that could be derived from other input with complete or high certainty,
@@ -357,7 +371,7 @@ but when the difference is meaningful, it is so large it transcends such details
 </figure>
 
 Of course, it was usually encapsulated in utility functions, which provided a similar signal-to-noise ratio as the modern method.
-However, user-defined abstractions don't come for free, there is an effort (and learnability) tax there too.
+However, user-defined abstractions don't come for free, there is an effort (and learnability) tax there, too.
 
 Improving signal-to-noise ratio is also why the front-end web industry gravitated towards component architectures: they increase signal-to-noise ratio by encapsulating boilerplate.
 As an exercise for the reader, try to calculate the signal-to-noise ratio of a [Bootstrap accordion](https://getbootstrap.com/docs/5.3/components/accordion/#example) (or any other complex Bootstrap component).
@@ -559,7 +573,7 @@ In some ways, it's the polar opposite of _death by a thousand paper cuts_:
 
 In the end, “_simple things simple, complex things possible_” is table stakes.
 The key differentiator is the [shape of the curve](#curve) between those points.
-Products win when uer effort scales smoothly with use case complexity, [cliffs](#cliffs) are engineered out, and [every interaction declares a meaningful piece of user intent](#signal-to-noise).
+Products win when user effort scales smoothly with use case complexity, [cliffs](#cliffs) are engineered out, and [every interaction declares a meaningful piece of user intent](#signal-to-noise).
 That doesn't just happen by itself.
 It involves hard tradeoffs, saying no a lot, and [prioritizing user needs at the organizational level](#poc).
 Treating user effort like real money, forces you to design with restraint.
