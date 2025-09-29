@@ -65,7 +65,6 @@
 html {
 	color: black;
 	font: 110%/1.5 var(--font-sans);
-	letter-spacing: -0.015em;
 	counter-reset: figure;
 
 	&.use-disqus {
