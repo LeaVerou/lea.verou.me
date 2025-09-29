@@ -123,6 +123,11 @@
 <div class="nutshell">{{ nutshell | md_block }}</div>
 {%- endif %}
 
+{% import "_tags.njk" as tagsUtil with context %}
+{% set tags = post.data.tags if post.data else tags %}
+{% set page = post.data.page if post.data else page %}
+{{ tagsUtil.list(tags) }}
+
 {{ content | safe }}
 
 <footer>

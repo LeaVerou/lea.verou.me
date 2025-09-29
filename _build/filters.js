@@ -195,7 +195,24 @@ export function is_real_tag (tag) {
 }
 
 export function real_tags_only (tags) {
-	return tags.filter(is_real_tag);
+	return tags?.filter(is_real_tag);
+}
+
+function getCollection (name) {
+	// From https://github.com/11ty/eleventy/blob/d3d24ccddb804e6e14773501d8c4e07e2c4b9c2b/src/Filters/GetLocaleCollectionItem.js#L39-L43
+	return (
+		this.collections?.[name] ||
+		this.ctx?.collections?.[name] ||
+		this.context?.environments?.collections?.[name]
+	);
+}
+
+export function sort_tags (tags) {
+	return tags?.sort((a, b) => {
+		let aLength = getCollection.call(this, a)?.length || 0;
+		let bLength = getCollection.call(this, b)?.length || 0;
+		return bLength - aLength;
+	});
 }
 
 export function log(...args) {

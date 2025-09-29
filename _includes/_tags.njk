@@ -1,5 +1,5 @@
 {% macro list(tags) %}
-{% set tags = tags | real_tags_only %}
+{% set tags = tags | real_tags_only | sort_tags %}
 {% if tags and tags.length > 0 %}
 <div class="metabit tags">
 	{% for tag in tags %}

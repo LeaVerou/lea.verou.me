@@ -850,6 +850,10 @@ body > footer {
 		& .orphan {
 			opacity: .6;
 		}
+
+		&:is(main > *) {
+			margin-block-end: 1rem;
+		}
 	}
 
 	&.reading-time {

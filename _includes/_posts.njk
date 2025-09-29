@@ -18,6 +18,8 @@
 		<div class="nutshell">{{ post.data.nutshell | md_block }}</div>
 	{%- endif %}
 
+
+
 	<div class="summary">
 		{% if post.data.page.excerpt %}
 			{{ post.data.page.excerpt | md_block({url: post.data.page.url}) }}
@@ -84,6 +86,8 @@
 	{%- endfor -%}
 	</div>
 	{%- endif -%}
+
+
 {% endmacro %}
 
 {% macro meta_after(post, o = {}) %}
