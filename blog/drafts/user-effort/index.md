@@ -23,27 +23,29 @@ tags:
 Alan Kay [[source]](https://aes2.org/community/technical-council/richard-c-heyser-memorial-lecture-series/details-of-heyser-lectures/memorial-lecture-at-109th-alan-kay-the-computer-revolution-hasnt-happened-yet/)</figcaption>
 </figure>
 
-One of my favorite product design principles of all time is Alan Kay’s _“Simple things should be simple, complex things should be possible”_.
+One of my favorite product design principles is Alan Kay’s _“Simple things should be simple, complex things should be possible”_.
 ^[[Kay himself replied on Quora and provided background on this quote](https://www.quora.com/What-is-the-story-behind-Alan-Kay-s-adage-Simple-things-should-be-simple-complex-things-should-be-possible). Don’t you just love the internet?]
-I had been saying it almost verbatim long before I heard of Kay's quote.
+I had been saying it almost verbatim long before I encountered Kay’s quote.
 Kay’s maxim is deceptively simple, but its implications run deep.
 It isn’t just a design ideal — it’s a call to continually balance friction, scope, and tradeoffs in service of the people using our products.
 
 This philosophy played a big part in [Prism’s](https://prismjs.com) success back in 2012,
-allowing it to become the web’s de facto syntax highlighter for years, and total over **2 billion** npm downloads.
-All it took to highlight blocks of code on a page was including its two files.
-Nothing to modify in the rest of the page.
-Styling was done through nicely readable CSS class names.
-Even adding new languages (the most common "complex" use case) was engineered to require much less technical knowledge and effort than alternatives.
-But it also came with a deep extensibility model that allowed plugin authors to dynamically patch its internals and dramatically alter its behavior.
-All of these design decisions took sacrifices: the nice styling API meant higher risk of clashes, and the deep extensibility meant less encapsulation.
+helping it become the web’s de facto syntax highlighter for years, with over **2 billion** npm downloads.
+Highlighting code on a page took including two files.
+No markup changes.
+Styling used readable CSS class names.
+Even adding new languages — the most common “complex” use case — required far less knowledge and effort than alternatives.
+At the same time, Prism exposed a deep extensibility model so plugin authors could patch internals and dramatically alter behavior.
+These choices are rarely free.
+The friendly styling API increased clash risk, and deep extensibility reduced encapsulation.
+These were conscious tradeoffs, and they weren't easy.
 
 <aside class="note">
 
 <h4>What things are simple and what things are complex?</h4>
 
 _Simple_ refers to use cases that are **simple from the user’s perspective**, i.e. the most common use cases.
-They may not be at all simple to implement, and interface simplicity is often [inversely correlated](#poc) with implementation simplicity.
+They may be hard to implement, and interface simplicity is often [inversely correlated](#poc) with implementation simplicity.
 And which things are _complex_, depends on **product scope**.
 Instagram’s complex cases are vastly different than Photoshop’s complex cases, but as long as there is a range, Kay's principle still applies.
 
@@ -53,12 +55,12 @@ Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientis
 but that sells it short.
 It applies to a much, _much_ broader class of interfaces.
 
-I’m not aware of a name for this class, but it seems to have a lot to do with the _distribution of use cases_.
-Products often cut scope by figuring out the ~20% of use cases that drive ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
-However, there are products with such diverse use cases that the Pareto Principle does not (meaningfully) apply to the product as a whole.
-There are certainly common use cases and niche ones, but there is no clean 20% subset that drives 80% of usage — or anything close to it.
-**The long tail of niche use cases is so numerous, they are significant in aggregate**.
-For lack of a better term, let's call these *long-tail UIs* (but let me know if you’re aware of a better name!).
+This class hinges on the _distribution of use cases_.
+Products often cut scope by identifying the ~20% of use cases that drive ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
+Some products, however, have such diverse use cases that Pareto doesn’t meaningfully apply to the product as a whole.
+There are common use cases and niche use cases, but no clean 20-80 split.
+**The long tail of niche use cases is so numerous, it becomes significant in aggregate**.
+For lack of a better term, I’ll call these *long‑tail UIs*.
 
 **Nearly all creative tools are long-tail UIs.**
 That’s why it works so well for programming languages and APIs — both are types of creative interfaces.
@@ -66,12 +68,11 @@ But so are graphics editors, word processors, spreadsheets, and countless other 
 
 <aside class="note">
 
-Yes, **programming languages and APIs are types of user interfaces**.
+Yes, **programming languages and APIs are user interfaces**.
 If this surprises you, watch my [DotJS 2024 talk titled "API Design is UI Design"](https://www.youtube.com/watch?v=g92XUzc1OHY).
 It’s only 20 minutes, but covers a lot of ground, including some of the ideas in this post.
 
-This is also why I try to include both code and GUI examples in these posts — to drive exactly this point home.
-If you only work on visual interfaces and the API examples don't make sense to you, you can skip them and the post should still make sense.
+I include both code and GUI examples to underscore this point; if the API examples aren’t your thing, skip them and the post will still make sense.
 
 </aside>
 
@@ -89,7 +90,7 @@ Indeed, Kay’s maxim has clearly been used in its design.
 The simple case has been so optimized that you can literally add a one hour calendar event with a single click (using a placeholder title).
 A different duration can be set after that first click through dragging
 ^[Yes, typing can be faster than dragging, but minimizing homing between input devices improves efficiency more, see [KLM](https://en.wikipedia.org/wiki/Keystroke-level_model)].
-But almost every possible edge case is also catered to — with additional user effort.
+But almost every edge case is also catered to —  with additional user effort.
 
 <figure>
   <video src="videos/google-calendar.mp4" muted autoplay loop loading="lazy"></video>
@@ -144,7 +145,7 @@ The lower down, the better — but higher up is **acceptable**.
 
 But even if we get these two points — **what about all the points in between?**
 There are a ton of different ways to connect them, and they produce _vastly_ different overall user experiences.
-How does your interface fare when it comes to a use case that is only _slightly_ more complex?
+How does your interface fare when a use case is only _slightly_ more complex?
 Are users yeeted into the deep end of interface complexity (bad), or do they only need to invest a proportional, incremental amount of effort to achieve their goal (good)?
 
 Meet the **complexity-to-effort curve**, the most important usability metric you've never heard of.
@@ -185,7 +186,7 @@ And if you pay less than you expected, you feel like you got a bargain, with all
 
 </aside>
 
-Suppose you were ordering pizza. You want a simple cheese pizza with ham and mushrooms.
+Suppose you’re ordering pizza. You want a simple cheese pizza with ham and mushrooms.
 You use the online ordering system, and you notice that adding ham to your pizza triples its price.
 We're not talking some kind of fancy ham where the pigs were fed on caviar and bathed in champagne, just a regular run-of-the-mill pizza topping.
 You may still order it if you’re starving and no other options are available, but _how does it make you feel?_
@@ -226,7 +227,7 @@ We just slap it on our `<video>` element and we’re done with a single line of 
 <img src="images/cat-video-player.png" alt="A cat video player with a sleek toolbar" style="flex: .5">
 </figure>
 
-Now let’s suppose use case complexity increases _juuuust a little bit_.
+Now suppose use case complexity increases _just a little_.
 Maybe I want to add buttons to jump 10 seconds back or forwards.
 Or a language picker for subtitles.
 Or just to hide the volume control on a video that has no audio track.
@@ -245,7 +246,7 @@ But once use case complexity crosses a certain (low) threshold, user effort abru
 <video src="videos/instagram.mov" muted autoplay loop loading="lazy" style="height: 15em; max-height: 100cqh; float: inline-end; margin-inline-start: 1em"></video>
 
 For Instagram's photo editor, the simple use case is canned filters, whereas the complex ones are those requiring tweaking through individual low-level controls.
-However, they are implemented as separate flows: you can only tweak the _intensity_ of the filter, but you cannot see what primitives it is implemented with and tweak them independently.
+However, they are implemented as separate flows: you can tweak the filter’s _intensity_, but you can’t see or adjust the primitives it’s built from.
 You _can_ layer both types of edits on the same image, but they are additive, which doesn’t work well.
 
 Ideally, the two panels would be integrated, so that selecting a filter would adjust the low-level controls accordingly, which would facilitate incremental tweaking
@@ -261,10 +262,10 @@ My favorite end-user facing product that gets this right is [Coda](https://coda.
 a cross between a document editor, a spreadsheet, and a database.
 All over its UI, it supports entering formulas instead of raw values, which makes complex things possible.
 
-Then, to make simple things easy, it also provides the usual GUI options you'd expect if there was no formula language at all.
-But here’s the twist: **these presets are actually generating formulas behind the scenes that users can then tweak**!
-Whenever users need to go a little beyond what the UI provides, they can switch to the formula editor and tweak the generated formula
-(which is infinitely easier than writing it from scratch).
+To make simple things easy, it also provides the GUI you’d expect even without a formula language.
+But here’s the twist: **these presets are generate formulas behind the scenes that users can tweak**!
+Whenever users need to go a little beyond what the UI provides, they can switch to the formula editor and adjust what was generated
+— far easier than writing it from scratch.
 
 
 <figure>
@@ -309,7 +310,7 @@ And yet, this is how many user interfaces work; expecting users to communicate t
 
 If _incremental value should require incremental user effort_, an obvious corollary is that **things that produce no value should not require user effort**.
 
-Using the model of user effort as a currency, it is easy to see why: who likes paying without getting anything in return?
+Using the currency model makes this obvious: who likes paying without getting anything in return?
 **Respect user effort.**
 Treat it as a scarce resource — just like regular currency — and keep it close to the minimum necessary to declare _intent_.
 Do not require users to do work that confers them no benefit, and could have been handled by the UI.
@@ -344,7 +345,7 @@ But too much noise increases friction and obfuscates signal.
 
 A short yet demonstrative example is the web platform’s methods for programmatically removing an element from the page.
 To signal _intent_ in this case, the user needs to communicate two things:
-(a) **what** they want to do (remove an element), and (b) **which element** they want to remove.
+(a) **what** they want to do (remove an element), and (b) **which element** to remove.
 Anything beyond that is noise.
 
 The modern [`element.remove()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) DOM method has an extremely high signal-to-noise ratio.
@@ -359,10 +360,9 @@ developers had to write a much noisier `if (element.parentNode) element.parentNo
 _Boilerplate_ is repetitive code that users need to include without thought, because it does not actually communicate intent.
 It’s the **software version of red tape**: hoops you need to jump through to accomplish your goal, that serve no obvious purpose in furthering said goal except for the fact that they are required.
 
-It may seem small, but this is only because the overall code is small.
-The actual difference in signal-to-noise ratio is staggering
-^[The exact numbers (81% vs 20% here) vary based on specifics such as variable names,
-but when the difference is meaningful, it is so large it transcends such details.].
+In this case, the amount of boilerplate may seem small, but when viewed as a percentage of the total amount of code, the difference is staggering.
+The exact ratio (81% vs 20% here) varies based on specifics such as variable names,
+but when the difference is meaningful, it transcends these types of low-level details.
 
 <figure class="width-m">
   <object data="images/code-signal-to-noise.svg"></object>
@@ -392,13 +392,10 @@ This reveals a fundamental misunderstanding about the **psychology of user feedb
 **Users are much more vocal about things not being possible, than about things being hard.**
 The reason becomes clear if we look at the neuroscience of each.
 
-In terms of intellectual response, friction is transient.
-Once the user accomplishes their goal and moves on to the next task, it no longer occupies working memory (mediated by the prefrontal cortex, responsible for reasoning and planning).
-In many cases, friction is _death by a thousand paper cuts_, and the user doesn’t retain each cut consciously at all.
-However, [emotions persist for much longer than their initial trigger](https://journals.sagepub.com/doi/abs/10.1037/1089-2680.2.3.271).
-The negative emotions the friction created accumulate and erode customer loyalty over time.
-Filing a complaint, however, requires prefrontal engagement — which in this case is brief or nonexistent.
-Users may not even understand why the software feels unpleasant: the details fade, but the feelings remain.
+Friction is transient in working memory (prefrontal cortex).
+After completing a task, details fade.
+The negative emotion persists and accumulates, but filing a complaint requires prefrontal engagement that is brief or absent.
+Users often can’t articulate why the software feels unpleasant: the specifics vanish; the feeling remains.
 
 Hard limitations, on the other hand, persist as conscious appraisals.
 The trigger doesn’t go away, since there is no workaround, so it’s far more likely to surface in explicit user feedback.
@@ -422,9 +419,9 @@ either because _all_ options in the category are high friction, or because the u
 So they begrudgingly pay the price, and don’t think they have the right to complain, because it's just how things are.
 
 You might ask, “If all competitors are equally high-friction, how does this hurt us?”
-First, you’re not only competing within a category; you’re competing with all alternative solutions — including **nonconsumption** (see [Jobs-to-be-Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done)).
-Even for retention, **users can defect to a different category altogether** (e.g., building native apps instead of web apps).
 **An unmet need is a standing invitation to disruption** that a competitor can exploit at any time.
+Because you’re not only competing within a category; you’re competing with all alternatives — including **nonconsumption** (see [Jobs‑to‑be‑Done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done)).
+Even for retention, users can defect to a different category altogether (e.g., building native apps instead of web apps).
 
 Historical examples abound.
 When it comes to actual currency, a familiar example is **Airbnb**: Until it came along, nobody would complain that a hotel of average price is expensive — it was just the price of hotels.
@@ -491,8 +488,8 @@ This interface sacrifices some implementation simplicity to minimize user effort
 
 </article>
 
-This is why I’m skeptical when someone advocates for "simplicity".
-Advocating for "simplicity" is a platitude — everyone agrees that all else being equal, simpler is better!
+This is why I’m skeptical of blanket calls for “simplicity.”: they are platitudes.
+Everyone agrees that, all else equal, simpler is better.
 **It’s the tradeoffs between different types of simplicity that are tough.**
 
 In some cases, reducing friction even carries tangible financial risks, which makes leadership buy-in crucial.
@@ -529,7 +526,7 @@ This highlights another key distinction.
 
 ### Consumers over Producers
 
-It’s not about prioritizing user needs over developer needs, it's about prioritizing **consumer needs over producer needs**.
+It’s more nuanced than users over developers; a better framing is **consumers over producers**.
 Developers are just one type of producer.
 
 - Consumers are typically more numerous than producers, so this **minimizes collective pain**.
