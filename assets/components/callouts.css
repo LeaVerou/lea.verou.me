@@ -201,11 +201,6 @@ main aside:where(:not(.pullquote)) {
 			color: var(--color, var(--color-orange));
 			text-align: center;
 		}
-
-		& > h4,
-		&::before {
-			left: 4.2rem;
-		}
 	}
 
 	a {
