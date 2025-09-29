@@ -167,7 +167,7 @@ Meet the **complexity-to-effort curve**, the most important usability metric you
       }
     }
   </style>
-  <img src="./images/curve-multiple.gif" class="fallback-image" />
+  <img src="./images/curve-multiple.gif" loading="lazy" class="fallback-image" />
   <object data="images/curve-multiple.svg"></object>
   <figcaption>
 
