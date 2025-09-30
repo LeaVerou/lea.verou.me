@@ -325,6 +325,15 @@ blockquote:where(:not(.pullquote, .pullquote > *)) {
 	}
 }
 
+@supports (shape-outside: circle(farthest-side)) {
+	aside.pullquote {
+		/* Make the following text flow around the pullquote more nicely */
+		shape-outside: circle(farthest-side) margin-box;
+		shape-margin: .5rem;
+		margin-inline-start: 0;
+	}
+}
+
 var {
 	font-variant-numeric: lining-nums;
 }
