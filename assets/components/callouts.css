@@ -7,6 +7,7 @@ main aside:where(:not(.pullquote))::before,
 
 	padding: .3em 1em;
 	width: max-content;
+	max-width: 100%;
 	column-span: all;
 	align-self: start;
 	clip-path: polygon(var(--offset) 0, 100% 0, calc(100% - var(--offset)) 100%, 0 100%);
