@@ -238,8 +238,7 @@ main aside:where(:not(.pullquote)) {
 }
 
 .note,
-.tip,
-.example {
+.tip {
 	--label: "Note";
 	--icon: var(--icon-clipboard-check);
 	--color: var(--color-green);
@@ -249,10 +248,16 @@ main aside:where(:not(.pullquote)) {
 }
 
 .example {
-	--color: var(--color-blue);
 	--label: "Example";
 	--icon: initial;
 	padding-inline: 2em;
+
+	&.bad,
+	&.good {
+		--color-light: var(--color-lighter);
+		--link-color: var(--color-darker);
+		--label-color: var(--color);
+	}
 
 	&.bad {
 		--color: var(--color-red);
