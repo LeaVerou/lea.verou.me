@@ -652,6 +652,12 @@ const proposals = [
 				title: "Second WG resolution (naming & MVP)",
 				url: "https://github.com/w3c/csswg-drafts/issues/2864#issuecomment-1645794662",
 				date: "2023-07-21"
+			},
+			{
+				type: "specced",
+				by: "Elika",
+				url: "https://github.com/w3c/csswg-drafts/commit/6492353c0b7bb68021bb0441a6bfc1c72f9a3f74",
+				date: "2024-10-28"
 			}
 		]
 	},
