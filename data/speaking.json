@@ -1,6 +1,19 @@
 {
 	"event": [
 		{
+			"date": "2026-06-11",
+			"talk": [
+				{
+					"title": "TBD",
+					"type": "Talk"
+				}
+			],
+			"url": "https://cssday.nl/",
+			"name": "CSS Day",
+			"city": "Amsterdam",
+			"country": "nl"
+		},
+		{
 			"date": "2024-06-27",
 			"talk": [
 				{
