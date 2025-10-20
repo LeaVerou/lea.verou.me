@@ -6,13 +6,12 @@ title: Home
 <a href="/about"><img src="/about/images/lightsaber.jpg" alt="Photo of me with a lightsaber"></a>
 {% markdown %}
 **Hi, I’m Lea!** 👋🏼
-I make things that help people make things.
-Ι [design web technologies](/specs/) implemented in your browser,
-launch [open source dev tools](/projects/) used by millions,
+I make things for making things.
+I’m an [award-winning](https://openjsf.org/blog/javascriptlandia-awards-2025#:~:text=Lea%20Verou) web standards leader,
+and have designed [several web technologies](/specs/) implemented in your browser.
+I have launched [open source dev tools](/projects/) used by millions,
 and [consult](/consulting/) on my areas of expertise.
 I hold a PhD in usability & innovation from [MIT](https://mit.edu)&thinsp;—&thinsp;but chose product over research.
-I love sharing knowledge and [speak](/speaking/), [teach](https://designftw.mit.edu), [write](/publications/),
-and [blog](/blog/) about product design, web technologies, usability, and their intersection.
 {% endmarkdown %}
 
 <p class="row">
@@ -22,6 +21,11 @@ and [blog](/blog/) about product design, web technologies, usability, and their 
 </div>
 
 <h2><a href="/blog/">Blog</a> <a href="/feed.xml" title="Feed" class="feed"></a></h2>
+
+{% markdown %}
+I love sharing knowledge and [speak](/speaking/), [teach](https://designftw.mit.edu), [write](/publications/),
+and [blog](/blog/) about product design, web technologies, usability, and their intersection.
+{% endmarkdown %}
 
 {% import "_posts.njk" as posts %}
 {{ posts.list(collections.published.slice(0, 30), {style: "compact", start: collections.published.length}) }}
