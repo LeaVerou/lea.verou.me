@@ -5,13 +5,16 @@
 			"talk": [
 				{
 					"title": "TBD",
-					"type": "Talk"
+					"type": "Talk",
+					"@context": "https://schema.org/"
 				}
 			],
 			"url": "https://cssday.nl/",
 			"name": "CSS Day",
 			"city": "Amsterdam",
-			"country": "nl"
+			"country": "nl",
+			"days": 2,
+			"@context": "https://schema.org/"
 		},
 		{
 			"date": "2024-06-27",
