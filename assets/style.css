@@ -1261,14 +1261,17 @@ a.contact {
 	}
 
 	.footnote-text {
-		--footnote-inline-size: 15rem;
+		--_footnote-inline-size: min(var(--footnote-inline-size, 15rem), 95vw);
+		--_footnote-offset: calc(var(--_footnote-inline-size) / 6);
+		--_pointer-height: calc(var(--pointer-height, 0.5em) * sqrt(2));
 
 		display: block;
 		position: absolute;
-		left: 1em;
-		bottom: 1.2lh;
 
-		inline-size: min(var(--footnote-inline-size), 95vw);
+		left: calc(-1 * var(--_footnote-offset));
+		bottom: calc(100% + var(--_pointer-height) / 2);
+
+		inline-size: var(--_footnote-inline-size);
 		padding: 0.5em 1em;
 		margin-block: 0.2em;
 
@@ -1279,8 +1282,22 @@ a.contact {
 		z-index: 2;
 
 		transition: scale 100ms ease-out;
+		transform-origin: calc(var(--_footnote-offset) + var(--_pointer-height) / 2) calc(100% + var(--_pointer-height));
 
-		overflow: clip; /* just in case; should we scroll instead? */
+		/* Triangle pointer */
+		&::before {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: var(--_footnote-offset);
+			translate: 50% -50%;
+			aspect-ratio: 1;
+			height: var(--_pointer-height);
+			background: inherit;
+			border: inherit;
+			rotate: -45deg;
+			clip-path: polygon(0 0, 0 100%, 100% 100%);
+		}
 
 		@starting-style {
 			scale: 0.8;
@@ -1298,6 +1315,11 @@ a.contact {
 
 			transform: none;
 			transform-origin: initial;
+
+			/* We can't have a dynamic triangle pointer when using anchor positioning, yet */
+			&::before {
+				display: none;
+			}
 		}
 	}
 }
