@@ -1233,3 +1233,71 @@ a.contact {
 		margin-block: 0;
 	}
 }
+
+.footnote-container {
+	position: relative;
+
+	/*
+		Why not “&:not(:hover, :focus) .footnote-text:not(:hover, :focus)”?
+		For better browser support.
+	*/
+	&:not(:hover):not(:focus) .footnote-text:not(:hover):not(:focus) {
+		display: none;
+	}
+
+	/*
+		Bridge the area between the ref and footnote text so the footnote doesn't disappear
+		when moving to it from the ref.
+	*/
+	&::after {
+		content: "";
+		position: absolute;
+		inset: -0.3lh -1ch;
+	}
+
+	.footnote-ref {
+		position: relative;
+		z-index: 1;
+	}
+
+	.footnote-text {
+		--footnote-inline-size: 15rem;
+
+		display: block;
+		position: absolute;
+		left: 1em;
+		bottom: 1.2lh;
+
+		inline-size: min(var(--footnote-inline-size), 95vw);
+		padding: 0.5em 1em;
+		margin-block: 0.2em;
+
+		background-color: canvas;
+		border-radius: 0.3rem;
+		box-shadow: 0 0 0.5em rgb(0 0 0 / 0.2);
+		font-size: 80%;
+		z-index: 2;
+
+		transition: scale 100ms ease-out;
+
+		overflow: clip; /* just in case; should we scroll instead? */
+
+		@starting-style {
+			scale: 0.8;
+		}
+
+		/* Enhanced positioning for browsers with anchor positioning support */
+		@supports (anchor-name: --footnote-text) {
+			position: fixed;
+			left: initial;
+			bottom: initial;
+			position-area: block-start span-inline-end;
+			position-try: flip-inline, flip-block;
+
+			min-inline-size: initial;
+
+			transform: none;
+			transform-origin: initial;
+		}
+	}
+}
