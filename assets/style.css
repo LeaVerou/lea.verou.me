@@ -1241,7 +1241,7 @@ a.contact {
 		Why not “&:not(:hover, :focus) .footnote-text:not(:hover, :focus)”?
 		For better browser support.
 	*/
-	&:not(:hover):not(:focus) .footnote-text:not(:hover):not(:focus) {
+	&:not(:hover):not(:focus-within) .footnote-text {
 		display: none;
 	}
 
