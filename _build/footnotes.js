@@ -40,6 +40,8 @@ export default function footnotesPostHTMLPlugin (options = {}) {
 			footnotes.set(node.attrs.id, {
 				tag: "span",
 				attrs: {
+					role: "doc-footnote",
+					tabindex: "0",
 					class: "footnote-text",
 					style: `position-anchor: --footnote-${node.attrs.id}`,
 				},
@@ -57,6 +59,7 @@ export default function footnotesPostHTMLPlugin (options = {}) {
 				}
 
 				let anchor = node.content?.find?.((n) => n.tag === "a");
+				anchor.attrs.role = "doc-noteref";
 				let id = anchor.attrs.href.match(/(?<=#).+/)?.[0]; // everything after "#"
 				if (!id) {
 					// Should not happen
