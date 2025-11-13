@@ -1233,3 +1233,93 @@ a.contact {
 		margin-block: 0;
 	}
 }
+
+.footnote-container {
+	position: relative;
+
+	/*
+		Why not “&:not(:hover, :focus) .footnote-text:not(:hover, :focus)”?
+		For better browser support.
+	*/
+	&:not(:hover):not(:focus) .footnote-text:not(:hover):not(:focus) {
+		display: none;
+	}
+
+	/*
+		Bridge the area between the ref and footnote text so the footnote doesn't disappear
+		when moving to it from the ref.
+	*/
+	&::after {
+		content: "";
+		position: absolute;
+		inset: -0.3lh -1ch;
+	}
+
+	.footnote-ref {
+		position: relative;
+		z-index: 1;
+	}
+
+	.footnote-text {
+		--_footnote-inline-size: min(var(--footnote-inline-size, 15rem), 95vw);
+		--_footnote-offset: calc(var(--_footnote-inline-size) / 6);
+		--_pointer-height: calc(var(--pointer-height, 0.5em) * sqrt(2));
+
+		display: block;
+		position: absolute;
+
+		left: calc(-1 * var(--_footnote-offset));
+		bottom: calc(100% + var(--_pointer-height) / 2);
+
+		inline-size: var(--_footnote-inline-size);
+		padding: 0.5em 1em;
+		margin-block: 0.2em;
+
+		background-color: canvas;
+		border-radius: 0.3rem;
+		box-shadow: 0 0 0.5em rgb(0 0 0 / 0.2);
+		font-size: 80%;
+		z-index: 2;
+
+		transition: scale 100ms ease-out;
+		transform-origin: calc(var(--_footnote-offset) + var(--_pointer-height) / 2) calc(100% + var(--_pointer-height));
+
+		/* Triangle pointer */
+		&::before {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: var(--_footnote-offset);
+			translate: 50% -50%;
+			aspect-ratio: 1;
+			height: var(--_pointer-height);
+			background: inherit;
+			border: inherit;
+			rotate: -45deg;
+			clip-path: polygon(0 0, 0 100%, 100% 100%);
+		}
+
+		@starting-style {
+			scale: 0.8;
+		}
+
+		/* Enhanced positioning for browsers with anchor positioning support */
+		@supports (anchor-name: --footnote-text) {
+			position: fixed;
+			left: initial;
+			bottom: initial;
+			position-area: block-start span-inline-end;
+			position-try: flip-inline, flip-block;
+
+			min-inline-size: initial;
+
+			transform: none;
+			transform-origin: initial;
+
+			/* We can't have a dynamic triangle pointer when using anchor positioning, yet */
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
