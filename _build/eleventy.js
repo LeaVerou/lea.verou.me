@@ -10,7 +10,7 @@ import markdownItDeflist from "markdown-it-deflist";
 import embeds from "eleventy-plugin-embed-everything";
 import pluginTOC from "eleventy-plugin-toc";
 
-import footnotesPostHTMLPlugin from "./footnotes.js";
+import footnotesPostHTMLPlugin, { improveFootnotesAccessibility } from "./footnotes.js";
 
 // Workaround for https://github.com/11ty/eleventy-dependency-tree-esm/issues/4
 // import tag_aliases  from "../data/tag_aliases.json" with { type: "json" };
@@ -178,6 +178,8 @@ export default config => {
 	});
 
 	config.htmlTransformer.addPosthtmlPlugin("html", footnotesPostHTMLPlugin);
+	
+	improveFootnotesAccessibility(config);
 
 	config.setServerOptions({ port: 8081 });
 
